@@ -1,0 +1,90 @@
+# Lists the c files that can be used to 'compile' .h files (for repair)
+#
+# <legal>
+# 'Redemption' Automated Code Repair Tool
+# 
+# Copyright 2023 Carnegie Mellon University.
+# 
+# NO WARRANTY. THIS CARNEGIE MELLON UNIVERSITY AND SOFTWARE ENGINEERING
+# INSTITUTE MATERIAL IS FURNISHED ON AN 'AS-IS' BASIS. CARNEGIE MELLON
+# UNIVERSITY MAKES NO WARRANTIES OF ANY KIND, EITHER EXPRESSED OR IMPLIED,
+# AS TO ANY MATTER INCLUDING, BUT NOT LIMITED TO, WARRANTY OF FITNESS FOR
+# PURPOSE OR MERCHANTABILITY, EXCLUSIVITY, OR RESULTS OBTAINED FROM USE OF
+# THE MATERIAL. CARNEGIE MELLON UNIVERSITY DOES NOT MAKE ANY WARRANTY OF ANY
+# KIND WITH RESPECT TO FREEDOM FROM PATENT, TRADEMARK, OR COPYRIGHT
+# INFRINGEMENT.
+# 
+# Licensed under a MIT (SEI)-style license, please see License.txt or
+# contact permission@sei.cmu.edu for full terms.
+# 
+# [DISTRIBUTION STATEMENT A] This material has been approved for public
+# release and unlimited distribution.  Please see Copyright notice for
+# non-US Government use and distribution.
+# 
+# This Software includes and/or makes use of Third-Party Software each
+# subject to its own license.
+# 
+# DM23-2165
+# </legal>
+
+git:
+  "dir.h":
+    "config.c"
+  "git-compat-util.h":
+    "branch.c"
+  "hash.h":
+    "oidtree.c"
+  "strbuf.h":
+    "config.c"
+  "strmap.h":
+    "branch.c"
+  "compat/obstack.h":
+    "kwset.c"
+  "sha1dc/sha1.h":
+    "sha1dc/sha1.c"
+  "sha1dc/ubc_check.h":
+    "sha1dc/ubc_check.c"
+
+zeek:
+  "auxil/broker/caf/libcaf_core/caf/detail/parser/read_bool.hpp":
+    "auxil/broker/caf/libcaf_core/src/detail/parse.cpp"
+  "auxil/broker/caf/libcaf_core/caf/detail/parser/read_floating_point.hpp":
+    "auxil/broker/caf/libcaf_core/src/detail/parse.cpp"
+  "auxil/broker/caf/libcaf_core/caf/detail/parser/read_ipv4_address.hpp":
+    "auxil/broker/caf/libcaf_core/src/detail/parse.cpp"
+  "auxil/broker/caf/libcaf_core/caf/detail/parser/read_ipv6_address.hpp":
+    "auxil/broker/caf/libcaf_core/src/detail/parse.cpp"
+  "auxil/broker/caf/libcaf_core/caf/detail/parser/read_number.hpp":
+    "auxil/broker/caf/libcaf_core/test/detail/parser/read_number.cpp"
+  "auxil/broker/caf/libcaf_core/caf/ipv4_endpoint.hpp":
+    "auxil/broker/caf/libcaf_core/src/detail/parse.cpp"
+  "auxil/broker/caf/libcaf_core/caf/ipv6_endpoint.hpp":
+    "auxil/broker/caf/libcaf_core/src/detail/parse.cpp"
+  "auxil/broker/include/broker/network_info.hh":
+    "auxil/broker/src/network_info.cc"
+  "auxil/broker/include/broker/span.hh":
+    "auxil/broker/include/broker/telemetry/histogram.hh"
+  "auxil/highwayhash/highwayhash/hh_avx2.h":
+    "auxil/highwayhash/highwayhash/highwayhash.h"
+  "auxil/rapidjson/include/rapidjson/internal/itoa.h":
+    "src/threading/formatters/JSON.cc"
+  "src/zeek/3rdparty/doctest.h":
+    "src/DNS_Mgr.cc"
+  "src/zeek/Dict.h":
+    "src/Dict.cc"
+  "src/zeek/IPAddr.h":
+    "src/SerializationFormat.cc"
+  "src/zeek/Type.h":
+    "src/Type.cc"
+  "src/zeek/UID.h":
+    "src/UID.cc"
+  "src/zeek/util.h":
+    "build/src/re-scan.cc"
+  "src/zeek/zeek/util.h":
+    "build/src/re-scan.cc"
+  "src/zeek/zeek/zeek/util.h":
+    "build/src/re-scan.cc"
+  "src/zeek/zeek/zeek/zeek/util.h":
+    "build/src/re-scan.cc"
+  "src/zeek/zeek/zeek/zeek/zeek/util.h":
+     "build/src/re-scan.cc"

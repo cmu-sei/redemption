@@ -1,0 +1,8 @@
+[
+    {
+	"rule": "EXP34-C",
+	"file": "header.h",
+	"line": 8,
+	"message": "Do not dereference null pointers"
+  }
+]

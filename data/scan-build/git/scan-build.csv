@@ -1,0 +1,148 @@
+Checker,Path,Line,Message,tool,checker,rule
+core.uninitialized.Assign,blame.c,1453,Assigned value is garbage or undefined,clang-scan-build,core.uninitialized.Assign,EXP33-C
+core.uninitialized.Assign,blame.c,1469,Assigned value is garbage or undefined,clang-scan-build,core.uninitialized.Assign,EXP33-C
+core.NullDereference,blame.c,2811,Access to field 'parents' results in a dereference of a null pointer (loaded from variable 'c'),clang-scan-build,core.NullDereference,EXP34-C
+deadcode.DeadStores,builtin/update-index.c,1171,Value stored to 'argc' is never read,clang-scan-build,deadcode.DeadStores,MSC13-C
+deadcode.DeadStores,builtin/show-index.c,26,Value stored to 'argc' is never read,clang-scan-build,deadcode.DeadStores,MSC13-C
+core.NullDereference,branch.c,163,Dereference of null pointer,clang-scan-build,core.NullDereference,EXP34-C
+core.NonNullParamChecker,transport.c,936,Null pointer passed to 1st parameter expecting 'nonnull',clang-scan-build,core.NonNullParamChecker,EXP34-C
+core.NonNullParamChecker,transport.c,943,Null pointer passed to 1st parameter expecting 'nonnull',clang-scan-build,core.NonNullParamChecker,EXP34-C
+core.NonNullParamChecker,builtin/index-pack.c,1497,Null pointer passed to 1st parameter expecting 'nonnull',clang-scan-build,core.NonNullParamChecker,EXP34-C
+core.NullDereference,builtin/index-pack.c,1681,Array access (from variable 'chain_histogram') results in a null pointer dereference,clang-scan-build,core.NullDereference,EXP34-C
+core.NullDereference,builtin/index-pack.c,1703,Array access (from variable 'chain_histogram') results in a null pointer dereference,clang-scan-build,core.NullDereference,EXP34-C
+core.NonNullParamChecker,pack-write.c,258,Null pointer passed to 1st parameter expecting 'nonnull',clang-scan-build,core.NonNullParamChecker,EXP34-C
+deadcode.DeadStores,builtin/stash.c,810,Value stored to 'argc' is never read,clang-scan-build,deadcode.DeadStores,MSC13-C
+core.CallAndMessage,diffcore-pickaxe.c,168,Called function pointer is null (null dereference),clang-scan-build,core.CallAndMessage,EXP33-C
+core.NullDereference,revision.c,1124,Access to field 'parents' results in a dereference of a null pointer (loaded from variable 'p'),clang-scan-build,core.NullDereference,EXP34-C
+core.NullDereference,revision.c,1432,Access to field 'date' results in a dereference of a null pointer (loaded from variable 'commit'),clang-scan-build,core.NullDereference,EXP34-C
+core.NullDereference,revision.c,1436,Access to field 'flags' results in a dereference of a null pointer (loaded from variable 'obj'),clang-scan-build,core.NullDereference,EXP34-C
+core.NullDereference,revision.c,1871,Access to field 'type' results in a dereference of a null pointer (loaded from variable 'it'),clang-scan-build,core.NullDereference,EXP34-C
+core.NullDereference,builtin/merge.c,224,Array access (from variable 'use_strategies') results in a null pointer dereference,clang-scan-build,core.NullDereference,EXP34-C
+deadcode.DeadStores,builtin/merge.c,924,Value stored to 'pptr' is never read,clang-scan-build,deadcode.DeadStores,MSC13-C
+deadcode.DeadStores,add-interactive.c,1165,Value stored to 'res' is never read,clang-scan-build,deadcode.DeadStores,MSC13-C
+deadcode.DeadStores,add-interactive.c,1183,Value stored to 'res' is never read,clang-scan-build,deadcode.DeadStores,MSC13-C
+deadcode.DeadStores,attr.c,565,"Although the value stored to 'param' is used in the enclosing expression, the value is never actually read from 'param'",clang-scan-build,deadcode.DeadStores,MSC13-C
+core.NullDereference,attr.c,908,Access to field 'prev' results in a dereference of a null pointer (loaded from variable 'info'),clang-scan-build,core.NullDereference,EXP34-C
+core.NullDereference,attr.c,916,Access to field 'origin' results in a dereference of a null pointer,clang-scan-build,core.NullDereference,EXP34-C
+deadcode.DeadStores,add-patch.c,1653,Value stored to 'eol' during its initialization is never read,clang-scan-build,deadcode.DeadStores,MSC13-C
+core.NullDereference,diffcore-break.c,291,Access to field 'broken_pair' results in a dereference of a null pointer (loaded from variable 'pp'),clang-scan-build,core.NullDereference,EXP34-C
+deadcode.DeadStores,builtin/diff-tree.c,131,Value stored to 'prefix' is never read,clang-scan-build,deadcode.DeadStores,MSC13-C
+deadcode.DeadStores,commit-graph.c,535,Value stored to 'valid' is never read,clang-scan-build,deadcode.DeadStores,MSC13-C
+deadcode.DeadStores,commit-graph.c,847,Value stored to 'pptr' is never read,clang-scan-build,deadcode.DeadStores,MSC13-C
+core.NullDereference,commit-graph.c,2057,Access to field 'odb' results in a dereference of a null pointer (loaded from variable 'g'),clang-scan-build,core.NullDereference,EXP34-C
+unix.Malloc,builtin/fetch.c,495,Use of memory after it is freed,clang-scan-build,unix.Malloc,MEM31-C
+core.NullDereference,builtin/fetch.c,588,Access to field 'nr' results in a dereference of a null pointer (loaded from variable 'fetch_refspec'),clang-scan-build,core.NullDereference,EXP34-C
+core.NullDereference,strvec.c,19,Array access (via field 'v') results in a null pointer dereference,clang-scan-build,core.NullDereference,EXP34-C
+core.NullDereference,parse-options.c,851,Dereference of null pointer (loaded from field 'opt'),clang-scan-build,core.NullDereference,EXP34-C
+core.NullDereference,parse-options.c,992,Dereference of null pointer (loaded from field 'opt'),clang-scan-build,core.NullDereference,EXP34-C
+core.CallAndMessage,remote.c,917,2nd function call argument is an uninitialized value,clang-scan-build,core.CallAndMessage,EXP33-C
+core.NonNullParamChecker,remote.c,1024,Null pointer passed to 1st parameter expecting 'nonnull',clang-scan-build,core.NonNullParamChecker,EXP34-C
+core.UndefinedBinaryOperatorResult,refs.c,1847,The left operand of '!=' is a garbage value,clang-scan-build,core.UndefinedBinaryOperatorResult,EXP33-C
+deadcode.DeadStores,builtin/commit.c,1537,Value stored to 'argc' is never read,clang-scan-build,deadcode.DeadStores,MSC13-C
+deadcode.DeadStores,builtin/commit.c,1722,Value stored to 'argc' is never read,clang-scan-build,deadcode.DeadStores,MSC13-C
+core.NullDereference,builtin/pack-redundant.c,477,Access to field 'next' results in a dereference of a null pointer (loaded from variable 'pl'),clang-scan-build,core.NullDereference,EXP34-C
+core.NullDereference,object-file.c,426,Array access (via field 'hash') results in a null pointer dereference,clang-scan-build,core.NullDereference,EXP34-C
+deadcode.DeadStores,builtin/reset.c,348,Value stored to 'argc' is never read,clang-scan-build,deadcode.DeadStores,MSC13-C
+core.NullDereference,refs/iterator.c,13,Access to field 'vtable' results in a dereference of a null pointer (loaded from variable 'ref_iterator'),clang-scan-build,core.NullDereference,EXP34-C
+core.NullDereference,refs/iterator.c,161,Access to field 'refname' results in a dereference of a null pointer,clang-scan-build,core.NullDereference,EXP34-C
+deadcode.DeadStores,builtin/bugreport.c,121,Value stored to 'argc' is never read,clang-scan-build,deadcode.DeadStores,MSC13-C
+deadcode.DeadStores,reftable/merged.c,89,Value stored to 'entry' during its initialization is never read,clang-scan-build,deadcode.DeadStores,MSC13-C
+deadcode.DeadStores,builtin/rev-parse.c,525,Value stored to 'argc' is never read,clang-scan-build,deadcode.DeadStores,MSC13-C
+deadcode.DeadStores,help.c,769,Value stored to 'argc' is never read,clang-scan-build,deadcode.DeadStores,MSC13-C
+deadcode.DeadStores,commit-reach.c,518,Value stored to 'next' is never read,clang-scan-build,deadcode.DeadStores,MSC13-C
+core.NullDereference,commit-reach.c,812,Access to field 'flags' results in a dereference of a null pointer (loaded from field 'item'),clang-scan-build,core.NullDereference,EXP34-C
+deadcode.DeadStores,diff.c,693,Value stored to 'needs_reset' is never read,clang-scan-build,deadcode.DeadStores,MSC13-C
+core.NonNullParamChecker,diff.c,2075,Null pointer passed to 1st parameter expecting 'nonnull',clang-scan-build,core.NonNullParamChecker,EXP34-C
+unix.Malloc,diff.c,4164,"Argument to free() is the address of a global variable, which is not memory allocated by malloc()",clang-scan-build,unix.Malloc,MEM31-C
+deadcode.DeadStores,builtin/mktag.c,83,Value stored to 'argc' is never read,clang-scan-build,deadcode.DeadStores,MSC13-C
+deadcode.DeadStores,archive.c,696,Value stored to 'argc' is never read,clang-scan-build,deadcode.DeadStores,MSC13-C
+deadcode.DeadStores,builtin/bundle.c,123,Value stored to 'argc' is never read,clang-scan-build,deadcode.DeadStores,MSC13-C
+deadcode.DeadStores,builtin/show-ref.c,183,Value stored to 'argc' is never read,clang-scan-build,deadcode.DeadStores,MSC13-C
+unix.Malloc,object-name.c,1979,Use of memory after it is freed,clang-scan-build,unix.Malloc,MEM31-C
+deadcode.DeadStores,builtin/credential-cache--daemon.c,282,Value stored to 'argc' is never read,clang-scan-build,deadcode.DeadStores,MSC13-C
+deadcode.DeadStores,builtin/diff-index.c,29,Value stored to 'prefix' is never read,clang-scan-build,deadcode.DeadStores,MSC13-C
+deadcode.DeadStores,unpack-trees.c,2036,Value stored to 'ret' is never read,clang-scan-build,deadcode.DeadStores,MSC13-C
+core.NonNullParamChecker,unpack-trees.c,2446,Null pointer passed to 2nd parameter expecting 'nonnull',clang-scan-build,core.NonNullParamChecker,EXP34-C
+core.NullDereference,unpack-trees.c,2453,Access to field 'ce_namelen' results in a dereference of a null pointer (loaded from variable 'ce'),clang-scan-build,core.NullDereference,EXP34-C
+core.NullDereference,unpack-trees.c,2494,Access to field 'ce_flags' results in a dereference of a null pointer (loaded from variable 'ce'),clang-scan-build,core.NullDereference,EXP34-C
+core.NonNullParamChecker,builtin/clone.c,1010,Null pointer passed to 1st parameter expecting 'nonnull',clang-scan-build,core.NonNullParamChecker,EXP34-C
+core.NullDereference,combine-diff.c,258,Access to field 'prev' results in a dereference of a null pointer (loaded from variable 'newend'),clang-scan-build,core.NullDereference,EXP34-C
+core.NullDereference,combine-diff.c,266,Access to field 'prev' results in a dereference of a null pointer (loaded from variable 'lline'),clang-scan-build,core.NullDereference,EXP34-C
+core.NullDereference,apply.c,2976,Dereference of null pointer,clang-scan-build,core.NullDereference,EXP34-C
+core.NullDereference,notes.c,672,Access to field 'next' results in a dereference of a null pointer (loaded from variable 'tws'),clang-scan-build,core.NullDereference,EXP34-C
+deadcode.DeadStores,reftable/writer.c,65,Value stored to 'n' is never read,clang-scan-build,deadcode.DeadStores,MSC13-C
+deadcode.DeadStores,reftable/writer.c,604,Value stored to 'p' is never read,clang-scan-build,deadcode.DeadStores,MSC13-C
+deadcode.DeadStores,builtin/rm.c,267,Value stored to 'argc' is never read,clang-scan-build,deadcode.DeadStores,MSC13-C
+deadcode.DeadStores,builtin/difftool.c,722,Value stored to 'argc' is never read,clang-scan-build,deadcode.DeadStores,MSC13-C
+deadcode.DeadStores,merge-recursive.c,950,Value stored to 'update_wd' is never read,clang-scan-build,deadcode.DeadStores,MSC13-C
+deadcode.DeadStores,merge-recursive.c,976,Value stored to 'update_wd' is never read,clang-scan-build,deadcode.DeadStores,MSC13-C
+deadcode.DeadStores,merge-recursive.c,2110,Value stored to 'clean' is never read,clang-scan-build,deadcode.DeadStores,MSC13-C
+core.NullDereference,merge-recursive.c,3352,Access to field 'pair' results in a dereference of a null pointer (loaded from field 'ren2'),clang-scan-build,core.NullDereference,EXP34-C
+core.NullDereference,merge-recursive.c,3365,Access to field 'pair' results in a dereference of a null pointer (loaded from field 'ren2'),clang-scan-build,core.NullDereference,EXP34-C
+deadcode.DeadStores,upload-pack.c,688,"Although the value stored to 'i' is used in the enclosing expression, the value is never actually read from 'i'",clang-scan-build,deadcode.DeadStores,MSC13-C
+deadcode.DeadStores,builtin/diff-files.c,39,Value stored to 'prefix' is never read,clang-scan-build,deadcode.DeadStores,MSC13-C
+core.UndefinedBinaryOperatorResult,diff-lib.c,41,The left operand of '&' is a garbage value,clang-scan-build,core.UndefinedBinaryOperatorResult,EXP33-C
+deadcode.DeadStores,builtin/diagnose.c,32,Value stored to 'argc' is never read,clang-scan-build,deadcode.DeadStores,MSC13-C
+core.NullDereference,kwset.c,466,Access to field 'next' results in a dereference of a null pointer (loaded from field 'trie'),clang-scan-build,core.NullDereference,EXP34-C
+core.NullDereference,kwset.c,637,Array access results in a null pointer dereference,clang-scan-build,core.NullDereference,EXP34-C
+core.NullDereference,bisect.c,429,Access to field 'item' results in a dereference of a null pointer (loaded from variable 'list'),clang-scan-build,core.NullDereference,EXP34-C
+deadcode.DeadStores,builtin/patch-id.c,234,Value stored to 'argc' is never read,clang-scan-build,deadcode.DeadStores,MSC13-C
+core.uninitialized.Branch,protocol-caps.c,46,Branch condition evaluates to a garbage value,clang-scan-build,core.uninitialized.Branch,EXP33-C
+deadcode.DeadStores,builtin/repack.c,818,Value stored to 'argc' is never read,clang-scan-build,deadcode.DeadStores,MSC13-C
+deadcode.DeadStores,builtin/ls-tree.c,97,Value stored to 'name' during its initialization is never read,clang-scan-build,deadcode.DeadStores,MSC13-C
+deadcode.DeadStores,builtin/add.c,321,Value stored to 'argc' is never read,clang-scan-build,deadcode.DeadStores,MSC13-C
+core.NullDereference,dir.c,2461,Access to field 'dirs_nr' results in a dereference of a null pointer (loaded from field 'untracked'),clang-scan-build,core.NullDereference,EXP34-C
+deadcode.DeadStores,dir.c,2696,Value stored to 'prevlen' is never read,clang-scan-build,deadcode.DeadStores,MSC13-C
+deadcode.DeadStores,pack-bitmap.c,203,Value stored to 'index_end' is never read,clang-scan-build,deadcode.DeadStores,MSC13-C
+deadcode.DeadStores,builtin/receive-pack.c,619,Value stored to 'retval' during its initialization is never read,clang-scan-build,deadcode.DeadStores,MSC13-C
+core.NullDereference,range-diff.c,531,Dereference of null pointer,clang-scan-build,core.NullDereference,EXP34-C
+deadcode.DeadStores,ewah/ewah_io.c,131,Value stored to 'len' is never read,clang-scan-build,deadcode.DeadStores,MSC13-C
+core.NonNullParamChecker,builtin/init-db.c,162,Null pointer passed to 1st parameter expecting 'nonnull',clang-scan-build,core.NonNullParamChecker,EXP34-C
+deadcode.DeadStores,fsck.c,819,Value stored to 'p' is never read,clang-scan-build,deadcode.DeadStores,MSC13-C
+deadcode.DeadStores,builtin/fast-import.c,1920,Value stored to 'num' is never read,clang-scan-build,deadcode.DeadStores,MSC13-C
+core.NullDereference,builtin/fast-import.c,2044,Access to field 'active_next_branch' results in a dereference of a null pointer (loaded from variable 'e'),clang-scan-build,core.NullDereference,EXP34-C
+core.NonNullParamChecker,ref-filter.c,925,Null pointer passed to 1st parameter expecting 'nonnull',clang-scan-build,core.NonNullParamChecker,EXP34-C
+core.NonNullParamChecker,ref-filter.c,929,Null pointer passed to 1st parameter expecting 'nonnull',clang-scan-build,core.NonNullParamChecker,EXP34-C
+core.NullDereference,ref-filter.c,1994,Access to field 'type' results in a dereference of an undefined pointer value (loaded from variable 'obj'),clang-scan-build,core.NullDereference,EXP34-C
+deadcode.DeadStores,compat/terminal.c,505,Value stored to 'eol' is never read,clang-scan-build,deadcode.DeadStores,MSC13-C
+deadcode.DeadStores,line-log.c,645,"Although the value stored to 'tmp' is used in the enclosing expression, the value is never actually read from 'tmp'",clang-scan-build,deadcode.DeadStores,MSC13-C
+core.NullDereference,line-log.c,873,Array access (from variable 'ends') results in a null pointer dereference,clang-scan-build,core.NullDereference,EXP34-C
+deadcode.DeadStores,reftable/stack.c,816,Value stored to 'err' is never read,clang-scan-build,deadcode.DeadStores,MSC13-C
+deadcode.DeadStores,reftable/stack.c,1073,Value stored to 'lock_file_fd' is never read,clang-scan-build,deadcode.DeadStores,MSC13-C
+deadcode.DeadStores,builtin/write-tree.c,38,Value stored to 'argc' is never read,clang-scan-build,deadcode.DeadStores,MSC13-C
+core.uninitialized.UndefReturn,color.c,59,Undefined or garbage value returned to caller,clang-scan-build,core.uninitialized.UndefReturn,EXP33-C
+core.NonNullParamChecker,builtin/rebase.c,1664,Null pointer passed to 1st parameter expecting 'nonnull',clang-scan-build,core.NonNullParamChecker,EXP34-C
+core.NonNullParamChecker,builtin/rebase.c,1730,Null pointer passed to 1st parameter expecting 'nonnull',clang-scan-build,core.NonNullParamChecker,EXP34-C
+core.NullDereference,sequencer.c,1260,Access to field 'buf' results in a dereference of a null pointer (loaded from variable 'msg'),clang-scan-build,core.NullDereference,EXP34-C
+core.NullDereference,sequencer.c,1474,Access to field 'parents' results in a dereference of a null pointer (loaded from variable 'current_head'),clang-scan-build,core.NullDereference,EXP34-C
+core.NullDereference,sequencer.c,1589,Access to field 'buf' results in a dereference of a null pointer (loaded from variable 'msg'),clang-scan-build,core.NullDereference,EXP34-C
+deadcode.DeadStores,sequencer.c,2208,Value stored to 'reword' is never read,clang-scan-build,deadcode.DeadStores,MSC13-C
+deadcode.DeadStores,run-command.c,1637,"Although the value stored to 'i' is used in the enclosing expression, the value is never actually read from 'i'",clang-scan-build,deadcode.DeadStores,MSC13-C
+deadcode.DeadStores,abspath.c,273,Value stored to 'pfx_len' is never read,clang-scan-build,deadcode.DeadStores,MSC13-C
+core.NullDereference,merge-ort.c,4341,Dereference of null pointer,clang-scan-build,core.NullDereference,EXP34-C
+core.NullDereference,merge-ort.c,5066,Access to field 'call_depth' results in a dereference of a null pointer (loaded from field 'priv'),clang-scan-build,core.NullDereference,EXP34-C
+core.NonNullParamChecker,setup.c,364,Null pointer passed to 1st parameter expecting 'nonnull',clang-scan-build,core.NonNullParamChecker,EXP34-C
+deadcode.DeadStores,reftable/reader.c,146,Value stored to 'f' is never read,clang-scan-build,deadcode.DeadStores,MSC13-C
+core.NullDereference,reftable/reader.c,329,Access to field 'full_block_size' results in a dereference of a null pointer (loaded from field 'br'),clang-scan-build,core.NullDereference,EXP34-C
+deadcode.DeadStores,reftable/reader.c,513,Value stored to 'err' is never read,clang-scan-build,deadcode.DeadStores,MSC13-C
+core.NonNullParamChecker,builtin/bisect--helper.c,311,Null pointer passed to 2nd parameter expecting 'nonnull',clang-scan-build,core.NonNullParamChecker,EXP34-C
+unix.Malloc,builtin/bisect--helper.c,911,Use of memory after it is freed,clang-scan-build,unix.Malloc,MEM31-C
+deadcode.DeadStores,builtin/sparse-checkout.c,63,Value stored to 'argc' is never read,clang-scan-build,deadcode.DeadStores,MSC13-C
+deadcode.DeadStores,builtin/sparse-checkout.c,455,Value stored to 'argc' is never read,clang-scan-build,deadcode.DeadStores,MSC13-C
+deadcode.DeadStores,builtin/sparse-checkout.c,863,Value stored to 'argc' is never read,clang-scan-build,deadcode.DeadStores,MSC13-C
+deadcode.DeadStores,builtin/sparse-checkout.c,900,Value stored to 'argc' is never read,clang-scan-build,deadcode.DeadStores,MSC13-C
+core.NonNullParamChecker,builtin/pull.c,757,Null pointer passed to 1st parameter expecting 'nonnull',clang-scan-build,core.NonNullParamChecker,EXP34-C
+deadcode.DeadStores,builtin/mktree.c,167,Value stored to 'ac' is never read,clang-scan-build,deadcode.DeadStores,MSC13-C
+deadcode.DeadStores,builtin/ls-files.c,784,Value stored to 'argc' is never read,clang-scan-build,deadcode.DeadStores,MSC13-C
+deadcode.DeadStores,diffcore-rename.c,1477,Value stored to 'num_sources' is never read,clang-scan-build,deadcode.DeadStores,MSC13-C
+deadcode.DeadStores,diffcore-rename.c,1624,Value stored to 'rename_count' is never read,clang-scan-build,deadcode.DeadStores,MSC13-C
+deadcode.DeadStores,grep.c,727,Value stored to 'extended' is never read,clang-scan-build,deadcode.DeadStores,MSC13-C
+core.NonNullParamChecker,pretty.c,1633,Null pointer passed to 1st parameter expecting 'nonnull',clang-scan-build,core.NonNullParamChecker,EXP34-C
+core.NullDereference,pretty.c,2178,Array access (from variable 'msg') results in a null pointer dereference,clang-scan-build,core.NullDereference,EXP34-C
+core.uninitialized.UndefReturn,builtin/submodule--helper.c,88,Undefined or garbage value returned to caller,clang-scan-build,core.uninitialized.UndefReturn,EXP33-C
+deadcode.DeadStores,builtin/submodule--helper.c,733,Value stored to 'argc' is never read,clang-scan-build,deadcode.DeadStores,MSC13-C
+core.NullDereference,builtin/submodule--helper.c,1249,Access to field 'name' results in a dereference of a null pointer (loaded from variable 'sub'),clang-scan-build,core.NullDereference,EXP34-C
+core.CallAndMessage,builtin/submodule--helper.c,1262,2nd function call argument is an uninitialized value,clang-scan-build,core.CallAndMessage,EXP33-C
+deadcode.DeadStores,builtin/submodule--helper.c,1327,Value stored to 'argc' is never read,clang-scan-build,deadcode.DeadStores,MSC13-C
+core.CallAndMessage,builtin/submodule--helper.c,2519,2nd function call argument is an uninitialized value,clang-scan-build,core.CallAndMessage,EXP33-C
+deadcode.DeadStores,builtin/submodule--helper.c,2840,Value stored to 'argc' is never read,clang-scan-build,deadcode.DeadStores,MSC13-C

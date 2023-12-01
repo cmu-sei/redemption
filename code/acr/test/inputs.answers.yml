@@ -1,0 +1,76 @@
+
+# <legal>
+# 'Redemption' Automated Code Repair Tool
+# 
+# Copyright 2023 Carnegie Mellon University.
+# 
+# NO WARRANTY. THIS CARNEGIE MELLON UNIVERSITY AND SOFTWARE ENGINEERING
+# INSTITUTE MATERIAL IS FURNISHED ON AN 'AS-IS' BASIS. CARNEGIE MELLON
+# UNIVERSITY MAKES NO WARRANTIES OF ANY KIND, EITHER EXPRESSED OR IMPLIED,
+# AS TO ANY MATTER INCLUDING, BUT NOT LIMITED TO, WARRANTY OF FITNESS FOR
+# PURPOSE OR MERCHANTABILITY, EXCLUSIVITY, OR RESULTS OBTAINED FROM USE OF
+# THE MATERIAL. CARNEGIE MELLON UNIVERSITY DOES NOT MAKE ANY WARRANTY OF ANY
+# KIND WITH RESPECT TO FREEDOM FROM PATENT, TRADEMARK, OR COPYRIGHT
+# INFRINGEMENT.
+# 
+# Licensed under a MIT (SEI)-style license, please see License.txt or
+# contact permission@sei.cmu.edu for full terms.
+# 
+# [DISTRIBUTION STATEMENT A] This material has been approved for public
+# release and unlimited distribution.  Please see Copyright notice for
+# non-US Government use and distribution.
+# 
+# This Software includes and/or makes use of Third-Party Software each
+# subject to its own license.
+# 
+# DM23-2165
+# </legal>
+
+tests:
+
+- answer_file: simple_null_check.repaired.answer.c
+  input:
+    alerts_file: simple_null_checkb.alerts.json
+    cfile: simple_null_check.c
+    compile_cmds_file: simple_null_check_compile_cmds.json
+  name: simple_null_checkb
+
+- answer_file: simple_null_check.repaired.answer.c
+  input:
+    alerts_file: simple_null_checkb.alerts.json
+    cfile: simple_null_check.c
+    compile_cmds_file: autogen
+    step_dir: out
+    out_src_dir: out
+  name: simple_null_checkb_repeated
+
+- answer_file: preproc_parser_1.repaired.answer.c
+  input:
+    alerts_file: preproc_parser_1.alerts.json
+    cfile: preproc_parser_1.c
+    compile_cmds_file: autogen
+    step_dir: out
+    out_src_dir: out
+  name: preproc_parser_1_not_simple_null_checkb_repeated_incorrect
+
+- answer_file: already_repaired_null_01.brain-out.json
+  input:
+    cfile: already_repaired_null_01.c
+    alerts_file: already_repaired_null_01.alerts.json
+
+- answer_file: uninit_var_01.answer.c
+  input:
+    cfile: uninit_var_01.c
+    alerts_file: uninit_var_01.alerts.json
+
+- answer_file: dead_asgn_01.answer.c
+  input:
+    cfile: dead_asgn_01.c
+    alerts_file: dead_asgn_01.alerts.json
+
+#- answer_file: "arrow-null-01.repaired.c"
+#  input:
+#    alerts_file: "arrow-null-01.alerts.json"
+#    cfile: "arrow-null-01.c"
+#    compile_cmds_file: autogen
+#  name: "arrow-null-01"

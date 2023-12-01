@@ -1,0 +1,12 @@
+[
+    {
+        "directory": "$TEST_DIR/",
+        "file": "super01a.c",
+        "arguments": [ "cc", "-c", "super01a.c" ]
+    },
+    {
+        "directory": "$TEST_DIR/",
+        "file": "super01b.c",
+        "arguments": [ "cc", "-c", "super01b.c" ]
+    }
+]

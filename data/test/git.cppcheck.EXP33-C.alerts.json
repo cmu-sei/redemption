@@ -1,0 +1,11 @@
+[
+  {
+    "rule": "EXP33-C",
+    "file": "builtin/notes.c",
+    "line": "726",
+    "column": "6",
+    "tool": "cppcheck",
+    "checker": "uninitvar",
+    "message": "Uninitialized variable: partial"
+  }
+]

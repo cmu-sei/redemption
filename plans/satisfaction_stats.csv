@@ -1,0 +1,26 @@
+Rule,cppcheck git,clang-tidy git,rosecheckers git,cppcheck zeek5,clang-tidy zeek5,rosecheckers zeek5,Title
+EXP34-C,20,77,,53,44,17,Do not dereference null pointers
+EXP33-C,1,9157,,29,5225,,Do not read uninitialized memory
+MSC12-C,37,,721,232,,480,Detect and remove code that has no effect
+MSC13-C,228,458,,1179,16,,Detect and remove unused values
+EXP12-C,,,3670,,1,507,Do not ignore values returned by functions
+INT31-C,,1689,,3,565,,Ensure that integer conversions do not result in lost or misinterpreted data
+EXP19-C,,20571,,,4413,,"Use braces for the body of an if, for, or while statement"
+ERR33-C,,950,132,,124,20,Detect and handle standard library errors
+INT32-C,,,63,1,,16,Ensure that operations on signed integers do not result in overflow
+DCL00-C,,21,1801,,316,576,Const-qualify immutable objects
+DCL01-C,42,,2465,89,,2553,Do not reuse variable names in subscopes
+MSC07-C,11,,,85,,,Detect and remove dead code
+DCL04-C,,1827,,,367,,Do not declare more than one variable per declaration
+DCL02-C,,,1500,,1,476,Use visually distinct identifiers
+EXP45-C,,253,,,186,,Do not perform assignments in selection statements
+PRE01-C,,276,,,175,,Use parentheses within macros around parameter names
+INT18-C,,192,,,80,,Evaluate integer expressions in a larger size before comparing or assigning to that size
+Total,420,50183,27162,2316,20447,10885,"# of alerts for this SA tool on this codebase,,"
+Rules,13,29,49,24,41,45,# of rules detected by this SA tool on this codebase
+Top10,4,7,5,6,8,6,# of rules detected by this SA tool out of top 10
+RAlerts,286,32923,6387,1497,10704,1616,# of alerts detected by this SA tool in top 10
+%,68.1,65.6,23.5,64.6,52.3,14.8,% of alerts in top 10 vs all alerts
+Top17,6,11,7,8,5,8,# of rules detected by this SA tool out of top 17
+RAlerts,339,35471,10352,1671,11513,4645,# of alerts detected by this SA tool in top 17
+%,80.7,70.7,38.1,72.2,56.3,42.7,% of alerts in top 17 vs all alerts

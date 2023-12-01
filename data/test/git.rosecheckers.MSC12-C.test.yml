@@ -1,0 +1,1161 @@
+tests:
+
+- answer_file: git.rosecheckers.MSC12-C.advice_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: advice.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: advice_c
+
+- answer_file: git.rosecheckers.MSC12-C.apply_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: apply.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: apply_c
+
+- answer_file: git.rosecheckers.MSC12-C.attr_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: attr.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: attr_c
+
+- answer_file: git.rosecheckers.MSC12-C.blame_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: blame.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: blame_c
+
+- answer_file: git.rosecheckers.MSC12-C.branch_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: branch.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: branch_c
+
+- answer_file: git.rosecheckers.MSC12-C.builtin_am_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/am.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_am_c
+
+- answer_file: git.rosecheckers.MSC12-C.builtin_bisect--helper_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/bisect--helper.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_bisect--helper_c
+
+- answer_file: git.rosecheckers.MSC12-C.builtin_branch_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/branch.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_branch_c
+
+- answer_file: git.rosecheckers.MSC12-C.builtin_cat-file_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/cat-file.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_cat-file_c
+
+- answer_file: git.rosecheckers.MSC12-C.builtin_check-attr_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/check-attr.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_check-attr_c
+
+- answer_file: git.rosecheckers.MSC12-C.builtin_checkout_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/checkout.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_checkout_c
+
+- answer_file: git.rosecheckers.MSC12-C.builtin_clone_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/clone.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_clone_c
+
+- answer_file: git.rosecheckers.MSC12-C.builtin_commit-tree_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/commit-tree.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_commit-tree_c
+
+- answer_file: git.rosecheckers.MSC12-C.builtin_commit_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/commit.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_commit_c
+
+- answer_file: git.rosecheckers.MSC12-C.builtin_config_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/config.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_config_c
+
+- answer_file: git.rosecheckers.MSC12-C.builtin_diff-tree_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/diff-tree.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_diff-tree_c
+
+- answer_file: git.rosecheckers.MSC12-C.builtin_env--helper_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/env--helper.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_env--helper_c
+
+- answer_file: git.rosecheckers.MSC12-C.builtin_fast-import_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/fast-import.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_fast-import_c
+
+- answer_file: git.rosecheckers.MSC12-C.builtin_fetch_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/fetch.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_fetch_c
+
+- answer_file: git.rosecheckers.MSC12-C.builtin_for-each-ref_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/for-each-ref.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_for-each-ref_c
+
+- answer_file: git.rosecheckers.MSC12-C.builtin_fsck_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/fsck.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_fsck_c
+
+- answer_file: git.rosecheckers.MSC12-C.builtin_gc_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/gc.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_gc_c
+
+- answer_file: git.rosecheckers.MSC12-C.builtin_hash-object_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/hash-object.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_hash-object_c
+
+- answer_file: git.rosecheckers.MSC12-C.builtin_index-pack_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/index-pack.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_index-pack_c
+
+- answer_file: git.rosecheckers.MSC12-C.builtin_log_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/log.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_log_c
+
+- answer_file: git.rosecheckers.MSC12-C.builtin_mailsplit_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/mailsplit.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_mailsplit_c
+
+- answer_file: git.rosecheckers.MSC12-C.builtin_merge_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/merge.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_merge_c
+
+- answer_file: git.rosecheckers.MSC12-C.builtin_mv_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/mv.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_mv_c
+
+- answer_file: git.rosecheckers.MSC12-C.builtin_name-rev_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/name-rev.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_name-rev_c
+
+- answer_file: git.rosecheckers.MSC12-C.builtin_notes_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/notes.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_notes_c
+
+- answer_file: git.rosecheckers.MSC12-C.builtin_pack-objects_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/pack-objects.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_pack-objects_c
+
+- answer_file: git.rosecheckers.MSC12-C.builtin_prune_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/prune.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_prune_c
+
+- answer_file: git.rosecheckers.MSC12-C.builtin_pull_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/pull.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_pull_c
+
+- answer_file: git.rosecheckers.MSC12-C.builtin_push_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/push.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_push_c
+
+- answer_file: git.rosecheckers.MSC12-C.builtin_rebase_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/rebase.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_rebase_c
+
+- answer_file: git.rosecheckers.MSC12-C.builtin_receive-pack_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/receive-pack.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_receive-pack_c
+
+- answer_file: git.rosecheckers.MSC12-C.builtin_remote_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/remote.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_remote_c
+
+- answer_file: git.rosecheckers.MSC12-C.builtin_replace_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/replace.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_replace_c
+
+- answer_file: git.rosecheckers.MSC12-C.builtin_reset_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/reset.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_reset_c
+
+- answer_file: git.rosecheckers.MSC12-C.builtin_revert_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/revert.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_revert_c
+
+- answer_file: git.rosecheckers.MSC12-C.builtin_shortlog_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/shortlog.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_shortlog_c
+
+- answer_file: git.rosecheckers.MSC12-C.builtin_sparse-checkout_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/sparse-checkout.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_sparse-checkout_c
+
+- answer_file: git.rosecheckers.MSC12-C.builtin_submodule--helper_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/submodule--helper.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_submodule--helper_c
+
+- answer_file: git.rosecheckers.MSC12-C.builtin_tag_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/tag.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_tag_c
+
+- answer_file: git.rosecheckers.MSC12-C.builtin_unpack-objects_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/unpack-objects.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_unpack-objects_c
+
+- answer_file: git.rosecheckers.MSC12-C.builtin_update-index_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/update-index.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_update-index_c
+
+- answer_file: git.rosecheckers.MSC12-C.builtin_upload-archive_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/upload-archive.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_upload-archive_c
+
+- answer_file: git.rosecheckers.MSC12-C.builtin_worktree_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/worktree.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_worktree_c
+
+- answer_file: git.rosecheckers.MSC12-C.bundle_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: bundle.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: bundle_c
+
+- answer_file: git.rosecheckers.MSC12-C.cache-tree_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: cache-tree.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: cache-tree_c
+
+- answer_file: git.rosecheckers.MSC12-C.cbtree_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: cbtree.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: cbtree_c
+
+- answer_file: git.rosecheckers.MSC12-C.chunk-format_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: chunk-format.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: chunk-format_c
+
+- answer_file: git.rosecheckers.MSC12-C.column_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: column.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: column_c
+
+- answer_file: git.rosecheckers.MSC12-C.combine-diff_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: combine-diff.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: combine-diff_c
+
+- answer_file: git.rosecheckers.MSC12-C.commit-graph_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: commit-graph.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: commit-graph_c
+
+- answer_file: git.rosecheckers.MSC12-C.commit_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: commit.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: commit_c
+
+- answer_file: git.rosecheckers.MSC12-C.compat_terminal_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: compat/terminal.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: compat_terminal_c
+
+- answer_file: git.rosecheckers.MSC12-C.convert_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: convert.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: convert_c
+
+- answer_file: git.rosecheckers.MSC12-C.delta-islands_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: delta-islands.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: delta-islands_c
+
+- answer_file: git.rosecheckers.MSC12-C.diagnose_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: diagnose.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: diagnose_c
+
+- answer_file: git.rosecheckers.MSC12-C.diff-delta_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: diff-delta.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: diff-delta_c
+
+- answer_file: git.rosecheckers.MSC12-C.diff-lib_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: diff-lib.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: diff-lib_c
+
+- answer_file: git.rosecheckers.MSC12-C.diff_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: diff.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: diff_c
+
+- answer_file: git.rosecheckers.MSC12-C.diffcore-rename_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: diffcore-rename.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: diffcore-rename_c
+
+- answer_file: git.rosecheckers.MSC12-C.dir_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: dir.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: dir_c
+
+- answer_file: git.rosecheckers.MSC12-C.entry_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: entry.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: entry_c
+
+- answer_file: git.rosecheckers.MSC12-C.ewah_ewah_bitmap_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: ewah/ewah_bitmap.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: ewah_ewah_bitmap_c
+
+- answer_file: git.rosecheckers.MSC12-C.fetch-pack_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: fetch-pack.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: fetch-pack_c
+
+- answer_file: git.rosecheckers.MSC12-C.fsck_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: fsck.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: fsck_c
+
+- answer_file: git.rosecheckers.MSC12-C.fsmonitor_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: fsmonitor.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: fsmonitor_c
+
+- answer_file: git.rosecheckers.MSC12-C.git_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: git.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: git_c
+
+- answer_file: git.rosecheckers.MSC12-C.gpg-interface_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: gpg-interface.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: gpg-interface_c
+
+- answer_file: git.rosecheckers.MSC12-C.graph_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: graph.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: graph_c
+
+- answer_file: git.rosecheckers.MSC12-C.grep_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: grep.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: grep_c
+
+- answer_file: git.rosecheckers.MSC12-C.kwset_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: kwset.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: kwset_c
+
+- answer_file: git.rosecheckers.MSC12-C.line-log_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: line-log.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: line-log_c
+
+- answer_file: git.rosecheckers.MSC12-C.line-range_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: line-range.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: line-range_c
+
+- answer_file: git.rosecheckers.MSC12-C.list-objects-filter-options_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: list-objects-filter-options.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: list-objects-filter-options_c
+
+- answer_file: git.rosecheckers.MSC12-C.list-objects-filter_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: list-objects-filter.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: list-objects-filter_c
+
+- answer_file: git.rosecheckers.MSC12-C.list-objects_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: list-objects.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: list-objects_c
+
+- answer_file: git.rosecheckers.MSC12-C.ll-merge_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: ll-merge.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: ll-merge_c
+
+- answer_file: git.rosecheckers.MSC12-C.lockfile_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: lockfile.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: lockfile_c
+
+- answer_file: git.rosecheckers.MSC12-C.mailinfo_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: mailinfo.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: mailinfo_c
+
+- answer_file: git.rosecheckers.MSC12-C.merge-ort-wrappers_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: merge-ort-wrappers.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: merge-ort-wrappers_c
+
+- answer_file: git.rosecheckers.MSC12-C.merge-ort_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: merge-ort.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: merge-ort_c
+
+- answer_file: git.rosecheckers.MSC12-C.merge-recursive_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: merge-recursive.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: merge-recursive_c
+
+- answer_file: git.rosecheckers.MSC12-C.midx_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: midx.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: midx_c
+
+- answer_file: git.rosecheckers.MSC12-C.name-hash_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: name-hash.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: name-hash_c
+
+- answer_file: git.rosecheckers.MSC12-C.notes-merge_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: notes-merge.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: notes-merge_c
+
+- answer_file: git.rosecheckers.MSC12-C.notes-utils_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: notes-utils.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: notes-utils_c
+
+- answer_file: git.rosecheckers.MSC12-C.notes_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: notes.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: notes_c
+
+- answer_file: git.rosecheckers.MSC12-C.object-file_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: object-file.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: object-file_c
+
+- answer_file: git.rosecheckers.MSC12-C.object-name_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: object-name.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: object-name_c
+
+- answer_file: git.rosecheckers.MSC12-C.object_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: object.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: object_c
+
+- answer_file: git.rosecheckers.MSC12-C.oidtree_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: oidtree.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: oidtree_c
+
+- answer_file: git.rosecheckers.MSC12-C.pack-bitmap_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: pack-bitmap.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: pack-bitmap_c
+
+- answer_file: git.rosecheckers.MSC12-C.pack-revindex_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: pack-revindex.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: pack-revindex_c
+
+- answer_file: git.rosecheckers.MSC12-C.pack-write_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: pack-write.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: pack-write_c
+
+- answer_file: git.rosecheckers.MSC12-C.packfile_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: packfile.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: packfile_c
+
+- answer_file: git.rosecheckers.MSC12-C.parallel-checkout_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: parallel-checkout.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: parallel-checkout_c
+
+- answer_file: git.rosecheckers.MSC12-C.parse-options_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: parse-options.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: parse-options_c
+
+- answer_file: git.rosecheckers.MSC12-C.patch-delta_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: patch-delta.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: patch-delta_c
+
+- answer_file: git.rosecheckers.MSC12-C.path_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: path.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: path_c
+
+- answer_file: git.rosecheckers.MSC12-C.pkt-line_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: pkt-line.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: pkt-line_c
+
+- answer_file: git.rosecheckers.MSC12-C.prompt_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: prompt.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: prompt_c
+
+- answer_file: git.rosecheckers.MSC12-C.range-diff_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: range-diff.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: range-diff_c
+
+- answer_file: git.rosecheckers.MSC12-C.read-cache_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: read-cache.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: read-cache_c
+
+- answer_file: git.rosecheckers.MSC12-C.ref-filter_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: ref-filter.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: ref-filter_c
+
+- answer_file: git.rosecheckers.MSC12-C.refs_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: refs.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: refs_c
+
+- answer_file: git.rosecheckers.MSC12-C.refs_files-backend_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: refs/files-backend.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: refs_files-backend_c
+
+- answer_file: git.rosecheckers.MSC12-C.refs_packed-backend_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: refs/packed-backend.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: refs_packed-backend_c
+
+- answer_file: git.rosecheckers.MSC12-C.refs_ref-cache_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: refs/ref-cache.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: refs_ref-cache_c
+
+- answer_file: git.rosecheckers.MSC12-C.reftable_blocksource_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: reftable/blocksource.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: reftable_blocksource_c
+
+- answer_file: git.rosecheckers.MSC12-C.reftable_generic_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: reftable/generic.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: reftable_generic_c
+
+- answer_file: git.rosecheckers.MSC12-C.reftable_iter_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: reftable/iter.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: reftable_iter_c
+
+- answer_file: git.rosecheckers.MSC12-C.reftable_merged_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: reftable/merged.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: reftable_merged_c
+
+- answer_file: git.rosecheckers.MSC12-C.reftable_reader_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: reftable/reader.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: reftable_reader_c
+
+- answer_file: git.rosecheckers.MSC12-C.reftable_record_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: reftable/record.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: reftable_record_c
+
+- answer_file: git.rosecheckers.MSC12-C.reftable_writer_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: reftable/writer.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: reftable_writer_c
+
+- answer_file: git.rosecheckers.MSC12-C.remote_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: remote.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: remote_c
+
+- answer_file: git.rosecheckers.MSC12-C.rerere_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: rerere.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: rerere_c
+
+- answer_file: git.rosecheckers.MSC12-C.resolve-undo_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: resolve-undo.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: resolve-undo_c
+
+- answer_file: git.rosecheckers.MSC12-C.revision_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: revision.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: revision_c
+
+- answer_file: git.rosecheckers.MSC12-C.run-command_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: run-command.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: run-command_c
+
+- answer_file: git.rosecheckers.MSC12-C.send-pack_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: send-pack.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: send-pack_c
+
+- answer_file: git.rosecheckers.MSC12-C.sequencer_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: sequencer.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: sequencer_c
+
+- answer_file: git.rosecheckers.MSC12-C.server-info_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: server-info.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: server-info_c
+
+- answer_file: git.rosecheckers.MSC12-C.setup_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: setup.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: setup_c
+
+- answer_file: git.rosecheckers.MSC12-C.split-index_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: split-index.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: split-index_c
+
+- answer_file: git.rosecheckers.MSC12-C.strbuf_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: strbuf.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: strbuf_c
+
+- answer_file: git.rosecheckers.MSC12-C.sub-process_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: sub-process.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: sub-process_c
+
+- answer_file: git.rosecheckers.MSC12-C.symlinks_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: symlinks.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: symlinks_c
+
+- answer_file: git.rosecheckers.MSC12-C.tempfile_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: tempfile.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: tempfile_c
+
+- answer_file: git.rosecheckers.MSC12-C.trace2_tr2_tmr_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: trace2/tr2_tmr.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: trace2_tr2_tmr_c
+
+- answer_file: git.rosecheckers.MSC12-C.trailer_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: trailer.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: trailer_c
+
+- answer_file: git.rosecheckers.MSC12-C.transport-helper_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: transport-helper.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: transport-helper_c
+
+- answer_file: git.rosecheckers.MSC12-C.tree-diff_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: tree-diff.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: tree-diff_c
+
+- answer_file: git.rosecheckers.MSC12-C.tree-walk_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: tree-walk.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: tree-walk_c
+
+- answer_file: git.rosecheckers.MSC12-C.unpack-trees_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: unpack-trees.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: unpack-trees_c
+
+- answer_file: git.rosecheckers.MSC12-C.upload-pack_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: upload-pack.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: upload-pack_c
+
+- answer_file: git.rosecheckers.MSC12-C.walker_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: walker.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: walker_c
+
+- answer_file: git.rosecheckers.MSC12-C.wrapper_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: wrapper.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: wrapper_c
+
+- answer_file: git.rosecheckers.MSC12-C.ws_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: ws.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: ws_c
+
+- answer_file: git.rosecheckers.MSC12-C.wt-status_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: wt-status.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: wt-status_c
+
+- answer_file: git.rosecheckers.MSC12-C.zlib_c.ans
+  input:
+    alerts_file: git.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: zlib.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: zlib_c

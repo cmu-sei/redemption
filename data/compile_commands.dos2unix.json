@@ -1,0 +1,77 @@
+[
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-DVER_REVISION=\"7.4.3\"",
+            "-DVER_DATE=\"2022-06-05\"",
+            "-DVER_AUTHOR=\"nobody\"",
+            "-DDEBUG=0",
+            "-DD2U_UNICODE",
+            "-D_LARGEFILE_SOURCE",
+            "-D_FILE_OFFSET_BITS=64",
+            "-DENABLE_NLS",
+            "-DLOCALEDIR=\"/usr/share/locale\"",
+            "-DPACKAGE=\"dos2unix\"",
+            "-O2",
+            "-Wall",
+            "-Wextra",
+            "-Wconversion",
+            "-o",
+            "dos2unix.o",
+            "dos2unix.c"
+        ],
+        "directory": "/datasets/dos2unix-7.4.3",
+        "file": "dos2unix.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-DVER_REVISION=\"7.4.3\"",
+            "-DVER_DATE=\"2022-06-05\"",
+            "-DVER_AUTHOR=\"nobody\"",
+            "-DDEBUG=0",
+            "-DD2U_UNICODE",
+            "-D_LARGEFILE_SOURCE",
+            "-D_FILE_OFFSET_BITS=64",
+            "-DENABLE_NLS",
+            "-DLOCALEDIR=\"/usr/share/locale\"",
+            "-DPACKAGE=\"dos2unix\"",
+            "-O2",
+            "-Wall",
+            "-Wextra",
+            "-Wconversion",
+            "-o",
+            "querycp.o",
+            "querycp.c"
+        ],
+        "directory": "/datasets/dos2unix-7.4.3",
+        "file": "querycp.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-DVER_REVISION=\"7.4.3\"",
+            "-DVER_DATE=\"2022-06-05\"",
+            "-DVER_AUTHOR=\"nobody\"",
+            "-DDEBUG=0",
+            "-DD2U_UNICODE",
+            "-D_LARGEFILE_SOURCE",
+            "-D_FILE_OFFSET_BITS=64",
+            "-DENABLE_NLS",
+            "-DLOCALEDIR=\"/usr/share/locale\"",
+            "-DPACKAGE=\"dos2unix\"",
+            "-O2",
+            "-Wall",
+            "-Wextra",
+            "-Wconversion",
+            "-o",
+            "common.o",
+            "common.c"
+        ],
+        "directory": "/datasets/dos2unix-7.4.3",
+        "file": "common.c"
+    }
+]

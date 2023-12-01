@@ -1,0 +1,83 @@
+# This file adds git and zeek (v5) for testing the Redemption software
+
+# docker  build -f Dockerfile.test  -t docker.cc.cert.org/redemption/test  .
+
+# <legal>
+# 'Redemption' Automated Code Repair Tool
+#
+# Copyright 2023 Carnegie Mellon University.
+#
+# NO WARRANTY. THIS CARNEGIE MELLON UNIVERSITY AND SOFTWARE ENGINEERING
+# INSTITUTE MATERIAL IS FURNISHED ON AN 'AS-IS' BASIS. CARNEGIE MELLON
+# UNIVERSITY MAKES NO WARRANTIES OF ANY KIND, EITHER EXPRESSED OR IMPLIED,
+# AS TO ANY MATTER INCLUDING, BUT NOT LIMITED TO, WARRANTY OF FITNESS FOR
+# PURPOSE OR MERCHANTABILITY, EXCLUSIVITY, OR RESULTS OBTAINED FROM USE OF
+# THE MATERIAL. CARNEGIE MELLON UNIVERSITY DOES NOT MAKE ANY WARRANTY OF ANY
+# KIND WITH RESPECT TO FREEDOM FROM PATENT, TRADEMARK, OR COPYRIGHT
+# INFRINGEMENT.
+#
+# Licensed under a MIT (SEI)-style license, please see License.txt or
+# contact permission@sei.cmu.edu for full terms.
+#
+# [DISTRIBUTION STATEMENT A] This material has been approved for public
+# release and unlimited distribution.  Please see Copyright notice for
+# non-US Government use and distribution.
+#
+# This Software includes and/or makes use of Third-Party Software each
+# subject to its own license.
+#
+# DM23-2165
+# </legal>
+
+
+FROM docker.cc.cert.org/redemption/prereq
+
+
+# Apt packages for git
+RUN apt-get update \
+    && DEBIAN_FRONTEND=noninteractive apt-get -y install --no-install-recommends \
+         libcurl4-openssl-dev  libssl-dev  zlib1g-dev  tcl  gettext \
+        && apt-get --purge -y autoremove \
+    && apt-get clean
+
+# Apt packages for zeek
+RUN apt-get update \
+    && DEBIAN_FRONTEND=noninteractive apt-get -y install --no-install-recommends \
+         cmake  g++  flex  libfl-dev  bison  libssl-dev  swig \
+        zlib1g-dev  libpcap0.8-dev  python3-dev  sendmail \
+        && apt-get --purge -y autoremove \
+    && apt-get clean
+
+
+RUN mkdir /oss
+
+# Get Git
+RUN cd /oss ; \
+    git clone https://github.com/git/git.git
+
+# Get Zeek
+RUN cd /oss ; \
+    git clone https://github.com/zeek/zeek.git ; \
+    cd zeek  ; \
+    git checkout v5.1.1 ; \
+    git submodule update --recursive --init
+
+RUN cd /oss/git ; \
+    git checkout v2.39.0 ; \
+    make configure 2>&1 | tee make.log ; \
+    env CC=clang ./configure 2>&1 | tee -a make.log ; \
+    bear -- make PAGER_ENV=dummy git 2>&1 | tee -a make.log
+    # on my machine, takes around 10 minutes
+
+RUN cd /oss/zeek ; \
+    for file in auxil/broker/caf/libcaf_core/caf/detail/ripemd_160.hpp \
+                auxil/broker/caf/libcaf_core/caf/telemetry/metric_type.hpp \
+                src/zeek/WeirdState.h ; do \
+        echo "#include <stdint.h>" | cat - $file  > foo ; \
+        mv foo $file ; \
+    done ; \
+    env CC=clang CXX=clang++ ./configure  2>&1 | tee make.log ; \
+    bear -- make 2>&1 | tee -a make.log
+
+
+CMD ["/bin/bash"]

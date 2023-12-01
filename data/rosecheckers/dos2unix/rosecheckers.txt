@@ -1,0 +1,188 @@
+/host/code/analysis/my-gcc   -DVER_REVISION=\"7.4.3\" -DVER_DATE=\"2022-06-05\" -DVER_AUTHOR=\"nobody\" -DDEBUG=0   -DD2U_UNICODE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -DENABLE_NLS -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"dos2unix\" -O2 -Wall -Wextra -Wconversion    -c dos2unix.c -o dos2unix.o
+In directory:  
+Compiler args are:  -DVER_REVISION="7.4.3" -DVER_DATE="2022-06-05" -DVER_AUTHOR="nobody" -DDEBUG=0 -DD2U_UNICODE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -DENABLE_NLS -DLOCALEDIR="/usr/share/locale" -DPACKAGE="dos2unix" -O2 -Wall -Wextra -Wconversion -c dos2unix.c -o dos2unix.o
+ /usr/bin//rosecheckers -DVER_REVISION="7.4.3" -DVER_DATE="2022-06-05" -DVER_AUTHOR="nobody" -DDEBUG=0 -DD2U_UNICODE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -DENABLE_NLS -DLOCALEDIR="/usr/share/locale" -DPACKAGE="dos2unix" -O2 -Wall -Wextra -Wconversion -c dos2unix.c
+dos2unix.c:79:3: error: FIO30-C: Exclude user input from format strings
+dos2unix.c:212:15: error: FIO30-C: Exclude user input from format strings
+dos2unix.c:249:15: error: FIO30-C: Exclude user input from format strings
+dos2unix.c:313:7: error: FIO30-C: Exclude user input from format strings
+dos2unix.c:371:8: error: FIO30-C: Exclude user input from format strings
+dos2unix.c:395:15: error: FIO30-C: Exclude user input from format strings
+dos2unix.c:402:32: error: ARR30-C: Do not form or use out-of-bounds pointers or array subscripts
+dos2unix.c:432:15: error: FIO30-C: Exclude user input from format strings
+dos2unix.c:439:33: error: ARR30-C: Do not form or use out-of-bounds pointers or array subscripts
+dos2unix.c:494:7: error: FIO30-C: Exclude user input from format strings
+dos2unix.c:518:15: warning: INT07-C: Use only explicitly signed or unsigned char type for numeric values
+dos2unix.c:519:3: error: STR31-C: String copy destination must contain sufficient storage
+dos2unix.c:522:10: error: ENV30-C: Do not modify the string returned by getenv()
+dos2unix.c:531:10: warning: EXP12-C: Do not ignore values returned by functions: d2u_strncpy
+dos2unix.c:545:4: warning: EXP12-C: Do not ignore values returned by functions: setlocale
+dos2unix.c:550:4: warning: EXP12-C: Do not ignore values returned by functions: bindtextdomain
+dos2unix.c:551:4: warning: EXP12-C: Do not ignore values returned by functions: textdomain
+dos2unix.c:565:8: error: EXP30-C: Do not depend on order of evaluation for side effects
+dos2unix.c:572:5: error: STR31-C: String copy destination must contain sufficient storage
+/host/code/analysis/my-gcc   -DVER_REVISION=\"7.4.3\" -DVER_DATE=\"2022-06-05\" -DVER_AUTHOR=\"nobody\" -DDEBUG=0   -DD2U_UNICODE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -DENABLE_NLS -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"dos2unix\" -O2 -Wall -Wextra -Wconversion    -c querycp.c -o querycp.o
+In directory:  
+Compiler args are:  -DVER_REVISION="7.4.3" -DVER_DATE="2022-06-05" -DVER_AUTHOR="nobody" -DDEBUG=0 -DD2U_UNICODE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -DENABLE_NLS -DLOCALEDIR="/usr/share/locale" -DPACKAGE="dos2unix" -O2 -Wall -Wextra -Wconversion -c querycp.c -o querycp.o
+ /usr/bin//rosecheckers -DVER_REVISION="7.4.3" -DVER_DATE="2022-06-05" -DVER_AUTHOR="nobody" -DDEBUG=0 -DD2U_UNICODE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -DENABLE_NLS -DLOCALEDIR="/usr/share/locale" -DPACKAGE="dos2unix" -O2 -Wall -Wextra -Wconversion -c querycp.c
+/host/code/analysis/my-gcc   -DVER_REVISION=\"7.4.3\" -DVER_DATE=\"2022-06-05\" -DVER_AUTHOR=\"nobody\" -DDEBUG=0   -DD2U_UNICODE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -DENABLE_NLS -DLOCALEDIR=\"/usr/share/locale\" -DPACKAGE=\"dos2unix\" -O2 -Wall -Wextra -Wconversion    -c common.c -o common.o
+In directory:  
+Compiler args are:  -DVER_REVISION="7.4.3" -DVER_DATE="2022-06-05" -DVER_AUTHOR="nobody" -DDEBUG=0 -DD2U_UNICODE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -DENABLE_NLS -DLOCALEDIR="/usr/share/locale" -DPACKAGE="dos2unix" -O2 -Wall -Wextra -Wconversion -c common.c -o common.o
+ /usr/bin//rosecheckers -DVER_REVISION="7.4.3" -DVER_DATE="2022-06-05" -DVER_AUTHOR="nobody" -DDEBUG=0 -DD2U_UNICODE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -DENABLE_NLS -DLOCALEDIR="/usr/share/locale" -DPACKAGE="dos2unix" -O2 -Wall -Wextra -Wconversion -c common.c
+common.c:65:23: warning: INT07-C: Use only explicitly signed or unsigned char type for numeric values
+common.c:65:19: warning: INT01-C: Use rsize_t or size_t for all integer values representing the size of an object
+common.c:67:32: warning: INT01-C: Use rsize_t or size_t for all integer values representing the size of an object
+common.c:81:9: error: FIO30-C: Exclude user input from format strings
+common.c:83:9: error: FIO30-C: Exclude user input from format strings
+common.c:648:3: error: FIO30-C: Exclude user input from format strings
+common.c:650:3: error: FIO30-C: Exclude user input from format strings
+common.c:652:3: error: FIO30-C: Exclude user input from format strings
+common.c:653:3: error: FIO30-C: Exclude user input from format strings
+common.c:654:3: error: FIO30-C: Exclude user input from format strings
+common.c:655:3: error: FIO30-C: Exclude user input from format strings
+common.c:656:3: error: FIO30-C: Exclude user input from format strings
+common.c:657:3: error: FIO30-C: Exclude user input from format strings
+common.c:658:3: error: FIO30-C: Exclude user input from format strings
+common.c:659:3: error: FIO30-C: Exclude user input from format strings
+common.c:660:3: error: FIO30-C: Exclude user input from format strings
+common.c:662:5: error: FIO30-C: Exclude user input from format strings
+common.c:664:5: error: FIO30-C: Exclude user input from format strings
+common.c:665:3: error: FIO30-C: Exclude user input from format strings
+common.c:671:3: error: FIO30-C: Exclude user input from format strings
+common.c:677:3: error: FIO30-C: Exclude user input from format strings
+common.c:678:3: error: FIO30-C: Exclude user input from format strings
+common.c:680:3: error: FIO30-C: Exclude user input from format strings
+common.c:681:3: error: FIO30-C: Exclude user input from format strings
+common.c:682:3: error: FIO30-C: Exclude user input from format strings
+common.c:683:3: error: FIO30-C: Exclude user input from format strings
+common.c:684:3: error: FIO30-C: Exclude user input from format strings
+common.c:688:3: error: FIO30-C: Exclude user input from format strings
+common.c:690:3: error: FIO30-C: Exclude user input from format strings
+common.c:692:3: error: FIO30-C: Exclude user input from format strings
+common.c:694:5: error: FIO30-C: Exclude user input from format strings
+common.c:696:5: error: FIO30-C: Exclude user input from format strings
+common.c:697:3: error: FIO30-C: Exclude user input from format strings
+common.c:699:3: error: FIO30-C: Exclude user input from format strings
+common.c:700:3: error: FIO30-C: Exclude user input from format strings
+common.c:701:3: error: FIO30-C: Exclude user input from format strings
+common.c:703:3: error: FIO30-C: Exclude user input from format strings
+common.c:705:3: error: FIO30-C: Exclude user input from format strings
+common.c:708:3: error: FIO30-C: Exclude user input from format strings
+common.c:710:3: error: FIO30-C: Exclude user input from format strings
+common.c:712:3: error: FIO30-C: Exclude user input from format strings
+common.c:1006:8: error: MEM34-C: Only free memory allocated dynamically
+common.c:1136:14: warning: FIO13-C: Never push back anything other than one read character
+common.c:1153:14: warning: FIO13-C: Never push back anything other than one read character
+common.c:1154:14: warning: FIO13-C: Never push back anything other than one read character
+common.c:1174:11: warning: FIO13-C: Never push back anything other than one read character
+common.c:1175:11: warning: FIO13-C: Never push back anything other than one read character
+common.c:1197:11: error: FIO30-C: Exclude user input from format strings
+common.c:1204:11: error: FIO30-C: Exclude user input from format strings
+common.c:1211:11: error: FIO30-C: Exclude user input from format strings
+common.c:1218:11: error: FIO30-C: Exclude user input from format strings
+common.c:1230:11: error: FIO30-C: Exclude user input from format strings
+common.c:1237:11: error: FIO30-C: Exclude user input from format strings
+common.c:1250:7: warning: EXP12-C: Do not ignore values returned by functions: d2u_strncpy
+common.c:1253:7: warning: EXP12-C: Do not ignore values returned by functions: d2u_strncpy
+common.c:1256:7: warning: EXP12-C: Do not ignore values returned by functions: d2u_strncpy
+common.c:1259:7: warning: EXP12-C: Do not ignore values returned by functions: d2u_strncpy
+common.c:1269:34: warning: INT07-C: Use only explicitly signed or unsigned char type for numeric values
+common.c:1269:30: warning: INT01-C: Use rsize_t or size_t for all integer values representing the size of an object
+common.c:1282:5: error: FIO30-C: Exclude user input from format strings
+common.c:1323:7: error: FIO30-C: Exclude user input from format strings
+common.c:1327:7: error: FIO30-C: Exclude user input from format strings
+common.c:1345:25: warning: INT01-C: Use rsize_t or size_t for all integer values representing the size of an object
+common.c:1365:7: error: FIO30-C: Exclude user input from format strings
+common.c:1369:7: error: FIO30-C: Exclude user input from format strings
+common.c:1398:25: warning: INT01-C: Use rsize_t or size_t for all integer values representing the size of an object
+common.c:1423:1: warning: DCL05-C: Use typedefs to improve code readability
+common.c:1514:9: error: FIO30-C: Exclude user input from format strings
+common.c:1569:8: warning: EXP12-C: Do not ignore values returned by functions: umask
+common.c:1570:49: warning: INT13-C: Use bitwise operators only on unsigned operands
+common.c:1570:51: warning: INT13-C: Use bitwise operators only on unsigned operands
+common.c:1578:10: error: FIO30-C: Exclude user input from format strings
+common.c:1594:13: error: FIO30-C: Exclude user input from format strings
+common.c:1599:11: warning: EXP12-C: Do not ignore values returned by functions: umask
+common.c:1600:52: warning: INT13-C: Use bitwise operators only on unsigned operands
+common.c:1600:54: warning: INT13-C: Use bitwise operators only on unsigned operands
+common.c:1606:16: error: FIO30-C: Exclude user input from format strings
+common.c:1616:13: error: FIO30-C: Exclude user input from format strings
+common.c:1664:11: error: FIO30-C: Exclude user input from format strings
+common.c:1665:11: error: FIO30-C: Exclude user input from format strings
+common.c:1691:9: error: FIO30-C: Exclude user input from format strings
+common.c:1695:11: error: FIO30-C: Exclude user input from format strings
+common.c:1697:9: error: FIO30-C: Exclude user input from format strings
+common.c:1703:7: warning: MEM01-C: Store a new value in pointers immediately after free()
+common.c:1703:7: error: MEM34-C: Only free memory allocated dynamically
+common.c:1705:3: error: MEM34-C: Only free memory allocated dynamically
+common.c:1713:1: warning: DCL05-C: Use typedefs to improve code readability
+common.c:1758:7: error: FIO30-C: Exclude user input from format strings
+common.c:1761:7: error: FIO30-C: Exclude user input from format strings
+common.c:1765:7: error: FIO30-C: Exclude user input from format strings
+common.c:1768:7: error: FIO30-C: Exclude user input from format strings
+common.c:1779:14: warning: INT07-C: Use only explicitly signed or unsigned char type for numeric values
+common.c:1780:15: warning: INT07-C: Use only explicitly signed or unsigned char type for numeric values
+common.c:1786:18: warning: INT07-C: Use only explicitly signed or unsigned char type for numeric values
+common.c:1786:15: warning: INT01-C: Use rsize_t or size_t for all integer values representing the size of an object
+common.c:1791:5: warning: EXP12-C: Do not ignore values returned by functions: d2u_strncpy
+common.c:1808:22: warning: INT07-C: Use only explicitly signed or unsigned char type for numeric values
+common.c:1808:19: warning: INT01-C: Use rsize_t or size_t for all integer values representing the size of an object
+common.c:1838:5: error: FIO30-C: Exclude user input from format strings
+common.c:1842:7: error: FIO30-C: Exclude user input from format strings
+common.c:1844:7: error: FIO30-C: Exclude user input from format strings
+common.c:1847:5: error: FIO30-C: Exclude user input from format strings
+common.c:1850:5: error: FIO30-C: Exclude user input from format strings
+common.c:1853:5: error: FIO30-C: Exclude user input from format strings
+common.c:1856:5: error: FIO30-C: Exclude user input from format strings
+common.c:1860:5: error: FIO30-C: Exclude user input from format strings
+common.c:1863:5: error: FIO30-C: Exclude user input from format strings
+common.c:1875:13: error: FIO30-C: Exclude user input from format strings
+common.c:1877:13: error: FIO30-C: Exclude user input from format strings
+common.c:1881:15: error: FIO30-C: Exclude user input from format strings
+common.c:1883:15: error: FIO30-C: Exclude user input from format strings
+common.c:1886:15: error: FIO30-C: Exclude user input from format strings
+common.c:1888:15: error: FIO30-C: Exclude user input from format strings
+common.c:1900:13: error: FIO30-C: Exclude user input from format strings
+common.c:1907:13: error: FIO30-C: Exclude user input from format strings
+common.c:1911:15: error: FIO30-C: Exclude user input from format strings
+common.c:1913:15: error: FIO30-C: Exclude user input from format strings
+common.c:1916:15: error: FIO30-C: Exclude user input from format strings
+common.c:1918:15: error: FIO30-C: Exclude user input from format strings
+common.c:1925:9: error: FIO30-C: Exclude user input from format strings
+common.c:1927:9: error: FIO30-C: Exclude user input from format strings
+common.c:1937:7: error: FIO30-C: Exclude user input from format strings
+common.c:1942:7: error: FIO30-C: Exclude user input from format strings
+common.c:1948:7: error: FIO30-C: Exclude user input from format strings
+common.c:1986:14: error: FIO34-C: Use int to capture the return value of character I/O functions
+common.c:1986:14: error: CHREOF-C: char values indistinguishable from EOF
+common.c:2008:9: error: EXP30-C: Do not depend on order of evaluation for side effects
+common.c:2017:12: error: FIO34-C: Use int to capture the return value of character I/O functions
+common.c:2017:12: error: CHREOF-C: char values indistinguishable from EOF
+common.c:2062:7: error: FIO30-C: Exclude user input from format strings
+common.c:2112:7: error: FIO30-C: Exclude user input from format strings
+common.c:2157:5: warning: EXP12-C: Do not ignore values returned by functions: d2u_fclose
+common.c:2268:9: error: FIO30-C: Exclude user input from format strings
+common.c:2278:1: warning: DCL05-C: Use typedefs to improve code readability
+common.c:2398:12: error: FIO30-C: Exclude user input from format strings
+common.c:2441:16: error: FIO30-C: Exclude user input from format strings
+common.c:2453:13: error: FIO30-C: Exclude user input from format strings
+common.c:2461:11: error: FIO30-C: Exclude user input from format strings
+common.c:2503:11: error: FIO30-C: Exclude user input from format strings
+common.c:2516:11: error: FIO30-C: Exclude user input from format strings
+common.c:2567:7: warning: EXP12-C: Do not ignore values returned by functions: GetFileInfoStdio
+common.c:2571:7: warning: EXP12-C: Do not ignore values returned by functions: ConvertStdio
+common.c:2583:5: error: FIO30-C: Exclude user input from format strings
+common.c:2595:7: error: FIO30-C: Exclude user input from format strings
+common.c:2605:7: error: FIO30-C: Exclude user input from format strings
+common.c:2617:9: error: FIO30-C: Exclude user input from format strings
+common.c:2655:9: warning: FIO13-C: Never push back anything other than one read character
+common.c:2692:7: error: FIO30-C: Exclude user input from format strings
+common.c:2708:10: error: FIO30-C: Exclude user input from format strings
+common.c:2745:15: warning: INT14-C: Avoid performing bitwise and arithmetic operations on the same data
+common.c:2746:15: warning: INT14-C: Avoid performing bitwise and arithmetic operations on the same data
+/host/code/analysis/my-gcc dos2unix.o querycp.o common.o     -o dos2unix
+In directory:  
+Compiler args are:  dos2unix.o querycp.o common.o -o dos2unix
+ /usr/bin//rosecheckers dos2unix.o querycp.o common.o -o dos2unix
+Invalid arguments...must specify a C/C++ source file:
+Aborted

@@ -1,0 +1,43 @@
+tests:
+
+- answer_file: zeek.clang-tidy.EXP34-C.auxil_broker_caf_libcaf_io_src_io_basp_instance_cpp.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP34-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/broker/caf/libcaf_io/src/io/basp/instance.cpp
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_broker_caf_libcaf_io_src_io_basp_instance_cpp
+
+- answer_file: zeek.clang-tidy.EXP34-C.auxil_rapidjson_include_rapidjson_internal_itoa_h.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP34-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: src/threading/formatters/JSON.cc
+    compile_cmds_file: ../compile_commands.zeek.json
+    hfile: auxil/rapidjson/include/rapidjson/internal/itoa.h
+  name: auxil_rapidjson_include_rapidjson_internal_itoa_h
+
+- answer_file: zeek.clang-tidy.EXP34-C.src_3rdparty_patricia_c.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP34-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: src/3rdparty/patricia.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: src_3rdparty_patricia_c
+
+- answer_file: zeek.clang-tidy.EXP34-C.src_3rdparty_sqlite3_c.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP34-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: src/3rdparty/sqlite3.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: src_3rdparty_sqlite3_c
+
+- answer_file: zeek.clang-tidy.EXP34-C.src_zeek_IPAddr_h.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP34-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: src/SerializationFormat.cc
+    compile_cmds_file: ../compile_commands.zeek.json
+    hfile: src/zeek/IPAddr.h
+  name: src_zeek_IPAddr_h

@@ -1,0 +1,332 @@
+{
+  "$DeclKind": "TranslationUnit",
+  "Decls": [
+    {
+      "$DeclKind": "Typedef",
+      "@Location": ["", 0, 0, 0, 0],
+      "DesugaredType": "__int128",
+      "IsImplicit": true,
+      "Name": "__int128_t",
+      "UnderlyingType": "__int128",
+      "UnderlyingTypeIsConst": false,
+      "UnderlyingTypeIsVolatile": false
+    },
+    {
+      "$DeclKind": "Typedef",
+      "@Location": ["", 0, 0, 0, 0],
+      "DesugaredType": "unsigned __int128",
+      "IsImplicit": true,
+      "Name": "__uint128_t",
+      "UnderlyingType": "unsigned __int128",
+      "UnderlyingTypeIsConst": false,
+      "UnderlyingTypeIsVolatile": false
+    },
+    {
+      "$DeclKind": "Typedef",
+      "@Location": ["", 0, 0, 0, 0],
+      "DesugaredType": "struct __NSConstantString_tag",
+      "IsImplicit": true,
+      "Name": "__NSConstantString",
+      "UnderlyingType": "struct __NSConstantString_tag",
+      "UnderlyingTypeIsConst": false,
+      "UnderlyingTypeIsVolatile": false
+    },
+    {
+      "$DeclKind": "Typedef",
+      "@Location": ["", 0, 0, 0, 0],
+      "DesugaredType": "char *",
+      "IsImplicit": true,
+      "Name": "__builtin_ms_va_list",
+      "UnderlyingType": "char *",
+      "UnderlyingTypeIsConst": false,
+      "UnderlyingTypeIsVolatile": false
+    },
+    {
+      "$DeclKind": "Typedef",
+      "@Location": ["", 0, 0, 0, 0],
+      "DesugaredType": "struct __va_list_tag [1]",
+      "IsImplicit": true,
+      "Name": "__builtin_va_list",
+      "UnderlyingType": "struct __va_list_tag [1]",
+      "UnderlyingTypeIsConst": false,
+      "UnderlyingTypeIsVolatile": false
+    },
+    {
+      "$DeclKind": "Function",
+      "@Location": ["test01.c", 0, 23, 1, 1],
+      "Body": {},
+      "CanonicalReturnType": "int",
+      "DeclaredReturnType": "int",
+      "FuncDecl": {
+        "$DeclKind": "FuncDecl",
+        "@Location": ["test01.c", 0, 23, 1, 1],
+        "NameLoc": ["test01.c", 4, 8, 0, 0]
+      },
+      "FunctionNameReturnType": {
+        "$DeclKind": "FunctionNameReturnType",
+        "@Location": ["test01.c", 0, 8, 1, 1],
+        "IsInlineSpecified": false,
+        "IsVariadic": false,
+        "Name": "puts",
+        "ReturnType": "int",
+        "ReturnTypeIsConst": false,
+        "ReturnTypeIsVolatile": false,
+        "Type": "int (const char *)",
+        "TypeIsConst": false,
+        "TypeIsVolatile": false
+      },
+      "IsInlineSpecified": false,
+      "IsVariadic": false,
+      "Name": "puts",
+      "NameBegin": 4,
+      "Parameters": [
+        {
+          "$DeclKind": "ParmVar",
+          "@Location": ["test01.c", 9, 22, 1, 10],
+          "CanonicalType": "const char *",
+          "DefaultArg": {},
+          "FunctionScopeIndex": 0,
+          "Name": "s",
+          "Type": "const char *",
+          "TypeIsConst": false,
+          "TypeIsVolatile": false
+        }
+      ],
+      "RequiredDecls": [],
+      "ReturnType": "int",
+      "ReturnTypeIsConst": false,
+      "ReturnTypeIsVolatile": false,
+      "SemiLoc": ["test01.c", 23],
+      "SigClosingLoc": [
+        "test01.c",
+        22
+      ],
+      "SigClosingTokType": "r_paren",
+      "StorageClass": "None",
+      "Type": "int (const char *)",
+      "TypeIsConst": false,
+      "TypeIsVolatile": false
+    },
+    {
+      "$DeclKind": "Function",
+      "@Location": ["test01.c", 26, 160, 3, 1],
+      "Body": {
+        "$StmtClass": "CompoundStmt",
+        "@Location": ["test01.c", 42, 160, 3, 17],
+        "Body": [
+          {
+            "$StmtClass": "IfStmt",
+            "@Location": ["test01.c", 48, 143, 4, 5],
+            "Cond": {
+              "$StmtClass": "UnaryOperator",
+              "@Location": ["test01.c", 52, 54, 4, 9],
+              "CanOverflow": false,
+              "CanonicalType": "int",
+              "IsPrefix": false,
+              "Opcode": 9,
+              "OpcodeStr": "!",
+              "SubExpr": {
+                "$StmtClass": "ImplicitCastExpr",
+                "@Location": ["test01.c", 53, 54, 4, 10],
+                "CanonicalType": "int *",
+                "CastKind": "LValueToRValue",
+                "SubExpr": {
+                  "$StmtClass": "DeclRefExpr",
+                  "@Location": ["test01.c", 53, 54, 4, 10],
+                  "CanonicalType": "int *",
+                  "DeclCanonicalType": "int *",
+                  "DeclKind": "ParmVar",
+                  "DeclName": "p",
+                  "DeclType": "int *",
+                  "DeclTypeIsConst": false,
+                  "DeclTypeIsVolatile": false,
+                  "Type": "int *",
+                  "TypeIsConst": false,
+                  "TypeIsVolatile": false
+                },
+                "Type": "int *",
+                "TypeIsConst": false,
+                "TypeIsVolatile": false
+              },
+              "Type": "int",
+              "TypeIsConst": false,
+              "TypeIsVolatile": false
+            },
+            "CondVar": {},
+            "Else": {},
+            "Init": {},
+            "Then": {
+              "$StmtClass": "CompoundStmt",
+              "@Location": ["test01.c", 56, 143, 4, 13],
+              "Body": [
+                {
+                  "$StmtClass": "CallExpr",
+                  "@Location": ["test01.c", 66, 94, 5, 9],
+                  "Args": [
+                    {
+                      "$StmtClass": "ImplicitCastExpr",
+                      "@Location": ["test01.c", 71, 93, 5, 14],
+                      "CanonicalType": "const char *",
+                      "CastKind": "BitCast",
+                      "SubExpr": {
+                        "$StmtClass": "ImplicitCastExpr",
+                        "@Location": ["test01.c", 71, 93, 5, 14],
+                        "CanonicalType": "char *",
+                        "CastKind": "ArrayToPointerDecay",
+                        "SubExpr": {
+                          "$StmtClass": "StringLiteral",
+                          "@Location": ["test01.c", 71, 93, 5, 14],
+                          "CharByteWidth": 1,
+                          "Length": 20,
+                          "String": "Error: null pointer!",
+                          "Type": "char [21]",
+                          "TypeIsConst": false,
+                          "TypeIsVolatile": false
+                        },
+                        "Type": "char *",
+                        "TypeIsConst": false,
+                        "TypeIsVolatile": false
+                      },
+                      "Type": "const char *",
+                      "TypeIsConst": false,
+                      "TypeIsVolatile": false
+                    }
+                  ],
+                  "Callee": {
+                    "$StmtClass": "ImplicitCastExpr",
+                    "@Location": ["test01.c", 66, 70, 5, 9],
+                    "CanonicalType": "int (*)(const char *)",
+                    "CastKind": "FunctionToPointerDecay",
+                    "SubExpr": {
+                      "$StmtClass": "DeclRefExpr",
+                      "@Location": ["test01.c", 66, 70, 5, 9],
+                      "CanonicalType": "int (const char *)",
+                      "DeclCanonicalType": "int (const char *)",
+                      "DeclKind": "Function",
+                      "DeclName": "puts",
+                      "DeclType": "int (const char *)",
+                      "DeclTypeIsConst": false,
+                      "DeclTypeIsVolatile": false,
+                      "Type": "int (const char *)",
+                      "TypeIsConst": false,
+                      "TypeIsVolatile": false
+                    },
+                    "Type": "int (*)(const char *)",
+                    "TypeIsConst": false,
+                    "TypeIsVolatile": false
+                  },
+                  "CanonicalType": "int",
+                  "Type": "int",
+                  "TypeIsConst": false,
+                  "TypeIsVolatile": false
+                }
+              ]
+            }
+          },
+          {
+            "$StmtClass": "ReturnStmt",
+            "@Location": ["test01.c", 148, 157, 8, 5],
+            "RetValue": {
+              "$StmtClass": "ImplicitCastExpr",
+              "@Location": ["test01.c", 155, 157, 8, 12],
+              "CanonicalType": "int",
+              "CastKind": "LValueToRValue",
+              "SubExpr": {
+                "$StmtClass": "UnaryOperator",
+                "@Location": ["test01.c", 155, 157, 8, 12],
+                "CanOverflow": false,
+                "CanonicalType": "int",
+                "IsPrefix": false,
+                "Opcode": 5,
+                "OpcodeStr": "*",
+                "SubExpr": {
+                  "$StmtClass": "ImplicitCastExpr",
+                  "@Location": ["test01.c", 156, 157, 8, 13],
+                  "CanonicalType": "int *",
+                  "CastKind": "LValueToRValue",
+                  "SubExpr": {
+                    "$StmtClass": "DeclRefExpr",
+                    "@Location": ["test01.c", 156, 157, 8, 13],
+                    "CanonicalType": "int *",
+                    "DeclCanonicalType": "int *",
+                    "DeclKind": "ParmVar",
+                    "DeclName": "p",
+                    "DeclType": "int *",
+                    "DeclTypeIsConst": false,
+                    "DeclTypeIsVolatile": false,
+                    "Type": "int *",
+                    "TypeIsConst": false,
+                    "TypeIsVolatile": false
+                  },
+                  "Type": "int *",
+                  "TypeIsConst": false,
+                  "TypeIsVolatile": false
+                },
+                "Type": "int",
+                "TypeIsConst": false,
+                "TypeIsVolatile": false
+              },
+              "Type": "int",
+              "TypeIsConst": false,
+              "TypeIsVolatile": false
+            }
+          }
+        ]
+      },
+      "CanonicalReturnType": "int",
+      "DeclaredReturnType": "int",
+      "FuncDecl": {
+        "$DeclKind": "FuncDecl",
+        "@Location": ["test01.c", 26, 41, 3, 1],
+        "NameLoc": ["test01.c", 30, 33, 0, 0]
+      },
+      "FunctionNameReturnType": {
+        "$DeclKind": "FunctionNameReturnType",
+        "@Location": ["test01.c", 26, 33, 3, 1],
+        "IsInlineSpecified": false,
+        "IsVariadic": false,
+        "Name": "foo",
+        "ReturnType": "int",
+        "ReturnTypeIsConst": false,
+        "ReturnTypeIsVolatile": false,
+        "Type": "int (int *)",
+        "TypeIsConst": false,
+        "TypeIsVolatile": false
+      },
+      "IsInlineSpecified": false,
+      "IsVariadic": false,
+      "Name": "foo",
+      "NameBegin": 30,
+      "Parameters": [
+        {
+          "$DeclKind": "ParmVar",
+          "@Location": ["test01.c", 34, 40, 3, 9],
+          "CanonicalType": "int *",
+          "DefaultArg": {},
+          "FunctionScopeIndex": 0,
+          "Name": "p",
+          "Type": "int *",
+          "TypeIsConst": false,
+          "TypeIsVolatile": false
+        }
+      ],
+      "RequiredDecls": [],
+      "ReturnType": "int",
+      "ReturnTypeIsConst": false,
+      "ReturnTypeIsVolatile": false,
+      "SigClosingLoc": [
+        "test01.c",
+        40
+      ],
+      "SigClosingTokType": "r_paren",
+      "StorageClass": "None",
+      "Type": "int (int *)",
+      "TypeIsConst": false,
+      "TypeIsVolatile": false
+    }
+  ],
+  "IsNormalized": true,
+  "MainFile": "test01.c",
+  "Timestamp": "2023-01-18 02:28:54",
+  "WorkingDir": "/home/wek/redemption/scripts/m2c"
+}

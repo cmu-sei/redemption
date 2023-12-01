@@ -1,0 +1,17 @@
+
+# <legal></legal>
+
+# Python intermediate material
+**/*.pyc
+**/__pycache__
+*egg-info
+.ipynb_checkpoints
+.vscode
+
+# Other intermediate files
+.DS_Store
+.ccls-cache/
+
+code/acr/test/out/*
+
+notes.org

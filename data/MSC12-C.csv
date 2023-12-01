@@ -1,0 +1,1471 @@
+Codebase,Checker,Path,Line,Message,tool
+git,constParameter,reftable/record.c,245,Parameter 'src' can be declared as pointer to const,cppcheck
+git,uselessAssignmentArg,builtin/difftool.c,722,Assignment of function parameter has no effect outside the function.,cppcheck
+git,constParameter,builtin/rebase.c,856,Parameter 'from' can be declared as pointer to const,cppcheck
+git,uselessAssignmentPtrArg,builtin/fast-import.c,2504,Assignment of function parameter has no effect outside the function. Did you forget dereferencing it?,cppcheck
+git,constParameter,compat/obstack.c,315,Parameter 'obj' can be declared as pointer to const,cppcheck
+git,uselessAssignmentArg,builtin/stash.c,810,Assignment of function parameter has no effect outside the function.,cppcheck
+git,uselessAssignmentArg,builtin/stash.c,1739,Assignment of function parameter has no effect outside the function.,cppcheck
+git,uselessAssignmentArg,builtin/sparse-checkout.c,455,Assignment of function parameter has no effect outside the function.,cppcheck
+git,uselessAssignmentArg,builtin/sparse-checkout.c,863,Assignment of function parameter has no effect outside the function.,cppcheck
+git,uselessAssignmentArg,builtin/sparse-checkout.c,900,Assignment of function parameter has no effect outside the function.,cppcheck
+git,uselessAssignmentArg,builtin/diagnose.c,32,Assignment of function parameter has no effect outside the function.,cppcheck
+git,uselessAssignmentArg,builtin/pull.c,506,Assignment of function parameter has no effect outside the function.,cppcheck
+git,uselessAssignmentArg,builtin/rev-parse.c,525,Assignment of function parameter has no effect outside the function.,cppcheck
+git,uselessAssignmentArg,builtin/credential-cache--daemon.c,282,Assignment of function parameter has no effect outside the function.,cppcheck
+git,uselessAssignmentArg,builtin/credential-cache--daemon.c,315,Assignment of function parameter has no effect outside the function.,cppcheck
+git,constParameter,builtin/pack-objects.c,91,Parameter 'delta' can be declared as pointer to const,cppcheck
+git,constParameter,builtin/pack-objects.c,119,Parameter 'delta' can be declared as pointer to const,cppcheck
+git,constParameter,builtin/pack-objects.c,129,Parameter 'delta' can be declared as pointer to const,cppcheck
+git,constParameter,builtin/pack-objects.c,779,Parameter 'e' can be declared as pointer to const,cppcheck
+git,constParameter,builtin/pack-objects.c,2422,Parameter 'e' can be declared as pointer to const,cppcheck
+git,uselessAssignmentArg,builtin/mktag.c,83,Assignment of function parameter has no effect outside the function.,cppcheck
+git,uselessAssignmentArg,builtin/write-tree.c,38,Assignment of function parameter has no effect outside the function.,cppcheck
+git,uselessAssignmentArg,builtin/patch-id.c,234,Assignment of function parameter has no effect outside the function.,cppcheck
+git,redundantInitialization,builtin/receive-pack.c,692,Redundant initialization for 'retval'. The initialized value is overwritten before it is read.,cppcheck
+git,uselessAssignmentPtrArg,builtin/checkout.c,1389,Assignment of function parameter has no effect outside the function. Did you forget dereferencing it?,cppcheck
+git,uselessAssignmentArg,builtin/checkout.c,1390,Assignment of function parameter has no effect outside the function.,cppcheck
+git,constParameter,builtin/checkout.c,717,Parameter 'old_commit' can be declared as pointer to const,cppcheck
+git,uselessAssignmentArg,builtin/reset.c,348,Assignment of function parameter has no effect outside the function.,cppcheck
+git,uselessAssignmentArg,builtin/commit.c,1537,Assignment of function parameter has no effect outside the function.,cppcheck
+git,constParameter,builtin/commit.c,1257,Parameter 'current_head' can be declared as pointer to const,cppcheck
+git,uselessAssignmentArg,builtin/bugreport.c,121,Assignment of function parameter has no effect outside the function.,cppcheck
+git,constParameter,builtin/show-branch.c,518,Parameter 'rev_mask' can be declared as pointer to const,cppcheck
+git,uselessAssignmentArg,builtin/credential-cache.c,179,Assignment of function parameter has no effect outside the function.,cppcheck
+git,uselessAssignmentArg,ewah/ewah_io.c,131,Assignment of function parameter has no effect outside the function.,cppcheck
+git,redundantInitialization,builtin/ls-tree.c,102,Redundant initialization for 'name'. The initialized value is overwritten before it is read.,cppcheck
+git,uselessAssignmentArg,builtin/add.c,321,Assignment of function parameter has no effect outside the function.,cppcheck
+git,constParameter,builtin/index-pack.c,409,Parameter 'retain' can be declared as pointer to const,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_bool.hpp,32,Label 'e_init' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_bool.hpp,36,Label 'e_has_f' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_bool.hpp,39,Label 'e_has_fa' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_bool.hpp,42,Label 'e_has_fal' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_bool.hpp,45,Label 'e_has_fals' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_bool.hpp,48,Label 'e_has_t' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_bool.hpp,51,Label 'e_has_tr' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_bool.hpp,54,Label 'e_has_tru' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_bool.hpp,57,Label 'e_done' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_floating_point.hpp,99,Label 'e_init' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_floating_point.hpp,104,Label 'e_regular_init' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_floating_point.hpp,111,Label 'e_has_sign' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_floating_point.hpp,116,Label 'e_zero' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_floating_point.hpp,120,Label 'e_dec' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_floating_point.hpp,125,Label 'e_after_dec' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_floating_point.hpp,130,Label 'e_leading_dot' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_floating_point.hpp,134,Label 'e_trailing_dot' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_floating_point.hpp,138,Label 'e_after_dot' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_floating_point.hpp,144,Label 'e_has_e' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_floating_point.hpp,150,Label 'e_has_plus_after_e' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_floating_point.hpp,154,Label 'e_has_minus_after_e' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_floating_point.hpp,159,Label 'e_pos_exp' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_floating_point.hpp,164,Label 'e_neg_exp' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_number.hpp,57,Label 'e_init' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_number.hpp,67,Label 'e_has_plus' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_number.hpp,74,Label 'e_has_minus' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_number.hpp,82,Label 'e_pos_zero' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_number.hpp,88,Label 'e_neg_zero' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_number.hpp,95,Label 'e_start_pos_bin' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_number.hpp,98,Label 'e_pos_bin' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_number.hpp,101,Label 'e_start_neg_bin' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_number.hpp,104,Label 'e_neg_bin' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_number.hpp,108,Label 's_start_pos_oct' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_number.hpp,108,Label 'e_start_pos_oct' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_number.hpp,111,Label 'e_pos_oct' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_number.hpp,115,Label 's_start_neg_oct' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_number.hpp,115,Label 'e_start_neg_oct' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_number.hpp,118,Label 'e_neg_oct' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_number.hpp,123,Label 'e_start_pos_hex' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_number.hpp,126,Label 'e_pos_hex' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_number.hpp,130,Label 'e_start_neg_hex' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_number.hpp,133,Label 'e_neg_hex' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_number.hpp,138,Label 'e_pos_dec' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_number.hpp,147,Label 'e_neg_dec' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_number.hpp,155,Label 'e_pos_dot' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_number.hpp,164,Label 'e_neg_dot' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_number.hpp,173,Label 'e_done' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_number.hpp,225,Label 'e_init' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_number.hpp,228,Label 'e_after_end_num' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_number.hpp,231,Label 'e_first_dot' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_number.hpp,234,Label 'e_second_dot' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_number.hpp,237,Label 'e_done' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/src/detail/json.cpp,113,Label 'e_init' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/src/detail/json.cpp,117,Label 'e_has_n' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/src/detail/json.cpp,121,Label 'e_has_nu' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/src/detail/json.cpp,124,Label 'e_has_nul' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/src/detail/json.cpp,127,Label 'e_has_na' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/src/detail/json.cpp,130,Label 'e_done' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/src/detail/json.cpp,142,Label 'e_init' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/src/detail/json.cpp,146,Label 'e_read_chars' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/src/detail/json.cpp,151,Label 'e_escape' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/src/detail/json.cpp,155,Label 'e_done' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/src/detail/json.cpp,165,Label 'e_init' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/src/detail/json.cpp,169,Label 'e_after_key' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/src/detail/json.cpp,173,Label 'e_done' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/src/detail/json.cpp,183,Label 'e_init' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/src/detail/json.cpp,187,Label 'e_has_open_brace' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/src/detail/json.cpp,192,Label 'e_after_member' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/src/detail/json.cpp,197,Label 'e_after_comma' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/src/detail/json.cpp,201,Label 'e_done' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/src/detail/json.cpp,211,Label 'e_init' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/src/detail/json.cpp,215,Label 'e_has_open_brace' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/src/detail/json.cpp,220,Label 'e_after_value' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/src/detail/json.cpp,225,Label 'e_after_comma' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/src/detail/json.cpp,229,Label 'e_done' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/src/detail/json.cpp,239,Label 'e_init' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/src/detail/json.cpp,248,Label 'e_done' is not used.,cppcheck
+zeek,constParameter,auxil/broker/caf/libcaf_core/caf/optional.hpp,288,Parameter 'x' can be declared as pointer to const,cppcheck
+zeek,constVariable,auxil/broker/caf/libcaf_core/caf/detail/parser/read_floating_point.hpp,75,Variable 'powerTable' can be declared as const array,cppcheck
+zeek,constParameter,build/auxil/binpac/src/pac_parse.cc,1304,Parameter 'yytop' can be declared as pointer to const,cppcheck
+zeek,constParameter,build/auxil/binpac/src/pac_parse.cc,1476,Parameter 'yyssp' can be declared as pointer to const,cppcheck
+zeek,constParameter,auxil/broker/caf/libcaf_core/caf/optional.hpp,288,Parameter 'x' can be declared as pointer to const,cppcheck
+zeek,constParameter,auxil/broker/caf/libcaf_core/caf/span.hpp,56,Parameter 'last' can be declared as pointer to const,cppcheck
+zeek,constParameter,auxil/spicy/spicy/hilti/toolchain/include/hilti/base/optional-ref.h,43,Parameter 'default_' can be declared as reference to const,cppcheck
+zeek,constParameter,src/3rdparty/nb_dns.c,564,Parameter 'cookie' can be declared as pointer to const,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_ipv4_address.hpp,46,Label 'e_init' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_ipv4_address.hpp,49,Label 'e_read' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_ipv4_address.hpp,69,Label 'e_init' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_ipv4_address.hpp,72,Label 'e_rd_dot' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_ipv4_address.hpp,75,Label 'e_rd_oct' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_ipv4_address.hpp,79,Label 'e_done' is not used.,cppcheck
+zeek,redundantCondition,auxil/c-ares/src/lib/ares__parse_into_addrinfo.c,188,Redundant condition: got_cname. '!got_cname || (got_cname && cname_only_is_enodata)' is equivalent to '!got_cname || cname_only_is_enodata',cppcheck
+zeek,constVariable,auxil/broker/include/broker/alm/routing_table.hh,171,Variable 'path' can be declared as reference to const,cppcheck
+zeek,constParameter,auxil/broker/include/broker/alm/routing_table.hh,353,Parameter 'kvp' can be declared as reference to const,cppcheck
+zeek,constVariable,auxil/broker/src/alm/multipath.cc,152,Variable 'mpath' can be declared as reference to const,cppcheck
+zeek,constParameter,auxil/broker/caf/libcaf_core/src/detail/monotonic_buffer_resource.cpp,68,Parameter 'where' can be declared as reference to const,cppcheck
+zeek,constParameter,auxil/broker/caf/libcaf_core/src/detail/monotonic_buffer_resource.cpp,148,Parameter 'bkt' can be declared as reference to const,cppcheck
+zeek,duplicateExpression,auxil/highwayhash/highwayhash/hh_avx2.h,330,Same expression on both sides of '^'.,cppcheck
+zeek,duplicateExpression,auxil/highwayhash/highwayhash/hh_avx2.h,332,Same expression on both sides of '=='.,cppcheck
+zeek,constParameter,src/Notifier.cc,38,Parameter 'r' can be declared as pointer to const,cppcheck
+zeek,constParameter,auxil/binpac/lib/binpac_buffer.cc,149,Parameter 'lbreaker' can be declared as pointer to const,cppcheck
+zeek,constVariable,auxil/broker/include/broker/status_subscriber.hh,72,Variable 'msg' can be declared as reference to const,cppcheck
+zeek,selfAssignment,auxil/broker/3rdparty/sqlite3.c,165963,Redundant assignment of 'yymsp[0].minor.yy528' to itself.,cppcheck
+zeek,unsignedLessThanZero,auxil/broker/3rdparty/sqlite3.c,77977,Checking if unsigned expression 'acc.mxAlloc' is less than zero.,cppcheck
+zeek,unsignedPositive,auxil/broker/3rdparty/sqlite3.c,90175,Unsigned expression 'p2' can't be negative so it is unnecessary to test it.,cppcheck
+zeek,unsignedLessThanZero,auxil/broker/3rdparty/sqlite3.c,149346,Checking if unsigned expression 'pLoop->u.btree.nBtm' is less than zero.,cppcheck
+zeek,unsignedPositive,auxil/broker/3rdparty/sqlite3.c,194844,Unsigned expression 'iTarget' can't be negative so it is unnecessary to test it.,cppcheck
+zeek,constVariable,auxil/broker/3rdparty/sqlite3.c,34157,Variable 'a' can be declared as const array,cppcheck
+zeek,constParameter,auxil/broker/3rdparty/sqlite3.c,66935,Parameter 'pExcept' can be declared as pointer to const,cppcheck
+zeek,constParameter,auxil/broker/3rdparty/sqlite3.c,67272,Parameter 'pCell' can be declared as pointer to const,cppcheck
+zeek,constParameter,auxil/broker/3rdparty/sqlite3.c,73377,Parameter 'pBegin' can be declared as pointer to const,cppcheck
+zeek,constParameter,auxil/broker/3rdparty/sqlite3.c,104030,Parameter 'p' can be declared as pointer to const,cppcheck
+zeek,constParameter,auxil/broker/3rdparty/sqlite3.c,112099,Parameter 'pOnlyIdx' can be declared as pointer to const,cppcheck
+zeek,constParameter,auxil/broker/3rdparty/sqlite3.c,117845,Parameter 'pStart' can be declared as pointer to const,cppcheck
+zeek,constParameter,auxil/broker/3rdparty/sqlite3.c,120978,Parameter 'aRegIdx' can be declared as pointer to const,cppcheck
+zeek,constParameter,auxil/broker/3rdparty/sqlite3.c,124301,Parameter 'aChange' can be declared as pointer to const,cppcheck
+zeek,constParameter,auxil/broker/3rdparty/sqlite3.c,124328,Parameter 'aChange' can be declared as pointer to const,cppcheck
+zeek,constParameter,auxil/broker/3rdparty/sqlite3.c,124712,Parameter 'pChanges' can be declared as pointer to const,cppcheck
+zeek,constParameter,auxil/broker/3rdparty/sqlite3.c,127588,Parameter 'aToOpen' can be declared as pointer to const,cppcheck
+zeek,constParameter,auxil/broker/3rdparty/sqlite3.c,129733,Parameter 'xInit' can be declared as pointer to const,cppcheck
+zeek,constParameter,auxil/broker/3rdparty/sqlite3.c,133746,Parameter 'pSchema' can be declared as pointer to const,cppcheck
+zeek,constParameter,auxil/broker/3rdparty/sqlite3.c,145020,Parameter 'pIdx' can be declared as pointer to const,cppcheck
+zeek,constParameter,auxil/broker/3rdparty/sqlite3.c,145706,Parameter 'db' can be declared as pointer to const,cppcheck
+zeek,redundantCondition,auxil/broker/3rdparty/sqlite3.c,58822,Redundant condition: The condition 'pgno <= 1' is redundant since 'pgno == 0' is sufficient.,cppcheck
+zeek,constParameter,auxil/broker/3rdparty/sqlite3.c,40088,Parameter 'p' can be declared as pointer to const,cppcheck
+zeek,constParameter,auxil/broker/3rdparty/sqlite3.c,54458,Parameter 'pData' can be declared as pointer to const,cppcheck
+zeek,constParameter,auxil/broker/3rdparty/sqlite3.c,47469,Parameter 'p' can be declared as pointer to const,cppcheck
+zeek,constParameter,auxil/broker/3rdparty/sqlite3.c,48740,Parameter 'x' can be declared as pointer to const,cppcheck
+zeek,constVariable,auxil/broker/3rdparty/sqlite3.c,220196,Variable 'aBareword' can be declared as const array,cppcheck
+zeek,constParameter,auxil/broker/3rdparty/sqlite3.c,234353,Parameter 'pTokenizer' can be declared as pointer to const,cppcheck
+zeek,constParameter,auxil/broker/3rdparty/sqlite3.c,236963,Parameter 'aBuf' can be declared as pointer to const,cppcheck
+zeek,constParameter,auxil/broker/3rdparty/sqlite3.c,237184,Parameter 'xCreate' can be declared as pointer to const,cppcheck
+zeek,constParameter,auxil/broker/3rdparty/sqlite3.c,237987,Parameter 'aArray' can be declared as pointer to const,cppcheck
+zeek,constParameter,auxil/broker/3rdparty/sqlite3.c,99350,Parameter 'pAux' can be declared as pointer to const,cppcheck
+zeek,constVariable,auxil/broker/3rdparty/sqlite3.c,208089,Variable 'aRes' can be declared as const array,cppcheck
+zeek,uselessAssignmentPtrArg,auxil/broker/3rdparty/sqlite3.c,42656,Assignment of function parameter has no effect outside the function. Did you forget dereferencing it?,cppcheck
+zeek,redundantInitialization,auxil/broker/3rdparty/sqlite3.c,37733,Redundant initialization for 'pInode'. The initialized value is overwritten before it is read.,cppcheck
+zeek,unusedLabelSwitch,auxil/broker/src/internal_command.cc,11,Label 'action' is not used. Should this be a 'case' of the enclosing switch()?,cppcheck
+zeek,unusedLabelSwitch,auxil/broker/src/internal_command.cc,12,Label 'producer_control' is not used. Should this be a 'case' of the enclosing switch()?,cppcheck
+zeek,unusedLabelSwitch,auxil/broker/src/internal_command.cc,13,Label 'consumer_control' is not used. Should this be a 'case' of the enclosing switch()?,cppcheck
+zeek,redundantInitialization,build/auxil/binpac/pac_scan.cc,1841,Redundant initialization for 'c'. The initialized value is overwritten before it is read.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_ipv6_address.hpp,59,Label 'e_init' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_ipv6_address.hpp,62,Label 'e_read' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_ipv6_address.hpp,115,Label 'e_init' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_ipv6_address.hpp,118,Label 'e_read' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_ipv6_address.hpp,125,Label 'e_read_octet' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_ipv6_address.hpp,130,Label 'e_read_last_octet' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_ipv6_address.hpp,216,Label 'e_init' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_ipv6_address.hpp,223,Label 'e_maybe_has_l32' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_ipv6_address.hpp,228,Label 'e_rd_sep' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_ipv6_address.hpp,233,Label 'e_has_sep' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_ipv6_address.hpp,237,Label 'e_rd_prefix' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_ipv6_address.hpp,250,Label 'e_maybe_done' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_ipv6_address.hpp,255,Label 'e_rd_prefix_sep' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_ipv6_address.hpp,259,Label 'e_rd_next_prefix' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_ipv6_address.hpp,264,Label 'e_rd_suffix' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_ipv6_address.hpp,273,Label 'e_rd_next_suffix' is not used.,cppcheck
+zeek,unusedLabel,auxil/broker/caf/libcaf_core/caf/detail/parser/read_ipv6_address.hpp,277,Label 'e_done' is not used.,cppcheck
+zeek,constParameter,auxil/broker/caf/libcaf_core/caf/detail/parser/read_ipv6_address.hpp,187,Parameter 'bytes' can be declared as pointer to const,cppcheck
+zeek,constParameter,auxil/broker/caf/libcaf_core/caf/detail/parser/read_ipv6_address.hpp,194,Parameter 'bytes' can be declared as pointer to const,cppcheck
+zeek,constParameter,auxil/broker/caf/libcaf_core/caf/span.hpp,56,Parameter 'last' can be declared as pointer to const,cppcheck
+zeek,constParameter,auxil/c-ares/src/lib/ares_init.c,2486,Parameter 'pat' can be declared as pointer to const,cppcheck
+zeek,unsignedLessThanZero,auxil/c-ares/src/lib/ares_parse_caa_reply.c,135,Checking if unsigned expression 'caa_curr->plength' is less than zero.,cppcheck
+zeek,unsignedLessThanZero,auxil/c-ares/src/lib/ares_parse_caa_reply.c,152,Checking if unsigned expression 'caa_curr->length' is less than zero.,cppcheck
+zeek,constParameter,src/iosource/PktDumper.cc,56,Parameter 'arg_props' can be declared as reference to const,cppcheck
+zeek,constParameter,src/iosource/PktDumper.cc,70,Parameter 'msg' can be declared as reference to const,cppcheck
+zeek,constVariable,auxil/broker/include/broker/status_subscriber.hh,72,Variable 'msg' can be declared as reference to const,cppcheck
+zeek,selfAssignment,src/3rdparty/sqlite3.c,165963,Redundant assignment of 'yymsp[0].minor.yy528' to itself.,cppcheck
+zeek,unsignedLessThanZero,src/3rdparty/sqlite3.c,77977,Checking if unsigned expression 'acc.mxAlloc' is less than zero.,cppcheck
+zeek,unsignedPositive,src/3rdparty/sqlite3.c,90175,Unsigned expression 'p2' can't be negative so it is unnecessary to test it.,cppcheck
+zeek,unsignedLessThanZero,src/3rdparty/sqlite3.c,149346,Checking if unsigned expression 'pLoop->u.btree.nBtm' is less than zero.,cppcheck
+zeek,unsignedPositive,src/3rdparty/sqlite3.c,194844,Unsigned expression 'iTarget' can't be negative so it is unnecessary to test it.,cppcheck
+zeek,constVariable,src/3rdparty/sqlite3.c,34157,Variable 'a' can be declared as const array,cppcheck
+zeek,constParameter,src/3rdparty/sqlite3.c,66935,Parameter 'pExcept' can be declared as pointer to const,cppcheck
+zeek,constParameter,src/3rdparty/sqlite3.c,67272,Parameter 'pCell' can be declared as pointer to const,cppcheck
+zeek,constParameter,src/3rdparty/sqlite3.c,73377,Parameter 'pBegin' can be declared as pointer to const,cppcheck
+zeek,constParameter,src/3rdparty/sqlite3.c,104030,Parameter 'p' can be declared as pointer to const,cppcheck
+zeek,constParameter,src/3rdparty/sqlite3.c,112099,Parameter 'pOnlyIdx' can be declared as pointer to const,cppcheck
+zeek,constParameter,src/3rdparty/sqlite3.c,117845,Parameter 'pStart' can be declared as pointer to const,cppcheck
+zeek,constParameter,src/3rdparty/sqlite3.c,120978,Parameter 'aRegIdx' can be declared as pointer to const,cppcheck
+zeek,constParameter,src/3rdparty/sqlite3.c,124301,Parameter 'aChange' can be declared as pointer to const,cppcheck
+zeek,constParameter,src/3rdparty/sqlite3.c,124328,Parameter 'aChange' can be declared as pointer to const,cppcheck
+zeek,constParameter,src/3rdparty/sqlite3.c,124712,Parameter 'pChanges' can be declared as pointer to const,cppcheck
+zeek,constParameter,src/3rdparty/sqlite3.c,127588,Parameter 'aToOpen' can be declared as pointer to const,cppcheck
+zeek,constParameter,src/3rdparty/sqlite3.c,129733,Parameter 'xInit' can be declared as pointer to const,cppcheck
+zeek,constParameter,src/3rdparty/sqlite3.c,133746,Parameter 'pSchema' can be declared as pointer to const,cppcheck
+zeek,constParameter,src/3rdparty/sqlite3.c,145020,Parameter 'pIdx' can be declared as pointer to const,cppcheck
+zeek,constParameter,src/3rdparty/sqlite3.c,145706,Parameter 'db' can be declared as pointer to const,cppcheck
+zeek,redundantCondition,src/3rdparty/sqlite3.c,58822,Redundant condition: The condition 'pgno <= 1' is redundant since 'pgno == 0' is sufficient.,cppcheck
+zeek,constParameter,src/3rdparty/sqlite3.c,40088,Parameter 'p' can be declared as pointer to const,cppcheck
+zeek,constVariable,auxil/broker/include/broker/status_subscriber.hh,72,Variable 'msg' can be declared as reference to const,cppcheck
+zeek,constParameter,auxil/broker/caf/libcaf_core/caf/span.hpp,56,Parameter 'last' can be declared as pointer to const,cppcheck
+zeek,constParameter,auxil/highwayhash/highwayhash/robust_statistics.h,79,Parameter 'end' can be declared as pointer to const,cppcheck
+zeek,uselessAssignmentArg,src/Reassem.cc,344,Assignment of function parameter has no effect outside the function.,cppcheck
+zeek,constParameter,src/Reassem.cc,119,Parameter 'hint' can be declared as pointer to const,cppcheck
+zeek,constVariable,auxil/broker/src/topic.cc,28,Variable 'component' can be declared as reference to const,cppcheck
+zeek,constParameter,auxil/zeek-aux/adtrace/adtrace.c,17,Parameter 'endp' can be declared as pointer to const,cppcheck
+zeek,constParameter,auxil/zeek-aux/adtrace/adtrace.c,40,Parameter 'endp' can be declared as pointer to const,cppcheck
+zeek,constParameter,src/3rdparty/ConvertUTF.c,167,Parameter 'targetEnd' can be declared as pointer to const,cppcheck
+zeek,constParameter,src/3rdparty/ConvertUTF.c,216,Parameter 'targetEnd' can be declared as pointer to const,cppcheck
+zeek,constParameter,src/3rdparty/ConvertUTF.c,270,Parameter 'targetEnd' can be declared as pointer to const,cppcheck
+zeek,constParameter,src/3rdparty/ConvertUTF.c,340,Parameter 'targetEnd' can be declared as pointer to const,cppcheck
+zeek,constParameter,src/3rdparty/ConvertUTF.c,564,Parameter 'targetEnd' can be declared as pointer to const,cppcheck
+zeek,constParameter,src/3rdparty/ConvertUTF.c,637,Parameter 'targetEnd' can be declared as pointer to const,cppcheck
+zeek,constParameter,auxil/c-ares/src/lib/ares_gethostbyname.c,226,Parameter 'channel' can be declared as pointer to const,cppcheck
+zeek,constParameter,auxil/broker/caf/libcaf_core/caf/optional.hpp,288,Parameter 'x' can be declared as pointer to const,cppcheck
+zeek,constVariable,auxil/broker/caf/libcaf_core/src/detail/base64.cpp,35,Variable 'buf' can be declared as const array,cppcheck
+zeek,constVariable,auxil/broker/include/broker/alm/routing_table.hh,171,Variable 'path' can be declared as reference to const,cppcheck
+zeek,constParameter,auxil/broker/include/broker/alm/routing_table.hh,353,Parameter 'kvp' can be declared as reference to const,cppcheck
+zeek,constParameter,build/auxil/bifcl/bif_parse.cc,1080,Parameter 'yytop' can be declared as pointer to const,cppcheck
+zeek,constParameter,build/auxil/bifcl/bif_parse.cc,1252,Parameter 'yyssp' can be declared as pointer to const,cppcheck
+zeek,redundantInitialization,build/auxil/bifcl/bif_lex.cc,1330,Redundant initialization for 'c'. The initialized value is overwritten before it is read.,cppcheck
+zeek,constParameter,auxil/broker/caf/libcaf_core/src/detail/ripemd_160.cpp,154,Parameter 'X' can be declared as pointer to const,cppcheck
+zeek,uselessAssignmentPtrArg,build/auxil/spicy/spicy/3rdparty/justrx/justrx/autogen/re-scan.c,2300,Assignment of function parameter has no effect outside the function. Did you forget dereferencing it?,cppcheck
+zeek,redundantInitialization,build/auxil/spicy/spicy/3rdparty/justrx/justrx/autogen/re-scan.c,1452,Redundant initialization for 'c'. The initialized value is overwritten before it is read.,cppcheck
+zeek,duplicateExpression,auxil/broker/include/broker/span.hh,157,Same expression on both sides of '-'.,cppcheck
+zeek,constVariable,auxil/gen-zam/src/Gen-ZAM.cc,129,Variable 'arg_i' can be declared as reference to const,cppcheck
+zeek,constVariable,auxil/gen-zam/src/Gen-ZAM.cc,156,Variable 'name' can be declared as reference to const,cppcheck
+zeek,constVariable,auxil/gen-zam/src/Gen-ZAM.cc,894,Variable 'tn' can be declared as reference to const,cppcheck
+zeek,constVariable,auxil/gen-zam/src/Gen-ZAM.cc,1357,Variable 'ei' can be declared as reference to const,cppcheck
+zeek,constVariable,auxil/gen-zam/src/Gen-ZAM.cc,1545,Variable 'etn' can be declared as reference to const,cppcheck
+zeek,constVariable,auxil/gen-zam/src/Gen-ZAM.cc,1745,Variable 'et' can be declared as reference to const,cppcheck
+zeek,constVariable,auxil/gen-zam/src/Gen-ZAM.cc,2090,Variable 'gfn' can be declared as reference to const,cppcheck
+zeek,constVariable,auxil/gen-zam/src/Gen-ZAM.cc,2128,Variable 'gf' can be declared as reference to const,cppcheck
+zeek,constVariable,auxil/gen-zam/src/Gen-ZAM.cc,2137,Variable 'desc' can be declared as reference to const,cppcheck
+zeek,redundantInitialization,build/src/re-scan.cc,1831,Redundant initialization for 'c'. The initialized value is overwritten before it is read.,cppcheck
+zeek,unassignedVariable,auxil/spicy/spicy/3rdparty/justrx/src/tests/testregex.c,1144,Variable 'pat' is not assigned a value.,cppcheck
+zeek,constVariable,auxil/broker/tests/benchmark/broker-fan-out.cc,330,Variable 'x' can be declared as reference to const,cppcheck
+zeek,constParameter,src/Pipe.cc,92,Parameter 'arg_fds' can be declared as pointer to const,cppcheck
+zeek,uselessAssignmentPtrArg,build/auxil/spicy/spicy/3rdparty/justrx/justrx/autogen/re-parse.c,1027,Assignment of function parameter has no effect outside the function. Did you forget dereferencing it?,cppcheck
+zeek,constParameter,build/auxil/spicy/spicy/3rdparty/justrx/justrx/autogen/re-parse.c,717,Parameter 'yytop' can be declared as pointer to const,cppcheck
+zeek,constParameter,build/auxil/spicy/spicy/3rdparty/justrx/justrx/autogen/re-parse.c,889,Parameter 'yyssp' can be declared as pointer to const,cppcheck
+git,MSC12-C,git.c,440,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,am.c,313,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,am.c,314,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,am.c,315,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,am.c,357,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,am.c,477,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,am.c,530,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,am.c,1288,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,am.c,1291,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,am.c,1294,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,am.c,1297,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,am.c,1350,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,am.c,1357,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,am.c,1364,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,am.c,1367,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,am.c,1689,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,am.c,1724,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,am.c,1896,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,am.c,2100,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,bisect--helper.c,228,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,bisect--helper.c,942,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,bisect--helper.c,1031,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,bisect--helper.c,1197,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,bisect--helper.c,1215,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,bisect--helper.c,1221,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,bisect--helper.c,1229,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,branch.c,183,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,branch.c,187,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,branch.c,252,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,branch.c,266,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,branch.c,459,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,cat-file.c,351,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,check-attr.c,101,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,checkout.c,768,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,clone.c,668,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,commit-tree.c,32,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,commit.c,1080,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,config.c,121,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,config.c,340,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,config.c,362,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,config.c,654,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,config.c,745,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,config.c,750,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,config.c,763,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,config.c,769,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,config.c,775,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,config.c,808,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,diff-tree.c,80,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,env--helper.c,67,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,env--helper.c,82,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,fast-import.c,327,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,fast-import.c,1642,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,fast-import.c,2224,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,fast-import.c,3241,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,fetch.c,338,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,fetch.c,1727,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,fetch.c,1983,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,fetch.c,2202,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,fetch.c,2218,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,for-each-ref.c,64,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,for-each-ref.c,68,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,fsck.c,324,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,fsck.c,482,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,fsck.c,532,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,fsck.c,539,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,fsck.c,647,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,fsck.c,746,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,fsck.c,785,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,fsck.c,933,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,fsck.c,944,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,gc.c,904,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,gc.c,934,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,gc.c,1050,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,gc.c,1067,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,gc.c,1336,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,gc.c,1418,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,gc.c,1423,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,gc.c,2351,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,gc.c,2372,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,gc.c,2377,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,gc.c,2407,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,gc.c,2412,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,hash-object.c,142,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,index-pack.c,799,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,index-pack.c,852,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,index-pack.c,970,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,index-pack.c,1055,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,log.c,683,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,log.c,1108,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,mailsplit.c,126,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,mailsplit.c,191,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,mailsplit.c,196,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,mailsplit.c,230,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,mailsplit.c,252,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,mailsplit.c,341,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,mailsplit.c,350,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,mailsplit.c,360,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge.c,734,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge.c,1621,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,mv.c,472,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,name-rev.c,607,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,notes.c,322,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,notes.c,374,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,notes.c,429,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,notes.c,507,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,notes.c,515,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,notes.c,519,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,notes.c,596,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,notes.c,663,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,notes.c,805,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,notes.c,810,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,notes.c,813,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,notes.c,834,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,notes.c,965,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,notes.c,987,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,notes.c,1020,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,pack-objects.c,581,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,pack-objects.c,592,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,pack-objects.c,1001,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,pack-objects.c,1019,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,pack-objects.c,1029,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,pack-objects.c,1190,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,pack-objects.c,2007,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,pack-objects.c,2016,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,pack-objects.c,3701,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,pack-objects.c,3715,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,pack-objects.c,3730,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,pack-objects.c,3731,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,pack-objects.c,3938,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,prune.c,85,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,pull.c,723,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,push.c,396,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,rebase.c,690,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,rebase.c,1793,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,receive-pack.c,1498,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,receive-pack.c,1545,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,remote.c,198,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,remote.c,716,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,remote.c,725,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,remote.c,879,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,remote.c,1099,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,remote.c,1573,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,remote.c,1598,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,remote.c,1630,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,remote.c,1701,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,remote.c,1777,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,replace.c,116,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,replace.c,126,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,replace.c,278,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,replace.c,300,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,reset.c,100,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,revert.c,169,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,shortlog.c,429,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,shortlog.c,434,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,sparse-checkout.c,366,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,submodule--helper.c,1474,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,tag.c,103,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,unpack-objects.c,131,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,unpack-objects.c,513,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,update-index.c,691,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,update-index.c,697,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,upload-archive.c,114,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,worktree.c,327,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,worktree.c,1084,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,advice.c,212,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,apply.c,1388,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,apply.c,1401,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,apply.c,1566,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,apply.c,1995,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,apply.c,2194,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,apply.c,2322,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,apply.c,3247,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,apply.c,3727,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,apply.c,3890,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,apply.c,4750,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,apply.c,4771,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,apply.c,4928,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,apply.c,4961,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,apply.c,4985,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,attr.c,936,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,blame.c,588,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,blame.c,665,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,blame.c,1101,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,blame.c,1101,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,blame.c,1765,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,blame.c,1769,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,blame.c,2588,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,branch.c,177,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,bundle.c,246,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,bundle.c,357,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,bundle.c,540,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,cache-tree.c,261,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,cbtree.c,36,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,chunk-format.c,117,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,chunk-format.c,126,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,chunk-format.c,133,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,chunk-format.c,147,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,column.c,186,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,combine-diff.c,1055,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,commit-graph.c,250,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,commit-graph.c,281,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,commit-graph.c,285,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,commit-graph.c,289,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,commit-graph.c,344,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,commit-graph.c,351,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,commit-graph.c,358,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,commit-graph.c,373,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,commit-graph.c,1819,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,commit-graph.c,1850,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,commit-graph.c,1864,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,commit-graph.c,1869,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,commit-graph.c,1963,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,commit-graph.c,1979,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,commit-graph.c,2000,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,commit-graph.c,2396,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,commit.c,205,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,commit.c,665,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,commit.c,665,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,terminal.c,233,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,convert.c,412,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,convert.c,479,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,convert.c,777,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,convert.c,830,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,convert.c,837,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,convert.c,932,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,convert.c,935,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,convert.c,1446,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,delta-islands.c,23,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,diagnose.c,291,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,diff-delta.c,292,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,diff-lib.c,33,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,diff-lib.c,359,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,diff.c,337,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,diff.c,1966,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,diff.c,2094,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,diff.c,2277,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,diff.c,2550,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,diff.c,3206,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,diff.c,6059,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,diffcore-rename.c,866,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,diffcore-rename.c,960,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,diffcore-rename.c,1009,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,diffcore-rename.c,1241,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,diffcore-rename.c,1296,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,diffcore-rename.c,1314,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,diffcore-rename.c,1403,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,diffcore-rename.c,1496,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,diffcore-rename.c,1591,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,dir.c,593,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,dir.c,1342,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,dir.c,1605,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,dir.c,1953,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,dir.c,3066,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,entry.c,212,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,entry.c,258,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,ewah_bitmap.c,116,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,ewah_bitmap.c,170,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,ewah_bitmap.c,175,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,ewah_bitmap.c,176,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,ewah_bitmap.c,177,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,ewah_bitmap.c,180,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,ewah_bitmap.c,183,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,ewah_bitmap.c,184,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,ewah_bitmap.c,208,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,ewah_bitmap.c,342,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,ewah_bitmap.c,347,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,fetch-pack.c,1077,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,fetch-pack.c,1077,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,fetch-pack.c,2084,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,fsck.c,99,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,fsck.c,1228,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,fsmonitor.c,364,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,gpg-interface.c,334,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,gpg-interface.c,452,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,gpg-interface.c,461,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,gpg-interface.c,481,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,gpg-interface.c,1015,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,gpg-interface.c,1027,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,gpg-interface.c,1033,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,gpg-interface.c,1053,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,graph.c,319,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,graph.c,880,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,graph.c,886,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,graph.c,938,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,graph.c,1109,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,graph.c,1187,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,graph.c,1194,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,graph.c,1240,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,graph.c,1241,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,grep.c,696,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,grep.c,947,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,grep.c,1886,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,kwset.c,102,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,kwset.c,173,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,kwset.c,179,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,kwset.c,183,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,kwset.c,223,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,kwset.c,228,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,kwset.c,229,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,kwset.c,243,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,kwset.c,248,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,kwset.c,249,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,kwset.c,405,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,kwset.c,532,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,kwset.c,533,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,kwset.c,536,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,kwset.c,537,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,kwset.c,538,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,kwset.c,541,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,kwset.c,542,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,kwset.c,543,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,kwset.c,546,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,kwset.c,614,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,kwset.c,773,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,line-log.c,63,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,line-log.c,72,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,line-log.c,103,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,line-log.c,131,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,line-log.c,153,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,line-log.c,403,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,line-log.c,552,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,line-log.c,553,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,line-log.c,629,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,line-log.c,644,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,line-log.c,788,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,line-log.c,842,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,line-log.c,1035,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,line-log.c,1037,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,line-log.c,1048,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,line-log.c,1127,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,line-range.c,185,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,list-objects-filter-options.c,180,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,list-objects-filter-options.c,219,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,list-objects-filter.c,106,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,list-objects-filter.c,311,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,list-objects-filter.c,452,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,list-objects-filter.c,474,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,list-objects-filter.c,781,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,list-objects.c,362,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,ll-merge.c,63,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,ll-merge.c,109,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,ll-merge.c,152,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,ll-merge.c,200,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,lockfile.c,184,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,mailinfo.c,258,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,mailinfo.c,785,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,mailinfo.c,957,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,mailinfo.c,1162,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,724,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,768,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,917,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,954,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,999,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,1000,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,1001,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,1056,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,1064,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,1144,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,1273,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,1274,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,1275,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,1276,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,1277,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,1374,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,1390,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,1468,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,1469,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,1564,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,1616,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,1618,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,1641,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,1994,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,2056,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,2063,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,2430,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,2573,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,2621,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,2622,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,2634,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,2672,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,2673,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,2674,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,2675,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,2800,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,2801,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,2802,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,2809,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,2894,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,2895,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,2897,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,2944,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,2963,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,2964,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,2965,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,3180,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,3620,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,3661,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,3791,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,3852,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,3853,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,3855,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,3875,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,3899,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,3988,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,4075,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,4121,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,4196,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,4443,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,4648,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,4673,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,4722,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,4772,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,4774,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,4776,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,4778,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,4779,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,4780,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,4782,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,4783,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,4794,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,4796,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,4797,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,4798,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,4800,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,4804,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,4813,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,4915,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,4925,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,5097,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort.c,5123,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-ort-wrappers.c,13,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-recursive.c,180,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-recursive.c,1070,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-recursive.c,1173,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-recursive.c,1433,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-recursive.c,2345,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-recursive.c,3111,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-recursive.c,3256,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-recursive.c,3257,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-recursive.c,3696,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-recursive.c,3698,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-recursive.c,3700,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-recursive.c,3702,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-recursive.c,3704,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-recursive.c,3705,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-recursive.c,3706,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-recursive.c,3708,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-recursive.c,3709,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-recursive.c,3712,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-recursive.c,3713,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-recursive.c,3714,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-recursive.c,3716,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-recursive.c,3719,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-recursive.c,3720,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-recursive.c,3754,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merge-recursive.c,3772,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,midx.c,67,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,midx.c,93,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,midx.c,100,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,midx.c,126,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,midx.c,1280,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,midx.c,1385,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,midx.c,1417,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,midx.c,1476,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,midx.c,1547,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,midx.c,1718,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,midx.c,2060,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,midx.c,2080,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,name-hash.c,278,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,name-hash.c,358,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,notes-merge.c,49,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,notes-merge.c,50,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,notes-merge.c,61,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,notes-merge.c,158,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,notes-merge.c,160,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,notes-merge.c,163,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,notes-merge.c,224,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,notes-merge.c,246,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,notes-merge.c,255,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,notes-merge.c,256,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,notes-merge.c,395,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,notes-merge.c,404,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,notes-merge.c,416,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,notes-merge.c,417,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,notes-merge.c,550,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,notes-merge.c,551,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,notes-merge.c,600,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,notes-utils.c,16,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,notes-utils.c,105,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,notes.c,170,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,notes.c,171,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,notes.c,206,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,notes.c,227,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,notes.c,257,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,notes.c,309,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,notes.c,379,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,notes.c,545,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,notes.c,596,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,notes.c,657,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,notes.c,658,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,notes.c,718,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,notes.c,770,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,notes.c,942,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,notes.c,1005,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,notes.c,1091,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,notes.c,1125,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,notes.c,1141,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,notes.c,1158,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,notes.c,1168,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,notes.c,1181,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,notes.c,1208,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,notes.c,1313,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,object-file.c,462,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,object-file.c,476,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,object-file.c,478,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,object-file.c,522,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,object-file.c,546,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,object-file.c,597,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,object-file.c,1235,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,object-file.c,2394,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,object-file.c,2395,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,object-file.c,2769,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,object-file.c,2773,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,object-file.c,2780,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,object-file.c,2803,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,object-file.c,2809,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,object-file.c,2814,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,object-file.c,2825,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,object-name.c,386,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,object-name.c,569,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,object-name.c,811,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,object.c,292,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,object.c,304,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,oidtree.c,99,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,pack-bitmap.c,148,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,pack-bitmap.c,237,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,pack-bitmap.c,349,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,pack-bitmap.c,375,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,pack-bitmap.c,429,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,pack-bitmap.c,489,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,pack-bitmap.c,528,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,pack-bitmap.c,544,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,pack-bitmap.c,556,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,pack-bitmap.c,726,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,pack-bitmap.c,737,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,pack-bitmap.c,762,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,pack-bitmap.c,780,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,pack-bitmap.c,1736,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,pack-bitmap.c,1823,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,pack-bitmap.c,1866,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,pack-revindex.c,377,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,pack-write.c,74,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,packfile.c,944,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,packfile.c,944,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,packfile.c,1076,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,packfile.c,1127,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,packfile.c,1546,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,packfile.c,1705,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,packfile.c,1716,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,packfile.c,1730,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,packfile.c,1803,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,packfile.c,1824,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,parallel-checkout.c,272,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,parallel-checkout.c,367,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,parallel-checkout.c,384,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,parallel-checkout.c,390,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,parse-options.c,93,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,parse-options.c,395,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,parse-options.c,443,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,parse-options.c,451,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,parse-options.c,818,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,parse-options.c,985,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,patch-delta.c,78,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,path.c,1527,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,path.c,1528,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,path.c,1549,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,pkt-line.c,232,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,prompt.c,32,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,range-diff.c,70,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,range-diff.c,98,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,range-diff.c,109,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,range-diff.c,132,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,range-diff.c,302,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,read-cache.c,908,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,read-cache.c,937,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,read-cache.c,3156,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,read-cache.c,3324,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,read-cache.c,3755,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,read-cache.c,3763,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,ref-filter.c,2046,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,refs.c,345,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,refs.c,917,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,refs.c,1124,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,refs.c,1197,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,refs.c,1341,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,refs.c,1780,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,refs.c,2165,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,refs.c,2351,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,files-backend.c,561,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,files-backend.c,949,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,files-backend.c,1022,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,files-backend.c,1459,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,files-backend.c,1484,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,files-backend.c,1488,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,files-backend.c,1511,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,files-backend.c,1522,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,files-backend.c,1531,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,files-backend.c,1852,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,files-backend.c,1895,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,files-backend.c,1935,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,files-backend.c,2180,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,files-backend.c,2652,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,files-backend.c,2680,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,files-backend.c,2851,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,files-backend.c,3011,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,files-backend.c,3153,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,files-backend.c,3189,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,files-backend.c,3195,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,packed-backend.c,1533,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,ref-cache.c,22,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,remote.c,1240,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,remote.c,1334,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,remote.c,2101,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,rerere.c,232,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,rerere.c,237,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,rerere.c,469,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,rerere.c,1042,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,rerere.c,1053,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,resolve-undo.c,102,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,revision.c,2633,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,run-command.c,1230,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,run-command.c,1421,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,send-pack.c,180,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,send-pack.c,229,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,send-pack.c,607,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,send-pack.c,729,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,sequencer.c,494,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,sequencer.c,499,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,sequencer.c,543,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,sequencer.c,589,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,sequencer.c,743,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,sequencer.c,1578,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,sequencer.c,2346,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,sequencer.c,2702,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,sequencer.c,3127,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,sequencer.c,3154,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,sequencer.c,3242,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,sequencer.c,3249,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,sequencer.c,3254,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,sequencer.c,3614,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,sequencer.c,3624,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,sequencer.c,3656,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,sequencer.c,3659,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,sequencer.c,3664,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,sequencer.c,3961,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,sequencer.c,3987,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,sequencer.c,4097,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,sequencer.c,5141,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,sequencer.c,5907,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,server-info.c,134,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,setup.c,390,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,setup.c,692,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,split-index.c,365,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,strbuf.c,644,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,sub-process.c,97,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,sub-process.c,105,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,symlinks.c,194,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,tempfile.c,149,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,tr2_tmr.c,56,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,trailer.c,244,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,trailer.c,745,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,transport-helper.c,1394,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,transport-helper.c,1421,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,transport-helper.c,1470,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,transport-helper.c,1474,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,tree-diff.c,194,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,tree-walk.c,144,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,unpack-trees.c,266,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,unpack-trees.c,1330,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,unpack-trees.c,1331,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,unpack-trees.c,1441,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,upload-pack.c,393,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,upload-pack.c,447,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,walker.c,288,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,walker.c,300,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,walker.c,327,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,walker.c,332,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,wrapper.c,27,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,wrapper.c,59,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,wrapper.c,80,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,wrapper.c,624,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,ws.c,247,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,wt-status.c,413,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,wt-status.c,1168,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,wt-status.c,2261,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,wt-status.c,2282,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,wt-status.c,2399,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,wt-status.c,2612,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,zlib.c,107,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,zlib.c,144,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,zlib.c,222,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,zlib.c,270,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,blocksource.c,31,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,blocksource.c,53,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,blocksource.c,110,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,blocksource.c,149,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,iter.c,88,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,iter.c,191,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merged.c,167,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,merged.c,358,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,reader.c,405,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,reader.c,792,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,record.c,208,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,record.c,247,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,record.c,332,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,record.c,384,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,record.c,1129,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,record.c,1178,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,generic.c,177,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,writer.c,229,Detect and remove code that has no effect,rosecheckers
+git,MSC12-C,writer.c,507,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/lib/binpac_buffer.cc,64,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/lib/binpac_buffer.cc,83,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/lib/binpac_buffer.cc,198,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/lib/binpac_buffer.cc,201,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/lib/binpac_buffer.cc,231,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/lib/binpac_buffer.cc,235,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/lib/binpac_buffer.cc,269,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/lib/binpac_buffer.cc,518,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/lib/binpac_buffer.cc,543,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/lib/binpac_buffer.cc,549,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,build/auxil/binpac/src/pac_parse.cc,1273,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,build/auxil/binpac/src/pac_parse.cc,1280,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,build/auxil/binpac/src/pac_parse.cc,1609,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,build/auxil/binpac/src/pac_parse.cc,1615,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,build/auxil/binpac/src/pac_parse.cc,3414,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,build/auxil/binpac/src/pac_parse.cc,3522,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,build/auxil/binpac/src/pac_parse.cc,3556,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,build/auxil/binpac/src/pac_parse.cc,3608,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,build/auxil/binpac/src/pac_parse.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,build/auxil/binpac/src/pac_parse.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,build/auxil/binpac/src/pac_parse.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,build/auxil/binpac/src/pac_parse.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,build/auxil/binpac/src/pac_parse.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,build/auxil/binpac/src/pac_parse.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,build/auxil/binpac/src/pac_parse.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,build/auxil/binpac/src/pac_parse.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,build/auxil/binpac/src/pac_parse.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,build/auxil/binpac/src/pac_parse.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,build/auxil/binpac/src/pac_parse.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,build/auxil/binpac/src/pac_parse.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,build/auxil/binpac/src/pac_parse.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,build/auxil/binpac/src/pac_parse.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,build/auxil/binpac/src/pac_parse.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,build/auxil/binpac/src/pac_parse.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,build/auxil/binpac/src/pac_parse.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,build/auxil/binpac/src/pac_parse.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,build/auxil/binpac/src/pac_parse.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,build/auxil/binpac/src/pac_parse.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,build/auxil/binpac/src/pac_parse.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,build/auxil/binpac/src/pac_parse.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,build/auxil/binpac/pac_scan.cc,329,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_action.cc,31,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_analyzer.cc,50,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_analyzer.cc,58,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_analyzer.cc,66,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_analyzer.cc,124,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_analyzer.cc,125,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_analyzer.cc,292,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_analyzer.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_analyzer.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_analyzer.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_analyzer.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_analyzer.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_analyzer.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_analyzer.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_analyzer.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_array.cc,324,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_array.cc,350,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_array.cc,351,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_array.cc,500,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_array.cc,601,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_array.cc,634,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_array.cc,644,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_array.cc,646,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_btype.cc,41,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_btype.cc,93,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_case.cc,33,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_case.cc,46,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_case.cc,57,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_case.cc,68,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_case.cc,250,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_case.cc,348,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_case.cc,439,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_case.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_case.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_case.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_case.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_conn.cc,54,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_conn.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_conn.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_context.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_context.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_cstr.cc,117,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_cstr.cc,120,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_dataptr.cc,40,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_decl.cc,53,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_decl.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_decl.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_decl.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_decl.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_decl.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_decl.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_decl.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_decl.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_decl.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_embedded.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_embedded.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_enum.cc,19,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_expr.cc,174,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_expr.cc,175,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_expr.cc,176,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_expr.cc,183,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_expr.cc,199,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_expr.cc,210,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_expr.cc,214,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_expr.cc,222,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_expr.cc,223,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_expr.cc,224,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_expr.cc,683,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_expr.cc,701,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_expr.cc,709,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_expr.cc,811,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_expr.cc,836,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_expr.cc,845,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_expr.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_expr.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_exttype.cc,29,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_exttype.cc,53,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_exttype.cc,58,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_flow.cc,51,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_flow.cc,70,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_flow.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_flow.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_flow.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_flow.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_func.cc,58,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_id.cc,105,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_id.cc,119,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_id.cc,125,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_id.cc,170,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_id.cc,230,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_id.cc,298,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_id.cc,356,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_id.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_id.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_id.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_id.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_id.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_let.cc,19,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_let.cc,41,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_let.cc,107,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_param.cc,25,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_paramtype.cc,156,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_paramtype.cc,207,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_paramtype.cc,246,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_paramtype.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_paramtype.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_primitive.cc,10,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_primitive.cc,16,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_record.cc,50,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_record.cc,56,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_record.cc,145,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_record.cc,154,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_record.cc,286,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_record.cc,290,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_record.cc,380,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_record.cc,435,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_record.cc,570,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_record.cc,656,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_redef.cc,38,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_redef.cc,74,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_redef.cc,83,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_redef.cc,104,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_redef.cc,131,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_redef.cc,148,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_strtype.cc,20,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_strtype.cc,31,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_strtype.cc,214,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_strtype.cc,309,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_strtype.cc,357,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_type.cc,32,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_type.cc,110,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_type.cc,147,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_type.cc,247,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_type.cc,272,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_type.cc,279,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_type.cc,287,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_type.cc,304,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_type.cc,383,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_type.cc,396,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_type.cc,408,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_type.cc,479,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_type.cc,552,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_type.cc,589,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_type.cc,757,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_type.cc,776,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_type.cc,783,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_type.cc,799,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_type.cc,800,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_type.cc,828,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_type.cc,907,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_type.cc,948,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_type.cc,1001,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_type.cc,1104,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_type.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_type.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_type.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_type.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_type.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_type.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_type.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_type.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_type.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_type.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_typedecl.cc,42,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_typedecl.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_typedecl.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_typedecl.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_typedecl.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_withinput.cc,13,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_withinput.cc,14,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_withinput.cc,62,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_main.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/binpac/src/pac_main.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,build/auxil/bifcl/bif_parse.cc,1049,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,build/auxil/bifcl/bif_parse.cc,1056,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,build/auxil/bifcl/bif_parse.cc,1385,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,build/auxil/bifcl/bif_parse.cc,1391,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,build/auxil/bifcl/bif_parse.cc,2256,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,build/auxil/bifcl/bif_parse.cc,2364,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,build/auxil/bifcl/bif_parse.cc,2398,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,build/auxil/bifcl/bif_parse.cc,2450,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,build/auxil/bifcl/bif_parse.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,build/auxil/bifcl/bif_parse.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,build/auxil/bifcl/bif_parse.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,build/auxil/bifcl/bif_parse.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,build/auxil/bifcl/bif_parse.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,build/auxil/bifcl/bif_parse.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/fiber/src/fiber.c,247,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/fiber/src/fiber.c,248,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/fiber/src/fiber.c,286,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/fiber/src/fiber.c,287,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/fiber/src/fiber.c,288,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/fiber/src/fiber.c,334,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/fiber/src/fiber.c,346,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/fiber/src/fiber.c,353,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/fiber/src/fiber.c,365,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/fiber/src/fiber.c,370,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/justrx/src/ccl.c,53,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/justrx/src/ccl.c,56,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/justrx/src/ccl.c,98,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/justrx/src/ccl.c,125,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/justrx/src/ccl.c,142,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/justrx/src/ccl.c,187,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/justrx/src/ccl.c,202,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/justrx/src/ccl.c,204,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/justrx/src/ccl.c,333,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/justrx/src/ccl.c,352,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/justrx/src/ccl.c,366,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/justrx/src/ccl.c,390,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/justrx/src/ccl.c,391,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/justrx/src/ccl.c,477,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/justrx/src/ccl.c,484,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/justrx/src/dfa.c,69,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/justrx/src/dfa.c,91,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/justrx/src/dfa.c,91,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/justrx/src/dfa.c,91,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/justrx/src/dfa.c,91,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/justrx/src/dfa.c,104,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/justrx/src/dfa.c,118,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/justrx/src/dfa.c,120,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/justrx/src/dfa.c,141,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/justrx/src/dfa.c,264,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/justrx/src/dfa.c,277,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/justrx/src/dfa.c,306,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/justrx/src/dfa.c,311,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/justrx/src/dfa.c,355,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/justrx/src/dfa.c,413,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/justrx/src/dfa.c,511,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/justrx/src/dfa-interpreter-std.c,29,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/justrx/src/dfa-interpreter-std.c,138,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/justrx/src/dfa-interpreter-std.c,218,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/justrx/src/dfa-interpreter-std.c,235,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/justrx/src/dfa-interpreter-std.c,308,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/justrx/src/dfa-interpreter-min.c,30,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/justrx/src/jrx.c,61,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/justrx/src/jrx.c,260,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/justrx/src/nfa.c,89,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/justrx/src/nfa.c,101,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/justrx/src/nfa.c,175,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/justrx/src/nfa.c,192,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/justrx/src/nfa.c,235,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/justrx/src/nfa.c,253,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/justrx/src/nfa.c,276,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/justrx/src/nfa.c,491,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/justrx/src/nfa.c,545,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/justrx/src/nfa.c,595,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/justrx/src/nfa.c,598,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,build/auxil/spicy/spicy/3rdparty/justrx/justrx/autogen/re-parse.c,1022,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,build/auxil/spicy/spicy/3rdparty/justrx/justrx/autogen/re-parse.c,1023,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,build/auxil/spicy/spicy/3rdparty/justrx/justrx/autogen/re-parse.c,1024,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,build/auxil/spicy/spicy/3rdparty/justrx/justrx/autogen/re-parse.c,1025,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,build/auxil/spicy/spicy/3rdparty/justrx/justrx/autogen/re-parse.c,1031,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,build/auxil/spicy/spicy/3rdparty/justrx/justrx/autogen/re-parse.c,1513,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,build/auxil/spicy/spicy/3rdparty/justrx/justrx/autogen/re-parse.c,1621,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,build/auxil/spicy/spicy/3rdparty/justrx/justrx/autogen/re-parse.c,1655,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,build/auxil/spicy/spicy/3rdparty/justrx/justrx/autogen/re-parse.c,1707,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,build/auxil/spicy/spicy/3rdparty/justrx/justrx/autogen/re-scan.c,1553,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,build/auxil/spicy/spicy/3rdparty/justrx/justrx/autogen/re-scan.c,2001,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,build/auxil/spicy/spicy/3rdparty/justrx/justrx/autogen/re-scan.c,2334,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,build/auxil/spicy/spicy/3rdparty/justrx/justrx/autogen/re-scan.c,2341,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,build/auxil/spicy/spicy/3rdparty/justrx/justrx/autogen/re-scan.c,2356,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/reproc/reproc/src/clock.posix.c,14,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/reproc/reproc/src/drain.c,75,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/reproc/reproc/src/drain.c,102,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/reproc/reproc/src/drain.c,103,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/reproc/reproc/src/drain.c,104,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/reproc/reproc/src/drain.c,105,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/reproc/reproc/src/handle.posix.c,39,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/reproc/reproc/src/options.c,17,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/reproc/reproc/src/options.c,91,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/reproc/reproc/src/pipe.posix.c,22,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/reproc/reproc/src/pipe.posix.c,23,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/reproc/reproc/src/pipe.posix.c,75,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/reproc/reproc/src/pipe.posix.c,76,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/reproc/reproc/src/pipe.posix.c,90,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/reproc/reproc/src/pipe.posix.c,91,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/reproc/reproc/src/pipe.posix.c,100,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/reproc/reproc/src/pipe.posix.c,134,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/reproc/reproc/src/process.posix.c,51,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/reproc/reproc/src/process.posix.c,171,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/reproc/reproc/src/process.posix.c,189,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/reproc/reproc/src/process.posix.c,197,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/reproc/reproc/src/process.posix.c,203,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/reproc/reproc/src/process.posix.c,291,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/reproc/reproc/src/process.posix.c,305,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/reproc/reproc/src/process.posix.c,400,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/reproc/reproc/src/process.posix.c,413,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/reproc/reproc/src/process.posix.c,433,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/reproc/reproc/src/process.posix.c,465,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/reproc/reproc/src/process.posix.c,473,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/reproc/reproc/src/process.posix.c,480,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/reproc/reproc/src/process.posix.c,488,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/reproc/reproc/src/process.posix.c,497,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/reproc/reproc/src/redirect.posix.c,28,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/reproc/reproc/src/redirect.posix.c,52,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/reproc/reproc/src/redirect.posix.c,66,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/reproc/reproc/src/redirect.posix.c,67,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/reproc/reproc/src/redirect.c,10,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/reproc/reproc/src/redirect.c,11,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/reproc/reproc/src/redirect.c,47,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/reproc/reproc/src/redirect.c,48,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/reproc/reproc/src/redirect.c,111,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/reproc/reproc/src/reproc.c,53,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/reproc/reproc/src/reproc.c,54,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/reproc/reproc/src/reproc.c,58,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/reproc/reproc/src/reproc.c,77,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/reproc/reproc/src/reproc.c,115,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/reproc/reproc/src/reproc.c,116,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/spicy/spicy/3rdparty/reproc/reproc/src/reproc.c,569,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/c-ares/src/lib/ares__addrinfo_localhost.c,191,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/c-ares/src/lib/ares__addrinfo_localhost.c,192,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/c-ares/src/lib/ares__addrinfo_localhost.c,193,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/c-ares/src/lib/ares__sortaddrinfo.c,481,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/c-ares/src/lib/ares_fds.c,41,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/c-ares/src/lib/ares_fds.c,51,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/c-ares/src/lib/ares_getaddrinfo.c,765,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/c-ares/src/lib/ares_create_query.c,109,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/c-ares/src/lib/ares_create_query.c,117,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/c-ares/src/lib/ares_create_query.c,168,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/c-ares/src/lib/ares_create_query.c,169,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/c-ares/src/lib/ares_create_query.c,176,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/c-ares/src/lib/ares_create_query.c,177,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/c-ares/src/lib/ares_process.c,620,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/c-ares/src/lib/ares_process.c,730,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/c-ares/src/lib/ares_process.c,737,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/c-ares/src/lib/ares_process.c,981,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/c-ares/src/lib/ares_process.c,1446,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/c-ares/src/lib/ares_query.c,67,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,src/3rdparty/ConvertUTF.c,448,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,src/3rdparty/ConvertUTF.c,526,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,src/3rdparty/nb_dns.c,138,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,src/3rdparty/patricia.c,143,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,src/3rdparty/patricia.c,168,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,src/3rdparty/patricia.c,183,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,src/3rdparty/patricia.c,302,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,src/3rdparty/patricia.c,355,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,src/3rdparty/patricia.c,358,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,src/3rdparty/patricia.c,382,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,src/3rdparty/patricia.c,394,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,src/3rdparty/patricia.c,429,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,src/3rdparty/patricia.c,447,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,src/3rdparty/patricia.c,459,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,src/3rdparty/patricia.c,484,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,src/3rdparty/patricia.c,485,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,src/3rdparty/patricia.c,486,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,src/3rdparty/patricia.c,530,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,src/3rdparty/patricia.c,531,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,src/3rdparty/patricia.c,552,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,src/3rdparty/patricia.c,553,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,src/3rdparty/patricia.c,554,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,src/3rdparty/patricia.c,555,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,src/3rdparty/patricia.c,556,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,src/3rdparty/patricia.c,557,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,src/3rdparty/patricia.c,654,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,src/3rdparty/patricia.c,655,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,src/3rdparty/patricia.c,656,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,src/3rdparty/patricia.c,747,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,src/3rdparty/patricia.c,748,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,src/3rdparty/patricia.c,749,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,src/3rdparty/patricia.c,803,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,src/3rdparty/patricia.c,824,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,src/3rdparty/patricia.c,860,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,src/3rdparty/patricia.c,878,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,src/3rdparty/patricia.c,881,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,src/3rdparty/patricia.c,900,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,src/3rdparty/patricia.c,932,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,src/3rdparty/patricia.c,952,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,src/3rdparty/patricia.c,953,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,src/3rdparty/patricia.c,982,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,src/3rdparty/patricia.c,991,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,src/3rdparty/patricia.c,1002,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,src/3rdparty/patricia.c,1007,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,src/3rdparty/patricia.c,1023,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,src/3rdparty/patricia.c,1034,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,src/3rdparty/patricia.c,1042,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/highwayhash/highwayhash/nanobenchmark.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/highwayhash/highwayhash/nanobenchmark.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/highwayhash/highwayhash/nanobenchmark.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/highwayhash/highwayhash/nanobenchmark.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/highwayhash/highwayhash/nanobenchmark.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/highwayhash/highwayhash/nanobenchmark.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/highwayhash/highwayhash/nanobenchmark.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/highwayhash/highwayhash/nanobenchmark.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/highwayhash/highwayhash/nanobenchmark.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/highwayhash/highwayhash/nanobenchmark.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/highwayhash/highwayhash/nanobenchmark.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/highwayhash/highwayhash/nanobenchmark.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/highwayhash/highwayhash/nanobenchmark.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/highwayhash/highwayhash/nanobenchmark.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/highwayhash/highwayhash/nanobenchmark.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/highwayhash/highwayhash/nanobenchmark.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/highwayhash/highwayhash/nanobenchmark.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/highwayhash/highwayhash/nanobenchmark.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/highwayhash/highwayhash/nanobenchmark.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/highwayhash/highwayhash/os_specific.cc,224,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/highwayhash/highwayhash/os_specific.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/highwayhash/highwayhash/os_specific.cc,0,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,src/zeek-affinity.cc,23,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,build/auxil/zeekctl/auxil/pysubnettree/CMakeFiles/SubnetTree.dir/SubnetTreePYTHON_wrap.cxx,2382,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,build/auxil/zeekctl/auxil/pysubnettree/CMakeFiles/SubnetTree.dir/SubnetTreePYTHON_wrap.cxx,2662,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,build/auxil/zeekctl/auxil/pysubnettree/CMakeFiles/SubnetTree.dir/SubnetTreePYTHON_wrap.cxx,5618,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/zeekctl/auxil/pysubnettree/patricia.c,186,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/zeekctl/auxil/pysubnettree/patricia.c,211,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/zeekctl/auxil/pysubnettree/patricia.c,226,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/zeekctl/auxil/pysubnettree/patricia.c,338,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/zeekctl/auxil/pysubnettree/patricia.c,390,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/zeekctl/auxil/pysubnettree/patricia.c,393,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/zeekctl/auxil/pysubnettree/patricia.c,418,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/zeekctl/auxil/pysubnettree/patricia.c,432,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/zeekctl/auxil/pysubnettree/patricia.c,468,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/zeekctl/auxil/pysubnettree/patricia.c,490,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/zeekctl/auxil/pysubnettree/patricia.c,505,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/zeekctl/auxil/pysubnettree/patricia.c,506,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/zeekctl/auxil/pysubnettree/patricia.c,507,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/zeekctl/auxil/pysubnettree/patricia.c,554,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/zeekctl/auxil/pysubnettree/patricia.c,555,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/zeekctl/auxil/pysubnettree/patricia.c,578,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/zeekctl/auxil/pysubnettree/patricia.c,579,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/zeekctl/auxil/pysubnettree/patricia.c,580,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/zeekctl/auxil/pysubnettree/patricia.c,677,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/zeekctl/auxil/pysubnettree/patricia.c,678,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/zeekctl/auxil/pysubnettree/patricia.c,679,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/zeekctl/auxil/pysubnettree/patricia.c,735,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/zeekctl/auxil/pysubnettree/patricia.c,756,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/zeekctl/auxil/pysubnettree/patricia.c,792,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/zeekctl/auxil/pysubnettree/patricia.c,811,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/zeekctl/auxil/pysubnettree/patricia.c,815,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/zeekctl/auxil/pysubnettree/patricia.c,835,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/zeekctl/auxil/pysubnettree/patricia.c,872,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/zeekctl/auxil/pysubnettree/patricia.c,896,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/zeekctl/auxil/pysubnettree/patricia.c,897,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/zeekctl/auxil/pysubnettree/patricia.c,926,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/zeekctl/auxil/pysubnettree/patricia.c,936,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/zeekctl/auxil/pysubnettree/patricia.c,947,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/zeekctl/auxil/pysubnettree/patricia.c,954,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/zeekctl/auxil/pysubnettree/patricia.c,971,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/zeekctl/auxil/pysubnettree/patricia.c,982,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/zeekctl/auxil/pysubnettree/patricia.c,991,Detect and remove code that has no effect,rosecheckers
+zeek,MSC12-C,auxil/zeekctl/auxil/capstats/capstats.cc,194,Detect and remove code that has no effect,rosecheckers

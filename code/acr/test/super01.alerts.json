@@ -1,0 +1,5 @@
+[
+  { "rule": "EXP34-C", "file": "super01a.c", "line": 9 },
+  { "rule": "EXP34-C", "file": "super01b.c", "line": 4 },
+  { "rule": "EXP34-C", "file": "super01.h", "line": 2 }
+]

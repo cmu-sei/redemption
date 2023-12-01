@@ -1,0 +1,11 @@
+[
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "simple_null_check.c"
+        ],
+        "directory": "/host/code/acr/test/",
+        "file": "simple_null_check.c"
+    }
+]

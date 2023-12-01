@@ -1,0 +1,1892 @@
+[
+  {
+    "rule": "561",
+    "file": "auxil/broker/caf/libcaf_core/caf/detail/parser/read_bool.hpp",
+    "line": "31",
+    "column": "3",
+    "tool": "cppcheck",
+    "checker": "unreachableCode",
+    "message": "Statements following return, break, continue, goto or throw will never be executed."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/broker/caf/libcaf_core/caf/detail/parser/read_floating_point.hpp",
+    "line": "98",
+    "column": "3",
+    "tool": "cppcheck",
+    "checker": "unreachableCode",
+    "message": "Statements following return, break, continue, goto or throw will never be executed."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/broker/caf/libcaf_core/caf/detail/parser/read_number.hpp",
+    "line": "56",
+    "column": "3",
+    "tool": "cppcheck",
+    "checker": "unreachableCode",
+    "message": "Statements following return, break, continue, goto or throw will never be executed."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/broker/caf/libcaf_core/caf/detail/parser/read_number.hpp",
+    "line": "224",
+    "column": "3",
+    "tool": "cppcheck",
+    "checker": "unreachableCode",
+    "message": "Statements following return, break, continue, goto or throw will never be executed."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/broker/caf/libcaf_core/src/detail/json.cpp",
+    "line": "112",
+    "column": "3",
+    "tool": "cppcheck",
+    "checker": "unreachableCode",
+    "message": "Statements following return, break, continue, goto or throw will never be executed."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/broker/caf/libcaf_core/src/detail/json.cpp",
+    "line": "141",
+    "column": "3",
+    "tool": "cppcheck",
+    "checker": "unreachableCode",
+    "message": "Statements following return, break, continue, goto or throw will never be executed."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/broker/caf/libcaf_core/src/detail/json.cpp",
+    "line": "164",
+    "column": "3",
+    "tool": "cppcheck",
+    "checker": "unreachableCode",
+    "message": "Statements following return, break, continue, goto or throw will never be executed."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/broker/caf/libcaf_core/src/detail/json.cpp",
+    "line": "182",
+    "column": "3",
+    "tool": "cppcheck",
+    "checker": "unreachableCode",
+    "message": "Statements following return, break, continue, goto or throw will never be executed."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/broker/caf/libcaf_core/src/detail/json.cpp",
+    "line": "210",
+    "column": "3",
+    "tool": "cppcheck",
+    "checker": "unreachableCode",
+    "message": "Statements following return, break, continue, goto or throw will never be executed."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/broker/caf/libcaf_core/src/detail/json.cpp",
+    "line": "238",
+    "column": "3",
+    "tool": "cppcheck",
+    "checker": "unreachableCode",
+    "message": "Statements following return, break, continue, goto or throw will never be executed."
+  },
+  {
+    "rule": "561",
+    "file": "/datasets/zeek/build/auxil/binpac/src/pac_parse.cc",
+    "line": "1392",
+    "column": "5",
+    "tool": "cppcheck",
+    "checker": "redundantContinue",
+    "message": "'continue' is redundant since it is the last statement in a loop."
+  },
+  {
+    "rule": "561",
+    "file": "/datasets/zeek/build/auxil/binpac/src/pac_parse.cc",
+    "line": "1411",
+    "column": "5",
+    "tool": "cppcheck",
+    "checker": "redundantContinue",
+    "message": "'continue' is redundant since it is the last statement in a loop."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/broker/caf/libcaf_core/caf/detail/parser/read_ipv4_address.hpp",
+    "line": "45",
+    "column": "3",
+    "tool": "cppcheck",
+    "checker": "unreachableCode",
+    "message": "Statements following return, break, continue, goto or throw will never be executed."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/broker/caf/libcaf_core/caf/detail/parser/read_ipv4_address.hpp",
+    "line": "68",
+    "column": "3",
+    "tool": "cppcheck",
+    "checker": "unreachableCode",
+    "message": "Statements following return, break, continue, goto or throw will never be executed."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/broker/3rdparty/sqlite3.c",
+    "line": "92115",
+    "column": "7",
+    "tool": "cppcheck",
+    "checker": "duplicateBreak",
+    "message": "Consecutive return, break, continue, goto or throw statements are unnecessary."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/broker/3rdparty/sqlite3.c",
+    "line": "231698",
+    "column": "3",
+    "tool": "cppcheck",
+    "checker": "unreachableCode",
+    "message": "Statements following return, break, continue, goto or throw will never be executed."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/broker/caf/libcaf_core/caf/detail/parser/read_ipv6_address.hpp",
+    "line": "58",
+    "column": "3",
+    "tool": "cppcheck",
+    "checker": "unreachableCode",
+    "message": "Statements following return, break, continue, goto or throw will never be executed."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/broker/caf/libcaf_core/caf/detail/parser/read_ipv6_address.hpp",
+    "line": "114",
+    "column": "3",
+    "tool": "cppcheck",
+    "checker": "unreachableCode",
+    "message": "Statements following return, break, continue, goto or throw will never be executed."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/broker/caf/libcaf_core/caf/detail/parser/read_ipv6_address.hpp",
+    "line": "213",
+    "column": "3",
+    "tool": "cppcheck",
+    "checker": "unreachableCode",
+    "message": "Statements following return, break, continue, goto or throw will never be executed."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/binpac/src/pac_id.cc",
+    "line": "304",
+    "column": "4",
+    "tool": "cppcheck",
+    "checker": "unreachableCode",
+    "message": "Statements following return, break, continue, goto or throw will never be executed."
+  },
+  {
+    "rule": "561",
+    "file": "src/3rdparty/sqlite3.c",
+    "line": "92115",
+    "column": "7",
+    "tool": "cppcheck",
+    "checker": "duplicateBreak",
+    "message": "Consecutive return, break, continue, goto or throw statements are unnecessary."
+  },
+  {
+    "rule": "561",
+    "file": "/datasets/zeek/build/auxil/bifcl/bif_parse.cc",
+    "line": "1168",
+    "column": "5",
+    "tool": "cppcheck",
+    "checker": "redundantContinue",
+    "message": "'continue' is redundant since it is the last statement in a loop."
+  },
+  {
+    "rule": "561",
+    "file": "/datasets/zeek/build/auxil/bifcl/bif_parse.cc",
+    "line": "1187",
+    "column": "5",
+    "tool": "cppcheck",
+    "checker": "redundantContinue",
+    "message": "'continue' is redundant since it is the last statement in a loop."
+  },
+  {
+    "rule": "561",
+    "file": "/datasets/zeek/build/auxil/spicy/spicy/3rdparty/justrx/justrx/autogen/re-parse.c",
+    "line": "805",
+    "column": "5",
+    "tool": "cppcheck",
+    "checker": "redundantContinue",
+    "message": "'continue' is redundant since it is the last statement in a loop."
+  },
+  {
+    "rule": "561",
+    "file": "/datasets/zeek/build/auxil/spicy/spicy/3rdparty/justrx/justrx/autogen/re-parse.c",
+    "line": "824",
+    "column": "5",
+    "tool": "cppcheck",
+    "checker": "redundantContinue",
+    "message": "'continue' is redundant since it is the last statement in a loop."
+  },
+  {
+    "rule": "561",
+    "file": "src/NFA.cc",
+    "line": "184",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'AddAccept' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/binpac/src/pac_field.cc",
+    "line": "24",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'AddAttr' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/binpac/src/pac_typedecl.cc",
+    "line": "39",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'AddParam' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "src/zeekygen/ReStructuredTextTable.cc",
+    "line": "19",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'AddRow' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "src/NFA.cc",
+    "line": "60",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'AddXtionsTo' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "src/ScannedFile.cc",
+    "line": "35",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'AlreadyScanned' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/binpac/src/pac_exttype.cc",
+    "line": "33",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'ByteOrderSensitive' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "src/Reassem.cc",
+    "line": "357",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'ClearBlocks' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "src/Reassem.cc",
+    "line": "362",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'ClearOldBlocks' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/binpac/src/pac_btype.cc",
+    "line": "19",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'CompatibleBuiltInTypes' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "src/3rdparty/ConvertUTF.c",
+    "line": "214",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'ConvertUTF16toUTF32' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "src/3rdparty/ConvertUTF.c",
+    "line": "268",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'ConvertUTF16toUTF8' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "src/3rdparty/ConvertUTF.c",
+    "line": "165",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'ConvertUTF32toUTF16' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "src/3rdparty/ConvertUTF.c",
+    "line": "338",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'ConvertUTF32toUTF8' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "src/3rdparty/ConvertUTF.c",
+    "line": "562",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'ConvertUTF8toUTF16' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "src/3rdparty/ConvertUTF.c",
+    "line": "731",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'ConvertUTF8toUTF32' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "src/3rdparty/ConvertUTF.c",
+    "line": "722",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'ConvertUTF8toUTF32Partial' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "src/module_util.cc",
+    "line": "28",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'DOCTEST_ANON_FUNC_12' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "src/module_util.cc",
+    "line": "49",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'DOCTEST_ANON_FUNC_17' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "src/module_util.cc",
+    "line": "71",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'DOCTEST_ANON_FUNC_22' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "src/module_util.cc",
+    "line": "87",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'DOCTEST_ANON_FUNC_27' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "src/module_util.cc",
+    "line": "22",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'DOCTEST_ANON_FUNC_7' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "src/probabilistic/CounterVector.cc",
+    "line": "58",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'Decrement' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/binpac/src/pac_array.cc",
+    "line": "78",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'DefineValueVar' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/binpac/src/pac_array.cc",
+    "line": "70",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'DoClone' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/binpac/src/pac_array.cc",
+    "line": "451",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'DoGenParseCode' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/binpac/src/pac_array.cc",
+    "line": "88",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'ElementDataType' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/binpac/src/pac_array.cc",
+    "line": "93",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'EvalElement' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/binpac/src/pac_exttype.cc",
+    "line": "38",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'EvalMember' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/binpac/src/pac_record.cc",
+    "line": "324",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'FieldSize' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "src/file_analysis/FileReassembler.cc",
+    "line": "17",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'Flush' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "src/file_analysis/FileReassembler.cc",
+    "line": "34",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'FlushTo' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "src/threading/BasicThread.cc",
+    "line": "56",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'Fmt' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/binpac/src/pac_state.cc",
+    "line": "12",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'GenAccessFunction' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/binpac/src/pac_state.cc",
+    "line": "7",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'GenDecl' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/binpac/src/pac_record.cc",
+    "line": "459",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'GenEval' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/binpac/src/pac_dataunit.cc",
+    "line": "39",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'GenNewContext' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/binpac/src/pac_dataunit.cc",
+    "line": "33",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'GenNewDataUnit' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/binpac/src/pac_state.cc",
+    "line": "18",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'GenSetFunction' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/binpac/src/pac_array.cc",
+    "line": "584",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'GenUntilInputCheck' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "src/zeekygen/Configuration.cc",
+    "line": "92",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'GenerateDocs' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "src/probabilistic/CounterVector.cc",
+    "line": "33",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'Increment' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "src/threading/BasicThread.cc",
+    "line": "155",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'Kill' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "src/PolicyFile.cc",
+    "line": "75",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'LoadPolicyFileText' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/binpac/src/pac_btype.cc",
+    "line": "39",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'LookUpByName' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/binpac/src/pac_typedecl.cc",
+    "line": "377",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'LookUpType' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "src/NFA.cc",
+    "line": "260",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'MakeRepl' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "src/probabilistic/CounterVector.cc",
+    "line": "112",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'Max' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "src/Reassem.cc",
+    "line": "383",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'MemoryAllocation' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "src/Reassem.cc",
+    "line": "323",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'NewBlock' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "src/PolicyFile.cc",
+    "line": "146",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'PrintLines' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/highwayhash/highwayhash/nanobenchmark.cc",
+    "line": "412",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'PrintMedianAndVariability' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/binpac/src/pac_redef.cc",
+    "line": "121",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'ProcessAnalyzerRedef' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/binpac/src/pac_redef.cc",
+    "line": "94",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'ProcessCaseExprRedef' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/binpac/src/pac_redef.cc",
+    "line": "64",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'ProcessCaseTypeRedef' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/binpac/src/pac_decl.cc",
+    "line": "65",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'ProcessDecls' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/binpac/src/pac_redef.cc",
+    "line": "138",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'ProcessTypeAttrRedef' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/binpac/src/pac_redef.cc",
+    "line": "28",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'ProcessTypeRedef' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "src/Pipe.cc",
+    "line": "112",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'SetFlags' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "src/threading/BasicThread.cc",
+    "line": "43",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'SetName' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "src/threading/BasicThread.cc",
+    "line": "49",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'SetOSName' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "src/threading/BasicThread.cc",
+    "line": "107",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'SignalStop' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "src/threading/BasicThread.cc",
+    "line": "93",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'Start' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "src/threading/BasicThread.cc",
+    "line": "84",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'Strerror' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "src/probabilistic/CounterVector.cc",
+    "line": "145",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'ToBitVector' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "src/Reassem.cc",
+    "line": "367",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'TotalSize' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "src/Pipe.cc",
+    "line": "118",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'UnsetFlags' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "src/threading/BasicThread.cc",
+    "line": "120",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'WaitForStop' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/broker/src/alm/routing_table.cc",
+    "line": "34",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'add_or_update_path' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/broker/caf/libcaf_core/src/message_builder.cpp",
+    "line": "68",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'append_from' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/c-ares/src/lib/ares__addrinfo_localhost.c",
+    "line": "200",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'ares__addrinfo_localhost' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/c-ares/src/lib/ares_llist.c",
+    "line": "27",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'ares__init_list_head' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/c-ares/src/lib/ares_llist.c",
+    "line": "34",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'ares__init_list_node' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/c-ares/src/lib/ares_llist.c",
+    "line": "46",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'ares__insert_in_list' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/c-ares/src/lib/ares__read_line.c",
+    "line": "31",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'ares__read_line' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/c-ares/src/lib/ares_llist.c",
+    "line": "55",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'ares__remove_from_list' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/c-ares/src/lib/ares__sortaddrinfo.c",
+    "line": "451",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'ares__sortaddrinfo' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/c-ares/src/lib/ares_fds.c",
+    "line": "23",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'ares_fds' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/c-ares/src/lib/ares_free_string.c",
+    "line": "22",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'ares_free_string' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/c-ares/src/lib/ares_gethostbyaddr.c",
+    "line": "58",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'ares_gethostbyaddr' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/c-ares/src/lib/ares_gethostbyname.c",
+    "line": "93",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'ares_gethostbyname' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/c-ares/src/lib/ares_gethostbyname.c",
+    "line": "226",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'ares_gethostbyname_file' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/c-ares/src/lib/ares_mkquery.c",
+    "line": "20",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'ares_mkquery' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/c-ares/src/lib/ares_parse_a_reply.c",
+    "line": "44",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'ares_parse_a_reply' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/c-ares/src/lib/ares_parse_aaaa_reply.c",
+    "line": "46",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'ares_parse_aaaa_reply' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/c-ares/src/lib/ares_parse_mx_reply.c",
+    "line": "38",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'ares_parse_mx_reply' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/c-ares/src/lib/ares_parse_naptr_reply.c",
+    "line": "38",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'ares_parse_naptr_reply' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/c-ares/src/lib/ares_parse_srv_reply.c",
+    "line": "38",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'ares_parse_srv_reply' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/c-ares/src/lib/ares_timeout.c",
+    "line": "38",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'ares_timeout' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/c-ares/src/lib/ares_nowarn.c",
+    "line": "212",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'aresx_FD_ISSET' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/c-ares/src/lib/ares_nowarn.c",
+    "line": "228",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'aresx_FD_ZERO' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/c-ares/src/lib/ares_nowarn.c",
+    "line": "248",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'aresx_ntohs' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/c-ares/src/lib/ares_nowarn.c",
+    "line": "195",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'aresx_sitous' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/c-ares/src/lib/ares_nowarn.c",
+    "line": "138",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'aresx_sltosi' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/c-ares/src/lib/ares_nowarn.c",
+    "line": "157",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'aresx_sztosi' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/c-ares/src/lib/ares_nowarn.c",
+    "line": "176",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'aresx_sztoui' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/c-ares/src/lib/ares_nowarn.c",
+    "line": "101",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'aresx_uztoss' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/broker/caf/libcaf_core/src/disposable.cpp",
+    "line": "19",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'as_disposable' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/paraglob/tools/benchmark.cpp",
+    "line": "40",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'benchmark' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "build/src/binpac-lib_pac.cc",
+    "line": "12",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'bytestring_casecmp' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "build/src/binpac-lib_pac.cc",
+    "line": "23",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'bytestring_caseprefix' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "build/src/binpac-lib_pac.cc",
+    "line": "37",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'bytestring_to_double' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "build/src/binpac-lib_pac.cc",
+    "line": "30",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'bytestring_to_int' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/broker/src/topic.cc",
+    "line": "99",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'clone_suffix' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/broker/caf/libcaf_net/src/detail/rfc6455.cpp",
+    "line": "75",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'decode_header' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/broker/tests/benchmark/broker-fan-out.cc",
+    "line": "153",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'enabled' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/broker/caf/libcaf_core/src/disposable.cpp",
+    "line": "76",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'erase_disposed' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/broker/src/detail/memory_backend.cc",
+    "line": "59",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'expire' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/broker/src/detail/memory_backend.cc",
+    "line": "108",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'expiries' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/broker/src/alm/routing_table.cc",
+    "line": "19",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'find_row' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "src/3rdparty/ConvertUTF.c",
+    "line": "540",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'getNumBytesForUTF8' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/broker/caf/libcaf_io/src/io/network/interfaces.cpp",
+    "line": "262",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'get_endpoint' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/broker/caf/libcaf_core/src/detail/get_mac_addresses.cpp",
+    "line": "198",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'get_mac_addresses' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "src/PolicyFile.cc",
+    "line": "44",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'how_many_lines_in' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "src/digest.cc",
+    "line": "67",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'internal_md5' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "src/3rdparty/ConvertUTF.c",
+    "line": "550",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'isLegalUTF8String' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/broker/src/alm/routing_table.cc",
+    "line": "14",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'is_direct_connection' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/broker/src/topic.cc",
+    "line": "88",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'is_internal' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/broker/caf/libcaf_io/src/io/network/interfaces.cpp",
+    "line": "165",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'list_all' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/zeekctl/auxil/pysubnettree/patricia.c",
+    "line": "1031",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'lookup_then_remove' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/paraglob/tools/benchmark.cpp",
+    "line": "146",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'makeGraphData' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/zeekctl/auxil/pysubnettree/patricia.c",
+    "line": "999",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'make_and_lookup' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/broker/caf/libcaf_core/src/disposable.cpp",
+    "line": "67",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'make_composite' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/broker/src/topic.cc",
+    "line": "95",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'master_suffix' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "src/3rdparty/modp_numtoa.c",
+    "line": "159",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'modp_dtoa' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "src/3rdparty/modp_numtoa.c",
+    "line": "260",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'modp_dtoa2' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "src/3rdparty/modp_numtoa.c",
+    "line": "380",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'modp_dtoa3' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "src/3rdparty/modp_numtoa.c",
+    "line": "107",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'modp_itoa10' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "src/3rdparty/modp_numtoa.c",
+    "line": "133",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'modp_litoa10' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "src/3rdparty/modp_numtoa.c",
+    "line": "122",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'modp_uitoa10' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "src/3rdparty/modp_numtoa.c",
+    "line": "148",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'modp_ulitoa10' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/broker/caf/libcaf_core/src/message_builder.cpp",
+    "line": "94",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'move_to_message' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/paraglob/src/ahocorasick/mpool.c",
+    "line": "80",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'mpool_create' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/paraglob/src/ahocorasick/mpool.c",
+    "line": "95",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'mpool_free' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/broker/caf/libcaf_io/src/io/network/interfaces.cpp",
+    "line": "206",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'native_address' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/paraglob/src/ahocorasick/node.c",
+    "line": "339",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'node_book_replacement' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/paraglob/src/ahocorasick/node.c",
+    "line": "426",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'node_collect_matches' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/paraglob/src/ahocorasick/node.c",
+    "line": "184",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'node_create_next' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/paraglob/src/ahocorasick/node.c",
+    "line": "451",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'node_display' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/paraglob/src/ahocorasick/node.c",
+    "line": "119",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'node_find_next_bs' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/paraglob/src/ahocorasick/node.c",
+    "line": "83",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'node_release_vectors' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/zeekctl/auxil/pysubnettree/patricia.c",
+    "line": "487",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'patricia_process' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/broker/caf/libcaf_core/src/detail/pretty_type_name.cpp",
+    "line": "58",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'pretty_type_name' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/broker/caf/libcaf_core/src/replies_to.cpp",
+    "line": "10",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'replies_to_type_name' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/spicy/spicy/3rdparty/reproc/reproc/src/reproc.c",
+    "line": "528",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'reproc_close' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/spicy/spicy/3rdparty/reproc/reproc/src/reproc.c",
+    "line": "667",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'reproc_destroy' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/spicy/spicy/3rdparty/reproc/reproc/src/reproc.c",
+    "line": "143",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'reproc_new' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/spicy/spicy/3rdparty/reproc/reproc/src/reproc.c",
+    "line": "658",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'reproc_pid' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/spicy/spicy/3rdparty/reproc/reproc/src/reproc.c",
+    "line": "461",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'reproc_read' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/spicy/spicy/3rdparty/reproc/reproc/src/reproc.c",
+    "line": "162",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'reproc_start' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/spicy/spicy/3rdparty/reproc/reproc/src/reproc.c",
+    "line": "693",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'reproc_strerror' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/spicy/spicy/3rdparty/reproc/reproc/src/reproc.c",
+    "line": "504",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'reproc_write' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/broker/caf/libcaf_core/src/detail/ripemd_160.cpp",
+    "line": "371",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'ripemd_160' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/broker/caf/libcaf_io/src/io/network/interfaces.cpp",
+    "line": "228",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'server_address' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "src/zeek-affinity.cc",
+    "line": "54",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'set_affinity' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/broker/caf/libcaf_net/src/net/http/v1.cpp",
+    "line": "39",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'split_header' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/broker/caf/libcaf_core/src/string_algorithms.cpp",
+    "line": "70",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'starts_with' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/binpac/src/pac_exttype.cc",
+    "line": "72",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'static_init' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/broker/src/topic.cc",
+    "line": "107",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'statuses' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/broker/src/topic.cc",
+    "line": "111",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'store_events' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/broker/caf/libcaf_core/src/message_builder.cpp",
+    "line": "90",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'to_message' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/broker/caf/libcaf_net/src/net/http/method.cpp",
+    "line": "5",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'to_rfc_string' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/broker/caf/libcaf_io/src/io/network/interfaces.cpp",
+    "line": "156",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'traverse' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/zeekctl/auxil/pysubnettree/patricia.c",
+    "line": "1040",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'try_search_best' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/broker/src/detail/peer_status_map.cc",
+    "line": "27",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'update' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/spicy/spicy/3rdparty/utf8proc/utf8proc.c",
+    "line": "766",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'utf8proc_NFC' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/spicy/spicy/3rdparty/utf8proc/utf8proc.c",
+    "line": "759",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'utf8proc_NFD' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/spicy/spicy/3rdparty/utf8proc/utf8proc.c",
+    "line": "780",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'utf8proc_NFKC' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/spicy/spicy/3rdparty/utf8proc/utf8proc.c",
+    "line": "787",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'utf8proc_NFKC_Casefold' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/spicy/spicy/3rdparty/utf8proc/utf8proc.c",
+    "line": "773",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'utf8proc_NFKD' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/spicy/spicy/3rdparty/utf8proc/utf8proc.c",
+    "line": "416",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'utf8proc_category_string' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/spicy/spicy/3rdparty/utf8proc/utf8proc.c",
+    "line": "408",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'utf8proc_charwidth' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/spicy/spicy/3rdparty/utf8proc/utf8proc.c",
+    "line": "173",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'utf8proc_codepoint_valid' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/spicy/spicy/3rdparty/utf8proc/utf8proc.c",
+    "line": "513",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'utf8proc_decompose' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/spicy/spicy/3rdparty/utf8proc/utf8proc.c",
+    "line": "107",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'utf8proc_errmsg' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/spicy/spicy/3rdparty/utf8proc/utf8proc.c",
+    "line": "335",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'utf8proc_grapheme_break' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/spicy/spicy/3rdparty/utf8proc/utf8proc.c",
+    "line": "394",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'utf8proc_islower' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/spicy/spicy/3rdparty/utf8proc/utf8proc.c",
+    "line": "400",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'utf8proc_isupper' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/spicy/spicy/3rdparty/utf8proc/utf8proc.c",
+    "line": "376",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'utf8proc_tolower' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/spicy/spicy/3rdparty/utf8proc/utf8proc.c",
+    "line": "388",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'utf8proc_totitle' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/spicy/spicy/3rdparty/utf8proc/utf8proc.c",
+    "line": "382",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'utf8proc_toupper' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/spicy/spicy/3rdparty/utf8proc/utf8proc.c",
+    "line": "103",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'utf8proc_unicode_version' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/spicy/spicy/3rdparty/utf8proc/utf8proc.c",
+    "line": "99",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'utf8proc_version' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "auxil/broker/caf/libcaf_net/src/net/http/v1.cpp",
+    "line": "58",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'write_header' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "src/3rdparty/zeek_inet_ntop.c",
+    "line": "50",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'zeek_inet_ntop' is never used."
+  }
+]

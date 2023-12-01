@@ -1,0 +1,263 @@
+[
+  {
+    "rule": "EXP33-C",
+    "file": "auxil/c-ares/src/lib/ares_query.c",
+    "line": "70",
+    "column": "41",
+    "tool": "cppcheck",
+    "checker": "uninitvar",
+    "message": "Uninitialized variable: qid"
+  },
+  {
+    "rule": "EXP33-C",
+    "file": "auxil/broker/include/broker/network_info.hh",
+    "line": "14",
+    "column": "3",
+    "tool": "cppcheck",
+    "checker": "uninitMemberVar",
+    "message": "Member variable 'network_info::port' is not initialized in the constructor."
+  },
+  {
+    "rule": "EXP33-C",
+    "file": "src/zeek/zeek/zeek/util.h",
+    "line": "210",
+    "column": "2",
+    "tool": "cppcheck",
+    "checker": "uninitMemberVar",
+    "message": "Member variable 'SafePathOp::error' is not initialized in the constructor."
+  },
+  {
+    "rule": "EXP33-C",
+    "file": "src/DbgWatch.cc",
+    "line": "19",
+    "column": "11",
+    "tool": "cppcheck",
+    "checker": "uninitMemberVar",
+    "message": "Member variable 'DbgWatch::var' is not initialized in the constructor."
+  },
+  {
+    "rule": "EXP33-C",
+    "file": "src/DbgWatch.cc",
+    "line": "19",
+    "column": "11",
+    "tool": "cppcheck",
+    "checker": "uninitMemberVar",
+    "message": "Member variable 'DbgWatch::expr' is not initialized in the constructor."
+  },
+  {
+    "rule": "EXP33-C",
+    "file": "src/zeek/3rdparty/doctest.h",
+    "line": "1217",
+    "column": "9",
+    "tool": "cppcheck",
+    "checker": "uninitMemberVar",
+    "message": "Member variable 'Result::m_passed' is not initialized in the constructor."
+  },
+  {
+    "rule": "EXP33-C",
+    "file": "auxil/broker/3rdparty/sqlite3.c",
+    "line": "222789",
+    "column": "10",
+    "tool": "cppcheck",
+    "checker": "uninitvar",
+    "message": "Uninitialized variable: rc"
+  },
+  {
+    "rule": "EXP33-C",
+    "file": "auxil/broker/3rdparty/sqlite3.c",
+    "line": "42154",
+    "column": "25",
+    "tool": "cppcheck",
+    "checker": "uninitvar",
+    "message": "Uninitialized variable: myHostID"
+  },
+  {
+    "rule": "EXP33-C",
+    "file": "auxil/broker/include/broker/network_info.hh",
+    "line": "14",
+    "column": "3",
+    "tool": "cppcheck",
+    "checker": "uninitMemberVar",
+    "message": "Member variable 'network_info::port' is not initialized in the constructor."
+  },
+  {
+    "rule": "EXP33-C",
+    "file": "src/RandTest.cc",
+    "line": "33",
+    "column": "11",
+    "tool": "cppcheck",
+    "checker": "uninitMemberVar",
+    "message": "Member variable 'RandTest::monte' is not initialized in the constructor."
+  },
+  {
+    "rule": "EXP33-C",
+    "file": "src/iosource/PktDumper.cc",
+    "line": "13",
+    "column": "12",
+    "tool": "cppcheck",
+    "checker": "uninitMemberVar",
+    "message": "Member variable 'PktDumper::props' is not initialized in the constructor."
+  },
+  {
+    "rule": "EXP33-C",
+    "file": "src/zeek/zeek/util.h",
+    "line": "210",
+    "column": "2",
+    "tool": "cppcheck",
+    "checker": "uninitMemberVar",
+    "message": "Member variable 'SafePathOp::error' is not initialized in the constructor."
+  },
+  {
+    "rule": "EXP33-C",
+    "file": "auxil/broker/include/broker/network_info.hh",
+    "line": "14",
+    "column": "3",
+    "tool": "cppcheck",
+    "checker": "uninitMemberVar",
+    "message": "Member variable 'network_info::port' is not initialized in the constructor."
+  },
+  {
+    "rule": "EXP33-C",
+    "file": "src/zeek/zeek/zeek/zeek/util.h",
+    "line": "210",
+    "column": "2",
+    "tool": "cppcheck",
+    "checker": "uninitMemberVar",
+    "message": "Member variable 'SafePathOp::error' is not initialized in the constructor."
+  },
+  {
+    "rule": "EXP33-C",
+    "file": "src/zeek/zeek/zeek/zeek/zeek/util.h",
+    "line": "210",
+    "column": "2",
+    "tool": "cppcheck",
+    "checker": "uninitMemberVar",
+    "message": "Member variable 'SafePathOp::error' is not initialized in the constructor."
+  },
+  {
+    "rule": "EXP33-C",
+    "file": "src/zeek/zeek/util.h",
+    "line": "210",
+    "column": "2",
+    "tool": "cppcheck",
+    "checker": "uninitMemberVar",
+    "message": "Member variable 'SafePathOp::error' is not initialized in the constructor."
+  },
+  {
+    "rule": "EXP33-C",
+    "file": "src/zeek/UID.h",
+    "line": "25",
+    "column": "2",
+    "tool": "cppcheck",
+    "checker": "uninitMemberVar",
+    "message": "Member variable 'UID::uid' is not initialized in the constructor."
+  },
+  {
+    "rule": "EXP33-C",
+    "file": "src/zeek/zeek/zeek/util.h",
+    "line": "210",
+    "column": "2",
+    "tool": "cppcheck",
+    "checker": "uninitMemberVar",
+    "message": "Member variable 'SafePathOp::error' is not initialized in the constructor."
+  },
+  {
+    "rule": "EXP33-C",
+    "file": "src/zeek/3rdparty/doctest.h",
+    "line": "1217",
+    "column": "9",
+    "tool": "cppcheck",
+    "checker": "uninitMemberVar",
+    "message": "Member variable 'Result::m_passed' is not initialized in the constructor."
+  },
+  {
+    "rule": "EXP33-C",
+    "file": "src/zeek/util.h",
+    "line": "210",
+    "column": "2",
+    "tool": "cppcheck",
+    "checker": "uninitMemberVar",
+    "message": "Member variable 'SafePathOp::error' is not initialized in the constructor."
+  },
+  {
+    "rule": "EXP33-C",
+    "file": "src/zeek/Type.h",
+    "line": "310",
+    "column": "2",
+    "tool": "cppcheck",
+    "checker": "uninitMemberVar",
+    "message": "Member variable 'Type::tag' is not initialized in the constructor."
+  },
+  {
+    "rule": "EXP33-C",
+    "file": "src/zeek/Type.h",
+    "line": "310",
+    "column": "2",
+    "tool": "cppcheck",
+    "checker": "uninitMemberVar",
+    "message": "Member variable 'Type::internal_tag' is not initialized in the constructor."
+  },
+  {
+    "rule": "EXP33-C",
+    "file": "src/zeek/Type.h",
+    "line": "310",
+    "column": "2",
+    "tool": "cppcheck",
+    "checker": "uninitMemberVar",
+    "message": "Member variable 'Type::is_network_order' is not initialized in the constructor."
+  },
+  {
+    "rule": "EXP33-C",
+    "file": "src/zeek/Type.h",
+    "line": "310",
+    "column": "2",
+    "tool": "cppcheck",
+    "checker": "uninitMemberVar",
+    "message": "Member variable 'Type::base_type' is not initialized in the constructor."
+  },
+  {
+    "rule": "EXP33-C",
+    "file": "src/zeek/Type.h",
+    "line": "707",
+    "column": "2",
+    "tool": "cppcheck",
+    "checker": "uninitMemberVar",
+    "message": "Member variable 'RecordType::num_fields' is not initialized in the constructor."
+  },
+  {
+    "rule": "EXP33-C",
+    "file": "src/zeek/Type.h",
+    "line": "707",
+    "column": "2",
+    "tool": "cppcheck",
+    "checker": "uninitMemberVar",
+    "message": "Member variable 'RecordType::num_orig_fields' is not initialized in the constructor."
+  },
+  {
+    "rule": "EXP33-C",
+    "file": "auxil/broker/caf/libcaf_core/caf/ipv4_endpoint.hpp",
+    "line": "23",
+    "column": "3",
+    "tool": "cppcheck",
+    "checker": "uninitMemberVar",
+    "message": "Member variable 'ipv4_endpoint::port_' is not initialized in the constructor."
+  },
+  {
+    "rule": "EXP33-C",
+    "file": "auxil/broker/caf/libcaf_core/caf/ipv6_endpoint.hpp",
+    "line": "28",
+    "column": "3",
+    "tool": "cppcheck",
+    "checker": "uninitMemberVar",
+    "message": "Member variable 'ipv6_endpoint::port_' is not initialized in the constructor."
+  },
+  {
+    "rule": "EXP33-C",
+    "file": "auxil/broker/caf/libcaf_core/src/detail/message_data.cpp",
+    "line": "20",
+    "column": "15",
+    "tool": "cppcheck",
+    "checker": "uninitMemberVar",
+    "message": "Member variable 'message_data::storage_' is not initialized in the constructor."
+  }
+]

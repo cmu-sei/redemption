@@ -1,0 +1,161 @@
+tests:
+
+- answer_file: git.cppcheck.MSC12-C.builtin_add_c.ans
+  input:
+    alerts_file: git.cppcheck.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/add.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_add_c
+
+- answer_file: git.cppcheck.MSC12-C.builtin_bugreport_c.ans
+  input:
+    alerts_file: git.cppcheck.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/bugreport.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_bugreport_c
+
+- answer_file: git.cppcheck.MSC12-C.builtin_checkout_c.ans
+  input:
+    alerts_file: git.cppcheck.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/checkout.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_checkout_c
+
+- answer_file: git.cppcheck.MSC12-C.builtin_commit_c.ans
+  input:
+    alerts_file: git.cppcheck.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/commit.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_commit_c
+
+- answer_file: git.cppcheck.MSC12-C.builtin_credential-cache--daemon_c.ans
+  input:
+    alerts_file: git.cppcheck.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/credential-cache--daemon.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_credential-cache--daemon_c
+
+- answer_file: git.cppcheck.MSC12-C.builtin_credential-cache_c.ans
+  input:
+    alerts_file: git.cppcheck.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/credential-cache.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_credential-cache_c
+
+- answer_file: git.cppcheck.MSC12-C.builtin_diagnose_c.ans
+  input:
+    alerts_file: git.cppcheck.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/diagnose.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_diagnose_c
+
+- answer_file: git.cppcheck.MSC12-C.builtin_difftool_c.ans
+  input:
+    alerts_file: git.cppcheck.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/difftool.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_difftool_c
+
+- answer_file: git.cppcheck.MSC12-C.builtin_fast-import_c.ans
+  input:
+    alerts_file: git.cppcheck.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/fast-import.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_fast-import_c
+
+- answer_file: git.cppcheck.MSC12-C.builtin_ls-tree_c.ans
+  input:
+    alerts_file: git.cppcheck.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/ls-tree.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_ls-tree_c
+
+- answer_file: git.cppcheck.MSC12-C.builtin_mktag_c.ans
+  input:
+    alerts_file: git.cppcheck.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/mktag.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_mktag_c
+
+- answer_file: git.cppcheck.MSC12-C.builtin_patch-id_c.ans
+  input:
+    alerts_file: git.cppcheck.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/patch-id.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_patch-id_c
+
+- answer_file: git.cppcheck.MSC12-C.builtin_pull_c.ans
+  input:
+    alerts_file: git.cppcheck.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/pull.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_pull_c
+
+- answer_file: git.cppcheck.MSC12-C.builtin_receive-pack_c.ans
+  input:
+    alerts_file: git.cppcheck.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/receive-pack.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_receive-pack_c
+
+- answer_file: git.cppcheck.MSC12-C.builtin_reset_c.ans
+  input:
+    alerts_file: git.cppcheck.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/reset.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_reset_c
+
+- answer_file: git.cppcheck.MSC12-C.builtin_rev-parse_c.ans
+  input:
+    alerts_file: git.cppcheck.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/rev-parse.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_rev-parse_c
+
+- answer_file: git.cppcheck.MSC12-C.builtin_sparse-checkout_c.ans
+  input:
+    alerts_file: git.cppcheck.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/sparse-checkout.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_sparse-checkout_c
+
+- answer_file: git.cppcheck.MSC12-C.builtin_stash_c.ans
+  input:
+    alerts_file: git.cppcheck.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/stash.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_stash_c
+
+- answer_file: git.cppcheck.MSC12-C.builtin_write-tree_c.ans
+  input:
+    alerts_file: git.cppcheck.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/write-tree.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_write-tree_c
+
+- answer_file: git.cppcheck.MSC12-C.ewah_ewah_io_c.ans
+  input:
+    alerts_file: git.cppcheck.MSC12-C.alerts.json
+    base_dir: /oss/git
+    cfile: ewah/ewah_io.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: ewah_ewah_io_c

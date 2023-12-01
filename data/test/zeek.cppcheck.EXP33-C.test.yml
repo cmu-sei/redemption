@@ -1,0 +1,148 @@
+tests:
+
+- answer_file: zeek.cppcheck.EXP33-C.auxil_broker_3rdparty_sqlite3_c.ans
+  input:
+    alerts_file: zeek.cppcheck.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/broker/3rdparty/sqlite3.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_broker_3rdparty_sqlite3_c
+
+- answer_file: zeek.cppcheck.EXP33-C.auxil_broker_caf_libcaf_core_caf_ipv4_endpoint_hpp.ans
+  input:
+    alerts_file: zeek.cppcheck.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/broker/caf/libcaf_core/src/detail/parse.cpp
+    compile_cmds_file: ../compile_commands.zeek.json
+    hfile: auxil/broker/caf/libcaf_core/caf/ipv4_endpoint.hpp
+  name: auxil_broker_caf_libcaf_core_caf_ipv4_endpoint_hpp
+
+- answer_file: zeek.cppcheck.EXP33-C.auxil_broker_caf_libcaf_core_caf_ipv6_endpoint_hpp.ans
+  input:
+    alerts_file: zeek.cppcheck.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/broker/caf/libcaf_core/src/detail/parse.cpp
+    compile_cmds_file: ../compile_commands.zeek.json
+    hfile: auxil/broker/caf/libcaf_core/caf/ipv6_endpoint.hpp
+  name: auxil_broker_caf_libcaf_core_caf_ipv6_endpoint_hpp
+
+- answer_file: zeek.cppcheck.EXP33-C.auxil_broker_caf_libcaf_core_src_detail_message_data_cpp.ans
+  input:
+    alerts_file: zeek.cppcheck.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/broker/caf/libcaf_core/src/detail/message_data.cpp
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_broker_caf_libcaf_core_src_detail_message_data_cpp
+
+- answer_file: zeek.cppcheck.EXP33-C.auxil_broker_include_broker_network_info_hh.ans
+  input:
+    alerts_file: zeek.cppcheck.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/broker/src/network_info.cc
+    compile_cmds_file: ../compile_commands.zeek.json
+    hfile: auxil/broker/include/broker/network_info.hh
+  name: auxil_broker_include_broker_network_info_hh
+
+- answer_file: zeek.cppcheck.EXP33-C.auxil_c-ares_src_lib_ares_query_c.ans
+  input:
+    alerts_file: zeek.cppcheck.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/c-ares/src/lib/ares_query.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_c-ares_src_lib_ares_query_c
+
+- answer_file: zeek.cppcheck.EXP33-C.src_DbgWatch_cc.ans
+  input:
+    alerts_file: zeek.cppcheck.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: src/DbgWatch.cc
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: src_DbgWatch_cc
+
+- answer_file: zeek.cppcheck.EXP33-C.src_RandTest_cc.ans
+  input:
+    alerts_file: zeek.cppcheck.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: src/RandTest.cc
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: src_RandTest_cc
+
+- answer_file: zeek.cppcheck.EXP33-C.src_iosource_PktDumper_cc.ans
+  input:
+    alerts_file: zeek.cppcheck.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: src/iosource/PktDumper.cc
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: src_iosource_PktDumper_cc
+
+- answer_file: zeek.cppcheck.EXP33-C.src_zeek_3rdparty_doctest_h.ans
+  input:
+    alerts_file: zeek.cppcheck.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: src/DNS_Mgr.cc
+    compile_cmds_file: ../compile_commands.zeek.json
+    hfile: src/zeek/3rdparty/doctest.h
+  name: src_zeek_3rdparty_doctest_h
+
+- answer_file: zeek.cppcheck.EXP33-C.src_zeek_Type_h.ans
+  input:
+    alerts_file: zeek.cppcheck.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: src/Type.cc
+    compile_cmds_file: ../compile_commands.zeek.json
+    hfile: src/zeek/Type.h
+  name: src_zeek_Type_h
+
+- answer_file: zeek.cppcheck.EXP33-C.src_zeek_UID_h.ans
+  input:
+    alerts_file: zeek.cppcheck.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: src/UID.cc
+    compile_cmds_file: ../compile_commands.zeek.json
+    hfile: src/zeek/UID.h
+  name: src_zeek_UID_h
+
+- answer_file: zeek.cppcheck.EXP33-C.src_zeek_util_h.ans
+  input:
+    alerts_file: zeek.cppcheck.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: build/src/re-scan.cc
+    compile_cmds_file: ../compile_commands.zeek.json
+    hfile: src/zeek/util.h
+  name: src_zeek_util_h
+
+- answer_file: zeek.cppcheck.EXP33-C.src_zeek_zeek_util_h.ans
+  input:
+    alerts_file: zeek.cppcheck.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: build/src/re-scan.cc
+    compile_cmds_file: ../compile_commands.zeek.json
+    hfile: src/zeek/zeek/util.h
+  name: src_zeek_zeek_util_h
+
+- answer_file: zeek.cppcheck.EXP33-C.src_zeek_zeek_zeek_util_h.ans
+  input:
+    alerts_file: zeek.cppcheck.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: build/src/re-scan.cc
+    compile_cmds_file: ../compile_commands.zeek.json
+    hfile: src/zeek/zeek/zeek/util.h
+  name: src_zeek_zeek_zeek_util_h
+
+- answer_file: zeek.cppcheck.EXP33-C.src_zeek_zeek_zeek_zeek_util_h.ans
+  input:
+    alerts_file: zeek.cppcheck.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: build/src/re-scan.cc
+    compile_cmds_file: ../compile_commands.zeek.json
+    hfile: src/zeek/zeek/zeek/zeek/util.h
+  name: src_zeek_zeek_zeek_zeek_util_h
+
+- answer_file: zeek.cppcheck.EXP33-C.src_zeek_zeek_zeek_zeek_zeek_util_h.ans
+  input:
+    alerts_file: zeek.cppcheck.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: build/src/re-scan.cc
+    compile_cmds_file: ../compile_commands.zeek.json
+    hfile: src/zeek/zeek/zeek/zeek/zeek/util.h
+  name: src_zeek_zeek_zeek_zeek_zeek_util_h

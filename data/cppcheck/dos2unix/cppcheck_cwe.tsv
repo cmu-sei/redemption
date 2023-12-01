@@ -1,0 +1,27 @@
+Checker	Path	Line	Column	Message	CWE
+unreadVariable	/datasets/dos2unix/common.c	1331	12	Variable 'InF' is assigned a value that is never used.	563
+unreadVariable	/datasets/dos2unix/common.c	1373	12	Variable 'InF' is assigned a value that is never used.	563
+unreadVariable	/datasets/dos2unix/common.c	2549	28	Variable 'conversion_error' is assigned a value that is never used.	563
+uninitvar	/datasets/dos2unix/common.c	117	19	Uninitialized variable: lpMsgBuf	457
+ConfigurationNotChecked	/datasets/dos2unix/common.c	426	0	Skipping configuration 'DEBUG;S_ISBLK' since the value of 'S_ISBLK' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.	NONE
+ConfigurationNotChecked	/datasets/dos2unix/common.c	379	0	Skipping configuration 'DEBUG;S_ISLNK' since the value of 'S_ISLNK' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.	NONE
+ConfigurationNotChecked	/datasets/dos2unix/common.c	420	0	Skipping configuration 'DEBUG;S_ISLNK' since the value of 'S_ISLNK' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.	NONE
+ConfigurationNotChecked	/datasets/dos2unix/common.c	439	0	Skipping configuration 'DEBUG;S_ISLNK' since the value of 'S_ISLNK' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.	NONE
+ConfigurationNotChecked	/datasets/dos2unix/common.c	1045	0	Skipping configuration 'DEBUG;S_ISLNK' since the value of 'S_ISLNK' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.	NONE
+ConfigurationNotChecked	/datasets/dos2unix/common.c	416	0	Skipping configuration 'DEBUG;S_ISSOCK' since the value of 'S_ISSOCK' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.	NONE
+nullPointerRedundantCheck	/datasets/dos2unix/common.c	835	25	Either the condition 'path==NULL' is redundant or there is possible null pointer dereference: path.	476
+nullPointerRedundantCheck	/datasets/dos2unix/common.c	857	25	Either the condition 'path==NULL' is redundant or there is possible null pointer dereference: path.	476
+ConfigurationNotChecked	/datasets/dos2unix/common.c	379	0	Skipping configuration 'S_ISLNK' since the value of 'S_ISLNK' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.	NONE
+ConfigurationNotChecked	/datasets/dos2unix/common.c	439	0	Skipping configuration 'S_ISLNK' since the value of 'S_ISLNK' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.	NONE
+ConfigurationNotChecked	/datasets/dos2unix/common.c	1045	0	Skipping configuration 'S_ISLNK' since the value of 'S_ISLNK' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.	NONE
+ConfigurationNotChecked	/datasets/dos2unix/common.c	379	0	Skipping configuration 'S_ISLNK;_WIN32;__CYGWIN__' since the value of 'S_ISLNK' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.	NONE
+ConfigurationNotChecked	/datasets/dos2unix/common.c	439	0	Skipping configuration 'S_ISLNK;_WIN32;__CYGWIN__' since the value of 'S_ISLNK' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.	NONE
+ConfigurationNotChecked	/datasets/dos2unix/common.c	1045	0	Skipping configuration 'S_ISLNK;_WIN32;__CYGWIN__' since the value of 'S_ISLNK' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.	NONE
+ConfigurationNotChecked	/datasets/dos2unix/common.c	755	0	Skipping configuration 'WINVER;_WIN32' since the value of 'WINVER' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.	NONE
+ConfigurationNotChecked	/datasets/dos2unix/common.c	746	0	Skipping configuration '_MSC_VER;_WIN32' since the value of '_MSC_VER' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.	NONE
+ConfigurationNotChecked	/datasets/dos2unix/common.c	744	0	Skipping configuration '_MSC_VER;_WIN64' since the value of '_MSC_VER' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.	NONE
+ConfigurationNotChecked	/datasets/dos2unix/common.c	752	0	Skipping configuration '__OS' since the value of '__OS' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.	NONE
+unreadVariable	/datasets/dos2unix/dos2unix.c	509	19	Variable '_dowildcard' is assigned a value that is never used.	563
+knownConditionTrueFalse	/datasets/dos2unix/test/setlocale.c	35	8	Condition '!utf8' is always true	571
+variableScope	/datasets/dos2unix/test/setlocale.c	25	7	The scope of the variable 'prevmode' can be reduced.	398
+unreadVariable	/datasets/dos2unix/unix2dos.c	482	19	Variable '_dowildcard' is assigned a value that is never used.	563

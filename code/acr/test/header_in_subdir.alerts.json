@@ -1,0 +1,12 @@
+[
+  {
+    "rule": "EXP34-C",
+    "file": "header_in_subdir.c",
+    "line": 6
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "header_in_subdir/header.h",
+    "line": 2
+  }
+]

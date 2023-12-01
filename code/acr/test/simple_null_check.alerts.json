@@ -1,0 +1,7 @@
+[
+  {
+    "rule": "EXP34-C",
+    "file": "simple_null_check.c",
+    "line": 8
+  }
+]

@@ -1,0 +1,529 @@
+tests:
+
+- answer_file: zeek.rosecheckers.MSC12-C.auxil_binpac_lib_binpac_buffer_cc.ans
+  input:
+    alerts_file: zeek.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/binpac/lib/binpac_buffer.cc
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_binpac_lib_binpac_buffer_cc
+
+- answer_file: zeek.rosecheckers.MSC12-C.auxil_binpac_src_pac_action_cc.ans
+  input:
+    alerts_file: zeek.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/binpac/src/pac_action.cc
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_binpac_src_pac_action_cc
+
+- answer_file: zeek.rosecheckers.MSC12-C.auxil_binpac_src_pac_analyzer_cc.ans
+  input:
+    alerts_file: zeek.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/binpac/src/pac_analyzer.cc
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_binpac_src_pac_analyzer_cc
+
+- answer_file: zeek.rosecheckers.MSC12-C.auxil_binpac_src_pac_array_cc.ans
+  input:
+    alerts_file: zeek.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/binpac/src/pac_array.cc
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_binpac_src_pac_array_cc
+
+- answer_file: zeek.rosecheckers.MSC12-C.auxil_binpac_src_pac_btype_cc.ans
+  input:
+    alerts_file: zeek.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/binpac/src/pac_btype.cc
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_binpac_src_pac_btype_cc
+
+- answer_file: zeek.rosecheckers.MSC12-C.auxil_binpac_src_pac_case_cc.ans
+  input:
+    alerts_file: zeek.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/binpac/src/pac_case.cc
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_binpac_src_pac_case_cc
+
+- answer_file: zeek.rosecheckers.MSC12-C.auxil_binpac_src_pac_conn_cc.ans
+  input:
+    alerts_file: zeek.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/binpac/src/pac_conn.cc
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_binpac_src_pac_conn_cc
+
+- answer_file: zeek.rosecheckers.MSC12-C.auxil_binpac_src_pac_context_cc.ans
+  input:
+    alerts_file: zeek.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/binpac/src/pac_context.cc
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_binpac_src_pac_context_cc
+
+- answer_file: zeek.rosecheckers.MSC12-C.auxil_binpac_src_pac_cstr_cc.ans
+  input:
+    alerts_file: zeek.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/binpac/src/pac_cstr.cc
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_binpac_src_pac_cstr_cc
+
+- answer_file: zeek.rosecheckers.MSC12-C.auxil_binpac_src_pac_dataptr_cc.ans
+  input:
+    alerts_file: zeek.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/binpac/src/pac_dataptr.cc
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_binpac_src_pac_dataptr_cc
+
+- answer_file: zeek.rosecheckers.MSC12-C.auxil_binpac_src_pac_decl_cc.ans
+  input:
+    alerts_file: zeek.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/binpac/src/pac_decl.cc
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_binpac_src_pac_decl_cc
+
+- answer_file: zeek.rosecheckers.MSC12-C.auxil_binpac_src_pac_embedded_cc.ans
+  input:
+    alerts_file: zeek.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/binpac/src/pac_embedded.cc
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_binpac_src_pac_embedded_cc
+
+- answer_file: zeek.rosecheckers.MSC12-C.auxil_binpac_src_pac_enum_cc.ans
+  input:
+    alerts_file: zeek.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/binpac/src/pac_enum.cc
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_binpac_src_pac_enum_cc
+
+- answer_file: zeek.rosecheckers.MSC12-C.auxil_binpac_src_pac_expr_cc.ans
+  input:
+    alerts_file: zeek.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/binpac/src/pac_expr.cc
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_binpac_src_pac_expr_cc
+
+- answer_file: zeek.rosecheckers.MSC12-C.auxil_binpac_src_pac_exttype_cc.ans
+  input:
+    alerts_file: zeek.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/binpac/src/pac_exttype.cc
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_binpac_src_pac_exttype_cc
+
+- answer_file: zeek.rosecheckers.MSC12-C.auxil_binpac_src_pac_flow_cc.ans
+  input:
+    alerts_file: zeek.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/binpac/src/pac_flow.cc
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_binpac_src_pac_flow_cc
+
+- answer_file: zeek.rosecheckers.MSC12-C.auxil_binpac_src_pac_func_cc.ans
+  input:
+    alerts_file: zeek.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/binpac/src/pac_func.cc
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_binpac_src_pac_func_cc
+
+- answer_file: zeek.rosecheckers.MSC12-C.auxil_binpac_src_pac_id_cc.ans
+  input:
+    alerts_file: zeek.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/binpac/src/pac_id.cc
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_binpac_src_pac_id_cc
+
+- answer_file: zeek.rosecheckers.MSC12-C.auxil_binpac_src_pac_let_cc.ans
+  input:
+    alerts_file: zeek.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/binpac/src/pac_let.cc
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_binpac_src_pac_let_cc
+
+- answer_file: zeek.rosecheckers.MSC12-C.auxil_binpac_src_pac_main_cc.ans
+  input:
+    alerts_file: zeek.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/binpac/src/pac_main.cc
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_binpac_src_pac_main_cc
+
+- answer_file: zeek.rosecheckers.MSC12-C.auxil_binpac_src_pac_param_cc.ans
+  input:
+    alerts_file: zeek.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/binpac/src/pac_param.cc
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_binpac_src_pac_param_cc
+
+- answer_file: zeek.rosecheckers.MSC12-C.auxil_binpac_src_pac_paramtype_cc.ans
+  input:
+    alerts_file: zeek.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/binpac/src/pac_paramtype.cc
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_binpac_src_pac_paramtype_cc
+
+- answer_file: zeek.rosecheckers.MSC12-C.auxil_binpac_src_pac_primitive_cc.ans
+  input:
+    alerts_file: zeek.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/binpac/src/pac_primitive.cc
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_binpac_src_pac_primitive_cc
+
+- answer_file: zeek.rosecheckers.MSC12-C.auxil_binpac_src_pac_record_cc.ans
+  input:
+    alerts_file: zeek.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/binpac/src/pac_record.cc
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_binpac_src_pac_record_cc
+
+- answer_file: zeek.rosecheckers.MSC12-C.auxil_binpac_src_pac_redef_cc.ans
+  input:
+    alerts_file: zeek.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/binpac/src/pac_redef.cc
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_binpac_src_pac_redef_cc
+
+- answer_file: zeek.rosecheckers.MSC12-C.auxil_binpac_src_pac_strtype_cc.ans
+  input:
+    alerts_file: zeek.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/binpac/src/pac_strtype.cc
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_binpac_src_pac_strtype_cc
+
+- answer_file: zeek.rosecheckers.MSC12-C.auxil_binpac_src_pac_type_cc.ans
+  input:
+    alerts_file: zeek.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/binpac/src/pac_type.cc
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_binpac_src_pac_type_cc
+
+- answer_file: zeek.rosecheckers.MSC12-C.auxil_binpac_src_pac_typedecl_cc.ans
+  input:
+    alerts_file: zeek.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/binpac/src/pac_typedecl.cc
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_binpac_src_pac_typedecl_cc
+
+- answer_file: zeek.rosecheckers.MSC12-C.auxil_binpac_src_pac_withinput_cc.ans
+  input:
+    alerts_file: zeek.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/binpac/src/pac_withinput.cc
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_binpac_src_pac_withinput_cc
+
+- answer_file: zeek.rosecheckers.MSC12-C.auxil_c-ares_src_lib_ares__addrinfo_localhost_c.ans
+  input:
+    alerts_file: zeek.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/c-ares/src/lib/ares__addrinfo_localhost.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_c-ares_src_lib_ares__addrinfo_localhost_c
+
+- answer_file: zeek.rosecheckers.MSC12-C.auxil_c-ares_src_lib_ares__sortaddrinfo_c.ans
+  input:
+    alerts_file: zeek.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/c-ares/src/lib/ares__sortaddrinfo.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_c-ares_src_lib_ares__sortaddrinfo_c
+
+- answer_file: zeek.rosecheckers.MSC12-C.auxil_c-ares_src_lib_ares_create_query_c.ans
+  input:
+    alerts_file: zeek.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/c-ares/src/lib/ares_create_query.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_c-ares_src_lib_ares_create_query_c
+
+- answer_file: zeek.rosecheckers.MSC12-C.auxil_c-ares_src_lib_ares_fds_c.ans
+  input:
+    alerts_file: zeek.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/c-ares/src/lib/ares_fds.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_c-ares_src_lib_ares_fds_c
+
+- answer_file: zeek.rosecheckers.MSC12-C.auxil_c-ares_src_lib_ares_getaddrinfo_c.ans
+  input:
+    alerts_file: zeek.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/c-ares/src/lib/ares_getaddrinfo.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_c-ares_src_lib_ares_getaddrinfo_c
+
+- answer_file: zeek.rosecheckers.MSC12-C.auxil_c-ares_src_lib_ares_process_c.ans
+  input:
+    alerts_file: zeek.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/c-ares/src/lib/ares_process.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_c-ares_src_lib_ares_process_c
+
+- answer_file: zeek.rosecheckers.MSC12-C.auxil_c-ares_src_lib_ares_query_c.ans
+  input:
+    alerts_file: zeek.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/c-ares/src/lib/ares_query.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_c-ares_src_lib_ares_query_c
+
+- answer_file: zeek.rosecheckers.MSC12-C.auxil_highwayhash_highwayhash_nanobenchmark_cc.ans
+  input:
+    alerts_file: zeek.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/highwayhash/highwayhash/nanobenchmark.cc
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_highwayhash_highwayhash_nanobenchmark_cc
+
+- answer_file: zeek.rosecheckers.MSC12-C.auxil_highwayhash_highwayhash_os_specific_cc.ans
+  input:
+    alerts_file: zeek.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/highwayhash/highwayhash/os_specific.cc
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_highwayhash_highwayhash_os_specific_cc
+
+- answer_file: zeek.rosecheckers.MSC12-C.auxil_spicy_spicy_3rdparty_fiber_src_fiber_c.ans
+  input:
+    alerts_file: zeek.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/spicy/spicy/3rdparty/fiber/src/fiber.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_spicy_spicy_3rdparty_fiber_src_fiber_c
+
+- answer_file: zeek.rosecheckers.MSC12-C.auxil_spicy_spicy_3rdparty_justrx_src_ccl_c.ans
+  input:
+    alerts_file: zeek.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/spicy/spicy/3rdparty/justrx/src/ccl.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_spicy_spicy_3rdparty_justrx_src_ccl_c
+
+- answer_file: zeek.rosecheckers.MSC12-C.auxil_spicy_spicy_3rdparty_justrx_src_dfa-interpreter-min_c.ans
+  input:
+    alerts_file: zeek.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/spicy/spicy/3rdparty/justrx/src/dfa-interpreter-min.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_spicy_spicy_3rdparty_justrx_src_dfa-interpreter-min_c
+
+- answer_file: zeek.rosecheckers.MSC12-C.auxil_spicy_spicy_3rdparty_justrx_src_dfa-interpreter-std_c.ans
+  input:
+    alerts_file: zeek.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/spicy/spicy/3rdparty/justrx/src/dfa-interpreter-std.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_spicy_spicy_3rdparty_justrx_src_dfa-interpreter-std_c
+
+- answer_file: zeek.rosecheckers.MSC12-C.auxil_spicy_spicy_3rdparty_justrx_src_dfa_c.ans
+  input:
+    alerts_file: zeek.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/spicy/spicy/3rdparty/justrx/src/dfa.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_spicy_spicy_3rdparty_justrx_src_dfa_c
+
+- answer_file: zeek.rosecheckers.MSC12-C.auxil_spicy_spicy_3rdparty_justrx_src_jrx_c.ans
+  input:
+    alerts_file: zeek.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/spicy/spicy/3rdparty/justrx/src/jrx.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_spicy_spicy_3rdparty_justrx_src_jrx_c
+
+- answer_file: zeek.rosecheckers.MSC12-C.auxil_spicy_spicy_3rdparty_justrx_src_nfa_c.ans
+  input:
+    alerts_file: zeek.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/spicy/spicy/3rdparty/justrx/src/nfa.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_spicy_spicy_3rdparty_justrx_src_nfa_c
+
+- answer_file: zeek.rosecheckers.MSC12-C.auxil_spicy_spicy_3rdparty_reproc_reproc_src_clock_posix_c.ans
+  input:
+    alerts_file: zeek.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/spicy/spicy/3rdparty/reproc/reproc/src/clock.posix.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_spicy_spicy_3rdparty_reproc_reproc_src_clock_posix_c
+
+- answer_file: zeek.rosecheckers.MSC12-C.auxil_spicy_spicy_3rdparty_reproc_reproc_src_drain_c.ans
+  input:
+    alerts_file: zeek.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/spicy/spicy/3rdparty/reproc/reproc/src/drain.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_spicy_spicy_3rdparty_reproc_reproc_src_drain_c
+
+- answer_file: zeek.rosecheckers.MSC12-C.auxil_spicy_spicy_3rdparty_reproc_reproc_src_handle_posix_c.ans
+  input:
+    alerts_file: zeek.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/spicy/spicy/3rdparty/reproc/reproc/src/handle.posix.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_spicy_spicy_3rdparty_reproc_reproc_src_handle_posix_c
+
+- answer_file: zeek.rosecheckers.MSC12-C.auxil_spicy_spicy_3rdparty_reproc_reproc_src_options_c.ans
+  input:
+    alerts_file: zeek.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/spicy/spicy/3rdparty/reproc/reproc/src/options.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_spicy_spicy_3rdparty_reproc_reproc_src_options_c
+
+- answer_file: zeek.rosecheckers.MSC12-C.auxil_spicy_spicy_3rdparty_reproc_reproc_src_pipe_posix_c.ans
+  input:
+    alerts_file: zeek.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/spicy/spicy/3rdparty/reproc/reproc/src/pipe.posix.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_spicy_spicy_3rdparty_reproc_reproc_src_pipe_posix_c
+
+- answer_file: zeek.rosecheckers.MSC12-C.auxil_spicy_spicy_3rdparty_reproc_reproc_src_process_posix_c.ans
+  input:
+    alerts_file: zeek.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/spicy/spicy/3rdparty/reproc/reproc/src/process.posix.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_spicy_spicy_3rdparty_reproc_reproc_src_process_posix_c
+
+- answer_file: zeek.rosecheckers.MSC12-C.auxil_spicy_spicy_3rdparty_reproc_reproc_src_redirect_c.ans
+  input:
+    alerts_file: zeek.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/spicy/spicy/3rdparty/reproc/reproc/src/redirect.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_spicy_spicy_3rdparty_reproc_reproc_src_redirect_c
+
+- answer_file: zeek.rosecheckers.MSC12-C.auxil_spicy_spicy_3rdparty_reproc_reproc_src_redirect_posix_c.ans
+  input:
+    alerts_file: zeek.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/spicy/spicy/3rdparty/reproc/reproc/src/redirect.posix.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_spicy_spicy_3rdparty_reproc_reproc_src_redirect_posix_c
+
+- answer_file: zeek.rosecheckers.MSC12-C.auxil_spicy_spicy_3rdparty_reproc_reproc_src_reproc_c.ans
+  input:
+    alerts_file: zeek.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/spicy/spicy/3rdparty/reproc/reproc/src/reproc.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_spicy_spicy_3rdparty_reproc_reproc_src_reproc_c
+
+- answer_file: zeek.rosecheckers.MSC12-C.auxil_zeekctl_auxil_capstats_capstats_cc.ans
+  input:
+    alerts_file: zeek.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/zeekctl/auxil/capstats/capstats.cc
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_zeekctl_auxil_capstats_capstats_cc
+
+- answer_file: zeek.rosecheckers.MSC12-C.auxil_zeekctl_auxil_pysubnettree_patricia_c.ans
+  input:
+    alerts_file: zeek.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/zeekctl/auxil/pysubnettree/patricia.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_zeekctl_auxil_pysubnettree_patricia_c
+
+- answer_file: zeek.rosecheckers.MSC12-C.build_auxil_bifcl_bif_parse_cc.ans
+  input:
+    alerts_file: zeek.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: build/auxil/bifcl/bif_parse.cc
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: build_auxil_bifcl_bif_parse_cc
+
+- answer_file: zeek.rosecheckers.MSC12-C.build_auxil_binpac_pac_scan_cc.ans
+  input:
+    alerts_file: zeek.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: build/auxil/binpac/pac_scan.cc
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: build_auxil_binpac_pac_scan_cc
+
+- answer_file: zeek.rosecheckers.MSC12-C.build_auxil_binpac_src_pac_parse_cc.ans
+  input:
+    alerts_file: zeek.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: build/auxil/binpac/src/pac_parse.cc
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: build_auxil_binpac_src_pac_parse_cc
+
+- answer_file: zeek.rosecheckers.MSC12-C.build_auxil_spicy_spicy_3rdparty_justrx_justrx_autogen_re-parse_c.ans
+  input:
+    alerts_file: zeek.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: build/auxil/spicy/spicy/3rdparty/justrx/justrx/autogen/re-parse.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: build_auxil_spicy_spicy_3rdparty_justrx_justrx_autogen_re-parse_c
+
+- answer_file: zeek.rosecheckers.MSC12-C.build_auxil_spicy_spicy_3rdparty_justrx_justrx_autogen_re-scan_c.ans
+  input:
+    alerts_file: zeek.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: build/auxil/spicy/spicy/3rdparty/justrx/justrx/autogen/re-scan.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: build_auxil_spicy_spicy_3rdparty_justrx_justrx_autogen_re-scan_c
+
+- answer_file: zeek.rosecheckers.MSC12-C.build_auxil_zeekctl_auxil_pysubnettree_CMakeFiles_SubnetTree_dir_SubnetTreePYTHON_wrap_cxx.ans
+  input:
+    alerts_file: zeek.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: build/auxil/zeekctl/auxil/pysubnettree/CMakeFiles/SubnetTree.dir/SubnetTreePYTHON_wrap.cxx
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: build_auxil_zeekctl_auxil_pysubnettree_CMakeFiles_SubnetTree_dir_SubnetTreePYTHON_wrap_cxx
+
+- answer_file: zeek.rosecheckers.MSC12-C.src_3rdparty_ConvertUTF_c.ans
+  input:
+    alerts_file: zeek.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: src/3rdparty/ConvertUTF.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: src_3rdparty_ConvertUTF_c
+
+- answer_file: zeek.rosecheckers.MSC12-C.src_3rdparty_nb_dns_c.ans
+  input:
+    alerts_file: zeek.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: src/3rdparty/nb_dns.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: src_3rdparty_nb_dns_c
+
+- answer_file: zeek.rosecheckers.MSC12-C.src_3rdparty_patricia_c.ans
+  input:
+    alerts_file: zeek.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: src/3rdparty/patricia.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: src_3rdparty_patricia_c
+
+- answer_file: zeek.rosecheckers.MSC12-C.src_zeek-affinity_cc.ans
+  input:
+    alerts_file: zeek.rosecheckers.MSC12-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: src/zeek-affinity.cc
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: src_zeek-affinity_cc

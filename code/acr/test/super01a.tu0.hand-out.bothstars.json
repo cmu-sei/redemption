@@ -1,0 +1,72 @@
+[
+  {
+    "rule": "EXP34-C",
+    "file": "/host/code/acr/test/super01a.c",
+    "line": 9,
+    "alert_id": 1,
+    "ast_id": 2178,
+    "repair": [
+      [
+        "/host/code/acr/test/super01a.c",
+        [
+          [
+            145,
+            145,
+            "null_check("
+          ],
+          [
+            148,
+            148,
+            ")"
+          ]
+        ]
+      ],
+      [
+        "/host/code/acr/test/super01a.c",
+        [
+          [
+            146,
+            146,
+            "null_check("
+          ],
+          [
+            148,
+            148,
+            ")"
+          ]
+        ]
+      ]
+    ]
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "/host/code/acr/test/super01b.c",
+    "line": 4,
+    "alert_id": 2,
+    "repair": []
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "/host/code/acr/test/super01.h",
+    "line": 2,
+    "alert_id": 3,
+    "ast_id": 2150,
+    "repair": [
+      [
+        "/host/code/acr/test/super01.h",
+        [
+          [
+            44,
+            44,
+            "null_check("
+          ],
+          [
+            45,
+            45,
+            ")"
+          ]
+        ]
+      ]
+    ]
+  }
+]

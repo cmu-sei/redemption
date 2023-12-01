@@ -1,0 +1,527 @@
+{
+  "id": 1000,
+  "kind": "TranslationUnitDecl",
+  "loc": {},
+  "range": {
+    "begin": {},
+    "end": {}
+  },
+  "inner": [
+    {
+      "id": 1001,
+      "kind": "TypedefDecl",
+      "loc": {},
+      "range": {
+        "begin": {},
+        "end": {}
+      },
+      "isImplicit": true,
+      "name": "__int128_t",
+      "type": {
+        "qualType": "__int128"
+      },
+      "inner": [
+        {
+          "id": 1002,
+          "kind": "BuiltinType",
+          "type": {
+            "qualType": "__int128"
+          }
+        }
+      ]
+    },
+    {
+      "id": 1003,
+      "kind": "TypedefDecl",
+      "loc": {},
+      "range": {
+        "begin": {},
+        "end": {}
+      },
+      "isImplicit": true,
+      "name": "__uint128_t",
+      "type": {
+        "qualType": "unsigned __int128"
+      },
+      "inner": [
+        {
+          "id": 1004,
+          "kind": "BuiltinType",
+          "type": {
+            "qualType": "unsigned __int128"
+          }
+        }
+      ]
+    },
+    {
+      "id": 1005,
+      "kind": "TypedefDecl",
+      "loc": {},
+      "range": {
+        "begin": {},
+        "end": {}
+      },
+      "isImplicit": true,
+      "name": "__NSConstantString",
+      "type": {
+        "qualType": "struct __NSConstantString_tag"
+      },
+      "inner": [
+        {
+          "id": 1006,
+          "kind": "RecordType",
+          "type": {
+            "qualType": "struct __NSConstantString_tag"
+          },
+          "decl": {
+            "id": 1007,
+            "kind": "RecordDecl",
+            "name": "__NSConstantString_tag"
+          }
+        }
+      ]
+    },
+    {
+      "id": 1008,
+      "kind": "TypedefDecl",
+      "loc": {},
+      "range": {
+        "begin": {},
+        "end": {}
+      },
+      "isImplicit": true,
+      "name": "__builtin_ms_va_list",
+      "type": {
+        "qualType": "char *"
+      },
+      "inner": [
+        {
+          "id": 1009,
+          "kind": "PointerType",
+          "type": {
+            "qualType": "char *"
+          },
+          "inner": [
+            {
+              "id": 1010,
+              "kind": "BuiltinType",
+              "type": {
+                "qualType": "char"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1011,
+      "kind": "TypedefDecl",
+      "loc": {},
+      "range": {
+        "begin": {},
+        "end": {}
+      },
+      "isImplicit": true,
+      "name": "__builtin_va_list",
+      "type": {
+        "qualType": "struct __va_list_tag[1]"
+      },
+      "inner": [
+        {
+          "id": 1012,
+          "kind": "ConstantArrayType",
+          "type": {
+            "qualType": "struct __va_list_tag[1]"
+          },
+          "size": 1,
+          "inner": [
+            {
+              "id": 1013,
+              "kind": "RecordType",
+              "type": {
+                "qualType": "struct __va_list_tag"
+              },
+              "decl": {
+                "id": 1014,
+                "kind": "RecordDecl",
+                "name": "__va_list_tag"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1015,
+      "kind": "FunctionDecl",
+      "loc": {
+        "offset": 25,
+        "file": "assert-test.c",
+        "line": 3,
+        "col": 5,
+        "tokLen": 4
+      },
+      "range": {
+        "begin": {
+          "offset": 21,
+          "col": 1,
+          "tokLen": 3
+        },
+        "end": {
+          "offset": 91,
+          "line": 6,
+          "col": 1,
+          "tokLen": 1
+        },
+        "file": "/host/code/acr/test/assert-test.c"
+      },
+      "name": "main",
+      "mangledName": "main",
+      "type": {
+        "qualType": "int (int, char **)"
+      },
+      "inner": [
+        {
+          "id": 1016,
+          "kind": "ParmVarDecl",
+          "loc": {
+            "offset": 34,
+            "line": 3,
+            "col": 14,
+            "tokLen": 4
+          },
+          "range": {
+            "begin": {
+              "offset": 30,
+              "col": 10,
+              "tokLen": 3
+            },
+            "end": {
+              "offset": 34,
+              "col": 14,
+              "tokLen": 4
+            },
+            "file": "/host/code/acr/test/assert-test.c"
+          },
+          "name": "argc",
+          "type": {
+            "qualType": "int"
+          }
+        },
+        {
+          "id": 1017,
+          "kind": "ParmVarDecl",
+          "loc": {
+            "offset": 47,
+            "col": 27,
+            "tokLen": 4
+          },
+          "range": {
+            "begin": {
+              "offset": 40,
+              "col": 20,
+              "tokLen": 4
+            },
+            "end": {
+              "offset": 47,
+              "col": 27,
+              "tokLen": 4
+            },
+            "file": "/host/code/acr/test/assert-test.c"
+          },
+          "name": "argv",
+          "type": {
+            "qualType": "char **"
+          }
+        },
+        {
+          "id": 1018,
+          "kind": "CompoundStmt",
+          "range": {
+            "begin": {
+              "offset": 53,
+              "col": 33,
+              "tokLen": 1
+            },
+            "end": {
+              "offset": 91,
+              "line": 6,
+              "col": 1,
+              "tokLen": 1
+            },
+            "file": "/host/code/acr/test/assert-test.c"
+          },
+          "inner": [
+            {
+              "id": 1019,
+              "kind": "ParenExpr",
+              "range": {
+                "begin": {
+                  "spellingLoc": {
+                    "offset": 1367,
+                    "file": "/usr/include/assert.h",
+                    "line": 50,
+                    "col": 24,
+                    "tokLen": 1,
+                    "includedFrom": {
+                      "file": "assert-test.c"
+                    }
+                  },
+                  "expansionLoc": {
+                    "offset": 59,
+                    "file": "assert-test.c",
+                    "line": 4,
+                    "col": 5,
+                    "tokLen": 6
+                  }
+                },
+                "end": {
+                  "spellingLoc": {
+                    "offset": 1390,
+                    "file": "/usr/include/assert.h",
+                    "line": 50,
+                    "col": 47,
+                    "tokLen": 1,
+                    "includedFrom": {
+                      "file": "assert-test.c"
+                    }
+                  },
+                  "expansionLoc": {
+                    "offset": 59,
+                    "file": "assert-test.c",
+                    "line": 4,
+                    "col": 5,
+                    "tokLen": 6
+                  }
+                },
+                "file": "/host/code/acr/test/assert-test.c"
+              },
+              "type": {
+                "qualType": "void"
+              },
+              "valueCategory": "prvalue",
+              "inner": [
+                {
+                  "id": 1020,
+                  "kind": "CStyleCastExpr",
+                  "range": {
+                    "begin": {
+                      "spellingLoc": {
+                        "offset": 1169,
+                        "file": "/usr/include/assert.h",
+                        "line": 40,
+                        "col": 29,
+                        "tokLen": 1,
+                        "includedFrom": {
+                          "file": "assert-test.c"
+                        }
+                      },
+                      "expansionLoc": {
+                        "offset": 59,
+                        "file": "assert-test.c",
+                        "line": 4,
+                        "col": 5,
+                        "tokLen": 6
+                      }
+                    },
+                    "end": {
+                      "spellingLoc": {
+                        "offset": 1389,
+                        "file": "/usr/include/assert.h",
+                        "line": 50,
+                        "col": 46,
+                        "tokLen": 1,
+                        "includedFrom": {
+                          "file": "assert-test.c"
+                        }
+                      },
+                      "expansionLoc": {
+                        "offset": 59,
+                        "file": "assert-test.c",
+                        "line": 4,
+                        "col": 5,
+                        "tokLen": 6
+                      }
+                    },
+                    "file": "/host/code/acr/test/assert-test.c"
+                  },
+                  "type": {
+                    "qualType": "void"
+                  },
+                  "valueCategory": "prvalue",
+                  "castKind": "ToVoid",
+                  "inner": [
+                    {
+                      "id": 1021,
+                      "kind": "ParenExpr",
+                      "range": {
+                        "begin": {
+                          "spellingLoc": {
+                            "offset": 1387,
+                            "file": "/usr/include/assert.h",
+                            "line": 50,
+                            "col": 44,
+                            "tokLen": 1,
+                            "includedFrom": {
+                              "file": "assert-test.c"
+                            }
+                          },
+                          "expansionLoc": {
+                            "offset": 59,
+                            "file": "assert-test.c",
+                            "line": 4,
+                            "col": 5,
+                            "tokLen": 6
+                          }
+                        },
+                        "end": {
+                          "spellingLoc": {
+                            "offset": 1389,
+                            "file": "/usr/include/assert.h",
+                            "line": 50,
+                            "col": 46,
+                            "tokLen": 1,
+                            "includedFrom": {
+                              "file": "assert-test.c"
+                            }
+                          },
+                          "expansionLoc": {
+                            "offset": 59,
+                            "file": "assert-test.c",
+                            "line": 4,
+                            "col": 5,
+                            "tokLen": 6
+                          }
+                        },
+                        "file": "/host/code/acr/test/assert-test.c"
+                      },
+                      "type": {
+                        "qualType": "int"
+                      },
+                      "valueCategory": "prvalue",
+                      "inner": [
+                        {
+                          "id": 1022,
+                          "kind": "IntegerLiteral",
+                          "range": {
+                            "begin": {
+                              "spellingLoc": {
+                                "offset": 1388,
+                                "file": "/usr/include/assert.h",
+                                "line": 50,
+                                "col": 45,
+                                "tokLen": 1,
+                                "includedFrom": {
+                                  "file": "assert-test.c"
+                                }
+                              },
+                              "expansionLoc": {
+                                "offset": 59,
+                                "file": "assert-test.c",
+                                "line": 4,
+                                "col": 5,
+                                "tokLen": 6
+                              }
+                            },
+                            "end": {
+                              "spellingLoc": {
+                                "offset": 1388,
+                                "file": "/usr/include/assert.h",
+                                "line": 50,
+                                "col": 45,
+                                "tokLen": 1,
+                                "includedFrom": {
+                                  "file": "assert-test.c"
+                                }
+                              },
+                              "expansionLoc": {
+                                "offset": 59,
+                                "file": "assert-test.c",
+                                "line": 4,
+                                "col": 5,
+                                "tokLen": 6
+                              }
+                            },
+                            "file": "/host/code/acr/test/assert-test.c"
+                          },
+                          "type": {
+                            "qualType": "int"
+                          },
+                          "valueCategory": "prvalue",
+                          "value": "0"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": 1023,
+              "kind": "ReturnStmt",
+              "range": {
+                "begin": {
+                  "offset": 81,
+                  "line": 5,
+                  "col": 5,
+                  "tokLen": 6
+                },
+                "end": {
+                  "offset": 88,
+                  "col": 12,
+                  "tokLen": 1
+                },
+                "file": "/host/code/acr/test/assert-test.c"
+              },
+              "inner": [
+                {
+                  "id": 1024,
+                  "kind": "IntegerLiteral",
+                  "range": {
+                    "begin": {
+                      "offset": 88,
+                      "col": 12,
+                      "tokLen": 1
+                    },
+                    "end": {
+                      "offset": 88,
+                      "col": 12,
+                      "tokLen": 1
+                    },
+                    "file": "/host/code/acr/test/assert-test.c"
+                  },
+                  "type": {
+                    "qualType": "int"
+                  },
+                  "valueCategory": "prvalue",
+                  "value": "0"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "base_dir": "/host/code/acr/test",
+  "compile_dir": "/host/code/acr/test",
+  "file": "/host/code/acr/test/assert-test.c",
+  "preproc_db": {
+    "/host/code/acr/test/assert-test.c": [
+      0
+    ]
+  },
+  "comments_db": {
+    "/host/code/acr/test/assert-test.c": []
+  },
+  "newlines_db": {
+    "/host/code/acr/test/assert-test.c": [
+      19,
+      20,
+      54,
+      76,
+      90,
+      92
+    ]
+  }
+}

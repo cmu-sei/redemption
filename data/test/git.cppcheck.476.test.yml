@@ -1,0 +1,73 @@
+tests:
+
+- answer_file: git.cppcheck.476.builtin_branch_c.ans
+  input:
+    alerts_file: git.cppcheck.476.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/branch.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_branch_c
+
+- answer_file: git.cppcheck.476.builtin_checkout_c.ans
+  input:
+    alerts_file: git.cppcheck.476.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/checkout.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_checkout_c
+
+- answer_file: git.cppcheck.476.builtin_fast-import_c.ans
+  input:
+    alerts_file: git.cppcheck.476.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/fast-import.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_fast-import_c
+
+- answer_file: git.cppcheck.476.builtin_fetch_c.ans
+  input:
+    alerts_file: git.cppcheck.476.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/fetch.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_fetch_c
+
+- answer_file: git.cppcheck.476.builtin_push_c.ans
+  input:
+    alerts_file: git.cppcheck.476.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/push.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_push_c
+
+- answer_file: git.cppcheck.476.builtin_rev-parse_c.ans
+  input:
+    alerts_file: git.cppcheck.476.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/rev-parse.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_rev-parse_c
+
+- answer_file: git.cppcheck.476.builtin_unpack-objects_c.ans
+  input:
+    alerts_file: git.cppcheck.476.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/unpack-objects.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_unpack-objects_c
+
+- answer_file: git.cppcheck.476.reftable_block_c.ans
+  input:
+    alerts_file: git.cppcheck.476.alerts.json
+    base_dir: /oss/git
+    cfile: reftable/block.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: reftable_block_c
+
+- answer_file: git.cppcheck.476.trace2_tr2_tgt_normal_c.ans
+  input:
+    alerts_file: git.cppcheck.476.alerts.json
+    base_dir: /oss/git
+    cfile: trace2/tr2_tgt_normal.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: trace2_tr2_tgt_normal_c

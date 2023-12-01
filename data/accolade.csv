@@ -1,0 +1,58 @@
+SA Tool,Codebase,Rank,Rule,Title,CWE
+cppcheck,git,5,EXP34-C,Do not dereference null pointers,476
+cppcheck,zeek5,6,EXP34-C,Do not dereference null pointers,476
+CWE Top 25,2022,11,EXP34-C,Do not dereference null pointers,476
+CERT Rules,Priority,18,EXP34-C,Do not dereference null pointers,476
+Redemption,Critical,,EXP34-C,Do not dereference null pointers,476
+Redemption,FINAL,1,EXP34-C,Do not dereference null pointers,476
+cppcheck,git,8,EXP33-C,Do not read uninitialized memory,457
+clang-tidy,git,2,EXP33-C,Do not read uninitialized memory,457
+clang-tidy,zeek5,1,EXP33-C,Do not read uninitialized memory,457
+CERT Rules,Priority,12,EXP33-C,Do not read uninitialized memory,457
+Redemption,FINAL,2,EXP33-C,Do not read uninitialized memory,457
+cppcheck,git,4,MSC12-C,Detect and remove code that has no effect,"561, 1164"
+rosecheckers,git,10,MSC12-C,Detect and remove code that has no effect,"561, 1164"
+rosecheckers,zeek5,8,MSC12-C,Detect and remove code that has no effect,"561, 1164"
+Redemption,FINAL,3,MSC12-C,Detect and remove code that has no effect,"561, 1164"
+cppcheck,git,1,MSC13-C,Detect and remove unused values,563
+clang-tidy,git,9,MSC13-C,Detect and remove unused values,563
+cppcheck,zeek5,1,MSC13-C,Detect and remove unused values,563
+Redemption,SCALe,8,MSC13-C,Detect and remove unused values,563
+Redemption,FINAL,4,MSC13-C,Detect and remove unused values,563
+rosecheckers,git,2,EXP12-C,Do not ignore values returned by functions,252
+rosecheckers,zeek5,7,EXP12-C,Do not ignore values returned by functions,252
+Redemption,SCALe,7,EXP12-C,Do not ignore values returned by functions,252
+Redemption,FINAL,5,EXP12-C,Do not ignore values returned by functions,252
+clang-tidy,git,6,INT31-C,Ensure that integer conversions do not result in lost or misinterpreted data,"192, 197"
+clang-tidy,zeek5,6,INT31-C,Ensure that integer conversions do not result in lost or misinterpreted data,"192, 197"
+Redemption,Voluminous,,INT31-C,Ensure that integer conversions do not result in lost or misinterpreted data,"192, 197"
+Redemption,SCALe,1,INT31-C,Ensure that integer conversions do not result in lost or misinterpreted data,"192, 197"
+Redemption,FINAL,6,INT31-C,Ensure that integer conversions do not result in lost or misinterpreted data,"192, 197"
+clang-tidy,git,1,EXP19-C,"Use braces for the body of an if, for, or while statement",
+clang-tidy,zeek5,3,EXP19-C,"Use braces for the body of an if, for, or while statement",
+Redemption,FINAL,7,EXP19-C,"Use braces for the body of an if, for, or while statement",
+clang-tidy,git,7,ERR33-C,Detect and handle standard library errors,252
+CERT Rules,Priority,18,ERR33-C,Detect and handle standard library errors,252
+Redemption,FINAL,8,ERR33-C,Detect and handle standard library errors,252
+rosecheckers,git alerts,63,INT32-C,Ensure that operations on signed integers do not result in overflow,190
+Redemption,Popular,,INT32-C,Ensure that operations on signed integers do not result in overflow,190
+CWE Top 25,2022,13,INT32-C,Ensure that operations on signed integers do not result in overflow,190
+Redemption,Popular,,INT32-C,Ensure that operations on signed integers do not result in overflow,190
+Redemption,FINAL,9,INT32-C,Ensure that operations on signed integers do not result in overflow,190
+rosecheckers,git,6,DCL00-C,Const-qualify immutable objects,
+rosecheckers,zeek5,6,DCL00-C,Const-qualify immutable objects,
+clang-tidy,zeek5,9,DCL00-C,Const-qualify immutable objects,
+Redemption,SCALe,5,DCL00-C,Const-qualify immutable objects,
+Redemption,FINAL,10,DCL00-C,Const-qualify immutable objects,
+cppcheck,git,3,DCL01-C,Do not reuse variable names in subscopes,
+cppcheck,zeek5,4,DCL01-C,Do not reuse variable names in subscopes,
+rosecheckers,zeek5,2,DCL01-C,Do not reuse variable names in subscopes,
+clang-tidy,git,5,DCL04-C,Do not declare more than one variable per declaration,
+clang-tidy,zeek5,8,DCL04-C,Do not declare more than one variable per declaration,
+rosecheckers,git,7,DCL02-C,Use visually distinct identifiers,
+rosecheckers,zeek5,9,DCL02-C,Use visually distinct identifiers,
+cppcheck,git,7,MSC07-C,Detect and remove dead code,561
+cppcheck,zeek5,5,MSC07-C,Detect and remove dead code,561
+Redemption,Popular,,INT30-C,Ensure that unsigned integer operations do not wrap,190
+CWE Top 25,2022,13,INT30-C,Ensure that unsigned integer operations do not wrap,190
+Redemption,FINAL,No,INT30-C,Ensure that unsigned integer operations do not wrap,190

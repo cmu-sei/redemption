@@ -1,0 +1,29 @@
+[
+  {
+    "rule": "EXP33-C",
+    "file": "uninit_var_01.c",
+    "line": "4",
+    "column": "5",
+    "tool": "clang-tidy",
+    "checker": "cppcoreguidelines-init-variables",
+    "message": "variable 'x' is not initialized"
+  },
+  {
+    "rule": "EXP33-C",
+    "file": "uninit_var_01.c",
+    "line": "13",
+    "column": "42",
+    "tool": "cppcheck",
+    "checker": "uninitvar",
+    "message": "Uninitialized variable: p"
+  },
+  {
+    "rule": "EXP33-C",
+    "file": "uninit_var_01.c",
+    "line": "13",
+    "column": "45",
+    "tool": "cppcheck",
+    "checker": "uninitvar",
+    "message": "Uninitialized variable: foo"
+  }
+]

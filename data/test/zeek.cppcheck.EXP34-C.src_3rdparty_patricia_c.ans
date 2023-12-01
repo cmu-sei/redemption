@@ -1,0 +1,88 @@
+--- /host/data/test/out/src/3rdparty/patricia.c	2023-11-30 01:51:25.560237531 +0000
++++ /oss/zeek/src/3rdparty/patricia.c	2023-09-28 20:16:04.000000000 +0000
+@@ -1,5 +1,3 @@
+-#include "acr.h"
+-
+ /*
+  * $Id: patricia.c,v 1.7 2005/12/07 20:46:41 dplonka Exp $
+  * Dave Plonka <plonka@doit.wisc.edu>
+@@ -378,9 +376,9 @@
+   if (patricia == NULL)
+     out_of_memory("patricia/new_patricia: unable to allocate memory");
+ 
+-  null_check(patricia->maxbits) = maxbits;
+-  null_check(patricia->head) = NULL;
+-  null_check(patricia->num_active_node) = 0;
++  patricia->maxbits = maxbits;
++  patricia->head = NULL;
++  patricia->num_active_node = 0;
+   assert(maxbits <= PATRICIA_MAXBITS); /* XXX */
+   num_active_patricia++;
+   return (patricia);
+@@ -567,7 +565,7 @@
+   addr = prefix_touchar(prefix);
+   bitlen = prefix->bitlen;
+ 
+-  while (null_check(node->bit) < bitlen) {
++  while (node->bit < bitlen) {
+ 
+     if (node->prefix) {
+ #ifdef PATRICIA_DEBUG
+@@ -664,7 +662,7 @@
+   addr = prefix_touchar(prefix);
+   bitlen = prefix->bitlen;
+ 
+-  while (null_check(node->bit) < bitlen) {
++  while (node->bit < bitlen) {
+ 
+     if (node->prefix) {
+ #ifdef PATRICIA_DEBUG
+@@ -754,11 +752,11 @@
+     node = calloc(1, sizeof *node);
+     if (node == NULL)
+       out_of_memory("patricia/patricia_lookup: unable to allocate memory");
+-    null_check(node->bit) = prefix->bitlen;
+-    null_check(node->prefix) = Ref_Prefix(prefix);
+-    null_check(node->parent) = NULL;
+-    null_check(node->l) = node->r = NULL;
+-    null_check(node->data) = NULL;
++    node->bit = prefix->bitlen;
++    node->prefix = Ref_Prefix(prefix);
++    node->parent = NULL;
++    node->l = node->r = NULL;
++    node->data = NULL;
+     patricia->head = node;
+ #ifdef PATRICIA_DEBUG
+     fprintf(stderr, "patricia_lookup: new_node #0 %s/%d (head)\n",
+@@ -866,11 +864,11 @@
+   new_node = calloc(1, sizeof *new_node);
+   if (new_node == NULL)
+     out_of_memory("patricia/patricia_lookup: unable to allocate memory");
+-  null_check(new_node->bit) = prefix->bitlen;
+-  null_check(new_node->prefix) = Ref_Prefix(prefix);
+-  null_check(new_node->parent) = NULL;
+-  null_check(new_node->l) = new_node->r = NULL;
+-  null_check(new_node->data) = NULL;
++  new_node->bit = prefix->bitlen;
++  new_node->prefix = Ref_Prefix(prefix);
++  new_node->parent = NULL;
++  new_node->l = new_node->r = NULL;
++  new_node->data = NULL;
+   patricia->num_active_node++;
+ 
+   if (node->bit == differ_bit) {
+@@ -915,10 +913,10 @@
+     glue = calloc(1, sizeof *glue);
+     if (glue == NULL)
+       out_of_memory("patricia/patricia_lookup: unable to allocate memory");
+-    null_check(glue->bit) = differ_bit;
+-    null_check(glue->prefix) = NULL;
+-    null_check(glue->parent) = node->parent;
+-    null_check(glue->data) = NULL;
++    glue->bit = differ_bit;
++    glue->prefix = NULL;
++    glue->parent = node->parent;
++    glue->data = NULL;
+     patricia->num_active_node++;
+     if (differ_bit < patricia->maxbits &&
+         BIT_TEST(addr[differ_bit >> 3], 0x80 >> (differ_bit & 0x07))) {

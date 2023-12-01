@@ -1,0 +1,11 @@
+[
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "preproc_parser_1.c"
+        ],
+        "directory": "$TEST_DIR/",
+        "file": "preproc_parser_1.c"
+    }
+]

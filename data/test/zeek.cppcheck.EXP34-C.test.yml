@@ -1,0 +1,82 @@
+tests:
+
+- answer_file: zeek.cppcheck.EXP34-C.auxil_broker_3rdparty_sqlite3_c.ans
+  input:
+    alerts_file: zeek.cppcheck.EXP34-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/broker/3rdparty/sqlite3.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_broker_3rdparty_sqlite3_c
+
+- answer_file: zeek.cppcheck.EXP34-C.auxil_broker_caf_libcaf_io_src_io_network_interfaces_cpp.ans
+  input:
+    alerts_file: zeek.cppcheck.EXP34-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/broker/caf/libcaf_io/src/io/network/interfaces.cpp
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_broker_caf_libcaf_io_src_io_network_interfaces_cpp
+
+- answer_file: zeek.cppcheck.EXP34-C.auxil_spicy_spicy_3rdparty_justrx_src_tests_testregex_c.ans
+  input:
+    alerts_file: zeek.cppcheck.EXP34-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/spicy/spicy/3rdparty/justrx/src/tests/testregex.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_spicy_spicy_3rdparty_justrx_src_tests_testregex_c
+
+- answer_file: zeek.cppcheck.EXP34-C.auxil_zeekctl_auxil_pysubnettree_patricia_c.ans
+  input:
+    alerts_file: zeek.cppcheck.EXP34-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/zeekctl/auxil/pysubnettree/patricia.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_zeekctl_auxil_pysubnettree_patricia_c
+
+- answer_file: zeek.cppcheck.EXP34-C.build_auxil_bifcl_bif_lex_cc.ans
+  input:
+    alerts_file: zeek.cppcheck.EXP34-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: build/auxil/bifcl/bif_lex.cc
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: build_auxil_bifcl_bif_lex_cc
+
+- answer_file: zeek.cppcheck.EXP34-C.build_auxil_binpac_pac_scan_cc.ans
+  input:
+    alerts_file: zeek.cppcheck.EXP34-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: build/auxil/binpac/pac_scan.cc
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: build_auxil_binpac_pac_scan_cc
+
+- answer_file: zeek.cppcheck.EXP34-C.build_src_re-scan_cc.ans
+  input:
+    alerts_file: zeek.cppcheck.EXP34-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: build/src/re-scan.cc
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: build_src_re-scan_cc
+
+- answer_file: zeek.cppcheck.EXP34-C.src_3rdparty_patricia_c.ans
+  input:
+    alerts_file: zeek.cppcheck.EXP34-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: src/3rdparty/patricia.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: src_3rdparty_patricia_c
+
+- answer_file: zeek.cppcheck.EXP34-C.src_3rdparty_sqlite3_c.ans
+  input:
+    alerts_file: zeek.cppcheck.EXP34-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: src/3rdparty/sqlite3.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: src_3rdparty_sqlite3_c
+
+- answer_file: zeek.cppcheck.EXP34-C.src_zeek_Dict_h.ans
+  input:
+    alerts_file: zeek.cppcheck.EXP34-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: src/Dict.cc
+    compile_cmds_file: ../compile_commands.zeek.json
+    hfile: src/zeek/Dict.h
+  name: src_zeek_Dict_h

@@ -1,0 +1,1910 @@
+[
+  {
+    "rule": "561",
+    "file": "compat/terminal.c",
+    "line": "50",
+    "column": "2",
+    "tool": "cppcheck",
+    "checker": "unreachableCode",
+    "message": "Statements following return, break, continue, goto or throw will never be executed."
+  },
+  {
+    "rule": "561",
+    "file": "compat/terminal.c",
+    "line": "77",
+    "column": "2",
+    "tool": "cppcheck",
+    "checker": "unreachableCode",
+    "message": "Statements following return, break, continue, goto or throw will never be executed."
+  },
+  {
+    "rule": "561",
+    "file": "sha1dc/sha1.c",
+    "line": "1868",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'SHA1DCFinal' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "sha1dc/sha1.c",
+    "line": "1767",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'SHA1DCInit' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "sha1dc/sha1.c",
+    "line": "1816",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'SHA1DCSetCallback' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "sha1dc/sha1.c",
+    "line": "1808",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'SHA1DCSetDetectReducedRoundCollision' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "sha1dc/sha1.c",
+    "line": "1783",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'SHA1DCSetSafeHash' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "sha1dc/sha1.c",
+    "line": "1800",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'SHA1DCSetUseDetectColl' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "sha1dc/sha1.c",
+    "line": "1792",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'SHA1DCSetUseUBC' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "compat/obstack.c",
+    "line": "315",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function '_obstack_allocated_p' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "ewah/bitmap.c",
+    "line": "121",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'bitmap_and_not' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "ewah/bitmap.c",
+    "line": "38",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'bitmap_dup' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "ewah/bitmap.c",
+    "line": "172",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'bitmap_equals' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "ewah/bitmap.c",
+    "line": "198",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'bitmap_is_subset' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "ewah/bitmap.c",
+    "line": "132",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'bitmap_or' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "ewah/bitmap.c",
+    "line": "141",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'bitmap_or_ewah' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "ewah/bitmap.c",
+    "line": "162",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'bitmap_popcount' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "ewah/bitmap.c",
+    "line": "76",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'bitmap_to_ewah' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "sha256/block/sha256.c",
+    "line": "179",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'blk_SHA256_Final' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "sha256/block/sha256.c",
+    "line": "9",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'blk_SHA256_Init' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "reftable/blocksource.c",
+    "line": "50",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'block_source_from_strbuf' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/add.c",
+    "line": "493",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_add' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/am.c",
+    "line": "2314",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_am' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/annotate.c",
+    "line": "10",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_annotate' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/apply.c",
+    "line": "11",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_apply' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/archive.c",
+    "line": "81",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_archive' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/bisect--helper.c",
+    "line": "1393",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_bisect__helper' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/branch.c",
+    "line": "628",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_branch' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/bugreport.c",
+    "line": "96",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_bugreport' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/bundle.c",
+    "line": "207",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_bundle' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/cat-file.c",
+    "line": "881",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_cat_file' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/check-attr.c",
+    "line": "105",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_check_attr' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/check-ignore.c",
+    "line": "153",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_check_ignore' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/check-mailmap.c",
+    "line": "39",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_check_mailmap' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/check-ref-format.c",
+    "line": "54",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_check_ref_format' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/checkout.c",
+    "line": "1825",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_checkout' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/checkout--worker.c",
+    "line": "114",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_checkout__worker' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/checkout-index.c",
+    "line": "206",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_checkout_index' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/revert.c",
+    "line": "256",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_cherry_pick' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/clean.c",
+    "line": "911",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_clean' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/clone.c",
+    "line": "890",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_clone' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/column.c",
+    "line": "20",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_column' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/commit.c",
+    "line": "1626",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_commit' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/commit-graph.c",
+    "line": "308",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_commit_graph' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/commit-tree.c",
+    "line": "102",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_commit_tree' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/config.c",
+    "line": "639",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_config' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/count-objects.c",
+    "line": "94",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_count_objects' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/credential.c",
+    "line": "9",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_credential' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/credential-cache.c",
+    "line": "128",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_credential_cache' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/credential-cache--daemon.c",
+    "line": "264",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_credential_cache_daemon' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/credential-store.c",
+    "line": "150",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_credential_store' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/diagnose.c",
+    "line": "11",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_diagnose' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/diff.c",
+    "line": "394",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_diff' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/diff-files.c",
+    "line": "20",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_diff_files' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/diff-index.c",
+    "line": "16",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_diff_index' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/diff-tree.c",
+    "line": "108",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_diff_tree' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/difftool.c",
+    "line": "687",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_difftool' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/env--helper.c",
+    "line": "32",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_env__helper' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/fast-export.c",
+    "line": "1159",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_fast_export' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/fast-import.c",
+    "line": "3519",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_fast_import' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/fetch.c",
+    "line": "2109",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_fetch' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/fetch-pack.c",
+    "line": "43",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_fetch_pack' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/fmt-merge-msg.c",
+    "line": "11",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_fmt_merge_msg' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/for-each-ref.c",
+    "line": "17",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_for_each_ref' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/for-each-repo.c",
+    "line": "30",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_for_each_repo' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/fsck.c",
+    "line": "848",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_fsck' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/fsmonitor--daemon.c",
+    "line": "1575",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_fsmonitor__daemon' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/gc.c",
+    "line": "550",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_gc' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/get-tar-commit-id.c",
+    "line": "17",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_get_tar_commit_id' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/grep.c",
+    "line": "870",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_grep' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/hash-object.c",
+    "line": "80",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_hash_object' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/hook.c",
+    "line": "68",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_hook' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/index-pack.c",
+    "line": "1714",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_index_pack' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/init-db.c",
+    "line": "531",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_init_db' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/interpret-trailers.c",
+    "line": "91",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_interpret_trailers' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/ls-files.c",
+    "line": "693",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_ls_files' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/ls-remote.c",
+    "line": "38",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_ls_remote' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/mailinfo.c",
+    "line": "50",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_mailinfo' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/mailsplit.c",
+    "line": "272",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_mailsplit' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/gc.c",
+    "line": "2636",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_maintenance' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/merge-base.c",
+    "line": "135",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_merge_base' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/merge-file.c",
+    "line": "26",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_merge_file' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/merge-index.c",
+    "line": "73",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_merge_index' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/merge-ours.c",
+    "line": "17",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_merge_ours' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/merge-recursive.c",
+    "line": "23",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_merge_recursive' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/merge-tree.c",
+    "line": "485",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_merge_tree' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/mktag.c",
+    "line": "71",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_mktag' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/mktree.c",
+    "line": "150",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_mktree' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/multi-pack-index.c",
+    "line": "258",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_multi_pack_index' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/mv.c",
+    "line": "159",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_mv' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/name-rev.c",
+    "line": "567",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_name_rev' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/notes.c",
+    "line": "995",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_notes' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/pack-objects.c",
+    "line": "4167",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_pack_objects' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/pack-redundant.c",
+    "line": "560",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_pack_redundant' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/pack-refs.c",
+    "line": "12",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_pack_refs' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/patch-id.c",
+    "line": "213",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_patch_id' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/prune.c",
+    "line": "141",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_prune' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/prune-packed.c",
+    "line": "10",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_prune_packed' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/pull.c",
+    "line": "979",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_pull' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/push.c",
+    "line": "576",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_push' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/range-diff.c",
+    "line": "15",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_range_diff' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/read-tree.c",
+    "line": "108",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_read_tree' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/rebase.c",
+    "line": "1022",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_rebase' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/receive-pack.c",
+    "line": "2464",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_receive_pack' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/reflog.c",
+    "line": "411",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_reflog' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/remote-ext.c",
+    "line": "196",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_remote_ext' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/remote-fd.c",
+    "line": "56",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_remote_fd' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/replace.c",
+    "line": "535",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_replace' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/rerere.c",
+    "line": "51",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_rerere' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/reset.c",
+    "line": "313",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_reset' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/checkout.c",
+    "line": "1921",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_restore' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/rev-list.c",
+    "line": "505",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_rev_list' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/rev-parse.c",
+    "line": "660",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_rev_parse' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/revert.c",
+    "line": "240",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_revert' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/rm.c",
+    "line": "258",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_rm' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/send-pack.c",
+    "line": "156",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_send_pack' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/shortlog.c",
+    "line": "376",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_shortlog' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/show-branch.c",
+    "line": "622",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_show_branch' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/show-index.c",
+    "line": "11",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_show_index' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/show-ref.c",
+    "line": "179",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_show_ref' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/sparse-checkout.c",
+    "line": "925",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_sparse_checkout' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/stash.c",
+    "line": "1819",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_stash' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/commit.c",
+    "line": "1485",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_status' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/stripspace.c",
+    "line": "29",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_stripspace' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/checkout.c",
+    "line": "1879",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_switch' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/symbolic-ref.c",
+    "line": "40",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_symbolic_ref' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/tag.c",
+    "line": "424",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_tag' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/unpack-file.c",
+    "line": "25",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_unpack_file' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/unpack-objects.c",
+    "line": "601",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_unpack_objects' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/update-index.c",
+    "line": "983",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_update_index' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/update-ref.c",
+    "line": "498",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_update_ref' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/update-server-info.c",
+    "line": "11",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_update_server_info' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/upload-archive.c",
+    "line": "78",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_upload_archive' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/upload-archive.c",
+    "line": "20",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_upload_archive_writer' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/upload-pack.c",
+    "line": "16",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_upload_pack' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/var.c",
+    "line": "82",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_var' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/verify-commit.c",
+    "line": "63",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_verify_commit' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/verify-pack.c",
+    "line": "63",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_verify_pack' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/verify-tag.c",
+    "line": "30",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_verify_tag' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/worktree.c",
+    "line": "1173",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_worktree' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "builtin/write-tree.c",
+    "line": "19",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'cmd_write_tree' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "refs/iterator.c",
+    "line": "410",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'do_for_each_repo_ref_iterator' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "refs/iterator.c",
+    "line": "72",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'empty_ref_iterator_begin' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "compat/nonblock.c",
+    "line": "44",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'enable_pipe_nonblock' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "ewah/ewah_bitmap.c",
+    "line": "467",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'ewah_checksum' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "ewah/ewah_bitmap.c",
+    "line": "239",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'ewah_each_bit' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "ewah/ewah_bitmap.c",
+    "line": "452",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'ewah_pool_free' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "ewah/ewah_bitmap.c",
+    "line": "444",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'ewah_pool_new' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "ewah/ewah_io.c",
+    "line": "89",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'ewah_read_mmap' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "ewah/ewah_io.c",
+    "line": "84",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'ewah_serialize_strbuf' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "ewah/ewah_bitmap.c",
+    "line": "202",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'ewah_set' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "ewah/bitmap.c",
+    "line": "103",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'ewah_to_bitmap' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "ewah/ewah_bitmap.c",
+    "line": "376",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'ewah_xor' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "compat/terminal.c",
+    "line": "427",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'git_terminal_prompt' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "compat/simple-ipc/ipc-unix-socket.c",
+    "line": "221",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'ipc_client_send_command' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "compat/simple-ipc/ipc-unix-socket.c",
+    "line": "17",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'ipc_get_active_state' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "compat/simple-ipc/ipc-unix-socket.c",
+    "line": "968",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'ipc_server_await' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "compat/simple-ipc/ipc-unix-socket.c",
+    "line": "991",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'ipc_server_free' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "compat/simple-ipc/ipc-unix-socket.c",
+    "line": "826",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'ipc_server_run_async' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "refs/debug.c",
+    "line": "14",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'maybe_debug_wrap_ref_store' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "refs/iterator.c",
+    "line": "260",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'overlay_ref_iterator_begin' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "refs/iterator.c",
+    "line": "386",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'prefix_ref_iterator_begin' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "compat/terminal.c",
+    "line": "532",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'read_key_without_echo' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "reftable/error.c",
+    "line": "13",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'reftable_error_str' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "reftable/reader.c",
+    "line": "798",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'reftable_reader_print_file' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "reftable/reader.c",
+    "line": "741",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'reftable_reader_refs_for' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "reftable/reader.c",
+    "line": "624",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'reftable_reader_seek_log' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "reftable/record.c",
+    "line": "1159",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'reftable_record_equal' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "reftable/record.c",
+    "line": "1310",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'reftable_record_print' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "reftable/publicbasics.c",
+    "line": "47",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'reftable_set_alloc' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "reftable/stack.c",
+    "line": "415",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'reftable_stack_add' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "reftable/stack.c",
+    "line": "1376",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'reftable_stack_clean' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "reftable/stack.c",
+    "line": "1086",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'reftable_stack_compact_all' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "reftable/stack.c",
+    "line": "1209",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'reftable_stack_compaction_stats' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "reftable/stack.c",
+    "line": "1396",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'reftable_stack_print_directory' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "reftable/stack.c",
+    "line": "1222",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'reftable_stack_read_log' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "reftable/stack.c",
+    "line": "1214",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'reftable_stack_read_ref' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "reftable/writer.c",
+    "line": "365",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'reftable_writer_add_logs' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "reftable/writer.c",
+    "line": "296",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'reftable_writer_add_refs' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "reftable/writer.c",
+    "line": "704",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'reftable_writer_stats' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "sha1dc/sha1.c",
+    "line": "191",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'sha1_compression' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "trace2/tr2_cfg.c",
+    "line": "84",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'tr2_cfg_free_env_vars' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "trace2/tr2_cfg.c",
+    "line": "45",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'tr2_cfg_free_patterns' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "trace2/tr2_cfg.c",
+    "line": "117",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'tr2_cfg_list_config_fl' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "trace2/tr2_cfg.c",
+    "line": "140",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'tr2_cfg_set_fl' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "trace2/tr2_cmd_name.c",
+    "line": "8",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'tr2_cmd_name_append_hierarchy' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "trace2/tr2_cmd_name.c",
+    "line": "22",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'tr2_cmd_name_get_hierarchy' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "trace2/tr2_cmd_name.c",
+    "line": "27",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'tr2_cmd_name_release' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "trace2/tr2_ctr.c",
+    "line": "34",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'tr2_counter_increment' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "trace2/tr2_ctr.c",
+    "line": "87",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'tr2_emit_final_counters' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "trace2/tr2_tmr.c",
+    "line": "168",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'tr2_emit_final_timers' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "trace2/tr2_ctr.c",
+    "line": "67",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'tr2_emit_per_thread_counters' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "trace2/tr2_tmr.c",
+    "line": "148",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'tr2_emit_per_thread_timers' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "trace2/tr2_cfg.c",
+    "line": "125",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'tr2_list_env_vars_fl' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "trace2/tr2_sid.c",
+    "line": "109",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'tr2_sid_release' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "trace2/tr2_tmr.c",
+    "line": "37",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'tr2_start_timer' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "trace2/tr2_tmr.c",
+    "line": "49",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'tr2_stop_timer' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "trace2/tr2_sysenv.c",
+    "line": "85",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'tr2_sysenv_load' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "trace2/tr2_sysenv.c",
+    "line": "126",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'tr2_sysenv_release' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "trace2/tr2_ctr.c",
+    "line": "46",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'tr2_update_final_counters' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "trace2/tr2_tmr.c",
+    "line": "88",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'tr2_update_final_timers' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "trace2/tr2_tls.c",
+    "line": "145",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'tr2tls_absolute_elapsed' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "trace2/tr2_tls.c",
+    "line": "153",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'tr2tls_init' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "trace2/tr2_tls.c",
+    "line": "84",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'tr2tls_is_main_thread' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "trace2/tr2_tls.c",
+    "line": "185",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'tr2tls_lock' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "trace2/tr2_tls.c",
+    "line": "123",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'tr2tls_pop_unwind_self' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "trace2/tr2_tls.c",
+    "line": "105",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'tr2tls_push_self' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "trace2/tr2_tls.c",
+    "line": "131",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'tr2tls_region_elasped_self' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "trace2/tr2_tls.c",
+    "line": "164",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'tr2tls_release' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "trace2/tr2_tls.c",
+    "line": "190",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'tr2tls_unlock' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "compat/linux/procinfo.c",
+    "line": "151",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'trace2_collect_process_info' is never used."
+  },
+  {
+    "rule": "561",
+    "file": "xdiff/xdiffi.c",
+    "line": "1054",
+    "column": "0",
+    "tool": "cppcheck",
+    "checker": "unusedFunction",
+    "message": "The function 'xdl_diff' is never used."
+  }
+]

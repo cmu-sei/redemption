@@ -1,0 +1,122 @@
+# Data used by update_markings.py
+
+# <legal>
+# 'Redemption' Automated Code Repair Tool
+# 
+# Copyright 2023 Carnegie Mellon University.
+# 
+# NO WARRANTY. THIS CARNEGIE MELLON UNIVERSITY AND SOFTWARE ENGINEERING
+# INSTITUTE MATERIAL IS FURNISHED ON AN 'AS-IS' BASIS. CARNEGIE MELLON
+# UNIVERSITY MAKES NO WARRANTIES OF ANY KIND, EITHER EXPRESSED OR IMPLIED,
+# AS TO ANY MATTER INCLUDING, BUT NOT LIMITED TO, WARRANTY OF FITNESS FOR
+# PURPOSE OR MERCHANTABILITY, EXCLUSIVITY, OR RESULTS OBTAINED FROM USE OF
+# THE MATERIAL. CARNEGIE MELLON UNIVERSITY DOES NOT MAKE ANY WARRANTY OF ANY
+# KIND WITH RESPECT TO FREEDOM FROM PATENT, TRADEMARK, OR COPYRIGHT
+# INFRINGEMENT.
+# 
+# Licensed under a MIT (SEI)-style license, please see License.txt or
+# contact permission@sei.cmu.edu for full terms.
+# 
+# [DISTRIBUTION STATEMENT A] This material has been approved for public
+# release and unlimited distribution.  Please see Copyright notice for
+# non-US Government use and distribution.
+# 
+# This Software includes and/or makes use of Third-Party Software each
+# subject to its own license.
+# 
+# DM23-2165
+# </legal>
+
+
+# Any file with one of these extensions need no <legal> tags
+Exempt_Extensions: [
+    # Binary
+    jpg,
+    png,
+    gif,
+    pdf,
+    docx,
+    xlsx,
+    pptx,
+    pyc,
+    zip,
+    class,
+    so,
+    o,
+    elf,
+
+    # Extensions with no commenting mechanism
+    json,
+    csv,
+    tsv,
+    ans, # usually these are a diff
+]
+
+
+# Any file that matches one of these regexps needs no <legal> tags.
+Exempt_Files: [
+    ".git.*",
+    "ABOUT",
+    "License.*",
+    "code/acr/llvm/CMakeLists.txt",
+    "code/acr/test/.*.c",
+    "code/acr/test/.*.h",
+    "code/acr/test/.*.ll",
+    "data/cppcheck/.*/cppcheck.xml",
+    "data/clang-tidy/.*/clang-tidy.txt",
+    "data/rosecheckers/.*/rosecheckers.txt",
+    "data/test/.*.clang-tidy..*.test.yml",
+    "data/test/.*.cppcheck..*.test.yml",
+    "data/test/.*.rosecheckers..*.test.yml",
+    "data/test/sample.alerts.txt",
+    "data/test/toy/.*.c",
+    "data/test/toy/.*.h",
+    "data/zeek5/.*.txt",
+    "denylist.txt",
+    "manifest.txt",
+    "paper.*",
+    ]
+
+
+# Every extension has a regex for how to comment <legal> tags.
+Extension_Map:
+    # These extensions need # prefixed, as in Bash
+    sh:         '# \1'
+    py:         '# \1'
+    rb:         '# \1'
+    mk:         '# \1'
+    properties: '# \1'
+    yml:        '# \1'
+    yaml:       '# \1'
+
+    # These extensions need // prefixed, as in Java
+    java:       '// \1'
+    c:          '// \1'
+    cpp:        '// \1'
+    cxx:        '// \1'
+    h:          '// \1'
+    hxx:        '// \1'
+    hpp:        '// \1'
+    C:          '// \1'
+    H:          '// \1'
+    js:         '// \1'
+
+    # These need idiosyncratic comments
+    erb:        '<!-- \1 -->'
+    sql:        '-- \1'
+    ll:         '; \1'
+    md:         '\1  '
+    html:       '<p>\1'
+    txt:        '\1'
+
+
+# Any file here needs <legal> tags in an idiosyncratic format
+File_Map:
+    .gitignore:  '# \1'
+    Dockerfile:  '# \1'
+    Dockerfile.distrib:  '# \1'
+    Dockerfile.prereq:  '# \1'
+    Dockerfile.test:  '# \1'
+    Dockerfile.rosecheckers:  '# \1'
+    Makefile:  '# \1'
+    Vagrantfile:  '# \1'

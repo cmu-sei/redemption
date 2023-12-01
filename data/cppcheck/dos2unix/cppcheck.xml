@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<results version="2">
+    <cppcheck version="2.9"/>
+    <errors>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;InF&apos; is assigned a value that is never used." verbose="Variable &apos;InF&apos; is assigned a value that is never used." cwe="563" file0="/datasets/dos2unix/common.c">
+            <location file="/datasets/dos2unix/common.c" line="1331" column="12"/>
+            <symbol>InF</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;InF&apos; is assigned a value that is never used." verbose="Variable &apos;InF&apos; is assigned a value that is never used." cwe="563" file0="/datasets/dos2unix/common.c">
+            <location file="/datasets/dos2unix/common.c" line="1373" column="12"/>
+            <symbol>InF</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;conversion_error&apos; is assigned a value that is never used." verbose="Variable &apos;conversion_error&apos; is assigned a value that is never used." cwe="563" file0="/datasets/dos2unix/common.c">
+            <location file="/datasets/dos2unix/common.c" line="2549" column="28"/>
+            <symbol>conversion_error</symbol>
+        </error>
+        <error id="uninitvar" severity="error" msg="Uninitialized variable: lpMsgBuf" verbose="Uninitialized variable: lpMsgBuf" cwe="457" file0="/datasets/dos2unix/common.c">
+            <location file="/datasets/dos2unix/common.c" line="117" column="19"/>
+            <symbol>lpMsgBuf</symbol>
+        </error>
+        <error id="ConfigurationNotChecked" severity="information" msg="Skipping configuration &apos;DEBUG;S_ISBLK&apos; since the value of &apos;S_ISBLK&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly." verbose="Skipping configuration &apos;DEBUG;S_ISBLK&apos; since the value of &apos;S_ISBLK&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.">
+            <location file="/datasets/dos2unix/common.c" line="426" column="0"/>
+        </error>
+        <error id="ConfigurationNotChecked" severity="information" msg="Skipping configuration &apos;DEBUG;S_ISLNK&apos; since the value of &apos;S_ISLNK&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly." verbose="Skipping configuration &apos;DEBUG;S_ISLNK&apos; since the value of &apos;S_ISLNK&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.">
+            <location file="/datasets/dos2unix/common.c" line="379" column="0"/>
+        </error>
+        <error id="ConfigurationNotChecked" severity="information" msg="Skipping configuration &apos;DEBUG;S_ISLNK&apos; since the value of &apos;S_ISLNK&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly." verbose="Skipping configuration &apos;DEBUG;S_ISLNK&apos; since the value of &apos;S_ISLNK&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.">
+            <location file="/datasets/dos2unix/common.c" line="420" column="0"/>
+        </error>
+        <error id="ConfigurationNotChecked" severity="information" msg="Skipping configuration &apos;DEBUG;S_ISLNK&apos; since the value of &apos;S_ISLNK&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly." verbose="Skipping configuration &apos;DEBUG;S_ISLNK&apos; since the value of &apos;S_ISLNK&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.">
+            <location file="/datasets/dos2unix/common.c" line="439" column="0"/>
+        </error>
+        <error id="ConfigurationNotChecked" severity="information" msg="Skipping configuration &apos;DEBUG;S_ISLNK&apos; since the value of &apos;S_ISLNK&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly." verbose="Skipping configuration &apos;DEBUG;S_ISLNK&apos; since the value of &apos;S_ISLNK&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.">
+            <location file="/datasets/dos2unix/common.c" line="1045" column="0"/>
+        </error>
+        <error id="ConfigurationNotChecked" severity="information" msg="Skipping configuration &apos;DEBUG;S_ISSOCK&apos; since the value of &apos;S_ISSOCK&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly." verbose="Skipping configuration &apos;DEBUG;S_ISSOCK&apos; since the value of &apos;S_ISSOCK&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.">
+            <location file="/datasets/dos2unix/common.c" line="416" column="0"/>
+        </error>
+        <error id="nullPointerRedundantCheck" severity="warning" msg="Either the condition &apos;path==NULL&apos; is redundant or there is possible null pointer dereference: path." verbose="Either the condition &apos;path==NULL&apos; is redundant or there is possible null pointer dereference: path." cwe="476" file0="/datasets/dos2unix/common.c">
+            <location file="/datasets/dos2unix/common.c" line="835" column="25" info="Null pointer dereference"/>
+            <location file="/datasets/dos2unix/common.c" line="841" column="13" info="Assuming that condition &apos;path==NULL&apos; is not redundant"/>
+            <symbol>path</symbol>
+        </error>
+        <error id="nullPointerRedundantCheck" severity="warning" msg="Either the condition &apos;path==NULL&apos; is redundant or there is possible null pointer dereference: path." verbose="Either the condition &apos;path==NULL&apos; is redundant or there is possible null pointer dereference: path." cwe="476" file0="/datasets/dos2unix/common.c">
+            <location file="/datasets/dos2unix/common.c" line="857" column="25" info="Null pointer dereference"/>
+            <location file="/datasets/dos2unix/common.c" line="863" column="13" info="Assuming that condition &apos;path==NULL&apos; is not redundant"/>
+            <symbol>path</symbol>
+        </error>
+        <error id="ConfigurationNotChecked" severity="information" msg="Skipping configuration &apos;S_ISLNK&apos; since the value of &apos;S_ISLNK&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly." verbose="Skipping configuration &apos;S_ISLNK&apos; since the value of &apos;S_ISLNK&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.">
+            <location file="/datasets/dos2unix/common.c" line="379" column="0"/>
+        </error>
+        <error id="ConfigurationNotChecked" severity="information" msg="Skipping configuration &apos;S_ISLNK&apos; since the value of &apos;S_ISLNK&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly." verbose="Skipping configuration &apos;S_ISLNK&apos; since the value of &apos;S_ISLNK&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.">
+            <location file="/datasets/dos2unix/common.c" line="439" column="0"/>
+        </error>
+        <error id="ConfigurationNotChecked" severity="information" msg="Skipping configuration &apos;S_ISLNK&apos; since the value of &apos;S_ISLNK&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly." verbose="Skipping configuration &apos;S_ISLNK&apos; since the value of &apos;S_ISLNK&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.">
+            <location file="/datasets/dos2unix/common.c" line="1045" column="0"/>
+        </error>
+        <error id="ConfigurationNotChecked" severity="information" msg="Skipping configuration &apos;S_ISLNK;_WIN32;__CYGWIN__&apos; since the value of &apos;S_ISLNK&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly." verbose="Skipping configuration &apos;S_ISLNK;_WIN32;__CYGWIN__&apos; since the value of &apos;S_ISLNK&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.">
+            <location file="/datasets/dos2unix/common.c" line="379" column="0"/>
+        </error>
+        <error id="ConfigurationNotChecked" severity="information" msg="Skipping configuration &apos;S_ISLNK;_WIN32;__CYGWIN__&apos; since the value of &apos;S_ISLNK&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly." verbose="Skipping configuration &apos;S_ISLNK;_WIN32;__CYGWIN__&apos; since the value of &apos;S_ISLNK&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.">
+            <location file="/datasets/dos2unix/common.c" line="439" column="0"/>
+        </error>
+        <error id="ConfigurationNotChecked" severity="information" msg="Skipping configuration &apos;S_ISLNK;_WIN32;__CYGWIN__&apos; since the value of &apos;S_ISLNK&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly." verbose="Skipping configuration &apos;S_ISLNK;_WIN32;__CYGWIN__&apos; since the value of &apos;S_ISLNK&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.">
+            <location file="/datasets/dos2unix/common.c" line="1045" column="0"/>
+        </error>
+        <error id="ConfigurationNotChecked" severity="information" msg="Skipping configuration &apos;WINVER;_WIN32&apos; since the value of &apos;WINVER&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly." verbose="Skipping configuration &apos;WINVER;_WIN32&apos; since the value of &apos;WINVER&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.">
+            <location file="/datasets/dos2unix/common.c" line="755" column="0"/>
+        </error>
+        <error id="ConfigurationNotChecked" severity="information" msg="Skipping configuration &apos;_MSC_VER;_WIN32&apos; since the value of &apos;_MSC_VER&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly." verbose="Skipping configuration &apos;_MSC_VER;_WIN32&apos; since the value of &apos;_MSC_VER&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.">
+            <location file="/datasets/dos2unix/common.c" line="746" column="0"/>
+        </error>
+        <error id="ConfigurationNotChecked" severity="information" msg="Skipping configuration &apos;_MSC_VER;_WIN64&apos; since the value of &apos;_MSC_VER&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly." verbose="Skipping configuration &apos;_MSC_VER;_WIN64&apos; since the value of &apos;_MSC_VER&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.">
+            <location file="/datasets/dos2unix/common.c" line="744" column="0"/>
+        </error>
+        <error id="ConfigurationNotChecked" severity="information" msg="Skipping configuration &apos;__OS&apos; since the value of &apos;__OS&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly." verbose="Skipping configuration &apos;__OS&apos; since the value of &apos;__OS&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.">
+            <location file="/datasets/dos2unix/common.c" line="752" column="0"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;_dowildcard&apos; is assigned a value that is never used." verbose="Variable &apos;_dowildcard&apos; is assigned a value that is never used." cwe="563" file0="/datasets/dos2unix/dos2unix.c">
+            <location file="/datasets/dos2unix/dos2unix.c" line="509" column="19"/>
+            <symbol>_dowildcard</symbol>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Condition &apos;!utf8&apos; is always true" verbose="Condition &apos;!utf8&apos; is always true" cwe="571" file0="/datasets/dos2unix/test/setlocale.c">
+            <location file="/datasets/dos2unix/test/setlocale.c" line="35" column="8" info="Condition &apos;!utf8&apos; is always true"/>
+            <location file="/datasets/dos2unix/test/setlocale.c" line="27" column="14" info="Assignment &apos;utf8=0&apos;, assigned value is 0"/>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;prevmode&apos; can be reduced." verbose="The scope of the variable &apos;prevmode&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="/datasets/dos2unix/test/setlocale.c">
+            <location file="/datasets/dos2unix/test/setlocale.c" line="25" column="7"/>
+            <symbol>prevmode</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;_dowildcard&apos; is assigned a value that is never used." verbose="Variable &apos;_dowildcard&apos; is assigned a value that is never used." cwe="563" file0="/datasets/dos2unix/unix2dos.c">
+            <location file="/datasets/dos2unix/unix2dos.c" line="482" column="19"/>
+            <symbol>_dowildcard</symbol>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Cppcheck cannot find all the include files (use --check-config for details)" verbose="Cppcheck cannot find all the include files. Cppcheck can check the code without the include files found. But the results will probably be more accurate if all the include files are found. Please check your project&apos;s include directories and add all of them as include directories for Cppcheck. To see what files Cppcheck cannot find use --check-config."/>
+    </errors>
+</results>
