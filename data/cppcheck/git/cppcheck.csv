@@ -1,0 +1,482 @@
+Checker,Path,Line,Column,Message,tool,checker,rule
+unreachableCode,compat/terminal.c,50,2,"Statements following return, break, continue, goto or throw will never be executed.",cppcheck,unreachableCode,MSC07-C
+unreachableCode,compat/terminal.c,77,2,"Statements following return, break, continue, goto or throw will never be executed.",cppcheck,unreachableCode,MSC07-C
+ConfigurationNotChecked,git-compat-util.h,1336,0,"Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATH=/proc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;BIG_ENDIAN;BYTE_ORDER;LITTLE_ENDIAN;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.",cppcheck,ConfigurationNotChecked,NONE
+ConfigurationNotChecked,git-compat-util.h,1336,0,"Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATH=/proc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;_MSC_VER;_M_ARM64;_M_IX86;_M_X64;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.",cppcheck,ConfigurationNotChecked,NONE
+ConfigurationNotChecked,git-compat-util.h,1336,0,"Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATH=/proc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;__BIG_ENDIAN;__BYTE_ORDER;__LITTLE_ENDIAN;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.",cppcheck,ConfigurationNotChecked,NONE
+ConfigurationNotChecked,git-compat-util.h,1336,0,"Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATH=/proc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;__GNUC__;__i386__;__x86_64__;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.",cppcheck,ConfigurationNotChecked,NONE
+ConfigurationNotChecked,git-compat-util.h,1336,0,"Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATH=/proc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;__GNUC__;__i386__;__x86_64__;__x86_64__;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.",cppcheck,ConfigurationNotChecked,NONE
+unreadVariable,builtin/show-ref.c,183,7,"Variable 'argc' is assigned a value that is never used.",cppcheck,unreadVariable,MSC13-C
+variableScope,builtin/gc.c,1498,27,"The scope of the variable 'item' can be reduced.",cppcheck,variableScope,DCL19-C
+variableScope,builtin/gc.c,1570,27,"The scope of the variable 'item' can be reduced.",cppcheck,variableScope,DCL19-C
+shadowVariable,reftable/record.c,418,7,"Local variable 'n' shadows outer variable",cppcheck,shadowVariable,DCL01-C
+shadowVariable,reftable/record.c,551,7,"Local variable 'n' shadows outer variable",cppcheck,shadowVariable,DCL01-C
+shadowVariable,reftable/record.c,601,7,"Local variable 'n' shadows outer variable",cppcheck,shadowVariable,DCL01-C
+constParameter,reftable/record.c,245,45,"Parameter 'src' can be declared as pointer to const",cppcheck,constParameter,DCL00-C
+uselessAssignmentArg,builtin/difftool.c,722,2,"Assignment of function parameter has no effect outside the function.",cppcheck,uselessAssignmentArg,MSC12-C
+shadowVariable,builtin/difftool.c,478,31,"Local variable 'entry' shadows outer variable",cppcheck,shadowVariable,DCL01-C
+nullPointerRedundantCheck,builtin/push.c,671,6,"Either the condition '!remote' is redundant or there is possible null pointer dereference: remote.",cppcheck,nullPointerRedundantCheck,EXP34-C
+variableScope,builtin/push.c,426,6,"The scope of the variable 'i' can be reduced.",cppcheck,variableScope,DCL19-C
+shadowVariable,builtin/push.c,465,7,"Local variable 'recurse_submodules' shadows outer variable",cppcheck,shadowVariable,DCL01-C
+clarifyCondition,builtin/config.c,306,20,"Boolean result is used in bitwise operation. Clarify expression with parentheses.",cppcheck,clarifyCondition,NONE
+shadowVariable,builtin/config.c,190,13,"Local variable 'term' shadows outer variable",cppcheck,shadowVariable,DCL01-C
+shadowVariable,builtin/config.c,203,13,"Local variable 'term' shadows outer variable",cppcheck,shadowVariable,DCL01-C
+variableScope,builtin/interpret-trailers.c,47,27,"The scope of the variable 'item' can be reduced.",cppcheck,variableScope,DCL19-C
+shadowFunction,builtin/merge-tree.c,415,22,"Local variable 'result' shadows outer function",cppcheck,shadowFunction,DCL01-C
+shadowFunction,builtin/merge-tree.c,535,8,"Local variable 'result' shadows outer function",cppcheck,shadowFunction,DCL01-C
+unusedStructMember,xdiff/xhistogram.c,65,8,"struct member 'histindex::key_shift' is never used.",cppcheck,unusedStructMember,MSC13-C
+nullPointerArithmeticRedundantCheck,builtin/am.c,1371,27,"Either the condition '!msg' is redundant or there is pointer arithmetic with NULL pointer.",cppcheck,nullPointerArithmeticRedundantCheck,EXP34-C
+shadowVariable,builtin/am.c,1857,18,"Local variable 'sb' shadows outer variable",cppcheck,shadowVariable,DCL01-C
+knownConditionTrueFalse,builtin/clean.c,778,7,"Condition '!eof' is always true",cppcheck,knownConditionTrueFalse,MSC07-C
+variableScope,builtin/clean.c,289,14,"The scope of the variable 'qname' can be reduced.",cppcheck,variableScope,DCL19-C
+variableScope,builtin/clean.c,672,18,"The scope of the variable 'ignore_list' can be reduced.",cppcheck,variableScope,DCL19-C
+variableScope,builtin/clean.c,674,23,"The scope of the variable 'pl' can be reduced.",cppcheck,variableScope,DCL19-C
+nullPointerRedundantCheck,reftable/block.c,445,40,"Either the condition 'blockp' is redundant or there is possible null pointer dereference: blockp.",cppcheck,nullPointerRedundantCheck,EXP34-C
+variableScope,builtin/fsck.c,470,17,"The scope of the variable 'obj' can be reduced.",cppcheck,variableScope,DCL19-C
+variableScope,builtin/fsck.c,894,13,"The scope of the variable 'total' can be reduced.",cppcheck,variableScope,DCL19-C
+shadowVariable,builtin/rebase.c,1425,7,"Local variable 'i' shadows outer variable",cppcheck,shadowVariable,DCL01-C
+shadowVariable,builtin/rebase.c,1464,7,"Local variable 'i' shadows outer variable",cppcheck,shadowVariable,DCL01-C
+clarifyCalculation,builtin/rebase.c,329,41,"Clarify calculation precedence for '&' and '?'.",cppcheck,clarifyCalculation,NONE
+constParameter,builtin/rebase.c,856,45,"Parameter 'from' can be declared as pointer to const",cppcheck,constParameter,DCL00-C
+uselessAssignmentPtrArg,builtin/fast-import.c,2504,4,"Assignment of function parameter has no effect outside the function. Did you forget dereferencing it?",cppcheck,uselessAssignmentPtrArg,MSC12-C
+nullPointerRedundantCheck,builtin/fast-import.c,1286,31,"Either the condition '!c' is redundant or there is possible null pointer dereference: c.",cppcheck,nullPointerRedundantCheck,EXP34-C
+nullPointerRedundantCheck,builtin/fast-import.c,2548,22,"Either the condition '!buf' is redundant or there is possible null pointer dereference: buf.",cppcheck,nullPointerRedundantCheck,EXP34-C
+nullPointerRedundantCheck,builtin/fast-import.c,3332,3,"Either the condition '!f' is redundant or there is possible null pointer dereference: f.",cppcheck,nullPointerRedundantCheck,EXP34-C
+nullPointerArithmeticRedundantCheck,builtin/fast-import.c,1274,19,"Either the condition '!buf' is redundant or there is pointer arithmetic with NULL pointer.",cppcheck,nullPointerArithmeticRedundantCheck,EXP34-C
+nullPointerArithmeticRedundantCheck,builtin/fast-import.c,3333,3,"Either the condition '!f' is redundant or there is pointer arithmetic with NULL pointer.",cppcheck,nullPointerArithmeticRedundantCheck,EXP34-C
+redundantAssignment,builtin/fast-import.c,1933,6,"Variable 'num' is reassigned a value before the old one has been used.",cppcheck,redundantAssignment,MSC13-C
+variableScope,builtin/fast-import.c,727,21,"The scope of the variable 'a' can be reduced.",cppcheck,variableScope,DCL19-C
+variableScope,builtin/fast-import.c,2099,21,"The scope of the variable 'e' can be reduced.",cppcheck,variableScope,DCL19-C
+variableScope,builtin/fast-import.c,2100,18,"The scope of the variable 'tmp_hex_oid_len' can be reduced.",cppcheck,variableScope,DCL19-C
+variableScope,builtin/fast-import.c,2100,35,"The scope of the variable 'tmp_fullpath_len' can be reduced.",cppcheck,variableScope,DCL19-C
+variableScope,builtin/fast-import.c,3090,35,"The scope of the variable 'top' can be reduced.",cppcheck,variableScope,DCL19-C
+shadowFunction,builtin/fast-import.c,1089,29,"Local variable 'checkpoint' shadows outer function",cppcheck,shadowFunction,DCL01-C
+unreadVariable,builtin/fast-import.c,2799,22,"Variable 'from_mark' is assigned a value that is never used.",cppcheck,unreadVariable,MSC13-C
+va_end_missing,builtin/fast-import.c,429,1,"va_list 'cp' was opened but not closed by va_end().",cppcheck,va_end_missing,DCL11-C
+ConfigurationNotChecked,builtin/fast-import.c,452,0,"Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATH=/proc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;SIGUSR1' since the value of 'SIGUSR1' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.",cppcheck,ConfigurationNotChecked,NONE
+constParameter,compat/obstack.c,315,48,"Parameter 'obj' can be declared as pointer to const",cppcheck,constParameter,DCL00-C
+unusedStructMember,compat/obstack.c,61,13,"union member 'fooround::i' is never used.",cppcheck,unusedStructMember,MSC13-C
+unusedStructMember,compat/obstack.c,62,15,"union member 'fooround::d' is never used.",cppcheck,unusedStructMember,MSC13-C
+unusedStructMember,compat/obstack.c,63,9,"union member 'fooround::p' is never used.",cppcheck,unusedStructMember,MSC13-C
+unusedStructMember,compat/obstack.c,67,8,"struct member 'fooalign::c' is never used.",cppcheck,unusedStructMember,MSC13-C
+unusedStructMember,compat/obstack.c,68,18,"struct member 'fooalign::u' is never used.",cppcheck,unusedStructMember,MSC13-C
+ConfigurationNotChecked,compat/obstack.h,161,0,"Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATH=/proc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;__PTRDIFF_TYPE__' since the value of '__PTRDIFF_TYPE__' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.",cppcheck,ConfigurationNotChecked,NONE
+ConfigurationNotChecked,compat/obstack.c,171,0,"Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATH=/proc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;__PTRDIFF_TYPE__' since the value of '__PTRDIFF_TYPE__' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.",cppcheck,ConfigurationNotChecked,NONE
+ConfigurationNotChecked,compat/obstack.c,220,0,"Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATH=/proc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;__PTRDIFF_TYPE__' since the value of '__PTRDIFF_TYPE__' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.",cppcheck,ConfigurationNotChecked,NONE
+ConfigurationNotChecked,compat/obstack.c,263,0,"Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATH=/proc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;__PTRDIFF_TYPE__' since the value of '__PTRDIFF_TYPE__' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.",cppcheck,ConfigurationNotChecked,NONE
+ConfigurationNotChecked,compat/obstack.c,290,0,"Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATH=/proc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;__PTRDIFF_TYPE__' since the value of '__PTRDIFF_TYPE__' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.",cppcheck,ConfigurationNotChecked,NONE
+variableScope,builtin/diff-tree.c,110,7,"The scope of the variable 'line' can be reduced.",cppcheck,variableScope,DCL19-C
+uselessAssignmentArg,builtin/stash.c,810,2,"Assignment of function parameter has no effect outside the function.",cppcheck,uselessAssignmentArg,MSC12-C
+uselessAssignmentArg,builtin/stash.c,1739,4,"Assignment of function parameter has no effect outside the function.",cppcheck,uselessAssignmentArg,MSC12-C
+shadowVariable,builtin/stash.c,1677,25,"Local variable 'cp' shadows outer variable",cppcheck,shadowVariable,DCL01-C
+unreadVariable,builtin/stash.c,1739,8,"Variable 'argc' is assigned a value that is never used.",cppcheck,unreadVariable,MSC13-C
+ConfigurationNotChecked,git-compat-util.h,1336,0,"Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATH=/proc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;ETC_GITCONFIG=/usr/local/etc/gitconfig;BIG_ENDIAN;BYTE_ORDER;LITTLE_ENDIAN;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.",cppcheck,ConfigurationNotChecked,NONE
+ConfigurationNotChecked,git-compat-util.h,1336,0,"Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATH=/proc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;ETC_GITCONFIG=/usr/local/etc/gitconfig;_MSC_VER;_M_ARM64;_M_IX86;_M_X64;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.",cppcheck,ConfigurationNotChecked,NONE
+ConfigurationNotChecked,git-compat-util.h,1336,0,"Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATH=/proc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;ETC_GITCONFIG=/usr/local/etc/gitconfig;__BIG_ENDIAN;__BYTE_ORDER;__LITTLE_ENDIAN;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.",cppcheck,ConfigurationNotChecked,NONE
+ConfigurationNotChecked,git-compat-util.h,1336,0,"Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATH=/proc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;ETC_GITCONFIG=/usr/local/etc/gitconfig;__GNUC__;__i386__;__x86_64__;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.",cppcheck,ConfigurationNotChecked,NONE
+ConfigurationNotChecked,git-compat-util.h,1336,0,"Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATH=/proc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;ETC_GITCONFIG=/usr/local/etc/gitconfig;__GNUC__;__i386__;__x86_64__;__x86_64__;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.",cppcheck,ConfigurationNotChecked,NONE
+uselessAssignmentArg,builtin/sparse-checkout.c,455,2,"Assignment of function parameter has no effect outside the function.",cppcheck,uselessAssignmentArg,MSC12-C
+uselessAssignmentArg,builtin/sparse-checkout.c,863,2,"Assignment of function parameter has no effect outside the function.",cppcheck,uselessAssignmentArg,MSC12-C
+uselessAssignmentArg,builtin/sparse-checkout.c,900,2,"Assignment of function parameter has no effect outside the function.",cppcheck,uselessAssignmentArg,MSC12-C
+variableScope,builtin/sparse-checkout.c,791,6,"The scope of the variable 'default_patterns_nr' can be reduced.",cppcheck,variableScope,DCL19-C
+unreadVariable,builtin/sparse-checkout.c,863,7,"Variable 'argc' is assigned a value that is never used.",cppcheck,unreadVariable,MSC13-C
+shadowVariable,builtin/fetch-pack.c,242,7,"Local variable 'i' shadows outer variable",cppcheck,shadowVariable,DCL01-C
+variableScope,builtin/check-ignore.c,74,14,"The scope of the variable 'full_path' can be reduced.",cppcheck,variableScope,DCL19-C
+variableScope,builtin/check-ignore.c,77,23,"The scope of the variable 'pattern' can be reduced.",cppcheck,variableScope,DCL19-C
+varFuncNullUB,builtin/revert.c,182,77,"Passing NULL after the last typed argument to a variadic function leads to undefined behaviour.",cppcheck,varFuncNullUB,MSC15-C
+varFuncNullUB,builtin/revert.c,196,29,"Passing NULL after the last typed argument to a variadic function leads to undefined behaviour.",cppcheck,varFuncNullUB,MSC15-C
+unknownMacro,builtin/repack.c,522,3,"There is an unknown macro here somewhere. Configuration is required. If for_each_string_list_item is a macro then please configure it.",cppcheck,unknownMacro,NONE
+uselessAssignmentArg,builtin/diagnose.c,32,2,"Assignment of function parameter has no effect outside the function.",cppcheck,uselessAssignmentArg,MSC12-C
+nullPointerRedundantCheck,builtin/unpack-objects.c,238,23,"Either the condition '!obj_buf' is redundant or there is possible null pointer dereference: obj_buf.",cppcheck,nullPointerRedundantCheck,EXP34-C
+nullPointerRedundantCheck,builtin/unpack-objects.c,300,3,"Either the condition '!obj' is redundant or there is possible null pointer dereference: obj.",cppcheck,nullPointerRedundantCheck,EXP34-C
+nullPointerRedundantCheck,builtin/unpack-objects.c,411,3,"Either the condition '!blob' is redundant or there is possible null pointer dereference: blob.",cppcheck,nullPointerRedundantCheck,EXP34-C
+variableScope,builtin/unpack-objects.c,460,16,"The scope of the variable 'mid' can be reduced.",cppcheck,variableScope,DCL19-C
+shadowArgument,builtin/unpack-objects.c,228,7,"Local variable 'type' shadows outer argument",cppcheck,shadowArgument,DCL01-C
+unknownMacro,builtin/remote.c,1451,2,"There is an unknown macro here somewhere. Configuration is required. If for_each_string_list_item is a macro then please configure it.",cppcheck,unknownMacro,NONE
+uselessAssignmentArg,builtin/pull.c,506,3,"Assignment of function parameter has no effect outside the function.",cppcheck,uselessAssignmentArg,MSC12-C
+unreadVariable,builtin/pull.c,506,7,"Variable 'argc' is assigned a value that is never used.",cppcheck,unreadVariable,MSC13-C
+uselessAssignmentArg,builtin/rev-parse.c,525,2,"Assignment of function parameter has no effect outside the function.",cppcheck,uselessAssignmentArg,MSC12-C
+nullPointerRedundantCheck,builtin/rev-parse.c,721,10,"Either the condition '!gitdir' is redundant or there is possible null pointer dereference: gitdir.",cppcheck,nullPointerRedundantCheck,EXP34-C
+nullPointerRedundantCheck,builtin/rev-parse.c,772,17,"Either the condition '!arg' is redundant or there is possible null pointer dereference: arg.",cppcheck,nullPointerRedundantCheck,EXP34-C
+shadowVariable,builtin/rev-parse.c,709,9,"Local variable 'i' shadows outer variable",cppcheck,shadowVariable,DCL01-C
+shadowVariable,builtin/rev-parse.c,1013,30,"Local variable 'oid' shadows outer variable",cppcheck,shadowVariable,DCL01-C
+ConfigurationNotChecked,compat/nonblock.c,11,0,"Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATH=/proc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;O_NONBLOCK' since the value of 'O_NONBLOCK' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.",cppcheck,ConfigurationNotChecked,NONE
+shadowVariable,builtin/ls-remote.c,90,7,"Local variable 'i' shadows outer variable",cppcheck,shadowVariable,DCL01-C
+shadowVariable,builtin/ls-remote.c,149,32,"Local variable 'ref' shadows outer variable",cppcheck,shadowVariable,DCL01-C
+uselessAssignmentArg,builtin/credential-cache--daemon.c,282,2,"Assignment of function parameter has no effect outside the function.",cppcheck,uselessAssignmentArg,MSC12-C
+uselessAssignmentArg,builtin/credential-cache--daemon.c,315,2,"Assignment of function parameter has no effect outside the function.",cppcheck,uselessAssignmentArg,MSC12-C
+unknownMacro,builtin/describe.c,610,4,"There is an unknown macro here somewhere. Configuration is required. If for_each_string_list_item is a macro then please configure it.",cppcheck,unknownMacro,NONE
+nullPointerRedundantCheck,trace2/tr2_tgt_normal.c,173,37,"Either the condition 'parent_names' is redundant or there is possible null pointer dereference: parent_names++.",cppcheck,nullPointerRedundantCheck,EXP34-C
+nullPointerArithmeticRedundantCheck,trace2/tr2_tgt_normal.c,173,37,"Either the condition 'parent_names' is redundant or there is pointer arithmetic with NULL pointer.",cppcheck,nullPointerArithmeticRedundantCheck,EXP34-C
+variableScope,compat/simple-ipc/ipc-unix-socket.c,588,6,"The scope of the variable 'fd' can be reduced.",cppcheck,variableScope,DCL19-C
+variableScope,compat/simple-ipc/ipc-unix-socket.c,588,10,"The scope of the variable 'io' can be reduced.",cppcheck,variableScope,DCL19-C
+variableScope,compat/simple-ipc/ipc-unix-socket.c,643,6,"The scope of the variable 'result' can be reduced.",cppcheck,variableScope,DCL19-C
+shadowVariable,builtin/mv.c,256,30,"Local variable 'ce' shadows outer variable",cppcheck,shadowVariable,DCL01-C
+shadowVariable,builtin/mv.c,334,31,"Local variable 'ce' shadows outer variable",cppcheck,shadowVariable,DCL01-C
+unknownMacro,builtin/fsmonitor--daemon.c,644,1,"There is an unknown macro here somewhere. Configuration is required. If KHASH_INIT is a macro then please configure it.",cppcheck,unknownMacro,NONE
+unknownMacro,builtin/log.c,189,3,"There is an unknown macro here somewhere. Configuration is required. If for_each_string_list_item is a macro then please configure it.",cppcheck,unknownMacro,NONE
+ConfigurationNotChecked,git-compat-util.h,1336,0,"Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATH=/proc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;GIT_LOCALE_PATH=share/locale;BIG_ENDIAN;BYTE_ORDER;LITTLE_ENDIAN;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.",cppcheck,ConfigurationNotChecked,NONE
+ConfigurationNotChecked,git-compat-util.h,1336,0,"Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATH=/proc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;GIT_LOCALE_PATH=share/locale;_MSC_VER;_M_ARM64;_M_IX86;_M_X64;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.",cppcheck,ConfigurationNotChecked,NONE
+ConfigurationNotChecked,git-compat-util.h,1336,0,"Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATH=/proc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;GIT_LOCALE_PATH=share/locale;__BIG_ENDIAN;__BYTE_ORDER;__LITTLE_ENDIAN;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.",cppcheck,ConfigurationNotChecked,NONE
+ConfigurationNotChecked,git-compat-util.h,1336,0,"Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATH=/proc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;GIT_LOCALE_PATH=share/locale;__GNUC__;__i386__;__x86_64__;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.",cppcheck,ConfigurationNotChecked,NONE
+ConfigurationNotChecked,git-compat-util.h,1336,0,"Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATH=/proc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;GIT_LOCALE_PATH=share/locale;__GNUC__;__i386__;__x86_64__;__x86_64__;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.",cppcheck,ConfigurationNotChecked,NONE
+variableScope,builtin/pack-objects.c,413,17,"The scope of the variable 'in' can be reduced.",cppcheck,variableScope,DCL19-C
+variableScope,builtin/pack-objects.c,443,9,"The scope of the variable 'dheader' can be reduced.",cppcheck,variableScope,DCL19-C
+variableScope,builtin/pack-objects.c,560,9,"The scope of the variable 'dheader' can be reduced.",cppcheck,variableScope,DCL19-C
+variableScope,builtin/pack-objects.c,1512,7,"The scope of the variable 'i' can be reduced.",cppcheck,variableScope,DCL19-C
+shadowVariable,builtin/pack-objects.c,600,12,"Local variable 'pos' shadows outer variable",cppcheck,shadowVariable,DCL01-C
+shadowArgument,builtin/pack-objects.c,1744,29,"Local variable 'tree' shadows outer argument",cppcheck,shadowArgument,DCL01-C
+shadowVariable,builtin/pack-objects.c,1954,20,"Local variable 'type' shadows outer variable",cppcheck,shadowVariable,DCL01-C
+shadowVariable,builtin/pack-objects.c,3373,22,"Local variable 'p' shadows outer variable",cppcheck,shadowVariable,DCL01-C
+shadowVariable,builtin/pack-objects.c,3386,22,"Local variable 'p' shadows outer variable",cppcheck,shadowVariable,DCL01-C
+shadowVariable,builtin/pack-objects.c,3400,22,"Local variable 'p' shadows outer variable",cppcheck,shadowVariable,DCL01-C
+shadowVariable,builtin/pack-objects.c,3685,12,"Local variable 'depth' shadows outer variable",cppcheck,shadowVariable,DCL01-C
+constParameter,builtin/pack-objects.c,91,26,"Parameter 'delta' can be declared as pointer to const",cppcheck,constParameter,DCL00-C
+constParameter,builtin/pack-objects.c,119,32,"Parameter 'delta' can be declared as pointer to const",cppcheck,constParameter,DCL00-C
+constParameter,builtin/pack-objects.c,129,27,"Parameter 'delta' can be declared as pointer to const",cppcheck,constParameter,DCL00-C
+constParameter,builtin/pack-objects.c,779,31,"Parameter 'e' can be declared as pointer to const",cppcheck,constParameter,DCL00-C
+constParameter,builtin/pack-objects.c,2422,31,"Parameter 'e' can be declared as pointer to const",cppcheck,constParameter,DCL00-C
+uselessAssignmentArg,builtin/mktag.c,83,2,"Assignment of function parameter has no effect outside the function.",cppcheck,uselessAssignmentArg,MSC12-C
+uselessAssignmentArg,builtin/write-tree.c,38,2,"Assignment of function parameter has no effect outside the function.",cppcheck,uselessAssignmentArg,MSC12-C
+invalidPrintfArgType_sint,builtin/rev-list.c,461,2,"%d in format string (no. 1) requires 'int' but the argument type is 'unsigned int'.",cppcheck,invalidPrintfArgType_sint,FIO47-C
+doubleFree,builtin/notes.c,269,2,"Memory pointed to by 'buf' is freed twice.",cppcheck,doubleFree,MEM30-C
+variableScope,builtin/notes.c,363,26,"The scope of the variable 'note' can be reduced.",cppcheck,variableScope,DCL19-C
+shadowFunction,builtin/notes.c,137,23,"Local variable 'show' shadows outer function",cppcheck,shadowFunction,DCL01-C
+uninitvar,builtin/notes.c,726,6,"Uninitialized variable: partial",cppcheck,uninitvar,EXP33-C
+pointerOutOfBounds,builtin/fast-export.c,784,23,"Undefined behaviour, pointer arithmetic 'tagger+strlen(tagger)' is out of bounds.",cppcheck,pointerOutOfBounds,ARR30-C
+nullPointerArithmeticRedundantCheck,builtin/fast-export.c,626,8,"Either the condition '!author' is redundant or there is pointer arithmetic with NULL pointer.",cppcheck,nullPointerArithmeticRedundantCheck,EXP34-C
+nullPointerArithmeticRedundantCheck,builtin/fast-export.c,632,11,"Either the condition '!committer' is redundant or there is pointer arithmetic with NULL pointer.",cppcheck,nullPointerArithmeticRedundantCheck,EXP34-C
+variableScope,builtin/show-index.c,19,6,"The scope of the variable 'hash_algo' can be reduced.",cppcheck,variableScope,DCL19-C
+variableScope,ewah/ewah_bitmap.c,126,9,"The scope of the variable 'literals' can be reduced.",cppcheck,variableScope,DCL19-C
+variableScope,ewah/ewah_bitmap.c,126,19,"The scope of the variable 'can_add' can be reduced.",cppcheck,variableScope,DCL19-C
+variableScope,ewah/ewah_bitmap.c,383,9,"The scope of the variable 'literals' can be reduced.",cppcheck,variableScope,DCL19-C
+variableScope,builtin/var.c,52,14,"The scope of the variable 'val' can be reduced.",cppcheck,variableScope,DCL19-C
+knownConditionTrueFalse,builtin/cat-file.c,1025,13,"Condition 'argc' is always true",cppcheck,knownConditionTrueFalse,MSC07-C
+knownConditionTrueFalse,builtin/reflog.c,307,6,"Condition 'do_all' is always false",cppcheck,knownConditionTrueFalse,MSC07-C
+variableScope,sha1dc/sha1.c,1717,11,"The scope of the variable 'i' can be reduced.",cppcheck,variableScope,DCL19-C
+variableScope,sha1dc/sha1.c,1717,14,"The scope of the variable 'j' can be reduced.",cppcheck,variableScope,DCL19-C
+variableScope,sha1dc/sha1.c,1718,11,"The scope of the variable 'ubc_dv_mask' can be reduced.",cppcheck,variableScope,DCL19-C
+variableScope,sha1dc/sha1.c,1719,11,"The scope of the variable 'ihvtmp' can be reduced.",cppcheck,variableScope,DCL19-C
+preprocessorErrorDirective,sha1dc/sha1.c,1910,0,"No header in #include",cppcheck,preprocessorErrorDirective,NONE
+preprocessorErrorDirective,sha1dc/sha1.h,107,0,"No header in #include",cppcheck,preprocessorErrorDirective,NONE
+preprocessorErrorDirective,sha1dc/ubc_check.h,49,0,"No header in #include",cppcheck,preprocessorErrorDirective,NONE
+variableScope,builtin/name-rev.c,189,9,"The scope of the variable 'parents_to_queue_nr' can be reduced.",cppcheck,variableScope,DCL19-C
+uselessAssignmentArg,builtin/patch-id.c,234,2,"Assignment of function parameter has no effect outside the function.",cppcheck,uselessAssignmentArg,MSC12-C
+variableScope,builtin/patch-id.c,176,6,"The scope of the variable 'patchlen' can be reduced.",cppcheck,variableScope,DCL19-C
+variableScope,builtin/send-pack.c,38,7,"The scope of the variable 'count' can be reduced.",cppcheck,variableScope,DCL19-C
+variableScope,builtin/pack-redundant.c,72,43,"The scope of the variable 'prev' can be reduced.",cppcheck,variableScope,DCL19-C
+variableScope,builtin/pack-redundant.c,449,21,"The scope of the variable 'hint' can be reduced.",cppcheck,variableScope,DCL19-C
+variableScope,builtin/pack-redundant.c,566,20,"The scope of the variable 'oid' can be reduced.",cppcheck,variableScope,DCL19-C
+variableScope,builtin/pack-redundant.c,567,7,"The scope of the variable 'buf' can be reduced.",cppcheck,variableScope,DCL19-C
+knownConditionTrueFalse,builtin/receive-pack.c,507,47,"Condition '!keepalive_active' is always true",cppcheck,knownConditionTrueFalse,MSC07-C
+knownConditionTrueFalse,builtin/receive-pack.c,904,6,"Condition 'bufp' is always true",cppcheck,knownConditionTrueFalse,MSC07-C
+redundantInitialization,builtin/receive-pack.c,692,10,"Redundant initialization for 'retval'. The initialized value is overwritten before it is read.",cppcheck,redundantInitialization,MSC12-C
+variableScope,builtin/receive-pack.c,1164,8,"The scope of the variable 'linelen' can be reduced.",cppcheck,variableScope,DCL19-C
+shadowFunction,builtin/receive-pack.c,974,26,"Local variable 'report' shadows outer function",cppcheck,shadowFunction,DCL01-C
+shadowFunction,builtin/receive-pack.c,2413,26,"Local variable 'report' shadows outer function",cppcheck,shadowFunction,DCL01-C
+ConfigurationNotChecked,git-compat-util.h,1336,0,"Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATH=/proc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;GIT_EXEC_PATH=/usr/local/libexec/git-core;GIT_LOCALE_PATH=share/locale;BINDIR=bin;FALLBACK_RUNTIME_PREFIX=/usr/local;BIG_ENDIAN;BYTE_ORDER;LITTLE_ENDIAN;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.",cppcheck,ConfigurationNotChecked,NONE
+ConfigurationNotChecked,git-compat-util.h,1336,0,"Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATH=/proc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;GIT_EXEC_PATH=/usr/local/libexec/git-core;GIT_LOCALE_PATH=share/locale;BINDIR=bin;FALLBACK_RUNTIME_PREFIX=/usr/local;_MSC_VER;_M_ARM64;_M_IX86;_M_X64;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.",cppcheck,ConfigurationNotChecked,NONE
+ConfigurationNotChecked,git-compat-util.h,1336,0,"Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATH=/proc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;GIT_EXEC_PATH=/usr/local/libexec/git-core;GIT_LOCALE_PATH=share/locale;BINDIR=bin;FALLBACK_RUNTIME_PREFIX=/usr/local;__BIG_ENDIAN;__BYTE_ORDER;__LITTLE_ENDIAN;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.",cppcheck,ConfigurationNotChecked,NONE
+ConfigurationNotChecked,git-compat-util.h,1336,0,"Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATH=/proc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;GIT_EXEC_PATH=/usr/local/libexec/git-core;GIT_LOCALE_PATH=share/locale;BINDIR=bin;FALLBACK_RUNTIME_PREFIX=/usr/local;__GNUC__;__i386__;__x86_64__;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.",cppcheck,ConfigurationNotChecked,NONE
+ConfigurationNotChecked,git-compat-util.h,1336,0,"Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATH=/proc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;GIT_EXEC_PATH=/usr/local/libexec/git-core;GIT_LOCALE_PATH=share/locale;BINDIR=bin;FALLBACK_RUNTIME_PREFIX=/usr/local;__GNUC__;__i386__;__x86_64__;__x86_64__;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.",cppcheck,ConfigurationNotChecked,NONE
+preprocessorErrorDirective,sha1dc/ubc_check.c,371,0,"No header in #include",cppcheck,preprocessorErrorDirective,NONE
+uselessAssignmentPtrArg,builtin/checkout.c,1389,3,"Assignment of function parameter has no effect outside the function. Did you forget dereferencing it?",cppcheck,uselessAssignmentPtrArg,MSC12-C
+uselessAssignmentArg,builtin/checkout.c,1390,3,"Assignment of function parameter has no effect outside the function.",cppcheck,uselessAssignmentArg,MSC12-C
+knownConditionTrueFalse,builtin/checkout.c,1682,28,"Condition 'opts->checkout_index<0' is always true",cppcheck,knownConditionTrueFalse,MSC07-C
+nullPointerRedundantCheck,builtin/checkout.c,788,29,"Either the condition '!tree' is redundant or there is possible null pointer dereference: tree.",cppcheck,nullPointerRedundantCheck,EXP34-C
+variableScope,builtin/checkout.c,504,8,"The scope of the variable 'rev_oid' can be reduced.",cppcheck,variableScope,DCL19-C
+shadowVariable,builtin/checkout.c,503,15,"Local variable 'rev' shadows outer variable",cppcheck,shadowVariable,DCL01-C
+constParameter,builtin/checkout.c,717,25,"Parameter 'old_commit' can be declared as pointer to const",cppcheck,constParameter,DCL00-C
+unreadVariable,builtin/checkout.c,1389,7,"Variable 'argv' is assigned a value that is never used.",cppcheck,unreadVariable,MSC13-C
+unreadVariable,builtin/checkout.c,1390,7,"Variable 'argc' is assigned a value that is never used.",cppcheck,unreadVariable,MSC13-C
+ConfigurationNotChecked,git-compat-util.h,1336,0,"Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATH=/proc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;ETC_GITATTRIBUTES=/usr/local/etc/gitattributes;BIG_ENDIAN;BYTE_ORDER;LITTLE_ENDIAN;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.",cppcheck,ConfigurationNotChecked,NONE
+ConfigurationNotChecked,git-compat-util.h,1336,0,"Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATH=/proc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;ETC_GITATTRIBUTES=/usr/local/etc/gitattributes;_MSC_VER;_M_ARM64;_M_IX86;_M_X64;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.",cppcheck,ConfigurationNotChecked,NONE
+ConfigurationNotChecked,git-compat-util.h,1336,0,"Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATH=/proc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;ETC_GITATTRIBUTES=/usr/local/etc/gitattributes;__BIG_ENDIAN;__BYTE_ORDER;__LITTLE_ENDIAN;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.",cppcheck,ConfigurationNotChecked,NONE
+ConfigurationNotChecked,git-compat-util.h,1336,0,"Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATH=/proc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;ETC_GITATTRIBUTES=/usr/local/etc/gitattributes;__GNUC__;__i386__;__x86_64__;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.",cppcheck,ConfigurationNotChecked,NONE
+ConfigurationNotChecked,git-compat-util.h,1336,0,"Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATH=/proc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;ETC_GITATTRIBUTES=/usr/local/etc/gitattributes;__GNUC__;__i386__;__x86_64__;__x86_64__;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.",cppcheck,ConfigurationNotChecked,NONE
+variableScope,trace2/tr2_sid.c,35,16,"The scope of the variable 'hash' can be reduced.",cppcheck,variableScope,DCL19-C
+variableScope,trace2/tr2_sid.c,36,7,"The scope of the variable 'hex' can be reduced.",cppcheck,variableScope,DCL19-C
+variableScope,trace2/tr2_dst.c,121,11,"The scope of the variable 'attempt_count' can be reduced.",cppcheck,variableScope,DCL19-C
+nullPointerRedundantCheck,builtin/branch.c,853,19,"Either the condition '!branch' is redundant or there is possible null pointer dereference: branch.",cppcheck,nullPointerRedundantCheck,EXP34-C
+shadowVariable,builtin/branch.c,294,9,"Local variable 'name' shadows outer variable",cppcheck,shadowVariable,DCL01-C
+unknownMacro,builtin/submodule--helper.c,1679,4,"There is an unknown macro here somewhere. Configuration is required. If for_each_string_list_item is a macro then please configure it.",cppcheck,unknownMacro,NONE
+knownConditionTrueFalse,reftable/stack.c,949,30,"Condition 'sublock_file_fd<0' is always true",cppcheck,knownConditionTrueFalse,MSC07-C
+shadowVariable,reftable/stack.c,321,7,"Local variable 'err' shadows outer variable",cppcheck,shadowVariable,DCL01-C
+unreadVariable,reftable/stack.c,1073,16,"Variable 'lock_file_fd' is assigned a value that is never used.",cppcheck,unreadVariable,MSC13-C
+ConfigurationNotChecked,git-compat-util.h,1336,0,"Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATH=/proc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;GIT_VERSION=2.39.0;GIT_USER_AGENT=git/2.39.0;GIT_BUILT_FROM_COMMIT=c48035d29b4e524aed3a32f0403676f0d9128863;BIG_ENDIAN;BYTE_ORDER;LITTLE_ENDIAN;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.",cppcheck,ConfigurationNotChecked,NONE
+ConfigurationNotChecked,git-compat-util.h,1336,0,"Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATH=/proc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;GIT_VERSION=2.39.0;GIT_USER_AGENT=git/2.39.0;GIT_BUILT_FROM_COMMIT=c48035d29b4e524aed3a32f0403676f0d9128863;_MSC_VER;_M_ARM64;_M_IX86;_M_X64;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.",cppcheck,ConfigurationNotChecked,NONE
+ConfigurationNotChecked,git-compat-util.h,1336,0,"Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATH=/proc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;GIT_VERSION=2.39.0;GIT_USER_AGENT=git/2.39.0;GIT_BUILT_FROM_COMMIT=c48035d29b4e524aed3a32f0403676f0d9128863;__BIG_ENDIAN;__BYTE_ORDER;__LITTLE_ENDIAN;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.",cppcheck,ConfigurationNotChecked,NONE
+ConfigurationNotChecked,git-compat-util.h,1336,0,"Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATH=/proc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;GIT_VERSION=2.39.0;GIT_USER_AGENT=git/2.39.0;GIT_BUILT_FROM_COMMIT=c48035d29b4e524aed3a32f0403676f0d9128863;__GNUC__;__i386__;__x86_64__;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.",cppcheck,ConfigurationNotChecked,NONE
+ConfigurationNotChecked,git-compat-util.h,1336,0,"Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATH=/proc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;GIT_VERSION=2.39.0;GIT_USER_AGENT=git/2.39.0;GIT_BUILT_FROM_COMMIT=c48035d29b4e524aed3a32f0403676f0d9128863;__GNUC__;__i386__;__x86_64__;__x86_64__;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.",cppcheck,ConfigurationNotChecked,NONE
+uselessAssignmentArg,builtin/reset.c,348,2,"Assignment of function parameter has no effect outside the function.",cppcheck,uselessAssignmentArg,MSC12-C
+uselessAssignmentArg,builtin/commit.c,1537,2,"Assignment of function parameter has no effect outside the function.",cppcheck,uselessAssignmentArg,MSC12-C
+constParameter,builtin/commit.c,1257,26,"Parameter 'current_head' can be declared as pointer to const",cppcheck,constParameter,DCL00-C
+uselessAssignmentArg,builtin/bugreport.c,121,2,"Assignment of function parameter has no effect outside the function.",cppcheck,uselessAssignmentArg,MSC12-C
+resourceLeak,builtin/bisect--helper.c,581,3,"Resource leak: fp",cppcheck,resourceLeak,FIO42-C
+variableScope,builtin/bisect--helper.c,1188,6,"The scope of the variable 'temporary_stdout_fd' can be reduced.",cppcheck,variableScope,DCL19-C
+variableScope,builtin/bisect--helper.c,1188,27,"The scope of the variable 'saved_stdout' can be reduced.",cppcheck,variableScope,DCL19-C
+varFuncNullUB,builtin/bisect--helper.c,173,56,"Passing NULL after the last typed argument to a variadic function leads to undefined behaviour.",cppcheck,varFuncNullUB,MSC15-C
+varFuncNullUB,builtin/bisect--helper.c,182,60,"Passing NULL after the last typed argument to a variadic function leads to undefined behaviour.",cppcheck,varFuncNullUB,MSC15-C
+varFuncNullUB,builtin/bisect--helper.c,183,60,"Passing NULL after the last typed argument to a variadic function leads to undefined behaviour.",cppcheck,varFuncNullUB,MSC15-C
+varFuncNullUB,builtin/bisect--helper.c,267,51,"Passing NULL after the last typed argument to a variadic function leads to undefined behaviour.",cppcheck,varFuncNullUB,MSC15-C
+varFuncNullUB,builtin/bisect--helper.c,308,42,"Passing NULL after the last typed argument to a variadic function leads to undefined behaviour.",cppcheck,varFuncNullUB,MSC15-C
+varFuncNullUB,builtin/bisect--helper.c,318,32,"Passing NULL after the last typed argument to a variadic function leads to undefined behaviour.",cppcheck,varFuncNullUB,MSC15-C
+varFuncNullUB,builtin/bisect--helper.c,322,31,"Passing NULL after the last typed argument to a variadic function leads to undefined behaviour.",cppcheck,varFuncNullUB,MSC15-C
+varFuncNullUB,builtin/bisect--helper.c,483,48,"Passing NULL after the last typed argument to a variadic function leads to undefined behaviour.",cppcheck,varFuncNullUB,MSC15-C
+varFuncNullUB,builtin/bisect--helper.c,485,52,"Passing NULL after the last typed argument to a variadic function leads to undefined behaviour.",cppcheck,varFuncNullUB,MSC15-C
+varFuncNullUB,builtin/bisect--helper.c,911,62,"Passing NULL after the last typed argument to a variadic function leads to undefined behaviour.",cppcheck,varFuncNullUB,MSC15-C
+varFuncNullUB,builtin/bisect--helper.c,1020,28,"Passing NULL after the last typed argument to a variadic function leads to undefined behaviour.",cppcheck,varFuncNullUB,MSC15-C
+knownConditionTrueFalse,builtin/show-branch.c,739,8,"Condition '!*av' is always false",cppcheck,knownConditionTrueFalse,MSC07-C
+variableScope,builtin/show-branch.c,385,6,"The scope of the variable 'i' can be reduced.",cppcheck,variableScope,DCL19-C
+variableScope,builtin/show-branch.c,874,8,"The scope of the variable 'j' can be reduced.",cppcheck,variableScope,DCL19-C
+shadowVariable,builtin/show-branch.c,919,18,"Local variable 'commit' shadows outer variable",cppcheck,shadowVariable,DCL01-C
+constParameter,builtin/show-branch.c,518,22,"Parameter 'rev_mask' can be declared as pointer to const",cppcheck,constParameter,DCL00-C
+uselessAssignmentArg,builtin/credential-cache.c,179,2,"Assignment of function parameter has no effect outside the function.",cppcheck,uselessAssignmentArg,MSC12-C
+syntaxError,builtin/help.c,315,18,"syntax error",cppcheck,syntaxError,NONE
+unknownMacro,builtin/merge.c,805,3,"There is an unknown macro here somewhere. Configuration is required. If for_each_string_list_item is a macro then please configure it.",cppcheck,unknownMacro,NONE
+knownConditionTrueFalse,builtin/fetch.c,1841,15,"Condition 'list->nr==prev_nr' is always true",cppcheck,knownConditionTrueFalse,MSC07-C
+nullPointerRedundantCheck,builtin/fetch.c,623,4,"Either the condition '!ref_map' is redundant or there is possible null pointer dereference: ref_map.",cppcheck,nullPointerRedundantCheck,EXP34-C
+variableScope,builtin/fetch.c,1436,14,"The scope of the variable 'path' can be reduced.",cppcheck,variableScope,DCL19-C
+variableScope,builtin/fetch.c,1941,6,"The scope of the variable 'i' can be reduced.",cppcheck,variableScope,DCL19-C
+uselessAssignmentArg,ewah/ewah_io.c,131,2,"Assignment of function parameter has no effect outside the function.",cppcheck,uselessAssignmentArg,MSC12-C
+unreadVariable,ewah/ewah_io.c,131,6,"Variable 'len' is assigned a value that is never used.",cppcheck,unreadVariable,MSC13-C
+shadowVariable,builtin/ls-files.c,572,18,"Local variable 'pathspec' shadows outer variable",cppcheck,shadowVariable,DCL01-C
+ConfigurationNotChecked,git-compat-util.h,1336,0,"Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATH=/proc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;GIT_HTML_PATH=share/doc/git;GIT_MAN_PATH=share/man;GIT_INFO_PATH=share/info;BIG_ENDIAN;BYTE_ORDER;LITTLE_ENDIAN;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.",cppcheck,ConfigurationNotChecked,NONE
+ConfigurationNotChecked,git-compat-util.h,1336,0,"Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATH=/proc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;GIT_HTML_PATH=share/doc/git;GIT_MAN_PATH=share/man;GIT_INFO_PATH=share/info;_MSC_VER;_M_ARM64;_M_IX86;_M_X64;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.",cppcheck,ConfigurationNotChecked,NONE
+ConfigurationNotChecked,git-compat-util.h,1336,0,"Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATH=/proc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;GIT_HTML_PATH=share/doc/git;GIT_MAN_PATH=share/man;GIT_INFO_PATH=share/info;__BIG_ENDIAN;__BYTE_ORDER;__LITTLE_ENDIAN;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.",cppcheck,ConfigurationNotChecked,NONE
+ConfigurationNotChecked,git-compat-util.h,1336,0,"Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATH=/proc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;GIT_HTML_PATH=share/doc/git;GIT_MAN_PATH=share/man;GIT_INFO_PATH=share/info;__GNUC__;__i386__;__x86_64__;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.",cppcheck,ConfigurationNotChecked,NONE
+ConfigurationNotChecked,git-compat-util.h,1336,0,"Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATH=/proc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;GIT_HTML_PATH=share/doc/git;GIT_MAN_PATH=share/man;GIT_INFO_PATH=share/info;__GNUC__;__i386__;__x86_64__;__x86_64__;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.",cppcheck,ConfigurationNotChecked,NONE
+variableScope,trace2/tr2_tgt_event.c,519,14,"The scope of the variable 'event_name' can be reduced.",cppcheck,variableScope,DCL19-C
+variableScope,trace2/tr2_tgt_event.c,544,14,"The scope of the variable 'event_name' can be reduced.",cppcheck,variableScope,DCL19-C
+variableScope,trace2/tr2_tgt_event.c,571,14,"The scope of the variable 'event_name' can be reduced.",cppcheck,variableScope,DCL19-C
+variableScope,trace2/tr2_tgt_event.c,599,14,"The scope of the variable 'event_name' can be reduced.",cppcheck,variableScope,DCL19-C
+redundantInitialization,builtin/ls-tree.c,102,8,"Redundant initialization for 'name'. The initialized value is overwritten before it is read.",cppcheck,redundantInitialization,MSC12-C
+uselessAssignmentArg,builtin/add.c,321,2,"Assignment of function parameter has no effect outside the function.",cppcheck,uselessAssignmentArg,MSC12-C
+shadowVariable,reftable/merged.c,112,7,"Local variable 'err' shadows outer variable",cppcheck,shadowVariable,DCL01-C
+shadowVariable,reftable/merged.c,266,7,"Local variable 'i' shadows outer variable",cppcheck,shadowVariable,DCL01-C
+variableScope,builtin/index-pack.c,452,7,"The scope of the variable 'hdr' can be reduced.",cppcheck,variableScope,DCL19-C
+variableScope,builtin/index-pack.c,453,6,"The scope of the variable 'hdrlen' can be reduced.",cppcheck,variableScope,DCL19-C
+variableScope,builtin/index-pack.c,1228,6,"The scope of the variable 'i' can be reduced.",cppcheck,variableScope,DCL19-C
+constParameter,builtin/index-pack.c,409,47,"Parameter 'retain' can be declared as pointer to const",cppcheck,constParameter,DCL00-C
+ConfigurationNotChecked,git-compat-util.h,1336,0,"Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATH=/proc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;PAGER_ENV=dummy;BIG_ENDIAN;BYTE_ORDER;LITTLE_ENDIAN;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.",cppcheck,ConfigurationNotChecked,NONE
+ConfigurationNotChecked,git-compat-util.h,1336,0,"Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATH=/proc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;PAGER_ENV=dummy;_MSC_VER;_M_ARM64;_M_IX86;_M_X64;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.",cppcheck,ConfigurationNotChecked,NONE
+ConfigurationNotChecked,git-compat-util.h,1336,0,"Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATH=/proc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;PAGER_ENV=dummy;__BIG_ENDIAN;__BYTE_ORDER;__LITTLE_ENDIAN;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.",cppcheck,ConfigurationNotChecked,NONE
+ConfigurationNotChecked,git-compat-util.h,1336,0,"Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATH=/proc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;PAGER_ENV=dummy;__GNUC__;__i386__;__x86_64__;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.",cppcheck,ConfigurationNotChecked,NONE
+ConfigurationNotChecked,git-compat-util.h,1336,0,"Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATH=/proc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;PAGER_ENV=dummy;__GNUC__;__i386__;__x86_64__;__x86_64__;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.",cppcheck,ConfigurationNotChecked,NONE
+variableScope,builtin/tag.c,351,6,"The scope of the variable 'subject_len' can be reduced.",cppcheck,variableScope,DCL19-C
+shadowArgument,builtin/tag.c,306,18,"Local variable 'buf' shadows outer argument",cppcheck,shadowArgument,DCL01-C
+variableScope,builtin/rm.c,323,15,"The scope of the variable 'original' can be reduced.",cppcheck,variableScope,DCL19-C
+shadowVariable,reftable/writer.c,53,7,"Local variable 'n' shadows outer variable",cppcheck,shadowVariable,DCL01-C
+unreadVariable,reftable/writer.c,65,4,"Variable 'n' is assigned a value that is never used.",cppcheck,unreadVariable,MSC13-C
+unreadVariable,reftable/writer.c,386,8,"Variable 'i' is assigned a value that is never used.",cppcheck,unreadVariable,MSC13-C
+shadowVariable,builtin/diff.c,520,7,"Local variable 'i' shadows outer variable",cppcheck,shadowVariable,DCL01-C
+unusedFunction,sha1dc/sha1.c,1868,0,"The function 'SHA1DCFinal' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,sha1dc/sha1.c,1767,0,"The function 'SHA1DCInit' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,sha1dc/sha1.c,1816,0,"The function 'SHA1DCSetCallback' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,sha1dc/sha1.c,1808,0,"The function 'SHA1DCSetDetectReducedRoundCollision' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,sha1dc/sha1.c,1783,0,"The function 'SHA1DCSetSafeHash' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,sha1dc/sha1.c,1800,0,"The function 'SHA1DCSetUseDetectColl' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,sha1dc/sha1.c,1792,0,"The function 'SHA1DCSetUseUBC' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,compat/obstack.c,315,0,"The function '_obstack_allocated_p' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,ewah/bitmap.c,121,0,"The function 'bitmap_and_not' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,ewah/bitmap.c,38,0,"The function 'bitmap_dup' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,ewah/bitmap.c,172,0,"The function 'bitmap_equals' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,ewah/bitmap.c,198,0,"The function 'bitmap_is_subset' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,ewah/bitmap.c,132,0,"The function 'bitmap_or' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,ewah/bitmap.c,141,0,"The function 'bitmap_or_ewah' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,ewah/bitmap.c,162,0,"The function 'bitmap_popcount' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,ewah/bitmap.c,76,0,"The function 'bitmap_to_ewah' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,sha256/block/sha256.c,179,0,"The function 'blk_SHA256_Final' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,sha256/block/sha256.c,9,0,"The function 'blk_SHA256_Init' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,reftable/blocksource.c,50,0,"The function 'block_source_from_strbuf' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/add.c,493,0,"The function 'cmd_add' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/am.c,2314,0,"The function 'cmd_am' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/annotate.c,10,0,"The function 'cmd_annotate' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/apply.c,11,0,"The function 'cmd_apply' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/archive.c,81,0,"The function 'cmd_archive' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/bisect--helper.c,1393,0,"The function 'cmd_bisect__helper' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/branch.c,628,0,"The function 'cmd_branch' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/bugreport.c,96,0,"The function 'cmd_bugreport' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/bundle.c,207,0,"The function 'cmd_bundle' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/cat-file.c,881,0,"The function 'cmd_cat_file' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/check-attr.c,105,0,"The function 'cmd_check_attr' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/check-ignore.c,153,0,"The function 'cmd_check_ignore' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/check-mailmap.c,39,0,"The function 'cmd_check_mailmap' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/check-ref-format.c,54,0,"The function 'cmd_check_ref_format' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/checkout.c,1825,0,"The function 'cmd_checkout' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/checkout--worker.c,114,0,"The function 'cmd_checkout__worker' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/checkout-index.c,206,0,"The function 'cmd_checkout_index' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/revert.c,256,0,"The function 'cmd_cherry_pick' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/clean.c,911,0,"The function 'cmd_clean' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/clone.c,890,0,"The function 'cmd_clone' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/column.c,20,0,"The function 'cmd_column' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/commit.c,1626,0,"The function 'cmd_commit' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/commit-graph.c,308,0,"The function 'cmd_commit_graph' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/commit-tree.c,102,0,"The function 'cmd_commit_tree' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/config.c,639,0,"The function 'cmd_config' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/count-objects.c,94,0,"The function 'cmd_count_objects' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/credential.c,9,0,"The function 'cmd_credential' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/credential-cache.c,128,0,"The function 'cmd_credential_cache' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/credential-cache--daemon.c,264,0,"The function 'cmd_credential_cache_daemon' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/credential-store.c,150,0,"The function 'cmd_credential_store' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/diagnose.c,11,0,"The function 'cmd_diagnose' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/diff.c,394,0,"The function 'cmd_diff' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/diff-files.c,20,0,"The function 'cmd_diff_files' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/diff-index.c,16,0,"The function 'cmd_diff_index' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/diff-tree.c,108,0,"The function 'cmd_diff_tree' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/difftool.c,687,0,"The function 'cmd_difftool' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/env--helper.c,32,0,"The function 'cmd_env__helper' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/fast-export.c,1159,0,"The function 'cmd_fast_export' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/fast-import.c,3519,0,"The function 'cmd_fast_import' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/fetch.c,2109,0,"The function 'cmd_fetch' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/fetch-pack.c,43,0,"The function 'cmd_fetch_pack' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/fmt-merge-msg.c,11,0,"The function 'cmd_fmt_merge_msg' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/for-each-ref.c,17,0,"The function 'cmd_for_each_ref' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/for-each-repo.c,30,0,"The function 'cmd_for_each_repo' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/fsck.c,848,0,"The function 'cmd_fsck' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/fsmonitor--daemon.c,1575,0,"The function 'cmd_fsmonitor__daemon' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/gc.c,550,0,"The function 'cmd_gc' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/get-tar-commit-id.c,17,0,"The function 'cmd_get_tar_commit_id' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/grep.c,870,0,"The function 'cmd_grep' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/hash-object.c,80,0,"The function 'cmd_hash_object' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/hook.c,68,0,"The function 'cmd_hook' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/index-pack.c,1714,0,"The function 'cmd_index_pack' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/init-db.c,531,0,"The function 'cmd_init_db' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/interpret-trailers.c,91,0,"The function 'cmd_interpret_trailers' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/ls-files.c,693,0,"The function 'cmd_ls_files' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/ls-remote.c,38,0,"The function 'cmd_ls_remote' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/mailinfo.c,50,0,"The function 'cmd_mailinfo' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/mailsplit.c,272,0,"The function 'cmd_mailsplit' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/gc.c,2636,0,"The function 'cmd_maintenance' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/merge-base.c,135,0,"The function 'cmd_merge_base' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/merge-file.c,26,0,"The function 'cmd_merge_file' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/merge-index.c,73,0,"The function 'cmd_merge_index' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/merge-ours.c,17,0,"The function 'cmd_merge_ours' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/merge-recursive.c,23,0,"The function 'cmd_merge_recursive' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/merge-tree.c,485,0,"The function 'cmd_merge_tree' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/mktag.c,71,0,"The function 'cmd_mktag' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/mktree.c,150,0,"The function 'cmd_mktree' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/multi-pack-index.c,258,0,"The function 'cmd_multi_pack_index' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/mv.c,159,0,"The function 'cmd_mv' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/name-rev.c,567,0,"The function 'cmd_name_rev' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/notes.c,995,0,"The function 'cmd_notes' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/pack-objects.c,4167,0,"The function 'cmd_pack_objects' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/pack-redundant.c,560,0,"The function 'cmd_pack_redundant' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/pack-refs.c,12,0,"The function 'cmd_pack_refs' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/patch-id.c,213,0,"The function 'cmd_patch_id' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/prune.c,141,0,"The function 'cmd_prune' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/prune-packed.c,10,0,"The function 'cmd_prune_packed' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/pull.c,979,0,"The function 'cmd_pull' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/push.c,576,0,"The function 'cmd_push' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/range-diff.c,15,0,"The function 'cmd_range_diff' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/read-tree.c,108,0,"The function 'cmd_read_tree' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/rebase.c,1022,0,"The function 'cmd_rebase' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/receive-pack.c,2464,0,"The function 'cmd_receive_pack' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/reflog.c,411,0,"The function 'cmd_reflog' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/remote-ext.c,196,0,"The function 'cmd_remote_ext' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/remote-fd.c,56,0,"The function 'cmd_remote_fd' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/replace.c,535,0,"The function 'cmd_replace' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/rerere.c,51,0,"The function 'cmd_rerere' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/reset.c,313,0,"The function 'cmd_reset' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/checkout.c,1921,0,"The function 'cmd_restore' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/rev-list.c,505,0,"The function 'cmd_rev_list' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/rev-parse.c,660,0,"The function 'cmd_rev_parse' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/revert.c,240,0,"The function 'cmd_revert' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/rm.c,258,0,"The function 'cmd_rm' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/send-pack.c,156,0,"The function 'cmd_send_pack' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/shortlog.c,376,0,"The function 'cmd_shortlog' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/show-branch.c,622,0,"The function 'cmd_show_branch' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/show-index.c,11,0,"The function 'cmd_show_index' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/show-ref.c,179,0,"The function 'cmd_show_ref' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/sparse-checkout.c,925,0,"The function 'cmd_sparse_checkout' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/stash.c,1819,0,"The function 'cmd_stash' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/commit.c,1485,0,"The function 'cmd_status' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/stripspace.c,29,0,"The function 'cmd_stripspace' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/checkout.c,1879,0,"The function 'cmd_switch' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/symbolic-ref.c,40,0,"The function 'cmd_symbolic_ref' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/tag.c,424,0,"The function 'cmd_tag' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/unpack-file.c,25,0,"The function 'cmd_unpack_file' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/unpack-objects.c,601,0,"The function 'cmd_unpack_objects' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/update-index.c,983,0,"The function 'cmd_update_index' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/update-ref.c,498,0,"The function 'cmd_update_ref' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/update-server-info.c,11,0,"The function 'cmd_update_server_info' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/upload-archive.c,78,0,"The function 'cmd_upload_archive' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/upload-archive.c,20,0,"The function 'cmd_upload_archive_writer' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/upload-pack.c,16,0,"The function 'cmd_upload_pack' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/var.c,82,0,"The function 'cmd_var' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/verify-commit.c,63,0,"The function 'cmd_verify_commit' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/verify-pack.c,63,0,"The function 'cmd_verify_pack' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/verify-tag.c,30,0,"The function 'cmd_verify_tag' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/worktree.c,1173,0,"The function 'cmd_worktree' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,builtin/write-tree.c,19,0,"The function 'cmd_write_tree' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,refs/iterator.c,410,0,"The function 'do_for_each_repo_ref_iterator' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,refs/iterator.c,72,0,"The function 'empty_ref_iterator_begin' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,compat/nonblock.c,44,0,"The function 'enable_pipe_nonblock' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,ewah/ewah_bitmap.c,467,0,"The function 'ewah_checksum' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,ewah/ewah_bitmap.c,239,0,"The function 'ewah_each_bit' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,ewah/ewah_bitmap.c,452,0,"The function 'ewah_pool_free' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,ewah/ewah_bitmap.c,444,0,"The function 'ewah_pool_new' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,ewah/ewah_io.c,89,0,"The function 'ewah_read_mmap' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,ewah/ewah_io.c,84,0,"The function 'ewah_serialize_strbuf' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,ewah/ewah_bitmap.c,202,0,"The function 'ewah_set' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,ewah/bitmap.c,103,0,"The function 'ewah_to_bitmap' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,ewah/ewah_bitmap.c,376,0,"The function 'ewah_xor' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,compat/terminal.c,427,0,"The function 'git_terminal_prompt' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,compat/simple-ipc/ipc-unix-socket.c,221,0,"The function 'ipc_client_send_command' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,compat/simple-ipc/ipc-unix-socket.c,17,0,"The function 'ipc_get_active_state' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,compat/simple-ipc/ipc-unix-socket.c,968,0,"The function 'ipc_server_await' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,compat/simple-ipc/ipc-unix-socket.c,991,0,"The function 'ipc_server_free' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,compat/simple-ipc/ipc-unix-socket.c,826,0,"The function 'ipc_server_run_async' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,refs/debug.c,14,0,"The function 'maybe_debug_wrap_ref_store' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,refs/iterator.c,260,0,"The function 'overlay_ref_iterator_begin' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,refs/iterator.c,386,0,"The function 'prefix_ref_iterator_begin' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,compat/terminal.c,532,0,"The function 'read_key_without_echo' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,reftable/error.c,13,0,"The function 'reftable_error_str' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,reftable/reader.c,798,0,"The function 'reftable_reader_print_file' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,reftable/reader.c,741,0,"The function 'reftable_reader_refs_for' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,reftable/reader.c,624,0,"The function 'reftable_reader_seek_log' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,reftable/record.c,1159,0,"The function 'reftable_record_equal' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,reftable/record.c,1310,0,"The function 'reftable_record_print' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,reftable/publicbasics.c,47,0,"The function 'reftable_set_alloc' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,reftable/stack.c,415,0,"The function 'reftable_stack_add' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,reftable/stack.c,1376,0,"The function 'reftable_stack_clean' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,reftable/stack.c,1086,0,"The function 'reftable_stack_compact_all' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,reftable/stack.c,1209,0,"The function 'reftable_stack_compaction_stats' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,reftable/stack.c,1396,0,"The function 'reftable_stack_print_directory' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,reftable/stack.c,1222,0,"The function 'reftable_stack_read_log' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,reftable/stack.c,1214,0,"The function 'reftable_stack_read_ref' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,reftable/writer.c,365,0,"The function 'reftable_writer_add_logs' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,reftable/writer.c,296,0,"The function 'reftable_writer_add_refs' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,reftable/writer.c,704,0,"The function 'reftable_writer_stats' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,sha1dc/sha1.c,191,0,"The function 'sha1_compression' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,trace2/tr2_cfg.c,84,0,"The function 'tr2_cfg_free_env_vars' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,trace2/tr2_cfg.c,45,0,"The function 'tr2_cfg_free_patterns' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,trace2/tr2_cfg.c,117,0,"The function 'tr2_cfg_list_config_fl' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,trace2/tr2_cfg.c,140,0,"The function 'tr2_cfg_set_fl' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,trace2/tr2_cmd_name.c,8,0,"The function 'tr2_cmd_name_append_hierarchy' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,trace2/tr2_cmd_name.c,22,0,"The function 'tr2_cmd_name_get_hierarchy' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,trace2/tr2_cmd_name.c,27,0,"The function 'tr2_cmd_name_release' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,trace2/tr2_ctr.c,34,0,"The function 'tr2_counter_increment' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,trace2/tr2_ctr.c,87,0,"The function 'tr2_emit_final_counters' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,trace2/tr2_tmr.c,168,0,"The function 'tr2_emit_final_timers' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,trace2/tr2_ctr.c,67,0,"The function 'tr2_emit_per_thread_counters' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,trace2/tr2_tmr.c,148,0,"The function 'tr2_emit_per_thread_timers' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,trace2/tr2_cfg.c,125,0,"The function 'tr2_list_env_vars_fl' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,trace2/tr2_sid.c,109,0,"The function 'tr2_sid_release' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,trace2/tr2_tmr.c,37,0,"The function 'tr2_start_timer' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,trace2/tr2_tmr.c,49,0,"The function 'tr2_stop_timer' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,trace2/tr2_sysenv.c,85,0,"The function 'tr2_sysenv_load' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,trace2/tr2_sysenv.c,126,0,"The function 'tr2_sysenv_release' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,trace2/tr2_ctr.c,46,0,"The function 'tr2_update_final_counters' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,trace2/tr2_tmr.c,88,0,"The function 'tr2_update_final_timers' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,trace2/tr2_tls.c,145,0,"The function 'tr2tls_absolute_elapsed' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,trace2/tr2_tls.c,153,0,"The function 'tr2tls_init' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,trace2/tr2_tls.c,84,0,"The function 'tr2tls_is_main_thread' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,trace2/tr2_tls.c,185,0,"The function 'tr2tls_lock' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,trace2/tr2_tls.c,123,0,"The function 'tr2tls_pop_unwind_self' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,trace2/tr2_tls.c,105,0,"The function 'tr2tls_push_self' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,trace2/tr2_tls.c,131,0,"The function 'tr2tls_region_elasped_self' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,trace2/tr2_tls.c,164,0,"The function 'tr2tls_release' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,trace2/tr2_tls.c,190,0,"The function 'tr2tls_unlock' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,compat/linux/procinfo.c,151,0,"The function 'trace2_collect_process_info' is never used.",cppcheck,unusedFunction,MSC13-C
+unusedFunction,xdiff/xdiffi.c,1054,0,"The function 'xdl_diff' is never used.",cppcheck,unusedFunction,MSC13-C

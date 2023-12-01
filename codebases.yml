@@ -1,0 +1,115 @@
+# Currently lists info about how to work with each external codebase
+
+# <legal>
+# 'Redemption' Automated Code Repair Tool
+# 
+# Copyright 2023 Carnegie Mellon University.
+# 
+# NO WARRANTY. THIS CARNEGIE MELLON UNIVERSITY AND SOFTWARE ENGINEERING
+# INSTITUTE MATERIAL IS FURNISHED ON AN 'AS-IS' BASIS. CARNEGIE MELLON
+# UNIVERSITY MAKES NO WARRANTIES OF ANY KIND, EITHER EXPRESSED OR IMPLIED,
+# AS TO ANY MATTER INCLUDING, BUT NOT LIMITED TO, WARRANTY OF FITNESS FOR
+# PURPOSE OR MERCHANTABILITY, EXCLUSIVITY, OR RESULTS OBTAINED FROM USE OF
+# THE MATERIAL. CARNEGIE MELLON UNIVERSITY DOES NOT MAKE ANY WARRANTY OF ANY
+# KIND WITH RESPECT TO FREEDOM FROM PATENT, TRADEMARK, OR COPYRIGHT
+# INFRINGEMENT.
+# 
+# Licensed under a MIT (SEI)-style license, please see License.txt or
+# contact permission@sei.cmu.edu for full terms.
+# 
+# [DISTRIBUTION STATEMENT A] This material has been approved for public
+# release and unlimited distribution.  Please see Copyright notice for
+# non-US Government use and distribution.
+# 
+# This Software includes and/or makes use of Third-Party Software each
+# subject to its own license.
+# 
+# DM23-2165
+# </legal>
+
+
+codebases: # All the codebases that we list
+
+  dos2unix:
+    url: "https://sourceforge.net/projects/dos2unix/files/dos2unix/7.4.3/dos2unix-7.4.3.tar.gz"
+    notes: "Download using wget"
+    stable_version: "7.4.3"
+    license: "FreeBSD style"
+
+    dependencies:
+      apt-get: ["po4a"]  # for running tests
+
+    build:
+      default: "make DOS2UNIX_AUTHOR=nobody dos2unix"
+      clang: "make DOS2UNIX_AUTHOR=nobody CC=clang dos2unix"
+    test:
+      setup: "make DOS2UNIX_AUTHOR=nobody"
+      cmd: "make DOS2UNIX_AUTHOR=nobody test"
+    clang-tidy:
+      cmd: ["bear -- make DOS2UNIX_AUTHOR=nobody CC=clang dos2unix",
+            "clang-tidy -checks='*' querycp.c  dos2unix.c  common.c"]
+            # >9000 warnings generated w clang 15
+    scan-build:
+      cmd: "scan-build -plist -o clang.out  make DOS2UNIX_AUTHOR=nobody CC=clang dos2unix"
+
+    clean: "make clean"
+    binary: "dos2unix"
+
+
+  git:
+    git: "https://github.com/git/git.git"
+    stable_version: "v2.39.0"
+    license: "GPLv2"
+    suite: "free"
+
+    dependencies:
+      apt-get: ["libcurl4-openssl-dev", "libssl-dev", "zlib1g-dev", "tcl", "gettext"]
+
+    build:
+      configure: "make configure; ./configure"
+      configure-clang: "make configure; env CC=clang ./configure"
+      default: "make PAGER_ENV=dummy git"
+    test:
+      # Note that a test fails quickly if run on a shared
+      # volume. (prob due to MacOS filesystem). The test only works if
+      # git source lives on a non-shared volume.
+      setup: "cd .. ; cp -r git /home ; pushd /home/git"
+
+      # On my platform, this takes 15 min & produces ~26000 lines of output.
+      cmd: "make test"
+      clean: "popd ; rm -rf /home/git"
+    clang-tidy:
+      cmd: ["bear -- make PAGER_ENV=dummy CC=clang git",
+            "clang-tidy -checks='*' ${SOURCE}"]
+            # must compute $SOURCE from compile_commands.json
+    scan-build:
+      cmd: "scan-build -plist -o clang.out  make PAGER_ENV=dummy  CC=clang  git"
+
+    clean: "make clean"
+    binary: "git"
+
+
+  zeek:
+    git: "https://github.com/zeek/zeek.git"
+    stable_version: "v5.1.1"
+    license: "BSD"
+    suite: "free"
+
+    dependencies:
+       apt-get: ["cmake", "g++", "flex", "libfl-dev", "bison", "libssl-dev", "swig",
+                 "zlib1g-dev", "libpcap0.8-dev", "python3-dev",
+                 "git", "sendmail"]
+      # Must also do: (even if using clang!)
+      # ln -s /usr/bin/gcc-12 /usr/bin/gcc-11
+
+    build:
+      configure: "./configure" # gcc, works only on clangbuntu
+      configure-clang: "env CC=clang CXX=clang++ ./configure"
+      default: "make" # takes 5 hours on my machine!, but 2.2 hrs with Clang
+    test:
+      cmd: "make test"
+      # Unfortunately, this produces 31-35 varying failures (see the failures files for details)
+
+    clean: "make clean"
+
+    binary: "build/src/zeek"

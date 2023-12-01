@@ -1,0 +1,5 @@
+{"edits": [
+    ["simple_null_check.c", [
+        [155, 157, "(p ? *p : (abort(),0))"]
+    ]]
+]}

@@ -1,0 +1,406 @@
+tests:
+
+- answer_file: git.clang-tidy.EXP34-C.add-patch_c.ans
+  input:
+    alerts_file: git.clang-tidy.EXP34-C.alerts.json
+    base_dir: /oss/git
+    cfile: add-patch.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: add-patch_c
+
+- answer_file: git.clang-tidy.EXP34-C.apply_c.ans
+  input:
+    alerts_file: git.clang-tidy.EXP34-C.alerts.json
+    base_dir: /oss/git
+    cfile: apply.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: apply_c
+
+- answer_file: git.clang-tidy.EXP34-C.attr_c.ans
+  input:
+    alerts_file: git.clang-tidy.EXP34-C.alerts.json
+    base_dir: /oss/git
+    cfile: attr.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: attr_c
+
+- answer_file: git.clang-tidy.EXP34-C.bisect_c.ans
+  input:
+    alerts_file: git.clang-tidy.EXP34-C.alerts.json
+    base_dir: /oss/git
+    cfile: bisect.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: bisect_c
+
+- answer_file: git.clang-tidy.EXP34-C.blame_c.ans
+  input:
+    alerts_file: git.clang-tidy.EXP34-C.alerts.json
+    base_dir: /oss/git
+    cfile: blame.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: blame_c
+
+- answer_file: git.clang-tidy.EXP34-C.branch_c.ans
+  input:
+    alerts_file: git.clang-tidy.EXP34-C.alerts.json
+    base_dir: /oss/git
+    cfile: branch.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: branch_c
+
+- answer_file: git.clang-tidy.EXP34-C.builtin_bisect--helper_c.ans
+  input:
+    alerts_file: git.clang-tidy.EXP34-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/bisect--helper.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_bisect--helper_c
+
+- answer_file: git.clang-tidy.EXP34-C.builtin_clone_c.ans
+  input:
+    alerts_file: git.clang-tidy.EXP34-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/clone.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_clone_c
+
+- answer_file: git.clang-tidy.EXP34-C.builtin_fast-import_c.ans
+  input:
+    alerts_file: git.clang-tidy.EXP34-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/fast-import.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_fast-import_c
+
+- answer_file: git.clang-tidy.EXP34-C.builtin_fetch_c.ans
+  input:
+    alerts_file: git.clang-tidy.EXP34-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/fetch.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_fetch_c
+
+- answer_file: git.clang-tidy.EXP34-C.builtin_index-pack_c.ans
+  input:
+    alerts_file: git.clang-tidy.EXP34-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/index-pack.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_index-pack_c
+
+- answer_file: git.clang-tidy.EXP34-C.builtin_init-db_c.ans
+  input:
+    alerts_file: git.clang-tidy.EXP34-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/init-db.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_init-db_c
+
+- answer_file: git.clang-tidy.EXP34-C.builtin_merge_c.ans
+  input:
+    alerts_file: git.clang-tidy.EXP34-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/merge.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_merge_c
+
+- answer_file: git.clang-tidy.EXP34-C.builtin_pack-redundant_c.ans
+  input:
+    alerts_file: git.clang-tidy.EXP34-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/pack-redundant.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_pack-redundant_c
+
+- answer_file: git.clang-tidy.EXP34-C.builtin_pull_c.ans
+  input:
+    alerts_file: git.clang-tidy.EXP34-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/pull.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_pull_c
+
+- answer_file: git.clang-tidy.EXP34-C.builtin_rebase_c.ans
+  input:
+    alerts_file: git.clang-tidy.EXP34-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/rebase.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_rebase_c
+
+- answer_file: git.clang-tidy.EXP34-C.builtin_submodule--helper_c.ans
+  input:
+    alerts_file: git.clang-tidy.EXP34-C.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/submodule--helper.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_submodule--helper_c
+
+- answer_file: git.clang-tidy.EXP34-C.combine-diff_c.ans
+  input:
+    alerts_file: git.clang-tidy.EXP34-C.alerts.json
+    base_dir: /oss/git
+    cfile: combine-diff.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: combine-diff_c
+
+- answer_file: git.clang-tidy.EXP34-C.commit-graph_c.ans
+  input:
+    alerts_file: git.clang-tidy.EXP34-C.alerts.json
+    base_dir: /oss/git
+    cfile: commit-graph.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: commit-graph_c
+
+- answer_file: git.clang-tidy.EXP34-C.commit-reach_c.ans
+  input:
+    alerts_file: git.clang-tidy.EXP34-C.alerts.json
+    base_dir: /oss/git
+    cfile: commit-reach.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: commit-reach_c
+
+- answer_file: git.clang-tidy.EXP34-C.convert_c.ans
+  input:
+    alerts_file: git.clang-tidy.EXP34-C.alerts.json
+    base_dir: /oss/git
+    cfile: convert.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: convert_c
+
+- answer_file: git.clang-tidy.EXP34-C.diff_c.ans
+  input:
+    alerts_file: git.clang-tidy.EXP34-C.alerts.json
+    base_dir: /oss/git
+    cfile: diff.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: diff_c
+
+- answer_file: git.clang-tidy.EXP34-C.diffcore-break_c.ans
+  input:
+    alerts_file: git.clang-tidy.EXP34-C.alerts.json
+    base_dir: /oss/git
+    cfile: diffcore-break.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: diffcore-break_c
+
+- answer_file: git.clang-tidy.EXP34-C.dir_c.ans
+  input:
+    alerts_file: git.clang-tidy.EXP34-C.alerts.json
+    base_dir: /oss/git
+    cfile: dir.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: dir_c
+
+- answer_file: git.clang-tidy.EXP34-C.dir_h.ans
+  input:
+    alerts_file: git.clang-tidy.EXP34-C.alerts.json
+    base_dir: /oss/git
+    cfile: config.c
+    compile_cmds_file: ../compile_commands.git.json
+    hfile: dir.h
+  name: dir_h
+
+- answer_file: git.clang-tidy.EXP34-C.git-compat-util_h.ans
+  input:
+    alerts_file: git.clang-tidy.EXP34-C.alerts.json
+    base_dir: /oss/git
+    cfile: branch.c
+    compile_cmds_file: ../compile_commands.git.json
+    hfile: git-compat-util.h
+  name: git-compat-util_h
+
+- answer_file: git.clang-tidy.EXP34-C.hash_h.ans
+  input:
+    alerts_file: git.clang-tidy.EXP34-C.alerts.json
+    base_dir: /oss/git
+    cfile: oidtree.c
+    compile_cmds_file: ../compile_commands.git.json
+    hfile: hash.h
+  name: hash_h
+
+- answer_file: git.clang-tidy.EXP34-C.kwset_c.ans
+  input:
+    alerts_file: git.clang-tidy.EXP34-C.alerts.json
+    base_dir: /oss/git
+    cfile: kwset.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: kwset_c
+
+- answer_file: git.clang-tidy.EXP34-C.line-log_c.ans
+  input:
+    alerts_file: git.clang-tidy.EXP34-C.alerts.json
+    base_dir: /oss/git
+    cfile: line-log.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: line-log_c
+
+- answer_file: git.clang-tidy.EXP34-C.merge-ort_c.ans
+  input:
+    alerts_file: git.clang-tidy.EXP34-C.alerts.json
+    base_dir: /oss/git
+    cfile: merge-ort.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: merge-ort_c
+
+- answer_file: git.clang-tidy.EXP34-C.merge-recursive_c.ans
+  input:
+    alerts_file: git.clang-tidy.EXP34-C.alerts.json
+    base_dir: /oss/git
+    cfile: merge-recursive.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: merge-recursive_c
+
+- answer_file: git.clang-tidy.EXP34-C.notes_c.ans
+  input:
+    alerts_file: git.clang-tidy.EXP34-C.alerts.json
+    base_dir: /oss/git
+    cfile: notes.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: notes_c
+
+- answer_file: git.clang-tidy.EXP34-C.object-file_c.ans
+  input:
+    alerts_file: git.clang-tidy.EXP34-C.alerts.json
+    base_dir: /oss/git
+    cfile: object-file.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: object-file_c
+
+- answer_file: git.clang-tidy.EXP34-C.pack-write_c.ans
+  input:
+    alerts_file: git.clang-tidy.EXP34-C.alerts.json
+    base_dir: /oss/git
+    cfile: pack-write.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: pack-write_c
+
+- answer_file: git.clang-tidy.EXP34-C.parse-options_c.ans
+  input:
+    alerts_file: git.clang-tidy.EXP34-C.alerts.json
+    base_dir: /oss/git
+    cfile: parse-options.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: parse-options_c
+
+- answer_file: git.clang-tidy.EXP34-C.pretty_c.ans
+  input:
+    alerts_file: git.clang-tidy.EXP34-C.alerts.json
+    base_dir: /oss/git
+    cfile: pretty.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: pretty_c
+
+- answer_file: git.clang-tidy.EXP34-C.range-diff_c.ans
+  input:
+    alerts_file: git.clang-tidy.EXP34-C.alerts.json
+    base_dir: /oss/git
+    cfile: range-diff.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: range-diff_c
+
+- answer_file: git.clang-tidy.EXP34-C.ref-filter_c.ans
+  input:
+    alerts_file: git.clang-tidy.EXP34-C.alerts.json
+    base_dir: /oss/git
+    cfile: ref-filter.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: ref-filter_c
+
+- answer_file: git.clang-tidy.EXP34-C.refs_iterator_c.ans
+  input:
+    alerts_file: git.clang-tidy.EXP34-C.alerts.json
+    base_dir: /oss/git
+    cfile: refs/iterator.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: refs_iterator_c
+
+- answer_file: git.clang-tidy.EXP34-C.reftable_reader_c.ans
+  input:
+    alerts_file: git.clang-tidy.EXP34-C.alerts.json
+    base_dir: /oss/git
+    cfile: reftable/reader.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: reftable_reader_c
+
+- answer_file: git.clang-tidy.EXP34-C.remote_c.ans
+  input:
+    alerts_file: git.clang-tidy.EXP34-C.alerts.json
+    base_dir: /oss/git
+    cfile: remote.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: remote_c
+
+- answer_file: git.clang-tidy.EXP34-C.revision_c.ans
+  input:
+    alerts_file: git.clang-tidy.EXP34-C.alerts.json
+    base_dir: /oss/git
+    cfile: revision.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: revision_c
+
+- answer_file: git.clang-tidy.EXP34-C.sequencer_c.ans
+  input:
+    alerts_file: git.clang-tidy.EXP34-C.alerts.json
+    base_dir: /oss/git
+    cfile: sequencer.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: sequencer_c
+
+- answer_file: git.clang-tidy.EXP34-C.setup_c.ans
+  input:
+    alerts_file: git.clang-tidy.EXP34-C.alerts.json
+    base_dir: /oss/git
+    cfile: setup.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: setup_c
+
+- answer_file: git.clang-tidy.EXP34-C.strbuf_c.ans
+  input:
+    alerts_file: git.clang-tidy.EXP34-C.alerts.json
+    base_dir: /oss/git
+    cfile: strbuf.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: strbuf_c
+
+- answer_file: git.clang-tidy.EXP34-C.strbuf_h.ans
+  input:
+    alerts_file: git.clang-tidy.EXP34-C.alerts.json
+    base_dir: /oss/git
+    cfile: config.c
+    compile_cmds_file: ../compile_commands.git.json
+    hfile: strbuf.h
+  name: strbuf_h
+
+- answer_file: git.clang-tidy.EXP34-C.strmap_h.ans
+  input:
+    alerts_file: git.clang-tidy.EXP34-C.alerts.json
+    base_dir: /oss/git
+    cfile: branch.c
+    compile_cmds_file: ../compile_commands.git.json
+    hfile: strmap.h
+  name: strmap_h
+
+- answer_file: git.clang-tidy.EXP34-C.strvec_c.ans
+  input:
+    alerts_file: git.clang-tidy.EXP34-C.alerts.json
+    base_dir: /oss/git
+    cfile: strvec.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: strvec_c
+
+- answer_file: git.clang-tidy.EXP34-C.transport_c.ans
+  input:
+    alerts_file: git.clang-tidy.EXP34-C.alerts.json
+    base_dir: /oss/git
+    cfile: transport.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: transport_c
+
+- answer_file: git.clang-tidy.EXP34-C.unpack-trees_c.ans
+  input:
+    alerts_file: git.clang-tidy.EXP34-C.alerts.json
+    base_dir: /oss/git
+    cfile: unpack-trees.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: unpack-trees_c

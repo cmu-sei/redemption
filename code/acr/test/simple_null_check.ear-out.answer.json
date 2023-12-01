@@ -1,0 +1,711 @@
+{
+  "id": 1000,
+  "kind": "TranslationUnitDecl",
+  "loc": {},
+  "range": {
+    "begin": {},
+    "end": {}
+  },
+  "inner": [
+    {
+      "id": 1001,
+      "kind": "TypedefDecl",
+      "loc": {},
+      "range": {
+        "begin": {},
+        "end": {}
+      },
+      "isImplicit": true,
+      "name": "__int128_t",
+      "type": {
+        "qualType": "__int128"
+      },
+      "inner": [
+        {
+          "id": 1002,
+          "kind": "BuiltinType",
+          "type": {
+            "qualType": "__int128"
+          }
+        }
+      ]
+    },
+    {
+      "id": 1003,
+      "kind": "TypedefDecl",
+      "loc": {},
+      "range": {
+        "begin": {},
+        "end": {}
+      },
+      "isImplicit": true,
+      "name": "__uint128_t",
+      "type": {
+        "qualType": "unsigned __int128"
+      },
+      "inner": [
+        {
+          "id": 1004,
+          "kind": "BuiltinType",
+          "type": {
+            "qualType": "unsigned __int128"
+          }
+        }
+      ]
+    },
+    {
+      "id": 1005,
+      "kind": "TypedefDecl",
+      "loc": {},
+      "range": {
+        "begin": {},
+        "end": {}
+      },
+      "isImplicit": true,
+      "name": "__NSConstantString",
+      "type": {
+        "qualType": "struct __NSConstantString_tag"
+      },
+      "inner": [
+        {
+          "id": 1006,
+          "kind": "RecordType",
+          "type": {
+            "qualType": "struct __NSConstantString_tag"
+          },
+          "decl": {
+            "id": 1007,
+            "kind": "RecordDecl",
+            "name": "__NSConstantString_tag"
+          }
+        }
+      ]
+    },
+    {
+      "id": 1008,
+      "kind": "TypedefDecl",
+      "loc": {},
+      "range": {
+        "begin": {},
+        "end": {}
+      },
+      "isImplicit": true,
+      "name": "__builtin_ms_va_list",
+      "type": {
+        "qualType": "char *"
+      },
+      "inner": [
+        {
+          "id": 1009,
+          "kind": "PointerType",
+          "type": {
+            "qualType": "char *"
+          },
+          "inner": [
+            {
+              "id": 1010,
+              "kind": "BuiltinType",
+              "type": {
+                "qualType": "char"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1011,
+      "kind": "TypedefDecl",
+      "loc": {},
+      "range": {
+        "begin": {},
+        "end": {}
+      },
+      "isImplicit": true,
+      "name": "__builtin_va_list",
+      "type": {
+        "qualType": "struct __va_list_tag[1]"
+      },
+      "inner": [
+        {
+          "id": 1012,
+          "kind": "ConstantArrayType",
+          "type": {
+            "qualType": "struct __va_list_tag[1]"
+          },
+          "size": 1,
+          "inner": [
+            {
+              "id": 1013,
+              "kind": "RecordType",
+              "type": {
+                "qualType": "struct __va_list_tag"
+              },
+              "decl": {
+                "id": 1014,
+                "kind": "RecordDecl",
+                "name": "__va_list_tag"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1015,
+      "kind": "FunctionDecl",
+      "loc": {
+        "offset": 4,
+        "file": "simple_null_check.c",
+        "line": 1,
+        "col": 5,
+        "tokLen": 4
+      },
+      "range": {
+        "begin": {
+          "offset": 0,
+          "col": 1,
+          "tokLen": 3
+        },
+        "end": {
+          "offset": 22,
+          "col": 23,
+          "tokLen": 1
+        },
+        "file": "/host/code/acr/test/simple_null_check.c"
+      },
+      "isUsed": true,
+      "name": "puts",
+      "mangledName": "puts",
+      "type": {
+        "qualType": "int (const char *)"
+      },
+      "inner": [
+        {
+          "id": 1016,
+          "kind": "ParmVarDecl",
+          "loc": {
+            "offset": 21,
+            "col": 22,
+            "tokLen": 1
+          },
+          "range": {
+            "begin": {
+              "offset": 9,
+              "col": 10,
+              "tokLen": 5
+            },
+            "end": {
+              "offset": 21,
+              "col": 22,
+              "tokLen": 1
+            },
+            "file": "/host/code/acr/test/simple_null_check.c"
+          },
+          "name": "s",
+          "type": {
+            "qualType": "const char *"
+          }
+        }
+      ]
+    },
+    {
+      "id": 1017,
+      "kind": "FunctionDecl",
+      "loc": {
+        "offset": 30,
+        "line": 3,
+        "col": 5,
+        "tokLen": 3
+      },
+      "range": {
+        "begin": {
+          "offset": 26,
+          "col": 1,
+          "tokLen": 3
+        },
+        "end": {
+          "offset": 159,
+          "line": 9,
+          "col": 1,
+          "tokLen": 1
+        },
+        "file": "/host/code/acr/test/simple_null_check.c"
+      },
+      "name": "foo",
+      "mangledName": "foo",
+      "type": {
+        "qualType": "int (int *)"
+      },
+      "inner": [
+        {
+          "id": 1018,
+          "kind": "ParmVarDecl",
+          "loc": {
+            "offset": 39,
+            "line": 3,
+            "col": 14,
+            "tokLen": 1
+          },
+          "range": {
+            "begin": {
+              "offset": 34,
+              "col": 9,
+              "tokLen": 3
+            },
+            "end": {
+              "offset": 39,
+              "col": 14,
+              "tokLen": 1
+            },
+            "file": "/host/code/acr/test/simple_null_check.c"
+          },
+          "isUsed": true,
+          "name": "p",
+          "type": {
+            "qualType": "int *"
+          }
+        },
+        {
+          "id": 1019,
+          "kind": "CompoundStmt",
+          "range": {
+            "begin": {
+              "offset": 42,
+              "col": 17,
+              "tokLen": 1
+            },
+            "end": {
+              "offset": 159,
+              "line": 9,
+              "col": 1,
+              "tokLen": 1
+            },
+            "file": "/host/code/acr/test/simple_null_check.c"
+          },
+          "inner": [
+            {
+              "id": 1020,
+              "kind": "IfStmt",
+              "range": {
+                "begin": {
+                  "offset": 48,
+                  "line": 4,
+                  "col": 5,
+                  "tokLen": 2
+                },
+                "end": {
+                  "offset": 142,
+                  "line": 7,
+                  "col": 5,
+                  "tokLen": 1
+                },
+                "file": "/host/code/acr/test/simple_null_check.c"
+              },
+              "inner": [
+                {
+                  "id": 1021,
+                  "kind": "UnaryOperator",
+                  "range": {
+                    "begin": {
+                      "offset": 52,
+                      "line": 4,
+                      "col": 9,
+                      "tokLen": 1
+                    },
+                    "end": {
+                      "offset": 53,
+                      "col": 10,
+                      "tokLen": 1
+                    },
+                    "file": "/host/code/acr/test/simple_null_check.c"
+                  },
+                  "type": {
+                    "qualType": "int"
+                  },
+                  "valueCategory": "prvalue",
+                  "isPostfix": false,
+                  "opcode": "!",
+                  "canOverflow": false,
+                  "inner": [
+                    {
+                      "id": 1022,
+                      "kind": "ImplicitCastExpr",
+                      "range": {
+                        "begin": {
+                          "offset": 53,
+                          "col": 10,
+                          "tokLen": 1
+                        },
+                        "end": {
+                          "offset": 53,
+                          "col": 10,
+                          "tokLen": 1
+                        },
+                        "file": "/host/code/acr/test/simple_null_check.c"
+                      },
+                      "type": {
+                        "qualType": "int *"
+                      },
+                      "valueCategory": "prvalue",
+                      "castKind": "LValueToRValue",
+                      "inner": [
+                        {
+                          "id": 1023,
+                          "kind": "DeclRefExpr",
+                          "range": {
+                            "begin": {
+                              "offset": 53,
+                              "col": 10,
+                              "tokLen": 1
+                            },
+                            "end": {
+                              "offset": 53,
+                              "col": 10,
+                              "tokLen": 1
+                            },
+                            "file": "/host/code/acr/test/simple_null_check.c"
+                          },
+                          "type": {
+                            "qualType": "int *"
+                          },
+                          "valueCategory": "lvalue",
+                          "referencedDecl": {
+                            "id": "1018b",
+                            "kind": "ParmVarDecl",
+                            "name": "p",
+                            "type": {
+                              "qualType": "int *"
+                            },
+                            "prevId": 1018
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": 1024,
+                  "kind": "CompoundStmt",
+                  "range": {
+                    "begin": {
+                      "offset": 56,
+                      "col": 13,
+                      "tokLen": 1
+                    },
+                    "end": {
+                      "offset": 142,
+                      "line": 7,
+                      "col": 5,
+                      "tokLen": 1
+                    },
+                    "file": "/host/code/acr/test/simple_null_check.c"
+                  },
+                  "inner": [
+                    {
+                      "id": 1025,
+                      "kind": "CallExpr",
+                      "range": {
+                        "begin": {
+                          "offset": 66,
+                          "line": 5,
+                          "col": 9,
+                          "tokLen": 4
+                        },
+                        "end": {
+                          "offset": 93,
+                          "col": 36,
+                          "tokLen": 1
+                        },
+                        "file": "/host/code/acr/test/simple_null_check.c"
+                      },
+                      "type": {
+                        "qualType": "int"
+                      },
+                      "valueCategory": "prvalue",
+                      "inner": [
+                        {
+                          "id": 1026,
+                          "kind": "ImplicitCastExpr",
+                          "range": {
+                            "begin": {
+                              "offset": 66,
+                              "col": 9,
+                              "tokLen": 4
+                            },
+                            "end": {
+                              "offset": 66,
+                              "col": 9,
+                              "tokLen": 4
+                            },
+                            "file": "/host/code/acr/test/simple_null_check.c"
+                          },
+                          "type": {
+                            "qualType": "int (*)(const char *)"
+                          },
+                          "valueCategory": "prvalue",
+                          "castKind": "FunctionToPointerDecay",
+                          "inner": [
+                            {
+                              "id": 1027,
+                              "kind": "DeclRefExpr",
+                              "range": {
+                                "begin": {
+                                  "offset": 66,
+                                  "col": 9,
+                                  "tokLen": 4
+                                },
+                                "end": {
+                                  "offset": 66,
+                                  "col": 9,
+                                  "tokLen": 4
+                                },
+                                "file": "/host/code/acr/test/simple_null_check.c"
+                              },
+                              "type": {
+                                "qualType": "int (const char *)"
+                              },
+                              "valueCategory": "prvalue",
+                              "referencedDecl": {
+                                "id": "1015b",
+                                "kind": "FunctionDecl",
+                                "name": "puts",
+                                "type": {
+                                  "qualType": "int (const char *)"
+                                },
+                                "prevId": 1015
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "id": 1028,
+                          "kind": "ImplicitCastExpr",
+                          "range": {
+                            "begin": {
+                              "offset": 71,
+                              "col": 14,
+                              "tokLen": 22
+                            },
+                            "end": {
+                              "offset": 71,
+                              "col": 14,
+                              "tokLen": 22
+                            },
+                            "file": "/host/code/acr/test/simple_null_check.c"
+                          },
+                          "type": {
+                            "qualType": "const char *"
+                          },
+                          "valueCategory": "prvalue",
+                          "castKind": "NoOp",
+                          "inner": [
+                            {
+                              "id": 1029,
+                              "kind": "ImplicitCastExpr",
+                              "range": {
+                                "begin": {
+                                  "offset": 71,
+                                  "col": 14,
+                                  "tokLen": 22
+                                },
+                                "end": {
+                                  "offset": 71,
+                                  "col": 14,
+                                  "tokLen": 22
+                                },
+                                "file": "/host/code/acr/test/simple_null_check.c"
+                              },
+                              "type": {
+                                "qualType": "char *"
+                              },
+                              "valueCategory": "prvalue",
+                              "castKind": "ArrayToPointerDecay",
+                              "inner": [
+                                {
+                                  "id": 1030,
+                                  "kind": "StringLiteral",
+                                  "range": {
+                                    "begin": {
+                                      "offset": 71,
+                                      "col": 14,
+                                      "tokLen": 22
+                                    },
+                                    "end": {
+                                      "offset": 71,
+                                      "col": 14,
+                                      "tokLen": 22
+                                    },
+                                    "file": "/host/code/acr/test/simple_null_check.c"
+                                  },
+                                  "type": {
+                                    "qualType": "char[21]"
+                                  },
+                                  "valueCategory": "lvalue",
+                                  "value": "\"Error: null pointer!\""
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": 1031,
+              "kind": "ReturnStmt",
+              "range": {
+                "begin": {
+                  "offset": 148,
+                  "line": 8,
+                  "col": 5,
+                  "tokLen": 6
+                },
+                "end": {
+                  "offset": 156,
+                  "col": 13,
+                  "tokLen": 1
+                },
+                "file": "/host/code/acr/test/simple_null_check.c"
+              },
+              "inner": [
+                {
+                  "id": 1032,
+                  "kind": "ImplicitCastExpr",
+                  "range": {
+                    "begin": {
+                      "offset": 155,
+                      "col": 12,
+                      "tokLen": 1
+                    },
+                    "end": {
+                      "offset": 156,
+                      "col": 13,
+                      "tokLen": 1
+                    },
+                    "file": "/host/code/acr/test/simple_null_check.c"
+                  },
+                  "type": {
+                    "qualType": "int"
+                  },
+                  "valueCategory": "prvalue",
+                  "castKind": "LValueToRValue",
+                  "inner": [
+                    {
+                      "id": 1033,
+                      "kind": "UnaryOperator",
+                      "range": {
+                        "begin": {
+                          "offset": 155,
+                          "col": 12,
+                          "tokLen": 1
+                        },
+                        "end": {
+                          "offset": 156,
+                          "col": 13,
+                          "tokLen": 1
+                        },
+                        "file": "/host/code/acr/test/simple_null_check.c"
+                      },
+                      "type": {
+                        "qualType": "int"
+                      },
+                      "valueCategory": "lvalue",
+                      "isPostfix": false,
+                      "opcode": "*",
+                      "canOverflow": false,
+                      "inner": [
+                        {
+                          "id": 1034,
+                          "kind": "ImplicitCastExpr",
+                          "range": {
+                            "begin": {
+                              "offset": 156,
+                              "col": 13,
+                              "tokLen": 1
+                            },
+                            "end": {
+                              "offset": 156,
+                              "col": 13,
+                              "tokLen": 1
+                            },
+                            "file": "/host/code/acr/test/simple_null_check.c"
+                          },
+                          "type": {
+                            "qualType": "int *"
+                          },
+                          "valueCategory": "prvalue",
+                          "castKind": "LValueToRValue",
+                          "inner": [
+                            {
+                              "id": 1035,
+                              "kind": "DeclRefExpr",
+                              "range": {
+                                "begin": {
+                                  "offset": 156,
+                                  "col": 13,
+                                  "tokLen": 1
+                                },
+                                "end": {
+                                  "offset": 156,
+                                  "col": 13,
+                                  "tokLen": 1
+                                },
+                                "file": "/host/code/acr/test/simple_null_check.c"
+                              },
+                              "type": {
+                                "qualType": "int *"
+                              },
+                              "valueCategory": "lvalue",
+                              "referencedDecl": {
+                                "id": "1018b",
+                                "kind": "ParmVarDecl",
+                                "name": "p",
+                                "type": {
+                                  "qualType": "int *"
+                                },
+                                "prevId": 1018
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "base_dir": "/host/code/acr/test",
+  "compile_dir": "/host/code/acr/test",
+  "file": "/host/code/acr/test/simple_null_check.c",
+  "preproc_db": {
+    "/host/code/acr/test/simple_null_check.c": []
+  },
+  "comments_db": {
+    "/host/code/acr/test/simple_null_check.c": [
+      [104, 137]
+    ]
+  },
+  "newlines_db": {
+    "/host/code/acr/test/simple_null_check.c": [
+      24,
+      25,
+      43,
+      57,
+      95,
+      137,
+      143,
+      158,
+      160,
+      161
+    ]
+  }
+}

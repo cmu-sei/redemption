@@ -1,0 +1,38 @@
+[
+  {
+    "rule": "EXP19-C",
+    "file": "abspath.c",
+    "line": "21",
+    "column": "57",
+    "tool": "clang_tidy_oss",
+    "checker": "google-readability-braces-around-statements,hicpp-braces-around-statements,readability-braces-around-statements",
+    "message": "statement should be inside braces"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "hash.h",
+    "line": "268",
+    "column": "2",
+    "tool": "clang_tidy_oss",
+    "checker": "clang-analyzer-core.NonNullParamChecker",
+    "message": "Null pointer passed to 2nd parameter expecting 'nonnull'"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "dir.h",
+    "line": "540",
+    "column": "52",
+    "tool": "clang_tidy_oss",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Access to field 'ce_namelen' results in a dereference of a null pointer (loaded from variable 'ce')"
+  },
+  {
+    "rule": "EXP33-C",
+    "file": "hash.h",
+    "line": "249",
+    "column": "6",
+    "tool": "clang_tidy_oss",
+    "checker": "clang-analyzer-core.uninitialized.Branch",
+    "message": "Branch condition evaluates to a garbage value"
+  }
+]

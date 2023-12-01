@@ -1,0 +1,12 @@
+[
+  {
+    "rule": "EXP34-C",
+    "file": "header_null_ptr.h",
+    "line": 12
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "header_null_ptr.h",
+    "line": 14
+  }
+]

@@ -1,0 +1,62 @@
+[
+################## 
+# Function: foo
+################## 
+[
+  ["dom-null-derefs.c", [10, 8]], {
+    "derefs": [
+    ],
+    "null_checks": [
+    ]
+  }
+],
+[
+  ["dom-null-derefs.c", [13, 12]], {
+    "derefs": [
+      [10, 8],
+    ],
+    "null_checks": [
+      [12, 9],
+    ]
+  }
+],
+################## 
+[
+  ["dom-null-derefs.c", [11, 12]], {
+    "derefs": [
+    ],
+    "null_checks": [
+    ]
+  }
+],
+[
+  ["dom-null-derefs.c", [16, 16]], {
+    "derefs": [
+      [11, 12],
+    ],
+    "null_checks": [
+      [15, 9],
+    ]
+  }
+],
+[
+  ["dom-null-derefs.c", [19, 12]], {
+    "derefs": [
+      [11, 12],
+    ],
+    "null_checks": [
+    ]
+  }
+],
+################## 
+[
+  ["dom-null-derefs.c", [18, 10]], {
+    "derefs": [
+    ],
+    "null_checks": [
+    ]
+  }
+],
+################## 
+# Function: main
+]

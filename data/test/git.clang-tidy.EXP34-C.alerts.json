@@ -1,0 +1,755 @@
+[
+  {
+    "rule": "EXP34-C",
+    "file": "dir.h",
+    "line": "540",
+    "column": "52",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Access to field 'ce_namelen' results in a dereference of a null pointer (loaded from variable 'ce')",
+    "satisfactory": "false",
+    "verdict": "true",
+    "repair": "true",
+    "rationale": "A parameter passed into a function is `const struct cache_entry *ce`, and it is dereferenced without a check in the function for a null-pointer dereference. The `ce_namelen` is defined in file cache.h in a `#define ` statement. Adding a null check for `ce_namecheck` in the dir.h function is one way to avoid the possible null dereference, and the team agreed that it would not take a lot of effort to add that repair functionality to ACR.",
+    "randomness": "first_five",
+    "issue": "REM-148"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "git-compat-util.h",
+    "line": "1099",
+    "column": "3",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NonNullParamChecker",
+    "message": "Null pointer passed to 1st parameter expecting 'nonnull'",
+    "satisfactory": "false",
+    "verdict": "true",
+    "repair": "true",
+    "rationale": "A parameter passed into the function is not currently checked that it is not null, prior to the dereference in that function. To handle possible null parameter dereferences, a null check can be added before dereference of a passed-in function parameter. The team agreed that this is a satisfactory solution (coding the repair into ACR won't take too much effort, plus the effect on code is acceptable).",
+     "randomness": "first_five",
+     "issue": "REM-128"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "git-compat-util.h",
+    "line": "1276",
+    "column": "6",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NonNullParamChecker",
+    "message": "Null pointer passed to 1st parameter expecting 'nonnull'",
+    "satisfactory": "false",
+    "verdict": "true",
+    "repair": "true",
+    "rationale": "A parameter passed into the function is not currently checked that it is not null, prior to the dereference in that function. To handle possible null parameter dereferences, a null check can be added before dereference of a passed-in function parameter. The team agreed that this is a satisfactory solution (coding the repair into ACR won't take too much effort, plus the effect on code is acceptable).",
+     "randomness": "first_five",
+     "issue": "REM-128"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "hash.h",
+    "line": "268",
+    "column": "2",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NonNullParamChecker",
+    "message": "Null pointer passed to 2nd parameter expecting 'nonnull'",
+    "satisfactory": "false",
+    "verdict": "true",
+    "repair": "true",
+    "rationale": "A parameter passed into the function is not currently checked that it is not null, prior to the dereference in that function. To handle possible null parameter dereferences, a null check can be added before dereference of a passed-in function parameter. The team agreed that this is a satisfactory solution (coding the repair into ACR won't take too much effort, plus the effect on code is acceptable).",
+    "randomness": "first_five",
+    "issue": "REM-128"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "strbuf.h",
+    "line": "166",
+    "column": "16",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Array access (via field 'buf') results in a null pointer dereference",
+    "satisfactory": "false",
+    "verdict": "true",
+    "repair": "true",
+    "rationale": "The ACR tool should add a null check for the field `buf` prior to dereferencing it on line 166, but it currently doesn't.",
+    "randomness": "first_five",
+    "issue": "REM-145"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "strbuf.h",
+    "line": "305",
+    "column": "20",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NonNullParamChecker",
+    "message": "Null pointer passed to 1st parameter expecting 'nonnull'"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "strmap.h",
+    "line": "189",
+    "column": "10",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Access to field 'default_value' results in a dereference of a null pointer (loaded from variable 'map')"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "add-patch.c",
+    "line": "591",
+    "column": "24",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NonNullParamChecker",
+    "message": "Null pointer passed to 1st parameter expecting 'nonnull'"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "apply.c",
+    "line": "2976",
+    "column": "3",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Dereference of null pointer"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "attr.c",
+    "line": "908",
+    "column": "11",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Access to field 'prev' results in a dereference of a null pointer (loaded from variable 'info')"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "attr.c",
+    "line": "916",
+    "column": "9",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Access to field 'origin' results in a dereference of a null pointer"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "bisect.c",
+    "line": "429",
+    "column": "15",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Access to field 'item' results in a dereference of a null pointer (loaded from variable 'list')"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "blame.c",
+    "line": "2811",
+    "column": "10",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Access to field 'parents' results in a dereference of a null pointer (loaded from variable 'c')"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "branch.c",
+    "line": "163",
+    "column": "12",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Dereference of null pointer",
+    "satisfactory": "false",
+    "verdict": "complex",
+    "repair": "true",
+    "rationale": "The dereference in the alert is the following: `friendly_ref_names.items[0].string`. Line 38 of git/strmap.h sets the following: `struct string_list friendly_ref_names = STRING_LIST_INIT_DUP`. ` STRING_LIST_INIT_DUP` is defined in file string-list.h: `#define STRING_LIST_INIT_DUP {.strdup_strings = 1}.` Various `strdup_strings` fields (e.g., string-list.c `list->strdup_strings`, resolve-undo.c and `resolve_undo->strdup_strings`) Since manual analysis of all possible ways that field could be null in the data/control paths leading to this alerted-about line appears too complex, we assume it is a true positive. A repair might require that for many dereferenced fields where the field is assigned to elsewhere (e.g., in another file), that there would need to be an added null check. In this case, that would check if `friendly_ref_names.items[0]` is null, prior to the dereference on line 163.",
+    "randomness": "true",
+    "issue": "REM-145 and REM-149"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "builtin/bisect--helper.c",
+    "line": "311",
+    "column": "23",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NonNullParamChecker",
+    "message": "Null pointer passed to 2nd parameter expecting 'nonnull'"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "builtin/clone.c",
+    "line": "1010",
+    "column": "12",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NonNullParamChecker",
+    "message": "Null pointer passed to 1st parameter expecting 'nonnull'"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "builtin/fast-import.c",
+    "line": "2044",
+    "column": "22",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Access to field 'active_next_branch' results in a dereference of a null pointer (loaded from variable 'e')"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "builtin/fetch.c",
+    "line": "588",
+    "column": "19",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Access to field 'nr' results in a dereference of a null pointer (loaded from variable 'fetch_refspec')"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "builtin/index-pack.c",
+    "line": "1497",
+    "column": "3",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NonNullParamChecker",
+    "message": "Null pointer passed to 1st parameter expecting 'nonnull'",
+    "satisfactory": "false",
+    "verdict": "complex",
+    "repair": "true",
+    "rationale": "The alert is for the following line: `chmod(*final_name, 0444);` The column number for the alert isn't very helpful. The first parameter to the function (specified in the alert message, so this narrows our code examination on the alerted-about-line) is `const char **final_name`. This parameter `*final_name` could have two potential problems: `final_name` could be NULL, and, if it isn't, then `*final_name` could be NULL. The former problem is Dependent, since if `final_name` were NULL, it is dereferenced on line 1490, and should be repaired there. However, the alert message specifies that NULL might be the parameter passed to `chmod()`, which is the latter problem. Using the project's alert auditing rule 5B, we audit only for that. Due to complexity of analysis, we assume the verdict is true. ACR should repair that.",
+    "randomness": "true",
+    "issue": "REM-159"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "builtin/index-pack.c",
+    "line": "1681",
+    "column": "4",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Array access (from variable 'chain_histogram') results in a null pointer dereference"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "builtin/index-pack.c",
+    "line": "1703",
+    "column": "8",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Array access (from variable 'chain_histogram') results in a null pointer dereference"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "builtin/init-db.c",
+    "line": "162",
+    "column": "7",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NonNullParamChecker",
+    "message": "Null pointer passed to 1st parameter expecting 'nonnull'"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "builtin/merge.c",
+    "line": "224",
+    "column": "38",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Array access (from variable 'use_strategies') results in a null pointer dereference"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "builtin/merge.c",
+    "line": "1525",
+    "column": "7",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Array access (from variable 'use_strategies') results in a null pointer dereference"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "builtin/pack-redundant.c",
+    "line": "477",
+    "column": "7",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Access to field 'next' results in a dereference of a null pointer (loaded from variable 'pl')",
+    "satisfactory": "true",
+    "verdict": "false",
+    "repair": "false",
+    "rationale": "The alerted-on code line is `if (!pl->next) {`, in function `cmp_local_packs`. `pl` is defined and assigned on line 474: `struct pack_list *pl = local_packs`. The pointer variable `* local_packs is defined as a `static struct pack_list` on lines 31-37 and assigned to NULL there. On line 639, function `cmp_local_packs` is called. Above that, line 614 checks if `local_packs` is null, and the program dies if so. Therefore, this alert is a false positive.",
+    "randomness": "true",
+    "issue": ""
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "builtin/pull.c",
+    "line": "757",
+    "column": "8",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NonNullParamChecker",
+    "message": "Null pointer passed to 1st parameter expecting 'nonnull'"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "builtin/rebase.c",
+    "line": "1664",
+    "column": "6",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NonNullParamChecker",
+    "message": "Null pointer passed to 1st parameter expecting 'nonnull'"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "builtin/rebase.c",
+    "line": "1730",
+    "column": "14",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NonNullParamChecker",
+    "message": "Null pointer passed to 1st parameter expecting 'nonnull'"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "builtin/submodule--helper.c",
+    "line": "1249",
+    "column": "39",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Access to field 'name' results in a dereference of a null pointer (loaded from variable 'sub')"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "combine-diff.c",
+    "line": "258",
+    "column": "13",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Access to field 'prev' results in a dereference of a null pointer (loaded from variable 'newend')"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "combine-diff.c",
+    "line": "266",
+    "column": "8",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Access to field 'prev' results in a dereference of a null pointer (loaded from variable 'lline')"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "commit-graph.c",
+    "line": "2057",
+    "column": "52",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Access to field 'odb' results in a dereference of a null pointer (loaded from variable 'g')"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "commit-reach.c",
+    "line": "812",
+    "column": "32",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Access to field 'flags' results in a dereference of a null pointer (loaded from field 'item')"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "convert.c",
+    "line": "42",
+    "column": "21",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Array access (from variable 'buf') results in a null pointer dereference"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "convert.c",
+    "line": "562",
+    "column": "22",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Dereference of null pointer"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "diff.c",
+    "line": "999",
+    "column": "24",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Dereference of null pointer"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "diff.c",
+    "line": "1002",
+    "column": "24",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Dereference of null pointer"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "diff.c",
+    "line": "2075",
+    "column": "3",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NonNullParamChecker",
+    "message": "Null pointer passed to 1st parameter expecting 'nonnull'"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "diffcore-break.c",
+    "line": "291",
+    "column": "9",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Access to field 'broken_pair' results in a dereference of a null pointer (loaded from variable 'pp')"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "dir.c",
+    "line": "2461",
+    "column": "25",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Access to field 'dirs_nr' results in a dereference of a null pointer (loaded from field 'untracked')"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "kwset.c",
+    "line": "466",
+    "column": "19",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Access to field 'next' results in a dereference of a null pointer (loaded from field 'trie')"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "kwset.c",
+    "line": "637",
+    "column": "16",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Array access results in a null pointer dereference"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "line-log.c",
+    "line": "873",
+    "column": "25",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Array access (from variable 'ends') results in a null pointer dereference"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "merge-ort.c",
+    "line": "4341",
+    "column": "31",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Dereference of null pointer"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "merge-ort.c",
+    "line": "5066",
+    "column": "3",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Access to field 'call_depth' results in a dereference of a null pointer (loaded from field 'priv')"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "merge-recursive.c",
+    "line": "3352",
+    "column": "14",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Access to field 'pair' results in a dereference of a null pointer (loaded from field 'ren2')"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "merge-recursive.c",
+    "line": "3365",
+    "column": "14",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Access to field 'pair' results in a dereference of a null pointer (loaded from field 'ren2')"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "notes.c",
+    "line": "672",
+    "column": "31",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Access to field 'next' results in a dereference of a null pointer (loaded from variable 'tws')"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "object-file.c",
+    "line": "426",
+    "column": "22",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Array access (via field 'hash') results in a null pointer dereference"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "pack-write.c",
+    "line": "258",
+    "column": "7",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NonNullParamChecker",
+    "message": "Null pointer passed to 1st parameter expecting 'nonnull'"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "parse-options.c",
+    "line": "851",
+    "column": "26",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Dereference of null pointer (loaded from field 'opt')"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "parse-options.c",
+    "line": "992",
+    "column": "14",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Dereference of null pointer (loaded from field 'opt')"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "pretty.c",
+    "line": "1633",
+    "column": "9",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NonNullParamChecker",
+    "message": "Null pointer passed to 1st parameter expecting 'nonnull'"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "pretty.c",
+    "line": "2178",
+    "column": "31",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Array access (from variable 'msg') results in a null pointer dereference"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "range-diff.c",
+    "line": "531",
+    "column": "13",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Dereference of null pointer"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "ref-filter.c",
+    "line": "925",
+    "column": "8",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NonNullParamChecker",
+    "message": "Null pointer passed to 1st parameter expecting 'nonnull'"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "ref-filter.c",
+    "line": "929",
+    "column": "7",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NonNullParamChecker",
+    "message": "Null pointer passed to 1st parameter expecting 'nonnull'"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "ref-filter.c",
+    "line": "1994",
+    "column": "23",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Access to field 'type' results in a dereference of an undefined pointer value (loaded from variable 'obj')"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "refs/iterator.c",
+    "line": "13",
+    "column": "9",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Access to field 'vtable' results in a dereference of a null pointer (loaded from variable 'ref_iterator')"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "refs/iterator.c",
+    "line": "161",
+    "column": "25",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Access to field 'refname' results in a dereference of a null pointer"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "reftable/reader.c",
+    "line": "329",
+    "column": "45",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Access to field 'full_block_size' results in a dereference of a null pointer (loaded from field 'br')"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "remote.c",
+    "line": "1024",
+    "column": "15",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NonNullParamChecker",
+    "message": "Null pointer passed to 1st parameter expecting 'nonnull'",
+    "satisfactory": "false",
+    "verdict": "complex",
+    "repair": "true",
+    "rationale": "True positive. No ACR repair. The alert is for the following line: `size_t len = strlen(name);` The third parameter to the surrounding function is `const char *name`. True positive assumed, due to complexity of analysis.",
+    "randomness": "true",
+    "issue": "REM-128"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "revision.c",
+    "line": "1124",
+    "column": "8",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Access to field 'parents' results in a dereference of a null pointer (loaded from variable 'p')"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "revision.c",
+    "line": "1432",
+    "column": "31",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Access to field 'date' results in a dereference of a null pointer (loaded from variable 'commit')"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "revision.c",
+    "line": "1436",
+    "column": "7",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Access to field 'flags' results in a dereference of a null pointer (loaded from variable 'obj')"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "revision.c",
+    "line": "1871",
+    "column": "7",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Access to field 'type' results in a dereference of a null pointer (loaded from variable 'it')"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "sequencer.c",
+    "line": "1260",
+    "column": "20",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Access to field 'buf' results in a dereference of a null pointer (loaded from variable 'msg')"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "sequencer.c",
+    "line": "1474",
+    "column": "30",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Access to field 'parents' results in a dereference of a null pointer (loaded from variable 'current_head')"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "sequencer.c",
+    "line": "1589",
+    "column": "27",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Access to field 'buf' results in a dereference of a null pointer (loaded from variable 'msg')"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "setup.c",
+    "line": "364",
+    "column": "7",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NonNullParamChecker",
+    "message": "Null pointer passed to 1st parameter expecting 'nonnull'"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "strbuf.c",
+    "line": "101",
+    "column": "14",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Array access (via field 'buf') results in a null pointer dereference",
+    "satisfactory": "false",
+    "verdict": "true",
+    "repair": "true",
+    "rationale": "The alert is for the following line: `sb->buf[0] = '0';` The first parameter to the surrounding function is `struct strbuf *sb`. If `*sb` was null, there would be undefined behavior above, on line 93 and on line 99. Per the project's auditing rule 5B, we use the alert message to narrow analysis to only `sb->buf`. The field `sb->buf` should be checked if it's null after line 99 `ALLOC_GROW` which changes `sb->buf`, prior to dereferencing it on line 101. Therefore we mark the verdict true. Additional analysis: Per the original CERT auditing rules (without rule 5B), an auditor would mark this alert `dependent` (on an existing or new-and-manually-created alert for line 93) and not analyze it further, since its determination depends on determination of alerts on line 93 and 99 (despite fact clang-tidy does not alert on those lines, such alerts could be generated by other SA tools or could be manually created and analyzed). For those alerts, true positive could be assumed, due to complexity of analysis of either alert. To handle possible null parameter dereferences, a null check can be added before dereference of a passed-in function parameter. Even without rule 5B, after line 99 there would still need to be an added check between line 99 and 101.",
+    "randomness": "true",
+    "issue": "REM-145 and REM-128"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "strvec.c",
+    "line": "19",
+    "column": "24",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Array access (via field 'v') results in a null pointer dereference"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "transport.c",
+    "line": "936",
+    "column": "6",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NonNullParamChecker",
+    "message": "Null pointer passed to 1st parameter expecting 'nonnull'"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "transport.c",
+    "line": "943",
+    "column": "9",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NonNullParamChecker",
+    "message": "Null pointer passed to 1st parameter expecting 'nonnull'"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "unpack-trees.c",
+    "line": "2446",
+    "column": "8",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NonNullParamChecker",
+    "message": "Null pointer passed to 2nd parameter expecting 'nonnull'"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "unpack-trees.c",
+    "line": "2453",
+    "column": "37",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Access to field 'ce_namelen' results in a dereference of a null pointer (loaded from variable 'ce')"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "unpack-trees.c",
+    "line": "2494",
+    "column": "35",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Access to field 'ce_flags' results in a dereference of a null pointer (loaded from variable 'ce')"
+  }
+]

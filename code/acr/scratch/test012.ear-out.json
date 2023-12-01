@@ -1,0 +1,3180 @@
+{
+  "id": 1000,
+  "kind": "TranslationUnitDecl",
+  "loc": {},
+  "range": {
+    "begin": {},
+    "end": {}
+  },
+  "inner": [
+    {
+      "id": 1001,
+      "kind": "TypedefDecl",
+      "loc": {},
+      "range": {
+        "begin": {},
+        "end": {}
+      },
+      "isImplicit": true,
+      "name": "__int128_t",
+      "type": {
+        "qualType": "__int128"
+      },
+      "inner": [
+        {
+          "id": 1002,
+          "kind": "BuiltinType",
+          "type": {
+            "qualType": "__int128"
+          }
+        }
+      ]
+    },
+    {
+      "id": 1003,
+      "kind": "TypedefDecl",
+      "loc": {},
+      "range": {
+        "begin": {},
+        "end": {}
+      },
+      "isImplicit": true,
+      "name": "__uint128_t",
+      "type": {
+        "qualType": "unsigned __int128"
+      },
+      "inner": [
+        {
+          "id": 1004,
+          "kind": "BuiltinType",
+          "type": {
+            "qualType": "unsigned __int128"
+          }
+        }
+      ]
+    },
+    {
+      "id": 1005,
+      "kind": "TypedefDecl",
+      "loc": {},
+      "range": {
+        "begin": {},
+        "end": {}
+      },
+      "isImplicit": true,
+      "name": "__NSConstantString",
+      "type": {
+        "qualType": "struct __NSConstantString_tag"
+      },
+      "inner": [
+        {
+          "id": 1006,
+          "kind": "RecordType",
+          "type": {
+            "qualType": "struct __NSConstantString_tag"
+          },
+          "decl": {
+            "id": 1007,
+            "kind": "RecordDecl",
+            "name": "__NSConstantString_tag"
+          }
+        }
+      ]
+    },
+    {
+      "id": 1008,
+      "kind": "TypedefDecl",
+      "loc": {},
+      "range": {
+        "begin": {},
+        "end": {}
+      },
+      "isImplicit": true,
+      "name": "__builtin_ms_va_list",
+      "type": {
+        "qualType": "char *"
+      },
+      "inner": [
+        {
+          "id": 1009,
+          "kind": "PointerType",
+          "type": {
+            "qualType": "char *"
+          },
+          "inner": [
+            {
+              "id": 1010,
+              "kind": "BuiltinType",
+              "type": {
+                "qualType": "char"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1011,
+      "kind": "TypedefDecl",
+      "loc": {},
+      "range": {
+        "begin": {},
+        "end": {}
+      },
+      "isImplicit": true,
+      "name": "__builtin_va_list",
+      "type": {
+        "qualType": "struct __va_list_tag[1]"
+      },
+      "inner": [
+        {
+          "id": 1012,
+          "kind": "ConstantArrayType",
+          "type": {
+            "qualType": "struct __va_list_tag[1]"
+          },
+          "size": 1,
+          "inner": [
+            {
+              "id": 1013,
+              "kind": "RecordType",
+              "type": {
+                "qualType": "struct __va_list_tag"
+              },
+              "decl": {
+                "id": 1014,
+                "kind": "RecordDecl",
+                "name": "__va_list_tag"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1015,
+      "kind": "FunctionDecl",
+      "loc": {
+        "offset": 4,
+        "file": "test012.c",
+        "line": 1,
+        "col": 5,
+        "tokLen": 6
+      },
+      "range": {
+        "begin": {
+          "offset": 4,
+          "col": 5,
+          "tokLen": 6
+        },
+        "end": {
+          "offset": 4,
+          "col": 5,
+          "tokLen": 6
+        },
+        "file": "$BASE/test012.c"
+      },
+      "isImplicit": true,
+      "isUsed": true,
+      "name": "printf",
+      "mangledName": "printf",
+      "type": {
+        "qualType": "int (const char *, ...)"
+      },
+      "storageClass": "extern",
+      "variadic": true,
+      "inner": [
+        {
+          "id": 1016,
+          "kind": "ParmVarDecl",
+          "loc": {},
+          "range": {
+            "begin": {},
+            "end": {}
+          },
+          "type": {
+            "qualType": "const char *"
+          }
+        },
+        {
+          "id": 1017,
+          "kind": "BuiltinAttr",
+          "range": {
+            "begin": {},
+            "end": {}
+          },
+          "implicit": true
+        },
+        {
+          "id": 1018,
+          "kind": "FormatAttr",
+          "range": {
+            "begin": {
+              "offset": 4,
+              "col": 5,
+              "tokLen": 6
+            },
+            "end": {
+              "offset": 4,
+              "col": 5,
+              "tokLen": 6
+            },
+            "file": "$BASE/test012.c"
+          },
+          "implicit": true
+        }
+      ]
+    },
+    {
+      "id": 1019,
+      "kind": "FunctionDecl",
+      "loc": {
+        "offset": 4,
+        "col": 5,
+        "tokLen": 6
+      },
+      "range": {
+        "begin": {
+          "offset": 0,
+          "col": 1,
+          "tokLen": 3
+        },
+        "end": {
+          "offset": 34,
+          "col": 35,
+          "tokLen": 1
+        },
+        "file": "$BASE/test012.c"
+      },
+      "isUsed": true,
+      "previousDecl": 1015,
+      "name": "printf",
+      "mangledName": "printf",
+      "type": {
+        "qualType": "int (const char *, ...)"
+      },
+      "variadic": true,
+      "inner": [
+        {
+          "id": 1020,
+          "kind": "ParmVarDecl",
+          "loc": {
+            "offset": 23,
+            "col": 24,
+            "tokLen": 6
+          },
+          "range": {
+            "begin": {
+              "offset": 11,
+              "col": 12,
+              "tokLen": 5
+            },
+            "end": {
+              "offset": 23,
+              "col": 24,
+              "tokLen": 6
+            },
+            "file": "$BASE/test012.c"
+          },
+          "name": "format",
+          "type": {
+            "qualType": "const char *"
+          }
+        },
+        {
+          "id": 1021,
+          "kind": "BuiltinAttr",
+          "range": {
+            "begin": {},
+            "end": {}
+          },
+          "inherited": true,
+          "implicit": true
+        },
+        {
+          "id": 1022,
+          "kind": "FormatAttr",
+          "range": {
+            "begin": {
+              "offset": 4,
+              "col": 5,
+              "tokLen": 6
+            },
+            "end": {
+              "offset": 4,
+              "col": 5,
+              "tokLen": 6
+            },
+            "file": "$BASE/test012.c"
+          },
+          "inherited": true
+        }
+      ]
+    },
+    {
+      "id": 1023,
+      "kind": "FunctionDecl",
+      "loc": {
+        "offset": 42,
+        "line": 3,
+        "col": 5,
+        "tokLen": 4
+      },
+      "range": {
+        "begin": {
+          "offset": 38,
+          "col": 1,
+          "tokLen": 3
+        },
+        "end": {
+          "offset": 567,
+          "line": 24,
+          "col": 1,
+          "tokLen": 1
+        },
+        "file": "$BASE/test012.c"
+      },
+      "name": "main",
+      "mangledName": "main",
+      "type": {
+        "qualType": "int ()"
+      },
+      "inner": [
+        {
+          "id": 1024,
+          "kind": "CompoundStmt",
+          "range": {
+            "begin": {
+              "offset": 49,
+              "line": 3,
+              "col": 12,
+              "tokLen": 1
+            },
+            "end": {
+              "offset": 567,
+              "line": 24,
+              "col": 1,
+              "tokLen": 1
+            },
+            "file": "$BASE/test012.c"
+          },
+          "inner": [
+            {
+              "id": 1025,
+              "kind": "DeclStmt",
+              "range": {
+                "begin": {
+                  "offset": 98,
+                  "line": 6,
+                  "col": 5,
+                  "tokLen": 3
+                },
+                "end": {
+                  "offset": 114,
+                  "col": 21,
+                  "tokLen": 1
+                },
+                "file": "$BASE/test012.c"
+              },
+              "inner": [
+                {
+                  "id": 1026,
+                  "kind": "VarDecl",
+                  "loc": {
+                    "offset": 102,
+                    "col": 9,
+                    "tokLen": 1
+                  },
+                  "range": {
+                    "begin": {
+                      "offset": 98,
+                      "col": 5,
+                      "tokLen": 3
+                    },
+                    "end": {
+                      "offset": 104,
+                      "col": 11,
+                      "tokLen": 3
+                    },
+                    "file": "$BASE/test012.c"
+                  },
+                  "isUsed": true,
+                  "name": "x",
+                  "type": {
+                    "qualType": "int"
+                  },
+                  "init": "c",
+                  "inner": [
+                    {
+                      "id": 1027,
+                      "kind": "IntegerLiteral",
+                      "range": {
+                        "begin": {
+                          "offset": 104,
+                          "col": 11,
+                          "tokLen": 3
+                        },
+                        "end": {
+                          "offset": 104,
+                          "col": 11,
+                          "tokLen": 3
+                        },
+                        "file": "$BASE/test012.c"
+                      },
+                      "type": {
+                        "qualType": "int"
+                      },
+                      "valueCategory": "prvalue",
+                      "value": "333"
+                    }
+                  ]
+                },
+                {
+                  "id": 1028,
+                  "kind": "VarDecl",
+                  "loc": {
+                    "offset": 109,
+                    "col": 16,
+                    "tokLen": 1
+                  },
+                  "range": {
+                    "begin": {
+                      "offset": 98,
+                      "col": 5,
+                      "tokLen": 3
+                    },
+                    "end": {
+                      "offset": 111,
+                      "col": 18,
+                      "tokLen": 3
+                    },
+                    "file": "$BASE/test012.c"
+                  },
+                  "isUsed": true,
+                  "name": "y",
+                  "type": {
+                    "qualType": "int"
+                  },
+                  "init": "c",
+                  "inner": [
+                    {
+                      "id": 1029,
+                      "kind": "IntegerLiteral",
+                      "range": {
+                        "begin": {
+                          "offset": 111,
+                          "col": 18,
+                          "tokLen": 3
+                        },
+                        "end": {
+                          "offset": 111,
+                          "col": 18,
+                          "tokLen": 3
+                        },
+                        "file": "$BASE/test012.c"
+                      },
+                      "type": {
+                        "qualType": "int"
+                      },
+                      "valueCategory": "prvalue",
+                      "value": "444"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": 1030,
+              "kind": "DeclStmt",
+              "range": {
+                "begin": {
+                  "offset": 120,
+                  "line": 7,
+                  "col": 5,
+                  "tokLen": 3
+                },
+                "end": {
+                  "offset": 143,
+                  "col": 28,
+                  "tokLen": 1
+                },
+                "file": "$BASE/test012.c"
+              },
+              "inner": [
+                {
+                  "id": 1031,
+                  "kind": "VarDecl",
+                  "loc": {
+                    "offset": 124,
+                    "col": 9,
+                    "tokLen": 3
+                  },
+                  "range": {
+                    "begin": {
+                      "offset": 120,
+                      "col": 5,
+                      "tokLen": 3
+                    },
+                    "end": {
+                      "spellingLoc": {
+                        "offset": 92,
+                        "line": 5,
+                        "col": 37,
+                        "tokLen": 1
+                      },
+                      "expansionLoc": {
+                        "offset": 130,
+                        "line": 7,
+                        "col": 15,
+                        "tokLen": 7
+                      }
+                    },
+                    "file": "$BASE/test012.c"
+                  },
+                  "isUsed": true,
+                  "name": "sum",
+                  "type": {
+                    "qualType": "int"
+                  },
+                  "init": "c",
+                  "inner": [
+                    {
+                      "id": 1032,
+                      "kind": "ParenExpr",
+                      "range": {
+                        "begin": {
+                          "spellingLoc": {
+                            "offset": 82,
+                            "line": 5,
+                            "col": 27,
+                            "tokLen": 1
+                          },
+                          "expansionLoc": {
+                            "offset": 130,
+                            "line": 7,
+                            "col": 15,
+                            "tokLen": 7
+                          }
+                        },
+                        "end": {
+                          "spellingLoc": {
+                            "offset": 92,
+                            "line": 5,
+                            "col": 37,
+                            "tokLen": 1
+                          },
+                          "expansionLoc": {
+                            "offset": 130,
+                            "line": 7,
+                            "col": 15,
+                            "tokLen": 7
+                          }
+                        },
+                        "file": "$BASE/test012.c"
+                      },
+                      "type": {
+                        "qualType": "int"
+                      },
+                      "valueCategory": "prvalue",
+                      "inner": [
+                        {
+                          "id": 1033,
+                          "kind": "BinaryOperator",
+                          "range": {
+                            "begin": {
+                              "spellingLoc": {
+                                "offset": 83,
+                                "line": 5,
+                                "col": 28,
+                                "tokLen": 1
+                              },
+                              "expansionLoc": {
+                                "offset": 130,
+                                "line": 7,
+                                "col": 15,
+                                "tokLen": 7
+                              }
+                            },
+                            "end": {
+                              "spellingLoc": {
+                                "offset": 91,
+                                "line": 5,
+                                "col": 36,
+                                "tokLen": 1
+                              },
+                              "expansionLoc": {
+                                "offset": 130,
+                                "line": 7,
+                                "col": 15,
+                                "tokLen": 7
+                              }
+                            },
+                            "file": "$BASE/test012.c"
+                          },
+                          "type": {
+                            "qualType": "int"
+                          },
+                          "valueCategory": "prvalue",
+                          "opcode": "+",
+                          "inner": [
+                            {
+                              "id": 1034,
+                              "kind": "ImplicitCastExpr",
+                              "range": {
+                                "begin": {
+                                  "spellingLoc": {
+                                    "offset": 83,
+                                    "line": 5,
+                                    "col": 28,
+                                    "tokLen": 1
+                                  },
+                                  "expansionLoc": {
+                                    "offset": 130,
+                                    "line": 7,
+                                    "col": 15,
+                                    "tokLen": 7
+                                  }
+                                },
+                                "end": {
+                                  "spellingLoc": {
+                                    "offset": 85,
+                                    "line": 5,
+                                    "col": 30,
+                                    "tokLen": 1
+                                  },
+                                  "expansionLoc": {
+                                    "offset": 130,
+                                    "line": 7,
+                                    "col": 15,
+                                    "tokLen": 7
+                                  }
+                                },
+                                "file": "$BASE/test012.c"
+                              },
+                              "type": {
+                                "qualType": "int"
+                              },
+                              "valueCategory": "prvalue",
+                              "castKind": "LValueToRValue",
+                              "inner": [
+                                {
+                                  "id": 1035,
+                                  "kind": "ParenExpr",
+                                  "range": {
+                                    "begin": {
+                                      "spellingLoc": {
+                                        "offset": 83,
+                                        "line": 5,
+                                        "col": 28,
+                                        "tokLen": 1
+                                      },
+                                      "expansionLoc": {
+                                        "offset": 130,
+                                        "line": 7,
+                                        "col": 15,
+                                        "tokLen": 7
+                                      }
+                                    },
+                                    "end": {
+                                      "spellingLoc": {
+                                        "offset": 85,
+                                        "line": 5,
+                                        "col": 30,
+                                        "tokLen": 1
+                                      },
+                                      "expansionLoc": {
+                                        "offset": 130,
+                                        "line": 7,
+                                        "col": 15,
+                                        "tokLen": 7
+                                      }
+                                    },
+                                    "file": "$BASE/test012.c"
+                                  },
+                                  "type": {
+                                    "qualType": "int"
+                                  },
+                                  "valueCategory": "lvalue",
+                                  "inner": [
+                                    {
+                                      "id": 1036,
+                                      "kind": "DeclRefExpr",
+                                      "range": {
+                                        "begin": {
+                                          "spellingLoc": {
+                                            "offset": 138,
+                                            "col": 23,
+                                            "tokLen": 1
+                                          },
+                                          "expansionLoc": {
+                                            "offset": 130,
+                                            "col": 15,
+                                            "tokLen": 7,
+                                            "isMacroArgExpansion": true
+                                          }
+                                        },
+                                        "end": {
+                                          "spellingLoc": {
+                                            "offset": 138,
+                                            "col": 23,
+                                            "tokLen": 1
+                                          },
+                                          "expansionLoc": {
+                                            "offset": 130,
+                                            "col": 15,
+                                            "tokLen": 7,
+                                            "isMacroArgExpansion": true
+                                          }
+                                        },
+                                        "file": "$BASE/test012.c"
+                                      },
+                                      "type": {
+                                        "qualType": "int"
+                                      },
+                                      "valueCategory": "lvalue",
+                                      "referencedDecl": {
+                                        "id": 1026,
+                                        "kind": "VarDecl",
+                                        "name": "x",
+                                        "type": {
+                                          "qualType": "int"
+                                        }
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "id": 1037,
+                              "kind": "ImplicitCastExpr",
+                              "range": {
+                                "begin": {
+                                  "spellingLoc": {
+                                    "offset": 89,
+                                    "line": 5,
+                                    "col": 34,
+                                    "tokLen": 1
+                                  },
+                                  "expansionLoc": {
+                                    "offset": 130,
+                                    "line": 7,
+                                    "col": 15,
+                                    "tokLen": 7
+                                  }
+                                },
+                                "end": {
+                                  "spellingLoc": {
+                                    "offset": 91,
+                                    "line": 5,
+                                    "col": 36,
+                                    "tokLen": 1
+                                  },
+                                  "expansionLoc": {
+                                    "offset": 130,
+                                    "line": 7,
+                                    "col": 15,
+                                    "tokLen": 7
+                                  }
+                                },
+                                "file": "$BASE/test012.c"
+                              },
+                              "type": {
+                                "qualType": "int"
+                              },
+                              "valueCategory": "prvalue",
+                              "castKind": "LValueToRValue",
+                              "inner": [
+                                {
+                                  "id": 1038,
+                                  "kind": "ParenExpr",
+                                  "range": {
+                                    "begin": {
+                                      "spellingLoc": {
+                                        "offset": 89,
+                                        "line": 5,
+                                        "col": 34,
+                                        "tokLen": 1
+                                      },
+                                      "expansionLoc": {
+                                        "offset": 130,
+                                        "line": 7,
+                                        "col": 15,
+                                        "tokLen": 7
+                                      }
+                                    },
+                                    "end": {
+                                      "spellingLoc": {
+                                        "offset": 91,
+                                        "line": 5,
+                                        "col": 36,
+                                        "tokLen": 1
+                                      },
+                                      "expansionLoc": {
+                                        "offset": 130,
+                                        "line": 7,
+                                        "col": 15,
+                                        "tokLen": 7
+                                      }
+                                    },
+                                    "file": "$BASE/test012.c"
+                                  },
+                                  "type": {
+                                    "qualType": "int"
+                                  },
+                                  "valueCategory": "lvalue",
+                                  "inner": [
+                                    {
+                                      "id": 1039,
+                                      "kind": "DeclRefExpr",
+                                      "range": {
+                                        "begin": {
+                                          "spellingLoc": {
+                                            "offset": 141,
+                                            "col": 26,
+                                            "tokLen": 1
+                                          },
+                                          "expansionLoc": {
+                                            "offset": 130,
+                                            "col": 15,
+                                            "tokLen": 7,
+                                            "isMacroArgExpansion": true
+                                          }
+                                        },
+                                        "end": {
+                                          "spellingLoc": {
+                                            "offset": 141,
+                                            "col": 26,
+                                            "tokLen": 1
+                                          },
+                                          "expansionLoc": {
+                                            "offset": 130,
+                                            "col": 15,
+                                            "tokLen": 7,
+                                            "isMacroArgExpansion": true
+                                          }
+                                        },
+                                        "file": "$BASE/test012.c"
+                                      },
+                                      "type": {
+                                        "qualType": "int"
+                                      },
+                                      "valueCategory": "lvalue",
+                                      "referencedDecl": {
+                                        "id": 1028,
+                                        "kind": "VarDecl",
+                                        "name": "y",
+                                        "type": {
+                                          "qualType": "int"
+                                        }
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": 1040,
+              "kind": "CallExpr",
+              "range": {
+                "begin": {
+                  "offset": 149,
+                  "line": 8,
+                  "col": 5,
+                  "tokLen": 6
+                },
+                "end": {
+                  "offset": 173,
+                  "col": 29,
+                  "tokLen": 1
+                },
+                "file": "$BASE/test012.c"
+              },
+              "type": {
+                "qualType": "int"
+              },
+              "valueCategory": "prvalue",
+              "inner": [
+                {
+                  "id": 1041,
+                  "kind": "ImplicitCastExpr",
+                  "range": {
+                    "begin": {
+                      "offset": 149,
+                      "col": 5,
+                      "tokLen": 6
+                    },
+                    "end": {
+                      "offset": 149,
+                      "col": 5,
+                      "tokLen": 6
+                    },
+                    "file": "$BASE/test012.c"
+                  },
+                  "type": {
+                    "qualType": "int (*)(const char *, ...)"
+                  },
+                  "valueCategory": "prvalue",
+                  "castKind": "FunctionToPointerDecay",
+                  "inner": [
+                    {
+                      "id": 1042,
+                      "kind": "DeclRefExpr",
+                      "range": {
+                        "begin": {
+                          "offset": 149,
+                          "col": 5,
+                          "tokLen": 6
+                        },
+                        "end": {
+                          "offset": 149,
+                          "col": 5,
+                          "tokLen": 6
+                        },
+                        "file": "$BASE/test012.c"
+                      },
+                      "type": {
+                        "qualType": "int (const char *, ...)"
+                      },
+                      "valueCategory": "prvalue",
+                      "referencedDecl": {
+                        "id": 1019,
+                        "kind": "FunctionDecl",
+                        "name": "printf",
+                        "type": {
+                          "qualType": "int (const char *, ...)"
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": 1043,
+                  "kind": "ImplicitCastExpr",
+                  "range": {
+                    "begin": {
+                      "offset": 156,
+                      "col": 12,
+                      "tokLen": 12
+                    },
+                    "end": {
+                      "offset": 156,
+                      "col": 12,
+                      "tokLen": 12
+                    },
+                    "file": "$BASE/test012.c"
+                  },
+                  "type": {
+                    "qualType": "const char *"
+                  },
+                  "valueCategory": "prvalue",
+                  "castKind": "NoOp",
+                  "inner": [
+                    {
+                      "id": 1044,
+                      "kind": "ImplicitCastExpr",
+                      "range": {
+                        "begin": {
+                          "offset": 156,
+                          "col": 12,
+                          "tokLen": 12
+                        },
+                        "end": {
+                          "offset": 156,
+                          "col": 12,
+                          "tokLen": 12
+                        },
+                        "file": "$BASE/test012.c"
+                      },
+                      "type": {
+                        "qualType": "char *"
+                      },
+                      "valueCategory": "prvalue",
+                      "castKind": "ArrayToPointerDecay",
+                      "inner": [
+                        {
+                          "id": 1045,
+                          "kind": "StringLiteral",
+                          "range": {
+                            "begin": {
+                              "offset": 156,
+                              "col": 12,
+                              "tokLen": 12
+                            },
+                            "end": {
+                              "offset": 156,
+                              "col": 12,
+                              "tokLen": 12
+                            },
+                            "file": "$BASE/test012.c"
+                          },
+                          "type": {
+                            "qualType": "char[10]"
+                          },
+                          "valueCategory": "lvalue",
+                          "value": "\"sum = %d\\n\""
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": 1046,
+                  "kind": "ImplicitCastExpr",
+                  "range": {
+                    "begin": {
+                      "offset": 170,
+                      "col": 26,
+                      "tokLen": 3
+                    },
+                    "end": {
+                      "offset": 170,
+                      "col": 26,
+                      "tokLen": 3
+                    },
+                    "file": "$BASE/test012.c"
+                  },
+                  "type": {
+                    "qualType": "int"
+                  },
+                  "valueCategory": "prvalue",
+                  "castKind": "LValueToRValue",
+                  "inner": [
+                    {
+                      "id": 1047,
+                      "kind": "DeclRefExpr",
+                      "range": {
+                        "begin": {
+                          "offset": 170,
+                          "col": 26,
+                          "tokLen": 3
+                        },
+                        "end": {
+                          "offset": 170,
+                          "col": 26,
+                          "tokLen": 3
+                        },
+                        "file": "$BASE/test012.c"
+                      },
+                      "type": {
+                        "qualType": "int"
+                      },
+                      "valueCategory": "lvalue",
+                      "referencedDecl": {
+                        "id": 1031,
+                        "kind": "VarDecl",
+                        "name": "sum",
+                        "type": {
+                          "qualType": "int"
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": 1048,
+              "kind": "DeclStmt",
+              "range": {
+                "begin": {
+                  "offset": 217,
+                  "line": 11,
+                  "col": 5,
+                  "tokLen": 3
+                },
+                "end": {
+                  "offset": 237,
+                  "col": 25,
+                  "tokLen": 1
+                },
+                "file": "$BASE/test012.c"
+              },
+              "inner": [
+                {
+                  "id": 1049,
+                  "kind": "VarDecl",
+                  "loc": {
+                    "offset": 221,
+                    "col": 9,
+                    "tokLen": 2
+                  },
+                  "range": {
+                    "begin": {
+                      "offset": 217,
+                      "col": 5,
+                      "tokLen": 3
+                    },
+                    "end": {
+                      "offset": 224,
+                      "col": 12,
+                      "tokLen": 1
+                    },
+                    "file": "$BASE/test012.c"
+                  },
+                  "isUsed": true,
+                  "name": "aa",
+                  "type": {
+                    "qualType": "int"
+                  },
+                  "init": "c",
+                  "inner": [
+                    {
+                      "id": 1050,
+                      "kind": "IntegerLiteral",
+                      "range": {
+                        "begin": {
+                          "offset": 224,
+                          "col": 12,
+                          "tokLen": 1
+                        },
+                        "end": {
+                          "offset": 224,
+                          "col": 12,
+                          "tokLen": 1
+                        },
+                        "file": "$BASE/test012.c"
+                      },
+                      "type": {
+                        "qualType": "int"
+                      },
+                      "valueCategory": "prvalue",
+                      "value": "2"
+                    }
+                  ]
+                },
+                {
+                  "id": 1051,
+                  "kind": "VarDecl",
+                  "loc": {
+                    "offset": 227,
+                    "col": 15,
+                    "tokLen": 2
+                  },
+                  "range": {
+                    "begin": {
+                      "offset": 217,
+                      "col": 5,
+                      "tokLen": 3
+                    },
+                    "end": {
+                      "offset": 230,
+                      "col": 18,
+                      "tokLen": 1
+                    },
+                    "file": "$BASE/test012.c"
+                  },
+                  "isUsed": true,
+                  "name": "bb",
+                  "type": {
+                    "qualType": "int"
+                  },
+                  "init": "c",
+                  "inner": [
+                    {
+                      "id": 1052,
+                      "kind": "IntegerLiteral",
+                      "range": {
+                        "begin": {
+                          "offset": 230,
+                          "col": 18,
+                          "tokLen": 1
+                        },
+                        "end": {
+                          "offset": 230,
+                          "col": 18,
+                          "tokLen": 1
+                        },
+                        "file": "$BASE/test012.c"
+                      },
+                      "type": {
+                        "qualType": "int"
+                      },
+                      "valueCategory": "prvalue",
+                      "value": "3"
+                    }
+                  ]
+                },
+                {
+                  "id": 1053,
+                  "kind": "VarDecl",
+                  "loc": {
+                    "offset": 233,
+                    "col": 21,
+                    "tokLen": 2
+                  },
+                  "range": {
+                    "begin": {
+                      "offset": 217,
+                      "col": 5,
+                      "tokLen": 3
+                    },
+                    "end": {
+                      "offset": 236,
+                      "col": 24,
+                      "tokLen": 1
+                    },
+                    "file": "$BASE/test012.c"
+                  },
+                  "isUsed": true,
+                  "name": "cc",
+                  "type": {
+                    "qualType": "int"
+                  },
+                  "init": "c",
+                  "inner": [
+                    {
+                      "id": 1054,
+                      "kind": "IntegerLiteral",
+                      "range": {
+                        "begin": {
+                          "offset": 236,
+                          "col": 24,
+                          "tokLen": 1
+                        },
+                        "end": {
+                          "offset": 236,
+                          "col": 24,
+                          "tokLen": 1
+                        },
+                        "file": "$BASE/test012.c"
+                      },
+                      "type": {
+                        "qualType": "int"
+                      },
+                      "valueCategory": "prvalue",
+                      "value": "5"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": 1055,
+              "kind": "DeclStmt",
+              "range": {
+                "begin": {
+                  "offset": 243,
+                  "line": 12,
+                  "col": 5,
+                  "tokLen": 3
+                },
+                "end": {
+                  "offset": 282,
+                  "col": 44,
+                  "tokLen": 1
+                },
+                "file": "$BASE/test012.c"
+              },
+              "inner": [
+                {
+                  "id": 1056,
+                  "kind": "VarDecl",
+                  "loc": {
+                    "offset": 247,
+                    "col": 9,
+                    "tokLen": 4
+                  },
+                  "range": {
+                    "begin": {
+                      "offset": 243,
+                      "col": 5,
+                      "tokLen": 3
+                    },
+                    "end": {
+                      "spellingLoc": {
+                        "offset": 211,
+                        "line": 10,
+                        "col": 35,
+                        "tokLen": 1
+                      },
+                      "expansionLoc": {
+                        "offset": 254,
+                        "line": 12,
+                        "col": 16,
+                        "tokLen": 7
+                      }
+                    },
+                    "file": "$BASE/test012.c"
+                  },
+                  "isUsed": true,
+                  "name": "prod",
+                  "type": {
+                    "qualType": "int"
+                  },
+                  "init": "c",
+                  "inner": [
+                    {
+                      "id": 1057,
+                      "kind": "ParenExpr",
+                      "range": {
+                        "begin": {
+                          "spellingLoc": {
+                            "offset": 203,
+                            "line": 10,
+                            "col": 27,
+                            "tokLen": 1
+                          },
+                          "expansionLoc": {
+                            "offset": 254,
+                            "line": 12,
+                            "col": 16,
+                            "tokLen": 7
+                          }
+                        },
+                        "end": {
+                          "spellingLoc": {
+                            "offset": 211,
+                            "line": 10,
+                            "col": 35,
+                            "tokLen": 1
+                          },
+                          "expansionLoc": {
+                            "offset": 254,
+                            "line": 12,
+                            "col": 16,
+                            "tokLen": 7
+                          }
+                        },
+                        "file": "$BASE/test012.c"
+                      },
+                      "type": {
+                        "qualType": "int"
+                      },
+                      "valueCategory": "prvalue",
+                      "inner": [
+                        {
+                          "id": 1058,
+                          "kind": "BinaryOperator",
+                          "range": {
+                            "begin": {
+                              "spellingLoc": {
+                                "offset": 204,
+                                "line": 10,
+                                "col": 28,
+                                "tokLen": 1
+                              },
+                              "expansionLoc": {
+                                "offset": 254,
+                                "line": 12,
+                                "col": 16,
+                                "tokLen": 7
+                              }
+                            },
+                            "end": {
+                              "spellingLoc": {
+                                "offset": 210,
+                                "line": 10,
+                                "col": 34,
+                                "tokLen": 1
+                              },
+                              "expansionLoc": {
+                                "offset": 254,
+                                "line": 12,
+                                "col": 16,
+                                "tokLen": 7
+                              }
+                            },
+                            "file": "$BASE/test012.c"
+                          },
+                          "type": {
+                            "qualType": "int"
+                          },
+                          "valueCategory": "prvalue",
+                          "opcode": "*",
+                          "inner": [
+                            {
+                              "id": 1059,
+                              "kind": "ImplicitCastExpr",
+                              "range": {
+                                "begin": {
+                                  "spellingLoc": {
+                                    "offset": 204,
+                                    "line": 10,
+                                    "col": 28,
+                                    "tokLen": 1
+                                  },
+                                  "expansionLoc": {
+                                    "offset": 254,
+                                    "line": 12,
+                                    "col": 16,
+                                    "tokLen": 7
+                                  }
+                                },
+                                "end": {
+                                  "spellingLoc": {
+                                    "offset": 206,
+                                    "line": 10,
+                                    "col": 30,
+                                    "tokLen": 1
+                                  },
+                                  "expansionLoc": {
+                                    "offset": 254,
+                                    "line": 12,
+                                    "col": 16,
+                                    "tokLen": 7
+                                  }
+                                },
+                                "file": "$BASE/test012.c"
+                              },
+                              "type": {
+                                "qualType": "int"
+                              },
+                              "valueCategory": "prvalue",
+                              "castKind": "LValueToRValue",
+                              "inner": [
+                                {
+                                  "id": 1060,
+                                  "kind": "ParenExpr",
+                                  "range": {
+                                    "begin": {
+                                      "spellingLoc": {
+                                        "offset": 204,
+                                        "line": 10,
+                                        "col": 28,
+                                        "tokLen": 1
+                                      },
+                                      "expansionLoc": {
+                                        "offset": 254,
+                                        "line": 12,
+                                        "col": 16,
+                                        "tokLen": 7
+                                      }
+                                    },
+                                    "end": {
+                                      "spellingLoc": {
+                                        "offset": 206,
+                                        "line": 10,
+                                        "col": 30,
+                                        "tokLen": 1
+                                      },
+                                      "expansionLoc": {
+                                        "offset": 254,
+                                        "line": 12,
+                                        "col": 16,
+                                        "tokLen": 7
+                                      }
+                                    },
+                                    "file": "$BASE/test012.c"
+                                  },
+                                  "type": {
+                                    "qualType": "int"
+                                  },
+                                  "valueCategory": "lvalue",
+                                  "inner": [
+                                    {
+                                      "id": 1061,
+                                      "kind": "DeclRefExpr",
+                                      "range": {
+                                        "begin": {
+                                          "spellingLoc": {
+                                            "offset": 262,
+                                            "col": 24,
+                                            "tokLen": 2
+                                          },
+                                          "expansionLoc": {
+                                            "offset": 254,
+                                            "col": 16,
+                                            "tokLen": 7,
+                                            "isMacroArgExpansion": true
+                                          }
+                                        },
+                                        "end": {
+                                          "spellingLoc": {
+                                            "offset": 262,
+                                            "col": 24,
+                                            "tokLen": 2
+                                          },
+                                          "expansionLoc": {
+                                            "offset": 254,
+                                            "col": 16,
+                                            "tokLen": 7,
+                                            "isMacroArgExpansion": true
+                                          }
+                                        },
+                                        "file": "$BASE/test012.c"
+                                      },
+                                      "type": {
+                                        "qualType": "int"
+                                      },
+                                      "valueCategory": "lvalue",
+                                      "referencedDecl": {
+                                        "id": 1049,
+                                        "kind": "VarDecl",
+                                        "name": "aa",
+                                        "type": {
+                                          "qualType": "int"
+                                        }
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "id": 1062,
+                              "kind": "ParenExpr",
+                              "range": {
+                                "begin": {
+                                  "spellingLoc": {
+                                    "offset": 208,
+                                    "line": 10,
+                                    "col": 32,
+                                    "tokLen": 1
+                                  },
+                                  "expansionLoc": {
+                                    "offset": 254,
+                                    "line": 12,
+                                    "col": 16,
+                                    "tokLen": 7
+                                  }
+                                },
+                                "end": {
+                                  "spellingLoc": {
+                                    "offset": 210,
+                                    "line": 10,
+                                    "col": 34,
+                                    "tokLen": 1
+                                  },
+                                  "expansionLoc": {
+                                    "offset": 254,
+                                    "line": 12,
+                                    "col": 16,
+                                    "tokLen": 7
+                                  }
+                                },
+                                "file": "$BASE/test012.c"
+                              },
+                              "type": {
+                                "qualType": "int"
+                              },
+                              "valueCategory": "prvalue",
+                              "inner": [
+                                {
+                                  "id": 1063,
+                                  "kind": "ParenExpr",
+                                  "range": {
+                                    "begin": {
+                                      "spellingLoc": {
+                                        "offset": 203,
+                                        "line": 10,
+                                        "col": 27,
+                                        "tokLen": 1
+                                      },
+                                      "expansionLoc": {
+                                        "offset": 254,
+                                        "line": 12,
+                                        "col": 16,
+                                        "tokLen": 7,
+                                        "isMacroArgExpansion": true
+                                      }
+                                    },
+                                    "end": {
+                                      "spellingLoc": {
+                                        "offset": 211,
+                                        "line": 10,
+                                        "col": 35,
+                                        "tokLen": 1
+                                      },
+                                      "expansionLoc": {
+                                        "offset": 254,
+                                        "line": 12,
+                                        "col": 16,
+                                        "tokLen": 7,
+                                        "isMacroArgExpansion": true
+                                      }
+                                    },
+                                    "file": "$BASE/test012.c"
+                                  },
+                                  "type": {
+                                    "qualType": "int"
+                                  },
+                                  "valueCategory": "prvalue",
+                                  "inner": [
+                                    {
+                                      "id": 1064,
+                                      "kind": "BinaryOperator",
+                                      "range": {
+                                        "begin": {
+                                          "spellingLoc": {
+                                            "offset": 204,
+                                            "line": 10,
+                                            "col": 28,
+                                            "tokLen": 1
+                                          },
+                                          "expansionLoc": {
+                                            "offset": 254,
+                                            "line": 12,
+                                            "col": 16,
+                                            "tokLen": 7,
+                                            "isMacroArgExpansion": true
+                                          }
+                                        },
+                                        "end": {
+                                          "spellingLoc": {
+                                            "offset": 210,
+                                            "line": 10,
+                                            "col": 34,
+                                            "tokLen": 1
+                                          },
+                                          "expansionLoc": {
+                                            "offset": 254,
+                                            "line": 12,
+                                            "col": 16,
+                                            "tokLen": 7,
+                                            "isMacroArgExpansion": true
+                                          }
+                                        },
+                                        "file": "$BASE/test012.c"
+                                      },
+                                      "type": {
+                                        "qualType": "int"
+                                      },
+                                      "valueCategory": "prvalue",
+                                      "opcode": "*",
+                                      "inner": [
+                                        {
+                                          "id": 1065,
+                                          "kind": "ImplicitCastExpr",
+                                          "range": {
+                                            "begin": {
+                                              "spellingLoc": {
+                                                "offset": 204,
+                                                "line": 10,
+                                                "col": 28,
+                                                "tokLen": 1
+                                              },
+                                              "expansionLoc": {
+                                                "offset": 254,
+                                                "line": 12,
+                                                "col": 16,
+                                                "tokLen": 7,
+                                                "isMacroArgExpansion": true
+                                              }
+                                            },
+                                            "end": {
+                                              "spellingLoc": {
+                                                "offset": 206,
+                                                "line": 10,
+                                                "col": 30,
+                                                "tokLen": 1
+                                              },
+                                              "expansionLoc": {
+                                                "offset": 254,
+                                                "line": 12,
+                                                "col": 16,
+                                                "tokLen": 7,
+                                                "isMacroArgExpansion": true
+                                              }
+                                            },
+                                            "file": "$BASE/test012.c"
+                                          },
+                                          "type": {
+                                            "qualType": "int"
+                                          },
+                                          "valueCategory": "prvalue",
+                                          "castKind": "LValueToRValue",
+                                          "inner": [
+                                            {
+                                              "id": 1066,
+                                              "kind": "ParenExpr",
+                                              "range": {
+                                                "begin": {
+                                                  "spellingLoc": {
+                                                    "offset": 204,
+                                                    "line": 10,
+                                                    "col": 28,
+                                                    "tokLen": 1
+                                                  },
+                                                  "expansionLoc": {
+                                                    "offset": 254,
+                                                    "line": 12,
+                                                    "col": 16,
+                                                    "tokLen": 7,
+                                                    "isMacroArgExpansion": true
+                                                  }
+                                                },
+                                                "end": {
+                                                  "spellingLoc": {
+                                                    "offset": 206,
+                                                    "line": 10,
+                                                    "col": 30,
+                                                    "tokLen": 1
+                                                  },
+                                                  "expansionLoc": {
+                                                    "offset": 254,
+                                                    "line": 12,
+                                                    "col": 16,
+                                                    "tokLen": 7,
+                                                    "isMacroArgExpansion": true
+                                                  }
+                                                },
+                                                "file": "$BASE/test012.c"
+                                              },
+                                              "type": {
+                                                "qualType": "int"
+                                              },
+                                              "valueCategory": "lvalue",
+                                              "inner": [
+                                                {
+                                                  "id": 1067,
+                                                  "kind": "DeclRefExpr",
+                                                  "range": {
+                                                    "begin": {
+                                                      "spellingLoc": {
+                                                        "offset": 274,
+                                                        "col": 36,
+                                                        "tokLen": 2
+                                                      },
+                                                      "expansionLoc": {
+                                                        "offset": 254,
+                                                        "col": 16,
+                                                        "tokLen": 7,
+                                                        "isMacroArgExpansion": true
+                                                      }
+                                                    },
+                                                    "end": {
+                                                      "spellingLoc": {
+                                                        "offset": 274,
+                                                        "col": 36,
+                                                        "tokLen": 2
+                                                      },
+                                                      "expansionLoc": {
+                                                        "offset": 254,
+                                                        "col": 16,
+                                                        "tokLen": 7,
+                                                        "isMacroArgExpansion": true
+                                                      }
+                                                    },
+                                                    "file": "$BASE/test012.c"
+                                                  },
+                                                  "type": {
+                                                    "qualType": "int"
+                                                  },
+                                                  "valueCategory": "lvalue",
+                                                  "referencedDecl": {
+                                                    "id": 1051,
+                                                    "kind": "VarDecl",
+                                                    "name": "bb",
+                                                    "type": {
+                                                      "qualType": "int"
+                                                    }
+                                                  }
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "id": 1068,
+                                          "kind": "ImplicitCastExpr",
+                                          "range": {
+                                            "begin": {
+                                              "spellingLoc": {
+                                                "offset": 208,
+                                                "line": 10,
+                                                "col": 32,
+                                                "tokLen": 1
+                                              },
+                                              "expansionLoc": {
+                                                "offset": 254,
+                                                "line": 12,
+                                                "col": 16,
+                                                "tokLen": 7,
+                                                "isMacroArgExpansion": true
+                                              }
+                                            },
+                                            "end": {
+                                              "spellingLoc": {
+                                                "offset": 210,
+                                                "line": 10,
+                                                "col": 34,
+                                                "tokLen": 1
+                                              },
+                                              "expansionLoc": {
+                                                "offset": 254,
+                                                "line": 12,
+                                                "col": 16,
+                                                "tokLen": 7,
+                                                "isMacroArgExpansion": true
+                                              }
+                                            },
+                                            "file": "$BASE/test012.c"
+                                          },
+                                          "type": {
+                                            "qualType": "int"
+                                          },
+                                          "valueCategory": "prvalue",
+                                          "castKind": "LValueToRValue",
+                                          "inner": [
+                                            {
+                                              "id": 1069,
+                                              "kind": "ParenExpr",
+                                              "range": {
+                                                "begin": {
+                                                  "spellingLoc": {
+                                                    "offset": 208,
+                                                    "line": 10,
+                                                    "col": 32,
+                                                    "tokLen": 1
+                                                  },
+                                                  "expansionLoc": {
+                                                    "offset": 254,
+                                                    "line": 12,
+                                                    "col": 16,
+                                                    "tokLen": 7,
+                                                    "isMacroArgExpansion": true
+                                                  }
+                                                },
+                                                "end": {
+                                                  "spellingLoc": {
+                                                    "offset": 210,
+                                                    "line": 10,
+                                                    "col": 34,
+                                                    "tokLen": 1
+                                                  },
+                                                  "expansionLoc": {
+                                                    "offset": 254,
+                                                    "line": 12,
+                                                    "col": 16,
+                                                    "tokLen": 7,
+                                                    "isMacroArgExpansion": true
+                                                  }
+                                                },
+                                                "file": "$BASE/test012.c"
+                                              },
+                                              "type": {
+                                                "qualType": "int"
+                                              },
+                                              "valueCategory": "lvalue",
+                                              "inner": [
+                                                {
+                                                  "id": 1070,
+                                                  "kind": "DeclRefExpr",
+                                                  "range": {
+                                                    "begin": {
+                                                      "spellingLoc": {
+                                                        "offset": 278,
+                                                        "col": 40,
+                                                        "tokLen": 2
+                                                      },
+                                                      "expansionLoc": {
+                                                        "offset": 254,
+                                                        "col": 16,
+                                                        "tokLen": 7,
+                                                        "isMacroArgExpansion": true
+                                                      }
+                                                    },
+                                                    "end": {
+                                                      "spellingLoc": {
+                                                        "offset": 278,
+                                                        "col": 40,
+                                                        "tokLen": 2
+                                                      },
+                                                      "expansionLoc": {
+                                                        "offset": 254,
+                                                        "col": 16,
+                                                        "tokLen": 7,
+                                                        "isMacroArgExpansion": true
+                                                      }
+                                                    },
+                                                    "file": "$BASE/test012.c"
+                                                  },
+                                                  "type": {
+                                                    "qualType": "int"
+                                                  },
+                                                  "valueCategory": "lvalue",
+                                                  "referencedDecl": {
+                                                    "id": 1053,
+                                                    "kind": "VarDecl",
+                                                    "name": "cc",
+                                                    "type": {
+                                                      "qualType": "int"
+                                                    }
+                                                  }
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": 1071,
+              "kind": "CallExpr",
+              "range": {
+                "begin": {
+                  "offset": 288,
+                  "line": 13,
+                  "col": 5,
+                  "tokLen": 6
+                },
+                "end": {
+                  "offset": 314,
+                  "col": 31,
+                  "tokLen": 1
+                },
+                "file": "$BASE/test012.c"
+              },
+              "type": {
+                "qualType": "int"
+              },
+              "valueCategory": "prvalue",
+              "inner": [
+                {
+                  "id": 1072,
+                  "kind": "ImplicitCastExpr",
+                  "range": {
+                    "begin": {
+                      "offset": 288,
+                      "col": 5,
+                      "tokLen": 6
+                    },
+                    "end": {
+                      "offset": 288,
+                      "col": 5,
+                      "tokLen": 6
+                    },
+                    "file": "$BASE/test012.c"
+                  },
+                  "type": {
+                    "qualType": "int (*)(const char *, ...)"
+                  },
+                  "valueCategory": "prvalue",
+                  "castKind": "FunctionToPointerDecay",
+                  "inner": [
+                    {
+                      "id": 1073,
+                      "kind": "DeclRefExpr",
+                      "range": {
+                        "begin": {
+                          "offset": 288,
+                          "col": 5,
+                          "tokLen": 6
+                        },
+                        "end": {
+                          "offset": 288,
+                          "col": 5,
+                          "tokLen": 6
+                        },
+                        "file": "$BASE/test012.c"
+                      },
+                      "type": {
+                        "qualType": "int (const char *, ...)"
+                      },
+                      "valueCategory": "prvalue",
+                      "referencedDecl": {
+                        "id": 1019,
+                        "kind": "FunctionDecl",
+                        "name": "printf",
+                        "type": {
+                          "qualType": "int (const char *, ...)"
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": 1074,
+                  "kind": "ImplicitCastExpr",
+                  "range": {
+                    "begin": {
+                      "offset": 295,
+                      "col": 12,
+                      "tokLen": 13
+                    },
+                    "end": {
+                      "offset": 295,
+                      "col": 12,
+                      "tokLen": 13
+                    },
+                    "file": "$BASE/test012.c"
+                  },
+                  "type": {
+                    "qualType": "const char *"
+                  },
+                  "valueCategory": "prvalue",
+                  "castKind": "NoOp",
+                  "inner": [
+                    {
+                      "id": 1075,
+                      "kind": "ImplicitCastExpr",
+                      "range": {
+                        "begin": {
+                          "offset": 295,
+                          "col": 12,
+                          "tokLen": 13
+                        },
+                        "end": {
+                          "offset": 295,
+                          "col": 12,
+                          "tokLen": 13
+                        },
+                        "file": "$BASE/test012.c"
+                      },
+                      "type": {
+                        "qualType": "char *"
+                      },
+                      "valueCategory": "prvalue",
+                      "castKind": "ArrayToPointerDecay",
+                      "inner": [
+                        {
+                          "id": 1076,
+                          "kind": "StringLiteral",
+                          "range": {
+                            "begin": {
+                              "offset": 295,
+                              "col": 12,
+                              "tokLen": 13
+                            },
+                            "end": {
+                              "offset": 295,
+                              "col": 12,
+                              "tokLen": 13
+                            },
+                            "file": "$BASE/test012.c"
+                          },
+                          "type": {
+                            "qualType": "char[11]"
+                          },
+                          "valueCategory": "lvalue",
+                          "value": "\"prod = %d\\n\""
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": 1077,
+                  "kind": "ImplicitCastExpr",
+                  "range": {
+                    "begin": {
+                      "offset": 310,
+                      "col": 27,
+                      "tokLen": 4
+                    },
+                    "end": {
+                      "offset": 310,
+                      "col": 27,
+                      "tokLen": 4
+                    },
+                    "file": "$BASE/test012.c"
+                  },
+                  "type": {
+                    "qualType": "int"
+                  },
+                  "valueCategory": "prvalue",
+                  "castKind": "LValueToRValue",
+                  "inner": [
+                    {
+                      "id": 1078,
+                      "kind": "DeclRefExpr",
+                      "range": {
+                        "begin": {
+                          "offset": 310,
+                          "col": 27,
+                          "tokLen": 4
+                        },
+                        "end": {
+                          "offset": 310,
+                          "col": 27,
+                          "tokLen": 4
+                        },
+                        "file": "$BASE/test012.c"
+                      },
+                      "type": {
+                        "qualType": "int"
+                      },
+                      "valueCategory": "lvalue",
+                      "referencedDecl": {
+                        "id": 1056,
+                        "kind": "VarDecl",
+                        "name": "prod",
+                        "type": {
+                          "qualType": "int"
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": 1079,
+              "kind": "DeclStmt",
+              "range": {
+                "begin": {
+                  "offset": 362,
+                  "line": 16,
+                  "col": 5,
+                  "tokLen": 3
+                },
+                "end": {
+                  "offset": 398,
+                  "col": 41,
+                  "tokLen": 1
+                },
+                "file": "$BASE/test012.c"
+              },
+              "inner": [
+                {
+                  "id": 1080,
+                  "kind": "VarDecl",
+                  "loc": {
+                    "offset": 366,
+                    "col": 9,
+                    "tokLen": 2
+                  },
+                  "range": {
+                    "begin": {
+                      "offset": 362,
+                      "col": 5,
+                      "tokLen": 3
+                    },
+                    "end": {
+                      "offset": 395,
+                      "col": 38,
+                      "tokLen": 3
+                    },
+                    "file": "$BASE/test012.c"
+                  },
+                  "isUsed": true,
+                  "name": "zz",
+                  "type": {
+                    "qualType": "int"
+                  },
+                  "init": "c",
+                  "inner": [
+                    {
+                      "id": 1081,
+                      "kind": "BinaryOperator",
+                      "range": {
+                        "begin": {
+                          "spellingLoc": {
+                            "offset": 383,
+                            "col": 26,
+                            "tokLen": 1
+                          },
+                          "expansionLoc": {
+                            "offset": 371,
+                            "col": 14,
+                            "tokLen": 11,
+                            "isMacroArgExpansion": true
+                          }
+                        },
+                        "end": {
+                          "offset": 395,
+                          "col": 38,
+                          "tokLen": 3
+                        },
+                        "file": "$BASE/test012.c"
+                      },
+                      "type": {
+                        "qualType": "int"
+                      },
+                      "valueCategory": "prvalue",
+                      "opcode": "=",
+                      "inner": [
+                        {
+                          "id": 1082,
+                          "kind": "DeclRefExpr",
+                          "range": {
+                            "begin": {
+                              "spellingLoc": {
+                                "offset": 383,
+                                "col": 26,
+                                "tokLen": 1
+                              },
+                              "expansionLoc": {
+                                "offset": 371,
+                                "col": 14,
+                                "tokLen": 11,
+                                "isMacroArgExpansion": true
+                              }
+                            },
+                            "end": {
+                              "spellingLoc": {
+                                "offset": 383,
+                                "col": 26,
+                                "tokLen": 1
+                              },
+                              "expansionLoc": {
+                                "offset": 371,
+                                "col": 14,
+                                "tokLen": 11,
+                                "isMacroArgExpansion": true
+                              }
+                            },
+                            "file": "$BASE/test012.c"
+                          },
+                          "type": {
+                            "qualType": "int"
+                          },
+                          "valueCategory": "lvalue",
+                          "referencedDecl": {
+                            "id": 1026,
+                            "kind": "VarDecl",
+                            "name": "x",
+                            "type": {
+                              "qualType": "int"
+                            }
+                          }
+                        },
+                        {
+                          "id": 1083,
+                          "kind": "BinaryOperator",
+                          "range": {
+                            "begin": {
+                              "spellingLoc": {
+                                "offset": 385,
+                                "col": 28,
+                                "tokLen": 1
+                              },
+                              "expansionLoc": {
+                                "offset": 371,
+                                "col": 14,
+                                "tokLen": 11,
+                                "isMacroArgExpansion": true
+                              }
+                            },
+                            "end": {
+                              "offset": 395,
+                              "col": 38,
+                              "tokLen": 3
+                            },
+                            "file": "$BASE/test012.c"
+                          },
+                          "type": {
+                            "qualType": "int"
+                          },
+                          "valueCategory": "prvalue",
+                          "opcode": "+",
+                          "inner": [
+                            {
+                              "id": 1084,
+                              "kind": "ImplicitCastExpr",
+                              "range": {
+                                "begin": {
+                                  "spellingLoc": {
+                                    "offset": 385,
+                                    "col": 28,
+                                    "tokLen": 1
+                                  },
+                                  "expansionLoc": {
+                                    "offset": 371,
+                                    "col": 14,
+                                    "tokLen": 11,
+                                    "isMacroArgExpansion": true
+                                  }
+                                },
+                                "end": {
+                                  "spellingLoc": {
+                                    "offset": 385,
+                                    "col": 28,
+                                    "tokLen": 1
+                                  },
+                                  "expansionLoc": {
+                                    "offset": 371,
+                                    "col": 14,
+                                    "tokLen": 11,
+                                    "isMacroArgExpansion": true
+                                  }
+                                },
+                                "file": "$BASE/test012.c"
+                              },
+                              "type": {
+                                "qualType": "int"
+                              },
+                              "valueCategory": "prvalue",
+                              "castKind": "LValueToRValue",
+                              "inner": [
+                                {
+                                  "id": 1085,
+                                  "kind": "DeclRefExpr",
+                                  "range": {
+                                    "begin": {
+                                      "spellingLoc": {
+                                        "offset": 385,
+                                        "col": 28,
+                                        "tokLen": 1
+                                      },
+                                      "expansionLoc": {
+                                        "offset": 371,
+                                        "col": 14,
+                                        "tokLen": 11,
+                                        "isMacroArgExpansion": true
+                                      }
+                                    },
+                                    "end": {
+                                      "spellingLoc": {
+                                        "offset": 385,
+                                        "col": 28,
+                                        "tokLen": 1
+                                      },
+                                      "expansionLoc": {
+                                        "offset": 371,
+                                        "col": 14,
+                                        "tokLen": 11,
+                                        "isMacroArgExpansion": true
+                                      }
+                                    },
+                                    "file": "$BASE/test012.c"
+                                  },
+                                  "type": {
+                                    "qualType": "int"
+                                  },
+                                  "valueCategory": "lvalue",
+                                  "referencedDecl": {
+                                    "id": 1028,
+                                    "kind": "VarDecl",
+                                    "name": "y",
+                                    "type": {
+                                      "qualType": "int"
+                                    }
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "id": 1086,
+                              "kind": "BinaryOperator",
+                              "range": {
+                                "begin": {
+                                  "spellingLoc": {
+                                    "offset": 388,
+                                    "col": 31,
+                                    "tokLen": 3
+                                  },
+                                  "expansionLoc": {
+                                    "offset": 371,
+                                    "col": 14,
+                                    "tokLen": 11,
+                                    "isMacroArgExpansion": true
+                                  }
+                                },
+                                "end": {
+                                  "offset": 395,
+                                  "col": 38,
+                                  "tokLen": 3
+                                },
+                                "file": "$BASE/test012.c"
+                              },
+                              "type": {
+                                "qualType": "int"
+                              },
+                              "valueCategory": "prvalue",
+                              "opcode": "*",
+                              "inner": [
+                                {
+                                  "id": 1087,
+                                  "kind": "BinaryOperator",
+                                  "range": {
+                                    "begin": {
+                                      "spellingLoc": {
+                                        "offset": 388,
+                                        "col": 31,
+                                        "tokLen": 3
+                                      },
+                                      "expansionLoc": {
+                                        "offset": 371,
+                                        "col": 14,
+                                        "tokLen": 11,
+                                        "isMacroArgExpansion": true
+                                      }
+                                    },
+                                    "end": {
+                                      "spellingLoc": {
+                                        "offset": 354,
+                                        "line": 15,
+                                        "col": 37,
+                                        "tokLen": 3
+                                      },
+                                      "expansionLoc": {
+                                        "offset": 371,
+                                        "line": 16,
+                                        "col": 14,
+                                        "tokLen": 11
+                                      }
+                                    },
+                                    "file": "$BASE/test012.c"
+                                  },
+                                  "type": {
+                                    "qualType": "int"
+                                  },
+                                  "valueCategory": "prvalue",
+                                  "opcode": "*",
+                                  "inner": [
+                                    {
+                                      "id": 1088,
+                                      "kind": "IntegerLiteral",
+                                      "range": {
+                                        "begin": {
+                                          "spellingLoc": {
+                                            "offset": 388,
+                                            "col": 31,
+                                            "tokLen": 3
+                                          },
+                                          "expansionLoc": {
+                                            "offset": 371,
+                                            "col": 14,
+                                            "tokLen": 11,
+                                            "isMacroArgExpansion": true
+                                          }
+                                        },
+                                        "end": {
+                                          "spellingLoc": {
+                                            "offset": 388,
+                                            "col": 31,
+                                            "tokLen": 3
+                                          },
+                                          "expansionLoc": {
+                                            "offset": 371,
+                                            "col": 14,
+                                            "tokLen": 11,
+                                            "isMacroArgExpansion": true
+                                          }
+                                        },
+                                        "file": "$BASE/test012.c"
+                                      },
+                                      "type": {
+                                        "qualType": "int"
+                                      },
+                                      "valueCategory": "prvalue",
+                                      "value": "555"
+                                    },
+                                    {
+                                      "id": 1089,
+                                      "kind": "IntegerLiteral",
+                                      "range": {
+                                        "begin": {
+                                          "spellingLoc": {
+                                            "offset": 354,
+                                            "line": 15,
+                                            "col": 37,
+                                            "tokLen": 3
+                                          },
+                                          "expansionLoc": {
+                                            "offset": 371,
+                                            "line": 16,
+                                            "col": 14,
+                                            "tokLen": 11
+                                          }
+                                        },
+                                        "end": {
+                                          "spellingLoc": {
+                                            "offset": 354,
+                                            "line": 15,
+                                            "col": 37,
+                                            "tokLen": 3
+                                          },
+                                          "expansionLoc": {
+                                            "offset": 371,
+                                            "line": 16,
+                                            "col": 14,
+                                            "tokLen": 11
+                                          }
+                                        },
+                                        "file": "$BASE/test012.c"
+                                      },
+                                      "type": {
+                                        "qualType": "int"
+                                      },
+                                      "valueCategory": "prvalue",
+                                      "value": "111"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "id": 1090,
+                                  "kind": "IntegerLiteral",
+                                  "range": {
+                                    "begin": {
+                                      "offset": 395,
+                                      "col": 38,
+                                      "tokLen": 3
+                                    },
+                                    "end": {
+                                      "offset": 395,
+                                      "col": 38,
+                                      "tokLen": 3
+                                    },
+                                    "file": "$BASE/test012.c"
+                                  },
+                                  "type": {
+                                    "qualType": "int"
+                                  },
+                                  "valueCategory": "prvalue",
+                                  "value": "999"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": 1091,
+              "kind": "CallExpr",
+              "range": {
+                "begin": {
+                  "offset": 404,
+                  "line": 17,
+                  "col": 5,
+                  "tokLen": 6
+                },
+                "end": {
+                  "offset": 426,
+                  "col": 27,
+                  "tokLen": 1
+                },
+                "file": "$BASE/test012.c"
+              },
+              "type": {
+                "qualType": "int"
+              },
+              "valueCategory": "prvalue",
+              "inner": [
+                {
+                  "id": 1092,
+                  "kind": "ImplicitCastExpr",
+                  "range": {
+                    "begin": {
+                      "offset": 404,
+                      "col": 5,
+                      "tokLen": 6
+                    },
+                    "end": {
+                      "offset": 404,
+                      "col": 5,
+                      "tokLen": 6
+                    },
+                    "file": "$BASE/test012.c"
+                  },
+                  "type": {
+                    "qualType": "int (*)(const char *, ...)"
+                  },
+                  "valueCategory": "prvalue",
+                  "castKind": "FunctionToPointerDecay",
+                  "inner": [
+                    {
+                      "id": 1093,
+                      "kind": "DeclRefExpr",
+                      "range": {
+                        "begin": {
+                          "offset": 404,
+                          "col": 5,
+                          "tokLen": 6
+                        },
+                        "end": {
+                          "offset": 404,
+                          "col": 5,
+                          "tokLen": 6
+                        },
+                        "file": "$BASE/test012.c"
+                      },
+                      "type": {
+                        "qualType": "int (const char *, ...)"
+                      },
+                      "valueCategory": "prvalue",
+                      "referencedDecl": {
+                        "id": 1019,
+                        "kind": "FunctionDecl",
+                        "name": "printf",
+                        "type": {
+                          "qualType": "int (const char *, ...)"
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": 1094,
+                  "kind": "ImplicitCastExpr",
+                  "range": {
+                    "begin": {
+                      "offset": 411,
+                      "col": 12,
+                      "tokLen": 11
+                    },
+                    "end": {
+                      "offset": 411,
+                      "col": 12,
+                      "tokLen": 11
+                    },
+                    "file": "$BASE/test012.c"
+                  },
+                  "type": {
+                    "qualType": "const char *"
+                  },
+                  "valueCategory": "prvalue",
+                  "castKind": "NoOp",
+                  "inner": [
+                    {
+                      "id": 1095,
+                      "kind": "ImplicitCastExpr",
+                      "range": {
+                        "begin": {
+                          "offset": 411,
+                          "col": 12,
+                          "tokLen": 11
+                        },
+                        "end": {
+                          "offset": 411,
+                          "col": 12,
+                          "tokLen": 11
+                        },
+                        "file": "$BASE/test012.c"
+                      },
+                      "type": {
+                        "qualType": "char *"
+                      },
+                      "valueCategory": "prvalue",
+                      "castKind": "ArrayToPointerDecay",
+                      "inner": [
+                        {
+                          "id": 1096,
+                          "kind": "StringLiteral",
+                          "range": {
+                            "begin": {
+                              "offset": 411,
+                              "col": 12,
+                              "tokLen": 11
+                            },
+                            "end": {
+                              "offset": 411,
+                              "col": 12,
+                              "tokLen": 11
+                            },
+                            "file": "$BASE/test012.c"
+                          },
+                          "type": {
+                            "qualType": "char[9]"
+                          },
+                          "valueCategory": "lvalue",
+                          "value": "\"zz = %d\\n\""
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": 1097,
+                  "kind": "ImplicitCastExpr",
+                  "range": {
+                    "begin": {
+                      "offset": 424,
+                      "col": 25,
+                      "tokLen": 2
+                    },
+                    "end": {
+                      "offset": 424,
+                      "col": 25,
+                      "tokLen": 2
+                    },
+                    "file": "$BASE/test012.c"
+                  },
+                  "type": {
+                    "qualType": "int"
+                  },
+                  "valueCategory": "prvalue",
+                  "castKind": "LValueToRValue",
+                  "inner": [
+                    {
+                      "id": 1098,
+                      "kind": "DeclRefExpr",
+                      "range": {
+                        "begin": {
+                          "offset": 424,
+                          "col": 25,
+                          "tokLen": 2
+                        },
+                        "end": {
+                          "offset": 424,
+                          "col": 25,
+                          "tokLen": 2
+                        },
+                        "file": "$BASE/test012.c"
+                      },
+                      "type": {
+                        "qualType": "int"
+                      },
+                      "valueCategory": "lvalue",
+                      "referencedDecl": {
+                        "id": 1080,
+                        "kind": "VarDecl",
+                        "name": "zz",
+                        "type": {
+                          "qualType": "int"
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": 1099,
+              "kind": "DeclStmt",
+              "range": {
+                "begin": {
+                  "offset": 473,
+                  "line": 20,
+                  "col": 5,
+                  "tokLen": 3
+                },
+                "end": {
+                  "offset": 486,
+                  "col": 18,
+                  "tokLen": 1
+                },
+                "file": "$BASE/test012.c"
+              },
+              "inner": [
+                {
+                  "id": 1100,
+                  "kind": "VarDecl",
+                  "loc": {
+                    "offset": 477,
+                    "col": 9,
+                    "tokLen": 4
+                  },
+                  "range": {
+                    "begin": {
+                      "offset": 473,
+                      "col": 5,
+                      "tokLen": 3
+                    },
+                    "end": {
+                      "offset": 484,
+                      "col": 16,
+                      "tokLen": 2
+                    },
+                    "file": "$BASE/test012.c"
+                  },
+                  "isUsed": true,
+                  "name": "goat",
+                  "type": {
+                    "qualType": "int"
+                  },
+                  "init": "c",
+                  "inner": [
+                    {
+                      "id": 1101,
+                      "kind": "IntegerLiteral",
+                      "range": {
+                        "begin": {
+                          "offset": 484,
+                          "col": 16,
+                          "tokLen": 2
+                        },
+                        "end": {
+                          "offset": 484,
+                          "col": 16,
+                          "tokLen": 2
+                        },
+                        "file": "$BASE/test012.c"
+                      },
+                      "type": {
+                        "qualType": "int"
+                      },
+                      "valueCategory": "prvalue",
+                      "value": "42"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": 1102,
+              "kind": "BinaryOperator",
+              "range": {
+                "begin": {
+                  "spellingLoc": {
+                    "offset": 1,
+                    "file": "<scratch space>",
+                    "line": 2,
+                    "col": 1,
+                    "tokLen": 4
+                  },
+                  "expansionLoc": {
+                    "offset": 492,
+                    "file": "test012.c",
+                    "line": 21,
+                    "col": 5,
+                    "tokLen": 13
+                  }
+                },
+                "end": {
+                  "offset": 515,
+                  "col": 28,
+                  "tokLen": 3
+                },
+                "file": "$BASE/test012.c"
+              },
+              "type": {
+                "qualType": "int"
+              },
+              "valueCategory": "prvalue",
+              "opcode": "=",
+              "inner": [
+                {
+                  "id": 1103,
+                  "kind": "DeclRefExpr",
+                  "range": {
+                    "begin": {
+                      "spellingLoc": {
+                        "offset": 1,
+                        "file": "<scratch space>",
+                        "line": 2,
+                        "col": 1,
+                        "tokLen": 4
+                      },
+                      "expansionLoc": {
+                        "offset": 492,
+                        "file": "test012.c",
+                        "line": 21,
+                        "col": 5,
+                        "tokLen": 13
+                      }
+                    },
+                    "end": {
+                      "spellingLoc": {
+                        "offset": 1,
+                        "file": "<scratch space>",
+                        "line": 2,
+                        "col": 1,
+                        "tokLen": 4
+                      },
+                      "expansionLoc": {
+                        "offset": 492,
+                        "file": "test012.c",
+                        "line": 21,
+                        "col": 5,
+                        "tokLen": 13
+                      }
+                    },
+                    "file": "$BASE/test012.c"
+                  },
+                  "type": {
+                    "qualType": "int"
+                  },
+                  "valueCategory": "lvalue",
+                  "referencedDecl": {
+                    "id": 1100,
+                    "kind": "VarDecl",
+                    "name": "goat",
+                    "type": {
+                      "qualType": "int"
+                    }
+                  }
+                },
+                {
+                  "id": 1104,
+                  "kind": "IntegerLiteral",
+                  "range": {
+                    "begin": {
+                      "offset": 515,
+                      "col": 28,
+                      "tokLen": 3
+                    },
+                    "end": {
+                      "offset": 515,
+                      "col": 28,
+                      "tokLen": 3
+                    },
+                    "file": "$BASE/test012.c"
+                  },
+                  "type": {
+                    "qualType": "int"
+                  },
+                  "valueCategory": "prvalue",
+                  "value": "777"
+                }
+              ]
+            },
+            {
+              "id": 1105,
+              "kind": "CallExpr",
+              "range": {
+                "begin": {
+                  "offset": 524,
+                  "line": 22,
+                  "col": 5,
+                  "tokLen": 6
+                },
+                "end": {
+                  "offset": 550,
+                  "col": 31,
+                  "tokLen": 1
+                },
+                "file": "$BASE/test012.c"
+              },
+              "type": {
+                "qualType": "int"
+              },
+              "valueCategory": "prvalue",
+              "inner": [
+                {
+                  "id": 1106,
+                  "kind": "ImplicitCastExpr",
+                  "range": {
+                    "begin": {
+                      "offset": 524,
+                      "col": 5,
+                      "tokLen": 6
+                    },
+                    "end": {
+                      "offset": 524,
+                      "col": 5,
+                      "tokLen": 6
+                    },
+                    "file": "$BASE/test012.c"
+                  },
+                  "type": {
+                    "qualType": "int (*)(const char *, ...)"
+                  },
+                  "valueCategory": "prvalue",
+                  "castKind": "FunctionToPointerDecay",
+                  "inner": [
+                    {
+                      "id": 1107,
+                      "kind": "DeclRefExpr",
+                      "range": {
+                        "begin": {
+                          "offset": 524,
+                          "col": 5,
+                          "tokLen": 6
+                        },
+                        "end": {
+                          "offset": 524,
+                          "col": 5,
+                          "tokLen": 6
+                        },
+                        "file": "$BASE/test012.c"
+                      },
+                      "type": {
+                        "qualType": "int (const char *, ...)"
+                      },
+                      "valueCategory": "prvalue",
+                      "referencedDecl": {
+                        "id": 1019,
+                        "kind": "FunctionDecl",
+                        "name": "printf",
+                        "type": {
+                          "qualType": "int (const char *, ...)"
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": 1108,
+                  "kind": "ImplicitCastExpr",
+                  "range": {
+                    "begin": {
+                      "offset": 531,
+                      "col": 12,
+                      "tokLen": 13
+                    },
+                    "end": {
+                      "offset": 531,
+                      "col": 12,
+                      "tokLen": 13
+                    },
+                    "file": "$BASE/test012.c"
+                  },
+                  "type": {
+                    "qualType": "const char *"
+                  },
+                  "valueCategory": "prvalue",
+                  "castKind": "NoOp",
+                  "inner": [
+                    {
+                      "id": 1109,
+                      "kind": "ImplicitCastExpr",
+                      "range": {
+                        "begin": {
+                          "offset": 531,
+                          "col": 12,
+                          "tokLen": 13
+                        },
+                        "end": {
+                          "offset": 531,
+                          "col": 12,
+                          "tokLen": 13
+                        },
+                        "file": "$BASE/test012.c"
+                      },
+                      "type": {
+                        "qualType": "char *"
+                      },
+                      "valueCategory": "prvalue",
+                      "castKind": "ArrayToPointerDecay",
+                      "inner": [
+                        {
+                          "id": 1110,
+                          "kind": "StringLiteral",
+                          "range": {
+                            "begin": {
+                              "offset": 531,
+                              "col": 12,
+                              "tokLen": 13
+                            },
+                            "end": {
+                              "offset": 531,
+                              "col": 12,
+                              "tokLen": 13
+                            },
+                            "file": "$BASE/test012.c"
+                          },
+                          "type": {
+                            "qualType": "char[11]"
+                          },
+                          "valueCategory": "lvalue",
+                          "value": "\"goat = %d\\n\""
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": 1111,
+                  "kind": "ImplicitCastExpr",
+                  "range": {
+                    "begin": {
+                      "offset": 546,
+                      "col": 27,
+                      "tokLen": 4
+                    },
+                    "end": {
+                      "offset": 546,
+                      "col": 27,
+                      "tokLen": 4
+                    },
+                    "file": "$BASE/test012.c"
+                  },
+                  "type": {
+                    "qualType": "int"
+                  },
+                  "valueCategory": "prvalue",
+                  "castKind": "LValueToRValue",
+                  "inner": [
+                    {
+                      "id": 1112,
+                      "kind": "DeclRefExpr",
+                      "range": {
+                        "begin": {
+                          "offset": 546,
+                          "col": 27,
+                          "tokLen": 4
+                        },
+                        "end": {
+                          "offset": 546,
+                          "col": 27,
+                          "tokLen": 4
+                        },
+                        "file": "$BASE/test012.c"
+                      },
+                      "type": {
+                        "qualType": "int"
+                      },
+                      "valueCategory": "lvalue",
+                      "referencedDecl": {
+                        "id": 1100,
+                        "kind": "VarDecl",
+                        "name": "goat",
+                        "type": {
+                          "qualType": "int"
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": 1113,
+              "kind": "ReturnStmt",
+              "range": {
+                "begin": {
+                  "offset": 557,
+                  "line": 23,
+                  "col": 5,
+                  "tokLen": 6
+                },
+                "end": {
+                  "offset": 564,
+                  "col": 12,
+                  "tokLen": 1
+                },
+                "file": "$BASE/test012.c"
+              },
+              "inner": [
+                {
+                  "id": 1114,
+                  "kind": "IntegerLiteral",
+                  "range": {
+                    "begin": {
+                      "offset": 564,
+                      "col": 12,
+                      "tokLen": 1
+                    },
+                    "end": {
+                      "offset": 564,
+                      "col": 12,
+                      "tokLen": 1
+                    },
+                    "file": "$BASE/test012.c"
+                  },
+                  "type": {
+                    "qualType": "int"
+                  },
+                  "valueCategory": "prvalue",
+                  "value": "0"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "base_dir": "/host/code/acr/test",
+  "compile_dir": "/host/code/acr/test",
+  "file": "/host/code/acr/test/test012.c",
+  "preproc_db": {
+    "$BASE/test012.c": [
+      60,
+      181,
+      322,
+      434
+    ]
+  },
+  "comments_db": {
+    "$BASE/test012.c": []
+  }
+}

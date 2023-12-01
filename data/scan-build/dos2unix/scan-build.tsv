@@ -1,0 +1,3 @@
+deadcode.DeadStores	common.c	1331	Although the value stored to 'InF' is used in the enclosing expression, the value is never actually read from 'InF'
+deadcode.DeadStores	common.c	1373	Although the value stored to 'InF' is used in the enclosing expression, the value is never actually read from 'InF'
+deadcode.DeadStores	common.c	2549	Value stored to 'conversion_error' is never read

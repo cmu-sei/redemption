@@ -1,0 +1,8 @@
+[
+  {
+    "rule": "EXP34-C",
+    "file": "already_repaired_null_01.c",
+    "line": 8
+  }
+]
+

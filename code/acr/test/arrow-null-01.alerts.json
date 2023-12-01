@@ -1,0 +1,8 @@
+[
+  { "rule": "EXP34-C", "file": "arrow-null-01.c", "line": 11 },
+  { "rule": "EXP34-C", "file": "arrow-null-01.c", "line": 12 },
+  { "rule": "EXP34-C", "file": "arrow-null-01.c", "line": 14 },
+  { "rule": "EXP34-C", "file": "arrow-null-01.c", "line": 16 },
+  { "rule": "EXP34-C", "file": "arrow-null-01.c", "line": 17 }
+]
+

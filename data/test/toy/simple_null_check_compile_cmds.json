@@ -1,0 +1,11 @@
+[
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "simple_null_check.c"
+        ],
+        "directory": "/host/data/test/toy",
+        "file": "simple_null_check.c"
+    }
+]

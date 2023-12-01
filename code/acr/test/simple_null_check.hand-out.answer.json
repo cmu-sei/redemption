@@ -1,0 +1,26 @@
+[
+  {
+    "rule": "EXP34-C",
+    "file": "/host/code/acr/test/simple_null_check.c",
+    "line": 8,
+    "alert_id": 1,
+    "ast_id": 1033,
+    "repair": [
+      [
+        "/host/code/acr/test/simple_null_check.c",
+        [
+          [
+            156,
+            156,
+            "null_check("
+          ],
+          [
+            157,
+            157,
+            ")"
+          ]
+        ]
+      ]
+    ]
+  }
+]

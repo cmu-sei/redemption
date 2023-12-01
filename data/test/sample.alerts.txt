@@ -1,0 +1,228 @@
+/oss/git/./dir.h:540:52: warning: Access to field 'ce_namelen' results in a dereference of a null pointer (loaded from variable 'ce') [clang-analyzer-core.NullDereference]
+        return match_pathspec(istate, pathspec, ce->name, ce_namelen(ce), 0, seen,
+                                                          ^
+/oss/git/./cache.h:240:24: note: expanded from macro 'ce_namelen'
+#define ce_namelen(ce) ((ce)->ce_namelen)
+                       ^
+./hash.h:249:6: warning: Branch condition evaluates to a garbage value [clang-analyzer-core.uninitialized.Branch]
+        if (!oid1->algo)
+            ^
+/oss/git/builtin/pull.c:990:7: note: Assuming the environment variable exists
+        if (!getenv("GIT_REFLOG_ACTION"))
+             ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/oss/git/builtin/pull.c:990:2: note: Taking false branch
+        if (!getenv("GIT_REFLOG_ACTION"))
+        ^
+/oss/git/builtin/pull.c:994:6: note: Assuming field 'gitdir' is null
+        if (the_repository->gitdir) {
+            ^~~~~~~~~~~~~~~~~~~~~~
+/oss/git/builtin/pull.c:994:2: note: Taking false branch
+        if (the_repository->gitdir) {
+        ^
+/oss/git/builtin/pull.c:1001:6: note: Assuming 'recurse_submodules_cli' is equal to RECURSE_SUBMODULES_DEFAULT
+        if (recurse_submodules_cli != RECURSE_SUBMODULES_DEFAULT)
+            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/oss/git/builtin/pull.c:1001:2: note: Taking false branch
+        if (recurse_submodules_cli != RECURSE_SUBMODULES_DEFAULT)
+        ^
+/oss/git/builtin/pull.c:1004:6: note: Assuming 'cleanup_arg' is null
+        if (cleanup_arg)
+            ^~~~~~~~~~~
+/oss/git/builtin/pull.c:1004:2: note: Taking false branch
+        if (cleanup_arg)
+        ^
+/oss/git/builtin/pull.c:1013:6: note: Assuming 'opt_ff' is non-null
+        if (!opt_ff) {
+            ^~~~~~~
+/oss/git/builtin/pull.c:1013:2: note: Taking false branch
+        if (!opt_ff) {
+        ^
+/oss/git/builtin/pull.c:1030:6: note: Assuming 'opt_rebase' is >= 0
+        if (opt_rebase < 0)
+            ^~~~~~~~~~~~~~
+/oss/git/builtin/pull.c:1030:2: note: Taking false branch
+        if (opt_rebase < 0)
+        ^
+/oss/git/builtin/pull.c:1033:6: note: Assuming the condition is false
+        if (repo_read_index_unmerged(the_repository))
+            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/oss/git/builtin/pull.c:1033:2: note: Taking false branch
+        if (repo_read_index_unmerged(the_repository))
+        ^
+/oss/git/builtin/pull.c:1036:6: note: Assuming the condition is false
+        if (file_exists(git_path_merge_head(the_repository)))
+            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/oss/git/builtin/pull.c:1036:2: note: Taking false branch
+        if (file_exists(git_path_merge_head(the_repository)))
+        ^
+/oss/git/builtin/pull.c:1039:6: note: Assuming the condition is false
+        if (get_oid("HEAD", &orig_head))
+            ^
+/oss/git/./cache.h:1487:28: note: expanded from macro 'get_oid'
+#define get_oid(str, oid)               repo_get_oid(the_repository, str, oid)
+                                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/oss/git/builtin/pull.c:1039:2: note: Taking false branch
+        if (get_oid("HEAD", &orig_head))
+        ^
+/oss/git/builtin/pull.c:1042:6: note: Assuming 'opt_rebase' is 0
+        if (opt_rebase) {
+            ^~~~~~~~~~
+/oss/git/builtin/pull.c:1042:2: note: Taking false branch
+        if (opt_rebase) {
+        ^
+/oss/git/builtin/pull.c:1058:6: note: Assuming the condition is false
+        if (run_fetch(repo, refspecs))
+            ^~~~~~~~~~~~~~~~~~~~~~~~~
+/oss/git/builtin/pull.c:1058:2: note: Taking false branch
+        if (run_fetch(repo, refspecs))
+        ^
+/oss/git/builtin/pull.c:1061:6: note: Assuming 'opt_dry_run' is 0
+        if (opt_dry_run)
+            ^~~~~~~~~~~
+/oss/git/builtin/pull.c:1061:2: note: Taking false branch
+        if (opt_dry_run)
+        ^
+/oss/git/builtin/pull.c:1064:6: note: Assuming the condition is false
+        if (get_oid("HEAD", &curr_head))
+            ^
+/oss/git/./cache.h:1487:28: note: expanded from macro 'get_oid'
+#define get_oid(str, oid)               repo_get_oid(the_repository, str, oid)
+                                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/oss/git/builtin/pull.c:1064:2: note: Taking false branch
+        if (get_oid("HEAD", &curr_head))
+        ^
+/oss/git/builtin/pull.c:1067:31: note: Left side of '&&' is false
+        if (!is_null_oid(&orig_head) && !is_null_oid(&curr_head) &&
+                                     ^
+/oss/git/builtin/pull.c:1093:6: note: Assuming field 'nr' is not equal to 0
+        if (!merge_heads.nr)
+            ^~~~~~~~~~~~~~~
+/oss/git/builtin/pull.c:1093:2: note: Taking false branch
+        if (!merge_heads.nr)
+        ^
+/oss/git/builtin/pull.c:1096:2: note: Taking false branch
+        if (is_null_oid(&orig_head)) {
+        ^
+/oss/git/builtin/pull.c:1102:6: note: Assuming field 'nr' is > 1
+        if (merge_heads.nr > 1) {
+            ^~~~~~~~~~~~~~~~~~
+/oss/git/builtin/pull.c:1102:2: note: Taking true branch
+        if (merge_heads.nr > 1) {
+        ^
+/oss/git/builtin/pull.c:1103:7: note: Assuming 'opt_rebase' is 0
+                if (opt_rebase)
+                    ^~~~~~~~~~
+/oss/git/builtin/pull.c:1103:3: note: Taking false branch
+                if (opt_rebase)
+                ^
+/oss/git/builtin/pull.c:1105:7: note: Assuming 'opt_ff' is null
+                if (opt_ff && !strcmp(opt_ff, "--ff-only"))
+                    ^~~~~~
+/oss/git/builtin/pull.c:1105:14: note: Left side of '&&' is false
+                if (opt_ff && !strcmp(opt_ff, "--ff-only"))
+                           ^
+/oss/git/builtin/pull.c:1110:15: note: 'can_ff' is 0
+        divergent = !can_ff && !already_up_to_date(&orig_head, &merge_heads);
+                     ^~~~~~
+/oss/git/builtin/pull.c:1110:14: note: Left side of '&&' is true
+        divergent = !can_ff && !already_up_to_date(&orig_head, &merge_heads);
+                    ^
+/oss/git/builtin/pull.c:1110:25: note: Assuming the condition is false
+        divergent = !can_ff && !already_up_to_date(&orig_head, &merge_heads);
+                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/oss/git/builtin/pull.c:1113:6: note: Assuming 'opt_ff' is null
+        if (opt_ff && !strcmp(opt_ff, "--ff-only")) {
+            ^~~~~~
+/oss/git/builtin/pull.c:1113:13: note: Left side of '&&' is false
+        if (opt_ff && !strcmp(opt_ff, "--ff-only")) {
+                   ^
+/oss/git/builtin/pull.c:1119:7: note: 'opt_ff' is null
+        if (!opt_ff && rebase_unspecified && divergent) {
+             ^~~~~~
+/oss/git/builtin/pull.c:1119:6: note: Left side of '&&' is true
+        if (!opt_ff && rebase_unspecified && divergent) {
+            ^
+/oss/git/builtin/pull.c:1119:17: note: 'rebase_unspecified' is 0
+        if (!opt_ff && rebase_unspecified && divergent) {
+                       ^~~~~~~~~~~~~~~~~~
+/oss/git/builtin/pull.c:1119:36: note: Left side of '&&' is false
+        if (!opt_ff && rebase_unspecified && divergent) {
+                                          ^
+/oss/git/builtin/pull.c:1124:6: note: Assuming 'opt_rebase' is not equal to 0
+        if (opt_rebase) {
+            ^~~~~~~~~~
+/oss/git/builtin/pull.c:1124:2: note: Taking true branch
+        if (opt_rebase) {
+        ^
+/oss/git/builtin/pull.c:1127:3: note: Calling 'get_rebase_newbase_and_upstream'
+                get_rebase_newbase_and_upstream(&newbase, &upstream, &curr_head,
+                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/oss/git/builtin/pull.c:857:7: note: Calling 'get_octopus_merge_base'
+        if (!get_octopus_merge_base(&oct_merge_base, curr_head, merge_head, fork_point))
+             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/oss/git/builtin/pull.c:828:7: note: Calling 'is_null_oid'
+        if (!is_null_oid(fork_point))
+             ^~~~~~~~~~~~~~~~~~~~~~~
+/oss/git/./hash.h:258:9: note: Calling 'oideq'
+        return oideq(oid, null_oid());
+               ^~~~~~~~~~~~~~~~~~~~~~
+/oss/git/./hash.h:249:6: note: Branch condition evaluates to a garbage value
+        if (!oid1->algo)
+            ^~~~~~~~~~~
+/oss/git/./hash.h:268:2: warning: Null pointer passed to 2nd parameter expecting 'nonnull' [clang-analyzer-core.NonNullParamChecker]
+        memcpy(dst->hash, src->hash, GIT_MAX_RAWSZ);
+        ^
+/oss/git/fmt-merge-msg.c:646:6: note: Assuming 'suppress_dest_pattern_seen' is not equal to 0
+        if (!suppress_dest_pattern_seen) {
+            ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/oss/git/fmt-merge-msg.c:646:2: note: Taking false branch
+        if (!suppress_dest_pattern_seen) {
+        ^
+/oss/git/fmt-merge-msg.c:656:6: note: Assuming 'current_branch' is non-null
+        if (!current_branch)
+            ^~~~~~~~~~~~~~~
+/oss/git/fmt-merge-msg.c:656:2: note: Taking false branch
+        if (!current_branch)
+        ^
+/oss/git/fmt-merge-msg.c:659:6: note: Assuming field 'into_name' is null
+        if (opts->into_name)
+            ^~~~~~~~~~~~~~~
+/oss/git/fmt-merge-msg.c:659:2: note: Taking false branch
+        if (opts->into_name)
+        ^
+/oss/git/fmt-merge-msg.c:661:11: note: Assuming the condition is false
+        else if (starts_with(current_branch, "refs/heads/"))
+                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/oss/git/fmt-merge-msg.c:661:7: note: Taking false branch
+        else if (starts_with(current_branch, "refs/heads/"))
+             ^
+/oss/git/fmt-merge-msg.c:664:2: note: Calling 'find_merge_parents'
+        find_merge_parents(&merge_parents, in, &head_oid);
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/oss/git/fmt-merge-msg.c:586:9: note: Assuming 'pos' is < field 'len'
+        while (pos < in->len) {
+               ^~~~~~~~~~~~~
+/oss/git/fmt-merge-msg.c:586:2: note: Loop condition is true.  Entering loop body
+        while (pos < in->len) {
+        ^
+/oss/git/fmt-merge-msg.c:595:9: note: Assuming 'newline' is non-null
+                len = newline ? newline - p : strlen(p);
+                      ^~~~~~~
+/oss/git/fmt-merge-msg.c:595:9: note: '?' condition is true
+/oss/git/fmt-merge-msg.c:596:18: note: 'newline' is non-null
+                pos += len + !!newline;
+                               ^~~~~~~
+/oss/git/fmt-merge-msg.c:598:7: note: Assuming the condition is false
+                if (parse_oid_hex(p, &oid, &q) ||
+                    ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/oss/git/fmt-merge-msg.c:598:7: note: Left side of '||' is false
+./builtin.h:112:28: warning: parameter name 's' is too short, expected at least 3 characters [readability-identifier-length]
+int is_builtin(const char *s);
+                           ^
+/oss/git/abspath.c:21:9: warning: backward branch (while loop) is ID-dependent due to variable reference to 'offset' and may cause performance degradation [altera-id-dependent-backward-branch]
+        while (offset < len && !is_dir_sep(path->buf[len - 1]))
+               ^
+/oss/git/abspath.c:21:57: warning: statement should be inside braces [google-readability-braces-around-statements,hicpp-braces-around-statements,readability-braces-around-statements]
+        while (offset < len && !is_dir_sep(path->buf[len - 1]))
+                                                               ^
+                                                                {

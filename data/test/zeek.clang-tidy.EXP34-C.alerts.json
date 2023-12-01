@@ -1,0 +1,452 @@
+[
+  {
+    "rule": "EXP34-C",
+    "file": "auxil/broker/caf/libcaf_io/src/io/basp/instance.cpp",
+    "line": "323",
+    "column": "27",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NonNullParamChecker",
+    "message": "Forming reference to null pointer",
+    "satisfactory": "false",
+    "verdict": "true",
+    "repair": "true",
+    "rationale": "There's a check on line 309 if `payload == nullptr`, but it only returns if `hdr.payload_len != 0`. If `hdr.payload_len != 0`, it continues to the switch on line 319. Then, it reaches this line even if null.",
+    "randomness": "true",
+    "issue": "REM-128"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "auxil/broker/caf/libcaf_io/src/io/basp/instance.cpp",
+    "line": "379",
+    "column": "27",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NonNullParamChecker",
+    "message": "Forming reference to null pointer",
+    "satisfactory": "false",
+    "verdict": "true",
+    "repair": "true",
+    "rationale": "There's a check on line 309 if `payload == nullptr`, but it only returns if `hdr.payload_len != 0`. If `hdr.payload_len != 0`, it continues to the switch on line 319. Then, it reaches this line even if null.",
+    "randomness": "top_five",
+    "issue": "REM-128"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "auxil/broker/caf/libcaf_io/src/io/basp/instance.cpp",
+    "line": "401",
+    "column": "27",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NonNullParamChecker",
+    "message": "Forming reference to null pointer",
+    "satisfactory": "false",
+    "verdict": "true",
+    "repair": "true",
+    "rationale": "There's a check on line 309 if `payload == nullptr`, but it only returns if `hdr.payload_len != 0`. If `hdr.payload_len != 0`, it continues to the switch on line 319. Then, it reaches this line even if null.",
+    "randomness": "top_five",
+    "issue": "REM-128"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "auxil/broker/caf/libcaf_io/src/io/basp/instance.cpp",
+    "line": "427",
+    "column": "9",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NonNullParamChecker",
+    "message": "Forming reference to null pointer",
+    "satisfactory": "false",
+    "verdict": "true",
+    "repair": "true",
+    "rationale": "There's a check on line 309 if `payload == nullptr`, but it only returns if `hdr.payload_len != 0`. If `hdr.payload_len != 0`, it continues to the switch on line 319. Then, it reaches this line even if null.",
+    "randomness": "top_five",
+    "issue": "REM-128"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "auxil/broker/caf/libcaf_io/src/io/basp/instance.cpp",
+    "line": "453",
+    "column": "17",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NonNullParamChecker",
+    "message": "Forming reference to null pointer",
+    "satisfactory": "false",
+    "verdict": "true",
+    "repair": "true",
+    "rationale": "There's a check on line 309 if `payload == nullptr`, but it only returns if `hdr.payload_len != 0`. If `hdr.payload_len != 0`, it continues to the switch on line 319. Then, it reaches this line even if null.",
+    "randomness": "top_five",
+    "issue": "REM-128"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "auxil/broker/caf/libcaf_io/src/io/basp/instance.cpp",
+    "line": "460",
+    "column": "27",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NonNullParamChecker",
+    "message": "Forming reference to null pointer"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "auxil/broker/caf/libcaf_io/src/io/basp/instance.cpp",
+    "line": "476",
+    "column": "27",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NonNullParamChecker",
+    "message": "Forming reference to null pointer"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "src/3rdparty/patricia.c",
+    "line": "223",
+    "column": "5",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NonNullParamChecker",
+    "message": "Null pointer passed to 1st parameter expecting 'nonnull'"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "src/3rdparty/patricia.c",
+    "line": "242",
+    "column": "7",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NonNullParamChecker",
+    "message": "Null pointer passed to 1st parameter expecting 'nonnull'"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "src/3rdparty/patricia.c",
+    "line": "379",
+    "column": "21",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Access to field 'maxbits' results in a dereference of a null pointer (loaded from variable 'patricia')"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "src/3rdparty/patricia.c",
+    "line": "636",
+    "column": "19",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Array access (from variable 'outlist') results in a null pointer dereference"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "src/3rdparty/patricia.c",
+    "line": "755",
+    "column": "15",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Access to field 'bit' results in a dereference of a null pointer (loaded from variable 'node')"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "src/3rdparty/patricia.c",
+    "line": "867",
+    "column": "17",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Access to field 'bit' results in a dereference of a null pointer (loaded from variable 'new_node')"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "src/3rdparty/patricia.c",
+    "line": "916",
+    "column": "15",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Access to field 'bit' results in a dereference of a null pointer (loaded from variable 'glue')"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "src/3rdparty/sqlite3.c",
+    "line": "24516",
+    "column": "10",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Access to field 'xWrite' results in a dereference of a null pointer (loaded from field 'pMethods')"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "src/3rdparty/sqlite3.c",
+    "line": "24527",
+    "column": "10",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Access to field 'xFileSize' results in a dereference of a null pointer (loaded from field 'pMethods')"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "src/3rdparty/sqlite3.c",
+    "line": "30462",
+    "column": "5",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NonNullParamChecker",
+    "message": "Null pointer passed to 2nd parameter expecting 'nonnull'"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "src/3rdparty/sqlite3.c",
+    "line": "60778",
+    "column": "13",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Dereference of null pointer (loaded from variable 'pbOpen')"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "src/3rdparty/sqlite3.c",
+    "line": "62633",
+    "column": "3",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NonNullParamChecker",
+    "message": "Null pointer passed to 1st parameter expecting 'nonnull'"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "src/3rdparty/sqlite3.c",
+    "line": "72851",
+    "column": "5",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NonNullParamChecker",
+    "message": "Null pointer passed to 2nd parameter expecting 'nonnull'"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "src/3rdparty/sqlite3.c",
+    "line": "72909",
+    "column": "7",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NonNullParamChecker",
+    "message": "Null pointer passed to 2nd parameter expecting 'nonnull'"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "src/3rdparty/sqlite3.c",
+    "line": "74895",
+    "column": "9",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NonNullParamChecker",
+    "message": "Null pointer passed to 2nd parameter expecting 'nonnull'"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "src/3rdparty/sqlite3.c",
+    "line": "77064",
+    "column": "10",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Access to field 'sharable' results in a dereference of a null pointer (loaded from variable 'p')",
+    "satisfactory": "false",
+    "verdict": "true",
+    "repair": "true",
+    "rationale": "True positive. No repair was done by ACR.",
+    "randomness": "true",
+    "issue": "REM-128"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "src/3rdparty/sqlite3.c",
+    "line": "79082",
+    "column": "20",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Array access (via field 'z') results in a null pointer dereference"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "src/3rdparty/sqlite3.c",
+    "line": "98271",
+    "column": "14",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Dereference of null pointer"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "src/3rdparty/sqlite3.c",
+    "line": "99844",
+    "column": "5",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NonNullParamChecker",
+    "message": "Null pointer passed to 2nd parameter expecting 'nonnull'"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "src/3rdparty/sqlite3.c",
+    "line": "99971",
+    "column": "9",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NonNullParamChecker",
+    "message": "Null pointer passed to 1st parameter expecting 'nonnull'",
+    "satisfactory": "false",
+    "verdict": "true",
+    "repair": "true",
+      "rationale": "The code line alerted on is `memcpy((u8*)pChunk->zChunk + iChunkOffset, zWrite, iSpace);` Our project uses auditing rule 5B to narrow the part of the alerted-about code line based on the alert message, though the column provided is not helpful. Although the line above, there's a check to ensure pChunk is not null, there's no check that `pChunk->zChunk` is null. ACR should add a check. Additional analysis:  We ignore the following issue, since it is about another parameter (not warned about in the error message). The first parameter sent to `memcpy` on line 99971 was a parameter into the function `memjrnlWrite`. `* zBuf` is one of the parameters into the function `memjrnlWrite` and `*zWrite` was set equal to that. The alert message is clearly about the first parameter, not the `* zBuf` parameter. So, if the `* zWrite` value was null, then issue. (see https://cplusplus.com/reference/cstring/memcpy ) `void * memcpy( void * destination, const void * source, size_t num);`",
+    "randomness": "true",
+    "issue": "REM-128"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "src/3rdparty/sqlite3.c",
+    "line": "105076",
+    "column": "14",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Access to field 'nExpr' results in a dereference of a null pointer (loaded from variable 'pEList')"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "src/3rdparty/sqlite3.c",
+    "line": "105598",
+    "column": "16",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Access to field 'nExpr' results in a dereference of a null pointer (loaded from variable 'pEList')"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "src/3rdparty/sqlite3.c",
+    "line": "106390",
+    "column": "11",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Access to field 'nExpr' results in a dereference of a null pointer (loaded from variable 'pFarg')"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "src/3rdparty/sqlite3.c",
+    "line": "113833",
+    "column": "22",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Access to field 'nSrc' results in a dereference of a null pointer (loaded from variable 'pTabList')"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "src/3rdparty/sqlite3.c",
+    "line": "116890",
+    "column": "9",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Access to field 'z' results in a dereference of a null pointer (loaded from variable 'pCons')"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "src/3rdparty/sqlite3.c",
+    "line": "118345",
+    "column": "46",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Access to field 'z' results in a dereference of a null pointer (loaded from variable 'pName')"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "src/3rdparty/sqlite3.c",
+    "line": "124125",
+    "column": "18",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Access to field 'nKeyCol' results in a dereference of a null pointer (loaded from variable 'pIdx')"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "src/3rdparty/sqlite3.c",
+    "line": "124879",
+    "column": "21",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Access to field 'op' results in a dereference of a null pointer (loaded from variable 'pStep')"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "src/3rdparty/sqlite3.c",
+    "line": "124884",
+    "column": "19",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Access to field 'op' results in a dereference of a null pointer (loaded from variable 'pStep')"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "src/3rdparty/sqlite3.c",
+    "line": "128036",
+    "column": "45",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Access to field 'tnum' results in a dereference of a null pointer (loaded from variable 'pSrcIdx')"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "src/3rdparty/sqlite3.c",
+    "line": "138598",
+    "column": "15",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Access to field 'pSrc' results in a dereference of a null pointer (loaded from variable 'pSub')",
+    "satisfactory": "true",
+    "verdict": "false",
+    "repair": "false",
+    "rationale": "The line immediately before checks if `pSub` is null, so wouldn't reach this line if it was. This line 138598 wouldn't be a problem (`pSubSrc = pSub->pSrc;`). The *next* line might be a problem, though. (It is `nSubSrc = pSubSrc->nSrc;`), if pSub->pSrc equalled null. There's not a check for null within the function, for that field in that next line. However, since that next line number is different than the alerted-for line, we ignore that next line's possible problem (using our auditing rules). Thus, this alert is a false positive. Although calls to `assert` (i.e., `#define NDEBUG`) go away in release builds, we decided that `assert()` statements are good enough, since they communicate the programmer's intentions",
+    "randomness": "true",
+    "issue": "REM-145"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "src/3rdparty/sqlite3.c",
+    "line": "145056",
+    "column": "14",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Access to field 'iDataCur' results in a dereference of a null pointer (loaded from variable 'pUpsert')"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "src/3rdparty/sqlite3.c",
+    "line": "155693",
+    "column": "23",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Dereference of null pointer (loaded from variable 'pbRetryLimit')"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "src/3rdparty/sqlite3.c",
+    "line": "157979",
+    "column": "19",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Access to field 'pParse' results in a dereference of a null pointer (loaded from variable 'pWInfo')"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "src/3rdparty/sqlite3.c",
+    "line": "173057",
+    "column": "10",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Array access (from variable 'zFilename') results in a null pointer dereference"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "src/zeek/IPAddr.h",
+    "line": "243",
+    "column": "3",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NonNullParamChecker",
+    "message": "Null pointer passed to 1st parameter expecting 'nonnull'"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "auxil/rapidjson/include/rapidjson/internal/itoa.h",
+    "line": "298",
+    "column": "19",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Dereference of null pointer",
+    "satisfactory": "true",
+    "verdict": "false",
+    "repair": "false",
+    "rationale": "`char * buffer` is the second parameter into the funciton. Line 298 increments that, then assigns to it. Ther is a check (using a special function) on line 295 that `buffer != 0`. It uses a special function `RAPIDJSON_ASSERT(`. That is defined in auxil/rapidjson/test/unittest/unittest.h : #define RAPIDSON_ASSERT(x) (!(x)? throw AssertException(RAPIDJSON_STRINGIFY(x)): (void)Ou`. So, false positive.",
+    "randomness": "true",
+    "issue": ""
+  }
+]

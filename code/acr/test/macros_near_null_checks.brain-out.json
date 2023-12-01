@@ -1,0 +1,106 @@
+[
+  {
+    "rule": "EXP34-C",
+    "file": "/host/code/acr/test/macros_near_null_checks.c",
+    "line": 14,
+    "alert_id": 1,
+    "ast_id": 1066,
+    "repair": [
+      "add_null_check",
+      {
+        "whole_expr": false
+      }
+    ]
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "/host/code/acr/test/macros_near_null_checks.c",
+    "line": 15,
+    "alert_id": 2,
+    "ast_id": 1085,
+    "repair": [
+      "skip",
+      {
+        "why": [
+          "In a macro expansion at beginning of expression",
+          "In a macro expansion at end of expression"
+        ]
+      }
+    ]
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "/host/code/acr/test/macros_near_null_checks.c",
+    "line": 16,
+    "alert_id": 3,
+    "ast_id": 1097,
+    "repair": [
+      "add_null_check",
+      {
+        "whole_expr": false
+      }
+    ]
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "/host/code/acr/test/macros_near_null_checks.c",
+    "line": 17,
+    "alert_id": 4,
+    "ast_id": 1113,
+    "repair": [
+      "skip",
+      {
+        "why": [
+          "In a macro expansion at end of expression"
+        ]
+      }
+    ]
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "/host/code/acr/test/macros_near_null_checks.c",
+    "line": 18,
+    "alert_id": 5,
+    "ast_id": 1131,
+    "repair": [
+      "skip",
+      {
+        "why": [
+          "In a macro expansion at beginning of expression",
+          "In a macro expansion at end of expression"
+        ]
+      }
+    ]
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "/host/code/acr/test/macros_near_null_checks.c",
+    "line": 19,
+    "alert_id": 6,
+    "ast_id": 1155,
+    "repair": [
+      "skip",
+      {
+        "why": [
+          "In a macro expansion at beginning of expression",
+          "In a macro expansion at end of expression"
+        ]
+      }
+    ]
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "/host/code/acr/test/macros_near_null_checks.c",
+    "line": 20,
+    "alert_id": 7,
+    "ast_id": 1172,
+    "repair": [
+      "skip",
+      {
+        "why": [
+          "In a macro expansion at beginning of expression"
+        ]
+      }
+    ]
+  }
+]

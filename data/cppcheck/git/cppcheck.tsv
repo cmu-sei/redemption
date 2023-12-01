@@ -1,0 +1,482 @@
+Checker	Path	Line	Column	Message
+unreachableCode	compaterminal.c	50	2	Statements following return, break, continue, goto or throw will never be executed.
+unreachableCode	compaterminal.c	77	2	Statements following return, break, continue, goto or throw will never be executed.
+ConfigurationNotChecked	git-compat-util.h	1336	0	Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATHproc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;BIG_ENDIAN;BYTE_ORDER;LITTLE_ENDIAN;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.
+ConfigurationNotChecked	git-compat-util.h	1336	0	Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATHproc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;_MSC_VER;_M_ARM64;_M_IX86;_M_X64;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.
+ConfigurationNotChecked	git-compat-util.h	1336	0	Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATHproc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;__BIG_ENDIAN;__BYTE_ORDER;__LITTLE_ENDIAN;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.
+ConfigurationNotChecked	git-compat-util.h	1336	0	Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATHproc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;__GNUC__;__i386__;__x86_64__;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.
+ConfigurationNotChecked	git-compat-util.h	1336	0	Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATHproc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;__GNUC__;__i386__;__x86_64__;__x86_64__;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.
+unreadVariable	builtishow-ref.c	183	7	Variable 'argc' is assigned a value that is never used.
+variableScope	builtigc.c	1498	27	The scope of the variable 'item' can be reduced.
+variableScope	builtigc.c	1570	27	The scope of the variable 'item' can be reduced.
+shadowVariable	reftablrecord.c	418	7	Local variable 'n' shadows outer variable
+shadowVariable	reftablrecord.c	551	7	Local variable 'n' shadows outer variable
+shadowVariable	reftablrecord.c	601	7	Local variable 'n' shadows outer variable
+constParameter	reftablrecord.c	245	45	Parameter 'src' can be declared as pointer to const
+uselessAssignmentArg	builtidifftool.c	722	2	Assignment of function parameter has no effect outside the function.
+shadowVariable	builtidifftool.c	478	31	Local variable 'entry' shadows outer variable
+nullPointerRedundantCheck	builtipush.c	671	6	Either the condition '!remote' is redundant or there is possible null pointer dereference: remote.
+variableScope	builtipush.c	426	6	The scope of the variable 'i' can be reduced.
+shadowVariable	builtipush.c	465	7	Local variable 'recurse_submodules' shadows outer variable
+clarifyCondition	builticonfig.c	306	20	Boolean result is used in bitwise operation. Clarify expression with parentheses.
+shadowVariable	builticonfig.c	190	13	Local variable 'term' shadows outer variable
+shadowVariable	builticonfig.c	203	13	Local variable 'term' shadows outer variable
+variableScope	builtiinterpret-trailers.c	47	27	The scope of the variable 'item' can be reduced.
+shadowFunction	builtimerge-tree.c	415	22	Local variable 'result' shadows outer function
+shadowFunction	builtimerge-tree.c	535	8	Local variable 'result' shadows outer function
+unusedStructMember	xdifxhistogram.c	65	8	struct member 'histindex::key_shift' is never used.
+nullPointerArithmeticRedundantCheck	builtiam.c	1371	27	Either the condition '!msg' is redundant or there is pointer arithmetic with NULL pointer.
+shadowVariable	builtiam.c	1857	18	Local variable 'sb' shadows outer variable
+knownConditionTrueFalse	builticlean.c	778	7	Condition '!eof' is always true
+variableScope	builticlean.c	289	14	The scope of the variable 'qname' can be reduced.
+variableScope	builticlean.c	672	18	The scope of the variable 'ignore_list' can be reduced.
+variableScope	builticlean.c	674	23	The scope of the variable 'pl' can be reduced.
+nullPointerRedundantCheck	reftablblock.c	445	40	Either the condition 'blockp' is redundant or there is possible null pointer dereference: blockp.
+variableScope	builtifsck.c	470	17	The scope of the variable 'obj' can be reduced.
+variableScope	builtifsck.c	894	13	The scope of the variable 'total' can be reduced.
+shadowVariable	builtirebase.c	1425	7	Local variable 'i' shadows outer variable
+shadowVariable	builtirebase.c	1464	7	Local variable 'i' shadows outer variable
+clarifyCalculation	builtirebase.c	329	41	Clarify calculation precedence for '&' and '?'.
+constParameter	builtirebase.c	856	45	Parameter 'from' can be declared as pointer to const
+uselessAssignmentPtrArg	builtifast-import.c	2504	4	Assignment of function parameter has no effect outside the function. Did you forget dereferencing it?
+nullPointerRedundantCheck	builtifast-import.c	1286	31	Either the condition '!c' is redundant or there is possible null pointer dereference: c.
+nullPointerRedundantCheck	builtifast-import.c	2548	22	Either the condition '!buf' is redundant or there is possible null pointer dereference: buf.
+nullPointerRedundantCheck	builtifast-import.c	3332	3	Either the condition '!f' is redundant or there is possible null pointer dereference: f.
+nullPointerArithmeticRedundantCheck	builtifast-import.c	1274	19	Either the condition '!buf' is redundant or there is pointer arithmetic with NULL pointer.
+nullPointerArithmeticRedundantCheck	builtifast-import.c	3333	3	Either the condition '!f' is redundant or there is pointer arithmetic with NULL pointer.
+redundantAssignment	builtifast-import.c	1933	6	Variable 'num' is reassigned a value before the old one has been used.
+variableScope	builtifast-import.c	727	21	The scope of the variable 'a' can be reduced.
+variableScope	builtifast-import.c	2099	21	The scope of the variable 'e' can be reduced.
+variableScope	builtifast-import.c	2100	18	The scope of the variable 'tmp_hex_oid_len' can be reduced.
+variableScope	builtifast-import.c	2100	35	The scope of the variable 'tmp_fullpath_len' can be reduced.
+variableScope	builtifast-import.c	3090	35	The scope of the variable 'top' can be reduced.
+shadowFunction	builtifast-import.c	1089	29	Local variable 'checkpoint' shadows outer function
+unreadVariable	builtifast-import.c	2799	22	Variable 'from_mark' is assigned a value that is never used.
+va_end_missing	builtifast-import.c	429	1	va_list 'cp' was opened but not closed by va_end().
+ConfigurationNotChecked	builtifast-import.c	452	0	Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATH=/proc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;SIGUSR1' since the value of 'SIGUSR1' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.
+constParameter	compaobstack.c	315	48	Parameter 'obj' can be declared as pointer to const
+unusedStructMember	compaobstack.c	61	13	union member 'fooround::i' is never used.
+unusedStructMember	compaobstack.c	62	15	union member 'fooround::d' is never used.
+unusedStructMember	compaobstack.c	63	9	union member 'fooround::p' is never used.
+unusedStructMember	compaobstack.c	67	8	struct member 'fooalign::c' is never used.
+unusedStructMember	compaobstack.c	68	18	struct member 'fooalign::u' is never used.
+ConfigurationNotChecked	compaobstack.h	161	0	Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATH=/proc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;__PTRDIFF_TYPE__' since the value of '__PTRDIFF_TYPE__' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.
+ConfigurationNotChecked	compaobstack.c	171	0	Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATH=/proc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;__PTRDIFF_TYPE__' since the value of '__PTRDIFF_TYPE__' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.
+ConfigurationNotChecked	compaobstack.c	220	0	Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATH=/proc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;__PTRDIFF_TYPE__' since the value of '__PTRDIFF_TYPE__' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.
+ConfigurationNotChecked	compaobstack.c	263	0	Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATH=/proc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;__PTRDIFF_TYPE__' since the value of '__PTRDIFF_TYPE__' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.
+ConfigurationNotChecked	compaobstack.c	290	0	Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATH=/proc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;__PTRDIFF_TYPE__' since the value of '__PTRDIFF_TYPE__' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.
+variableScope	builtidiff-tree.c	110	7	The scope of the variable 'line' can be reduced.
+uselessAssignmentArg	builtistash.c	810	2	Assignment of function parameter has no effect outside the function.
+uselessAssignmentArg	builtistash.c	1739	4	Assignment of function parameter has no effect outside the function.
+shadowVariable	builtistash.c	1677	25	Local variable 'cp' shadows outer variable
+unreadVariable	builtistash.c	1739	8	Variable 'argc' is assigned a value that is never used.
+ConfigurationNotChecked	git-compat-util.h	1336	0	Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATHproc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;ETC_GITCONFIG=/usr/local/etc/gitconfig;BIG_ENDIAN;BYTE_ORDER;LITTLE_ENDIAN;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.
+ConfigurationNotChecked	git-compat-util.h	1336	0	Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATHproc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;ETC_GITCONFIG=/usr/local/etc/gitconfig;_MSC_VER;_M_ARM64;_M_IX86;_M_X64;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.
+ConfigurationNotChecked	git-compat-util.h	1336	0	Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATHproc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;ETC_GITCONFIG=/usr/local/etc/gitconfig;__BIG_ENDIAN;__BYTE_ORDER;__LITTLE_ENDIAN;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.
+ConfigurationNotChecked	git-compat-util.h	1336	0	Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATHproc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;ETC_GITCONFIG=/usr/local/etc/gitconfig;__GNUC__;__i386__;__x86_64__;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.
+ConfigurationNotChecked	git-compat-util.h	1336	0	Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATHproc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;ETC_GITCONFIG=/usr/local/etc/gitconfig;__GNUC__;__i386__;__x86_64__;__x86_64__;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.
+uselessAssignmentArg	builtisparse-checkout.c	455	2	Assignment of function parameter has no effect outside the function.
+uselessAssignmentArg	builtisparse-checkout.c	863	2	Assignment of function parameter has no effect outside the function.
+uselessAssignmentArg	builtisparse-checkout.c	900	2	Assignment of function parameter has no effect outside the function.
+variableScope	builtisparse-checkout.c	791	6	The scope of the variable 'default_patterns_nr' can be reduced.
+unreadVariable	builtisparse-checkout.c	863	7	Variable 'argc' is assigned a value that is never used.
+shadowVariable	builtifetch-pack.c	242	7	Local variable 'i' shadows outer variable
+variableScope	builticheck-ignore.c	74	14	The scope of the variable 'full_path' can be reduced.
+variableScope	builticheck-ignore.c	77	23	The scope of the variable 'pattern' can be reduced.
+varFuncNullUB	builtirevert.c	182	77	Passing NULL after the last typed argument to a variadic function leads to undefined behaviour.
+varFuncNullUB	builtirevert.c	196	29	Passing NULL after the last typed argument to a variadic function leads to undefined behaviour.
+unknownMacro	builtirepack.c	522	3	There is an unknown macro here somewhere. Configuration is required. If for_each_string_list_item is a macro then please configure it.
+uselessAssignmentArg	builtidiagnose.c	32	2	Assignment of function parameter has no effect outside the function.
+nullPointerRedundantCheck	builtiunpack-objects.c	238	23	Either the condition '!obj_buf' is redundant or there is possible null pointer dereference: obj_buf.
+nullPointerRedundantCheck	builtiunpack-objects.c	300	3	Either the condition '!obj' is redundant or there is possible null pointer dereference: obj.
+nullPointerRedundantCheck	builtiunpack-objects.c	411	3	Either the condition '!blob' is redundant or there is possible null pointer dereference: blob.
+variableScope	builtiunpack-objects.c	460	16	The scope of the variable 'mid' can be reduced.
+shadowArgument	builtiunpack-objects.c	228	7	Local variable 'type' shadows outer argument
+unknownMacro	builtiremote.c	1451	2	There is an unknown macro here somewhere. Configuration is required. If for_each_string_list_item is a macro then please configure it.
+uselessAssignmentArg	builtipull.c	506	3	Assignment of function parameter has no effect outside the function.
+unreadVariable	builtipull.c	506	7	Variable 'argc' is assigned a value that is never used.
+uselessAssignmentArg	builtirev-parse.c	525	2	Assignment of function parameter has no effect outside the function.
+nullPointerRedundantCheck	builtirev-parse.c	721	10	Either the condition '!gitdir' is redundant or there is possible null pointer dereference: gitdir.
+nullPointerRedundantCheck	builtirev-parse.c	772	17	Either the condition '!arg' is redundant or there is possible null pointer dereference: arg.
+shadowVariable	builtirev-parse.c	709	9	Local variable 'i' shadows outer variable
+shadowVariable	builtirev-parse.c	1013	30	Local variable 'oid' shadows outer variable
+ConfigurationNotChecked	companonblock.c	11	0	Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATH=/proc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;O_NONBLOCK' since the value of 'O_NONBLOCK' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.
+shadowVariable	builtils-remote.c	90	7	Local variable 'i' shadows outer variable
+shadowVariable	builtils-remote.c	149	32	Local variable 'ref' shadows outer variable
+uselessAssignmentArg	builticredential-cache--daemon.c	282	2	Assignment of function parameter has no effect outside the function.
+uselessAssignmentArg	builticredential-cache--daemon.c	315	2	Assignment of function parameter has no effect outside the function.
+unknownMacro	builtidescribe.c	610	4	There is an unknown macro here somewhere. Configuration is required. If for_each_string_list_item is a macro then please configure it.
+nullPointerRedundantCheck	tracetr2_tgt_normal.c	173	37	Either the condition 'parent_names' is redundant or there is possible null pointer dereference: parent_names++.
+nullPointerArithmeticRedundantCheck	tracetr2_tgt_normal.c	173	37	Either the condition 'parent_names' is redundant or there is pointer arithmetic with NULL pointer.
+variableScope	compasimple-ipc/ipc-unix-socket.c	588	6	The scope of the variable 'fd' can be reduced.
+variableScope	compasimple-ipc/ipc-unix-socket.c	588	10	The scope of the variable 'io' can be reduced.
+variableScope	compasimple-ipc/ipc-unix-socket.c	643	6	The scope of the variable 'result' can be reduced.
+shadowVariable	builtimv.c	256	30	Local variable 'ce' shadows outer variable
+shadowVariable	builtimv.c	334	31	Local variable 'ce' shadows outer variable
+unknownMacro	builtifsmonitor--daemon.c	644	1	There is an unknown macro here somewhere. Configuration is required. If KHASH_INIT is a macro then please configure it.
+unknownMacro	builtilog.c	189	3	There is an unknown macro here somewhere. Configuration is required. If for_each_string_list_item is a macro then please configure it.
+ConfigurationNotChecked	git-compat-util.h	1336	0	Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATHproc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;GIT_LOCALE_PATH=share/locale;BIG_ENDIAN;BYTE_ORDER;LITTLE_ENDIAN;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.
+ConfigurationNotChecked	git-compat-util.h	1336	0	Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATHproc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;GIT_LOCALE_PATH=share/locale;_MSC_VER;_M_ARM64;_M_IX86;_M_X64;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.
+ConfigurationNotChecked	git-compat-util.h	1336	0	Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATHproc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;GIT_LOCALE_PATH=share/locale;__BIG_ENDIAN;__BYTE_ORDER;__LITTLE_ENDIAN;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.
+ConfigurationNotChecked	git-compat-util.h	1336	0	Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATHproc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;GIT_LOCALE_PATH=share/locale;__GNUC__;__i386__;__x86_64__;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.
+ConfigurationNotChecked	git-compat-util.h	1336	0	Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATHproc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;GIT_LOCALE_PATH=share/locale;__GNUC__;__i386__;__x86_64__;__x86_64__;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.
+variableScope	builtipack-objects.c	413	17	The scope of the variable 'in' can be reduced.
+variableScope	builtipack-objects.c	443	9	The scope of the variable 'dheader' can be reduced.
+variableScope	builtipack-objects.c	560	9	The scope of the variable 'dheader' can be reduced.
+variableScope	builtipack-objects.c	1512	7	The scope of the variable 'i' can be reduced.
+shadowVariable	builtipack-objects.c	600	12	Local variable 'pos' shadows outer variable
+shadowArgument	builtipack-objects.c	1744	29	Local variable 'tree' shadows outer argument
+shadowVariable	builtipack-objects.c	1954	20	Local variable 'type' shadows outer variable
+shadowVariable	builtipack-objects.c	3373	22	Local variable 'p' shadows outer variable
+shadowVariable	builtipack-objects.c	3386	22	Local variable 'p' shadows outer variable
+shadowVariable	builtipack-objects.c	3400	22	Local variable 'p' shadows outer variable
+shadowVariable	builtipack-objects.c	3685	12	Local variable 'depth' shadows outer variable
+constParameter	builtipack-objects.c	91	26	Parameter 'delta' can be declared as pointer to const
+constParameter	builtipack-objects.c	119	32	Parameter 'delta' can be declared as pointer to const
+constParameter	builtipack-objects.c	129	27	Parameter 'delta' can be declared as pointer to const
+constParameter	builtipack-objects.c	779	31	Parameter 'e' can be declared as pointer to const
+constParameter	builtipack-objects.c	2422	31	Parameter 'e' can be declared as pointer to const
+uselessAssignmentArg	builtimktag.c	83	2	Assignment of function parameter has no effect outside the function.
+uselessAssignmentArg	builtiwrite-tree.c	38	2	Assignment of function parameter has no effect outside the function.
+invalidPrintfArgType_sint	builtirev-list.c	461	2	%d in format string (no. 1) requires 'int' but the argument type is 'unsigned int'.
+doubleFree	builtinotes.c	269	2	Memory pointed to by 'buf' is freed twice.
+variableScope	builtinotes.c	363	26	The scope of the variable 'note' can be reduced.
+shadowFunction	builtinotes.c	137	23	Local variable 'show' shadows outer function
+uninitvar	builtinotes.c	726	6	Uninitialized variable: partial
+pointerOutOfBounds	builtifast-export.c	784	23	Undefined behaviour, pointer arithmetic 'tagger+strlen(tagger)' is out of bounds.
+nullPointerArithmeticRedundantCheck	builtifast-export.c	626	8	Either the condition '!author' is redundant or there is pointer arithmetic with NULL pointer.
+nullPointerArithmeticRedundantCheck	builtifast-export.c	632	11	Either the condition '!committer' is redundant or there is pointer arithmetic with NULL pointer.
+variableScope	builtishow-index.c	19	6	The scope of the variable 'hash_algo' can be reduced.
+variableScope	ewaewah_bitmap.c	126	9	The scope of the variable 'literals' can be reduced.
+variableScope	ewaewah_bitmap.c	126	19	The scope of the variable 'can_add' can be reduced.
+variableScope	ewaewah_bitmap.c	383	9	The scope of the variable 'literals' can be reduced.
+variableScope	builtivar.c	52	14	The scope of the variable 'val' can be reduced.
+knownConditionTrueFalse	builticat-file.c	1025	13	Condition 'argc' is always true
+knownConditionTrueFalse	builtireflog.c	307	6	Condition 'do_all' is always false
+variableScope	sha1dsha1.c	1717	11	The scope of the variable 'i' can be reduced.
+variableScope	sha1dsha1.c	1717	14	The scope of the variable 'j' can be reduced.
+variableScope	sha1dsha1.c	1718	11	The scope of the variable 'ubc_dv_mask' can be reduced.
+variableScope	sha1dsha1.c	1719	11	The scope of the variable 'ihvtmp' can be reduced.
+preprocessorErrorDirective	sha1dsha1.c	1910	0	No header in #include
+preprocessorErrorDirective	sha1dsha1.h	107	0	No header in #include
+preprocessorErrorDirective	sha1dubc_check.h	49	0	No header in #include
+variableScope	builtiname-rev.c	189	9	The scope of the variable 'parents_to_queue_nr' can be reduced.
+uselessAssignmentArg	builtipatch-id.c	234	2	Assignment of function parameter has no effect outside the function.
+variableScope	builtipatch-id.c	176	6	The scope of the variable 'patchlen' can be reduced.
+variableScope	builtisend-pack.c	38	7	The scope of the variable 'count' can be reduced.
+variableScope	builtipack-redundant.c	72	43	The scope of the variable 'prev' can be reduced.
+variableScope	builtipack-redundant.c	449	21	The scope of the variable 'hint' can be reduced.
+variableScope	builtipack-redundant.c	566	20	The scope of the variable 'oid' can be reduced.
+variableScope	builtipack-redundant.c	567	7	The scope of the variable 'buf' can be reduced.
+knownConditionTrueFalse	builtireceive-pack.c	507	47	Condition '!keepalive_active' is always true
+knownConditionTrueFalse	builtireceive-pack.c	904	6	Condition 'bufp' is always true
+redundantInitialization	builtireceive-pack.c	692	10	Redundant initialization for 'retval'. The initialized value is overwritten before it is read.
+variableScope	builtireceive-pack.c	1164	8	The scope of the variable 'linelen' can be reduced.
+shadowFunction	builtireceive-pack.c	974	26	Local variable 'report' shadows outer function
+shadowFunction	builtireceive-pack.c	2413	26	Local variable 'report' shadows outer function
+ConfigurationNotChecked	git-compat-util.h	1336	0	Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATHproc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;GIT_EXEC_PATH=/usr/local/libexec/git-core;GIT_LOCALE_PATH=share/locale;BINDIR=bin;FALLBACK_RUNTIME_PREFIX=/usr/local;BIG_ENDIAN;BYTE_ORDER;LITTLE_ENDIAN;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.
+ConfigurationNotChecked	git-compat-util.h	1336	0	Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATHproc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;GIT_EXEC_PATH=/usr/local/libexec/git-core;GIT_LOCALE_PATH=share/locale;BINDIR=bin;FALLBACK_RUNTIME_PREFIX=/usr/local;_MSC_VER;_M_ARM64;_M_IX86;_M_X64;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.
+ConfigurationNotChecked	git-compat-util.h	1336	0	Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATHproc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;GIT_EXEC_PATH=/usr/local/libexec/git-core;GIT_LOCALE_PATH=share/locale;BINDIR=bin;FALLBACK_RUNTIME_PREFIX=/usr/local;__BIG_ENDIAN;__BYTE_ORDER;__LITTLE_ENDIAN;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.
+ConfigurationNotChecked	git-compat-util.h	1336	0	Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATHproc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;GIT_EXEC_PATH=/usr/local/libexec/git-core;GIT_LOCALE_PATH=share/locale;BINDIR=bin;FALLBACK_RUNTIME_PREFIX=/usr/local;__GNUC__;__i386__;__x86_64__;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.
+ConfigurationNotChecked	git-compat-util.h	1336	0	Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATHproc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;GIT_EXEC_PATH=/usr/local/libexec/git-core;GIT_LOCALE_PATH=share/locale;BINDIR=bin;FALLBACK_RUNTIME_PREFIX=/usr/local;__GNUC__;__i386__;__x86_64__;__x86_64__;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.
+preprocessorErrorDirective	sha1dubc_check.c	371	0	No header in #include
+uselessAssignmentPtrArg	builticheckout.c	1389	3	Assignment of function parameter has no effect outside the function. Did you forget dereferencing it?
+uselessAssignmentArg	builticheckout.c	1390	3	Assignment of function parameter has no effect outside the function.
+knownConditionTrueFalse	builticheckout.c	1682	28	Condition 'opts->checkout_index<0' is always true
+nullPointerRedundantCheck	builticheckout.c	788	29	Either the condition '!tree' is redundant or there is possible null pointer dereference: tree.
+variableScope	builticheckout.c	504	8	The scope of the variable 'rev_oid' can be reduced.
+shadowVariable	builticheckout.c	503	15	Local variable 'rev' shadows outer variable
+constParameter	builticheckout.c	717	25	Parameter 'old_commit' can be declared as pointer to const
+unreadVariable	builticheckout.c	1389	7	Variable 'argv' is assigned a value that is never used.
+unreadVariable	builticheckout.c	1390	7	Variable 'argc' is assigned a value that is never used.
+ConfigurationNotChecked	git-compat-util.h	1336	0	Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATHproc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;ETC_GITATTRIBUTES=/usr/local/etc/gitattributes;BIG_ENDIAN;BYTE_ORDER;LITTLE_ENDIAN;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.
+ConfigurationNotChecked	git-compat-util.h	1336	0	Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATHproc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;ETC_GITATTRIBUTES=/usr/local/etc/gitattributes;_MSC_VER;_M_ARM64;_M_IX86;_M_X64;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.
+ConfigurationNotChecked	git-compat-util.h	1336	0	Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATHproc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;ETC_GITATTRIBUTES=/usr/local/etc/gitattributes;__BIG_ENDIAN;__BYTE_ORDER;__LITTLE_ENDIAN;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.
+ConfigurationNotChecked	git-compat-util.h	1336	0	Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATHproc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;ETC_GITATTRIBUTES=/usr/local/etc/gitattributes;__GNUC__;__i386__;__x86_64__;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.
+ConfigurationNotChecked	git-compat-util.h	1336	0	Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATHproc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;ETC_GITATTRIBUTES=/usr/local/etc/gitattributes;__GNUC__;__i386__;__x86_64__;__x86_64__;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.
+variableScope	tracetr2_sid.c	35	16	The scope of the variable 'hash' can be reduced.
+variableScope	tracetr2_sid.c	36	7	The scope of the variable 'hex' can be reduced.
+variableScope	tracetr2_dst.c	121	11	The scope of the variable 'attempt_count' can be reduced.
+nullPointerRedundantCheck	builtibranch.c	853	19	Either the condition '!branch' is redundant or there is possible null pointer dereference: branch.
+shadowVariable	builtibranch.c	294	9	Local variable 'name' shadows outer variable
+unknownMacro	builtisubmodule--helper.c	1679	4	There is an unknown macro here somewhere. Configuration is required. If for_each_string_list_item is a macro then please configure it.
+knownConditionTrueFalse	reftablstack.c	949	30	Condition 'sublock_file_fd<0' is always true
+shadowVariable	reftablstack.c	321	7	Local variable 'err' shadows outer variable
+unreadVariable	reftablstack.c	1073	16	Variable 'lock_file_fd' is assigned a value that is never used.
+ConfigurationNotChecked	git-compat-util.h	1336	0	Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATHproc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;GIT_VERSION=2.39.0;GIT_USER_AGENT=git/2.39.0;GIT_BUILT_FROM_COMMIT=c48035d29b4e524aed3a32f0403676f0d9128863;BIG_ENDIAN;BYTE_ORDER;LITTLE_ENDIAN;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.
+ConfigurationNotChecked	git-compat-util.h	1336	0	Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATHproc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;GIT_VERSION=2.39.0;GIT_USER_AGENT=git/2.39.0;GIT_BUILT_FROM_COMMIT=c48035d29b4e524aed3a32f0403676f0d9128863;_MSC_VER;_M_ARM64;_M_IX86;_M_X64;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.
+ConfigurationNotChecked	git-compat-util.h	1336	0	Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATHproc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;GIT_VERSION=2.39.0;GIT_USER_AGENT=git/2.39.0;GIT_BUILT_FROM_COMMIT=c48035d29b4e524aed3a32f0403676f0d9128863;__BIG_ENDIAN;__BYTE_ORDER;__LITTLE_ENDIAN;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.
+ConfigurationNotChecked	git-compat-util.h	1336	0	Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATHproc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;GIT_VERSION=2.39.0;GIT_USER_AGENT=git/2.39.0;GIT_BUILT_FROM_COMMIT=c48035d29b4e524aed3a32f0403676f0d9128863;__GNUC__;__i386__;__x86_64__;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.
+ConfigurationNotChecked	git-compat-util.h	1336	0	Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATHproc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;GIT_VERSION=2.39.0;GIT_USER_AGENT=git/2.39.0;GIT_BUILT_FROM_COMMIT=c48035d29b4e524aed3a32f0403676f0d9128863;__GNUC__;__i386__;__x86_64__;__x86_64__;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.
+uselessAssignmentArg	builtireset.c	348	2	Assignment of function parameter has no effect outside the function.
+uselessAssignmentArg	builticommit.c	1537	2	Assignment of function parameter has no effect outside the function.
+constParameter	builticommit.c	1257	26	Parameter 'current_head' can be declared as pointer to const
+uselessAssignmentArg	builtibugreport.c	121	2	Assignment of function parameter has no effect outside the function.
+resourceLeak	builtibisect--helper.c	581	3	Resource leak: fp
+variableScope	builtibisect--helper.c	1188	6	The scope of the variable 'temporary_stdout_fd' can be reduced.
+variableScope	builtibisect--helper.c	1188	27	The scope of the variable 'saved_stdout' can be reduced.
+varFuncNullUB	builtibisect--helper.c	173	56	Passing NULL after the last typed argument to a variadic function leads to undefined behaviour.
+varFuncNullUB	builtibisect--helper.c	182	60	Passing NULL after the last typed argument to a variadic function leads to undefined behaviour.
+varFuncNullUB	builtibisect--helper.c	183	60	Passing NULL after the last typed argument to a variadic function leads to undefined behaviour.
+varFuncNullUB	builtibisect--helper.c	267	51	Passing NULL after the last typed argument to a variadic function leads to undefined behaviour.
+varFuncNullUB	builtibisect--helper.c	308	42	Passing NULL after the last typed argument to a variadic function leads to undefined behaviour.
+varFuncNullUB	builtibisect--helper.c	318	32	Passing NULL after the last typed argument to a variadic function leads to undefined behaviour.
+varFuncNullUB	builtibisect--helper.c	322	31	Passing NULL after the last typed argument to a variadic function leads to undefined behaviour.
+varFuncNullUB	builtibisect--helper.c	483	48	Passing NULL after the last typed argument to a variadic function leads to undefined behaviour.
+varFuncNullUB	builtibisect--helper.c	485	52	Passing NULL after the last typed argument to a variadic function leads to undefined behaviour.
+varFuncNullUB	builtibisect--helper.c	911	62	Passing NULL after the last typed argument to a variadic function leads to undefined behaviour.
+varFuncNullUB	builtibisect--helper.c	1020	28	Passing NULL after the last typed argument to a variadic function leads to undefined behaviour.
+knownConditionTrueFalse	builtishow-branch.c	739	8	Condition '!*av' is always false
+variableScope	builtishow-branch.c	385	6	The scope of the variable 'i' can be reduced.
+variableScope	builtishow-branch.c	874	8	The scope of the variable 'j' can be reduced.
+shadowVariable	builtishow-branch.c	919	18	Local variable 'commit' shadows outer variable
+constParameter	builtishow-branch.c	518	22	Parameter 'rev_mask' can be declared as pointer to const
+uselessAssignmentArg	builticredential-cache.c	179	2	Assignment of function parameter has no effect outside the function.
+syntaxError	builtihelp.c	315	18	syntax error
+unknownMacro	builtimerge.c	805	3	There is an unknown macro here somewhere. Configuration is required. If for_each_string_list_item is a macro then please configure it.
+knownConditionTrueFalse	builtifetch.c	1841	15	Condition 'list->nr==prev_nr' is always true
+nullPointerRedundantCheck	builtifetch.c	623	4	Either the condition '!ref_map' is redundant or there is possible null pointer dereference: ref_map.
+variableScope	builtifetch.c	1436	14	The scope of the variable 'path' can be reduced.
+variableScope	builtifetch.c	1941	6	The scope of the variable 'i' can be reduced.
+uselessAssignmentArg	ewaewah_io.c	131	2	Assignment of function parameter has no effect outside the function.
+unreadVariable	ewaewah_io.c	131	6	Variable 'len' is assigned a value that is never used.
+shadowVariable	builtils-files.c	572	18	Local variable 'pathspec' shadows outer variable
+ConfigurationNotChecked	git-compat-util.h	1336	0	Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATHproc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;GIT_HTML_PATH=share/doc/git;GIT_MAN_PATH=share/man;GIT_INFO_PATH=share/info;BIG_ENDIAN;BYTE_ORDER;LITTLE_ENDIAN;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.
+ConfigurationNotChecked	git-compat-util.h	1336	0	Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATHproc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;GIT_HTML_PATH=share/doc/git;GIT_MAN_PATH=share/man;GIT_INFO_PATH=share/info;_MSC_VER;_M_ARM64;_M_IX86;_M_X64;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.
+ConfigurationNotChecked	git-compat-util.h	1336	0	Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATHproc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;GIT_HTML_PATH=share/doc/git;GIT_MAN_PATH=share/man;GIT_INFO_PATH=share/info;__BIG_ENDIAN;__BYTE_ORDER;__LITTLE_ENDIAN;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.
+ConfigurationNotChecked	git-compat-util.h	1336	0	Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATHproc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;GIT_HTML_PATH=share/doc/git;GIT_MAN_PATH=share/man;GIT_INFO_PATH=share/info;__GNUC__;__i386__;__x86_64__;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.
+ConfigurationNotChecked	git-compat-util.h	1336	0	Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATHproc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;GIT_HTML_PATH=share/doc/git;GIT_MAN_PATH=share/man;GIT_INFO_PATH=share/info;__GNUC__;__i386__;__x86_64__;__x86_64__;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.
+variableScope	tracetr2_tgt_event.c	519	14	The scope of the variable 'event_name' can be reduced.
+variableScope	tracetr2_tgt_event.c	544	14	The scope of the variable 'event_name' can be reduced.
+variableScope	tracetr2_tgt_event.c	571	14	The scope of the variable 'event_name' can be reduced.
+variableScope	tracetr2_tgt_event.c	599	14	The scope of the variable 'event_name' can be reduced.
+redundantInitialization	builtils-tree.c	102	8	Redundant initialization for 'name'. The initialized value is overwritten before it is read.
+uselessAssignmentArg	builtiadd.c	321	2	Assignment of function parameter has no effect outside the function.
+shadowVariable	reftablmerged.c	112	7	Local variable 'err' shadows outer variable
+shadowVariable	reftablmerged.c	266	7	Local variable 'i' shadows outer variable
+variableScope	builtiindex-pack.c	452	7	The scope of the variable 'hdr' can be reduced.
+variableScope	builtiindex-pack.c	453	6	The scope of the variable 'hdrlen' can be reduced.
+variableScope	builtiindex-pack.c	1228	6	The scope of the variable 'i' can be reduced.
+constParameter	builtiindex-pack.c	409	47	Parameter 'retain' can be declared as pointer to const
+ConfigurationNotChecked	git-compat-util.h	1336	0	Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATHproc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;PAGER_ENV=dummy;BIG_ENDIAN;BYTE_ORDER;LITTLE_ENDIAN;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.
+ConfigurationNotChecked	git-compat-util.h	1336	0	Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATHproc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;PAGER_ENV=dummy;_MSC_VER;_M_ARM64;_M_IX86;_M_X64;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.
+ConfigurationNotChecked	git-compat-util.h	1336	0	Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATHproc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;PAGER_ENV=dummy;__BIG_ENDIAN;__BYTE_ORDER;__LITTLE_ENDIAN;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.
+ConfigurationNotChecked	git-compat-util.h	1336	0	Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATHproc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;PAGER_ENV=dummy;__GNUC__;__i386__;__x86_64__;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.
+ConfigurationNotChecked	git-compat-util.h	1336	0	Skipping configuration 'HAVE_SYSINFO=1;GIT_HOST_CPU=x86_64;HAVE_ALLOCA_H=1;USE_CURL_FOR_IMAP_SEND=1;SUPPORTS_SIMPLE_IPC=1;SHA1_DC=1;SHA1DC_NO_STANDARD_INCLUDES=1;SHA1DC_INIT_SAFE_HASH_DEFAULT=0;SHA1DC_CUSTOM_INCLUDE_SHA1_C=cache.h;SHA1DC_CUSTOM_INCLUDE_UBC_CHECK_C=git-compat-util.h;SHA256_BLK=1;HAVE_PATHS_H=1;HAVE_STRINGS_H=1;HAVE_DEV_TTY=1;HAVE_CLOCK_GETTIME=1;HAVE_CLOCK_MONOTONIC=1;HAVE_SYNC_FILE_RANGE=1;HAVE_GETDELIM=1;PROCFS_EXECUTABLE_PATHproc/self/exe;FREAD_READS_DIRECTORIES=1;NO_STRLCPY=1;SHELL_PATH=/bin/sh;PAGER_ENV=dummy;__GNUC__;__i386__;__x86_64__;__x86_64__;REG_STARTEND' since the value of 'REG_STARTEND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.
+variableScope	builtitag.c	351	6	The scope of the variable 'subject_len' can be reduced.
+shadowArgument	builtitag.c	306	18	Local variable 'buf' shadows outer argument
+variableScope	builtirm.c	323	15	The scope of the variable 'original' can be reduced.
+shadowVariable	reftablwriter.c	53	7	Local variable 'n' shadows outer variable
+unreadVariable	reftablwriter.c	65	4	Variable 'n' is assigned a value that is never used.
+unreadVariable	reftablwriter.c	386	8	Variable 'i' is assigned a value that is never used.
+shadowVariable	builtidiff.c	520	7	Local variable 'i' shadows outer variable
+unusedFunction	sha1dsha1.c	1868	0	The function 'SHA1DCFinal' is never used.
+unusedFunction	sha1dsha1.c	1767	0	The function 'SHA1DCInit' is never used.
+unusedFunction	sha1dsha1.c	1816	0	The function 'SHA1DCSetCallback' is never used.
+unusedFunction	sha1dsha1.c	1808	0	The function 'SHA1DCSetDetectReducedRoundCollision' is never used.
+unusedFunction	sha1dsha1.c	1783	0	The function 'SHA1DCSetSafeHash' is never used.
+unusedFunction	sha1dsha1.c	1800	0	The function 'SHA1DCSetUseDetectColl' is never used.
+unusedFunction	sha1dsha1.c	1792	0	The function 'SHA1DCSetUseUBC' is never used.
+unusedFunction	compaobstack.c	315	0	The function '_obstack_allocated_p' is never used.
+unusedFunction	ewabitmap.c	121	0	The function 'bitmap_and_not' is never used.
+unusedFunction	ewabitmap.c	38	0	The function 'bitmap_dup' is never used.
+unusedFunction	ewabitmap.c	172	0	The function 'bitmap_equals' is never used.
+unusedFunction	ewabitmap.c	198	0	The function 'bitmap_is_subset' is never used.
+unusedFunction	ewabitmap.c	132	0	The function 'bitmap_or' is never used.
+unusedFunction	ewabitmap.c	141	0	The function 'bitmap_or_ewah' is never used.
+unusedFunction	ewabitmap.c	162	0	The function 'bitmap_popcount' is never used.
+unusedFunction	ewabitmap.c	76	0	The function 'bitmap_to_ewah' is never used.
+unusedFunction	sha25block/sha256.c	179	0	The function 'blk_SHA256_Final' is never used.
+unusedFunction	sha25block/sha256.c	9	0	The function 'blk_SHA256_Init' is never used.
+unusedFunction	reftablblocksource.c	50	0	The function 'block_source_from_strbuf' is never used.
+unusedFunction	builtiadd.c	493	0	The function 'cmd_add' is never used.
+unusedFunction	builtiam.c	2314	0	The function 'cmd_am' is never used.
+unusedFunction	builtiannotate.c	10	0	The function 'cmd_annotate' is never used.
+unusedFunction	builtiapply.c	11	0	The function 'cmd_apply' is never used.
+unusedFunction	builtiarchive.c	81	0	The function 'cmd_archive' is never used.
+unusedFunction	builtibisect--helper.c	1393	0	The function 'cmd_bisect__helper' is never used.
+unusedFunction	builtibranch.c	628	0	The function 'cmd_branch' is never used.
+unusedFunction	builtibugreport.c	96	0	The function 'cmd_bugreport' is never used.
+unusedFunction	builtibundle.c	207	0	The function 'cmd_bundle' is never used.
+unusedFunction	builticat-file.c	881	0	The function 'cmd_cat_file' is never used.
+unusedFunction	builticheck-attr.c	105	0	The function 'cmd_check_attr' is never used.
+unusedFunction	builticheck-ignore.c	153	0	The function 'cmd_check_ignore' is never used.
+unusedFunction	builticheck-mailmap.c	39	0	The function 'cmd_check_mailmap' is never used.
+unusedFunction	builticheck-ref-format.c	54	0	The function 'cmd_check_ref_format' is never used.
+unusedFunction	builticheckout.c	1825	0	The function 'cmd_checkout' is never used.
+unusedFunction	builticheckout--worker.c	114	0	The function 'cmd_checkout__worker' is never used.
+unusedFunction	builticheckout-index.c	206	0	The function 'cmd_checkout_index' is never used.
+unusedFunction	builtirevert.c	256	0	The function 'cmd_cherry_pick' is never used.
+unusedFunction	builticlean.c	911	0	The function 'cmd_clean' is never used.
+unusedFunction	builticlone.c	890	0	The function 'cmd_clone' is never used.
+unusedFunction	builticolumn.c	20	0	The function 'cmd_column' is never used.
+unusedFunction	builticommit.c	1626	0	The function 'cmd_commit' is never used.
+unusedFunction	builticommit-graph.c	308	0	The function 'cmd_commit_graph' is never used.
+unusedFunction	builticommit-tree.c	102	0	The function 'cmd_commit_tree' is never used.
+unusedFunction	builticonfig.c	639	0	The function 'cmd_config' is never used.
+unusedFunction	builticount-objects.c	94	0	The function 'cmd_count_objects' is never used.
+unusedFunction	builticredential.c	9	0	The function 'cmd_credential' is never used.
+unusedFunction	builticredential-cache.c	128	0	The function 'cmd_credential_cache' is never used.
+unusedFunction	builticredential-cache--daemon.c	264	0	The function 'cmd_credential_cache_daemon' is never used.
+unusedFunction	builticredential-store.c	150	0	The function 'cmd_credential_store' is never used.
+unusedFunction	builtidiagnose.c	11	0	The function 'cmd_diagnose' is never used.
+unusedFunction	builtidiff.c	394	0	The function 'cmd_diff' is never used.
+unusedFunction	builtidiff-files.c	20	0	The function 'cmd_diff_files' is never used.
+unusedFunction	builtidiff-index.c	16	0	The function 'cmd_diff_index' is never used.
+unusedFunction	builtidiff-tree.c	108	0	The function 'cmd_diff_tree' is never used.
+unusedFunction	builtidifftool.c	687	0	The function 'cmd_difftool' is never used.
+unusedFunction	builtienv--helper.c	32	0	The function 'cmd_env__helper' is never used.
+unusedFunction	builtifast-export.c	1159	0	The function 'cmd_fast_export' is never used.
+unusedFunction	builtifast-import.c	3519	0	The function 'cmd_fast_import' is never used.
+unusedFunction	builtifetch.c	2109	0	The function 'cmd_fetch' is never used.
+unusedFunction	builtifetch-pack.c	43	0	The function 'cmd_fetch_pack' is never used.
+unusedFunction	builtifmt-merge-msg.c	11	0	The function 'cmd_fmt_merge_msg' is never used.
+unusedFunction	builtifor-each-ref.c	17	0	The function 'cmd_for_each_ref' is never used.
+unusedFunction	builtifor-each-repo.c	30	0	The function 'cmd_for_each_repo' is never used.
+unusedFunction	builtifsck.c	848	0	The function 'cmd_fsck' is never used.
+unusedFunction	builtifsmonitor--daemon.c	1575	0	The function 'cmd_fsmonitor__daemon' is never used.
+unusedFunction	builtigc.c	550	0	The function 'cmd_gc' is never used.
+unusedFunction	builtiget-tar-commit-id.c	17	0	The function 'cmd_get_tar_commit_id' is never used.
+unusedFunction	builtigrep.c	870	0	The function 'cmd_grep' is never used.
+unusedFunction	builtihash-object.c	80	0	The function 'cmd_hash_object' is never used.
+unusedFunction	builtihook.c	68	0	The function 'cmd_hook' is never used.
+unusedFunction	builtiindex-pack.c	1714	0	The function 'cmd_index_pack' is never used.
+unusedFunction	builtiinit-db.c	531	0	The function 'cmd_init_db' is never used.
+unusedFunction	builtiinterpret-trailers.c	91	0	The function 'cmd_interpret_trailers' is never used.
+unusedFunction	builtils-files.c	693	0	The function 'cmd_ls_files' is never used.
+unusedFunction	builtils-remote.c	38	0	The function 'cmd_ls_remote' is never used.
+unusedFunction	builtimailinfo.c	50	0	The function 'cmd_mailinfo' is never used.
+unusedFunction	builtimailsplit.c	272	0	The function 'cmd_mailsplit' is never used.
+unusedFunction	builtigc.c	2636	0	The function 'cmd_maintenance' is never used.
+unusedFunction	builtimerge-base.c	135	0	The function 'cmd_merge_base' is never used.
+unusedFunction	builtimerge-file.c	26	0	The function 'cmd_merge_file' is never used.
+unusedFunction	builtimerge-index.c	73	0	The function 'cmd_merge_index' is never used.
+unusedFunction	builtimerge-ours.c	17	0	The function 'cmd_merge_ours' is never used.
+unusedFunction	builtimerge-recursive.c	23	0	The function 'cmd_merge_recursive' is never used.
+unusedFunction	builtimerge-tree.c	485	0	The function 'cmd_merge_tree' is never used.
+unusedFunction	builtimktag.c	71	0	The function 'cmd_mktag' is never used.
+unusedFunction	builtimktree.c	150	0	The function 'cmd_mktree' is never used.
+unusedFunction	builtimulti-pack-index.c	258	0	The function 'cmd_multi_pack_index' is never used.
+unusedFunction	builtimv.c	159	0	The function 'cmd_mv' is never used.
+unusedFunction	builtiname-rev.c	567	0	The function 'cmd_name_rev' is never used.
+unusedFunction	builtinotes.c	995	0	The function 'cmd_notes' is never used.
+unusedFunction	builtipack-objects.c	4167	0	The function 'cmd_pack_objects' is never used.
+unusedFunction	builtipack-redundant.c	560	0	The function 'cmd_pack_redundant' is never used.
+unusedFunction	builtipack-refs.c	12	0	The function 'cmd_pack_refs' is never used.
+unusedFunction	builtipatch-id.c	213	0	The function 'cmd_patch_id' is never used.
+unusedFunction	builtiprune.c	141	0	The function 'cmd_prune' is never used.
+unusedFunction	builtiprune-packed.c	10	0	The function 'cmd_prune_packed' is never used.
+unusedFunction	builtipull.c	979	0	The function 'cmd_pull' is never used.
+unusedFunction	builtipush.c	576	0	The function 'cmd_push' is never used.
+unusedFunction	builtirange-diff.c	15	0	The function 'cmd_range_diff' is never used.
+unusedFunction	builtiread-tree.c	108	0	The function 'cmd_read_tree' is never used.
+unusedFunction	builtirebase.c	1022	0	The function 'cmd_rebase' is never used.
+unusedFunction	builtireceive-pack.c	2464	0	The function 'cmd_receive_pack' is never used.
+unusedFunction	builtireflog.c	411	0	The function 'cmd_reflog' is never used.
+unusedFunction	builtiremote-ext.c	196	0	The function 'cmd_remote_ext' is never used.
+unusedFunction	builtiremote-fd.c	56	0	The function 'cmd_remote_fd' is never used.
+unusedFunction	builtireplace.c	535	0	The function 'cmd_replace' is never used.
+unusedFunction	builtirerere.c	51	0	The function 'cmd_rerere' is never used.
+unusedFunction	builtireset.c	313	0	The function 'cmd_reset' is never used.
+unusedFunction	builticheckout.c	1921	0	The function 'cmd_restore' is never used.
+unusedFunction	builtirev-list.c	505	0	The function 'cmd_rev_list' is never used.
+unusedFunction	builtirev-parse.c	660	0	The function 'cmd_rev_parse' is never used.
+unusedFunction	builtirevert.c	240	0	The function 'cmd_revert' is never used.
+unusedFunction	builtirm.c	258	0	The function 'cmd_rm' is never used.
+unusedFunction	builtisend-pack.c	156	0	The function 'cmd_send_pack' is never used.
+unusedFunction	builtishortlog.c	376	0	The function 'cmd_shortlog' is never used.
+unusedFunction	builtishow-branch.c	622	0	The function 'cmd_show_branch' is never used.
+unusedFunction	builtishow-index.c	11	0	The function 'cmd_show_index' is never used.
+unusedFunction	builtishow-ref.c	179	0	The function 'cmd_show_ref' is never used.
+unusedFunction	builtisparse-checkout.c	925	0	The function 'cmd_sparse_checkout' is never used.
+unusedFunction	builtistash.c	1819	0	The function 'cmd_stash' is never used.
+unusedFunction	builticommit.c	1485	0	The function 'cmd_status' is never used.
+unusedFunction	builtistripspace.c	29	0	The function 'cmd_stripspace' is never used.
+unusedFunction	builticheckout.c	1879	0	The function 'cmd_switch' is never used.
+unusedFunction	builtisymbolic-ref.c	40	0	The function 'cmd_symbolic_ref' is never used.
+unusedFunction	builtitag.c	424	0	The function 'cmd_tag' is never used.
+unusedFunction	builtiunpack-file.c	25	0	The function 'cmd_unpack_file' is never used.
+unusedFunction	builtiunpack-objects.c	601	0	The function 'cmd_unpack_objects' is never used.
+unusedFunction	builtiupdate-index.c	983	0	The function 'cmd_update_index' is never used.
+unusedFunction	builtiupdate-ref.c	498	0	The function 'cmd_update_ref' is never used.
+unusedFunction	builtiupdate-server-info.c	11	0	The function 'cmd_update_server_info' is never used.
+unusedFunction	builtiupload-archive.c	78	0	The function 'cmd_upload_archive' is never used.
+unusedFunction	builtiupload-archive.c	20	0	The function 'cmd_upload_archive_writer' is never used.
+unusedFunction	builtiupload-pack.c	16	0	The function 'cmd_upload_pack' is never used.
+unusedFunction	builtivar.c	82	0	The function 'cmd_var' is never used.
+unusedFunction	builtiverify-commit.c	63	0	The function 'cmd_verify_commit' is never used.
+unusedFunction	builtiverify-pack.c	63	0	The function 'cmd_verify_pack' is never used.
+unusedFunction	builtiverify-tag.c	30	0	The function 'cmd_verify_tag' is never used.
+unusedFunction	builtiworktree.c	1173	0	The function 'cmd_worktree' is never used.
+unusedFunction	builtiwrite-tree.c	19	0	The function 'cmd_write_tree' is never used.
+unusedFunction	refiterator.c	410	0	The function 'do_for_each_repo_ref_iterator' is never used.
+unusedFunction	refiterator.c	72	0	The function 'empty_ref_iterator_begin' is never used.
+unusedFunction	companonblock.c	44	0	The function 'enable_pipe_nonblock' is never used.
+unusedFunction	ewaewah_bitmap.c	467	0	The function 'ewah_checksum' is never used.
+unusedFunction	ewaewah_bitmap.c	239	0	The function 'ewah_each_bit' is never used.
+unusedFunction	ewaewah_bitmap.c	452	0	The function 'ewah_pool_free' is never used.
+unusedFunction	ewaewah_bitmap.c	444	0	The function 'ewah_pool_new' is never used.
+unusedFunction	ewaewah_io.c	89	0	The function 'ewah_read_mmap' is never used.
+unusedFunction	ewaewah_io.c	84	0	The function 'ewah_serialize_strbuf' is never used.
+unusedFunction	ewaewah_bitmap.c	202	0	The function 'ewah_set' is never used.
+unusedFunction	ewabitmap.c	103	0	The function 'ewah_to_bitmap' is never used.
+unusedFunction	ewaewah_bitmap.c	376	0	The function 'ewah_xor' is never used.
+unusedFunction	compaterminal.c	427	0	The function 'git_terminal_prompt' is never used.
+unusedFunction	compasimple-ipc/ipc-unix-socket.c	221	0	The function 'ipc_client_send_command' is never used.
+unusedFunction	compasimple-ipc/ipc-unix-socket.c	17	0	The function 'ipc_get_active_state' is never used.
+unusedFunction	compasimple-ipc/ipc-unix-socket.c	968	0	The function 'ipc_server_await' is never used.
+unusedFunction	compasimple-ipc/ipc-unix-socket.c	991	0	The function 'ipc_server_free' is never used.
+unusedFunction	compasimple-ipc/ipc-unix-socket.c	826	0	The function 'ipc_server_run_async' is never used.
+unusedFunction	refdebug.c	14	0	The function 'maybe_debug_wrap_ref_store' is never used.
+unusedFunction	refiterator.c	260	0	The function 'overlay_ref_iterator_begin' is never used.
+unusedFunction	refiterator.c	386	0	The function 'prefix_ref_iterator_begin' is never used.
+unusedFunction	compaterminal.c	532	0	The function 'read_key_without_echo' is never used.
+unusedFunction	reftablerror.c	13	0	The function 'reftable_error_str' is never used.
+unusedFunction	reftablreader.c	798	0	The function 'reftable_reader_print_file' is never used.
+unusedFunction	reftablreader.c	741	0	The function 'reftable_reader_refs_for' is never used.
+unusedFunction	reftablreader.c	624	0	The function 'reftable_reader_seek_log' is never used.
+unusedFunction	reftablrecord.c	1159	0	The function 'reftable_record_equal' is never used.
+unusedFunction	reftablrecord.c	1310	0	The function 'reftable_record_print' is never used.
+unusedFunction	reftablpublicbasics.c	47	0	The function 'reftable_set_alloc' is never used.
+unusedFunction	reftablstack.c	415	0	The function 'reftable_stack_add' is never used.
+unusedFunction	reftablstack.c	1376	0	The function 'reftable_stack_clean' is never used.
+unusedFunction	reftablstack.c	1086	0	The function 'reftable_stack_compact_all' is never used.
+unusedFunction	reftablstack.c	1209	0	The function 'reftable_stack_compaction_stats' is never used.
+unusedFunction	reftablstack.c	1396	0	The function 'reftable_stack_print_directory' is never used.
+unusedFunction	reftablstack.c	1222	0	The function 'reftable_stack_read_log' is never used.
+unusedFunction	reftablstack.c	1214	0	The function 'reftable_stack_read_ref' is never used.
+unusedFunction	reftablwriter.c	365	0	The function 'reftable_writer_add_logs' is never used.
+unusedFunction	reftablwriter.c	296	0	The function 'reftable_writer_add_refs' is never used.
+unusedFunction	reftablwriter.c	704	0	The function 'reftable_writer_stats' is never used.
+unusedFunction	sha1dsha1.c	191	0	The function 'sha1_compression' is never used.
+unusedFunction	tracetr2_cfg.c	84	0	The function 'tr2_cfg_free_env_vars' is never used.
+unusedFunction	tracetr2_cfg.c	45	0	The function 'tr2_cfg_free_patterns' is never used.
+unusedFunction	tracetr2_cfg.c	117	0	The function 'tr2_cfg_list_config_fl' is never used.
+unusedFunction	tracetr2_cfg.c	140	0	The function 'tr2_cfg_set_fl' is never used.
+unusedFunction	tracetr2_cmd_name.c	8	0	The function 'tr2_cmd_name_append_hierarchy' is never used.
+unusedFunction	tracetr2_cmd_name.c	22	0	The function 'tr2_cmd_name_get_hierarchy' is never used.
+unusedFunction	tracetr2_cmd_name.c	27	0	The function 'tr2_cmd_name_release' is never used.
+unusedFunction	tracetr2_ctr.c	34	0	The function 'tr2_counter_increment' is never used.
+unusedFunction	tracetr2_ctr.c	87	0	The function 'tr2_emit_final_counters' is never used.
+unusedFunction	tracetr2_tmr.c	168	0	The function 'tr2_emit_final_timers' is never used.
+unusedFunction	tracetr2_ctr.c	67	0	The function 'tr2_emit_per_thread_counters' is never used.
+unusedFunction	tracetr2_tmr.c	148	0	The function 'tr2_emit_per_thread_timers' is never used.
+unusedFunction	tracetr2_cfg.c	125	0	The function 'tr2_list_env_vars_fl' is never used.
+unusedFunction	tracetr2_sid.c	109	0	The function 'tr2_sid_release' is never used.
+unusedFunction	tracetr2_tmr.c	37	0	The function 'tr2_start_timer' is never used.
+unusedFunction	tracetr2_tmr.c	49	0	The function 'tr2_stop_timer' is never used.
+unusedFunction	tracetr2_sysenv.c	85	0	The function 'tr2_sysenv_load' is never used.
+unusedFunction	tracetr2_sysenv.c	126	0	The function 'tr2_sysenv_release' is never used.
+unusedFunction	tracetr2_ctr.c	46	0	The function 'tr2_update_final_counters' is never used.
+unusedFunction	tracetr2_tmr.c	88	0	The function 'tr2_update_final_timers' is never used.
+unusedFunction	tracetr2_tls.c	145	0	The function 'tr2tls_absolute_elapsed' is never used.
+unusedFunction	tracetr2_tls.c	153	0	The function 'tr2tls_init' is never used.
+unusedFunction	tracetr2_tls.c	84	0	The function 'tr2tls_is_main_thread' is never used.
+unusedFunction	tracetr2_tls.c	185	0	The function 'tr2tls_lock' is never used.
+unusedFunction	tracetr2_tls.c	123	0	The function 'tr2tls_pop_unwind_self' is never used.
+unusedFunction	tracetr2_tls.c	105	0	The function 'tr2tls_push_self' is never used.
+unusedFunction	tracetr2_tls.c	131	0	The function 'tr2tls_region_elasped_self' is never used.
+unusedFunction	tracetr2_tls.c	164	0	The function 'tr2tls_release' is never used.
+unusedFunction	tracetr2_tls.c	190	0	The function 'tr2tls_unlock' is never used.
+unusedFunction	compalinux/procinfo.c	151	0	The function 'trace2_collect_process_info' is never used.
+unusedFunction	xdifxdiffi.c	1054	0	The function 'xdl_diff' is never used.

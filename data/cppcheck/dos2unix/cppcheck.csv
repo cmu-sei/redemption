@@ -1,0 +1,27 @@
+Checker,Path,Line,Column,Message,tool,checker,rule
+unreadVariable,common.c,1331,12,"Variable 'InF' is assigned a value that is never used.",cppcheck,unreadVariable,MSC13-C
+unreadVariable,common.c,1373,12,"Variable 'InF' is assigned a value that is never used.",cppcheck,unreadVariable,MSC13-C
+unreadVariable,common.c,2549,28,"Variable 'conversion_error' is assigned a value that is never used.",cppcheck,unreadVariable,MSC13-C
+uninitvar,common.c,117,19,"Uninitialized variable: lpMsgBuf",cppcheck,uninitvar,EXP33-C
+ConfigurationNotChecked,common.c,426,0,"Skipping configuration 'DEBUG;S_ISBLK' since the value of 'S_ISBLK' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.",cppcheck,ConfigurationNotChecked,NONE
+ConfigurationNotChecked,common.c,379,0,"Skipping configuration 'DEBUG;S_ISLNK' since the value of 'S_ISLNK' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.",cppcheck,ConfigurationNotChecked,NONE
+ConfigurationNotChecked,common.c,420,0,"Skipping configuration 'DEBUG;S_ISLNK' since the value of 'S_ISLNK' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.",cppcheck,ConfigurationNotChecked,NONE
+ConfigurationNotChecked,common.c,439,0,"Skipping configuration 'DEBUG;S_ISLNK' since the value of 'S_ISLNK' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.",cppcheck,ConfigurationNotChecked,NONE
+ConfigurationNotChecked,common.c,1045,0,"Skipping configuration 'DEBUG;S_ISLNK' since the value of 'S_ISLNK' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.",cppcheck,ConfigurationNotChecked,NONE
+ConfigurationNotChecked,common.c,416,0,"Skipping configuration 'DEBUG;S_ISSOCK' since the value of 'S_ISSOCK' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.",cppcheck,ConfigurationNotChecked,NONE
+nullPointerRedundantCheck,common.c,835,25,"Either the condition 'path==NULL' is redundant or there is possible null pointer dereference: path.",cppcheck,nullPointerRedundantCheck,EXP34-C
+nullPointerRedundantCheck,common.c,857,25,"Either the condition 'path==NULL' is redundant or there is possible null pointer dereference: path.",cppcheck,nullPointerRedundantCheck,EXP34-C
+ConfigurationNotChecked,common.c,379,0,"Skipping configuration 'S_ISLNK' since the value of 'S_ISLNK' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.",cppcheck,ConfigurationNotChecked,NONE
+ConfigurationNotChecked,common.c,439,0,"Skipping configuration 'S_ISLNK' since the value of 'S_ISLNK' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.",cppcheck,ConfigurationNotChecked,NONE
+ConfigurationNotChecked,common.c,1045,0,"Skipping configuration 'S_ISLNK' since the value of 'S_ISLNK' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.",cppcheck,ConfigurationNotChecked,NONE
+ConfigurationNotChecked,common.c,379,0,"Skipping configuration 'S_ISLNK;_WIN32;__CYGWIN__' since the value of 'S_ISLNK' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.",cppcheck,ConfigurationNotChecked,NONE
+ConfigurationNotChecked,common.c,439,0,"Skipping configuration 'S_ISLNK;_WIN32;__CYGWIN__' since the value of 'S_ISLNK' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.",cppcheck,ConfigurationNotChecked,NONE
+ConfigurationNotChecked,common.c,1045,0,"Skipping configuration 'S_ISLNK;_WIN32;__CYGWIN__' since the value of 'S_ISLNK' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.",cppcheck,ConfigurationNotChecked,NONE
+ConfigurationNotChecked,common.c,755,0,"Skipping configuration 'WINVER;_WIN32' since the value of 'WINVER' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.",cppcheck,ConfigurationNotChecked,NONE
+ConfigurationNotChecked,common.c,746,0,"Skipping configuration '_MSC_VER;_WIN32' since the value of '_MSC_VER' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.",cppcheck,ConfigurationNotChecked,NONE
+ConfigurationNotChecked,common.c,744,0,"Skipping configuration '_MSC_VER;_WIN64' since the value of '_MSC_VER' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.",cppcheck,ConfigurationNotChecked,NONE
+ConfigurationNotChecked,common.c,752,0,"Skipping configuration '__OS' since the value of '__OS' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.",cppcheck,ConfigurationNotChecked,NONE
+unreadVariable,dos2unix.c,509,19,"Variable '_dowildcard' is assigned a value that is never used.",cppcheck,unreadVariable,MSC13-C
+knownConditionTrueFalse,test/setlocale.c,35,8,"Condition '!utf8' is always true",cppcheck,knownConditionTrueFalse,MSC07-C
+variableScope,test/setlocale.c,25,7,"The scope of the variable 'prevmode' can be reduced.",cppcheck,variableScope,DCL19-C
+unreadVariable,unix2dos.c,482,19,"Variable '_dowildcard' is assigned a value that is never used.",cppcheck,unreadVariable,MSC13-C

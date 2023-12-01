@@ -1,0 +1,2049 @@
+{
+  "id": 1000,
+  "kind": "TranslationUnitDecl",
+  "loc": {},
+  "range": {
+    "begin": {},
+    "end": {}
+  },
+  "inner": [
+    {
+      "id": 1001,
+      "kind": "TypedefDecl",
+      "loc": {},
+      "range": {
+        "begin": {},
+        "end": {}
+      },
+      "isImplicit": true,
+      "name": "__int128_t",
+      "type": {
+        "qualType": "__int128"
+      },
+      "inner": [
+        {
+          "id": 1002,
+          "kind": "BuiltinType",
+          "type": {
+            "qualType": "__int128"
+          }
+        }
+      ]
+    },
+    {
+      "id": 1003,
+      "kind": "TypedefDecl",
+      "loc": {},
+      "range": {
+        "begin": {},
+        "end": {}
+      },
+      "isImplicit": true,
+      "name": "__uint128_t",
+      "type": {
+        "qualType": "unsigned __int128"
+      },
+      "inner": [
+        {
+          "id": 1004,
+          "kind": "BuiltinType",
+          "type": {
+            "qualType": "unsigned __int128"
+          }
+        }
+      ]
+    },
+    {
+      "id": 1005,
+      "kind": "TypedefDecl",
+      "loc": {},
+      "range": {
+        "begin": {},
+        "end": {}
+      },
+      "isImplicit": true,
+      "name": "__NSConstantString",
+      "type": {
+        "qualType": "struct __NSConstantString_tag"
+      },
+      "inner": [
+        {
+          "id": 1006,
+          "kind": "RecordType",
+          "type": {
+            "qualType": "struct __NSConstantString_tag"
+          },
+          "decl": {
+            "id": 1007,
+            "kind": "RecordDecl",
+            "name": "__NSConstantString_tag"
+          }
+        }
+      ]
+    },
+    {
+      "id": 1008,
+      "kind": "TypedefDecl",
+      "loc": {},
+      "range": {
+        "begin": {},
+        "end": {}
+      },
+      "isImplicit": true,
+      "name": "__builtin_ms_va_list",
+      "type": {
+        "qualType": "char *"
+      },
+      "inner": [
+        {
+          "id": 1009,
+          "kind": "PointerType",
+          "type": {
+            "qualType": "char *"
+          },
+          "inner": [
+            {
+              "id": 1010,
+              "kind": "BuiltinType",
+              "type": {
+                "qualType": "char"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1011,
+      "kind": "TypedefDecl",
+      "loc": {},
+      "range": {
+        "begin": {},
+        "end": {}
+      },
+      "isImplicit": true,
+      "name": "__builtin_va_list",
+      "type": {
+        "qualType": "struct __va_list_tag[1]"
+      },
+      "inner": [
+        {
+          "id": 1012,
+          "kind": "ConstantArrayType",
+          "type": {
+            "qualType": "struct __va_list_tag[1]"
+          },
+          "size": 1,
+          "inner": [
+            {
+              "id": 1013,
+              "kind": "RecordType",
+              "type": {
+                "qualType": "struct __va_list_tag"
+              },
+              "decl": {
+                "id": 1014,
+                "kind": "RecordDecl",
+                "name": "__va_list_tag"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1015,
+      "kind": "FunctionDecl",
+      "loc": {
+        "offset": 4,
+        "file": "preproc_parser_1.c",
+        "line": 1,
+        "col": 5,
+        "tokLen": 6
+      },
+      "range": {
+        "begin": {
+          "offset": 4,
+          "col": 5,
+          "tokLen": 6
+        },
+        "end": {
+          "offset": 4,
+          "col": 5,
+          "tokLen": 6
+        },
+        "file": "/host/code/acr/test/preproc_parser_1.c"
+      },
+      "isImplicit": true,
+      "isUsed": true,
+      "name": "printf",
+      "mangledName": "printf",
+      "type": {
+        "qualType": "int (const char *, ...)"
+      },
+      "storageClass": "extern",
+      "variadic": true,
+      "inner": [
+        {
+          "id": 1016,
+          "kind": "ParmVarDecl",
+          "loc": {},
+          "range": {
+            "begin": {},
+            "end": {}
+          },
+          "type": {
+            "qualType": "const char *"
+          }
+        },
+        {
+          "id": 1017,
+          "kind": "BuiltinAttr",
+          "range": {
+            "begin": {},
+            "end": {}
+          },
+          "implicit": true
+        },
+        {
+          "id": 1018,
+          "kind": "FormatAttr",
+          "range": {
+            "begin": {
+              "offset": 4,
+              "col": 5,
+              "tokLen": 6
+            },
+            "end": {
+              "offset": 4,
+              "col": 5,
+              "tokLen": 6
+            },
+            "file": "/host/code/acr/test/preproc_parser_1.c"
+          },
+          "implicit": true
+        }
+      ]
+    },
+    {
+      "id": 1019,
+      "kind": "FunctionDecl",
+      "loc": {
+        "offset": 4,
+        "col": 5,
+        "tokLen": 6
+      },
+      "range": {
+        "begin": {
+          "offset": 0,
+          "col": 1,
+          "tokLen": 3
+        },
+        "end": {
+          "offset": 34,
+          "col": 35,
+          "tokLen": 1
+        },
+        "file": "/host/code/acr/test/preproc_parser_1.c"
+      },
+      "isUsed": true,
+      "previousDecl": 1015,
+      "name": "printf",
+      "mangledName": "printf",
+      "type": {
+        "qualType": "int (const char *, ...)"
+      },
+      "variadic": true,
+      "inner": [
+        {
+          "id": 1020,
+          "kind": "ParmVarDecl",
+          "loc": {
+            "offset": 23,
+            "col": 24,
+            "tokLen": 6
+          },
+          "range": {
+            "begin": {
+              "offset": 11,
+              "col": 12,
+              "tokLen": 5
+            },
+            "end": {
+              "offset": 23,
+              "col": 24,
+              "tokLen": 6
+            },
+            "file": "/host/code/acr/test/preproc_parser_1.c"
+          },
+          "name": "format",
+          "type": {
+            "qualType": "const char *"
+          }
+        },
+        {
+          "id": 1021,
+          "kind": "BuiltinAttr",
+          "range": {
+            "begin": {},
+            "end": {}
+          },
+          "inherited": true,
+          "implicit": true
+        },
+        {
+          "id": 1022,
+          "kind": "FormatAttr",
+          "range": {
+            "begin": {
+              "offset": 4,
+              "col": 5,
+              "tokLen": 6
+            },
+            "end": {
+              "offset": 4,
+              "col": 5,
+              "tokLen": 6
+            },
+            "file": "/host/code/acr/test/preproc_parser_1.c"
+          },
+          "inherited": true
+        }
+      ]
+    },
+    {
+      "id": 1023,
+      "kind": "FunctionDecl",
+      "loc": {
+        "offset": 42,
+        "line": 3,
+        "col": 5,
+        "tokLen": 4
+      },
+      "range": {
+        "begin": {
+          "offset": 38,
+          "col": 1,
+          "tokLen": 3
+        },
+        "end": {
+          "offset": 652,
+          "line": 45,
+          "col": 1,
+          "tokLen": 1
+        },
+        "file": "/host/code/acr/test/preproc_parser_1.c"
+      },
+      "name": "main",
+      "mangledName": "main",
+      "type": {
+        "qualType": "int ()"
+      },
+      "inner": [
+        {
+          "id": 1024,
+          "kind": "CompoundStmt",
+          "range": {
+            "begin": {
+              "offset": 49,
+              "line": 3,
+              "col": 12,
+              "tokLen": 1
+            },
+            "end": {
+              "offset": 652,
+              "line": 45,
+              "col": 1,
+              "tokLen": 1
+            },
+            "file": "/host/code/acr/test/preproc_parser_1.c"
+          },
+          "inner": [
+            {
+              "id": 1025,
+              "kind": "DeclStmt",
+              "range": {
+                "begin": {
+                  "offset": 55,
+                  "line": 4,
+                  "col": 5,
+                  "tokLen": 3
+                },
+                "end": {
+                  "offset": 72,
+                  "col": 22,
+                  "tokLen": 1
+                },
+                "file": "/host/code/acr/test/preproc_parser_1.c"
+              },
+              "inner": [
+                {
+                  "id": 1026,
+                  "kind": "VarDecl",
+                  "loc": {
+                    "offset": 59,
+                    "col": 9,
+                    "tokLen": 1
+                  },
+                  "range": {
+                    "begin": {
+                      "offset": 55,
+                      "col": 5,
+                      "tokLen": 3
+                    },
+                    "end": {
+                      "offset": 61,
+                      "col": 11,
+                      "tokLen": 1
+                    },
+                    "file": "/host/code/acr/test/preproc_parser_1.c"
+                  },
+                  "isUsed": true,
+                  "name": "x",
+                  "type": {
+                    "qualType": "int"
+                  },
+                  "init": "c",
+                  "inner": [
+                    {
+                      "id": 1027,
+                      "kind": "IntegerLiteral",
+                      "range": {
+                        "begin": {
+                          "offset": 61,
+                          "col": 11,
+                          "tokLen": 1
+                        },
+                        "end": {
+                          "offset": 61,
+                          "col": 11,
+                          "tokLen": 1
+                        },
+                        "file": "/host/code/acr/test/preproc_parser_1.c"
+                      },
+                      "type": {
+                        "qualType": "int"
+                      },
+                      "valueCategory": "prvalue",
+                      "value": "0"
+                    }
+                  ]
+                },
+                {
+                  "id": 1028,
+                  "kind": "VarDecl",
+                  "loc": {
+                    "offset": 64,
+                    "col": 14,
+                    "tokLen": 1
+                  },
+                  "range": {
+                    "begin": {
+                      "offset": 55,
+                      "col": 5,
+                      "tokLen": 3
+                    },
+                    "end": {
+                      "offset": 66,
+                      "col": 16,
+                      "tokLen": 1
+                    },
+                    "file": "/host/code/acr/test/preproc_parser_1.c"
+                  },
+                  "isUsed": true,
+                  "name": "y",
+                  "type": {
+                    "qualType": "int"
+                  },
+                  "init": "c",
+                  "inner": [
+                    {
+                      "id": 1029,
+                      "kind": "IntegerLiteral",
+                      "range": {
+                        "begin": {
+                          "offset": 66,
+                          "col": 16,
+                          "tokLen": 1
+                        },
+                        "end": {
+                          "offset": 66,
+                          "col": 16,
+                          "tokLen": 1
+                        },
+                        "file": "/host/code/acr/test/preproc_parser_1.c"
+                      },
+                      "type": {
+                        "qualType": "int"
+                      },
+                      "valueCategory": "prvalue",
+                      "value": "0"
+                    }
+                  ]
+                },
+                {
+                  "id": 1030,
+                  "kind": "VarDecl",
+                  "loc": {
+                    "offset": 69,
+                    "col": 19,
+                    "tokLen": 1
+                  },
+                  "range": {
+                    "begin": {
+                      "offset": 55,
+                      "col": 5,
+                      "tokLen": 3
+                    },
+                    "end": {
+                      "offset": 71,
+                      "col": 21,
+                      "tokLen": 1
+                    },
+                    "file": "/host/code/acr/test/preproc_parser_1.c"
+                  },
+                  "isUsed": true,
+                  "name": "z",
+                  "type": {
+                    "qualType": "int"
+                  },
+                  "init": "c",
+                  "inner": [
+                    {
+                      "id": 1031,
+                      "kind": "IntegerLiteral",
+                      "range": {
+                        "begin": {
+                          "offset": 71,
+                          "col": 21,
+                          "tokLen": 1
+                        },
+                        "end": {
+                          "offset": 71,
+                          "col": 21,
+                          "tokLen": 1
+                        },
+                        "file": "/host/code/acr/test/preproc_parser_1.c"
+                      },
+                      "type": {
+                        "qualType": "int"
+                      },
+                      "valueCategory": "prvalue",
+                      "value": "0"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": 1032,
+              "kind": "DeclStmt",
+              "range": {
+                "begin": {
+                  "offset": 78,
+                  "line": 5,
+                  "col": 5,
+                  "tokLen": 3
+                },
+                "end": {
+                  "offset": 95,
+                  "col": 22,
+                  "tokLen": 1
+                },
+                "file": "/host/code/acr/test/preproc_parser_1.c"
+              },
+              "inner": [
+                {
+                  "id": 1033,
+                  "kind": "VarDecl",
+                  "loc": {
+                    "offset": 82,
+                    "col": 9,
+                    "tokLen": 1
+                  },
+                  "range": {
+                    "begin": {
+                      "offset": 78,
+                      "col": 5,
+                      "tokLen": 3
+                    },
+                    "end": {
+                      "offset": 84,
+                      "col": 11,
+                      "tokLen": 1
+                    },
+                    "file": "/host/code/acr/test/preproc_parser_1.c"
+                  },
+                  "isUsed": true,
+                  "name": "a",
+                  "type": {
+                    "qualType": "int"
+                  },
+                  "init": "c",
+                  "inner": [
+                    {
+                      "id": 1034,
+                      "kind": "IntegerLiteral",
+                      "range": {
+                        "begin": {
+                          "offset": 84,
+                          "col": 11,
+                          "tokLen": 1
+                        },
+                        "end": {
+                          "offset": 84,
+                          "col": 11,
+                          "tokLen": 1
+                        },
+                        "file": "/host/code/acr/test/preproc_parser_1.c"
+                      },
+                      "type": {
+                        "qualType": "int"
+                      },
+                      "valueCategory": "prvalue",
+                      "value": "1"
+                    }
+                  ]
+                },
+                {
+                  "id": 1035,
+                  "kind": "VarDecl",
+                  "loc": {
+                    "offset": 87,
+                    "col": 14,
+                    "tokLen": 1
+                  },
+                  "range": {
+                    "begin": {
+                      "offset": 78,
+                      "col": 5,
+                      "tokLen": 3
+                    },
+                    "end": {
+                      "offset": 89,
+                      "col": 16,
+                      "tokLen": 1
+                    },
+                    "file": "/host/code/acr/test/preproc_parser_1.c"
+                  },
+                  "name": "b",
+                  "type": {
+                    "qualType": "int"
+                  },
+                  "init": "c",
+                  "inner": [
+                    {
+                      "id": 1036,
+                      "kind": "IntegerLiteral",
+                      "range": {
+                        "begin": {
+                          "offset": 89,
+                          "col": 16,
+                          "tokLen": 1
+                        },
+                        "end": {
+                          "offset": 89,
+                          "col": 16,
+                          "tokLen": 1
+                        },
+                        "file": "/host/code/acr/test/preproc_parser_1.c"
+                      },
+                      "type": {
+                        "qualType": "int"
+                      },
+                      "valueCategory": "prvalue",
+                      "value": "2"
+                    }
+                  ]
+                },
+                {
+                  "id": 1037,
+                  "kind": "VarDecl",
+                  "loc": {
+                    "offset": 92,
+                    "col": 19,
+                    "tokLen": 1
+                  },
+                  "range": {
+                    "begin": {
+                      "offset": 78,
+                      "col": 5,
+                      "tokLen": 3
+                    },
+                    "end": {
+                      "offset": 94,
+                      "col": 21,
+                      "tokLen": 1
+                    },
+                    "file": "/host/code/acr/test/preproc_parser_1.c"
+                  },
+                  "isUsed": true,
+                  "name": "c",
+                  "type": {
+                    "qualType": "int"
+                  },
+                  "init": "c",
+                  "inner": [
+                    {
+                      "id": 1038,
+                      "kind": "IntegerLiteral",
+                      "range": {
+                        "begin": {
+                          "offset": 94,
+                          "col": 21,
+                          "tokLen": 1
+                        },
+                        "end": {
+                          "offset": 94,
+                          "col": 21,
+                          "tokLen": 1
+                        },
+                        "file": "/host/code/acr/test/preproc_parser_1.c"
+                      },
+                      "type": {
+                        "qualType": "int"
+                      },
+                      "valueCategory": "prvalue",
+                      "value": "3"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": 1039,
+              "kind": "ImplicitCastExpr",
+              "range": {
+                "begin": {
+                  "offset": 102,
+                  "line": 7,
+                  "col": 5,
+                  "tokLen": 38
+                },
+                "end": {
+                  "offset": 102,
+                  "col": 5,
+                  "tokLen": 38
+                },
+                "file": "/host/code/acr/test/preproc_parser_1.c"
+              },
+              "type": {
+                "qualType": "char *"
+              },
+              "valueCategory": "prvalue",
+              "castKind": "ArrayToPointerDecay",
+              "inner": [
+                {
+                  "id": 1040,
+                  "kind": "StringLiteral",
+                  "range": {
+                    "begin": {
+                      "offset": 102,
+                      "col": 5,
+                      "tokLen": 38
+                    },
+                    "end": {
+                      "offset": 102,
+                      "col": 5,
+                      "tokLen": 38
+                    },
+                    "file": "/host/code/acr/test/preproc_parser_1.c"
+                  },
+                  "type": {
+                    "qualType": "char[37]"
+                  },
+                  "valueCategory": "lvalue",
+                  "value": "\"Hello, I'm a string. \\342\\230\\205\\342\\230\\205\\342\\230\\205\\342\\230\\205\\342\\230\\205\""
+                }
+              ]
+            },
+            {
+              "id": 1041,
+              "kind": "ImplicitCastExpr",
+              "range": {
+                "begin": {
+                  "offset": 146,
+                  "line": 8,
+                  "col": 5,
+                  "tokLen": 19
+                },
+                "end": {
+                  "offset": 146,
+                  "col": 5,
+                  "tokLen": 19
+                },
+                "file": "/host/code/acr/test/preproc_parser_1.c"
+              },
+              "type": {
+                "qualType": "char *"
+              },
+              "valueCategory": "prvalue",
+              "castKind": "ArrayToPointerDecay",
+              "inner": [
+                {
+                  "id": 1042,
+                  "kind": "StringLiteral",
+                  "range": {
+                    "begin": {
+                      "offset": 146,
+                      "col": 5,
+                      "tokLen": 19
+                    },
+                    "end": {
+                      "offset": 146,
+                      "col": 5,
+                      "tokLen": 19
+                    },
+                    "file": "/host/code/acr/test/preproc_parser_1.c"
+                  },
+                  "type": {
+                    "qualType": "char[18]"
+                  },
+                  "valueCategory": "lvalue",
+                  "value": "\"#if FOO #then BAR\""
+                }
+              ]
+            },
+            {
+              "id": 1043,
+              "kind": "BinaryOperator",
+              "range": {
+                "begin": {
+                  "offset": 273,
+                  "line": 14,
+                  "col": 5,
+                  "tokLen": 1
+                },
+                "end": {
+                  "offset": 330,
+                  "line": 20,
+                  "col": 9,
+                  "tokLen": 1
+                },
+                "file": "/host/code/acr/test/preproc_parser_1.c"
+              },
+              "type": {
+                "qualType": "int"
+              },
+              "valueCategory": "prvalue",
+              "opcode": "=",
+              "inner": [
+                {
+                  "id": 1044,
+                  "kind": "DeclRefExpr",
+                  "range": {
+                    "begin": {
+                      "offset": 273,
+                      "line": 14,
+                      "col": 5,
+                      "tokLen": 1
+                    },
+                    "end": {
+                      "offset": 273,
+                      "col": 5,
+                      "tokLen": 1
+                    },
+                    "file": "/host/code/acr/test/preproc_parser_1.c"
+                  },
+                  "type": {
+                    "qualType": "int"
+                  },
+                  "valueCategory": "lvalue",
+                  "referencedDecl": {
+                    "id": "1026b",
+                    "kind": "VarDecl",
+                    "name": "x",
+                    "type": {
+                      "qualType": "int"
+                    },
+                    "prevId": 1026
+                  }
+                },
+                {
+                  "id": 1045,
+                  "kind": "BinaryOperator",
+                  "range": {
+                    "begin": {
+                      "offset": 282,
+                      "line": 15,
+                      "col": 5,
+                      "tokLen": 1
+                    },
+                    "end": {
+                      "offset": 330,
+                      "line": 20,
+                      "col": 9,
+                      "tokLen": 1
+                    },
+                    "file": "/host/code/acr/test/preproc_parser_1.c"
+                  },
+                  "type": {
+                    "qualType": "int"
+                  },
+                  "valueCategory": "prvalue",
+                  "opcode": "+",
+                  "inner": [
+                    {
+                      "id": 1046,
+                      "kind": "ImplicitCastExpr",
+                      "range": {
+                        "begin": {
+                          "offset": 282,
+                          "line": 15,
+                          "col": 5,
+                          "tokLen": 1
+                        },
+                        "end": {
+                          "offset": 326,
+                          "line": 20,
+                          "col": 5,
+                          "tokLen": 1
+                        },
+                        "file": "/host/code/acr/test/preproc_parser_1.c"
+                      },
+                      "type": {
+                        "qualType": "int"
+                      },
+                      "valueCategory": "prvalue",
+                      "castKind": "LValueToRValue",
+                      "inner": [
+                        {
+                          "id": 1047,
+                          "kind": "ParenExpr",
+                          "range": {
+                            "begin": {
+                              "offset": 282,
+                              "line": 15,
+                              "col": 5,
+                              "tokLen": 1
+                            },
+                            "end": {
+                              "offset": 326,
+                              "line": 20,
+                              "col": 5,
+                              "tokLen": 1
+                            },
+                            "file": "/host/code/acr/test/preproc_parser_1.c"
+                          },
+                          "type": {
+                            "qualType": "int"
+                          },
+                          "valueCategory": "lvalue",
+                          "inner": [
+                            {
+                              "id": 1048,
+                              "kind": "DeclRefExpr",
+                              "range": {
+                                "begin": {
+                                  "offset": 288,
+                                  "line": 16,
+                                  "col": 5,
+                                  "tokLen": 1
+                                },
+                                "end": {
+                                  "offset": 288,
+                                  "col": 5,
+                                  "tokLen": 1
+                                },
+                                "file": "/host/code/acr/test/preproc_parser_1.c"
+                              },
+                              "type": {
+                                "qualType": "int"
+                              },
+                              "valueCategory": "lvalue",
+                              "referencedDecl": {
+                                "id": "1033b",
+                                "kind": "VarDecl",
+                                "name": "a",
+                                "type": {
+                                  "qualType": "int"
+                                },
+                                "prevId": 1033
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "id": 1049,
+                      "kind": "ImplicitCastExpr",
+                      "range": {
+                        "begin": {
+                          "offset": 330,
+                          "line": 20,
+                          "col": 9,
+                          "tokLen": 1
+                        },
+                        "end": {
+                          "offset": 330,
+                          "col": 9,
+                          "tokLen": 1
+                        },
+                        "file": "/host/code/acr/test/preproc_parser_1.c"
+                      },
+                      "type": {
+                        "qualType": "int"
+                      },
+                      "valueCategory": "prvalue",
+                      "castKind": "LValueToRValue",
+                      "inner": [
+                        {
+                          "id": 1050,
+                          "kind": "DeclRefExpr",
+                          "range": {
+                            "begin": {
+                              "offset": 330,
+                              "col": 9,
+                              "tokLen": 1
+                            },
+                            "end": {
+                              "offset": 330,
+                              "col": 9,
+                              "tokLen": 1
+                            },
+                            "file": "/host/code/acr/test/preproc_parser_1.c"
+                          },
+                          "type": {
+                            "qualType": "int"
+                          },
+                          "valueCategory": "lvalue",
+                          "referencedDecl": {
+                            "id": "1037b",
+                            "kind": "VarDecl",
+                            "name": "c",
+                            "type": {
+                              "qualType": "int"
+                            },
+                            "prevId": 1037
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": 1051,
+              "kind": "CallExpr",
+              "range": {
+                "begin": {
+                  "offset": 338,
+                  "line": 22,
+                  "col": 5,
+                  "tokLen": 6
+                },
+                "end": {
+                  "offset": 358,
+                  "col": 25,
+                  "tokLen": 1
+                },
+                "file": "/host/code/acr/test/preproc_parser_1.c"
+              },
+              "type": {
+                "qualType": "int"
+              },
+              "valueCategory": "prvalue",
+              "inner": [
+                {
+                  "id": 1052,
+                  "kind": "ImplicitCastExpr",
+                  "range": {
+                    "begin": {
+                      "offset": 338,
+                      "col": 5,
+                      "tokLen": 6
+                    },
+                    "end": {
+                      "offset": 338,
+                      "col": 5,
+                      "tokLen": 6
+                    },
+                    "file": "/host/code/acr/test/preproc_parser_1.c"
+                  },
+                  "type": {
+                    "qualType": "int (*)(const char *, ...)"
+                  },
+                  "valueCategory": "prvalue",
+                  "castKind": "FunctionToPointerDecay",
+                  "inner": [
+                    {
+                      "id": 1053,
+                      "kind": "DeclRefExpr",
+                      "range": {
+                        "begin": {
+                          "offset": 338,
+                          "col": 5,
+                          "tokLen": 6
+                        },
+                        "end": {
+                          "offset": 338,
+                          "col": 5,
+                          "tokLen": 6
+                        },
+                        "file": "/host/code/acr/test/preproc_parser_1.c"
+                      },
+                      "type": {
+                        "qualType": "int (const char *, ...)"
+                      },
+                      "valueCategory": "prvalue",
+                      "referencedDecl": {
+                        "id": "1019b",
+                        "kind": "FunctionDecl",
+                        "name": "printf",
+                        "type": {
+                          "qualType": "int (const char *, ...)"
+                        },
+                        "prevId": 1019
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": 1054,
+                  "kind": "ImplicitCastExpr",
+                  "range": {
+                    "begin": {
+                      "offset": 345,
+                      "col": 12,
+                      "tokLen": 10
+                    },
+                    "end": {
+                      "offset": 345,
+                      "col": 12,
+                      "tokLen": 10
+                    },
+                    "file": "/host/code/acr/test/preproc_parser_1.c"
+                  },
+                  "type": {
+                    "qualType": "const char *"
+                  },
+                  "valueCategory": "prvalue",
+                  "castKind": "NoOp",
+                  "inner": [
+                    {
+                      "id": 1055,
+                      "kind": "ImplicitCastExpr",
+                      "range": {
+                        "begin": {
+                          "offset": 345,
+                          "col": 12,
+                          "tokLen": 10
+                        },
+                        "end": {
+                          "offset": 345,
+                          "col": 12,
+                          "tokLen": 10
+                        },
+                        "file": "/host/code/acr/test/preproc_parser_1.c"
+                      },
+                      "type": {
+                        "qualType": "char *"
+                      },
+                      "valueCategory": "prvalue",
+                      "castKind": "ArrayToPointerDecay",
+                      "inner": [
+                        {
+                          "id": 1056,
+                          "kind": "StringLiteral",
+                          "range": {
+                            "begin": {
+                              "offset": 345,
+                              "col": 12,
+                              "tokLen": 10
+                            },
+                            "end": {
+                              "offset": 345,
+                              "col": 12,
+                              "tokLen": 10
+                            },
+                            "file": "/host/code/acr/test/preproc_parser_1.c"
+                          },
+                          "type": {
+                            "qualType": "char[8]"
+                          },
+                          "valueCategory": "lvalue",
+                          "value": "\"x = %d\\n\""
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": 1057,
+                  "kind": "ImplicitCastExpr",
+                  "range": {
+                    "begin": {
+                      "offset": 357,
+                      "col": 24,
+                      "tokLen": 1
+                    },
+                    "end": {
+                      "offset": 357,
+                      "col": 24,
+                      "tokLen": 1
+                    },
+                    "file": "/host/code/acr/test/preproc_parser_1.c"
+                  },
+                  "type": {
+                    "qualType": "int"
+                  },
+                  "valueCategory": "prvalue",
+                  "castKind": "LValueToRValue",
+                  "inner": [
+                    {
+                      "id": 1058,
+                      "kind": "DeclRefExpr",
+                      "range": {
+                        "begin": {
+                          "offset": 357,
+                          "col": 24,
+                          "tokLen": 1
+                        },
+                        "end": {
+                          "offset": 357,
+                          "col": 24,
+                          "tokLen": 1
+                        },
+                        "file": "/host/code/acr/test/preproc_parser_1.c"
+                      },
+                      "type": {
+                        "qualType": "int"
+                      },
+                      "valueCategory": "lvalue",
+                      "referencedDecl": {
+                        "id": "1026b",
+                        "kind": "VarDecl",
+                        "name": "x",
+                        "type": {
+                          "qualType": "int"
+                        },
+                        "prevId": 1026
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": 1059,
+              "kind": "DeclStmt",
+              "range": {
+                "begin": {
+                  "offset": 428,
+                  "line": 26,
+                  "col": 5,
+                  "tokLen": 3
+                },
+                "end": {
+                  "offset": 439,
+                  "col": 16,
+                  "tokLen": 1
+                },
+                "file": "/host/code/acr/test/preproc_parser_1.c"
+              },
+              "inner": [
+                {
+                  "id": 1060,
+                  "kind": "VarDecl",
+                  "loc": {
+                    "offset": 433,
+                    "col": 10,
+                    "tokLen": 1
+                  },
+                  "range": {
+                    "begin": {
+                      "offset": 428,
+                      "col": 5,
+                      "tokLen": 3
+                    },
+                    "end": {
+                      "offset": 438,
+                      "col": 15,
+                      "tokLen": 1
+                    },
+                    "file": "/host/code/acr/test/preproc_parser_1.c"
+                  },
+                  "isUsed": true,
+                  "name": "e",
+                  "type": {
+                    "qualType": "int *"
+                  },
+                  "init": "c",
+                  "inner": [
+                    {
+                      "id": 1061,
+                      "kind": "UnaryOperator",
+                      "range": {
+                        "begin": {
+                          "offset": 437,
+                          "col": 14,
+                          "tokLen": 1
+                        },
+                        "end": {
+                          "offset": 438,
+                          "col": 15,
+                          "tokLen": 1
+                        },
+                        "file": "/host/code/acr/test/preproc_parser_1.c"
+                      },
+                      "type": {
+                        "qualType": "int *"
+                      },
+                      "valueCategory": "prvalue",
+                      "isPostfix": false,
+                      "opcode": "&",
+                      "canOverflow": false,
+                      "inner": [
+                        {
+                          "id": 1062,
+                          "kind": "DeclRefExpr",
+                          "range": {
+                            "begin": {
+                              "offset": 438,
+                              "col": 15,
+                              "tokLen": 1
+                            },
+                            "end": {
+                              "offset": 438,
+                              "col": 15,
+                              "tokLen": 1
+                            },
+                            "file": "/host/code/acr/test/preproc_parser_1.c"
+                          },
+                          "type": {
+                            "qualType": "int"
+                          },
+                          "valueCategory": "lvalue",
+                          "referencedDecl": {
+                            "id": "1037b",
+                            "kind": "VarDecl",
+                            "name": "c",
+                            "type": {
+                              "qualType": "int"
+                            },
+                            "prevId": 1037
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "id": 1063,
+                      "kind": "FullComment",
+                      "loc": {
+                        "offset": 369,
+                        "line": 24,
+                        "col": 8,
+                        "tokLen": 53
+                      },
+                      "range": {
+                        "begin": {
+                          "offset": 369,
+                          "col": 8,
+                          "tokLen": 53
+                        },
+                        "end": {
+                          "offset": 421,
+                          "col": 60,
+                          "tokLen": 1
+                        },
+                        "file": "/host/code/acr/test/preproc_parser_1.c"
+                      },
+                      "inner": [
+                        {
+                          "id": 1064,
+                          "kind": "ParagraphComment",
+                          "loc": {
+                            "offset": 369,
+                            "col": 8,
+                            "tokLen": 53
+                          },
+                          "range": {
+                            "begin": {
+                              "offset": 369,
+                              "col": 8,
+                              "tokLen": 53
+                            },
+                            "end": {
+                              "offset": 421,
+                              "col": 60,
+                              "tokLen": 1
+                            },
+                            "file": "/host/code/acr/test/preproc_parser_1.c"
+                          },
+                          "inner": [
+                            {
+                              "id": 1065,
+                              "kind": "TextComment",
+                              "loc": {
+                                "offset": 369,
+                                "col": 8,
+                                "tokLen": 53
+                              },
+                              "range": {
+                                "begin": {
+                                  "offset": 369,
+                                  "col": 8,
+                                  "tokLen": 53
+                                },
+                                "end": {
+                                  "offset": 421,
+                                  "col": 60,
+                                  "tokLen": 1
+                                },
+                                "file": "/host/code/acr/test/preproc_parser_1.c"
+                              },
+                              "text": "/////////////////////////////////////////////////////"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": 1066,
+              "kind": "BinaryOperator",
+              "range": {
+                "begin": {
+                  "offset": 446,
+                  "line": 28,
+                  "col": 5,
+                  "tokLen": 1
+                },
+                "end": {
+                  "offset": 533,
+                  "line": 38,
+                  "col": 9,
+                  "tokLen": 1
+                },
+                "file": "/host/code/acr/test/preproc_parser_1.c"
+              },
+              "type": {
+                "qualType": "int"
+              },
+              "valueCategory": "prvalue",
+              "opcode": "=",
+              "inner": [
+                {
+                  "id": 1067,
+                  "kind": "DeclRefExpr",
+                  "range": {
+                    "begin": {
+                      "offset": 446,
+                      "line": 28,
+                      "col": 5,
+                      "tokLen": 1
+                    },
+                    "end": {
+                      "offset": 446,
+                      "col": 5,
+                      "tokLen": 1
+                    },
+                    "file": "/host/code/acr/test/preproc_parser_1.c"
+                  },
+                  "type": {
+                    "qualType": "int"
+                  },
+                  "valueCategory": "lvalue",
+                  "referencedDecl": {
+                    "id": "1028b",
+                    "kind": "VarDecl",
+                    "name": "y",
+                    "type": {
+                      "qualType": "int"
+                    },
+                    "prevId": 1028
+                  }
+                },
+                {
+                  "id": 1068,
+                  "kind": "BinaryOperator",
+                  "range": {
+                    "begin": {
+                      "offset": 450,
+                      "col": 9,
+                      "tokLen": 1
+                    },
+                    "end": {
+                      "offset": 533,
+                      "line": 38,
+                      "col": 9,
+                      "tokLen": 1
+                    },
+                    "file": "/host/code/acr/test/preproc_parser_1.c"
+                  },
+                  "type": {
+                    "qualType": "int"
+                  },
+                  "valueCategory": "prvalue",
+                  "opcode": "+",
+                  "inner": [
+                    {
+                      "id": 1069,
+                      "kind": "ImplicitCastExpr",
+                      "range": {
+                        "begin": {
+                          "offset": 450,
+                          "line": 28,
+                          "col": 9,
+                          "tokLen": 1
+                        },
+                        "end": {
+                          "offset": 529,
+                          "line": 38,
+                          "col": 5,
+                          "tokLen": 1
+                        },
+                        "file": "/host/code/acr/test/preproc_parser_1.c"
+                      },
+                      "type": {
+                        "qualType": "int"
+                      },
+                      "valueCategory": "prvalue",
+                      "castKind": "LValueToRValue",
+                      "inner": [
+                        {
+                          "id": 1070,
+                          "kind": "ParenExpr",
+                          "range": {
+                            "begin": {
+                              "offset": 450,
+                              "line": 28,
+                              "col": 9,
+                              "tokLen": 1
+                            },
+                            "end": {
+                              "offset": 529,
+                              "line": 38,
+                              "col": 5,
+                              "tokLen": 1
+                            },
+                            "file": "/host/code/acr/test/preproc_parser_1.c"
+                          },
+                          "type": {
+                            "qualType": "int"
+                          },
+                          "valueCategory": "lvalue",
+                          "inner": [
+                            {
+                              "id": 1071,
+                              "kind": "UnaryOperator",
+                              "range": {
+                                "begin": {
+                                  "offset": 510,
+                                  "line": 36,
+                                  "col": 5,
+                                  "tokLen": 1
+                                },
+                                "end": {
+                                  "offset": 512,
+                                  "col": 7,
+                                  "tokLen": 1
+                                },
+                                "file": "/host/code/acr/test/preproc_parser_1.c"
+                              },
+                              "type": {
+                                "qualType": "int"
+                              },
+                              "valueCategory": "lvalue",
+                              "isPostfix": false,
+                              "opcode": "*",
+                              "canOverflow": false,
+                              "inner": [
+                                {
+                                  "id": 1072,
+                                  "kind": "ImplicitCastExpr",
+                                  "range": {
+                                    "begin": {
+                                      "offset": 512,
+                                      "col": 7,
+                                      "tokLen": 1
+                                    },
+                                    "end": {
+                                      "offset": 512,
+                                      "col": 7,
+                                      "tokLen": 1
+                                    },
+                                    "file": "/host/code/acr/test/preproc_parser_1.c"
+                                  },
+                                  "type": {
+                                    "qualType": "int *"
+                                  },
+                                  "valueCategory": "prvalue",
+                                  "castKind": "LValueToRValue",
+                                  "inner": [
+                                    {
+                                      "id": 1073,
+                                      "kind": "DeclRefExpr",
+                                      "range": {
+                                        "begin": {
+                                          "offset": 512,
+                                          "col": 7,
+                                          "tokLen": 1
+                                        },
+                                        "end": {
+                                          "offset": 512,
+                                          "col": 7,
+                                          "tokLen": 1
+                                        },
+                                        "file": "/host/code/acr/test/preproc_parser_1.c"
+                                      },
+                                      "type": {
+                                        "qualType": "int *"
+                                      },
+                                      "valueCategory": "lvalue",
+                                      "referencedDecl": {
+                                        "id": "1060b",
+                                        "kind": "VarDecl",
+                                        "name": "e",
+                                        "type": {
+                                          "qualType": "int *"
+                                        },
+                                        "prevId": 1060
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "id": 1074,
+                      "kind": "ImplicitCastExpr",
+                      "range": {
+                        "begin": {
+                          "offset": 533,
+                          "line": 38,
+                          "col": 9,
+                          "tokLen": 1
+                        },
+                        "end": {
+                          "offset": 533,
+                          "col": 9,
+                          "tokLen": 1
+                        },
+                        "file": "/host/code/acr/test/preproc_parser_1.c"
+                      },
+                      "type": {
+                        "qualType": "int"
+                      },
+                      "valueCategory": "prvalue",
+                      "castKind": "LValueToRValue",
+                      "inner": [
+                        {
+                          "id": 1075,
+                          "kind": "DeclRefExpr",
+                          "range": {
+                            "begin": {
+                              "offset": 533,
+                              "col": 9,
+                              "tokLen": 1
+                            },
+                            "end": {
+                              "offset": 533,
+                              "col": 9,
+                              "tokLen": 1
+                            },
+                            "file": "/host/code/acr/test/preproc_parser_1.c"
+                          },
+                          "type": {
+                            "qualType": "int"
+                          },
+                          "valueCategory": "lvalue",
+                          "referencedDecl": {
+                            "id": "1037b",
+                            "kind": "VarDecl",
+                            "name": "c",
+                            "type": {
+                              "qualType": "int"
+                            },
+                            "prevId": 1037
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": 1076,
+              "kind": "CallExpr",
+              "range": {
+                "begin": {
+                  "offset": 541,
+                  "line": 40,
+                  "col": 5,
+                  "tokLen": 6
+                },
+                "end": {
+                  "offset": 572,
+                  "col": 36,
+                  "tokLen": 1
+                },
+                "file": "/host/code/acr/test/preproc_parser_1.c"
+              },
+              "type": {
+                "qualType": "int"
+              },
+              "valueCategory": "prvalue",
+              "inner": [
+                {
+                  "id": 1077,
+                  "kind": "ImplicitCastExpr",
+                  "range": {
+                    "begin": {
+                      "offset": 541,
+                      "col": 5,
+                      "tokLen": 6
+                    },
+                    "end": {
+                      "offset": 541,
+                      "col": 5,
+                      "tokLen": 6
+                    },
+                    "file": "/host/code/acr/test/preproc_parser_1.c"
+                  },
+                  "type": {
+                    "qualType": "int (*)(const char *, ...)"
+                  },
+                  "valueCategory": "prvalue",
+                  "castKind": "FunctionToPointerDecay",
+                  "inner": [
+                    {
+                      "id": 1078,
+                      "kind": "DeclRefExpr",
+                      "range": {
+                        "begin": {
+                          "offset": 541,
+                          "col": 5,
+                          "tokLen": 6
+                        },
+                        "end": {
+                          "offset": 541,
+                          "col": 5,
+                          "tokLen": 6
+                        },
+                        "file": "/host/code/acr/test/preproc_parser_1.c"
+                      },
+                      "type": {
+                        "qualType": "int (const char *, ...)"
+                      },
+                      "valueCategory": "prvalue",
+                      "referencedDecl": {
+                        "id": "1019b",
+                        "kind": "FunctionDecl",
+                        "name": "printf",
+                        "type": {
+                          "qualType": "int (const char *, ...)"
+                        },
+                        "prevId": 1019
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": 1079,
+                  "kind": "ImplicitCastExpr",
+                  "range": {
+                    "begin": {
+                      "offset": 548,
+                      "col": 12,
+                      "tokLen": 18
+                    },
+                    "end": {
+                      "offset": 548,
+                      "col": 12,
+                      "tokLen": 18
+                    },
+                    "file": "/host/code/acr/test/preproc_parser_1.c"
+                  },
+                  "type": {
+                    "qualType": "const char *"
+                  },
+                  "valueCategory": "prvalue",
+                  "castKind": "NoOp",
+                  "inner": [
+                    {
+                      "id": 1080,
+                      "kind": "ImplicitCastExpr",
+                      "range": {
+                        "begin": {
+                          "offset": 548,
+                          "col": 12,
+                          "tokLen": 18
+                        },
+                        "end": {
+                          "offset": 548,
+                          "col": 12,
+                          "tokLen": 18
+                        },
+                        "file": "/host/code/acr/test/preproc_parser_1.c"
+                      },
+                      "type": {
+                        "qualType": "char *"
+                      },
+                      "valueCategory": "prvalue",
+                      "castKind": "ArrayToPointerDecay",
+                      "inner": [
+                        {
+                          "id": 1081,
+                          "kind": "StringLiteral",
+                          "range": {
+                            "begin": {
+                              "offset": 548,
+                              "col": 12,
+                              "tokLen": 18
+                            },
+                            "end": {
+                              "offset": 548,
+                              "col": 12,
+                              "tokLen": 18
+                            },
+                            "file": "/host/code/acr/test/preproc_parser_1.c"
+                          },
+                          "type": {
+                            "qualType": "char[16]"
+                          },
+                          "valueCategory": "lvalue",
+                          "value": "\"y = %d, z = %d\\n\""
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": 1082,
+                  "kind": "ImplicitCastExpr",
+                  "range": {
+                    "begin": {
+                      "offset": 568,
+                      "col": 32,
+                      "tokLen": 1
+                    },
+                    "end": {
+                      "offset": 568,
+                      "col": 32,
+                      "tokLen": 1
+                    },
+                    "file": "/host/code/acr/test/preproc_parser_1.c"
+                  },
+                  "type": {
+                    "qualType": "int"
+                  },
+                  "valueCategory": "prvalue",
+                  "castKind": "LValueToRValue",
+                  "inner": [
+                    {
+                      "id": 1083,
+                      "kind": "DeclRefExpr",
+                      "range": {
+                        "begin": {
+                          "offset": 568,
+                          "col": 32,
+                          "tokLen": 1
+                        },
+                        "end": {
+                          "offset": 568,
+                          "col": 32,
+                          "tokLen": 1
+                        },
+                        "file": "/host/code/acr/test/preproc_parser_1.c"
+                      },
+                      "type": {
+                        "qualType": "int"
+                      },
+                      "valueCategory": "lvalue",
+                      "referencedDecl": {
+                        "id": "1028b",
+                        "kind": "VarDecl",
+                        "name": "y",
+                        "type": {
+                          "qualType": "int"
+                        },
+                        "prevId": 1028
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": 1084,
+                  "kind": "ImplicitCastExpr",
+                  "range": {
+                    "begin": {
+                      "offset": 571,
+                      "col": 35,
+                      "tokLen": 1
+                    },
+                    "end": {
+                      "offset": 571,
+                      "col": 35,
+                      "tokLen": 1
+                    },
+                    "file": "/host/code/acr/test/preproc_parser_1.c"
+                  },
+                  "type": {
+                    "qualType": "int"
+                  },
+                  "valueCategory": "prvalue",
+                  "castKind": "LValueToRValue",
+                  "inner": [
+                    {
+                      "id": 1085,
+                      "kind": "DeclRefExpr",
+                      "range": {
+                        "begin": {
+                          "offset": 571,
+                          "col": 35,
+                          "tokLen": 1
+                        },
+                        "end": {
+                          "offset": 571,
+                          "col": 35,
+                          "tokLen": 1
+                        },
+                        "file": "/host/code/acr/test/preproc_parser_1.c"
+                      },
+                      "type": {
+                        "qualType": "int"
+                      },
+                      "valueCategory": "lvalue",
+                      "referencedDecl": {
+                        "id": "1030b",
+                        "kind": "VarDecl",
+                        "name": "z",
+                        "type": {
+                          "qualType": "int"
+                        },
+                        "prevId": 1030
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": 1086,
+              "kind": "ReturnStmt",
+              "range": {
+                "begin": {
+                  "offset": 642,
+                  "line": 44,
+                  "col": 5,
+                  "tokLen": 6
+                },
+                "end": {
+                  "offset": 649,
+                  "col": 12,
+                  "tokLen": 1
+                },
+                "file": "/host/code/acr/test/preproc_parser_1.c"
+              },
+              "inner": [
+                {
+                  "id": 1087,
+                  "kind": "IntegerLiteral",
+                  "range": {
+                    "begin": {
+                      "offset": 649,
+                      "col": 12,
+                      "tokLen": 1
+                    },
+                    "end": {
+                      "offset": 649,
+                      "col": 12,
+                      "tokLen": 1
+                    },
+                    "file": "/host/code/acr/test/preproc_parser_1.c"
+                  },
+                  "type": {
+                    "qualType": "int"
+                  },
+                  "valueCategory": "prvalue",
+                  "value": "0"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "base_dir": "/host/code/acr/test",
+  "compile_dir": "/host/code/acr/test",
+  "file": "/host/code/acr/test/preproc_parser_1.c",
+  "preproc_db": {
+    "/host/code/acr/test/preproc_parser_1.c": [
+      295,
+      315,
+      456,
+      500,
+      518
+    ]
+  },
+  "comments_db": {
+    "/host/code/acr/test/preproc_parser_1.c": [
+      [171, 184],
+      [189, 201],
+      [211, 267],
+      [366, 422],
+      [580, 636]
+    ]
+  },
+  "newlines_db": {
+    "/host/code/acr/test/preproc_parser_1.c": [
+      36,
+      37,
+      50,
+      73,
+      96,
+      97,
+      141,
+      166,
+      184,
+      201,
+      206,
+      267,
+      268,
+      277,
+      283,
+      290,
+      302,
+      310,
+      321,
+      332,
+      333,
+      360,
+      361,
+      422,
+      423,
+      440,
+      441,
+      451,
+      463,
+      472,
+      473,
+      482,
+      488,
+      495,
+      505,
+      513,
+      524,
+      535,
+      536,
+      574,
+      575,
+      636,
+      637,
+      651,
+      653
+    ]
+  }
+}

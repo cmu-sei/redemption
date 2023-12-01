@@ -1,0 +1,26 @@
+--- /host/data/test/out/git-compat-util.h	2023-09-14 21:20:27.500772088 +0000
++++ /oss/git/git-compat-util.h	2023-08-16 02:12:59.000000000 +0000
+@@ -1,5 +1,3 @@
+-#include "acr.h"
+-
+ #ifndef GIT_COMPAT_UTIL_H
+ #define GIT_COMPAT_UTIL_H
+ 
+@@ -1098,7 +1096,7 @@
+ static inline void copy_array(void *dst, const void *src, size_t n, size_t size)
+ {
+ 	if (n)
+-		memcpy(null_check(dst), src, st_mult(size, n));
++		memcpy(dst, src, st_mult(size, n));
+ }
+ 
+ #define MOVE_ARRAY(dst, src, n) move_array((dst), (src), (n), sizeof(*(dst)) + \
+@@ -1275,7 +1273,7 @@
+ 
+ 	errno = 0;
+ 	/* negative values would be accepted by strtoul */
+-	if (strchr(null_check(s, return -1), '-'))
++	if (strchr(s, '-'))
+ 		return -1;
+ 	ul = strtoul(s, &p, base);
+ 	if (errno || *p || p == s || (unsigned int) ul != ul)

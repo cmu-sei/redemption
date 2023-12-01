@@ -1,0 +1,11 @@
+[
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "header_null_ptr.c"
+        ],
+        "directory": "$TEST_DIR",
+        "file": "/host/code/acr/test/header_null_ptr.c"
+    }
+]

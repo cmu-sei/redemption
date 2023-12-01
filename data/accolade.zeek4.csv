@@ -1,0 +1,5 @@
+checkmarx,[01;31m[Kzeek4[m[K,7,MSC12-C,Detect and remove code that has no effect,"561, 1164"
+cppcheck,[01;31m[Kzeek4[m[K,3,MSC12-C,Detect and remove code that has no effect,"561, 1164"
+all (table),[01;31m[Kzeek4[m[K,2,MSC12-C,Detect and remove code that has no effect,"561, 1164"
+all (table),[01;31m[Kzeek4[m[K,3,MSC13-C,Detect and remove unused values,563
+checkmarx,[01;31m[Kzeek4[m[K,8,EXP12-C,Do not ignore values returned by functions,252

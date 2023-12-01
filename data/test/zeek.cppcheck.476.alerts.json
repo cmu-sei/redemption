@@ -1,0 +1,452 @@
+[
+  {
+    "rule": "476",
+    "file": "src/3rdparty/patricia.c",
+    "line": "379",
+    "column": "3",
+    "tool": "cppcheck",
+    "checker": "nullPointerRedundantCheck",
+    "message": "Either the condition 'patricia==NULL' is redundant or there is possible null pointer dereference: patricia."
+  },
+  {
+    "rule": "476",
+    "file": "src/3rdparty/patricia.c",
+    "line": "380",
+    "column": "3",
+    "tool": "cppcheck",
+    "checker": "nullPointerRedundantCheck",
+    "message": "Either the condition 'patricia==NULL' is redundant or there is possible null pointer dereference: patricia."
+  },
+  {
+    "rule": "476",
+    "file": "src/3rdparty/patricia.c",
+    "line": "381",
+    "column": "3",
+    "tool": "cppcheck",
+    "checker": "nullPointerRedundantCheck",
+    "message": "Either the condition 'patricia==NULL' is redundant or there is possible null pointer dereference: patricia."
+  },
+  {
+    "rule": "476",
+    "file": "src/3rdparty/patricia.c",
+    "line": "568",
+    "column": "10",
+    "tool": "cppcheck",
+    "checker": "nullPointerRedundantCheck",
+    "message": "Either the condition 'node' is redundant or there is possible null pointer dereference: node."
+  },
+  {
+    "rule": "476",
+    "file": "src/3rdparty/patricia.c",
+    "line": "665",
+    "column": "10",
+    "tool": "cppcheck",
+    "checker": "nullPointerRedundantCheck",
+    "message": "Either the condition 'node' is redundant or there is possible null pointer dereference: node."
+  },
+  {
+    "rule": "476",
+    "file": "src/3rdparty/patricia.c",
+    "line": "755",
+    "column": "5",
+    "tool": "cppcheck",
+    "checker": "nullPointerRedundantCheck",
+    "message": "Either the condition 'node==NULL' is redundant or there is possible null pointer dereference: node."
+  },
+  {
+    "rule": "476",
+    "file": "src/3rdparty/patricia.c",
+    "line": "756",
+    "column": "5",
+    "tool": "cppcheck",
+    "checker": "nullPointerRedundantCheck",
+    "message": "Either the condition 'node==NULL' is redundant or there is possible null pointer dereference: node."
+  },
+  {
+    "rule": "476",
+    "file": "src/3rdparty/patricia.c",
+    "line": "757",
+    "column": "5",
+    "tool": "cppcheck",
+    "checker": "nullPointerRedundantCheck",
+    "message": "Either the condition 'node==NULL' is redundant or there is possible null pointer dereference: node."
+  },
+  {
+    "rule": "476",
+    "file": "src/3rdparty/patricia.c",
+    "line": "758",
+    "column": "5",
+    "tool": "cppcheck",
+    "checker": "nullPointerRedundantCheck",
+    "message": "Either the condition 'node==NULL' is redundant or there is possible null pointer dereference: node."
+  },
+  {
+    "rule": "476",
+    "file": "src/3rdparty/patricia.c",
+    "line": "759",
+    "column": "5",
+    "tool": "cppcheck",
+    "checker": "nullPointerRedundantCheck",
+    "message": "Either the condition 'node==NULL' is redundant or there is possible null pointer dereference: node."
+  },
+  {
+    "rule": "476",
+    "file": "src/3rdparty/patricia.c",
+    "line": "867",
+    "column": "3",
+    "tool": "cppcheck",
+    "checker": "nullPointerRedundantCheck",
+    "message": "Either the condition 'new_node==NULL' is redundant or there is possible null pointer dereference: new_node."
+  },
+  {
+    "rule": "476",
+    "file": "src/3rdparty/patricia.c",
+    "line": "868",
+    "column": "3",
+    "tool": "cppcheck",
+    "checker": "nullPointerRedundantCheck",
+    "message": "Either the condition 'new_node==NULL' is redundant or there is possible null pointer dereference: new_node."
+  },
+  {
+    "rule": "476",
+    "file": "src/3rdparty/patricia.c",
+    "line": "869",
+    "column": "3",
+    "tool": "cppcheck",
+    "checker": "nullPointerRedundantCheck",
+    "message": "Either the condition 'new_node==NULL' is redundant or there is possible null pointer dereference: new_node."
+  },
+  {
+    "rule": "476",
+    "file": "src/3rdparty/patricia.c",
+    "line": "870",
+    "column": "3",
+    "tool": "cppcheck",
+    "checker": "nullPointerRedundantCheck",
+    "message": "Either the condition 'new_node==NULL' is redundant or there is possible null pointer dereference: new_node."
+  },
+  {
+    "rule": "476",
+    "file": "src/3rdparty/patricia.c",
+    "line": "871",
+    "column": "3",
+    "tool": "cppcheck",
+    "checker": "nullPointerRedundantCheck",
+    "message": "Either the condition 'new_node==NULL' is redundant or there is possible null pointer dereference: new_node."
+  },
+  {
+    "rule": "476",
+    "file": "src/3rdparty/patricia.c",
+    "line": "916",
+    "column": "5",
+    "tool": "cppcheck",
+    "checker": "nullPointerRedundantCheck",
+    "message": "Either the condition 'glue==NULL' is redundant or there is possible null pointer dereference: glue."
+  },
+  {
+    "rule": "476",
+    "file": "src/3rdparty/patricia.c",
+    "line": "917",
+    "column": "5",
+    "tool": "cppcheck",
+    "checker": "nullPointerRedundantCheck",
+    "message": "Either the condition 'glue==NULL' is redundant or there is possible null pointer dereference: glue."
+  },
+  {
+    "rule": "476",
+    "file": "src/3rdparty/patricia.c",
+    "line": "918",
+    "column": "5",
+    "tool": "cppcheck",
+    "checker": "nullPointerRedundantCheck",
+    "message": "Either the condition 'glue==NULL' is redundant or there is possible null pointer dereference: glue."
+  },
+  {
+    "rule": "476",
+    "file": "src/3rdparty/patricia.c",
+    "line": "919",
+    "column": "5",
+    "tool": "cppcheck",
+    "checker": "nullPointerRedundantCheck",
+    "message": "Either the condition 'glue==NULL' is redundant or there is possible null pointer dereference: glue."
+  },
+  {
+    "rule": "476",
+    "file": "auxil/broker/3rdparty/sqlite3.c",
+    "line": "71844",
+    "column": "3",
+    "tool": "cppcheck",
+    "checker": "nullPointerRedundantCheck",
+    "message": "Either the condition 'pIdxKey' is redundant or there is possible null pointer dereference: pIdxKey."
+  },
+  {
+    "rule": "476",
+    "file": "auxil/broker/3rdparty/sqlite3.c",
+    "line": "71845",
+    "column": "11",
+    "tool": "cppcheck",
+    "checker": "nullPointerRedundantCheck",
+    "message": "Either the condition 'pIdxKey' is redundant or there is possible null pointer dereference: pIdxKey."
+  },
+  {
+    "rule": "476",
+    "file": "auxil/broker/3rdparty/sqlite3.c",
+    "line": "84675",
+    "column": "7",
+    "tool": "cppcheck",
+    "checker": "nullPointerRedundantCheck",
+    "message": "Either the condition 'pIdxKey' is redundant or there is possible null pointer dereference: p."
+  },
+  {
+    "rule": "476",
+    "file": "auxil/broker/3rdparty/sqlite3.c",
+    "line": "134032",
+    "column": "4",
+    "tool": "cppcheck",
+    "checker": "nullPointerRedundantCheck",
+    "message": "Either the condition 'ppStmt==0' is redundant or there is possible null pointer dereference: ppStmt."
+  },
+  {
+    "rule": "476",
+    "file": "auxil/broker/3rdparty/sqlite3.c",
+    "line": "134180",
+    "column": "4",
+    "tool": "cppcheck",
+    "checker": "nullPointerRedundantCheck",
+    "message": "Either the condition 'ppStmt==0' is redundant or there is possible null pointer dereference: ppStmt."
+  },
+  {
+    "rule": "476",
+    "file": "auxil/broker/3rdparty/sqlite3.c",
+    "line": "136375",
+    "column": "11",
+    "tool": "cppcheck",
+    "checker": "nullPointerRedundantCheck",
+    "message": "Either the condition 'pColExpr!=0' is redundant or there is possible null pointer dereference: pColExpr."
+  },
+  {
+    "rule": "476",
+    "file": "auxil/broker/3rdparty/sqlite3.c",
+    "line": "137928",
+    "column": "27",
+    "tool": "cppcheck",
+    "checker": "nullPointerRedundantCheck",
+    "message": "Either the condition 'pSubst->pEList!=0' is redundant or there is possible null pointer dereference: pSubst->pEList."
+  },
+  {
+    "rule": "476",
+    "file": "auxil/broker/3rdparty/sqlite3.c",
+    "line": "173057",
+    "column": "10",
+    "tool": "cppcheck",
+    "checker": "nullPointerRedundantCheck",
+    "message": "Either the condition 'zFilename' is redundant or there is possible null pointer dereference: zFilename."
+  },
+  {
+    "rule": "476",
+    "file": "auxil/broker/3rdparty/sqlite3.c",
+    "line": "120197",
+    "column": "12",
+    "tool": "cppcheck",
+    "checker": "nullPointer",
+    "message": "Null pointer dereference: (struct VTable*)0"
+  },
+  {
+    "rule": "476",
+    "file": "auxil/broker/3rdparty/sqlite3.c",
+    "line": "100154",
+    "column": "10",
+    "tool": "cppcheck",
+    "checker": "nullPointer",
+    "message": "Possible null pointer dereference: p"
+  },
+  {
+    "rule": "476",
+    "file": "auxil/broker/3rdparty/sqlite3.c",
+    "line": "142743",
+    "column": "14",
+    "tool": "cppcheck",
+    "checker": "nullPointer",
+    "message": "Possible null pointer dereference: pEList"
+  },
+  {
+    "rule": "476",
+    "file": "auxil/broker/3rdparty/sqlite3.c",
+    "line": "134032",
+    "column": "4",
+    "tool": "cppcheck",
+    "checker": "nullPointerRedundantCheck",
+    "message": "Either the condition 'ppStmt==0' is redundant or there is possible null pointer dereference: ppStmt."
+  },
+  {
+    "rule": "476",
+    "file": "/datasets/zeek/build/auxil/binpac/pac_scan.cc",
+    "line": "2142",
+    "column": "2",
+    "tool": "cppcheck",
+    "checker": "nullPointer",
+    "message": "Possible null pointer dereference: b"
+  },
+  {
+    "rule": "476",
+    "file": "/datasets/zeek/build/auxil/binpac/pac_scan.cc",
+    "line": "2143",
+    "column": "2",
+    "tool": "cppcheck",
+    "checker": "nullPointer",
+    "message": "Possible null pointer dereference: b"
+  },
+  {
+    "rule": "476",
+    "file": "src/3rdparty/sqlite3.c",
+    "line": "71844",
+    "column": "3",
+    "tool": "cppcheck",
+    "checker": "nullPointerRedundantCheck",
+    "message": "Either the condition 'pIdxKey' is redundant or there is possible null pointer dereference: pIdxKey."
+  },
+  {
+    "rule": "476",
+    "file": "src/3rdparty/sqlite3.c",
+    "line": "71845",
+    "column": "11",
+    "tool": "cppcheck",
+    "checker": "nullPointerRedundantCheck",
+    "message": "Either the condition 'pIdxKey' is redundant or there is possible null pointer dereference: pIdxKey."
+  },
+  {
+    "rule": "476",
+    "file": "src/3rdparty/sqlite3.c",
+    "line": "84675",
+    "column": "7",
+    "tool": "cppcheck",
+    "checker": "nullPointerRedundantCheck",
+    "message": "Either the condition 'pIdxKey' is redundant or there is possible null pointer dereference: p."
+  },
+  {
+    "rule": "476",
+    "file": "src/3rdparty/sqlite3.c",
+    "line": "134032",
+    "column": "4",
+    "tool": "cppcheck",
+    "checker": "nullPointerRedundantCheck",
+    "message": "Either the condition 'ppStmt==0' is redundant or there is possible null pointer dereference: ppStmt."
+  },
+  {
+    "rule": "476",
+    "file": "src/3rdparty/sqlite3.c",
+    "line": "134180",
+    "column": "4",
+    "tool": "cppcheck",
+    "checker": "nullPointerRedundantCheck",
+    "message": "Either the condition 'ppStmt==0' is redundant or there is possible null pointer dereference: ppStmt."
+  },
+  {
+    "rule": "476",
+    "file": "src/3rdparty/sqlite3.c",
+    "line": "136375",
+    "column": "11",
+    "tool": "cppcheck",
+    "checker": "nullPointerRedundantCheck",
+    "message": "Either the condition 'pColExpr!=0' is redundant or there is possible null pointer dereference: pColExpr."
+  },
+  {
+    "rule": "476",
+    "file": "src/3rdparty/sqlite3.c",
+    "line": "137928",
+    "column": "27",
+    "tool": "cppcheck",
+    "checker": "nullPointerRedundantCheck",
+    "message": "Either the condition 'pSubst->pEList!=0' is redundant or there is possible null pointer dereference: pSubst->pEList."
+  },
+  {
+    "rule": "476",
+    "file": "src/3rdparty/sqlite3.c",
+    "line": "173057",
+    "column": "10",
+    "tool": "cppcheck",
+    "checker": "nullPointerRedundantCheck",
+    "message": "Either the condition 'zFilename' is redundant or there is possible null pointer dereference: zFilename."
+  },
+  {
+    "rule": "476",
+    "file": "src/3rdparty/sqlite3.c",
+    "line": "120197",
+    "column": "12",
+    "tool": "cppcheck",
+    "checker": "nullPointer",
+    "message": "Null pointer dereference: (struct VTable*)0"
+  },
+  {
+    "rule": "476",
+    "file": "src/zeek/Dict.h",
+    "line": "885",
+    "column": "4",
+    "tool": "cppcheck",
+    "checker": "nullPointerDefaultArg",
+    "message": "Possible null pointer dereference if the default parameter value is used: distances"
+  },
+  {
+    "rule": "476",
+    "file": "auxil/zeekctl/auxil/pysubnettree/patricia.c",
+    "line": "589",
+    "column": "12",
+    "tool": "cppcheck",
+    "checker": "nullPointerRedundantCheck",
+    "message": "Either the condition 'node' is redundant or there is possible null pointer dereference: node."
+  },
+  {
+    "rule": "476",
+    "file": "/datasets/zeek/build/auxil/bifcl/bif_lex.cc",
+    "line": "1668",
+    "column": "2",
+    "tool": "cppcheck",
+    "checker": "nullPointer",
+    "message": "Possible null pointer dereference: b"
+  },
+  {
+    "rule": "476",
+    "file": "/datasets/zeek/build/auxil/bifcl/bif_lex.cc",
+    "line": "1669",
+    "column": "2",
+    "tool": "cppcheck",
+    "checker": "nullPointer",
+    "message": "Possible null pointer dereference: b"
+  },
+  {
+    "rule": "476",
+    "file": "/datasets/zeek/build/src/re-scan.cc",
+    "line": "2169",
+    "column": "2",
+    "tool": "cppcheck",
+    "checker": "nullPointer",
+    "message": "Possible null pointer dereference: b"
+  },
+  {
+    "rule": "476",
+    "file": "/datasets/zeek/build/src/re-scan.cc",
+    "line": "2170",
+    "column": "2",
+    "tool": "cppcheck",
+    "checker": "nullPointer",
+    "message": "Possible null pointer dereference: b"
+  },
+  {
+    "rule": "476",
+    "file": "auxil/spicy/spicy/3rdparty/justrx/src/tests/testregex.c",
+    "line": "734",
+    "column": "31",
+    "tool": "cppcheck",
+    "checker": "nullPointerRedundantCheck",
+    "message": "Either the condition 'e' is redundant or there is possible null pointer dereference: ++s."
+  },
+  {
+    "rule": "476",
+    "file": "auxil/broker/caf/libcaf_io/src/io/network/interfaces.cpp",
+    "line": "105",
+    "column": "47",
+    "tool": "cppcheck",
+    "checker": "nullPointer",
+    "message": "Null pointer dereference"
+  }
+]

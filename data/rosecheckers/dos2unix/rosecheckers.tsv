@@ -1,0 +1,171 @@
+Checker	Path	Line	Column	Message
+FIO30-C	dos2unix.c	79	3	Exclude user input from format strings
+FIO30-C	dos2unix.c	212	15	Exclude user input from format strings
+FIO30-C	dos2unix.c	249	15	Exclude user input from format strings
+FIO30-C	dos2unix.c	313	7	Exclude user input from format strings
+FIO30-C	dos2unix.c	371	8	Exclude user input from format strings
+FIO30-C	dos2unix.c	395	15	Exclude user input from format strings
+ARR30-C	dos2unix.c	402	32	Do not form or use out-of-bounds pointers or array subscripts
+FIO30-C	dos2unix.c	432	15	Exclude user input from format strings
+ARR30-C	dos2unix.c	439	33	Do not form or use out-of-bounds pointers or array subscripts
+FIO30-C	dos2unix.c	494	7	Exclude user input from format strings
+INT07-C	dos2unix.c	518	15	Use only explicitly signed or unsigned char type for numeric values
+STR31-C	dos2unix.c	519	3	String copy destination must contain sufficient storage
+ENV30-C	dos2unix.c	522	10	Do not modify the string returned by getenv()
+EXP12-C	dos2unix.c	531	10	Do not ignore values returned by functions: d2u_strncpy
+EXP12-C	dos2unix.c	545	4	Do not ignore values returned by functions: setlocale
+EXP12-C	dos2unix.c	550	4	Do not ignore values returned by functions: bindtextdomain
+EXP12-C	dos2unix.c	551	4	Do not ignore values returned by functions: textdomain
+EXP30-C	dos2unix.c	565	8	Do not depend on order of evaluation for side effects
+STR31-C	dos2unix.c	572	5	String copy destination must contain sufficient storage
+INT07-C	common.c	65	23	Use only explicitly signed or unsigned char type for numeric values
+INT01-C	common.c	65	19	Use rsize_t or size_t for all integer values representing the size of an object
+INT01-C	common.c	67	32	Use rsize_t or size_t for all integer values representing the size of an object
+FIO30-C	common.c	81	9	Exclude user input from format strings
+FIO30-C	common.c	83	9	Exclude user input from format strings
+FIO30-C	common.c	648	3	Exclude user input from format strings
+FIO30-C	common.c	650	3	Exclude user input from format strings
+FIO30-C	common.c	652	3	Exclude user input from format strings
+FIO30-C	common.c	653	3	Exclude user input from format strings
+FIO30-C	common.c	654	3	Exclude user input from format strings
+FIO30-C	common.c	655	3	Exclude user input from format strings
+FIO30-C	common.c	656	3	Exclude user input from format strings
+FIO30-C	common.c	657	3	Exclude user input from format strings
+FIO30-C	common.c	658	3	Exclude user input from format strings
+FIO30-C	common.c	659	3	Exclude user input from format strings
+FIO30-C	common.c	660	3	Exclude user input from format strings
+FIO30-C	common.c	662	5	Exclude user input from format strings
+FIO30-C	common.c	664	5	Exclude user input from format strings
+FIO30-C	common.c	665	3	Exclude user input from format strings
+FIO30-C	common.c	671	3	Exclude user input from format strings
+FIO30-C	common.c	677	3	Exclude user input from format strings
+FIO30-C	common.c	678	3	Exclude user input from format strings
+FIO30-C	common.c	680	3	Exclude user input from format strings
+FIO30-C	common.c	681	3	Exclude user input from format strings
+FIO30-C	common.c	682	3	Exclude user input from format strings
+FIO30-C	common.c	683	3	Exclude user input from format strings
+FIO30-C	common.c	684	3	Exclude user input from format strings
+FIO30-C	common.c	688	3	Exclude user input from format strings
+FIO30-C	common.c	690	3	Exclude user input from format strings
+FIO30-C	common.c	692	3	Exclude user input from format strings
+FIO30-C	common.c	694	5	Exclude user input from format strings
+FIO30-C	common.c	696	5	Exclude user input from format strings
+FIO30-C	common.c	697	3	Exclude user input from format strings
+FIO30-C	common.c	699	3	Exclude user input from format strings
+FIO30-C	common.c	700	3	Exclude user input from format strings
+FIO30-C	common.c	701	3	Exclude user input from format strings
+FIO30-C	common.c	703	3	Exclude user input from format strings
+FIO30-C	common.c	705	3	Exclude user input from format strings
+FIO30-C	common.c	708	3	Exclude user input from format strings
+FIO30-C	common.c	710	3	Exclude user input from format strings
+FIO30-C	common.c	712	3	Exclude user input from format strings
+MEM34-C	common.c	1006	8	Only free memory allocated dynamically
+FIO13-C	common.c	1136	14	Never push back anything other than one read character
+FIO13-C	common.c	1153	14	Never push back anything other than one read character
+FIO13-C	common.c	1154	14	Never push back anything other than one read character
+FIO13-C	common.c	1174	11	Never push back anything other than one read character
+FIO13-C	common.c	1175	11	Never push back anything other than one read character
+FIO30-C	common.c	1197	11	Exclude user input from format strings
+FIO30-C	common.c	1204	11	Exclude user input from format strings
+FIO30-C	common.c	1211	11	Exclude user input from format strings
+FIO30-C	common.c	1218	11	Exclude user input from format strings
+FIO30-C	common.c	1230	11	Exclude user input from format strings
+FIO30-C	common.c	1237	11	Exclude user input from format strings
+EXP12-C	common.c	1250	7	Do not ignore values returned by functions: d2u_strncpy
+EXP12-C	common.c	1253	7	Do not ignore values returned by functions: d2u_strncpy
+EXP12-C	common.c	1256	7	Do not ignore values returned by functions: d2u_strncpy
+EXP12-C	common.c	1259	7	Do not ignore values returned by functions: d2u_strncpy
+INT07-C	common.c	1269	34	Use only explicitly signed or unsigned char type for numeric values
+INT01-C	common.c	1269	30	Use rsize_t or size_t for all integer values representing the size of an object
+FIO30-C	common.c	1282	5	Exclude user input from format strings
+FIO30-C	common.c	1323	7	Exclude user input from format strings
+FIO30-C	common.c	1327	7	Exclude user input from format strings
+INT01-C	common.c	1345	25	Use rsize_t or size_t for all integer values representing the size of an object
+FIO30-C	common.c	1365	7	Exclude user input from format strings
+FIO30-C	common.c	1369	7	Exclude user input from format strings
+INT01-C	common.c	1398	25	Use rsize_t or size_t for all integer values representing the size of an object
+DCL05-C	common.c	1423	1	Use typedefs to improve code readability
+FIO30-C	common.c	1514	9	Exclude user input from format strings
+EXP12-C	common.c	1569	8	Do not ignore values returned by functions: umask
+INT13-C	common.c	1570	49	Use bitwise operators only on unsigned operands
+INT13-C	common.c	1570	51	Use bitwise operators only on unsigned operands
+FIO30-C	common.c	1578	10	Exclude user input from format strings
+FIO30-C	common.c	1594	13	Exclude user input from format strings
+EXP12-C	common.c	1599	11	Do not ignore values returned by functions: umask
+INT13-C	common.c	1600	52	Use bitwise operators only on unsigned operands
+INT13-C	common.c	1600	54	Use bitwise operators only on unsigned operands
+FIO30-C	common.c	1606	16	Exclude user input from format strings
+FIO30-C	common.c	1616	13	Exclude user input from format strings
+FIO30-C	common.c	1664	11	Exclude user input from format strings
+FIO30-C	common.c	1665	11	Exclude user input from format strings
+FIO30-C	common.c	1691	9	Exclude user input from format strings
+FIO30-C	common.c	1695	11	Exclude user input from format strings
+FIO30-C	common.c	1697	9	Exclude user input from format strings
+MEM01-C	common.c	1703	7	Store a new value in pointers immediately after free()
+MEM34-C	common.c	1703	7	Only free memory allocated dynamically
+MEM34-C	common.c	1705	3	Only free memory allocated dynamically
+DCL05-C	common.c	1713	1	Use typedefs to improve code readability
+FIO30-C	common.c	1758	7	Exclude user input from format strings
+FIO30-C	common.c	1761	7	Exclude user input from format strings
+FIO30-C	common.c	1765	7	Exclude user input from format strings
+FIO30-C	common.c	1768	7	Exclude user input from format strings
+INT07-C	common.c	1779	14	Use only explicitly signed or unsigned char type for numeric values
+INT07-C	common.c	1780	15	Use only explicitly signed or unsigned char type for numeric values
+INT07-C	common.c	1786	18	Use only explicitly signed or unsigned char type for numeric values
+INT01-C	common.c	1786	15	Use rsize_t or size_t for all integer values representing the size of an object
+EXP12-C	common.c	1791	5	Do not ignore values returned by functions: d2u_strncpy
+INT07-C	common.c	1808	22	Use only explicitly signed or unsigned char type for numeric values
+INT01-C	common.c	1808	19	Use rsize_t or size_t for all integer values representing the size of an object
+FIO30-C	common.c	1838	5	Exclude user input from format strings
+FIO30-C	common.c	1842	7	Exclude user input from format strings
+FIO30-C	common.c	1844	7	Exclude user input from format strings
+FIO30-C	common.c	1847	5	Exclude user input from format strings
+FIO30-C	common.c	1850	5	Exclude user input from format strings
+FIO30-C	common.c	1853	5	Exclude user input from format strings
+FIO30-C	common.c	1856	5	Exclude user input from format strings
+FIO30-C	common.c	1860	5	Exclude user input from format strings
+FIO30-C	common.c	1863	5	Exclude user input from format strings
+FIO30-C	common.c	1875	13	Exclude user input from format strings
+FIO30-C	common.c	1877	13	Exclude user input from format strings
+FIO30-C	common.c	1881	15	Exclude user input from format strings
+FIO30-C	common.c	1883	15	Exclude user input from format strings
+FIO30-C	common.c	1886	15	Exclude user input from format strings
+FIO30-C	common.c	1888	15	Exclude user input from format strings
+FIO30-C	common.c	1900	13	Exclude user input from format strings
+FIO30-C	common.c	1907	13	Exclude user input from format strings
+FIO30-C	common.c	1911	15	Exclude user input from format strings
+FIO30-C	common.c	1913	15	Exclude user input from format strings
+FIO30-C	common.c	1916	15	Exclude user input from format strings
+FIO30-C	common.c	1918	15	Exclude user input from format strings
+FIO30-C	common.c	1925	9	Exclude user input from format strings
+FIO30-C	common.c	1927	9	Exclude user input from format strings
+FIO30-C	common.c	1937	7	Exclude user input from format strings
+FIO30-C	common.c	1942	7	Exclude user input from format strings
+FIO30-C	common.c	1948	7	Exclude user input from format strings
+FIO34-C	common.c	1986	14	Use int to capture the return value of character O functions
+CHREOF-C	common.c	1986	14	char values indistinguishable from EOF
+EXP30-C	common.c	2008	9	Do not depend on order of evaluation for side effects
+FIO34-C	common.c	2017	12	Use int to capture the return value of character O functions
+CHREOF-C	common.c	2017	12	char values indistinguishable from EOF
+FIO30-C	common.c	2062	7	Exclude user input from format strings
+FIO30-C	common.c	2112	7	Exclude user input from format strings
+EXP12-C	common.c	2157	5	Do not ignore values returned by functions: d2u_fclose
+FIO30-C	common.c	2268	9	Exclude user input from format strings
+DCL05-C	common.c	2278	1	Use typedefs to improve code readability
+FIO30-C	common.c	2398	12	Exclude user input from format strings
+FIO30-C	common.c	2441	16	Exclude user input from format strings
+FIO30-C	common.c	2453	13	Exclude user input from format strings
+FIO30-C	common.c	2461	11	Exclude user input from format strings
+FIO30-C	common.c	2503	11	Exclude user input from format strings
+FIO30-C	common.c	2516	11	Exclude user input from format strings
+EXP12-C	common.c	2567	7	Do not ignore values returned by functions: GetFileInfoStdio
+EXP12-C	common.c	2571	7	Do not ignore values returned by functions: ConvertStdio
+FIO30-C	common.c	2583	5	Exclude user input from format strings
+FIO30-C	common.c	2595	7	Exclude user input from format strings
+FIO30-C	common.c	2605	7	Exclude user input from format strings
+FIO30-C	common.c	2617	9	Exclude user input from format strings
+FIO13-C	common.c	2655	9	Never push back anything other than one read character
+FIO30-C	common.c	2692	7	Exclude user input from format strings
+FIO30-C	common.c	2708	10	Exclude user input from format strings
+INT14-C	common.c	2745	15	Avoid performing bitwise and arithmetic operations on the same data
+INT14-C	common.c	2746	15	Avoid performing bitwise and arithmetic operations on the same data

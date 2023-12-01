@@ -1,0 +1,22 @@
+[
+  {
+    "rule": "EXP34-C",
+    "file": "test_errors.c",
+    "line": 11
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "test_errors.c",
+    "line": 19
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "test_errors.c",
+    "line": 27
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "test_errors.c",
+    "line": 35
+  }
+]

@@ -1,0 +1,11 @@
+[
+  {
+    "rule": "MSC12-C",
+    "file": "dead_asgn_01.c",
+    "line": 4,
+    "column": 5,
+    "tool": "cppcheck",
+    "checker": "uselessAssignmentArg",
+    "message": "Assignment of function parameter has no effect outside the function."
+  }
+]

@@ -1,0 +1,15 @@
+--- /host/data/test/out/header.h	2023-07-11 18:45:52.661816408 +0000
++++ /host/data/test/toy/header.h	2023-07-10 19:55:37.016549411 +0000
+@@ -1,5 +1,3 @@
+-#include "acr.h"
+-
+ int puts(const char *s);
+
+ int foo(int* p) {
+@@ -7,5 +5,5 @@
+         puts("Error: null pointer!");
+         /* Bug here: forgot to return. */
+     }
+-    return *null_check(p);
++    return *p;
+ }

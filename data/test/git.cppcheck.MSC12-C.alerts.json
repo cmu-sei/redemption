@@ -1,0 +1,230 @@
+[
+  {
+    "rule": "MSC12-C",
+    "file": "builtin/difftool.c",
+    "line": "722",
+    "column": "2",
+    "tool": "cppcheck",
+    "checker": "uselessAssignmentArg",
+    "message": "Assignment of function parameter has no effect outside the function."
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "builtin/fast-import.c",
+    "line": "2504",
+    "column": "4",
+    "tool": "cppcheck",
+    "checker": "uselessAssignmentPtrArg",
+    "message": "Assignment of function parameter has no effect outside the function. Did you forget dereferencing it?"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "builtin/stash.c",
+    "line": "810",
+    "column": "2",
+    "tool": "cppcheck",
+    "checker": "uselessAssignmentArg",
+    "message": "Assignment of function parameter has no effect outside the function."
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "builtin/stash.c",
+    "line": "1739",
+    "column": "4",
+    "tool": "cppcheck",
+    "checker": "uselessAssignmentArg",
+    "message": "Assignment of function parameter has no effect outside the function."
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "builtin/sparse-checkout.c",
+    "line": "455",
+    "column": "2",
+    "tool": "cppcheck",
+    "checker": "uselessAssignmentArg",
+    "message": "Assignment of function parameter has no effect outside the function."
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "builtin/sparse-checkout.c",
+    "line": "863",
+    "column": "2",
+    "tool": "cppcheck",
+    "checker": "uselessAssignmentArg",
+    "message": "Assignment of function parameter has no effect outside the function."
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "builtin/sparse-checkout.c",
+    "line": "900",
+    "column": "2",
+    "tool": "cppcheck",
+    "checker": "uselessAssignmentArg",
+    "message": "Assignment of function parameter has no effect outside the function."
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "builtin/diagnose.c",
+    "line": "32",
+    "column": "2",
+    "tool": "cppcheck",
+    "checker": "uselessAssignmentArg",
+    "message": "Assignment of function parameter has no effect outside the function."
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "builtin/pull.c",
+    "line": "506",
+    "column": "3",
+    "tool": "cppcheck",
+    "checker": "uselessAssignmentArg",
+    "message": "Assignment of function parameter has no effect outside the function."
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "builtin/rev-parse.c",
+    "line": "525",
+    "column": "2",
+    "tool": "cppcheck",
+    "checker": "uselessAssignmentArg",
+    "message": "Assignment of function parameter has no effect outside the function."
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "builtin/credential-cache--daemon.c",
+    "line": "282",
+    "column": "2",
+    "tool": "cppcheck",
+    "checker": "uselessAssignmentArg",
+    "message": "Assignment of function parameter has no effect outside the function."
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "builtin/credential-cache--daemon.c",
+    "line": "315",
+    "column": "2",
+    "tool": "cppcheck",
+    "checker": "uselessAssignmentArg",
+    "message": "Assignment of function parameter has no effect outside the function."
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "builtin/mktag.c",
+    "line": "83",
+    "column": "2",
+    "tool": "cppcheck",
+    "checker": "uselessAssignmentArg",
+    "message": "Assignment of function parameter has no effect outside the function."
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "builtin/write-tree.c",
+    "line": "38",
+    "column": "2",
+    "tool": "cppcheck",
+    "checker": "uselessAssignmentArg",
+    "message": "Assignment of function parameter has no effect outside the function."
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "builtin/patch-id.c",
+    "line": "234",
+    "column": "2",
+    "tool": "cppcheck",
+    "checker": "uselessAssignmentArg",
+    "message": "Assignment of function parameter has no effect outside the function."
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "builtin/receive-pack.c",
+    "line": "692",
+    "column": "10",
+    "tool": "cppcheck",
+    "checker": "redundantInitialization",
+    "message": "Redundant initialization for 'retval'. The initialized value is overwritten before it is read.",
+    "verdict": "false",
+    "repair": "false",
+    "rationale": "We never repair redundant initializers.  See the dead-code.md file."
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "builtin/checkout.c",
+    "line": "1389",
+    "column": "3",
+    "tool": "cppcheck",
+    "checker": "uselessAssignmentPtrArg",
+    "message": "Assignment of function parameter has no effect outside the function. Did you forget dereferencing it?"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "builtin/checkout.c",
+    "line": "1390",
+    "column": "3",
+    "tool": "cppcheck",
+    "checker": "uselessAssignmentArg",
+    "message": "Assignment of function parameter has no effect outside the function."
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "builtin/reset.c",
+    "line": "348",
+    "column": "2",
+    "tool": "cppcheck",
+    "checker": "uselessAssignmentArg",
+    "message": "Assignment of function parameter has no effect outside the function."
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "builtin/commit.c",
+    "line": "1537",
+    "column": "2",
+    "tool": "cppcheck",
+    "checker": "uselessAssignmentArg",
+    "message": "Assignment of function parameter has no effect outside the function."
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "builtin/bugreport.c",
+    "line": "121",
+    "column": "2",
+    "tool": "cppcheck",
+    "checker": "uselessAssignmentArg",
+    "message": "Assignment of function parameter has no effect outside the function."
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "builtin/credential-cache.c",
+    "line": "179",
+    "column": "2",
+    "tool": "cppcheck",
+    "checker": "uselessAssignmentArg",
+    "message": "Assignment of function parameter has no effect outside the function."
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "ewah/ewah_io.c",
+    "line": "131",
+    "column": "2",
+    "tool": "cppcheck",
+    "checker": "uselessAssignmentArg",
+    "message": "Assignment of function parameter has no effect outside the function."
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "builtin/ls-tree.c",
+    "line": "102",
+    "column": "8",
+    "tool": "cppcheck",
+    "checker": "redundantInitialization",
+    "message": "Redundant initialization for 'name'. The initialized value is overwritten before it is read."
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "builtin/add.c",
+    "line": "321",
+    "column": "2",
+    "tool": "cppcheck",
+    "checker": "uselessAssignmentArg",
+    "message": "Assignment of function parameter has no effect outside the function."
+  }
+]

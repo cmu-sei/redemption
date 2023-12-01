@@ -1,0 +1,73 @@
+tests:
+
+- answer_file: zeek.rosecheckers.EXP34-C.auxil_highwayhash_highwayhash_os_specific_cc.ans
+  input:
+    alerts_file: zeek.rosecheckers.EXP34-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/highwayhash/highwayhash/os_specific.cc
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_highwayhash_highwayhash_os_specific_cc
+
+- answer_file: zeek.rosecheckers.EXP34-C.auxil_paraglob_src_ahocorasick_ahocorasick_c.ans
+  input:
+    alerts_file: zeek.rosecheckers.EXP34-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/paraglob/src/ahocorasick/ahocorasick.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_paraglob_src_ahocorasick_ahocorasick_c
+
+- answer_file: zeek.rosecheckers.EXP34-C.auxil_paraglob_src_ahocorasick_mpool_c.ans
+  input:
+    alerts_file: zeek.rosecheckers.EXP34-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/paraglob/src/ahocorasick/mpool.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_paraglob_src_ahocorasick_mpool_c
+
+- answer_file: zeek.rosecheckers.EXP34-C.auxil_spicy_spicy_3rdparty_justrx_src_ccl_c.ans
+  input:
+    alerts_file: zeek.rosecheckers.EXP34-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/spicy/spicy/3rdparty/justrx/src/ccl.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_spicy_spicy_3rdparty_justrx_src_ccl_c
+
+- answer_file: zeek.rosecheckers.EXP34-C.auxil_spicy_spicy_3rdparty_justrx_src_dfa-interpreter-std_c.ans
+  input:
+    alerts_file: zeek.rosecheckers.EXP34-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/spicy/spicy/3rdparty/justrx/src/dfa-interpreter-std.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_spicy_spicy_3rdparty_justrx_src_dfa-interpreter-std_c
+
+- answer_file: zeek.rosecheckers.EXP34-C.auxil_spicy_spicy_3rdparty_justrx_src_nfa_c.ans
+  input:
+    alerts_file: zeek.rosecheckers.EXP34-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/spicy/spicy/3rdparty/justrx/src/nfa.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_spicy_spicy_3rdparty_justrx_src_nfa_c
+
+- answer_file: zeek.rosecheckers.EXP34-C.auxil_zeek-aux_rst_rst_c.ans
+  input:
+    alerts_file: zeek.rosecheckers.EXP34-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/zeek-aux/rst/rst.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_zeek-aux_rst_rst_c
+
+- answer_file: zeek.rosecheckers.EXP34-C.auxil_zeekctl_auxil_pysubnettree_SubnetTree_cc.ans
+  input:
+    alerts_file: zeek.rosecheckers.EXP34-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/zeekctl/auxil/pysubnettree/SubnetTree.cc
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_zeekctl_auxil_pysubnettree_SubnetTree_cc
+
+- answer_file: zeek.rosecheckers.EXP34-C.build_auxil_zeekctl_auxil_pysubnettree_CMakeFiles_SubnetTree_dir_SubnetTreePYTHON_wrap_cxx.ans
+  input:
+    alerts_file: zeek.rosecheckers.EXP34-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: build/auxil/zeekctl/auxil/pysubnettree/CMakeFiles/SubnetTree.dir/SubnetTreePYTHON_wrap.cxx
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: build_auxil_zeekctl_auxil_pysubnettree_CMakeFiles_SubnetTree_dir_SubnetTreePYTHON_wrap_cxx

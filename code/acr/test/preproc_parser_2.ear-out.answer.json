@@ -1,0 +1,263 @@
+{
+  "id": 1000,
+  "kind": "TranslationUnitDecl",
+  "loc": {},
+  "range": {
+    "begin": {},
+    "end": {}
+  },
+  "inner": [
+    {
+      "id": 1001,
+      "kind": "TypedefDecl",
+      "loc": {},
+      "range": {
+        "begin": {},
+        "end": {}
+      },
+      "isImplicit": true,
+      "name": "__int128_t",
+      "type": {
+        "qualType": "__int128"
+      },
+      "inner": [
+        {
+          "id": 1002,
+          "kind": "BuiltinType",
+          "type": {
+            "qualType": "__int128"
+          }
+        }
+      ]
+    },
+    {
+      "id": 1003,
+      "kind": "TypedefDecl",
+      "loc": {},
+      "range": {
+        "begin": {},
+        "end": {}
+      },
+      "isImplicit": true,
+      "name": "__uint128_t",
+      "type": {
+        "qualType": "unsigned __int128"
+      },
+      "inner": [
+        {
+          "id": 1004,
+          "kind": "BuiltinType",
+          "type": {
+            "qualType": "unsigned __int128"
+          }
+        }
+      ]
+    },
+    {
+      "id": 1005,
+      "kind": "TypedefDecl",
+      "loc": {},
+      "range": {
+        "begin": {},
+        "end": {}
+      },
+      "isImplicit": true,
+      "name": "__NSConstantString",
+      "type": {
+        "qualType": "struct __NSConstantString_tag"
+      },
+      "inner": [
+        {
+          "id": 1006,
+          "kind": "RecordType",
+          "type": {
+            "qualType": "struct __NSConstantString_tag"
+          },
+          "decl": {
+            "id": 1007,
+            "kind": "RecordDecl",
+            "name": "__NSConstantString_tag"
+          }
+        }
+      ]
+    },
+    {
+      "id": 1008,
+      "kind": "TypedefDecl",
+      "loc": {},
+      "range": {
+        "begin": {},
+        "end": {}
+      },
+      "isImplicit": true,
+      "name": "__builtin_ms_va_list",
+      "type": {
+        "qualType": "char *"
+      },
+      "inner": [
+        {
+          "id": 1009,
+          "kind": "PointerType",
+          "type": {
+            "qualType": "char *"
+          },
+          "inner": [
+            {
+              "id": 1010,
+              "kind": "BuiltinType",
+              "type": {
+                "qualType": "char"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1011,
+      "kind": "TypedefDecl",
+      "loc": {},
+      "range": {
+        "begin": {},
+        "end": {}
+      },
+      "isImplicit": true,
+      "name": "__builtin_va_list",
+      "type": {
+        "qualType": "struct __va_list_tag[1]"
+      },
+      "inner": [
+        {
+          "id": 1012,
+          "kind": "ConstantArrayType",
+          "type": {
+            "qualType": "struct __va_list_tag[1]"
+          },
+          "size": 1,
+          "inner": [
+            {
+              "id": 1013,
+              "kind": "RecordType",
+              "type": {
+                "qualType": "struct __va_list_tag"
+              },
+              "decl": {
+                "id": 1014,
+                "kind": "RecordDecl",
+                "name": "__va_list_tag"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1015,
+      "kind": "VarDecl",
+      "loc": {
+        "offset": 104,
+        "file": "preproc_parser_2.c",
+        "line": 3,
+        "col": 5,
+        "tokLen": 1
+      },
+      "range": {
+        "begin": {
+          "offset": 100,
+          "col": 1,
+          "tokLen": 3
+        },
+        "end": {
+          "offset": 128,
+          "col": 29,
+          "tokLen": 2
+        },
+        "file": "$BASE/preproc_parser_2.c"
+      },
+      "name": "x",
+      "mangledName": "x",
+      "type": {
+        "qualType": "int"
+      },
+      "init": "c",
+      "inner": [
+        {
+          "id": 1016,
+          "kind": "IntegerLiteral",
+          "range": {
+            "begin": {
+              "offset": 128,
+              "col": 29,
+              "tokLen": 2
+            },
+            "end": {
+              "offset": 128,
+              "col": 29,
+              "tokLen": 2
+            },
+            "file": "$BASE/preproc_parser_2.c"
+          },
+          "type": {
+            "qualType": "int"
+          },
+          "valueCategory": "prvalue",
+          "value": "42"
+        }
+      ]
+    },
+    {
+      "id": 1017,
+      "kind": "VarDecl",
+      "loc": {
+        "offset": 143,
+        "line": 6,
+        "col": 5,
+        "tokLen": 1
+      },
+      "range": {
+        "begin": {
+          "offset": 139,
+          "col": 1,
+          "tokLen": 3
+        },
+        "end": {
+          "offset": 143,
+          "col": 5,
+          "tokLen": 1
+        },
+        "file": "$BASE/preproc_parser_2.c"
+      },
+      "name": "y",
+      "mangledName": "y",
+      "type": {
+        "qualType": "int"
+      }
+    }
+  ],
+  "base_dir": "/host/code/acr/test",
+  "compile_dir": "/host/code/acr/test",
+  "file": "/host/code/acr/test/preproc_parser_2.c",
+  "preproc_db": {
+    "$BASE/preproc_parser_2.c": [
+      133,
+      146
+    ]
+  },
+  "comments_db": {
+    "$BASE/preproc_parser_2.c": [
+      [0, 99],
+      [106, 115],
+      [118, 127]
+    ]
+  },
+  "newlines_db": {
+    "$BASE/preproc_parser_2.c": [
+      99,
+      131,
+      132,
+      138,
+      145,
+      152
+    ]
+  }
+}

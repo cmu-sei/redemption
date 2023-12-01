@@ -1,0 +1,4322 @@
+[
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/lib/binpac_buffer.cc",
+    "line": "64",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/lib/binpac_buffer.cc",
+    "line": "83",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/lib/binpac_buffer.cc",
+    "line": "198",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/lib/binpac_buffer.cc",
+    "line": "201",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/lib/binpac_buffer.cc",
+    "line": "231",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/lib/binpac_buffer.cc",
+    "line": "235",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/lib/binpac_buffer.cc",
+    "line": "269",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/lib/binpac_buffer.cc",
+    "line": "518",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/lib/binpac_buffer.cc",
+    "line": "543",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/lib/binpac_buffer.cc",
+    "line": "549",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "build/auxil/binpac/src/pac_parse.cc",
+    "line": "1273",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "build/auxil/binpac/src/pac_parse.cc",
+    "line": "1280",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "build/auxil/binpac/src/pac_parse.cc",
+    "line": "1609",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "build/auxil/binpac/src/pac_parse.cc",
+    "line": "1615",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "build/auxil/binpac/src/pac_parse.cc",
+    "line": "3414",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "build/auxil/binpac/src/pac_parse.cc",
+    "line": "3522",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "build/auxil/binpac/src/pac_parse.cc",
+    "line": "3556",
+    "column": "7",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "build/auxil/binpac/src/pac_parse.cc",
+    "line": "3608",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "build/auxil/binpac/src/pac_parse.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "build/auxil/binpac/src/pac_parse.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "build/auxil/binpac/src/pac_parse.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "build/auxil/binpac/src/pac_parse.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "build/auxil/binpac/src/pac_parse.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "build/auxil/binpac/src/pac_parse.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "build/auxil/binpac/src/pac_parse.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "build/auxil/binpac/src/pac_parse.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "build/auxil/binpac/src/pac_parse.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "build/auxil/binpac/src/pac_parse.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "build/auxil/binpac/src/pac_parse.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "build/auxil/binpac/src/pac_parse.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "build/auxil/binpac/src/pac_parse.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "build/auxil/binpac/src/pac_parse.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "build/auxil/binpac/src/pac_parse.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "build/auxil/binpac/src/pac_parse.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "build/auxil/binpac/src/pac_parse.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "build/auxil/binpac/src/pac_parse.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "build/auxil/binpac/src/pac_parse.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "build/auxil/binpac/src/pac_parse.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "build/auxil/binpac/src/pac_parse.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "build/auxil/binpac/src/pac_parse.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "build/auxil/binpac/pac_scan.cc",
+    "line": "329",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_action.cc",
+    "line": "31",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_analyzer.cc",
+    "line": "50",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_analyzer.cc",
+    "line": "58",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_analyzer.cc",
+    "line": "66",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_analyzer.cc",
+    "line": "124",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_analyzer.cc",
+    "line": "125",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_analyzer.cc",
+    "line": "292",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_analyzer.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_analyzer.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_analyzer.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_analyzer.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_analyzer.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_analyzer.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_analyzer.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_analyzer.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_array.cc",
+    "line": "324",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_array.cc",
+    "line": "350",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_array.cc",
+    "line": "351",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_array.cc",
+    "line": "500",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_array.cc",
+    "line": "601",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_array.cc",
+    "line": "634",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_array.cc",
+    "line": "644",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_array.cc",
+    "line": "646",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_btype.cc",
+    "line": "41",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_btype.cc",
+    "line": "93",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_case.cc",
+    "line": "33",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_case.cc",
+    "line": "46",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_case.cc",
+    "line": "57",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_case.cc",
+    "line": "68",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_case.cc",
+    "line": "250",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_case.cc",
+    "line": "348",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_case.cc",
+    "line": "439",
+    "column": "4",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_case.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_case.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_case.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_case.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_conn.cc",
+    "line": "54",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_conn.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_conn.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_context.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_context.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_cstr.cc",
+    "line": "117",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_cstr.cc",
+    "line": "120",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_dataptr.cc",
+    "line": "40",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_decl.cc",
+    "line": "53",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_decl.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_decl.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_decl.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_decl.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_decl.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_decl.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_decl.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_decl.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_decl.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_embedded.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_embedded.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_enum.cc",
+    "line": "19",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_expr.cc",
+    "line": "174",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_expr.cc",
+    "line": "175",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_expr.cc",
+    "line": "176",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_expr.cc",
+    "line": "183",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_expr.cc",
+    "line": "199",
+    "column": "4",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_expr.cc",
+    "line": "210",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_expr.cc",
+    "line": "214",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_expr.cc",
+    "line": "222",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_expr.cc",
+    "line": "223",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_expr.cc",
+    "line": "224",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_expr.cc",
+    "line": "683",
+    "column": "4",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_expr.cc",
+    "line": "701",
+    "column": "4",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_expr.cc",
+    "line": "709",
+    "column": "4",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_expr.cc",
+    "line": "811",
+    "column": "4",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_expr.cc",
+    "line": "836",
+    "column": "4",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_expr.cc",
+    "line": "845",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_expr.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_expr.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_exttype.cc",
+    "line": "29",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_exttype.cc",
+    "line": "53",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_exttype.cc",
+    "line": "58",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_flow.cc",
+    "line": "51",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_flow.cc",
+    "line": "70",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_flow.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_flow.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_flow.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_flow.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_func.cc",
+    "line": "58",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_id.cc",
+    "line": "105",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_id.cc",
+    "line": "119",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_id.cc",
+    "line": "125",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_id.cc",
+    "line": "170",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_id.cc",
+    "line": "230",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_id.cc",
+    "line": "298",
+    "column": "4",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_id.cc",
+    "line": "356",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_id.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_id.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_id.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_id.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_id.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_let.cc",
+    "line": "19",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_let.cc",
+    "line": "41",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_let.cc",
+    "line": "107",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_param.cc",
+    "line": "25",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_paramtype.cc",
+    "line": "156",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_paramtype.cc",
+    "line": "207",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_paramtype.cc",
+    "line": "246",
+    "column": "4",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_paramtype.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_paramtype.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_primitive.cc",
+    "line": "10",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_primitive.cc",
+    "line": "16",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_record.cc",
+    "line": "50",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_record.cc",
+    "line": "56",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_record.cc",
+    "line": "145",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_record.cc",
+    "line": "154",
+    "column": "4",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_record.cc",
+    "line": "286",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_record.cc",
+    "line": "290",
+    "column": "4",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_record.cc",
+    "line": "380",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_record.cc",
+    "line": "435",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_record.cc",
+    "line": "570",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_record.cc",
+    "line": "656",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_redef.cc",
+    "line": "38",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_redef.cc",
+    "line": "74",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_redef.cc",
+    "line": "83",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_redef.cc",
+    "line": "104",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_redef.cc",
+    "line": "131",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_redef.cc",
+    "line": "148",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_strtype.cc",
+    "line": "20",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_strtype.cc",
+    "line": "31",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_strtype.cc",
+    "line": "214",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_strtype.cc",
+    "line": "309",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_strtype.cc",
+    "line": "357",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_type.cc",
+    "line": "32",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_type.cc",
+    "line": "110",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_type.cc",
+    "line": "147",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_type.cc",
+    "line": "247",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_type.cc",
+    "line": "272",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_type.cc",
+    "line": "279",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_type.cc",
+    "line": "287",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_type.cc",
+    "line": "304",
+    "column": "4",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_type.cc",
+    "line": "383",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_type.cc",
+    "line": "396",
+    "column": "4",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_type.cc",
+    "line": "408",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_type.cc",
+    "line": "479",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_type.cc",
+    "line": "552",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_type.cc",
+    "line": "589",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_type.cc",
+    "line": "757",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_type.cc",
+    "line": "776",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_type.cc",
+    "line": "783",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_type.cc",
+    "line": "799",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_type.cc",
+    "line": "800",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_type.cc",
+    "line": "828",
+    "column": "4",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_type.cc",
+    "line": "907",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_type.cc",
+    "line": "948",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_type.cc",
+    "line": "1001",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_type.cc",
+    "line": "1104",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_type.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_type.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_type.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_type.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_type.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_type.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_type.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_type.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_type.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_type.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_typedecl.cc",
+    "line": "42",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_typedecl.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_typedecl.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_typedecl.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_typedecl.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_withinput.cc",
+    "line": "13",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_withinput.cc",
+    "line": "14",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_withinput.cc",
+    "line": "62",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_main.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/binpac/src/pac_main.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "build/auxil/bifcl/bif_parse.cc",
+    "line": "1049",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "build/auxil/bifcl/bif_parse.cc",
+    "line": "1056",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "build/auxil/bifcl/bif_parse.cc",
+    "line": "1385",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "build/auxil/bifcl/bif_parse.cc",
+    "line": "1391",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "build/auxil/bifcl/bif_parse.cc",
+    "line": "2256",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "build/auxil/bifcl/bif_parse.cc",
+    "line": "2364",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "build/auxil/bifcl/bif_parse.cc",
+    "line": "2398",
+    "column": "7",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "build/auxil/bifcl/bif_parse.cc",
+    "line": "2450",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "build/auxil/bifcl/bif_parse.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "build/auxil/bifcl/bif_parse.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "build/auxil/bifcl/bif_parse.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "build/auxil/bifcl/bif_parse.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "build/auxil/bifcl/bif_parse.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "build/auxil/bifcl/bif_parse.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/fiber/src/fiber.c",
+    "line": "247",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/fiber/src/fiber.c",
+    "line": "248",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/fiber/src/fiber.c",
+    "line": "286",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/fiber/src/fiber.c",
+    "line": "287",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/fiber/src/fiber.c",
+    "line": "288",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/fiber/src/fiber.c",
+    "line": "334",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/fiber/src/fiber.c",
+    "line": "346",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/fiber/src/fiber.c",
+    "line": "353",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/fiber/src/fiber.c",
+    "line": "365",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/fiber/src/fiber.c",
+    "line": "370",
+    "column": "9",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/justrx/src/ccl.c",
+    "line": "53",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/justrx/src/ccl.c",
+    "line": "56",
+    "column": "9",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/justrx/src/ccl.c",
+    "line": "98",
+    "column": "9",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/justrx/src/ccl.c",
+    "line": "125",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/justrx/src/ccl.c",
+    "line": "142",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/justrx/src/ccl.c",
+    "line": "187",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/justrx/src/ccl.c",
+    "line": "202",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/justrx/src/ccl.c",
+    "line": "204",
+    "column": "9",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/justrx/src/ccl.c",
+    "line": "333",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/justrx/src/ccl.c",
+    "line": "352",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/justrx/src/ccl.c",
+    "line": "366",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/justrx/src/ccl.c",
+    "line": "390",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/justrx/src/ccl.c",
+    "line": "391",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/justrx/src/ccl.c",
+    "line": "477",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/justrx/src/ccl.c",
+    "line": "484",
+    "column": "9",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/justrx/src/dfa.c",
+    "line": "69",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/justrx/src/dfa.c",
+    "line": "91",
+    "column": "1",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/justrx/src/dfa.c",
+    "line": "91",
+    "column": "1",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/justrx/src/dfa.c",
+    "line": "91",
+    "column": "1",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/justrx/src/dfa.c",
+    "line": "91",
+    "column": "1",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/justrx/src/dfa.c",
+    "line": "104",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/justrx/src/dfa.c",
+    "line": "118",
+    "column": "21",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/justrx/src/dfa.c",
+    "line": "120",
+    "column": "21",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/justrx/src/dfa.c",
+    "line": "141",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/justrx/src/dfa.c",
+    "line": "264",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/justrx/src/dfa.c",
+    "line": "277",
+    "column": "17",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/justrx/src/dfa.c",
+    "line": "306",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/justrx/src/dfa.c",
+    "line": "311",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/justrx/src/dfa.c",
+    "line": "355",
+    "column": "9",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/justrx/src/dfa.c",
+    "line": "413",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/justrx/src/dfa.c",
+    "line": "511",
+    "column": "9",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/justrx/src/dfa-interpreter-std.c",
+    "line": "29",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/justrx/src/dfa-interpreter-std.c",
+    "line": "138",
+    "column": "9",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/justrx/src/dfa-interpreter-std.c",
+    "line": "218",
+    "column": "9",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/justrx/src/dfa-interpreter-std.c",
+    "line": "235",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/justrx/src/dfa-interpreter-std.c",
+    "line": "308",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/justrx/src/dfa-interpreter-min.c",
+    "line": "30",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/justrx/src/jrx.c",
+    "line": "61",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/justrx/src/jrx.c",
+    "line": "260",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/justrx/src/nfa.c",
+    "line": "89",
+    "column": "9",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/justrx/src/nfa.c",
+    "line": "101",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/justrx/src/nfa.c",
+    "line": "175",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/justrx/src/nfa.c",
+    "line": "192",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/justrx/src/nfa.c",
+    "line": "235",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/justrx/src/nfa.c",
+    "line": "253",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/justrx/src/nfa.c",
+    "line": "276",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/justrx/src/nfa.c",
+    "line": "491",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/justrx/src/nfa.c",
+    "line": "545",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/justrx/src/nfa.c",
+    "line": "595",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/justrx/src/nfa.c",
+    "line": "598",
+    "column": "9",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "build/auxil/spicy/spicy/3rdparty/justrx/justrx/autogen/re-parse.c",
+    "line": "1022",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "build/auxil/spicy/spicy/3rdparty/justrx/justrx/autogen/re-parse.c",
+    "line": "1023",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "build/auxil/spicy/spicy/3rdparty/justrx/justrx/autogen/re-parse.c",
+    "line": "1024",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "build/auxil/spicy/spicy/3rdparty/justrx/justrx/autogen/re-parse.c",
+    "line": "1025",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "build/auxil/spicy/spicy/3rdparty/justrx/justrx/autogen/re-parse.c",
+    "line": "1031",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "build/auxil/spicy/spicy/3rdparty/justrx/justrx/autogen/re-parse.c",
+    "line": "1513",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "build/auxil/spicy/spicy/3rdparty/justrx/justrx/autogen/re-parse.c",
+    "line": "1621",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "build/auxil/spicy/spicy/3rdparty/justrx/justrx/autogen/re-parse.c",
+    "line": "1655",
+    "column": "7",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "build/auxil/spicy/spicy/3rdparty/justrx/justrx/autogen/re-parse.c",
+    "line": "1707",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "build/auxil/spicy/spicy/3rdparty/justrx/justrx/autogen/re-scan.c",
+    "line": "1553",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "build/auxil/spicy/spicy/3rdparty/justrx/justrx/autogen/re-scan.c",
+    "line": "2001",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "build/auxil/spicy/spicy/3rdparty/justrx/justrx/autogen/re-scan.c",
+    "line": "2334",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "build/auxil/spicy/spicy/3rdparty/justrx/justrx/autogen/re-scan.c",
+    "line": "2341",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "build/auxil/spicy/spicy/3rdparty/justrx/justrx/autogen/re-scan.c",
+    "line": "2356",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/reproc/reproc/src/clock.posix.c",
+    "line": "14",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/reproc/reproc/src/drain.c",
+    "line": "75",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/reproc/reproc/src/drain.c",
+    "line": "102",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/reproc/reproc/src/drain.c",
+    "line": "103",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/reproc/reproc/src/drain.c",
+    "line": "104",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/reproc/reproc/src/drain.c",
+    "line": "105",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/reproc/reproc/src/handle.posix.c",
+    "line": "39",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/reproc/reproc/src/options.c",
+    "line": "17",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/reproc/reproc/src/options.c",
+    "line": "91",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/reproc/reproc/src/pipe.posix.c",
+    "line": "22",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/reproc/reproc/src/pipe.posix.c",
+    "line": "23",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/reproc/reproc/src/pipe.posix.c",
+    "line": "75",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/reproc/reproc/src/pipe.posix.c",
+    "line": "76",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/reproc/reproc/src/pipe.posix.c",
+    "line": "90",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/reproc/reproc/src/pipe.posix.c",
+    "line": "91",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/reproc/reproc/src/pipe.posix.c",
+    "line": "100",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/reproc/reproc/src/pipe.posix.c",
+    "line": "134",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/reproc/reproc/src/process.posix.c",
+    "line": "51",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/reproc/reproc/src/process.posix.c",
+    "line": "171",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/reproc/reproc/src/process.posix.c",
+    "line": "189",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/reproc/reproc/src/process.posix.c",
+    "line": "197",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/reproc/reproc/src/process.posix.c",
+    "line": "203",
+    "column": "7",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/reproc/reproc/src/process.posix.c",
+    "line": "291",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/reproc/reproc/src/process.posix.c",
+    "line": "305",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/reproc/reproc/src/process.posix.c",
+    "line": "400",
+    "column": "7",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/reproc/reproc/src/process.posix.c",
+    "line": "413",
+    "column": "7",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/reproc/reproc/src/process.posix.c",
+    "line": "433",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/reproc/reproc/src/process.posix.c",
+    "line": "465",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/reproc/reproc/src/process.posix.c",
+    "line": "473",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/reproc/reproc/src/process.posix.c",
+    "line": "480",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/reproc/reproc/src/process.posix.c",
+    "line": "488",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/reproc/reproc/src/process.posix.c",
+    "line": "497",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/reproc/reproc/src/redirect.posix.c",
+    "line": "28",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/reproc/reproc/src/redirect.posix.c",
+    "line": "52",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/reproc/reproc/src/redirect.posix.c",
+    "line": "66",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/reproc/reproc/src/redirect.posix.c",
+    "line": "67",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/reproc/reproc/src/redirect.c",
+    "line": "10",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/reproc/reproc/src/redirect.c",
+    "line": "11",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/reproc/reproc/src/redirect.c",
+    "line": "47",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/reproc/reproc/src/redirect.c",
+    "line": "48",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/reproc/reproc/src/redirect.c",
+    "line": "111",
+    "column": "7",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/reproc/reproc/src/reproc.c",
+    "line": "53",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/reproc/reproc/src/reproc.c",
+    "line": "54",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/reproc/reproc/src/reproc.c",
+    "line": "58",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/reproc/reproc/src/reproc.c",
+    "line": "77",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/reproc/reproc/src/reproc.c",
+    "line": "115",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/reproc/reproc/src/reproc.c",
+    "line": "116",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/spicy/spicy/3rdparty/reproc/reproc/src/reproc.c",
+    "line": "569",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/c-ares/src/lib/ares__addrinfo_localhost.c",
+    "line": "191",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/c-ares/src/lib/ares__addrinfo_localhost.c",
+    "line": "192",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/c-ares/src/lib/ares__addrinfo_localhost.c",
+    "line": "193",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/c-ares/src/lib/ares__sortaddrinfo.c",
+    "line": "481",
+    "column": "7",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/c-ares/src/lib/ares_fds.c",
+    "line": "41",
+    "column": "11",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/c-ares/src/lib/ares_fds.c",
+    "line": "51",
+    "column": "10",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/c-ares/src/lib/ares_getaddrinfo.c",
+    "line": "765",
+    "column": "7",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/c-ares/src/lib/ares_create_query.c",
+    "line": "109",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/c-ares/src/lib/ares_create_query.c",
+    "line": "117",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/c-ares/src/lib/ares_create_query.c",
+    "line": "168",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/c-ares/src/lib/ares_create_query.c",
+    "line": "169",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/c-ares/src/lib/ares_create_query.c",
+    "line": "176",
+    "column": "7",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/c-ares/src/lib/ares_create_query.c",
+    "line": "177",
+    "column": "7",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/c-ares/src/lib/ares_process.c",
+    "line": "620",
+    "column": "11",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/c-ares/src/lib/ares_process.c",
+    "line": "730",
+    "column": "7",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/c-ares/src/lib/ares_process.c",
+    "line": "737",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/c-ares/src/lib/ares_process.c",
+    "line": "981",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/c-ares/src/lib/ares_process.c",
+    "line": "1446",
+    "column": "13",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/c-ares/src/lib/ares_query.c",
+    "line": "67",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "src/3rdparty/ConvertUTF.c",
+    "line": "448",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "src/3rdparty/ConvertUTF.c",
+    "line": "526",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "src/3rdparty/nb_dns.c",
+    "line": "138",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "src/3rdparty/patricia.c",
+    "line": "143",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "src/3rdparty/patricia.c",
+    "line": "168",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "src/3rdparty/patricia.c",
+    "line": "183",
+    "column": "7",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "src/3rdparty/patricia.c",
+    "line": "302",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "src/3rdparty/patricia.c",
+    "line": "355",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "src/3rdparty/patricia.c",
+    "line": "358",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "src/3rdparty/patricia.c",
+    "line": "382",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "src/3rdparty/patricia.c",
+    "line": "394",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "src/3rdparty/patricia.c",
+    "line": "429",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "src/3rdparty/patricia.c",
+    "line": "447",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "src/3rdparty/patricia.c",
+    "line": "459",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "src/3rdparty/patricia.c",
+    "line": "484",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "src/3rdparty/patricia.c",
+    "line": "485",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "src/3rdparty/patricia.c",
+    "line": "486",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "src/3rdparty/patricia.c",
+    "line": "530",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "src/3rdparty/patricia.c",
+    "line": "531",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "src/3rdparty/patricia.c",
+    "line": "552",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "src/3rdparty/patricia.c",
+    "line": "553",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "src/3rdparty/patricia.c",
+    "line": "554",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "src/3rdparty/patricia.c",
+    "line": "555",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "src/3rdparty/patricia.c",
+    "line": "556",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "src/3rdparty/patricia.c",
+    "line": "557",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "src/3rdparty/patricia.c",
+    "line": "654",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "src/3rdparty/patricia.c",
+    "line": "655",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "src/3rdparty/patricia.c",
+    "line": "656",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "src/3rdparty/patricia.c",
+    "line": "747",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "src/3rdparty/patricia.c",
+    "line": "748",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "src/3rdparty/patricia.c",
+    "line": "749",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "src/3rdparty/patricia.c",
+    "line": "803",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "src/3rdparty/patricia.c",
+    "line": "824",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "src/3rdparty/patricia.c",
+    "line": "860",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "src/3rdparty/patricia.c",
+    "line": "878",
+    "column": "7",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "src/3rdparty/patricia.c",
+    "line": "881",
+    "column": "7",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "src/3rdparty/patricia.c",
+    "line": "900",
+    "column": "7",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "src/3rdparty/patricia.c",
+    "line": "932",
+    "column": "7",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "src/3rdparty/patricia.c",
+    "line": "952",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "src/3rdparty/patricia.c",
+    "line": "953",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "src/3rdparty/patricia.c",
+    "line": "982",
+    "column": "7",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "src/3rdparty/patricia.c",
+    "line": "991",
+    "column": "7",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "src/3rdparty/patricia.c",
+    "line": "1002",
+    "column": "7",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "src/3rdparty/patricia.c",
+    "line": "1007",
+    "column": "7",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "src/3rdparty/patricia.c",
+    "line": "1023",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "src/3rdparty/patricia.c",
+    "line": "1034",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "src/3rdparty/patricia.c",
+    "line": "1042",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/highwayhash/highwayhash/nanobenchmark.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/highwayhash/highwayhash/nanobenchmark.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/highwayhash/highwayhash/nanobenchmark.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/highwayhash/highwayhash/nanobenchmark.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/highwayhash/highwayhash/nanobenchmark.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/highwayhash/highwayhash/nanobenchmark.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/highwayhash/highwayhash/nanobenchmark.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/highwayhash/highwayhash/nanobenchmark.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/highwayhash/highwayhash/nanobenchmark.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/highwayhash/highwayhash/nanobenchmark.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/highwayhash/highwayhash/nanobenchmark.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/highwayhash/highwayhash/nanobenchmark.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/highwayhash/highwayhash/nanobenchmark.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/highwayhash/highwayhash/nanobenchmark.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/highwayhash/highwayhash/nanobenchmark.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/highwayhash/highwayhash/nanobenchmark.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/highwayhash/highwayhash/nanobenchmark.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/highwayhash/highwayhash/nanobenchmark.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/highwayhash/highwayhash/nanobenchmark.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/highwayhash/highwayhash/os_specific.cc",
+    "line": "224",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/highwayhash/highwayhash/os_specific.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/highwayhash/highwayhash/os_specific.cc",
+    "line": "0",
+    "column": "0",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "src/zeek-affinity.cc",
+    "line": "23",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "build/auxil/zeekctl/auxil/pysubnettree/CMakeFiles/SubnetTree.dir/SubnetTreePYTHON_wrap.cxx",
+    "line": "2382",
+    "column": "15",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "build/auxil/zeekctl/auxil/pysubnettree/CMakeFiles/SubnetTree.dir/SubnetTreePYTHON_wrap.cxx",
+    "line": "2662",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "build/auxil/zeekctl/auxil/pysubnettree/CMakeFiles/SubnetTree.dir/SubnetTreePYTHON_wrap.cxx",
+    "line": "5618",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/zeekctl/auxil/pysubnettree/patricia.c",
+    "line": "186",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/zeekctl/auxil/pysubnettree/patricia.c",
+    "line": "211",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/zeekctl/auxil/pysubnettree/patricia.c",
+    "line": "226",
+    "column": "6",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/zeekctl/auxil/pysubnettree/patricia.c",
+    "line": "338",
+    "column": "3",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/zeekctl/auxil/pysubnettree/patricia.c",
+    "line": "390",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/zeekctl/auxil/pysubnettree/patricia.c",
+    "line": "393",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/zeekctl/auxil/pysubnettree/patricia.c",
+    "line": "418",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/zeekctl/auxil/pysubnettree/patricia.c",
+    "line": "432",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/zeekctl/auxil/pysubnettree/patricia.c",
+    "line": "468",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/zeekctl/auxil/pysubnettree/patricia.c",
+    "line": "490",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/zeekctl/auxil/pysubnettree/patricia.c",
+    "line": "505",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/zeekctl/auxil/pysubnettree/patricia.c",
+    "line": "506",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/zeekctl/auxil/pysubnettree/patricia.c",
+    "line": "507",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/zeekctl/auxil/pysubnettree/patricia.c",
+    "line": "554",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/zeekctl/auxil/pysubnettree/patricia.c",
+    "line": "555",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/zeekctl/auxil/pysubnettree/patricia.c",
+    "line": "578",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/zeekctl/auxil/pysubnettree/patricia.c",
+    "line": "579",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/zeekctl/auxil/pysubnettree/patricia.c",
+    "line": "580",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/zeekctl/auxil/pysubnettree/patricia.c",
+    "line": "677",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/zeekctl/auxil/pysubnettree/patricia.c",
+    "line": "678",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/zeekctl/auxil/pysubnettree/patricia.c",
+    "line": "679",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/zeekctl/auxil/pysubnettree/patricia.c",
+    "line": "735",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/zeekctl/auxil/pysubnettree/patricia.c",
+    "line": "756",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/zeekctl/auxil/pysubnettree/patricia.c",
+    "line": "792",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/zeekctl/auxil/pysubnettree/patricia.c",
+    "line": "811",
+    "column": "6",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/zeekctl/auxil/pysubnettree/patricia.c",
+    "line": "815",
+    "column": "6",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/zeekctl/auxil/pysubnettree/patricia.c",
+    "line": "835",
+    "column": "6",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/zeekctl/auxil/pysubnettree/patricia.c",
+    "line": "872",
+    "column": "6",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/zeekctl/auxil/pysubnettree/patricia.c",
+    "line": "896",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/zeekctl/auxil/pysubnettree/patricia.c",
+    "line": "897",
+    "column": "5",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/zeekctl/auxil/pysubnettree/patricia.c",
+    "line": "926",
+    "column": "6",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/zeekctl/auxil/pysubnettree/patricia.c",
+    "line": "936",
+    "column": "6",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/zeekctl/auxil/pysubnettree/patricia.c",
+    "line": "947",
+    "column": "6",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/zeekctl/auxil/pysubnettree/patricia.c",
+    "line": "954",
+    "column": "6",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/zeekctl/auxil/pysubnettree/patricia.c",
+    "line": "971",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/zeekctl/auxil/pysubnettree/patricia.c",
+    "line": "982",
+    "column": "2",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/zeekctl/auxil/pysubnettree/patricia.c",
+    "line": "991",
+    "column": "9",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  },
+  {
+    "rule": "MSC12-C",
+    "file": "auxil/zeekctl/auxil/capstats/capstats.cc",
+    "line": "194",
+    "column": "9",
+    "tool": "rosecheckers",
+    "checker": "MSC12-C",
+    "message": "Detect and remove code that has no effect"
+  }
+]

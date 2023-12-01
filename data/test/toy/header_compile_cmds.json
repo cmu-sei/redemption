@@ -1,0 +1,11 @@
+[
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "header.c"
+        ],
+        "directory": "/host/data/test/toy",
+        "file": "header.c"
+    }
+]

@@ -1,0 +1,11 @@
+[
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "test_errors.c"
+        ],
+        "directory": "$TEST_DIR/",
+        "file": "test_errors.c"
+    }
+]

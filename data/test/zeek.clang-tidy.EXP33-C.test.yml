@@ -1,0 +1,737 @@
+tests:
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_broker_caf_libcaf_core_src_binary_deserializer_cpp.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/broker/caf/libcaf_core/src/binary_deserializer.cpp
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_broker_caf_libcaf_core_src_binary_deserializer_cpp
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_broker_caf_libcaf_core_src_config_value_reader_cpp.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/broker/caf/libcaf_core/src/config_value_reader.cpp
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_broker_caf_libcaf_core_src_config_value_reader_cpp
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_broker_caf_libcaf_core_src_detail_glob_match_cpp.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/broker/caf/libcaf_core/src/detail/glob_match.cpp
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_broker_caf_libcaf_core_src_detail_glob_match_cpp
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_broker_caf_libcaf_core_src_detail_parse_cpp.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/broker/caf/libcaf_core/src/detail/parse.cpp
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_broker_caf_libcaf_core_src_detail_parse_cpp
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_broker_caf_libcaf_core_src_detail_ripemd_160_cpp.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/broker/caf/libcaf_core/src/detail/ripemd_160.cpp
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_broker_caf_libcaf_core_src_detail_ripemd_160_cpp
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_broker_caf_libcaf_core_src_hash_sha1_cpp.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/broker/caf/libcaf_core/src/hash/sha1.cpp
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_broker_caf_libcaf_core_src_hash_sha1_cpp
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_broker_caf_libcaf_core_src_json_writer_cpp.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/broker/caf/libcaf_core/src/json_writer.cpp
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_broker_caf_libcaf_core_src_json_writer_cpp
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_broker_caf_libcaf_core_src_logger_cpp.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/broker/caf/libcaf_core/src/logger.cpp
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_broker_caf_libcaf_core_src_logger_cpp
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_broker_caf_libcaf_core_src_message_builder_cpp.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/broker/caf/libcaf_core/src/message_builder.cpp
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_broker_caf_libcaf_core_src_message_builder_cpp
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_broker_caf_libcaf_core_src_node_id_cpp.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/broker/caf/libcaf_core/src/node_id.cpp
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_broker_caf_libcaf_core_src_node_id_cpp
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_broker_caf_libcaf_core_src_uuid_cpp.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/broker/caf/libcaf_core/src/uuid.cpp
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_broker_caf_libcaf_core_src_uuid_cpp
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_broker_caf_libcaf_io_src_io_basp_instance_cpp.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/broker/caf/libcaf_io/src/io/basp/instance.cpp
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_broker_caf_libcaf_io_src_io_basp_instance_cpp
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_broker_caf_libcaf_io_src_io_middleman_cpp.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/broker/caf/libcaf_io/src/io/middleman.cpp
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_broker_caf_libcaf_io_src_io_middleman_cpp
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_broker_caf_libcaf_io_src_io_middleman_actor_impl_cpp.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/broker/caf/libcaf_io/src/io/middleman_actor_impl.cpp
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_broker_caf_libcaf_io_src_io_middleman_actor_impl_cpp
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_broker_caf_libcaf_io_src_io_network_default_multiplexer_cpp.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/broker/caf/libcaf_io/src/io/network/default_multiplexer.cpp
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_broker_caf_libcaf_io_src_io_network_default_multiplexer_cpp
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_broker_caf_libcaf_io_src_io_network_native_socket_cpp.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/broker/caf/libcaf_io/src/io/network/native_socket.cpp
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_broker_caf_libcaf_io_src_io_network_native_socket_cpp
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_broker_caf_libcaf_io_src_io_network_pipe_reader_cpp.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/broker/caf/libcaf_io/src/io/network/pipe_reader.cpp
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_broker_caf_libcaf_io_src_io_network_pipe_reader_cpp
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_broker_caf_libcaf_io_src_io_network_test_multiplexer_cpp.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/broker/caf/libcaf_io/src/io/network/test_multiplexer.cpp
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_broker_caf_libcaf_io_src_io_network_test_multiplexer_cpp
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_broker_caf_libcaf_net_src_detail_rfc6455_cpp.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/broker/caf/libcaf_net/src/detail/rfc6455.cpp
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_broker_caf_libcaf_net_src_detail_rfc6455_cpp
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_broker_caf_libcaf_net_src_header_cpp.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/broker/caf/libcaf_net/src/header.cpp
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_broker_caf_libcaf_net_src_header_cpp
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_broker_caf_libcaf_net_src_pollset_updater_cpp.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/broker/caf/libcaf_net/src/pollset_updater.cpp
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_broker_caf_libcaf_net_src_pollset_updater_cpp
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_c-ares_src_lib_ares__addrinfo2hostent_c.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/c-ares/src/lib/ares__addrinfo2hostent.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_c-ares_src_lib_ares__addrinfo2hostent_c
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_c-ares_src_lib_ares__addrinfo_localhost_c.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/c-ares/src/lib/ares__addrinfo_localhost.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_c-ares_src_lib_ares__addrinfo_localhost_c
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_c-ares_src_lib_ares__close_sockets_c.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/c-ares/src/lib/ares__close_sockets.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_c-ares_src_lib_ares__close_sockets_c
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_c-ares_src_lib_ares__get_hostent_c.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/c-ares/src/lib/ares__get_hostent.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_c-ares_src_lib_ares__get_hostent_c
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_c-ares_src_lib_ares__parse_into_addrinfo_c.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/c-ares/src/lib/ares__parse_into_addrinfo.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_c-ares_src_lib_ares__parse_into_addrinfo_c
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_c-ares_src_lib_ares__read_line_c.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/c-ares/src/lib/ares__read_line.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_c-ares_src_lib_ares__read_line_c
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_c-ares_src_lib_ares__readaddrinfo_c.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/c-ares/src/lib/ares__readaddrinfo.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_c-ares_src_lib_ares__readaddrinfo_c
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_c-ares_src_lib_ares__sortaddrinfo_c.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/c-ares/src/lib/ares__sortaddrinfo.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_c-ares_src_lib_ares__sortaddrinfo_c
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_c-ares_src_lib_ares_cancel_c.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/c-ares/src/lib/ares_cancel.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_c-ares_src_lib_ares_cancel_c
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_c-ares_src_lib_ares_create_query_c.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/c-ares/src/lib/ares_create_query.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_c-ares_src_lib_ares_create_query_c
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_c-ares_src_lib_ares_data_c.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/c-ares/src/lib/ares_data.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_c-ares_src_lib_ares_data_c
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_c-ares_src_lib_ares_destroy_c.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/c-ares/src/lib/ares_destroy.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_c-ares_src_lib_ares_destroy_c
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_c-ares_src_lib_ares_expand_name_c.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/c-ares/src/lib/ares_expand_name.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_c-ares_src_lib_ares_expand_name_c
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_c-ares_src_lib_ares_expand_string_c.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/c-ares/src/lib/ares_expand_string.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_c-ares_src_lib_ares_expand_string_c
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_c-ares_src_lib_ares_fds_c.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/c-ares/src/lib/ares_fds.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_c-ares_src_lib_ares_fds_c
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_c-ares_src_lib_ares_free_hostent_c.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/c-ares/src/lib/ares_free_hostent.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_c-ares_src_lib_ares_free_hostent_c
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_c-ares_src_lib_ares_freeaddrinfo_c.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/c-ares/src/lib/ares_freeaddrinfo.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_c-ares_src_lib_ares_freeaddrinfo_c
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_c-ares_src_lib_ares_getaddrinfo_c.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/c-ares/src/lib/ares_getaddrinfo.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_c-ares_src_lib_ares_getaddrinfo_c
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_c-ares_src_lib_ares_gethostbyaddr_c.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/c-ares/src/lib/ares_gethostbyaddr.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_c-ares_src_lib_ares_gethostbyaddr_c
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_c-ares_src_lib_ares_gethostbyname_c.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/c-ares/src/lib/ares_gethostbyname.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_c-ares_src_lib_ares_gethostbyname_c
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_c-ares_src_lib_ares_getnameinfo_c.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/c-ares/src/lib/ares_getnameinfo.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_c-ares_src_lib_ares_getnameinfo_c
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_c-ares_src_lib_ares_getsock_c.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/c-ares/src/lib/ares_getsock.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_c-ares_src_lib_ares_getsock_c
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_c-ares_src_lib_ares_init_c.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/c-ares/src/lib/ares_init.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_c-ares_src_lib_ares_init_c
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_c-ares_src_lib_ares_library_init_c.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/c-ares/src/lib/ares_library_init.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_c-ares_src_lib_ares_library_init_c
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_c-ares_src_lib_ares_options_c.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/c-ares/src/lib/ares_options.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_c-ares_src_lib_ares_options_c
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_c-ares_src_lib_ares_parse_a_reply_c.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/c-ares/src/lib/ares_parse_a_reply.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_c-ares_src_lib_ares_parse_a_reply_c
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_c-ares_src_lib_ares_parse_aaaa_reply_c.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/c-ares/src/lib/ares_parse_aaaa_reply.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_c-ares_src_lib_ares_parse_aaaa_reply_c
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_c-ares_src_lib_ares_parse_caa_reply_c.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/c-ares/src/lib/ares_parse_caa_reply.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_c-ares_src_lib_ares_parse_caa_reply_c
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_c-ares_src_lib_ares_parse_mx_reply_c.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/c-ares/src/lib/ares_parse_mx_reply.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_c-ares_src_lib_ares_parse_mx_reply_c
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_c-ares_src_lib_ares_parse_naptr_reply_c.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/c-ares/src/lib/ares_parse_naptr_reply.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_c-ares_src_lib_ares_parse_naptr_reply_c
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_c-ares_src_lib_ares_parse_ns_reply_c.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/c-ares/src/lib/ares_parse_ns_reply.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_c-ares_src_lib_ares_parse_ns_reply_c
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_c-ares_src_lib_ares_parse_ptr_reply_c.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/c-ares/src/lib/ares_parse_ptr_reply.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_c-ares_src_lib_ares_parse_ptr_reply_c
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_c-ares_src_lib_ares_parse_soa_reply_c.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/c-ares/src/lib/ares_parse_soa_reply.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_c-ares_src_lib_ares_parse_soa_reply_c
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_c-ares_src_lib_ares_parse_srv_reply_c.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/c-ares/src/lib/ares_parse_srv_reply.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_c-ares_src_lib_ares_parse_srv_reply_c
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_c-ares_src_lib_ares_parse_txt_reply_c.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/c-ares/src/lib/ares_parse_txt_reply.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_c-ares_src_lib_ares_parse_txt_reply_c
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_c-ares_src_lib_ares_parse_uri_reply_c.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/c-ares/src/lib/ares_parse_uri_reply.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_c-ares_src_lib_ares_parse_uri_reply_c
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_c-ares_src_lib_ares_process_c.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/c-ares/src/lib/ares_process.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_c-ares_src_lib_ares_process_c
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_c-ares_src_lib_ares_query_c.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/c-ares/src/lib/ares_query.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_c-ares_src_lib_ares_query_c
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_c-ares_src_lib_ares_search_c.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/c-ares/src/lib/ares_search.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_c-ares_src_lib_ares_search_c
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_c-ares_src_lib_ares_send_c.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/c-ares/src/lib/ares_send.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_c-ares_src_lib_ares_send_c
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_c-ares_src_lib_ares_strdup_c.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/c-ares/src/lib/ares_strdup.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_c-ares_src_lib_ares_strdup_c
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_c-ares_src_lib_ares_strsplit_c.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/c-ares/src/lib/ares_strsplit.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_c-ares_src_lib_ares_strsplit_c
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_c-ares_src_lib_ares_timeout_c.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/c-ares/src/lib/ares_timeout.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_c-ares_src_lib_ares_timeout_c
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_c-ares_src_lib_bitncmp_c.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/c-ares/src/lib/bitncmp.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_c-ares_src_lib_bitncmp_c
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_c-ares_src_lib_inet_net_pton_c.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/c-ares/src/lib/inet_net_pton.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_c-ares_src_lib_inet_net_pton_c
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_libkqueue_src_linux_platform_c.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/libkqueue/src/linux/platform.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_libkqueue_src_linux_platform_c
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_libkqueue_src_linux_proc_c.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/libkqueue/src/linux/proc.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_libkqueue_src_linux_proc_c
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_libkqueue_src_linux_read_c.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/libkqueue/src/linux/read.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_libkqueue_src_linux_read_c
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_libkqueue_src_linux_signal_c.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/libkqueue/src/linux/signal.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_libkqueue_src_linux_signal_c
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_libkqueue_src_linux_timer_c.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/libkqueue/src/linux/timer.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_libkqueue_src_linux_timer_c
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_libkqueue_src_linux_user_c.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/libkqueue/src/linux/user.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_libkqueue_src_linux_user_c
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_libkqueue_src_linux_vnode_c.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/libkqueue/src/linux/vnode.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_libkqueue_src_linux_vnode_c
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_libkqueue_src_linux_write_c.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/libkqueue/src/linux/write.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_libkqueue_src_linux_write_c
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_paraglob_src_ahocorasick_AhoCorasickPlus_cpp.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/paraglob/src/ahocorasick/AhoCorasickPlus.cpp
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_paraglob_src_ahocorasick_AhoCorasickPlus_cpp
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_paraglob_src_ahocorasick_ahocorasick_c.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/paraglob/src/ahocorasick/ahocorasick.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_paraglob_src_ahocorasick_ahocorasick_c
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_paraglob_src_ahocorasick_mpool_c.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/paraglob/src/ahocorasick/mpool.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_paraglob_src_ahocorasick_mpool_c
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_paraglob_src_ahocorasick_node_c.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/paraglob/src/ahocorasick/node.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_paraglob_src_ahocorasick_node_c
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_paraglob_src_ahocorasick_replace_c.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/paraglob/src/ahocorasick/replace.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_paraglob_src_ahocorasick_replace_c
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_paraglob_src_paraglob_cpp.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/paraglob/src/paraglob.cpp
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_paraglob_src_paraglob_cpp
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_paraglob_tools_benchmark_cpp.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/paraglob/tools/benchmark.cpp
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_paraglob_tools_benchmark_cpp
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_zeek-aux_adtrace_adtrace_c.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/zeek-aux/adtrace/adtrace.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_zeek-aux_adtrace_adtrace_c
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_zeek-aux_rst_rst_c.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/zeek-aux/rst/rst.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_zeek-aux_rst_rst_c
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_zeek-aux_zeek-cut_zeek-cut_c.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/zeek-aux/zeek-cut/zeek-cut.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_zeek-aux_zeek-cut_zeek-cut_c
+
+- answer_file: zeek.clang-tidy.EXP33-C.auxil_zeekctl_auxil_pysubnettree_patricia_c.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/zeekctl/auxil/pysubnettree/patricia.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_zeekctl_auxil_pysubnettree_patricia_c
+
+- answer_file: zeek.clang-tidy.EXP33-C.build_auxil_zeekctl_auxil_pysubnettree_CMakeFiles_SubnetTree_dir_SubnetTreePYTHON_wrap_cxx.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: build/auxil/zeekctl/auxil/pysubnettree/CMakeFiles/SubnetTree.dir/SubnetTreePYTHON_wrap.cxx
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: build_auxil_zeekctl_auxil_pysubnettree_CMakeFiles_SubnetTree_dir_SubnetTreePYTHON_wrap_cxx
+
+- answer_file: zeek.clang-tidy.EXP33-C.src_3rdparty_ConvertUTF_c.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: src/3rdparty/ConvertUTF.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: src_3rdparty_ConvertUTF_c
+
+- answer_file: zeek.clang-tidy.EXP33-C.src_3rdparty_modp_numtoa_c.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: src/3rdparty/modp_numtoa.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: src_3rdparty_modp_numtoa_c
+
+- answer_file: zeek.clang-tidy.EXP33-C.src_3rdparty_nb_dns_c.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: src/3rdparty/nb_dns.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: src_3rdparty_nb_dns_c
+
+- answer_file: zeek.clang-tidy.EXP33-C.src_3rdparty_patricia_c.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: src/3rdparty/patricia.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: src_3rdparty_patricia_c
+
+- answer_file: zeek.clang-tidy.EXP33-C.src_3rdparty_sqlite3_c.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: src/3rdparty/sqlite3.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: src_3rdparty_sqlite3_c
+
+- answer_file: zeek.clang-tidy.EXP33-C.src_3rdparty_zeek_inet_ntop_c.ans
+  input:
+    alerts_file: zeek.clang-tidy.EXP33-C.alerts.json
+    base_dir: /oss/zeek
+    cfile: src/3rdparty/zeek_inet_ntop.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: src_3rdparty_zeek_inet_ntop_c
