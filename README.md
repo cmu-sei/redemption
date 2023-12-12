@@ -123,7 +123,7 @@ bear -- make
 
 ### Execution
 
-Example how to run a built-in end-to-end automated code repair test, within the container (you can change the `out` directory location or directory name, but you must create that directory before running the command):
+Here is an example of how to run a built-in end-to-end automated code repair test, within the container (you can change the `out` directory location or directory name, but you must create that directory before running the command):
 
 ```sh
 pushd /host/code/acr
