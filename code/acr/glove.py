@@ -86,19 +86,20 @@ def run(edits_file, output_dir, *, comp_dir=".", base_dir=None, single_file=None
             sys.stderr.write("Warning: Skipping file outside of out_dir: %r" % outname)
             continue
         assert(abs_filename.startswith("/"))
-        contents_string = read_whole_file(abs_filename)
+        contents_string = read_whole_file(abs_filename, 'b')
         contents = list(contents_string)
         if len(edit_list) > 0:
             include_line = '#include "acr.h"'
-            already_present = re.search('^' + include_line + '$', contents_string, flags=re.MULTILINE)
+            already_present = re.search(b'^' + bytes(include_line, "utf-8") + b'$',
+                                        contents_string, flags=re.MULTILINE)
             if not already_present:
                 edit_list.append([0, 0, include_line + "\n\n"])
         for (start, end, replacement) in reversed(sorted(edit_list)):
-            contents[start:end] = list(replacement)
-        contents = "".join(contents)
+            contents[start:end] = list(bytes(replacement, 'utf-8'))
+        contents = bytes(contents)
         out_subdir = os.path.dirname(outname)
         Path(out_subdir).mkdir(parents=True, exist_ok=True)
-        with open(outname, 'w') as outfile:
+        with open(outname, 'wb') as outfile:
             outfile.write(contents)
             repaired_files.append(outname)
     print("Repaired files: %r" % repaired_files)

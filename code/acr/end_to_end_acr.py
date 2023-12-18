@@ -75,6 +75,17 @@ def main():
 
 
 def run(source_file, compile_commands, alerts, *, hand_out_file=None, ast_dir=None, out_src_dir=None, step_dir=None, base_dir=None, single_file_mode=None, repair_in_place=False, skip_dom=None):
+    if os.getenv('acr_emit_invocation'):
+        print("end_to_end_acr.py{}{}{}{}{}{}{}{} {} {} {}".format(
+            f" -o {hand_out_file}" if hand_out_file else "",
+            f" --ast-dir {ast_dir}" if ast_dir else "",
+            f" --repaired-src {out_src_dir}" if out_src_dir else "",
+            f" --step-dir {step_dir}" if step_dir else "",
+            f" --base-dir {base_dir}" if base_dir else "",
+            " --in-place" if repair_in_place else "",
+            " --single-file" if single_file_mode else "",
+            " --skip-dom true" if skip_dom else "",
+            source_file, compile_commands, alerts))
 
     if repair_in_place == True:
         if (base_dir is None):

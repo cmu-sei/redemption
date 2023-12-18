@@ -1,0 +1,17 @@
+--- /host/data/test/out/auxil/zeek-aux/rst/rst.c	2023-12-15 21:06:10.030204764 +0000
++++ /oss/zeek/auxil/zeek-aux/rst/rst.c	2023-11-21 18:09:48.000000000 +0000
+@@ -1,5 +1,3 @@
+-#include "acr.h"
+-
+ /* Derived from traceroute, which has the following copyright:
+  *
+  * Copyright (c) 1999, 2002
+@@ -168,7 +166,7 @@
+ 	int cc;
+ 	int pktlen = 40 + size;
+ 	const int max_injection_size = 4096;
+-	char *pkt = null_check(malloc(pktlen + max_injection_size + 1024 /* slop */));
++	char *pkt = malloc(pktlen + max_injection_size + 1024 /* slop */);
+ 	struct ip *ip = (struct ip *) pkt;
+ 	struct tcphdr *tcp = (struct tcphdr *) &pkt[20];
+ 

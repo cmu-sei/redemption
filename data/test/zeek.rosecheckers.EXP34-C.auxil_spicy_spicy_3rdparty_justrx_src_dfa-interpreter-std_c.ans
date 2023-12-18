@@ -1,0 +1,26 @@
+--- /host/data/test/out/auxil/spicy/spicy/3rdparty/justrx/src/dfa-interpreter-std.c	2023-12-15 21:06:05.418101067 +0000
++++ /oss/zeek/auxil/spicy/spicy/3rdparty/justrx/src/dfa-interpreter-std.c	2023-11-21 18:09:48.000000000 +0000
+@@ -1,5 +1,3 @@
+-#include "acr.h"
+-
+ // $Id$
+ 
+ #include "dfa-interpreter-std.h"
+@@ -48,7 +46,7 @@
+     int old_size = *size * _tag_group_size(ms);
+     int new_size = (group + 1) * _tag_group_size(ms);
+ 
+-    char* t = null_check(realloc(tags, new_size));
++    char* t = realloc(tags, new_size);
+     memset(t + old_size, 0, new_size - old_size);
+ 
+     *size = (group + 1);
+@@ -303,7 +301,7 @@
+ 
+ jrx_offset* jrx_match_state_copy_tags(jrx_match_state* ms, jrx_tag_group_id tid)
+ {
+-    jrx_offset* tags = (jrx_offset*)null_check(malloc(_tag_group_size(ms)));
++    jrx_offset* tags = (jrx_offset*)malloc(_tag_group_size(ms));
+     jrx_offset* group = _tag_group(ms, ms->current_tags, tid);
+     memcpy(tags, group, _tag_group_size(ms));
+ 

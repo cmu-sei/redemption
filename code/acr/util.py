@@ -46,6 +46,42 @@ def read_file_range(filename, begin_offset, end_offset):
         file.seek(begin_offset)
         return file.read(end_offset - begin_offset)
 
+def get_dict_path(dictionary, *keys, default=None):
+    """Return the value for a list of keys in a recursive dictionary.
+
+    If a key does not exist, return the value of 'default'.
+    """
+    try:
+        for key in keys:
+            dictionary = dictionary[key]
+        return dictionary
+    except KeyError:
+        return default
+
+def set_dict_path(dictionary, *args):
+    """Set a value for a list of keys in a recursive dictionary.
+
+    When a key does not exist, create a dictionary for it.  The last
+    value in 'args' is the value to set.  Returns the value that was set.
+    """
+    keys = args[:-1]
+    value = args[-1]
+    for key in keys[:-1]:
+        dictionary = dictionary.setdefault(key, dict())
+    dictionary[keys[-1]] = value
+    return value
+
+def setdefault_dict_path(dictionary, *args):
+    """Set a value for a list of keys in a recursive dictionary if it is not already set.
+
+    If a value already exists, return it.  Otherwise, set as in 'multi_set'.
+    """
+    keys = args[:-1]
+    value = args[-1]
+    for key in keys[:-1]:
+        dictionary = dictionary.setdefault(key, dict())
+    return dictionary.setdefault(keys[-1], value)
+
 env_var__show_progress = (os.getenv('acr_show_progress') == "true")
 program_start_time = time.time()
 

@@ -1,0 +1,17 @@
+--- /host/data/test/out/auxil/paraglob/src/ahocorasick/ahocorasick.c	2023-12-15 21:05:57.529923711 +0000
++++ /oss/zeek/auxil/paraglob/src/ahocorasick/ahocorasick.c	2023-11-21 18:09:38.000000000 +0000
+@@ -1,5 +1,3 @@
+-#include "acr.h"
+-
+ /*
+  * ahocorasick.c: Implements the A. C. Trie functionalities
+  * This file is part of multifast.
+@@ -60,7 +58,7 @@
+  *****************************************************************************/
+ AC_TRIE_t *ac_trie_create (void)
+ {
+-    AC_TRIE_t *thiz = (AC_TRIE_t *) null_check(malloc (sizeof(AC_TRIE_t)));
++    AC_TRIE_t *thiz = (AC_TRIE_t *) malloc (sizeof(AC_TRIE_t));
+     thiz->mp = mpool_create(0);
+     
+     thiz->root = node_create (thiz);

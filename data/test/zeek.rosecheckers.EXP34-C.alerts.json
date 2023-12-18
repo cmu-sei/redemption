@@ -10,7 +10,7 @@
     "satisfactory": "false",
     "verdict": "true",
     "repair": "true",
-    "rationale": "A malloc is done, then the pointer is dereferenced without a check first in case it is null. (duplicate alert)",
+    "rationale": "A malloc is done, then the pointer is dereferenced without a check first in case it is null.",
     "randomness": "random and first_five",
     "issue": "REM-129"
   },
@@ -43,45 +43,6 @@
     "rationale": "A malloc is done, then the pointer is dereferenced without a check first in case it is null.",
     "randomness": "first_five",
     "issue": "REM-129"
-  },
-  {
-    "rule": "EXP34-C",
-    "file": "auxil/paraglob/src/ahocorasick/ahocorasick.c",
-    "line": "61",
-    "column": "37",
-    "tool": "rosecheckers",
-    "checker": "EXP34-C",
-    "message": "Ensure pointer is valid before dereferencing it",
-    "satisfactory": "false",
-    "verdict": "true",
-    "repair": "true",
-     "rationale": "A malloc is done, then the pointer is dereferenced without a check first in case it is null. (duplicate alert)",
-    "randomness": "first_five",
-    "issue": "REM-129"
-  },
-  {
-    "rule": "EXP34-C",
-    "file": "auxil/paraglob/src/ahocorasick/mpool.c",
-    "line": "65",
-    "column": "36",
-    "tool": "rosecheckers",
-    "checker": "EXP34-C",
-    "message": "Ensure pointer is valid before dereferencing it",
-    "satisfactory": "false",
-    "verdict": "true",
-    "repair": "true",
-    "rationale": "A malloc is done, then the pointer is dereferenced without a check first in case it is null.",
-    "randomness": "first_five",
-    "issue": "REM-129"
-  },
-  {
-    "rule": "EXP34-C",
-    "file": "auxil/paraglob/src/ahocorasick/mpool.c",
-    "line": "84",
-    "column": "11",
-    "tool": "rosecheckers",
-    "checker": "EXP34-C",
-    "message": "Ensure pointer is valid before dereferencing it"
   },
   {
     "rule": "EXP34-C",

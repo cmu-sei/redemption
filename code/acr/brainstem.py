@@ -113,6 +113,8 @@ def parse_args():
     return cmdline_args
 
 def run(ast_file, output_filename):
+    if os.getenv('acr_emit_invocation'):
+        print(f"brainstem.py -o {output_filename} {ast_file}")
     ast = read_json_file(ast_file)
     brainstem = Brainstem()
     brainstem.visit(ast)

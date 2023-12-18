@@ -1,0 +1,26 @@
+--- /host/data/test/out/auxil/spicy/spicy/3rdparty/justrx/src/ccl.c	2023-12-15 21:06:00.305986127 +0000
++++ /oss/zeek/auxil/spicy/spicy/3rdparty/justrx/src/ccl.c	2023-11-21 18:09:48.000000000 +0000
+@@ -1,5 +1,3 @@
+-#include "acr.h"
+-
+ // $Id$
+ 
+ #include "ccl.h"
+@@ -12,7 +10,7 @@
+ 
+ static jrx_ccl* _ccl_create_epsilon()
+ {
+-    jrx_ccl* ccl = (jrx_ccl*)null_check(malloc(sizeof(jrx_ccl)));
++    jrx_ccl* ccl = (jrx_ccl*)malloc(sizeof(jrx_ccl));
+     ccl->id = 0;
+     ccl->group = 0;
+     ccl->assertions = 0;
+@@ -243,7 +241,7 @@
+ 
+ jrx_ccl_group* ccl_group_create()
+ {
+-    jrx_ccl_group* group = (jrx_ccl_group*)null_check(malloc(sizeof(jrx_ccl_group)));
++    jrx_ccl_group* group = (jrx_ccl_group*)malloc(sizeof(jrx_ccl_group));
+     group->std_ccls = vec_std_ccl_create(0);
+     group->ccls = vec_ccl_create(0);
+     return group;

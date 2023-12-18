@@ -3,9 +3,9 @@
 
 # <legal>
 # 'Redemption' Automated Code Repair Tool
-# 
+#
 # Copyright 2023 Carnegie Mellon University.
-# 
+#
 # NO WARRANTY. THIS CARNEGIE MELLON UNIVERSITY AND SOFTWARE ENGINEERING
 # INSTITUTE MATERIAL IS FURNISHED ON AN 'AS-IS' BASIS. CARNEGIE MELLON
 # UNIVERSITY MAKES NO WARRANTIES OF ANY KIND, EITHER EXPRESSED OR IMPLIED,
@@ -14,17 +14,17 @@
 # THE MATERIAL. CARNEGIE MELLON UNIVERSITY DOES NOT MAKE ANY WARRANTY OF ANY
 # KIND WITH RESPECT TO FREEDOM FROM PATENT, TRADEMARK, OR COPYRIGHT
 # INFRINGEMENT.
-# 
+#
 # Licensed under a MIT (SEI)-style license, please see License.txt or
 # contact permission@sei.cmu.edu for full terms.
-# 
+#
 # [DISTRIBUTION STATEMENT A] This material has been approved for public
 # release and unlimited distribution.  Please see Copyright notice for
 # non-US Government use and distribution.
-# 
+#
 # This Software includes and/or makes use of Third-Party Software each
 # subject to its own license.
-# 
+#
 # DM23-2165
 # </legal>
 
@@ -85,7 +85,7 @@ def run_test(**kwargs):
         # This won't catch any exceptions; it's for breaking into the debugger
         # when an error occurs.
         ExceptionClass = BaseException
-    try: 
+    try:
         end_to_end_acr.run(**kwargs)
     except ExceptionClass as exc:
         os.chdir(current_dir)
@@ -335,7 +335,7 @@ def run_and_check_if_answer(stringinput, tests_file,
                     diff_results = subprocess.run(['interdiff', cur_answer_file, cur_diff_file], capture_output=True)
                     if os.getenv('pytest_keep') != "true":
                         subprocess.run(['rm', cur_diff_file], capture_output=True)
-                    if len(diff_results.stdout) != 0:  # interdiff returns 0 even on different files!
+                    if len(diff_results.stdout) != 0 or len(diff_results.stderr) != 0:
                         print("  FAIL: test result doesn't match answer key.\n")
                         all_diff_results.append([test['name'], diff_results.args, diff_results.stdout])
                         all_passed_or_none_tested = 0

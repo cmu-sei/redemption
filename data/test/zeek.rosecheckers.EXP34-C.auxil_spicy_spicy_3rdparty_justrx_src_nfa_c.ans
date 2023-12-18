@@ -1,0 +1,26 @@
+--- /host/data/test/out/auxil/spicy/spicy/3rdparty/justrx/src/nfa.c	2023-12-15 21:06:08.878178862 +0000
++++ /oss/zeek/auxil/spicy/spicy/3rdparty/justrx/src/nfa.c	2023-11-21 18:09:48.000000000 +0000
+@@ -1,5 +1,3 @@
+-#include "acr.h"
+-
+ // $Id$
+ 
+ #include "nfa.h"
+@@ -122,7 +120,7 @@
+ 
+ jrx_nfa_context* nfa_context_create(jrx_option options, int8_t nmatch)
+ {
+-    jrx_nfa_context* ctx = (jrx_nfa_context*)null_check(malloc(sizeof(jrx_nfa_context)));
++    jrx_nfa_context* ctx = (jrx_nfa_context*)malloc(sizeof(jrx_nfa_context));
+     ctx->refcnt = 0;
+     ctx->options = options;
+     ctx->nmatch = nmatch >= 0 ? nmatch : INT8_MAX;
+@@ -149,7 +147,7 @@
+ 
+ jrx_nfa* nfa_create(jrx_nfa_context* ctx, jrx_nfa_state* initial, jrx_nfa_state* final)
+ {
+-    jrx_nfa* nfa = (jrx_nfa*)null_check(malloc(sizeof(jrx_nfa)));
++    jrx_nfa* nfa = (jrx_nfa*)malloc(sizeof(jrx_nfa));
+     nfa->ctx = ctx;
+     nfa->initial_tags = 0;
+     nfa->initial = initial;

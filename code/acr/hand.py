@@ -170,6 +170,8 @@ def main():
     run(**vars(cmdline_args))
 
 def run(ast_file, alerts_filename, output_filename, warn_missing=False):
+    if os.getenv('acr_emit_invocation'):
+        print(f"hand.py -o {output_filename} -a {alerts_filename} {ast_file}")
     ast = read_json_file(ast_file)
     hand = Hand()
     env_warn_missing = os.getenv('acr_warn_unlocated_alerts')

@@ -211,9 +211,16 @@ class Brain(AstVisitor):
         if alert is None:
             alert = self.get_alert_at_cursor("EXP34-C")
         if alert:
-            if alert.get("repair") and not whole_expr:
-                # Already repaired
-                return
+            repair = alert.get("repair")
+            if repair:
+                if not whole_expr:
+                    # Non-whole_exprs cannot override repairs
+                    return
+                match alert:
+                    case {'tool': 'rosecheckers',
+                          'repair': ['add_null_check', {"whole_expr": True}]}:
+                        # If we've already repaired this as a whole_expr, stop
+                        return
             message = alert.get("message","")
             m = re.match("Null pointer passed to ([0-9]+).. parameter", message)
             if m:
@@ -259,13 +266,15 @@ class Brain(AstVisitor):
                 a['file'] = os.path.join(self.base_dir, a['file'])
             a['file'] = os.path.realpath(a['file'])
             (filename, line, col, rule)  = (a['file'], int(a['line']), int(a.get("column",-1)), a['rule'])
-            self.alerts_by_line.setdefault(filename, {}).setdefault(line, {})[rule] = a
-            if col:
-                self.alerts_by_lc.setdefault(filename, {}).setdefault(line, {}).setdefault(col, {})[rule] = a
             a["alert_id"] = cur_alert_id
             cur_alert_id += 1
-
-
+            val = set_dict_path(self.alerts_by_line, filename, line, rule, a)
+            if not val is a:
+                mark_skipped_alert(a, f"Duplicate of alert_id={val['alert_id']}")
+            if col:
+                val = setdefault_dict_path(self.alerts_by_lc, filename, line, col, rule, a)
+                if not val is a:
+                    mark_skipped_alert(a, f"Duplicate of alert_id={val['alert_id']}")
 
     def fixup_nulldom_info(self):
         def fixup(cur_deref):
@@ -412,6 +421,8 @@ def main():
     run(**vars(cmdline_args))
 
 def run(ast_file, alerts_filename, output_filename, skip_dom=False):
+    if os.getenv('acr_emit_invocation'):
+        print(f"brain.py -o {output_filename} -a {alerts_filename} {ast_file}")
     ll_file = get_ast_file_base(ast_file) + ".ll"
     ast = read_json_file(ast_file)
     brain = Brain(ast)
