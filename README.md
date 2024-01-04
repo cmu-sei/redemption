@@ -161,4 +161,4 @@ unset XDG_RUNTIME_DIR
 unset DBUS_SESSION_BUS_ADDRESS
 ```
 
-For more details, see https://github.com/containers/buildah/issues/3887#issuecomment-1085680094
+For more information, see https://github.com/containers/buildah/issues/3887#issuecomment-1085680094
