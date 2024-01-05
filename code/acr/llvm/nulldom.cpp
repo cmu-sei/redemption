@@ -157,6 +157,16 @@ public:
     }
   }
 
+  Value* get_base_of_GEP(Value* p) {
+    /* We are only concerned with null-pointer checks, 
+       so we conflate {p, p->foo, p[2], etc.}. */
+    if (auto* gep = dyn_cast<GetElementPtrInst>(p)) {
+      return gep->getPointerOperand();
+    } else {
+      return p;
+    }
+  }
+
   bool
   runOnFunction(llvm::Function &F) override
   {
@@ -170,9 +180,9 @@ public:
         llvm::Instruction* I = &(*BI);
         Value* ptr = nullptr;
         if (LoadInst* LI = dyn_cast<LoadInst>(I)) {
-          ptr = LI->getPointerOperand();
+          ptr = get_base_of_GEP(LI->getPointerOperand());
         } else if (StoreInst* SI = dyn_cast<StoreInst>(I)) {
-          ptr = SI->getPointerOperand();
+          ptr = get_base_of_GEP(SI->getPointerOperand());
         }
         if (ptr) {
           llvm::DebugLoc dl = I->getDebugLoc();
