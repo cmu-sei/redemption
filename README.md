@@ -162,3 +162,13 @@ unset DBUS_SESSION_BUS_ADDRESS
 ```
 
 For more information, see https://github.com/containers/buildah/issues/3887#issuecomment-1085680094
+
+### Summary of environment variables
+
+```bash
+export pytest_keep=true         # Keep output of individual modules (ear, brain, etc.)
+export parser_cache=/host/code/acr/test/cache/ # Cache the output of the ear module
+export acr_show_progress=true   # Show progress and timing
+export acr_warn_unlocated_alerts=true # Warn when alerts cannot be located in AST
+export pytest_no_catch=true     # Break into debugger with "-m pdb" instead of catching exception
+```
