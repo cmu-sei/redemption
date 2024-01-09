@@ -435,6 +435,9 @@ def test_parameter_string_matches(stringinput, out_dir):
 def test_errors(stringinput, out_dir):
     assert run(stringinput, "test_errors.yml") == 1
 
+def test_array_null(stringinput, out_dir):
+    assert run(stringinput, "array_null.yml") == 1
+
 
 def main():
     cmdline_args = parse_args()

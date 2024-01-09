@@ -1,0 +1,29 @@
+[
+  {
+    "rule": "EXP34-C",
+    "file": "array_null.c",
+    "line": "7",
+    "column": "20",
+    "tool": "cppcheck",
+    "checker": "nullPointer",
+    "message": "Possible null pointer dereference: arr"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "array_null.c",
+    "line": "7",
+    "column": "20",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Array access (from variable 'arr') results in a null pointer dereference"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "array_null.c",
+    "line": "7",
+    "column": "20",
+    "tool": "clang-tidy",
+    "checker": "clang-analyzer-core.NullDereference",
+    "message": "Array access results in a null pointer dereference"
+  }
+]
