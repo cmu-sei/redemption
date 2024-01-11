@@ -1,0 +1,80 @@
+--- /host/data/test/out/src/3rdparty/sqlite3.c	2024-01-10 18:24:24.481181010 +0000
++++ /oss/zeek/src/3rdparty/sqlite3.c	2023-11-21 18:09:52.000000000 +0000
+@@ -1,5 +1,3 @@
+-#include "acr.h"
+-
+ /******************************************************************************
+ ** This file is an amalgamation of many separate C source files from SQLite
+ ** version 3.38.4.  By combining all the individual C code files into this
+@@ -71843,7 +71841,7 @@
+ #endif
+ 
+   xRecordCompare = sqlite3VdbeFindCompare(pIdxKey);
+-  null_check(pIdxKey)->errCode = 0;
++  pIdxKey->errCode = 0;
+   assert( pIdxKey->default_rc==1
+        || pIdxKey->default_rc==0
+        || pIdxKey->default_rc==-1
+@@ -84674,7 +84672,7 @@
+   ** The easiest way to enforce this limit is to consider only records with
+   ** 13 fields or less. If the first field is an integer, the maximum legal
+   ** header size is (12*5 + 1 + 1) bytes.  */
+-  if( null_check(p)->pKeyInfo->nAllField<=13 ){
++  if( p->pKeyInfo->nAllField<=13 ){
+     int flags = p->aMem[0].flags;
+     if( p->pKeyInfo->aSortFlags[0] ){
+       if( p->pKeyInfo->aSortFlags[0] & KEYINFO_ORDER_BIGNULL ){
+@@ -120196,7 +120194,7 @@
+ static int tabIsReadOnly(Parse *pParse, Table *pTab){
+   sqlite3 *db;
+   if( IsVirtual(pTab) ){
+-    return null_check(sqlite3GetVTable, return 0)(pParse->db, pTab)->pMod->pModule->xUpdate==0;
++    return sqlite3GetVTable(pParse->db, pTab)->pMod->pModule->xUpdate==0;
+   }
+   if( (pTab->tabFlags & (TF_Readonly|TF_Shadow))==0 ) return 0;
+   db = pParse->db;
+@@ -134031,7 +134029,7 @@
+ #ifdef SQLITE_ENABLE_API_ARMOR
+   if( ppStmt==0 ) return SQLITE_MISUSE_BKPT;
+ #endif
+-  *null_check(ppStmt) = 0;
++  *ppStmt = 0;
+   if( !sqlite3SafetyCheckOk(db)||zSql==0 ){
+     return SQLITE_MISUSE_BKPT;
+   }
+@@ -134179,7 +134177,7 @@
+ #ifdef SQLITE_ENABLE_API_ARMOR
+   if( ppStmt==0 ) return SQLITE_MISUSE_BKPT;
+ #endif
+-  *null_check(ppStmt) = 0;
++  *ppStmt = 0;
+   if( !sqlite3SafetyCheckOk(db)||zSql==0 ){
+     return SQLITE_MISUSE_BKPT;
+   }
+@@ -136374,7 +136372,7 @@
+         pColExpr = pColExpr->pRight;
+         assert( pColExpr!=0 );
+       }
+-      if( null_check(pColExpr)->op==TK_COLUMN
++      if( pColExpr->op==TK_COLUMN
+        && ALWAYS( ExprUseYTab(pColExpr) )
+        && (pTab = pColExpr->y.pTab)!=0
+       ){
+@@ -137927,7 +137925,7 @@
+ #endif
+     {
+       Expr *pNew;
+-      Expr *pCopy = null_check(pSubst->pEList->a)[pExpr->iColumn].pExpr;
++      Expr *pCopy = pSubst->pEList->a[pExpr->iColumn].pExpr;
+       Expr ifNullRow;
+       assert( pSubst->pEList!=0 && pExpr->iColumn<pSubst->pEList->nExpr );
+       assert( pExpr->pRight==0 );
+@@ -173056,7 +173054,7 @@
+     zFilename += sqlite3Strlen30(zFilename) + 1;
+     zFilename += sqlite3Strlen30(zFilename) + 1;
+   }
+-  return null_check(zFilename)[0] ? zFilename : 0;
++  return zFilename[0] ? zFilename : 0;
+ }
+ 
+ /*

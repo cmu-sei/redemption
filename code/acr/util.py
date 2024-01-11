@@ -30,6 +30,9 @@ import sys, os, re, pdb, argparse, json
 from collections import OrderedDict, defaultdict
 import time
 
+class JSONFileException(Exception):
+    pass
+
 stop = pdb.set_trace
 
 def read_whole_file(filename, mode_mod=""):
@@ -38,7 +41,11 @@ def read_whole_file(filename, mode_mod=""):
 
 def read_json_file(filename):
     with open(filename, 'r') as f:
-        data = json.load(f, object_pairs_hook=OrderedDict)
+        try:
+            data = json.load(f, object_pairs_hook=OrderedDict)
+        except Exception as e:
+            raise JSONFileException(
+                "Error reading JSON file: {}: {}" .format(filename, e)) from e
     return data
 
 def read_file_range(filename, begin_offset, end_offset):

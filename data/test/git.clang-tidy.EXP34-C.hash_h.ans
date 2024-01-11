@@ -1,0 +1,17 @@
+--- /host/data/test/out/hash.h	2024-01-10 16:21:22.987911002 +0000
++++ /oss/git/hash.h	2023-11-21 18:10:21.000000000 +0000
+@@ -1,5 +1,3 @@
+-#include "acr.h"
+-
+ #ifndef HASH_H
+ #define HASH_H
+ 
+@@ -267,7 +265,7 @@
+ 
+ static inline void oidcpy(struct object_id *dst, const struct object_id *src)
+ {
+-	memcpy(dst->hash, null_check(src->hash), GIT_MAX_RAWSZ);
++	memcpy(dst->hash, src->hash, GIT_MAX_RAWSZ);
+ 	dst->algo = src->algo;
+ }
+ 

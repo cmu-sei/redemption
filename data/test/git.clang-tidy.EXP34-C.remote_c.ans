@@ -1,0 +1,17 @@
+--- /host/data/test/out/remote.c	2024-01-10 16:24:32.524154629 +0000
++++ /oss/git/remote.c	2023-11-21 18:10:21.000000000 +0000
+@@ -1,5 +1,3 @@
+-#include "acr.h"
+-
+ #include "cache.h"
+ #include "config.h"
+ #include "remote.h"
+@@ -1023,7 +1021,7 @@
+ static struct ref *alloc_ref_with_prefix(const char *prefix, size_t prefixlen,
+ 		const char *name)
+ {
+-	size_t len = strlen(null_check(name));
++	size_t len = strlen(name);
+ 	struct ref *ref = xcalloc(1, st_add4(sizeof(*ref), prefixlen, len, 1));
+ 	memcpy(ref->name, prefix, prefixlen);
+ 	memcpy(ref->name + prefixlen, name, len);

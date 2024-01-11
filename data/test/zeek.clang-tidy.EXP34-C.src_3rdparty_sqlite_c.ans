@@ -1,0 +1,242 @@
+--- /host/data/test/out/src/3rdparty/sqlite3.c	2024-01-10 16:52:42.553993979 +0000
++++ /oss/zeek/src/3rdparty/sqlite3.c	2023-11-21 18:09:52.000000000 +0000
+@@ -1,5 +1,3 @@
+-#include "acr.h"
+-
+ /******************************************************************************
+ ** This file is an amalgamation of many separate C source files from SQLite
+ ** version 3.38.4.  By combining all the individual C code files into this
+@@ -24515,7 +24513,7 @@
+ }
+ SQLITE_PRIVATE int sqlite3OsWrite(sqlite3_file *id, const void *pBuf, int amt, i64 offset){
+   DO_OS_MALLOC_TEST(id);
+-  return null_check(id)->pMethods->xWrite(id, pBuf, amt, offset);
++  return id->pMethods->xWrite(id, pBuf, amt, offset);
+ }
+ SQLITE_PRIVATE int sqlite3OsTruncate(sqlite3_file *id, i64 size){
+   return id->pMethods->xTruncate(id, size);
+@@ -24526,7 +24524,7 @@
+ }
+ SQLITE_PRIVATE int sqlite3OsFileSize(sqlite3_file *id, i64 *pSize){
+   DO_OS_MALLOC_TEST(id);
+-  return null_check(id)->pMethods->xFileSize(id, pSize);
++  return id->pMethods->xFileSize(id, pSize);
+ }
+ SQLITE_PRIVATE int sqlite3OsLock(sqlite3_file *id, int lockType){
+   DO_OS_MALLOC_TEST(id);
+@@ -30461,7 +30459,7 @@
+ static void SQLITE_NOINLINE enlargeAndAppend(StrAccum *p, const char *z, int N){
+   N = sqlite3StrAccumEnlarge(p, N);
+   if( N>0 ){
+-    memcpy(&p->zText[p->nChar], null_check(z), N);
++    memcpy(&p->zText[p->nChar], z, N);
+     p->nChar += N;
+   }
+ }
+@@ -60777,7 +60775,7 @@
+       pPager->eState = PAGER_OPEN;
+     }
+   }else{
+-    *null_check(pbOpen) = 1;
++    *pbOpen = 1;
+   }
+ 
+   return rc;
+@@ -62632,7 +62630,7 @@
+ 
+   *paRight = aLeft;
+   *pnRight = iOut;
+-  memcpy(null_check(aLeft), aTmp, sizeof(aTmp[0])*iOut);
++  memcpy(aLeft, aTmp, sizeof(aTmp[0])*iOut);
+ }
+ 
+ /*
+@@ -72850,7 +72848,7 @@
+     *pnSize = n;
+     assert( nSrc<=nPayload );
+     testcase( nSrc<nPayload );
+-    memcpy(pPayload, null_check(pSrc), nSrc);
++    memcpy(pPayload, pSrc, nSrc);
+     memset(pPayload+nSrc, 0, nPayload-nSrc);
+     return SQLITE_OK;
+   }
+@@ -72908,7 +72906,7 @@
+             || sqlite3PagerIswriteable(pPage->pDbPage) );
+ 
+     if( nSrc>=n ){
+-      memcpy(pPayload, null_check(pSrc), n);
++      memcpy(pPayload, pSrc, n);
+     }else if( nSrc>0 ){
+       n = nSrc;
+       memcpy(pPayload, pSrc, n);
+@@ -74894,7 +74892,7 @@
+       if( rc ) return rc;
+       iAmt = nData;
+     }
+-    if( memcmp(pDest, null_check(((u8*)pX->pData) + iOffset), iAmt)!=0 ){
++    if( memcmp(pDest, ((u8*)pX->pData) + iOffset, iAmt)!=0 ){
+       int rc = sqlite3PagerWrite(pPage->pDbPage);
+       if( rc ) return rc;
+       /* In a corrupt database, it is possible for the source and destination
+@@ -77063,7 +77061,7 @@
+ ** Return true if the Btree passed as the only argument is sharable.
+ */
+ SQLITE_PRIVATE int sqlite3BtreeSharable(Btree *p){
+-  return null_check(p)->sharable;
++  return p->sharable;
+ }
+ 
+ /*
+@@ -79081,7 +79079,7 @@
+   if( SQLITE_OK==(rc = sqlite3VdbeMemClearAndResize(pMem, amt+1)) ){
+     rc = sqlite3BtreePayload(pCur, offset, amt, pMem->z);
+     if( rc==SQLITE_OK ){
+-      null_check(pMem->z)[amt] = 0;   /* Overrun area used when reading malformed records */
++      pMem->z[amt] = 0;   /* Overrun area used when reading malformed records */
+       pMem->flags = MEM_Blob;
+       pMem->n = (int)amt;
+     }else{
+@@ -98270,7 +98268,7 @@
+       assert( pTask->list.pList==0 );
+       assert( pTask->list.aMemory==0 || pSorter->list.aMemory!=0 );
+ 
+-      aMem = null_check(pTask)->list.aMemory;
++      aMem = pTask->list.aMemory;
+       pCtx = (void*)pTask;
+       pSorter->iPrev = (u8)(pTask - pSorter->aTask);
+       pTask->list = pSorter->list;
+@@ -99843,7 +99841,7 @@
+   do {
+     int iSpace = p->nChunkSize - iChunkOffset;
+     int nCopy = MIN(nRead, (p->nChunkSize - iChunkOffset));
+-    memcpy(zOut, null_check((u8*)pChunk->zChunk + iChunkOffset), nCopy);
++    memcpy(zOut, (u8*)pChunk->zChunk + iChunkOffset, nCopy);
+     zOut += nCopy;
+     nRead -= iSpace;
+     iChunkOffset = 0;
+@@ -99970,7 +99968,7 @@
+         }
+ 
+         assert( pChunk!=0 );
+-        memcpy(null_check((u8*)pChunk->zChunk + iChunkOffset), zWrite, iSpace);
++        memcpy((u8*)pChunk->zChunk + iChunkOffset, zWrite, iSpace);
+         zWrite += iSpace;
+         nWrite -= iSpace;
+         p->endpoint.iOffset += iSpace;
+@@ -105075,7 +105073,7 @@
+   pEList = p->pEList;
+   assert( pEList!=0 );
+   /* All SELECT results must be columns. */
+-  for(i=0; i<null_check(pEList, return NULL)->nExpr; i++){
++  for(i=0; i<pEList->nExpr; i++){
+     Expr *pRes = pEList->a[i].pExpr;
+     if( pRes->op!=TK_COLUMN ) return 0;
+     assert( pRes->iTable==pSrc->a[0].iCursor );  /* Not a correlated subquery */
+@@ -106389,7 +106387,7 @@
+   Vdbe *v = pParse->pVdbe;
+   assert( v!=0 );
+   assert( pFarg!=0 );
+-  nFarg = null_check(pFarg)->nExpr;
++  nFarg = pFarg->nExpr;
+   assert( nFarg>0 );  /* All in-line functions have at least one argument */
+   switch( iFuncId ){
+     case INLINEFUNC_coalesce: {
+@@ -113832,7 +113830,7 @@
+     pTab = pParse->pTriggerTab;
+   }else{
+     assert( pTabList );
+-    for(iSrc=0; iSrc<null_check(pTabList)->nSrc; iSrc++){
++    for(iSrc=0; iSrc<pTabList->nSrc; iSrc++){
+       if( pExpr->iTable==pTabList->a[iSrc].iCursor ){
+         pTab = pTabList->a[iSrc].pTab;
+         break;
+@@ -116889,7 +116887,7 @@
+ #ifndef SQLITE_OMIT_ALTERTABLE
+   if( !pSelect && IsOrdinaryTable(p) ){
+     assert( pCons && pEnd );
+-    if( null_check(pCons)->z==0 ){
++    if( pCons->z==0 ){
+       pCons = pEnd;
+     }
+     p->u.tab.addColOffset = 13 + (int)(pCons->z - pParse->sNameToken.z);
+@@ -118344,7 +118342,7 @@
+       */
+       assert( pName!=0 || pStart==0 );
+       if( pStart ){
+-        int n = (int)(pParse->sLastToken.z - null_check(pName)->z) + pParse->sLastToken.n;
++        int n = (int)(pParse->sLastToken.z - pName->z) + pParse->sLastToken.n;
+         if( pName->z[n-1]==';' ) n--;
+         /* A named index with an explicit CREATE INDEX statement */
+         zStmt = sqlite3MPrintf(db, "CREATE%s INDEX %.*s",
+@@ -124124,7 +124122,7 @@
+     }else{
+       Expr *pEq, *pAll = 0;
+       assert( pIdx!=0 );
+-      for(i=0; i<null_check(pIdx)->nKeyCol; i++){
++      for(i=0; i<pIdx->nKeyCol; i++){
+         i16 iCol = pIdx->aiColumn[i];
+         assert( iCol>=0 );
+         pLeft = exprTableRegister(pParse, pTab, regData, iCol);
+@@ -124878,7 +124876,7 @@
+         break;
+       case OE_Cascade:
+         if( !pChanges ){
+-          null_check(pStep, return NULL)->op = TK_DELETE;
++          pStep->op = TK_DELETE;
+           break;
+         }
+         /* no break */ deliberate_fall_through
+@@ -128035,7 +128033,7 @@
+       if( xferCompatibleIndex(pDestIdx, pSrcIdx) ) break;
+     }
+     assert( pSrcIdx );
+-    sqlite3VdbeAddOp3(v, OP_OpenRead, iSrc, null_check(pSrcIdx, return 0)->tnum, iDbSrc);
++    sqlite3VdbeAddOp3(v, OP_OpenRead, iSrc, pSrcIdx->tnum, iDbSrc);
+     sqlite3VdbeSetP4KeyInfo(pParse, pSrcIdx);
+     VdbeComment((v, "%s", pSrcIdx->zName));
+     sqlite3VdbeAddOp3(v, OP_OpenWrite, iDest, pDestIdx->tnum, iDbDest);
+@@ -138597,7 +138595,7 @@
+     int nSubSrc;
+     u8 jointype = 0;
+     assert( pSub!=0 );
+-    pSubSrc = null_check(pSub)->pSrc;     /* FROM clause of subquery */
++    pSubSrc = pSub->pSrc;     /* FROM clause of subquery */
+     nSubSrc = pSubSrc->nSrc;  /* Number of terms in subquery FROM clause */
+     pSrc = pParent->pSrc;     /* FROM clause of the outer query */
+ 
+@@ -145055,7 +145053,7 @@
+ 
+   assert( v!=0 );
+   assert( pUpsert!=0 );
+-  iDataCur = null_check(pUpsert)->iDataCur;
++  iDataCur = pUpsert->iDataCur;
+   pUpsert = sqlite3UpsertOfIndex(pTop, pIdx);
+   VdbeNoopComment((v, "Begin DO UPDATE of UPSERT"));
+   if( pIdx && iCur!=iDataCur ){
+@@ -155692,7 +155690,7 @@
+           pIdxInfo->idxStr = 0;
+           pIdxInfo->needToFreeIdxStr = 0;
+         }
+-        *null_check(pbRetryLimit) = 1;
++        *pbRetryLimit = 1;
+         return SQLITE_OK;
+       }
+     }
+@@ -157978,7 +157976,7 @@
+ ** sqlite3WhereBegin() for additional information.
+ */
+ SQLITE_PRIVATE void sqlite3WhereEnd(WhereInfo *pWInfo){
+-  Parse *pParse = null_check(pWInfo)->pParse;
++  Parse *pParse = pWInfo->pParse;
+   Vdbe *v = pParse->pVdbe;
+   int i;
+   WhereLevel *pLevel;
+@@ -173056,7 +173054,7 @@
+     zFilename += sqlite3Strlen30(zFilename) + 1;
+     zFilename += sqlite3Strlen30(zFilename) + 1;
+   }
+-  return null_check(zFilename)[0] ? zFilename : 0;
++  return zFilename[0] ? zFilename : 0;
+ }
+ 
+ /*
