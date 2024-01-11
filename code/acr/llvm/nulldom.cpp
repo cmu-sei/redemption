@@ -149,7 +149,8 @@ public:
     llvm::DebugLoc dl = inst->getDebugLoc();
     if (dl) {
       // TODO: Escape any quotation marks in the filename.
-      outs() << "[\"" << dl.get()->getFilename() << "\", ";
+      outs() << "[\"" << dl.get()->getDirectory() << '/'
+             << dl.get()->getFilename() << "\", ";
       outs() << "[" << dl.getLine() << ", " << dl.getCol() << "]";
       outs() << "]";
     } else {

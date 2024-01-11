@@ -211,16 +211,13 @@ class Brain(AstVisitor):
         if alert is None:
             alert = self.get_alert_at_cursor("EXP34-C")
         if alert:
-            repair = alert.get("repair")
-            if repair:
-                if not whole_expr:
-                    # Non-whole_exprs cannot override repairs
+            match alert:
+                case {'repair': [_, _]} if not whole_expr:
                     return
-                match alert:
-                    case {'tool': 'rosecheckers',
-                          'repair': ['add_null_check', {"whole_expr": True}]}:
-                        # If we've already repaired this as a whole_expr, stop
-                        return
+                case {'tool': 'rosecheckers',
+                      'repair': ['add_null_check', {"whole_expr": True}]}:
+                    # If we've already repaired this as a whole_expr, stop
+                    return
             message = alert.get("message","")
             m = re.match("Null pointer passed to ([0-9]+).. parameter", message)
             if m:

@@ -74,7 +74,7 @@ def set_dict_path(dictionary, *args):
 def setdefault_dict_path(dictionary, *args):
     """Set a value for a list of keys in a recursive dictionary if it is not already set.
 
-    If a value already exists, return it.  Otherwise, set as in 'multi_set'.
+    If a value already exists, return it.  Otherwise, set as in 'set_dict_path'.
     """
     keys = args[:-1]
     value = args[-1]
