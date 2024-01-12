@@ -71,3 +71,5 @@ Once this is done, you can run clang-tidy on the sources:
 ```sh
 clang-tidy -checks='*' ${SOURCE} > clang-tidy.txt
 ```
+
+Note that clang-tidy will reference the compile_commands.json file for compilation details if the file exists, even if you don't specify it on the command line. So you will get better results if you create it before running clang-tidy.

@@ -76,7 +76,7 @@ RUN cd /oss/zeek ; \
         echo "#include <stdint.h>" | cat - $file  > foo ; \
         mv foo $file ; \
     done ; \
-    env CC=clang CXX=clang++ ./configure  2>&1 | tee make.log ; \
+    env CC=clang CXX=clang++ ./configure --enable-debug  2>&1 | tee make.log ; \
     bear -- make 2>&1 | tee -a make.log
 
 
