@@ -67,7 +67,7 @@
     "tool": "clang-tidy",
     "checker": "clang-analyzer-core.NullDereference",
     "message": "Array access (via field 'buf') results in a null pointer dereference",
-    "satisfactory": "false",
+    "satisfactory": "true",
     "verdict": "true",
     "repair": "true",
     "rationale": "The ACR tool should add a null check for the field `buf` prior to dereferencing it on line 166, but it currently doesn't.",
@@ -159,7 +159,7 @@
     "repair": "true",
     "rationale": "The dereference in the alert is the following: `friendly_ref_names.items[0].string`. Line 38 of git/strmap.h sets the following: `struct string_list friendly_ref_names = STRING_LIST_INIT_DUP`. ` STRING_LIST_INIT_DUP` is defined in file string-list.h: `#define STRING_LIST_INIT_DUP {.strdup_strings = 1}.` Various `strdup_strings` fields (e.g., string-list.c `list->strdup_strings`, resolve-undo.c and `resolve_undo->strdup_strings`) Since manual analysis of all possible ways that field could be null in the data/control paths leading to this alerted-about line appears too complex, we assume it is a true positive. A repair might require that for many dereferenced fields where the field is assigned to elsewhere (e.g., in another file), that there would need to be an added null check. In this case, that would check if `friendly_ref_names.items[0]` is null, prior to the dereference on line 163.",
     "randomness": "true",
-    "issue": "REM-145 and REM-149"
+    "issue": "REM-145 and REM-149 and REM-212"
   },
   {
     "rule": "EXP34-C",
