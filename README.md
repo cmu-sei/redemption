@@ -29,7 +29,7 @@ DM23-2165
 
 This is the Redemption of False Positives project.
 
-Some useful commands are below, for working with this code.
+There are some useful commands below for working with this code.
 
 ## Build instructions
 
