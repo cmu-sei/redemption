@@ -83,7 +83,7 @@ def flag_overlapping_repairs(alert_list):
     edits_by_file = OrderedDict()
     for alert in alert_list:
         alert_id = alert["alert_id"]
-        for (filename, edit_list) in alert["repair"]:
+        for (filename, edit_list) in alert["patch"]:
             edits_by_file.setdefault(filename, [])
             edit_list = [[start, end, replacement, alert_id] for 
                          [start, end, replacement] in edit_list]
@@ -108,9 +108,9 @@ def flag_overlapping_repairs(alert_list):
 
     for (alert_id, overlapping_alerts) in overlap_map.items():
         alert_index = alert_id - 1
-        if (alert_list[alert_index]["repair"] != []):
-            alert_list[alert_index]["skipped_repair"] = alert_list[alert_index]["repair"]
-            alert_list[alert_index]["repair"] = []
+        if (alert_list[alert_index]["patch"] != []):
+            alert_list[alert_index]["skipped_repair"] = alert_list[alert_index]["patch"]
+            alert_list[alert_index]["patch"] = []
             alert_list[alert_index]["why_skipped"] = "Overlaps with other alerts"
             alert_list[alert_index]["overlapping_alerts"] = sorted(overlapping_alerts)
 
@@ -133,18 +133,27 @@ def combine_hand_outs(indiv_hand_filenames):
 
     def combine_alert(alert_id, variants):
         non_empty = []
+        algos = None
         for (v, filename) in zip(variants, indiv_hand_filenames):
             if v['alert_id'] != alert_id:
                 print(f"Error in {filename}: Expecting alert_id {alert_id} but found alert_id {v['alert_id']}.")
-            if v['repair'] != []:
-                non_empty.append(tuplize(v['repair']))
+            if v['patch'] != []:
+                non_empty.append(tuplize(v['patch']))
+                if algos is None:
+                    algos = v.get('repair_algo')
         combined = variants[0].copy()
         if all_equal(non_empty):
-            combined['repair'] = non_empty[0]
+            if algos:
+                combined['repair_algo'] = algos
+            if 'patch' in combined:
+                del combined['patch']
+            combined['patch'] = non_empty[0]
         elif len(non_empty) == 0:
             pass
         else:
-            combined['repair'] = []
+            if 'repair_algo' in combined:
+                del combined['repair_algo']
+            combined['patch'] = []
             combined['why_skipped'] = "Different repairs from different translation units"
             combined['conflicting_repairs'] = sorted(non_empty)
         return combined

@@ -143,7 +143,7 @@
     "checker": "redundantInitialization",
     "message": "Redundant initialization for 'retval'. The initialized value is overwritten before it is read.",
     "verdict": "false",
-    "repair": "false",
+    "repairable": "false",
     "rationale": "We never repair redundant initializers.  See the dead-code.md file."
   },
   {

@@ -47,7 +47,7 @@ class Hand(AstVisitor):
     def visitdefault(self, node):
         if 'id' in node:
             for alert in self.alerts_by_ast_id[node['id']]:
-                (func_name, kwargs) = alert["repair_cmd"]
+                (func_name, kwargs) = alert["repair_algo"]
                 fn_repair = getattr(Hand, func_name)
                 fn_repair(self, node, alert, **kwargs)
         return dict([(k, self.visit(v)) for (k,v) in node.items()])
@@ -75,7 +75,7 @@ class Hand(AstVisitor):
         edit = [self.file_name, [
             [byte_start+1, byte_start+1, "null_check("],
             [byte_end, byte_end, closer]]]
-        alert["repair"] = [edit]
+        alert["patch"] = [edit]
 
     def initialize_var(self, node, alert, decl_id):
         node = self.var_decls_by_id.get(decl_id)
@@ -91,11 +91,11 @@ class Hand(AstVisitor):
             byte_end = node['range']['end']['offset'] + node['range']['end']['tokLen']
         except KeyError:
             alert["why_skipped"] = "AST node is missing range offset information"
-            alert["repair"] = []
+            alert["patch"] = []
             return
         edit = [self.file_name, [
             [byte_end, byte_end, " = " + init_val]]]
-        alert["repair"] = [edit]
+        alert["patch"] = [edit]
 
     def del_unused_asgn(self, node, alert, asgn_id):
         asgn = self.node_stack[-2]
@@ -105,10 +105,10 @@ class Hand(AstVisitor):
             del_end = asgn["inner"][1]["range"]["begin"]["offset"]
         except KeyError:
             alert["why_skipped"] = "KeyError"
-            alert["repair"] = []
+            alert["patch"] = []
             return
         edit = [self.file_name, [[del_begin, del_end, "(void) "]]]
-        alert["repair"] = [edit]
+        alert["patch"] = [edit]
 
     def repair_deadinit_var(self, node, alert, decl_id):
         node = None
@@ -119,39 +119,35 @@ class Hand(AstVisitor):
             end_offset = decl_node["range"]["end"]["offset"] + decl_node["range"]["end"]["tokLen"]
         except KeyError:
             alert["why_skipped"] = "KeyError"
-            alert["repair"] = []
+            alert["patch"] = []
             return
         decl_text = read_file_range(filename, begin_offset, end_offset)
         m = re.search(b"( *=)", decl_text)
         if not m:
             alert["why_skipped"] = "No assignment '=' found!"
-            alert["repair"] = []
+            alert["patch"] = []
         del_start = begin_offset + m.span()[0]
         edit = [self.file_name, [[del_start, end_offset, ""]]]
-        alert["repair"] = [edit]
+        alert["patch"] = [edit]
 
     def msc12c(self, node, alert):
         alert["why_skipped"] = "not implemented yet"
-        alert["repair"] = []
+        alert["patch"] = []
 
     def skip(self, node, alert, why):
         alert["why_skipped"] = why
-        alert["repair"] = []
+        alert["patch"] = []
 
     def parse_alerts(self, alerts_filename):
         self.alert_list = read_json_file(alerts_filename)
         self.alerts_by_ast_id = defaultdict(lambda: list())
         for cur_alert in self.alert_list:
-            try:
-                cur_alert["repair_cmd"] = cur_alert["repair"]
-            except KeyError:
-                pass
             ast_id = cur_alert.get('ast_id')
             if ast_id:
                 self.alerts_by_ast_id[ast_id].append(cur_alert)
             else:
                 self.missing_ast_alerts.append(cur_alert)
-                cur_alert["repair"] = []
+                cur_alert["patch"] = []
 
 def is_expr_of_ptr_type(ast_node):
     return ast_node["type"]["qualType"].endswith("*")
@@ -185,11 +181,6 @@ def run(ast_file, alerts_filename, output_filename, warn_missing=False):
     hand.warn_missing = warn_missing
     hand.parse_alerts(alerts_filename)
     hand.visit(ast)
-    for cur_alert in hand.alert_list:
-        try:
-            del cur_alert["repair_cmd"]
-        except KeyError:
-            pass
     if warn_missing:
         missing_files = set()
         for cur_alert in hand.missing_ast_alerts:

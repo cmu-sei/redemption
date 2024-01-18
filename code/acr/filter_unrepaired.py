@@ -44,7 +44,7 @@ for filename in sys.argv[1:]:
     alert_list = json.loads(read_whole_file(filename))
 
     for alert in alert_list:
-        repair = alert.get("repair")
+        repair = alert.get("repair_algo")
         if not repair:
             continue
         if repair[0] == "skip":

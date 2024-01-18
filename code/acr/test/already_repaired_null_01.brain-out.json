@@ -5,7 +5,7 @@
     "line": 8,
     "alert_id": 1,
     "ast_id": 2721,
-    "repair": [
+    "repair_algo": [
       "skip",
       {
         "why": [

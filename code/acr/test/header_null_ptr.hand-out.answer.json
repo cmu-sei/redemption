@@ -5,7 +5,7 @@
     "line": 12,
     "alert_id": 1,
     "ast_id": 2683,
-    "repair": [
+    "patch": [
       [
         "$BASE/header_null_ptr.h",
         [
@@ -29,7 +29,7 @@
     "line": 14,
     "alert_id": 2,
     "ast_id": 2688,
-    "repair": [],
+    "patch": [],
     "why_skipped": "Contains preprocessor directives"
   }
 ]

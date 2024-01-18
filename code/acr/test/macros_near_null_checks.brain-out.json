@@ -5,7 +5,7 @@
     "line": 14,
     "alert_id": 1,
     "ast_id": 1066,
-    "repair": [
+    "repair_algo": [
       "add_null_check",
       {
         "whole_expr": false
@@ -18,7 +18,7 @@
     "line": 15,
     "alert_id": 2,
     "ast_id": 1085,
-    "repair": [
+    "repair_algo": [
       "skip",
       {
         "why": [
@@ -34,7 +34,7 @@
     "line": 16,
     "alert_id": 3,
     "ast_id": 1097,
-    "repair": [
+    "repair_algo": [
       "add_null_check",
       {
         "whole_expr": false
@@ -47,7 +47,7 @@
     "line": 17,
     "alert_id": 4,
     "ast_id": 1113,
-    "repair": [
+    "repair_algo": [
       "skip",
       {
         "why": [
@@ -62,7 +62,7 @@
     "line": 18,
     "alert_id": 5,
     "ast_id": 1131,
-    "repair": [
+    "repair_algo": [
       "skip",
       {
         "why": [
@@ -78,7 +78,7 @@
     "line": 19,
     "alert_id": 6,
     "ast_id": 1155,
-    "repair": [
+    "repair_algo": [
       "skip",
       {
         "why": [
@@ -94,7 +94,7 @@
     "line": 20,
     "alert_id": 7,
     "ast_id": 1172,
-    "repair": [
+    "repair_algo": [
       "skip",
       {
         "why": [

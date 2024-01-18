@@ -106,9 +106,9 @@ class Brain(AstVisitor):
         def try_msc12():
             alert["ast_id"] = node['id']
             if not self.enable_msc12:
-                alert["repair"] = ["skip", {"why": ["Repair of MSC12-C is disabled; set env var REPAIR_MSC12=true to enable it."]}]
+                alert["repair_algo"] = ["skip", {"why": ["Repair of MSC12-C is disabled; set env var REPAIR_MSC12=true to enable it."]}]
                 return
-            alert["repair"] = ["msc12c", {}]
+            alert["repair_algo"] = ["msc12c", {}]
             
             try:
                 macro_file = node['range']['begin']['spellingLoc']['file']
@@ -120,7 +120,7 @@ class Brain(AstVisitor):
             if self.try_deadinit_var_repair(node, alert):
                 self.check_repairability(alert, node)
                 return
-            if alert["checker"].startswith("uselessAssignment"):
+            if alert.get("checker", "").startswith("uselessAssignment"):
                 if node["kind"] != "DeclRefExpr":
                     return
                 asgn = self.node_stack[-2]
@@ -129,7 +129,7 @@ class Brain(AstVisitor):
                 self.check_repairability(alert, node)
                 if is_skipped_alert(alert):
                     return
-                alert["repair"] = ["del_unused_asgn", {"asgn_id":asgn["id"]}]
+                alert["repair_algo"] = ["del_unused_asgn", {"asgn_id":asgn["id"]}]
                 return
                 
             self.check_repairability(alert, node)
@@ -185,7 +185,7 @@ class Brain(AstVisitor):
             decl_node = self.get_decl_of_var(node)
             if not decl_node:
                 return False
-            alert["repair"] = ["initialize_var", {"decl_id": decl_node["id"]}]
+            alert["repair_algo"] = ["initialize_var", {"decl_id": decl_node["id"]}]
             return True
         else:
             return False
@@ -202,7 +202,7 @@ class Brain(AstVisitor):
             decl_node = self.get_decl_of_var(node)
             if not decl_node:
                 return False
-            alert["repair"] = ["repair_deadinit_var", {"decl_id": decl_node["id"]}]
+            alert["repair_algo"] = ["repair_deadinit_var", {"decl_id": decl_node["id"]}]
             return True
         else:
             return False
@@ -210,26 +210,27 @@ class Brain(AstVisitor):
     def try_null_ptr_repair(self, node, alert=None, whole_expr=False):
         if alert is None:
             alert = self.get_alert_at_cursor("EXP34-C")
-        if alert:
-            match alert:
-                case {'repair': [_, _]} if not whole_expr:
-                    return
-                case {'tool': 'rosecheckers',
-                      'repair': ['add_null_check', {"whole_expr": True}]}:
-                    # If we've already repaired this as a whole_expr, stop
-                    return
-            message = alert.get("message","")
-            m = re.match("Null pointer passed to ([0-9]+).. parameter", message)
-            if m:
-                if node.get("kind") != "CallExpr":
-                    return
-                param_ordinal = int(m.group(1))
-                node = node["inner"][param_ordinal]
-            kwargs = self.get_error_handler_at_cursor()
-            kwargs["whole_expr"] = whole_expr
-            alert["ast_id"] = node['id']
-            alert["repair"] = ["add_null_check", kwargs]
-            self.check_repairability(alert, node)
+        match alert:
+            case None:
+                return
+            case {'repair_algo': [_, _]} if not whole_expr:
+                return
+            case {'tool': 'rosecheckers',
+              'repair_algo': ['add_null_check', {"whole_expr": True}]}:
+                # If we've already repaired this as a whole_expr, stop
+                return
+        message = alert.get("message","")
+        m = re.match("Null pointer passed to ([0-9]+).. parameter", message)
+        if m:
+            if node.get("kind") != "CallExpr":
+                return
+            param_ordinal = int(m.group(1))
+            node = node["inner"][param_ordinal]
+        kwargs = self.get_error_handler_at_cursor()
+        kwargs["whole_expr"] = whole_expr
+        alert["ast_id"] = node['id']
+        alert["repair_algo"] = ["add_null_check", kwargs]
+        self.check_repairability(alert, node)
 
     def visit_UnaryOperator(self, node):
         if node['opcode'] == '*':
@@ -308,7 +309,7 @@ class Brain(AstVisitor):
             # If it is mapped to multiple alerts, check that each alert is repairable.
             ret = None
             for dom_alert in dom_alerts:
-                if dom_alert["repair"] == []:
+                if dom_alert["repair_algo"] == []:
                     ret = None
                     break
                 else:
@@ -378,21 +379,18 @@ def in_macro_at_end(ast):
     return ("spellingLoc" in ast['range']['end'])
 
 def mark_skipped_alert(alert, reason):
-    try:
-        (repair_func, kwargs) = alert["repair"]
-    except:
-        repair_func = None
-    if repair_func == "skip":
-        kwargs["why"].append(reason)
-    else:
-        alert["repair"] = ["skip", {"why": [reason]}]
+    match alert:
+        case {"repair_algo": ["skip", kwargs]}:
+            kwargs["why"].append(reason)
+        case _:
+            alert["repair_algo"] = ["skip", {"why": [reason]}]
 
 def is_skipped_alert(alert):
-    try:
-        (repair_func, kwargs) = alert.get("repair")
-    except:
-        return False
-    return (repair_func == "skip")
+    match alert:
+        case {"repair_algo": ["skip", _]}:
+            return True
+        case _:
+            return False
 
 def is_indep_of_macros(node, alert):
     ret = True

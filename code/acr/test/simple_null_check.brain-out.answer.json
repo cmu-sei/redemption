@@ -5,7 +5,7 @@
     "line": 8,
     "alert_id": 1,
     "ast_id": 1033,
-    "repair": [
+    "repair_algo": [
       "add_null_check",
       {
         "whole_expr": false

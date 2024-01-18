@@ -67,7 +67,7 @@ def run(edits_file, output_dir, *, comp_dir=".", base_dir=None, single_file=None
     if not isinstance(edit_json, list):
         edit_json = [edit_json]
     for top_item in edit_json:
-        for (filename, edit_list) in (top_item.get("edits") or top_item.get("repair")):
+        for (filename, edit_list) in (top_item.get("edits") or top_item.get("patch")):
             edits_by_file.setdefault(filename, [])
             edits_by_file[filename].extend(edit_list)
     def remove_base_dir(s):

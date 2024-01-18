@@ -9,7 +9,7 @@
     "message": "Either the condition '!remote' is redundant or there is possible null pointer dereference: remote.",
     "satisfactory": "true",
     "verdict": "false",
-    "repair": "false",
+    "repairable": "false",
     "rationale": "If it is null, then the program dies. Therefore, this alert is a false positive.",
     "randomness": "first_five",
     "issue": ""
@@ -24,7 +24,7 @@
     "message": "Either the condition '!msg' is redundant or there is pointer arithmetic with NULL pointer.",
     "satisfactory": "false",
     "verdict": "false",
-    "repair": "false",
+    "repairable": "false",
     "rationale": "There already was a check if `msg` was null 2 lines above the code location that was indicated. However, what if there was an overflow? (since the current line has `msg + 2`). `xstrdup` is an error-checking version of the common `strdup` routine, which creates a duplicate of a string by allocating memory for the copy with `malloc`. They never return unless there was no problem... the caller does not need to check for a NULL return value. See https://manpages.org/xstrdup/3  Therefore, if there was an overflow causing it to be null, then the program terminates. Therefore, this alert is a false positive.",
     "randomness": "first_five",
     "issue": "REM-206"
@@ -39,7 +39,7 @@
     "message": "Either the condition 'blockp' is redundant or there is possible null pointer dereference: blockp.",
     "satisfactory": "true",
     "verdict": "complex",
-    "repair": "true",
+    "repairable": "true",
     "rationale": "The function definition is in reftable/block.c. There are 11 uses of the function, which would be too time-consuming to trace, for this task. Assume it is a true positive, since it would take too much analysis to determine if there is no null parameter, for each time the function is called. Additional analysis specific to the tool's message is that even if `blockp` is never null, then the condition is redundant as the message says. However, the verdict is `complex` rather than `true positive` since the audit is for EXP34-C instead of the tool's message.",
     "randomness": "first_five",
     "issue": "REM-128"
@@ -54,7 +54,7 @@
     "message": "Either the condition '!c' is redundant or there is possible null pointer dereference: c.",
     "satisfactory": "true",
     "verdict": "false",
-    "repair": "false",
+    "repairable": "false",
     "rationale": "There is a check for `!c` being different than 0, and the program dies if so, in lines above. So, the alert is a false positive.",
     "randomness": "random and first_five",
     "issue": ""
@@ -69,7 +69,7 @@
     "message": "Either the condition '!buf' is redundant or there is possible null pointer dereference: buf.",
     "satisfactory": "true",
     "verdict": "false",
-    "repair": "false",
+    "repairable": "false",
     "rationale": "If buf is null, then the die function ends the program. This is a false positive, because the checker doesn't realize that the die function never returns.",
     "randomness": "random and first_five",
     "issue": ""
@@ -156,7 +156,7 @@
     "message": "Either the condition 'parent_names' is redundant or there is possible null pointer dereference: parent_names++.",
     "satisfactory": "false",
     "verdict": "complex",
-    "repair": "true",
+    "repairable": "true",
     "rationale": "This alert is a near-duplicate of the following alert.  The ideal fix is the same as the following alert.",
     "randomness": "non-random, selected manually while adjudicating similar alert",
     "issue": "REM-150"
@@ -171,7 +171,7 @@
     "message": "Either the condition 'parent_names' is redundant or there is pointer arithmetic with NULL pointer.",
     "satisfactory": "false",
     "verdict": "complex",
-    "repair": "true",
+    "repairable": "true",
     "rationale": " The line alerted is: `while ((parent_name = *parent_names++)) {` and the second parameter into the surrounding function is `const char **parent_names`. So, the line alerted dereferences a function parameter and does an arithmetic operation on it, without first checking if the dereferenced function parameter (or the function parameter) is null. True positive (assumed due to complexity). Automated repair could do both checks.",
     "randomness": "random",
     "issue": "REM-150"
@@ -186,7 +186,7 @@
     "message": "Either the condition '!author' is redundant or there is pointer arithmetic with NULL pointer.",
     "satisfactory": "true",
     "verdict": "false",
-    "repair": "false",
+    "repairable": "false",
     "rationale": "The line alerted is: `author++` and `const char *author` was set to `strstr(commit_buffer, \"\nauthor \")`, which itself was set to `get_commit_buffer(commit, NULL)`. (extra escape `\\` added before the quotes in this rationale text, for the strstr argument) The first parameter into the surrounding function is `struct commit *commit`. Above the alerted line, line 623 checks if `author` was null, and if yes it makes the program die. So, there cannot be pointer arithmetic with a null pointer on the alerted-about line.",
     "randomness": "random",
     "issue": ""
@@ -219,7 +219,7 @@
     "message": "Either the condition '!branch' is redundant or there is possible null pointer dereference: branch.",
     "satisfactory": "true",
     "verdict": "false",
-    "repair": "false",
+    "repairable": "false",
     "rationale": "The alerted line is `if (!ref_exists(branch->refname)){. Above, on line 845 there's a check if `branch` is null, and if yes, the program dies. However, the alerted line is about a field of the `branch` structure. That field might be null although the structure exists (assume this is true, since it would take too much effort to check to ensure that would not be possible for this program). The function `ref_exists` is defined in file refs.c. and it only does `return refs_ref_exists(get_main_ref_store(the_repository), refname);`, and refs_ref_exists function is in the same file and does `return !!refs_resolve_ref_unsafe(refs, refname, RESOLVE_REF_READING, NULL, NULL);` which also is defined in the same file. If that function performs as expected and so do its calling functions (function logic not analyzed as part of this work), the line alerted on appears to be a null check and not a problem.",
     "randomness": "random",
     "issue": ""

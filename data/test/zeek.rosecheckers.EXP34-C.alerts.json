@@ -9,7 +9,7 @@
     "message": "Ensure pointer is valid before dereferencing it",
     "satisfactory": "false",
     "verdict": "true",
-    "repair": "true",
+    "repairable": "true",
     "rationale": "A malloc is done, then the pointer is dereferenced without a check first in case it is null.",
     "randomness": "random and first_five",
     "issue": "REM-129"
@@ -24,7 +24,7 @@
     "message": "Ensure pointer is valid before dereferencing it",
     "satisfactory": "false",
     "verdict": "true",
-    "repair": "true",
+    "repairable": "true",
     "rationale": "A malloc is done, then the pointer is dereferenced without a check first in case it is null.",
     "randomness": "random and first_five",
     "issue": "REM-129"
@@ -39,7 +39,7 @@
     "message": "Ensure pointer is valid before dereferencing it",
     "satisfactory": "false",
     "verdict": "true",
-    "repair": "true",
+    "repairable": "true",
     "rationale": "A malloc is done, then the pointer is dereferenced without a check first in case it is null.",
     "randomness": "first_five",
     "issue": "REM-129"
@@ -54,7 +54,7 @@
     "message": "Ensure pointer is valid before dereferencing it",
     "satisfactory": "false",
     "verdict": "true",
-    "repair": "true",
+    "repairable": "true",
     "rationale": "The line for the alert is `jrx_ccl* ccl = (jrx_ccl*)malloc(sizeof(jrx_ccl));`. This is the line where the memory is dynamically allocated. The next line (14) dereferences the pointer, without first checking if malloc returned null. Some SA tools alert on the allocation line, others on the dereference. We'd like our code to be able to handle both line locations of alerts, and do automated code repair that inserts a check. ACR already does a repair for this type of alert, but the line alerted on might be the reason it doesn't do the repair for this alert.",
     "randomness": "random",
     "issue": "REM-129"
@@ -96,7 +96,7 @@
     "message": "Ensure pointer is valid before dereferencing it",
     "satisfactory": "false",
     "verdict": "true",
-    "repair": "true",
+    "repairable": "true",
     "rationale": "The line of code alerted on contains dynamic memory allocation. In the next line, that pointer is dereferenced. There should be a check if the pointer address is null, between the allocation line and the dereference line. Rosecheckers alerts on the allocation line, and some other tools alert on the dereference line.",
     "randomness": "random",
     "issue": "REM-129"
@@ -120,7 +120,7 @@
     "message": "Ensure pointer is valid before dereferencing it",
     "satisfactory": "false",
     "verdict": "true",
-    "repair": "true",
+    "repairable": "true",
     "rationale": "The line of code alerted on contains dynamic memory allocation. (The line is `static_cast<ThreadAffinity*>(malloc(sizeof(ThreadAffinity)));`) On lines 130, 135, 139, and 143, that pointer is dereferenced. (Depending on the OS, control flow reaches different dereference lines.) There should be a check if the pointer address is null, between the allocation line and the dereference line. Rosecheckers alerts on the allocation line, and some other tools alert on the dereference line.",
     "randomness": "random",
     "issue": "REM-129"      

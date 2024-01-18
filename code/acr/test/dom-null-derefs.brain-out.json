@@ -5,7 +5,7 @@
     "line": 10,
     "alert_id": 1,
     "ast_id": 2689,
-    "repair": [
+    "repair_algo": [
       "add_null_check",
       {}
     ]
@@ -16,7 +16,7 @@
     "line": 11,
     "alert_id": 2,
     "ast_id": 2694,
-    "repair": [
+    "repair_algo": [
       "add_null_check",
       {}
     ]
@@ -27,7 +27,7 @@
     "line": 13,
     "alert_id": 3,
     "ast_id": 2704,
-    "repair": [
+    "repair_algo": [
       "skip",
       {
         "why": [
@@ -43,7 +43,7 @@
     "line": 16,
     "alert_id": 4,
     "ast_id": 2714,
-    "repair": [
+    "repair_algo": [
       "skip",
       {
         "why": [
@@ -59,7 +59,7 @@
     "line": 18,
     "alert_id": 5,
     "ast_id": 2720,
-    "repair": [
+    "repair_algo": [
       "add_null_check",
       {}
     ]
@@ -70,7 +70,7 @@
     "line": 19,
     "alert_id": 6,
     "ast_id": 2726,
-    "repair": [
+    "repair_algo": [
       "skip",
       {
         "why": [
