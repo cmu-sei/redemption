@@ -26,7 +26,7 @@
 # DM23-2165
 # </legal>
 
-import sys, os, re, pdb, argparse, json
+import sys, os, re, pdb, argparse, json, traceback
 from collections import OrderedDict, defaultdict
 import time
 
@@ -106,7 +106,12 @@ def strip_filename_extension(filename):
 def get_ast_file_base(ast_file):
     # TODO: some test files are still using the old command-line arguments; fix this.
     #assert ast_file.endswith(".ear-out.json"), ast_file
-    assert(      re.search("[.][^.]*[.]json$", ast_file))
+    is_okay = re.search("[.][^.]*[.]json$", ast_file)
+    if not is_okay:
+        traceback.print_stack()
+        sys.stderr.write("\nBad filename: %r\n" % ast_file)
+        sys.stderr.write("Expecting something like: 'path/foo.ear-out.json'\n")
+        sys.exit(1)
     ast_file_base = ast_file
     ast_file_base = re.sub("[.]answer[.]json$", ".json", ast_file_base)
     ast_file_base = re.sub("[.][^.]*[.]json$", "", ast_file_base)

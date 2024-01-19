@@ -300,7 +300,7 @@ def find_included_files_aux(node, files):
 def parse_args():
     parser = argparse.ArgumentParser(description='Creates AST files from source code')
     parser.add_argument('-o', "--ast-file", type=str, dest="ast_file",
-        required=True, help="Filename for output AST file")
+        required=True, help="Filename for output AST file, must end in '.ear-out.json'")
     parser.add_argument('-s', "--source-file", type=str, dest="source_file",
         required=True, help="Source '.c' file")
     parser.add_argument('-c', "--compile-commands", type=str, dest="compile_cmds_file",
