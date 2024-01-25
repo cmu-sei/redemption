@@ -1,31 +1,25 @@
 # How to Test the Automated Code Repair (ACR) tool
 
-<legal>  
-'Redemption' Automated Code Repair Tool  
-  
-Copyright 2023 Carnegie Mellon University.  
-  
-NO WARRANTY. THIS CARNEGIE MELLON UNIVERSITY AND SOFTWARE ENGINEERING  
-INSTITUTE MATERIAL IS FURNISHED ON AN 'AS-IS' BASIS. CARNEGIE MELLON  
-UNIVERSITY MAKES NO WARRANTIES OF ANY KIND, EITHER EXPRESSED OR IMPLIED,  
-AS TO ANY MATTER INCLUDING, BUT NOT LIMITED TO, WARRANTY OF FITNESS FOR  
-PURPOSE OR MERCHANTABILITY, EXCLUSIVITY, OR RESULTS OBTAINED FROM USE OF  
-THE MATERIAL. CARNEGIE MELLON UNIVERSITY DOES NOT MAKE ANY WARRANTY OF ANY  
-KIND WITH RESPECT TO FREEDOM FROM PATENT, TRADEMARK, OR COPYRIGHT  
-INFRINGEMENT.  
-  
-Licensed under a MIT (SEI)-style license, please see License.txt or  
-contact permission@sei.cmu.edu for full terms.  
-  
-[DISTRIBUTION STATEMENT A] This material has been approved for public  
-release and unlimited distribution.  Please see Copyright notice for  
-non-US Government use and distribution.  
-  
-This Software includes and/or makes use of Third-Party Software each  
-subject to its own license.  
-  
-DM23-2165  
-</legal>  
+<legal>
+'Redemption' Automated Code Repair Tool
+Copyright 2023, 2024 Carnegie Mellon University.
+NO WARRANTY. THIS CARNEGIE MELLON UNIVERSITY AND SOFTWARE ENGINEERING
+INSTITUTE MATERIAL IS FURNISHED ON AN 'AS-IS' BASIS. CARNEGIE MELLON
+UNIVERSITY MAKES NO WARRANTIES OF ANY KIND, EITHER EXPRESSED OR IMPLIED,
+AS TO ANY MATTER INCLUDING, BUT NOT LIMITED TO, WARRANTY OF FITNESS FOR
+PURPOSE OR MERCHANTABILITY, EXCLUSIVITY, OR RESULTS OBTAINED FROM USE OF
+THE MATERIAL. CARNEGIE MELLON UNIVERSITY DOES NOT MAKE ANY WARRANTY OF ANY
+KIND WITH RESPECT TO FREEDOM FROM PATENT, TRADEMARK, OR COPYRIGHT
+INFRINGEMENT.
+Licensed under a MIT (SEI)-style license, please see License.txt or
+contact permission@sei.cmu.edu for full terms.
+[DISTRIBUTION STATEMENT A] This material has been approved for public
+release and unlimited distribution.  Please see Copyright notice for
+non-US Government use and distribution.
+This Software includes and/or makes use of Third-Party Software each
+subject to its own license.
+DM23-2165
+</legal>
 
 ## Component Testing
 
@@ -77,12 +71,12 @@ To complete this test, we do the following:
       Pick N random alerts; N=5 for now. For each alert,
         Manually check if ACR did the right thing:
         (repaired correctly or correctly refused to repair.)
-      Until ACR does the Right Thing on >=80% of alerts, 
+      Until ACR does the Right Thing on >=80% of alerts,
         Fix ACR bugs and re-test.
 
 ## “Stumble-Through” Testing
 
-Since there are too many alerts to verify them all, this is a preliminary test to make sure that the repair tool does not crash or hang. 
+Since there are too many alerts to verify them all, this is a preliminary test to make sure that the repair tool does not crash or hang.
 
 In this test, we run the repair tool on all alerts in all codebases. The test fails if the tool crashes, hangs, or throws exceptions.
 
@@ -115,9 +109,9 @@ Time should be <5% slower. Memory usage should be equivalent.
 This test confirms that the code has been repaired, according to the SA tools.
 
     Run the repair tool on all codebases.
-    We rerun SA tools on the repaired code. 
+    We rerun SA tools on the repaired code.
     The goal is to see if the SA alerts that were repaired disappear. If not, why not?
-    We rerun ACR on the repaired code with (new) SA alerts. 
+    We rerun ACR on the repaired code with (new) SA alerts.
     Ideally the SA tool should do nothing.
     Confirm that any alerts for successfully-repaired code are reported by ACR as false positives (as the code is repaired).
 

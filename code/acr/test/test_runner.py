@@ -4,7 +4,7 @@
 # <legal>
 # 'Redemption' Automated Code Repair Tool
 #
-# Copyright 2023 Carnegie Mellon University.
+# Copyright 2023, 2024 Carnegie Mellon University.
 #
 # NO WARRANTY. THIS CARNEGIE MELLON UNIVERSITY AND SOFTWARE ENGINEERING
 # INSTITUTE MATERIAL IS FURNISHED ON AN 'AS-IS' BASIS. CARNEGIE MELLON

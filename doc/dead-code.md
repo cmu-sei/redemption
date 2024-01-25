@@ -1,31 +1,25 @@
 # Dead Code
 
-<legal>  
-'Redemption' Automated Code Repair Tool  
-  
-Copyright 2023 Carnegie Mellon University.  
-  
-NO WARRANTY. THIS CARNEGIE MELLON UNIVERSITY AND SOFTWARE ENGINEERING  
-INSTITUTE MATERIAL IS FURNISHED ON AN 'AS-IS' BASIS. CARNEGIE MELLON  
-UNIVERSITY MAKES NO WARRANTIES OF ANY KIND, EITHER EXPRESSED OR IMPLIED,  
-AS TO ANY MATTER INCLUDING, BUT NOT LIMITED TO, WARRANTY OF FITNESS FOR  
-PURPOSE OR MERCHANTABILITY, EXCLUSIVITY, OR RESULTS OBTAINED FROM USE OF  
-THE MATERIAL. CARNEGIE MELLON UNIVERSITY DOES NOT MAKE ANY WARRANTY OF ANY  
-KIND WITH RESPECT TO FREEDOM FROM PATENT, TRADEMARK, OR COPYRIGHT  
-INFRINGEMENT.  
-  
-Licensed under a MIT (SEI)-style license, please see License.txt or  
-contact permission@sei.cmu.edu for full terms.  
-  
-[DISTRIBUTION STATEMENT A] This material has been approved for public  
-release and unlimited distribution.  Please see Copyright notice for  
-non-US Government use and distribution.  
-  
-This Software includes and/or makes use of Third-Party Software each  
-subject to its own license.  
-  
-DM23-2165  
-</legal>  
+<legal>
+'Redemption' Automated Code Repair Tool
+Copyright 2023, 2024 Carnegie Mellon University.
+NO WARRANTY. THIS CARNEGIE MELLON UNIVERSITY AND SOFTWARE ENGINEERING
+INSTITUTE MATERIAL IS FURNISHED ON AN 'AS-IS' BASIS. CARNEGIE MELLON
+UNIVERSITY MAKES NO WARRANTIES OF ANY KIND, EITHER EXPRESSED OR IMPLIED,
+AS TO ANY MATTER INCLUDING, BUT NOT LIMITED TO, WARRANTY OF FITNESS FOR
+PURPOSE OR MERCHANTABILITY, EXCLUSIVITY, OR RESULTS OBTAINED FROM USE OF
+THE MATERIAL. CARNEGIE MELLON UNIVERSITY DOES NOT MAKE ANY WARRANTY OF ANY
+KIND WITH RESPECT TO FREEDOM FROM PATENT, TRADEMARK, OR COPYRIGHT
+INFRINGEMENT.
+Licensed under a MIT (SEI)-style license, please see License.txt or
+contact permission@sei.cmu.edu for full terms.
+[DISTRIBUTION STATEMENT A] This material has been approved for public
+release and unlimited distribution.  Please see Copyright notice for
+non-US Government use and distribution.
+This Software includes and/or makes use of Third-Party Software each
+subject to its own license.
+DM23-2165
+</legal>
 
 This is about alerts mapped to MSC12-C. We analyze all the MSC12-C alerts mapped to git or zeek.
 
@@ -129,7 +123,7 @@ From zeek:auxil/c-ares/src/lib/ares__parse_into_addrinfo.c:188:
 Replace with:
 
           if (!got_cname || cname_only_is_enodata)
-          
+
 since (a || (!a && b)) == a || b
 
 This might be less readable, and it is the only instance.
@@ -166,8 +160,8 @@ Consider this code:
 
     int x; // uninitialized
     ...
-    x = 5; 
-    
+    x = 5;
+
 Solution: If there exists a code path where x is read w/o being initialized, then x should be initialized when declared. This means that EXP33-?C is a true positive and MSC12-C would be a false positive.
 On the other paw, if there is no such code path, then that means that after x is declared (whether initialized or not) it is always initialized before being read. This means that EXP33-C is a false positive.
 But MSC12-C should also be a false positive.  This is because initializing a variable to a known good value is a good defense-in-depth strategy, and makes the code less brittle, in case the code is later modified to read the value without writing to it first.

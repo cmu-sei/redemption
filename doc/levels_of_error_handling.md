@@ -1,31 +1,25 @@
 # Levels of Error Handling
 
-<legal>  
-'Redemption' Automated Code Repair Tool  
-  
-Copyright 2023 Carnegie Mellon University.  
-  
-NO WARRANTY. THIS CARNEGIE MELLON UNIVERSITY AND SOFTWARE ENGINEERING  
-INSTITUTE MATERIAL IS FURNISHED ON AN 'AS-IS' BASIS. CARNEGIE MELLON  
-UNIVERSITY MAKES NO WARRANTIES OF ANY KIND, EITHER EXPRESSED OR IMPLIED,  
-AS TO ANY MATTER INCLUDING, BUT NOT LIMITED TO, WARRANTY OF FITNESS FOR  
-PURPOSE OR MERCHANTABILITY, EXCLUSIVITY, OR RESULTS OBTAINED FROM USE OF  
-THE MATERIAL. CARNEGIE MELLON UNIVERSITY DOES NOT MAKE ANY WARRANTY OF ANY  
-KIND WITH RESPECT TO FREEDOM FROM PATENT, TRADEMARK, OR COPYRIGHT  
-INFRINGEMENT.  
-  
-Licensed under a MIT (SEI)-style license, please see License.txt or  
-contact permission@sei.cmu.edu for full terms.  
-  
-[DISTRIBUTION STATEMENT A] This material has been approved for public  
-release and unlimited distribution.  Please see Copyright notice for  
-non-US Government use and distribution.  
-  
-This Software includes and/or makes use of Third-Party Software each  
-subject to its own license.  
-  
-DM23-2165  
-</legal>  
+<legal>
+'Redemption' Automated Code Repair Tool
+Copyright 2023, 2024 Carnegie Mellon University.
+NO WARRANTY. THIS CARNEGIE MELLON UNIVERSITY AND SOFTWARE ENGINEERING
+INSTITUTE MATERIAL IS FURNISHED ON AN 'AS-IS' BASIS. CARNEGIE MELLON
+UNIVERSITY MAKES NO WARRANTIES OF ANY KIND, EITHER EXPRESSED OR IMPLIED,
+AS TO ANY MATTER INCLUDING, BUT NOT LIMITED TO, WARRANTY OF FITNESS FOR
+PURPOSE OR MERCHANTABILITY, EXCLUSIVITY, OR RESULTS OBTAINED FROM USE OF
+THE MATERIAL. CARNEGIE MELLON UNIVERSITY DOES NOT MAKE ANY WARRANTY OF ANY
+KIND WITH RESPECT TO FREEDOM FROM PATENT, TRADEMARK, OR COPYRIGHT
+INFRINGEMENT.
+Licensed under a MIT (SEI)-style license, please see License.txt or
+contact permission@sei.cmu.edu for full terms.
+[DISTRIBUTION STATEMENT A] This material has been approved for public
+release and unlimited distribution.  Please see Copyright notice for
+non-US Government use and distribution.
+This Software includes and/or makes use of Third-Party Software each
+subject to its own license.
+DM23-2165
+</legal>
 
 This document dictates several levels of error-handling, where each level imposes extra restrictions, and offers more guarantees. The job of error-handling, and the default level are the responsibility of the developer, although the programming language they use can help, as well as the error-handling technology they choose to use with the language.
 
@@ -89,7 +83,7 @@ Java, Python, and Rust do not have undefined behavior....you must use JNI code, 
 
 This level, the lowest available, indicates a program that neither detects nor prevents errors. Forbidden by CERT recommendation EXP12-C.
 
-This is the default for C & C++. Most C/C++ errors that are neither detected nor prevented result in undefined behavior. 
+This is the default for C & C++. Most C/C++ errors that are neither detected nor prevented result in undefined behavior.
 
 ##### Example: Reading a File in C
 

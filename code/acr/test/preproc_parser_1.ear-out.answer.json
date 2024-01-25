@@ -327,7 +327,7 @@
           "tokLen": 3
         },
         "end": {
-          "offset": 652,
+          "offset": 644,
           "line": 45,
           "col": 1,
           "tokLen": 1
@@ -351,7 +351,7 @@
               "tokLen": 1
             },
             "end": {
-              "offset": 652,
+              "offset": 644,
               "line": 45,
               "col": 1,
               "tokLen": 1
@@ -809,13 +809,13 @@
               "kind": "BinaryOperator",
               "range": {
                 "begin": {
-                  "offset": 273,
+                  "offset": 269,
                   "line": 14,
                   "col": 5,
                   "tokLen": 1
                 },
                 "end": {
-                  "offset": 330,
+                  "offset": 324,
                   "line": 20,
                   "col": 9,
                   "tokLen": 1
@@ -833,13 +833,13 @@
                   "kind": "DeclRefExpr",
                   "range": {
                     "begin": {
-                      "offset": 273,
+                      "offset": 269,
                       "line": 14,
                       "col": 5,
                       "tokLen": 1
                     },
                     "end": {
-                      "offset": 273,
+                      "offset": 269,
                       "col": 5,
                       "tokLen": 1
                     },
@@ -864,13 +864,13 @@
                   "kind": "BinaryOperator",
                   "range": {
                     "begin": {
-                      "offset": 282,
+                      "offset": 277,
                       "line": 15,
                       "col": 5,
                       "tokLen": 1
                     },
                     "end": {
-                      "offset": 330,
+                      "offset": 324,
                       "line": 20,
                       "col": 9,
                       "tokLen": 1
@@ -888,13 +888,13 @@
                       "kind": "ImplicitCastExpr",
                       "range": {
                         "begin": {
-                          "offset": 282,
+                          "offset": 277,
                           "line": 15,
                           "col": 5,
                           "tokLen": 1
                         },
                         "end": {
-                          "offset": 326,
+                          "offset": 320,
                           "line": 20,
                           "col": 5,
                           "tokLen": 1
@@ -912,13 +912,13 @@
                           "kind": "ParenExpr",
                           "range": {
                             "begin": {
-                              "offset": 282,
+                              "offset": 277,
                               "line": 15,
                               "col": 5,
                               "tokLen": 1
                             },
                             "end": {
-                              "offset": 326,
+                              "offset": 320,
                               "line": 20,
                               "col": 5,
                               "tokLen": 1
@@ -935,13 +935,13 @@
                               "kind": "DeclRefExpr",
                               "range": {
                                 "begin": {
-                                  "offset": 288,
+                                  "offset": 283,
                                   "line": 16,
                                   "col": 5,
                                   "tokLen": 1
                                 },
                                 "end": {
-                                  "offset": 288,
+                                  "offset": 283,
                                   "col": 5,
                                   "tokLen": 1
                                 },
@@ -970,13 +970,13 @@
                       "kind": "ImplicitCastExpr",
                       "range": {
                         "begin": {
-                          "offset": 330,
+                          "offset": 324,
                           "line": 20,
                           "col": 9,
                           "tokLen": 1
                         },
                         "end": {
-                          "offset": 330,
+                          "offset": 324,
                           "col": 9,
                           "tokLen": 1
                         },
@@ -993,12 +993,12 @@
                           "kind": "DeclRefExpr",
                           "range": {
                             "begin": {
-                              "offset": 330,
+                              "offset": 324,
                               "col": 9,
                               "tokLen": 1
                             },
                             "end": {
-                              "offset": 330,
+                              "offset": 324,
                               "col": 9,
                               "tokLen": 1
                             },
@@ -1029,13 +1029,13 @@
               "kind": "CallExpr",
               "range": {
                 "begin": {
-                  "offset": 338,
+                  "offset": 332,
                   "line": 22,
                   "col": 5,
                   "tokLen": 6
                 },
                 "end": {
-                  "offset": 358,
+                  "offset": 352,
                   "col": 25,
                   "tokLen": 1
                 },
@@ -1051,12 +1051,12 @@
                   "kind": "ImplicitCastExpr",
                   "range": {
                     "begin": {
-                      "offset": 338,
+                      "offset": 332,
                       "col": 5,
                       "tokLen": 6
                     },
                     "end": {
-                      "offset": 338,
+                      "offset": 332,
                       "col": 5,
                       "tokLen": 6
                     },
@@ -1073,12 +1073,12 @@
                       "kind": "DeclRefExpr",
                       "range": {
                         "begin": {
-                          "offset": 338,
+                          "offset": 332,
                           "col": 5,
                           "tokLen": 6
                         },
                         "end": {
-                          "offset": 338,
+                          "offset": 332,
                           "col": 5,
                           "tokLen": 6
                         },
@@ -1105,12 +1105,12 @@
                   "kind": "ImplicitCastExpr",
                   "range": {
                     "begin": {
-                      "offset": 345,
+                      "offset": 339,
                       "col": 12,
                       "tokLen": 10
                     },
                     "end": {
-                      "offset": 345,
+                      "offset": 339,
                       "col": 12,
                       "tokLen": 10
                     },
@@ -1127,12 +1127,12 @@
                       "kind": "ImplicitCastExpr",
                       "range": {
                         "begin": {
-                          "offset": 345,
+                          "offset": 339,
                           "col": 12,
                           "tokLen": 10
                         },
                         "end": {
-                          "offset": 345,
+                          "offset": 339,
                           "col": 12,
                           "tokLen": 10
                         },
@@ -1149,12 +1149,12 @@
                           "kind": "StringLiteral",
                           "range": {
                             "begin": {
-                              "offset": 345,
+                              "offset": 339,
                               "col": 12,
                               "tokLen": 10
                             },
                             "end": {
-                              "offset": 345,
+                              "offset": 339,
                               "col": 12,
                               "tokLen": 10
                             },
@@ -1175,12 +1175,12 @@
                   "kind": "ImplicitCastExpr",
                   "range": {
                     "begin": {
-                      "offset": 357,
+                      "offset": 351,
                       "col": 24,
                       "tokLen": 1
                     },
                     "end": {
-                      "offset": 357,
+                      "offset": 351,
                       "col": 24,
                       "tokLen": 1
                     },
@@ -1197,12 +1197,12 @@
                       "kind": "DeclRefExpr",
                       "range": {
                         "begin": {
-                          "offset": 357,
+                          "offset": 351,
                           "col": 24,
                           "tokLen": 1
                         },
                         "end": {
-                          "offset": 357,
+                          "offset": 351,
                           "col": 24,
                           "tokLen": 1
                         },
@@ -1231,13 +1231,13 @@
               "kind": "DeclStmt",
               "range": {
                 "begin": {
-                  "offset": 428,
+                  "offset": 422,
                   "line": 26,
                   "col": 5,
                   "tokLen": 3
                 },
                 "end": {
-                  "offset": 439,
+                  "offset": 433,
                   "col": 16,
                   "tokLen": 1
                 },
@@ -1248,18 +1248,18 @@
                   "id": 1060,
                   "kind": "VarDecl",
                   "loc": {
-                    "offset": 433,
+                    "offset": 427,
                     "col": 10,
                     "tokLen": 1
                   },
                   "range": {
                     "begin": {
-                      "offset": 428,
+                      "offset": 422,
                       "col": 5,
                       "tokLen": 3
                     },
                     "end": {
-                      "offset": 438,
+                      "offset": 432,
                       "col": 15,
                       "tokLen": 1
                     },
@@ -1277,12 +1277,12 @@
                       "kind": "UnaryOperator",
                       "range": {
                         "begin": {
-                          "offset": 437,
+                          "offset": 431,
                           "col": 14,
                           "tokLen": 1
                         },
                         "end": {
-                          "offset": 438,
+                          "offset": 432,
                           "col": 15,
                           "tokLen": 1
                         },
@@ -1301,12 +1301,12 @@
                           "kind": "DeclRefExpr",
                           "range": {
                             "begin": {
-                              "offset": 438,
+                              "offset": 432,
                               "col": 15,
                               "tokLen": 1
                             },
                             "end": {
-                              "offset": 438,
+                              "offset": 432,
                               "col": 15,
                               "tokLen": 1
                             },
@@ -1332,19 +1332,19 @@
                       "id": 1063,
                       "kind": "FullComment",
                       "loc": {
-                        "offset": 369,
+                        "offset": 363,
                         "line": 24,
                         "col": 8,
                         "tokLen": 53
                       },
                       "range": {
                         "begin": {
-                          "offset": 369,
+                          "offset": 363,
                           "col": 8,
                           "tokLen": 53
                         },
                         "end": {
-                          "offset": 421,
+                          "offset": 415,
                           "col": 60,
                           "tokLen": 1
                         },
@@ -1355,18 +1355,18 @@
                           "id": 1064,
                           "kind": "ParagraphComment",
                           "loc": {
-                            "offset": 369,
+                            "offset": 363,
                             "col": 8,
                             "tokLen": 53
                           },
                           "range": {
                             "begin": {
-                              "offset": 369,
+                              "offset": 363,
                               "col": 8,
                               "tokLen": 53
                             },
                             "end": {
-                              "offset": 421,
+                              "offset": 415,
                               "col": 60,
                               "tokLen": 1
                             },
@@ -1377,18 +1377,18 @@
                               "id": 1065,
                               "kind": "TextComment",
                               "loc": {
-                                "offset": 369,
+                                "offset": 363,
                                 "col": 8,
                                 "tokLen": 53
                               },
                               "range": {
                                 "begin": {
-                                  "offset": 369,
+                                  "offset": 363,
                                   "col": 8,
                                   "tokLen": 53
                                 },
                                 "end": {
-                                  "offset": 421,
+                                  "offset": 415,
                                   "col": 60,
                                   "tokLen": 1
                                 },
@@ -1409,13 +1409,13 @@
               "kind": "BinaryOperator",
               "range": {
                 "begin": {
-                  "offset": 446,
+                  "offset": 440,
                   "line": 28,
                   "col": 5,
                   "tokLen": 1
                 },
                 "end": {
-                  "offset": 533,
+                  "offset": 525,
                   "line": 38,
                   "col": 9,
                   "tokLen": 1
@@ -1433,13 +1433,13 @@
                   "kind": "DeclRefExpr",
                   "range": {
                     "begin": {
-                      "offset": 446,
+                      "offset": 440,
                       "line": 28,
                       "col": 5,
                       "tokLen": 1
                     },
                     "end": {
-                      "offset": 446,
+                      "offset": 440,
                       "col": 5,
                       "tokLen": 1
                     },
@@ -1464,12 +1464,12 @@
                   "kind": "BinaryOperator",
                   "range": {
                     "begin": {
-                      "offset": 450,
+                      "offset": 444,
                       "col": 9,
                       "tokLen": 1
                     },
                     "end": {
-                      "offset": 533,
+                      "offset": 525,
                       "line": 38,
                       "col": 9,
                       "tokLen": 1
@@ -1487,13 +1487,13 @@
                       "kind": "ImplicitCastExpr",
                       "range": {
                         "begin": {
-                          "offset": 450,
+                          "offset": 444,
                           "line": 28,
                           "col": 9,
                           "tokLen": 1
                         },
                         "end": {
-                          "offset": 529,
+                          "offset": 521,
                           "line": 38,
                           "col": 5,
                           "tokLen": 1
@@ -1511,13 +1511,13 @@
                           "kind": "ParenExpr",
                           "range": {
                             "begin": {
-                              "offset": 450,
+                              "offset": 444,
                               "line": 28,
                               "col": 9,
                               "tokLen": 1
                             },
                             "end": {
-                              "offset": 529,
+                              "offset": 521,
                               "line": 38,
                               "col": 5,
                               "tokLen": 1
@@ -1534,13 +1534,13 @@
                               "kind": "UnaryOperator",
                               "range": {
                                 "begin": {
-                                  "offset": 510,
+                                  "offset": 502,
                                   "line": 36,
                                   "col": 5,
                                   "tokLen": 1
                                 },
                                 "end": {
-                                  "offset": 512,
+                                  "offset": 504,
                                   "col": 7,
                                   "tokLen": 1
                                 },
@@ -1559,12 +1559,12 @@
                                   "kind": "ImplicitCastExpr",
                                   "range": {
                                     "begin": {
-                                      "offset": 512,
+                                      "offset": 504,
                                       "col": 7,
                                       "tokLen": 1
                                     },
                                     "end": {
-                                      "offset": 512,
+                                      "offset": 504,
                                       "col": 7,
                                       "tokLen": 1
                                     },
@@ -1581,12 +1581,12 @@
                                       "kind": "DeclRefExpr",
                                       "range": {
                                         "begin": {
-                                          "offset": 512,
+                                          "offset": 504,
                                           "col": 7,
                                           "tokLen": 1
                                         },
                                         "end": {
-                                          "offset": 512,
+                                          "offset": 504,
                                           "col": 7,
                                           "tokLen": 1
                                         },
@@ -1619,13 +1619,13 @@
                       "kind": "ImplicitCastExpr",
                       "range": {
                         "begin": {
-                          "offset": 533,
+                          "offset": 525,
                           "line": 38,
                           "col": 9,
                           "tokLen": 1
                         },
                         "end": {
-                          "offset": 533,
+                          "offset": 525,
                           "col": 9,
                           "tokLen": 1
                         },
@@ -1642,12 +1642,12 @@
                           "kind": "DeclRefExpr",
                           "range": {
                             "begin": {
-                              "offset": 533,
+                              "offset": 525,
                               "col": 9,
                               "tokLen": 1
                             },
                             "end": {
-                              "offset": 533,
+                              "offset": 525,
                               "col": 9,
                               "tokLen": 1
                             },
@@ -1678,13 +1678,13 @@
               "kind": "CallExpr",
               "range": {
                 "begin": {
-                  "offset": 541,
+                  "offset": 533,
                   "line": 40,
                   "col": 5,
                   "tokLen": 6
                 },
                 "end": {
-                  "offset": 572,
+                  "offset": 564,
                   "col": 36,
                   "tokLen": 1
                 },
@@ -1700,12 +1700,12 @@
                   "kind": "ImplicitCastExpr",
                   "range": {
                     "begin": {
-                      "offset": 541,
+                      "offset": 533,
                       "col": 5,
                       "tokLen": 6
                     },
                     "end": {
-                      "offset": 541,
+                      "offset": 533,
                       "col": 5,
                       "tokLen": 6
                     },
@@ -1722,12 +1722,12 @@
                       "kind": "DeclRefExpr",
                       "range": {
                         "begin": {
-                          "offset": 541,
+                          "offset": 533,
                           "col": 5,
                           "tokLen": 6
                         },
                         "end": {
-                          "offset": 541,
+                          "offset": 533,
                           "col": 5,
                           "tokLen": 6
                         },
@@ -1754,12 +1754,12 @@
                   "kind": "ImplicitCastExpr",
                   "range": {
                     "begin": {
-                      "offset": 548,
+                      "offset": 540,
                       "col": 12,
                       "tokLen": 18
                     },
                     "end": {
-                      "offset": 548,
+                      "offset": 540,
                       "col": 12,
                       "tokLen": 18
                     },
@@ -1776,12 +1776,12 @@
                       "kind": "ImplicitCastExpr",
                       "range": {
                         "begin": {
-                          "offset": 548,
+                          "offset": 540,
                           "col": 12,
                           "tokLen": 18
                         },
                         "end": {
-                          "offset": 548,
+                          "offset": 540,
                           "col": 12,
                           "tokLen": 18
                         },
@@ -1798,12 +1798,12 @@
                           "kind": "StringLiteral",
                           "range": {
                             "begin": {
-                              "offset": 548,
+                              "offset": 540,
                               "col": 12,
                               "tokLen": 18
                             },
                             "end": {
-                              "offset": 548,
+                              "offset": 540,
                               "col": 12,
                               "tokLen": 18
                             },
@@ -1824,12 +1824,12 @@
                   "kind": "ImplicitCastExpr",
                   "range": {
                     "begin": {
-                      "offset": 568,
+                      "offset": 560,
                       "col": 32,
                       "tokLen": 1
                     },
                     "end": {
-                      "offset": 568,
+                      "offset": 560,
                       "col": 32,
                       "tokLen": 1
                     },
@@ -1846,12 +1846,12 @@
                       "kind": "DeclRefExpr",
                       "range": {
                         "begin": {
-                          "offset": 568,
+                          "offset": 560,
                           "col": 32,
                           "tokLen": 1
                         },
                         "end": {
-                          "offset": 568,
+                          "offset": 560,
                           "col": 32,
                           "tokLen": 1
                         },
@@ -1878,12 +1878,12 @@
                   "kind": "ImplicitCastExpr",
                   "range": {
                     "begin": {
-                      "offset": 571,
+                      "offset": 563,
                       "col": 35,
                       "tokLen": 1
                     },
                     "end": {
-                      "offset": 571,
+                      "offset": 563,
                       "col": 35,
                       "tokLen": 1
                     },
@@ -1900,12 +1900,12 @@
                       "kind": "DeclRefExpr",
                       "range": {
                         "begin": {
-                          "offset": 571,
+                          "offset": 563,
                           "col": 35,
                           "tokLen": 1
                         },
                         "end": {
-                          "offset": 571,
+                          "offset": 563,
                           "col": 35,
                           "tokLen": 1
                         },
@@ -1934,13 +1934,13 @@
               "kind": "ReturnStmt",
               "range": {
                 "begin": {
-                  "offset": 642,
+                  "offset": 634,
                   "line": 44,
                   "col": 5,
                   "tokLen": 6
                 },
                 "end": {
-                  "offset": 649,
+                  "offset": 641,
                   "col": 12,
                   "tokLen": 1
                 },
@@ -1952,12 +1952,12 @@
                   "kind": "IntegerLiteral",
                   "range": {
                     "begin": {
-                      "offset": 649,
+                      "offset": 641,
                       "col": 12,
                       "tokLen": 1
                     },
                     "end": {
-                      "offset": 649,
+                      "offset": 641,
                       "col": 12,
                       "tokLen": 1
                     },
@@ -1981,20 +1981,20 @@
   "file": "/host/code/acr/test/preproc_parser_1.c",
   "preproc_db": {
     "/host/code/acr/test/preproc_parser_1.c": [
-      295,
-      315,
-      456,
-      500,
-      518
+      289,
+      309,
+      450,
+      492,
+      510
     ]
   },
   "comments_db": {
     "/host/code/acr/test/preproc_parser_1.c": [
       [171, 184],
       [189, 201],
-      [211, 267],
-      [366, 422],
-      [580, 636]
+      [207, 263],
+      [360, 416],
+      [572, 628]
     ]
   },
   "newlines_db": {
@@ -2009,41 +2009,41 @@
       166,
       184,
       201,
-      206,
-      267,
-      268,
-      277,
-      283,
-      290,
-      302,
-      310,
-      321,
-      332,
-      333,
-      360,
-      361,
-      422,
-      423,
-      440,
-      441,
-      451,
-      463,
-      472,
-      473,
-      482,
-      488,
-      495,
+      202,
+      263,
+      264,
+      272,
+      278,
+      284,
+      296,
+      304,
+      315,
+      326,
+      327,
+      354,
+      355,
+      416,
+      417,
+      434,
+      435,
+      445,
+      457,
+      466,
+      467,
+      475,
+      481,
+      487,
+      497,
       505,
-      513,
-      524,
-      535,
-      536,
-      574,
-      575,
-      636,
-      637,
-      651,
-      653
+      516,
+      527,
+      528,
+      566,
+      567,
+      628,
+      629,
+      643,
+      645
     ]
   }
 }

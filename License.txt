@@ -1,6 +1,6 @@
 "Redemption" Automated Code Repair Tool
 
-Copyright 2023 Carnegie Mellon University.
+Copyright 2023, 2024 Carnegie Mellon University.
 
 Licensed under a MIT (SEI)-style license, please see License.txt or contact permission@sei.cmu.edu for full terms.
 
@@ -10,7 +10,7 @@ The above copyright notice and this permission notice shall be included in all c
 
 "Redemption" Automated Code Repair Tool includes and/or can make use of certain third party software ("Third Party Software"). The Third Party Software that is used by "Redemption" Automated Code Repair Tool is dependent upon your system configuration, but typically includes the software identified in this license.txt file, and/or described in the documentation and/or read me file. By using "Redemption" Automated Code Repair Tool, you agree to comply with any and all relevant Third Party Software terms and conditions contained in any such Third Party Software or separate license file distributed with such Third Party Software. The parties who own the Third Party Software ("Third Party Licensors") are intended third party beneficiaries to this License with respect to the terms applicable to their Third Party Software. Third Party Software licenses only apply to the Third Party Software and not any other portion of "Redemption" Automated Code Repair Tool or "Redemption" Automated Code Repair Tool as a whole.
 
-This material is based upon work funded and supported by the Department of Defense under Contract No. FA8702-15-D-0002 with Carnegie Mellon University for the operation of the Software Engineering Institute, a federally funded research and development center.  
+This material is based upon work funded and supported by the Department of Defense under Contract No. FA8702-15-D-0002 with Carnegie Mellon University for the operation of the Software Engineering Institute, a federally funded research and development center.
 
 The view, opinions, and/or findings contained in this material are those of the author(s) and should not be construed as an official Government position, policy, or decision, unless designated by other documentation.
 
@@ -20,4 +20,3 @@ NO WARRANTY. THIS CARNEGIE MELLON UNIVERSITY AND SOFTWARE ENGINEERING INSTITUTE 
 
 
 DM23-2165
-

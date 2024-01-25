@@ -1,8 +1,27 @@
 # Using a Continuous Integration (CI) pipeline to test the Redemption tool
 
-<legal></legal>  
+<legal>
+'Redemption' Automated Code Repair Tool
+Copyright 2023, 2024 Carnegie Mellon University.
+NO WARRANTY. THIS CARNEGIE MELLON UNIVERSITY AND SOFTWARE ENGINEERING
+INSTITUTE MATERIAL IS FURNISHED ON AN 'AS-IS' BASIS. CARNEGIE MELLON
+UNIVERSITY MAKES NO WARRANTIES OF ANY KIND, EITHER EXPRESSED OR IMPLIED,
+AS TO ANY MATTER INCLUDING, BUT NOT LIMITED TO, WARRANTY OF FITNESS FOR
+PURPOSE OR MERCHANTABILITY, EXCLUSIVITY, OR RESULTS OBTAINED FROM USE OF
+THE MATERIAL. CARNEGIE MELLON UNIVERSITY DOES NOT MAKE ANY WARRANTY OF ANY
+KIND WITH RESPECT TO FREEDOM FROM PATENT, TRADEMARK, OR COPYRIGHT
+INFRINGEMENT.
+Licensed under a MIT (SEI)-style license, please see License.txt or
+contact permission@sei.cmu.edu for full terms.
+[DISTRIBUTION STATEMENT A] This material has been approved for public
+release and unlimited distribution.  Please see Copyright notice for
+non-US Government use and distribution.
+This Software includes and/or makes use of Third-Party Software each
+subject to its own license.
+DM23-2165
+</legal>
 
-To achieve Continuous Integration (CI) and Continuous Deployment (CD) of our Redemption Tool, we have [Atlassian Bamboo](https://www.atlassian.com/software/bamboo) and [Bitbucket](https://bitbucket.org/product) available internally at SEI. We would also like to publish the tool as OSS to [Github](https://github.com/). 
+To achieve Continuous Integration (CI) and Continuous Deployment (CD) of our Redemption Tool, we have [Atlassian Bamboo](https://www.atlassian.com/software/bamboo) and [Bitbucket](https://bitbucket.org/product) available internally at SEI. We would also like to publish the tool as OSS to [Github](https://github.com/).
 
 While the tool itself is open-source, we also maintain some private files that should not be published. Likewise, clients may ask us for private extensions to the tool, again which should not be published on Github.  Furthermore, the tool has a Git history of about 1 year, which contains private and public files, so we do not want to mirror the entire current Bitbucket repository.
 
@@ -18,7 +37,7 @@ Our priorities are as follows:
  * Continuous Delivery...that is the process of publishing bugfixes should be as painless as possible. Since we already have a process for reviewing bugfixes and features (via PRs), then ideally publishing should be accompanied with merging any development PR into main.
 * Any given file should have only one history, rather than existing with parallel histories in both the public and private repositories
 * To avoid unnecessary difficulty for external users, we should not force push to the main branch on Github
-  
+
 I now think that the goal of a non-awkward dir structure is incompatible with the proper handling of public vs private files. The former strategy of using manifest vs denylist files did a good job of filtering sensitive files, but meant that the public Git repo cannot fast-forward to the public Bitbucket repo, since the Github repo must lack the denylist or any files in it.  We could use Git branches to address the public vs private problem, but branches can easily lead to confusion and files getting leaked onto the wrong branch.  For now, for the private repo we will employ some process to load a container from the public repo with the private files it needs.
 
 ## Current Plan

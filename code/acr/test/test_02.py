@@ -3,9 +3,9 @@
 
 # <legal>
 # 'Redemption' Automated Code Repair Tool
-# 
-# Copyright 2023 Carnegie Mellon University.
-# 
+#
+# Copyright 2023, 2024 Carnegie Mellon University.
+#
 # NO WARRANTY. THIS CARNEGIE MELLON UNIVERSITY AND SOFTWARE ENGINEERING
 # INSTITUTE MATERIAL IS FURNISHED ON AN 'AS-IS' BASIS. CARNEGIE MELLON
 # UNIVERSITY MAKES NO WARRANTIES OF ANY KIND, EITHER EXPRESSED OR IMPLIED,
@@ -14,17 +14,17 @@
 # THE MATERIAL. CARNEGIE MELLON UNIVERSITY DOES NOT MAKE ANY WARRANTY OF ANY
 # KIND WITH RESPECT TO FREEDOM FROM PATENT, TRADEMARK, OR COPYRIGHT
 # INFRINGEMENT.
-# 
+#
 # Licensed under a MIT (SEI)-style license, please see License.txt or
 # contact permission@sei.cmu.edu for full terms.
-# 
+#
 # [DISTRIBUTION STATEMENT A] This material has been approved for public
 # release and unlimited distribution.  Please see Copyright notice for
 # non-US Government use and distribution.
-# 
+#
 # This Software includes and/or makes use of Third-Party Software each
 # subject to its own license.
-# 
+#
 # DM23-2165
 # </legal>
 
@@ -60,7 +60,7 @@ def delete_ids_and_filenames(s):
 def relativize_paths(s):
     s = re.sub('"/.*/test\\b', '"test', s)
     return s
-    
+
 
 def cmp_file_normalize(file1, file2, fn_norm=None):
     if (fn_norm is None):
@@ -96,7 +96,7 @@ def test_ear_03():
     os.chdir("..")
     try:
         ear.run_ear_for_source_file(
-            ast_file="test/out/simple_null_check.ear-out.json", 
+            ast_file="test/out/simple_null_check.ear-out.json",
             source_file="test/simple_null_check.c",
             compile_cmds_file="test/simple_null_check_compile_cmds.json")
     finally:
@@ -168,7 +168,7 @@ def test_ear_04():
     os.chdir("..")
     try:
         ear.run_ear_for_source_file(
-            ast_file=ast_file, 
+            ast_file=ast_file,
             source_file=source_file,
             compile_cmds_file=compile_cmds_file)
     finally:
@@ -241,7 +241,7 @@ def test_e2e_06b():
     finally:
         os.chdir(cur_dir)
     assert cmp_file_normalize("header_null_ptr.repaired.answer.h", "out/header_null_ptr.h")
-    
+
     test_runner.cleanup(source_file, out_location=out_src_dir, step_dir=step_dir, single_file_mode=single_file_mode, additional_files="out/header_null_ptr.h out/header_null_ptr.c")
     os.chdir("..")
     test_runner.cleanup(source_file, out_location=out_src_dir, step_dir=step_dir, single_file_mode=single_file_mode)
@@ -298,7 +298,7 @@ def test_e2e_013():
     assert cmp_file_normalize("macros_near_null_checks.hand-out.json",  "out/macros_near_null_checks.hand-out.json")
     assert cmp_file_normalize("macros_near_null_checks.repaired.c",     "out/macros_near_null_checks.c")
     test_runner.cleanup(source_file, out_location=out_src_dir, step_dir=step_dir, additional_files="out/macros_near_null_checks.* out/acr.h")
-    
+
 def test_e2e_arrow_null_01():
     if(os.path.exists("out")):
         step_dir_prev_existed = True

@@ -1,37 +1,31 @@
 # Verdicts vs Repairs
 
-<legal>  
-'Redemption' Automated Code Repair Tool  
-  
-Copyright 2023 Carnegie Mellon University.  
-  
-NO WARRANTY. THIS CARNEGIE MELLON UNIVERSITY AND SOFTWARE ENGINEERING  
-INSTITUTE MATERIAL IS FURNISHED ON AN 'AS-IS' BASIS. CARNEGIE MELLON  
-UNIVERSITY MAKES NO WARRANTIES OF ANY KIND, EITHER EXPRESSED OR IMPLIED,  
-AS TO ANY MATTER INCLUDING, BUT NOT LIMITED TO, WARRANTY OF FITNESS FOR  
-PURPOSE OR MERCHANTABILITY, EXCLUSIVITY, OR RESULTS OBTAINED FROM USE OF  
-THE MATERIAL. CARNEGIE MELLON UNIVERSITY DOES NOT MAKE ANY WARRANTY OF ANY  
-KIND WITH RESPECT TO FREEDOM FROM PATENT, TRADEMARK, OR COPYRIGHT  
-INFRINGEMENT.  
-  
-Licensed under a MIT (SEI)-style license, please see License.txt or  
-contact permission@sei.cmu.edu for full terms.  
-  
-[DISTRIBUTION STATEMENT A] This material has been approved for public  
-release and unlimited distribution.  Please see Copyright notice for  
-non-US Government use and distribution.  
-  
-This Software includes and/or makes use of Third-Party Software each  
-subject to its own license.  
-  
-DM23-2165  
-</legal>  
+<legal>
+'Redemption' Automated Code Repair Tool
+Copyright 2023, 2024 Carnegie Mellon University.
+NO WARRANTY. THIS CARNEGIE MELLON UNIVERSITY AND SOFTWARE ENGINEERING
+INSTITUTE MATERIAL IS FURNISHED ON AN 'AS-IS' BASIS. CARNEGIE MELLON
+UNIVERSITY MAKES NO WARRANTIES OF ANY KIND, EITHER EXPRESSED OR IMPLIED,
+AS TO ANY MATTER INCLUDING, BUT NOT LIMITED TO, WARRANTY OF FITNESS FOR
+PURPOSE OR MERCHANTABILITY, EXCLUSIVITY, OR RESULTS OBTAINED FROM USE OF
+THE MATERIAL. CARNEGIE MELLON UNIVERSITY DOES NOT MAKE ANY WARRANTY OF ANY
+KIND WITH RESPECT TO FREEDOM FROM PATENT, TRADEMARK, OR COPYRIGHT
+INFRINGEMENT.
+Licensed under a MIT (SEI)-style license, please see License.txt or
+contact permission@sei.cmu.edu for full terms.
+[DISTRIBUTION STATEMENT A] This material has been approved for public
+release and unlimited distribution.  Please see Copyright notice for
+non-US Government use and distribution.
+This Software includes and/or makes use of Third-Party Software each
+subject to its own license.
+DM23-2165
+</legal>
 
 For each alert that we use to test ACR, we are making two determinations:
 
  * Is the alert a true positive? What is its verdict? (a la SCALe)
  * Should ACR repair the alert?
- 
+
 One premise of this project is that these two questions are independent. An alert can be a false positive while ACR should (in theory) "repair" the alert. Likewise, ACR may refuse to repair an alert that is a true positive (perhaps repairing it is beyond ACR's capabilities). We hope that 80% of all alerts can either be repaired or determined (by ACR) to be false positives and not worthy of repair.
 
 ## Is the alert a true positive?
@@ -87,7 +81,7 @@ The `memcpy()` function requires that its first and second argument not be NULL.
 Suppose we have only one alert for this function. That alert, using its line number, column number, and message, refers to the `P1` pointer in the `memcpy` call. The alert's message says:
 
     First argument to memcpy, "P1", might be null.
-    
+
 We have no other alerts for this code.
 
 Furthermore, suppose that we happen to know that every time this function is called, `P1` cannot be NULL, but `P2` could be.
@@ -159,7 +153,7 @@ This code appears in zeek/src/3rdparty/patricia.c:
 375       patricia_tree_t *patricia = calloc(1, sizeof *patricia);
 376       if (patricia == NULL)
 377         out_of_memory("patricia/new_patricia: unable to allocate memory");
-378 
+378
 379       patricia->maxbits = maxbits;
 ...
 ```
@@ -168,7 +162,7 @@ Clang-tidy produces an alert on line 379, column 3, with this message:
 
     Either the condition 'patricia==NULL' is redundant or there is possible null pointer dereference: patricia.
 
-The column number is...weird. The message clearly indicates that `patricia` might be NULL on line 379. The SA tool's reasoning is that while there is a NULL check of `patricia` on line 376, it is possible for the program to call `out_of_memory()` on line 377, resume execution, and dereference NULL on line 379. 
+The column number is...weird. The message clearly indicates that `patricia` might be NULL on line 379. The SA tool's reasoning is that while there is a NULL check of `patricia` on line 376, it is possible for the program to call `out_of_memory()` on line 377, resume execution, and dereference NULL on line 379.
 
 What the tool does not know is that the `out_of_memory()` function does not return; it is defined in auxil/zeekctl/auxil/pysubnettree/patricia.c, line 70, and it ends by calling `abort()` which also does not return.  To infer this, a tool would have to perform "Whole Program Analysis", that is, statically analyze the source code for the entire project, rather than just one file. Some SA tools do this, but not all.
 

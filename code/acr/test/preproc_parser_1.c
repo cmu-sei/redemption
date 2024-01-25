@@ -8,12 +8,12 @@ int main() {
     "#if FOO #then BAR";
     /* #if FOO */
     // #then BAR
-    
+
     ////////////////////////////////////////////////////////
 
-    x = 
+    x =
     (
-    a 
+    a
     #if FOO
     * b
     #endif
@@ -29,9 +29,9 @@ int main() {
     #if FOO
     32);
 
-    z = 
+    z =
     (
-    a 
+    a
     #else
     * e
     #endif

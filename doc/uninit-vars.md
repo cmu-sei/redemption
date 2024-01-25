@@ -1,35 +1,29 @@
 # Uninitialized variables (EXP33-C)
 
-<legal>  
-'Redemption' Automated Code Repair Tool  
-  
-Copyright 2023 Carnegie Mellon University.  
-  
-NO WARRANTY. THIS CARNEGIE MELLON UNIVERSITY AND SOFTWARE ENGINEERING  
-INSTITUTE MATERIAL IS FURNISHED ON AN 'AS-IS' BASIS. CARNEGIE MELLON  
-UNIVERSITY MAKES NO WARRANTIES OF ANY KIND, EITHER EXPRESSED OR IMPLIED,  
-AS TO ANY MATTER INCLUDING, BUT NOT LIMITED TO, WARRANTY OF FITNESS FOR  
-PURPOSE OR MERCHANTABILITY, EXCLUSIVITY, OR RESULTS OBTAINED FROM USE OF  
-THE MATERIAL. CARNEGIE MELLON UNIVERSITY DOES NOT MAKE ANY WARRANTY OF ANY  
-KIND WITH RESPECT TO FREEDOM FROM PATENT, TRADEMARK, OR COPYRIGHT  
-INFRINGEMENT.  
-  
-Licensed under a MIT (SEI)-style license, please see License.txt or  
-contact permission@sei.cmu.edu for full terms.  
-  
-[DISTRIBUTION STATEMENT A] This material has been approved for public  
-release and unlimited distribution.  Please see Copyright notice for  
-non-US Government use and distribution.  
-  
-This Software includes and/or makes use of Third-Party Software each  
-subject to its own license.  
-  
-DM23-2165  
-</legal>  
+<legal>
+'Redemption' Automated Code Repair Tool
+Copyright 2023, 2024 Carnegie Mellon University.
+NO WARRANTY. THIS CARNEGIE MELLON UNIVERSITY AND SOFTWARE ENGINEERING
+INSTITUTE MATERIAL IS FURNISHED ON AN 'AS-IS' BASIS. CARNEGIE MELLON
+UNIVERSITY MAKES NO WARRANTIES OF ANY KIND, EITHER EXPRESSED OR IMPLIED,
+AS TO ANY MATTER INCLUDING, BUT NOT LIMITED TO, WARRANTY OF FITNESS FOR
+PURPOSE OR MERCHANTABILITY, EXCLUSIVITY, OR RESULTS OBTAINED FROM USE OF
+THE MATERIAL. CARNEGIE MELLON UNIVERSITY DOES NOT MAKE ANY WARRANTY OF ANY
+KIND WITH RESPECT TO FREEDOM FROM PATENT, TRADEMARK, OR COPYRIGHT
+INFRINGEMENT.
+Licensed under a MIT (SEI)-style license, please see License.txt or
+contact permission@sei.cmu.edu for full terms.
+[DISTRIBUTION STATEMENT A] This material has been approved for public
+release and unlimited distribution.  Please see Copyright notice for
+non-US Government use and distribution.
+This Software includes and/or makes use of Third-Party Software each
+subject to its own license.
+DM23-2165
+</legal>
 
 This document shows evidence that different SA tools can report identical alerts but using different lines.
 
-In particular EXP33-C (uninit-var) alerts are reported differently by different SA tools: 
+In particular EXP33-C (uninit-var) alerts are reported differently by different SA tools:
  - Clang-tidy provides the line of code where an uninitialized variable is declared.
  - Cppcheck provides the line where an uninitialized variable is first used.
 
@@ -43,7 +37,7 @@ As a quick-and-dirty solution to this problem, we currently ignore the line numb
 
 The above quick-and-dirty solution fails if two variables in the same function have the same name.  A more robust solution is as follows:
 
- 1. Traverse the AST to find the occurrence of the identifier token at the line and column indicated in the alert.  
+ 1. Traverse the AST to find the occurrence of the identifier token at the line and column indicated in the alert.
 
  2. If this AST node is a `VarDecl` node, then read its `id` field, create a new `var_decl` field in the alert, and write the value of the AST node's `id` field to the alert's `var_decl` field.
 
@@ -57,7 +51,7 @@ The above quick-and-dirty solution fails if two variables in the same function h
 ### Code: `uninit_var.c`
 ```c
  1. #include <stdio.h>
- 2. 
+ 2.
  3. int main(int argc, char** argv) {
  4.     int x;
  5.     if (argc > 1) {
@@ -72,7 +66,7 @@ The above quick-and-dirty solution fails if two variables in the same function h
 ``` shell
 $ cppcheck --version
 Cppcheck 2.9
-$ cppcheck uninit_var.c 
+$ cppcheck uninit_var.c
 Checking uninit_var.c ...
 uninit_var.c:8:33: warning: Uninitialized variable: x [uninitvar]
     printf("The value is %d\n", x);
@@ -96,7 +90,7 @@ Ubuntu LLVM version 15.0.7
   Optimized build.
   Default target: x86_64-pc-linux-gnu
   Host CPU: skylake
-$ clang-tidy -checks='*' uninit_var.c 
+$ clang-tidy -checks='*' uninit_var.c
 ...
 /host/uninit_var.c:4:9: warning: variable 'x' is not initialized [cppcoreguidelines-init-variables]
     int x;
@@ -130,7 +124,7 @@ For Zeek, a similar phenomenon occurs on the `qid` variable potentially used bef
  65.   struct list_node* list_head;
  66.   struct list_node* list_node;
  67.   DNS_HEADER_SET_QID(((unsigned char*)&qid), id);
- 68. 
+ 68.
  69.   /* Find the query corresponding to this packet. */
  70.   list_head = &(channel->queries_by_qid[qid % ARES_QID_TABLE_SIZE]);
 ...

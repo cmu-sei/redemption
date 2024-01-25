@@ -2,9 +2,7 @@
 
 <legal>
 'Redemption' Automated Code Repair Tool
-
-Copyright 2023 Carnegie Mellon University.
-
+Copyright 2023, 2024 Carnegie Mellon University.
 NO WARRANTY. THIS CARNEGIE MELLON UNIVERSITY AND SOFTWARE ENGINEERING
 INSTITUTE MATERIAL IS FURNISHED ON AN 'AS-IS' BASIS. CARNEGIE MELLON
 UNIVERSITY MAKES NO WARRANTIES OF ANY KIND, EITHER EXPRESSED OR IMPLIED,
@@ -13,17 +11,13 @@ PURPOSE OR MERCHANTABILITY, EXCLUSIVITY, OR RESULTS OBTAINED FROM USE OF
 THE MATERIAL. CARNEGIE MELLON UNIVERSITY DOES NOT MAKE ANY WARRANTY OF ANY
 KIND WITH RESPECT TO FREEDOM FROM PATENT, TRADEMARK, OR COPYRIGHT
 INFRINGEMENT.
-
 Licensed under a MIT (SEI)-style license, please see License.txt or
 contact permission@sei.cmu.edu for full terms.
-
 [DISTRIBUTION STATEMENT A] This material has been approved for public
 release and unlimited distribution.  Please see Copyright notice for
 non-US Government use and distribution.
-
 This Software includes and/or makes use of Third-Party Software each
 subject to its own license.
-
 DM23-2165
 </legal>
 
@@ -60,7 +54,7 @@ hereafter referred to as *fields*.
 
     The AST node identifier that the alert has been associated with by
     the brain.
-    
+
 * `checker` : string
 
     The specific rule the `tool` used to generate the alert.
@@ -68,7 +62,7 @@ hereafter referred to as *fields*.
 * `column` : string
 
     The column associated with the alert.
-    
+
 * `conflicting_repairs` : list
 
     A list of repairs that were unable to be used due to conflicts.
@@ -125,7 +119,7 @@ hereafter referred to as *fields*.
     a string which represents the algorithm.  The second element is
     any data that needs to be attached to the algorithm, and is
     specific to each algorithm.
- 
+
 * `repairable` : string
 
     A manual determination as to whether an alert is repairable.
@@ -149,12 +143,12 @@ hereafter referred to as *fields*.
 
     The tool whose output was used to generate the alert, or `manual`
     if it was manually generated.
-    
+
 * `verdict` : string
 
     A manual determination as to whether the current alert actually
     violates the specified rule.
- 
+
 * `why_skipped` : string
 
     A reason why a repair was skipped.

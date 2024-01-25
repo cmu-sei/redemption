@@ -1,31 +1,25 @@
 # Dataset Data Documentation
 
-<legal>  
-'Redemption' Automated Code Repair Tool  
-  
-Copyright 2023 Carnegie Mellon University.  
-  
-NO WARRANTY. THIS CARNEGIE MELLON UNIVERSITY AND SOFTWARE ENGINEERING  
-INSTITUTE MATERIAL IS FURNISHED ON AN 'AS-IS' BASIS. CARNEGIE MELLON  
-UNIVERSITY MAKES NO WARRANTIES OF ANY KIND, EITHER EXPRESSED OR IMPLIED,  
-AS TO ANY MATTER INCLUDING, BUT NOT LIMITED TO, WARRANTY OF FITNESS FOR  
-PURPOSE OR MERCHANTABILITY, EXCLUSIVITY, OR RESULTS OBTAINED FROM USE OF  
-THE MATERIAL. CARNEGIE MELLON UNIVERSITY DOES NOT MAKE ANY WARRANTY OF ANY  
-KIND WITH RESPECT TO FREEDOM FROM PATENT, TRADEMARK, OR COPYRIGHT  
-INFRINGEMENT.  
-  
-Licensed under a MIT (SEI)-style license, please see License.txt or  
-contact permission@sei.cmu.edu for full terms.  
-  
-[DISTRIBUTION STATEMENT A] This material has been approved for public  
-release and unlimited distribution.  Please see Copyright notice for  
-non-US Government use and distribution.  
-  
-This Software includes and/or makes use of Third-Party Software each  
-subject to its own license.  
-  
-DM23-2165  
-</legal>  
+<legal>
+'Redemption' Automated Code Repair Tool
+Copyright 2023, 2024 Carnegie Mellon University.
+NO WARRANTY. THIS CARNEGIE MELLON UNIVERSITY AND SOFTWARE ENGINEERING
+INSTITUTE MATERIAL IS FURNISHED ON AN 'AS-IS' BASIS. CARNEGIE MELLON
+UNIVERSITY MAKES NO WARRANTIES OF ANY KIND, EITHER EXPRESSED OR IMPLIED,
+AS TO ANY MATTER INCLUDING, BUT NOT LIMITED TO, WARRANTY OF FITNESS FOR
+PURPOSE OR MERCHANTABILITY, EXCLUSIVITY, OR RESULTS OBTAINED FROM USE OF
+THE MATERIAL. CARNEGIE MELLON UNIVERSITY DOES NOT MAKE ANY WARRANTY OF ANY
+KIND WITH RESPECT TO FREEDOM FROM PATENT, TRADEMARK, OR COPYRIGHT
+INFRINGEMENT.
+Licensed under a MIT (SEI)-style license, please see License.txt or
+contact permission@sei.cmu.edu for full terms.
+[DISTRIBUTION STATEMENT A] This material has been approved for public
+release and unlimited distribution.  Please see Copyright notice for
+non-US Government use and distribution.
+This Software includes and/or makes use of Third-Party Software each
+subject to its own license.
+DM23-2165
+</legal>
 
 This includes all data needed to replicate and validate our frequency analysis of static analysis (SA) alerts produced using open-source SA tools on several OSS codebases. It includes instructions how to get and run the SA tools, a Dockerfile to conveniently get and use the SA tools, raw SA tool output, parsed SA data and aggregate analyses, and SA data augmented with CERT rule and CWE data.
 
@@ -42,7 +36,7 @@ Use Docker version 20 or greater.
   `Dockerfile.rosecheckers`: for conveniently constructing a container to use with codebases and tools (NOTE: Do not use clang-tidy from this container, it is an older version than what we used.)
   `Dockerfile.redemption`: for conveniently contstructing a container to use with clang-tidy version 15
   `codebases.yml`: information about the codebases including download location, version, and compilation instructions
-  `paper/oss_frequency.csv`: table 
+  `paper/oss_frequency.csv`: table
   `paper/tables`: tables
   `data`: data
   `code/analysis`: static analysis tool outputs
@@ -86,7 +80,7 @@ There are already raw output files in `data/$TOOL/$CODEBASE/$TOOL.txt` (or `.xml
 
 ### `compile_commands.json`
 
-This is a file that contains information about a codebase's build process. This file is required by `clang-tidy` and can also be used by `cppcheck` (though not required), You can create it yourself for each project, or you can use the `data/compile_command.${TOOL}.json` files in this directory. 
+This is a file that contains information about a codebase's build process. This file is required by `clang-tidy` and can also be used by `cppcheck` (though not required), You can create it yourself for each project, or you can use the `data/compile_command.${TOOL}.json` files in this directory.
 
 The file is created by a utility called `bear` that lives in each container. There's a different version of `bear` in each container, so if you run it you will need to run it separately as specified below, immediately prior to running `clang-tidy` or `cppcheck` in that container. You should prepend `bear` to your project's build command for building with clang.  The `codebases.yml` file contains instructions for generating this file for each tool...look under the `clang-tidy` heading. To use `bear`, run it in the base directory for the codebase.
 

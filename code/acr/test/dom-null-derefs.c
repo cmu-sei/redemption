@@ -18,7 +18,7 @@ void foo(void) {
     p[0] = 8888;    // Should be marked as dependent, but it isn't, due to imprecision of the static analysis.
     *foo.p = 9999;
     printf("... foo\n");
-} 
+}
 
 int main(void) {
     foo();

@@ -3,9 +3,9 @@
 
 # <legal>
 # 'Redemption' Automated Code Repair Tool
-# 
-# Copyright 2023 Carnegie Mellon University.
-# 
+#
+# Copyright 2023, 2024 Carnegie Mellon University.
+#
 # NO WARRANTY. THIS CARNEGIE MELLON UNIVERSITY AND SOFTWARE ENGINEERING
 # INSTITUTE MATERIAL IS FURNISHED ON AN 'AS-IS' BASIS. CARNEGIE MELLON
 # UNIVERSITY MAKES NO WARRANTIES OF ANY KIND, EITHER EXPRESSED OR IMPLIED,
@@ -14,17 +14,17 @@
 # THE MATERIAL. CARNEGIE MELLON UNIVERSITY DOES NOT MAKE ANY WARRANTY OF ANY
 # KIND WITH RESPECT TO FREEDOM FROM PATENT, TRADEMARK, OR COPYRIGHT
 # INFRINGEMENT.
-# 
+#
 # Licensed under a MIT (SEI)-style license, please see License.txt or
 # contact permission@sei.cmu.edu for full terms.
-# 
+#
 # [DISTRIBUTION STATEMENT A] This material has been approved for public
 # release and unlimited distribution.  Please see Copyright notice for
 # non-US Government use and distribution.
-# 
+#
 # This Software includes and/or makes use of Third-Party Software each
 # subject to its own license.
-# 
+#
 # DM23-2165
 # </legal>
 
@@ -85,17 +85,17 @@ def flag_overlapping_repairs(alert_list):
         alert_id = alert["alert_id"]
         for (filename, edit_list) in alert["patch"]:
             edits_by_file.setdefault(filename, [])
-            edit_list = [[start, end, replacement, alert_id] for 
+            edit_list = [[start, end, replacement, alert_id] for
                          [start, end, replacement] in edit_list]
             edits_by_file[filename].extend(edit_list)
-    
+
     overlap_map = {}
     for (filename, edit_list) in edits_by_file.items():
         prev_end = -1
         prev_replacement = None
         prev_alert_id = None
         for [start, end, replacement, alert_id] in sorted(edit_list):
-            has_bad_overlap = ((start < prev_end) or 
+            has_bad_overlap = ((start < prev_end) or
                 (start == prev_end and replacement != prev_replacement))
             if has_bad_overlap:
                 overlap_map.setdefault(alert_id, set()).add(prev_alert_id)
@@ -198,7 +198,7 @@ def run(*, compile_cmds_file, alerts, step_dir, base_dir, combined_hand_out, out
     combined_alerts = combine_hand_outs(indiv_hand_filenames)
     with open(combined_hand_out, 'w') as outfile:
         outfile.write(json.dumps(combined_alerts, indent=2) + "\n")
-    
+
     if out_src_dir:
         import glove
         glove.run(edits_file=combined_hand_out, output_dir=out_src_dir, base_dir=base_dir)

@@ -18,9 +18,9 @@
 
 # <legal>
 # 'Redemption' Automated Code Repair Tool
-# 
-# Copyright 2023 Carnegie Mellon University.
-# 
+#
+# Copyright 2023, 2024 Carnegie Mellon University.
+#
 # NO WARRANTY. THIS CARNEGIE MELLON UNIVERSITY AND SOFTWARE ENGINEERING
 # INSTITUTE MATERIAL IS FURNISHED ON AN 'AS-IS' BASIS. CARNEGIE MELLON
 # UNIVERSITY MAKES NO WARRANTIES OF ANY KIND, EITHER EXPRESSED OR IMPLIED,
@@ -29,17 +29,17 @@
 # THE MATERIAL. CARNEGIE MELLON UNIVERSITY DOES NOT MAKE ANY WARRANTY OF ANY
 # KIND WITH RESPECT TO FREEDOM FROM PATENT, TRADEMARK, OR COPYRIGHT
 # INFRINGEMENT.
-# 
+#
 # Licensed under a MIT (SEI)-style license, please see License.txt or
 # contact permission@sei.cmu.edu for full terms.
-# 
+#
 # [DISTRIBUTION STATEMENT A] This material has been approved for public
 # release and unlimited distribution.  Please see Copyright notice for
 # non-US Government use and distribution.
-# 
+#
 # This Software includes and/or makes use of Third-Party Software each
 # subject to its own license.
-# 
+#
 # DM23-2165
 # </legal>
 
@@ -132,9 +132,10 @@ def update_markings(markings_data, config_data, warnings=True, cui=False):
                                     new_contents += "\n"
                                 new_contents += "\n" + re.sub(r'(?m)(^.*$)', regex, "CUI") + "\n"
                         new_legal = cui_line + "<legal>\n" + "\n".join(markings_data['legal']) + "\n</legal>"
-                        prot_new_legal = re.sub(r'(?m)(^.*$)', regex, new_legal)
+                        new_legal1 = re.sub(r'(?m)(^.*$)', regex, new_legal)
+                        new_legal2 = re.sub(r'(?m)(\s*$)', '', new_legal1)
                         new_contents = (new_contents[:match.start(0)] +
-                                        prot_new_legal +
+                                        new_legal2 +
                                         new_contents[match.end(0):])
                         fp.seek(0)
                         fp.write(new_contents)
