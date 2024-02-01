@@ -28,7 +28,7 @@
 # DM23-2165
 # </legal>
 
-import os
+import os, sys
 import re
 import subprocess
 import json
@@ -52,12 +52,10 @@ def parse_args():
             raise ValueError("Expecting 'true' or 'false'")
     parser = argparse.ArgumentParser(description='Creates repaired source-code files')
     parser.add_argument("source_file", type=str, help="The source-code file to repair")
-    parser.add_argument("compile_commands", type=str, help="The compile_comands.json file produced by Bear")
+    parser.add_argument("compile_commands", type=str, help="The compile_comands.json file (produced by Bear) or \"autogen\"")
     parser.add_argument("alerts", type=str, help="Static-analysis alerts")
-    parser.add_argument('-o', type=str, metavar="OUTPUT_FILE", dest="hand_out_file", help=argparse.SUPPRESS) # deprecated
-    parser.add_argument('--ast-dir', type=str, metavar="AST_DIR", dest="ast_dir", help=argparse.SUPPRESS)    # deprecated
     parser.add_argument('--repaired-src', type=str, dest="out_src_dir", help="Directory to write repaired source files")
-    parser.add_argument('--step-dir', type=str, dest="step_dir", help="Directory to write intermediate files of the steps of the process")
+    parser.add_argument('--step-dir', type=str, dest="step_dir", required=True, help="Directory to write intermediate files of the steps of the process")
     parser.add_argument('-b', "--base-dir", type=str, dest="base_dir",
         help="Base directory of the project")
     parser.add_argument('--in-place', action="store_true", dest="repair_in_place",
@@ -74,11 +72,9 @@ def main():
     run(**vars(cmdline_args))
 
 
-def run(source_file, compile_commands, alerts, *, hand_out_file=None, ast_dir=None, out_src_dir=None, step_dir=None, base_dir=None, single_file_mode=None, repair_in_place=False, skip_dom=None):
+def run(source_file, compile_commands, alerts, *, out_src_dir=None, step_dir=None, base_dir=None, single_file_mode=None, repair_in_place=False, skip_dom=None):
     if os.getenv('acr_emit_invocation'):
         print("end_to_end_acr.py{}{}{}{}{}{}{}{} {} {} {}".format(
-            f" -o {hand_out_file}" if hand_out_file else "",
-            f" --ast-dir {ast_dir}" if ast_dir else "",
             f" --repaired-src {out_src_dir}" if out_src_dir else "",
             f" --step-dir {step_dir}" if step_dir else "",
             f" --base-dir {base_dir}" if base_dir else "",
@@ -105,20 +101,16 @@ def run(source_file, compile_commands, alerts, *, hand_out_file=None, ast_dir=No
     source_base_name = os.path.basename(source_file)
     source_base_name = strip_filename_extension(source_base_name)
 
-    if step_dir:
-        ast_dir = step_dir
-        brain_out_file = step_dir + "/" + source_base_name + ".brain-out.json"
-        hand_out_file = step_dir + "/" + source_base_name + ".hand-out.json"
-        ast_file_suffix = ".ear-out.json"
-    else:
-        brain_out_file = hand_out_file
-        ast_file_suffix = ".ast.json"
+    assert(step_dir)
+    brain_out_file = step_dir + "/" + source_base_name + ".brain-out.json"
+    hand_out_file  = step_dir + "/" + source_base_name + ".hand-out.json"
+    ast_filename   = step_dir + "/" + source_base_name + ".ear-out.json"
 
-    temp_ast_dir = None
-    if not ast_dir:
-        temp_ast_dir = tempfile.TemporaryDirectory()
-        ast_dir = temp_ast_dir.name
-    ast_filename = ast_dir + "/" + source_base_name + ast_file_suffix
+
+    if not os.path.exists(alerts):
+        sys.stderr.write("Error: Alerts file %r doesn't exist!\n" % alerts)
+        sys.exit(1)
+
 
     print_progress("Running ear module...")
     ear.run_ear_for_source_file(source_file, compile_commands, ast_filename, base_dir=base_dir)
@@ -136,9 +128,6 @@ def run(source_file, compile_commands, alerts, *, hand_out_file=None, ast_dir=No
         glove.run(edits_file=hand_out_file, output_dir=out_src_dir, comp_dir=compile_dir, base_dir=base_dir, **kwargs)
 
     print_progress("Finished!")
-
-    if temp_ast_dir:
-        temp_ast_dir.cleanup()
 
 
 if __name__ == "__main__":

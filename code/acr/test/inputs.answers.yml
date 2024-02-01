@@ -68,6 +68,11 @@ tests:
     cfile: dead_asgn_01.c
     alerts_file: dead_asgn_01.alerts.json
 
+- answer_file: try_01.hand-out.json
+  input:
+    cfile: try_01.cpp
+    alerts_file: empty.alerts.json
+
 #- answer_file: "arrow-null-01.repaired.c"
 #  input:
 #    alerts_file: "arrow-null-01.alerts.json"

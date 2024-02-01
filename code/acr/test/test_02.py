@@ -137,8 +137,6 @@ def test_end_to_end_test():
     source_file="test/simple_null_check.c"
     compile_commands="autogen"
     alerts="test/simple_null_check.alerts.json"
-    hand_out_file="test/out/simple_null_check.repairs.json"
-    ast_dir="test/out"
     out_src_dir="test/out"
 
     cur_dir = os.getcwd()
@@ -148,8 +146,7 @@ def test_end_to_end_test():
             source_file=source_file,
             compile_commands=compile_commands,
             alerts=alerts,
-            hand_out_file=hand_out_file,
-            ast_dir=ast_dir,
+            step_dir=out_src_dir,
             out_src_dir=out_src_dir)
     finally:
         os.chdir(cur_dir)
@@ -189,8 +186,6 @@ def test_e2e_06a():
     source_file="test/header_null_ptr.c"
     compile_commands="autogen"
     alerts="test/header_null_ptr.alerts.json"
-    hand_out_file="test/out/header_null_ptr.repairs.json"
-    ast_dir="test/out"
     out_src_dir="test/out"
     single_file_mode=True
 
@@ -201,8 +196,7 @@ def test_e2e_06a():
             source_file=source_file,
             compile_commands=compile_commands,
             alerts=alerts,
-            hand_out_file=hand_out_file,
-            ast_dir=ast_dir,
+            step_dir=out_src_dir,
             out_src_dir=out_src_dir,
             single_file_mode=single_file_mode)
     finally:
@@ -210,7 +204,7 @@ def test_e2e_06a():
     assert(not os.path.exists("out/header_null_ptr.h"))
     files_to_delete = ["out/header_null_ptr.ast.json", "out/acr.h", "out/header_null_ptr.repairs.json"]
     for x in files_to_delete:
-        test_runner.cleanup(source_file, out_location=out_src_dir, step_dir=ast_dir, single_file_mode=single_file_mode, additional_files=x)
+        test_runner.cleanup(source_file, out_location=out_src_dir, step_dir=out_src_dir, single_file_mode=single_file_mode, additional_files=x)
     test_runner.dir_final_cleanup("out/header_in_subdir", step_dir_prev_existed=step_dir_prev_existed)
 
 
