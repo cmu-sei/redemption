@@ -106,7 +106,14 @@ hereafter referred to as *fields*.
 * `randomness` : string
 
     A (usually symbolic) reason this alert was chosen for manual
-    analysis.
+    analysis. `first five` if the alert was selected (non-randomly)
+    for adjudication as one the first five alerts in the file,
+    `random` if the alert was selected for adjudication using a random
+    number generation process (so far, we've used the random number
+    generator here: https://www.random.org/integers/ and made it
+    generate 5 numbers between 1 and the total number of alerts in a
+    file), and `random and first five` if the alert was selected both
+    those ways.
 
 * `rationale` : string
 
@@ -147,7 +154,10 @@ hereafter referred to as *fields*.
 * `verdict` : string
 
     A manual determination as to whether the current alert actually
-    violates the specified rule.
+    violates the specified rule. This may be `true` (means true
+    positive), `false` (means false positive), `true (complex)` (means
+    assumed true since it's too complex to determine for certain,
+    given our time constraints);
 
 * `why_skipped` : string
 

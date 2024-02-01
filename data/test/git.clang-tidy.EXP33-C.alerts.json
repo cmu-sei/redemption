@@ -38040,7 +38040,13 @@
     "column": "27",
     "tool": "clang-tidy",
     "checker": "cppcoreguidelines-init-variables",
-    "message": "variable 'dp' is not initialized"
+    "message": "variable 'dp' is not initialized",
+    "satisfactory": "",
+    "verdict": "false",
+    "repairable": "true",
+    "rationale": "Line 195 does not read uninitialized memory, instead it only declares a variable that is a struct pointer: `struct diff_filepair *dp;` Therefore per our auditing rules, there is no violation of EXP33-C.   DETAIL: Pointer `dp` is assigned a memory address on line 208: `dp = diff_queue(&outq, p->one, null_one);` and after that, fields in the struct it points to are set to different values in lines 215-6. Line 214 sets `dp` to another address returned by `diff_queue` and then two struct fields are set. Although we do not know if the memory at that returned address has been initialized, there is no read from this possibly-uninitialized memory (only writes to it) in this function. We recommend ACR implementation of a fix to initialize variables like `dp` when declared, since it is feasible and sufficiently low effort for practicality in the current project. Therefore, despite being a false positive, we recommend a repair to remove the alert and possible EXP33-C violation in a different code location.",
+    "randomness": "random",
+    "issue": ""
   },
   {
     "rule": "EXP33-C",
@@ -40722,7 +40728,13 @@
     "column": "9",
     "tool": "clang-tidy",
     "checker": "cppcoreguidelines-init-variables",
-    "message": "variable 'i' is not initialized"
+    "message": "variable 'i' is not initialized",
+    "satisfactory": "",
+    "verdict": "false",
+    "repairable": "true",
+    "rationale": "There is no read of uninitialized memory on line 27. Instead, there is only a declaration of a variable: `size_t i;`. However, per discussion with Will, ACR implementation of a fix to initialize the variable is feasible and sufficiently low effort for practicality in the current project. Therefore, despite being a false positive, we recommend a repair to remove the alert and possible EXP33-C violation in a different code location. DETAIL: `i` is used on line 50, where it is first set then tested and incremented, in the `for` loop top line. On line 60, it is used the same way in another for loop top line. A read of uninitialized memory can't happen for this variable.",
+    "randomness": "random",
+    "issue": ""
   },
   {
     "rule": "EXP33-C",
@@ -57543,7 +57555,13 @@
     "column": "6",
     "tool": "clang-tidy",
     "checker": "cppcoreguidelines-init-variables",
-    "message": "variable 'err' is not initialized"
+    "message": "variable 'err' is not initialized",
+    "satisfactory": "",
+    "verdict": "false",
+    "repairable": "true",
+    "rationale": "There is no read of uninitialized memory on this code line. Instead, there is only declaration of a variable: `int err;` DETAIL: `err` is initialized on line 608. Then, line 610 checks if it's NULL or zero, and otherwise the function does not access the variable.",
+    "randomness": "random",
+    "issue": ""
   },
   {
     "rule": "EXP33-C",
@@ -68217,7 +68235,13 @@
     "column": "6",
     "tool": "clang-tidy",
     "checker": "cppcoreguidelines-init-variables",
-    "message": "variable 'failed_errno' is not initialized"
+    "message": "variable 'failed_errno' is not initialized",
+    "satisfactory": "",
+    "verdict": "false",
+    "repairable": "true",
+    "rationale": "No read of uninitialized memory on this line. Instead, the line is just a declaration of a variable: `int failed_errno;`. Per our alert auditing rules, we should not examine other later code lines. DETAIL: There are only two reads of failed_errno in this function, which happen on lines 714 and 716. There is an initalization which happens on line 702, prior to both of those reads. `failed_errno = errno;` Per team discussion, ACR implementation of a fix to initialize the variable is feasible and sufficiently low effort for practicality in the current project. Therefore, despite being a false positive, we recommend a repair to remove the alert and possible EXP33-C violation in a different code location.",
+    "randomness": "random",
+    "issue": ""
   },
   {
     "rule": "EXP33-C",
@@ -80025,7 +80049,13 @@
     "column": "28",
     "tool": "clang-tidy",
     "checker": "cppcoreguidelines-init-variables",
-    "message": "variable 'ce' is not initialized"
+    "message": "variable 'ce' is not initialized",
+    "satisfactory": "",
+    "verdict": "false",
+    "repairable": "true",
+    "rationale": "There is no read of uninitialized memory on this code line. The line only declares `ce` as a pointer to `const struct cache_entry` type: `const struct cache_entry *ce;`. Following our alert auditing rules, this is a false positive since line 510 does not have that flaw. However, the team decided to repair code to initialize variables when declared, for this type of case. DETAIL: Since it is a pointer to a const type, `ce` can be modified but the object pointed to by `ce` may not be. Line 519 assigns a new address to the pointer `ce`. Determining if `istate->cache[pos++]` is always initialized prior to this assignment (which includes a read) is complex. Further, line 520 reads `ce->name` from the new address of `ce`, and determining if that struct field had been initialized prior to being read (even if the memory field `ce` was assigned to had been initialized) is complex.",
+    "randomness": "random",
+    "issue": ""
   },
   {
     "rule": "EXP33-C",

@@ -19,21 +19,18 @@
   },
   {
     "rule": "EXP33-C",
-    "file": "src/zeek/zeek/zeek/util.h",
-    "line": "210",
-    "column": "2",
-    "tool": "cppcheck",
-    "checker": "uninitMemberVar",
-    "message": "Member variable 'SafePathOp::error' is not initialized in the constructor."
-  },
-  {
-    "rule": "EXP33-C",
     "file": "src/DbgWatch.cc",
     "line": "19",
     "column": "11",
     "tool": "cppcheck",
     "checker": "uninitMemberVar",
-    "message": "Member variable 'DbgWatch::var' is not initialized in the constructor."
+    "message": "Member variable 'DbgWatch::var' is not initialized in the constructor.",
+    "satisfactory": "",
+    "verdict": "false",
+    "repairable": "true",
+    "rationale": "The code line for the alert is a constructor for Dbgwatch with input parameter of a pointer to an `Expr`: `DbgWatch::DbgWatch(Expr* expr_to_watch)`. No initialization of variable `var` happens is done in that constructor. In fact, there's an InternalError function called instead, with error `DbgWatch unimplemented`. DbgWatch class and explicit constructors are declared in file src/DbgWatch.h and `var` is specified as a protected variable of type `Obj *`. There is also a protected `Expr* expr`. Neither constructor (one takes an `Expr*` parameter, other takes `Obj *` parameter) assigns the protected variables to the constructor's parameter. It looks like the DbWatch constructors haven't been implemented, as the error messages in the DbgWatch.cc files state. While both constructors leave their fields uninitialized, the `internalError()` method suggests that those fields will never be read. Therefore, the verdict is false positive. Per team discussion, ACR implementation of a fix to initialize the `var` variable (and also the `expr` variable) in the constructor is feasible and sufficiently low effort for practicality in the current project.",
+    "randomness": "random",
+    "issue": ""
   },
   {
     "rule": "EXP33-C",
@@ -69,7 +66,13 @@
     "column": "25",
     "tool": "cppcheck",
     "checker": "uninitvar",
-    "message": "Uninitialized variable: myHostID"
+    "message": "Uninitialized variable: myHostID",
+    "satisfactory": "",
+    "verdict": "true",
+    "repairable": "true",
+    "rationale": "The code line alerted on is `rc = proxyGetHostID(myHostID, &pError);` `myHostID` is declared on line 42138: `uuid_t myHostID;` Per GPT, it's a type commonly used to represent a Universally Unique Identifier, where `the specific declaration of uuid_t` can depend on the library or platform you're using` and often the OSSP UUID library is used (e.g., `#include <uuid/uid.h>`. There's no initialization within the code between the declaration of `myHostID` and using it as a function parameter. The `uuid_t` depends on the operating system, and type affects possible repair. E.g., if it's a struct, then to initialize it you need to know which fields to initialize. We can do an automated repair of this by changing `uuid_t myHostID;` to `uuid_t myHostID = {};`. Using `= {}` will default-initialize a struct, union, array (that is, set all individual types to 0), per the C23 standard's s6.7.10p11.",
+    "randomness": "random",
+    "issue": ""
   },
   {
     "rule": "EXP33-C",
@@ -100,30 +103,18 @@
   },
   {
     "rule": "EXP33-C",
-    "file": "src/zeek/zeek/util.h",
-    "line": "210",
-    "column": "2",
-    "tool": "cppcheck",
-    "checker": "uninitMemberVar",
-    "message": "Member variable 'SafePathOp::error' is not initialized in the constructor."
-  },
-  {
-    "rule": "EXP33-C",
     "file": "auxil/broker/include/broker/network_info.hh",
     "line": "14",
     "column": "3",
     "tool": "cppcheck",
     "checker": "uninitMemberVar",
-    "message": "Member variable 'network_info::port' is not initialized in the constructor."
-  },
-  {
-    "rule": "EXP33-C",
-    "file": "src/zeek/zeek/zeek/zeek/util.h",
-    "line": "210",
-    "column": "2",
-    "tool": "cppcheck",
-    "checker": "uninitMemberVar",
-    "message": "Member variable 'SafePathOp::error' is not initialized in the constructor."
+    "message": "Member variable 'network_info::port' is not initialized in the constructor.",
+    "satisfactory": "",
+    "verdict": "false",
+    "repairable": "false",
+    "rationale": "The code line alerted on is `network_info() = default;`, with an explicitly-defaulted definition of a default constructor inside of class declaration as used for default constructors since C++11. The condition being audited is EXP33-C, which is about use of an uninitialized variable. Simply not initializing the variable `port` in the constructor is insufficient to violate EXP33-C. Although this alert is a false positive, per previous team discussion weighing SEI work to develop the auto-repair versus benefit of eliminating some alerts, the recommendation will be to repair the code to initialize the variable when declared.",
+    "randomness": "random",
+    "issue": ""
   },
   {
     "rule": "EXP33-C",
@@ -132,16 +123,13 @@
     "column": "2",
     "tool": "cppcheck",
     "checker": "uninitMemberVar",
-    "message": "Member variable 'SafePathOp::error' is not initialized in the constructor."
-  },
-  {
-    "rule": "EXP33-C",
-    "file": "src/zeek/zeek/util.h",
-    "line": "210",
-    "column": "2",
-    "tool": "cppcheck",
-    "checker": "uninitMemberVar",
-    "message": "Member variable 'SafePathOp::error' is not initialized in the constructor."
+    "message": "Member variable 'SafePathOp::error' is not initialized in the constructor.",
+    "satisfactory": "",
+    "verdict": "false",
+    "repairable": "false",
+     "rationale": "The alert is for the code line of the constructor: `SafePathOp() : result(), error() { }`. The alert message is not correct, the member variable is initialized in the constructor. However, the rule EXP33-C does not require that variables be initialized in their constructor, so it is a false positive for EXP33-C violation.",
+    "randomness": "random",
+    "issue": ""
   },
   {
     "rule": "EXP33-C",
@@ -154,30 +142,12 @@
   },
   {
     "rule": "EXP33-C",
-    "file": "src/zeek/zeek/zeek/util.h",
-    "line": "210",
-    "column": "2",
-    "tool": "cppcheck",
-    "checker": "uninitMemberVar",
-    "message": "Member variable 'SafePathOp::error' is not initialized in the constructor."
-  },
-  {
-    "rule": "EXP33-C",
     "file": "src/zeek/3rdparty/doctest.h",
     "line": "1217",
     "column": "9",
     "tool": "cppcheck",
     "checker": "uninitMemberVar",
     "message": "Member variable 'Result::m_passed' is not initialized in the constructor."
-  },
-  {
-    "rule": "EXP33-C",
-    "file": "src/zeek/util.h",
-    "line": "210",
-    "column": "2",
-    "tool": "cppcheck",
-    "checker": "uninitMemberVar",
-    "message": "Member variable 'SafePathOp::error' is not initialized in the constructor."
   },
   {
     "rule": "EXP33-C",
@@ -204,7 +174,13 @@
     "column": "2",
     "tool": "cppcheck",
     "checker": "uninitMemberVar",
-    "message": "Member variable 'Type::is_network_order' is not initialized in the constructor."
+    "message": "Member variable 'Type::is_network_order' is not initialized in the constructor.",
+    "satisfactory": "",
+    "verdict": "false",
+    "repairable": "false",
+    "rationale": "The alert is for this code line: `Type() = default;` All fields get initialized to their default values being set to 0 or initialized by their default constructors. Per our auditing rules, there is no violation of EXP33-C in this line because there is no read of uninitialized memory in the alerted code line. Further, the rule EXP33-C does not require that variables be initialized in their constructor.",
+    "randomness": "random",
+    "issue": ""
   },
   {
     "rule": "EXP33-C",

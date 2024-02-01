@@ -10239,7 +10239,13 @@
     "column": "18",
     "tool": "clang-tidy",
     "checker": "cppcoreguidelines-init-variables",
-    "message": "variable 'op' is not initialized"
+    "message": "variable 'op' is not initialized",
+    "satisfactory": "",
+    "verdict": "",
+    "repairable": "",
+    "rationale": "",
+    "randomness": "random",
+    "issue": ""
   },
   {
     "rule": "EXP33-C",
@@ -18447,7 +18453,13 @@
     "column": "10",
     "tool": "clang-tidy",
     "checker": "cppcoreguidelines-init-variables",
-    "message": "variable 'rB' is not initialized"
+    "message": "variable 'rB' is not initialized",
+    "satisfactory": "",
+    "verdict": "",
+    "repairable": "",
+    "rationale": "",
+    "randomness": "random",
+    "issue": ""
   },
   {
     "rule": "EXP33-C",
@@ -19428,7 +19440,13 @@
     "column": "7",
     "tool": "clang-tidy",
     "checker": "cppcoreguidelines-init-variables",
-    "message": "variable 'res' is not initialized"
+    "message": "variable 'res' is not initialized",
+    "satisfactory": "",
+    "verdict": "",
+    "repairable": "",
+    "rationale": "",
+    "randomness": "random",
+    "issue": ""
   },
   {
     "rule": "EXP33-C",
@@ -29346,7 +29364,13 @@
     "column": "19",
     "tool": "clang-tidy",
     "checker": "cppcoreguidelines-init-variables",
-    "message": "variable 'pGCC' is not initialized"
+    "message": "variable 'pGCC' is not initialized",
+    "satisfactory": "",
+    "verdict": "",
+    "repairable": "",
+    "rationale": "",
+    "randomness": "random",
+    "issue": ""
   },
   {
     "rule": "EXP33-C",
@@ -40011,7 +40035,13 @@
     "column": "12",
     "tool": "clang-tidy",
     "checker": "cppcoreguidelines-init-variables",
-    "message": "variable 'nIter' is not initialized"
+    "message": "variable 'nIter' is not initialized",
+    "satisfactory": "",
+    "verdict": "",
+    "repairable": "",
+    "rationale": "",
+    "randomness": "random",
+    "issue": ""
   },
   {
     "rule": "EXP33-C",
