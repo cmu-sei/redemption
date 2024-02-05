@@ -7,11 +7,11 @@
     "tool": "cppcheck",
     "checker": "uninitvar",
     "message": "Uninitialized variable: partial",
-    "satisfactory": "",
+    "satisfactory": "true",
     "verdict": "false",
-    "repairable": "false",
-    "rationale": "On line 726, `partial->parents` is read. Since the alert message specifies `partial` not `partial->parents`, we only adjudicate for `partial`. Question 1 is if `partial` has been initialized before line 726. (This is the essential question for the adjudication verdict.) Question 2 is if `partial` could be NULL. Relevant to question 2: If `partial` is assigned to be NULL, then it would not be uninitialized. (That would result in a verdict of false.) On line 721, variable `partial` is assigned to the return value of a call to `lookup_commit_reference(the_repository, &oid))`. On line 722, if variable `partial` was NULL, the program would call the `die` function and never return. Otherwise it calls parse_commit, and if it reaches line 726, `partial` was initialized. ",
+    "repairable": "true",
+    "rationale": "On line 726, `partial->parents` is read. Since the alert message specifies `partial` not `partial->parents`, we only adjudicate for `partial`. Question 1 is if `partial` has been initialized before line 726. (This is the essential question for the adjudication verdict.) Question 2 is if `partial` could be NULL. Relevant to question 2: If `partial` is assigned to be NULL, then it would not be uninitialized. (That would result in a verdict of false.) On line 721, variable `partial` is assigned to the return value of a call to `lookup_commit_reference(the_repository, &oid))`. On line 722, if variable `partial` was NULL, the program would call the `die` function and never return. Otherwise it calls parse_commit, and if it reaches line 726, `partial` was initialized. There is currently a Redemption code repair which modifies the code to initialize `struct commit *partial NULL;` when it is declared. However, the `die()` call on line 722 should be recognized as non-returning.",
     "randomness": "random",
-    "issue": ""
+    "issue": "REM-206"
   }
 ]

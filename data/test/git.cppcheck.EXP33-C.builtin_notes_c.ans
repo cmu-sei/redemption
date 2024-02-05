@@ -1,0 +1,17 @@
+--- /host/data/test/out/builtin/notes.c	2024-02-05 02:08:06.195905642 +0000
++++ /oss/git/builtin/notes.c	2024-01-17 19:04:23.759229960 +0000
+@@ -1,5 +1,3 @@
+-#include "acr.h"
+-
+ /*
+  * Builtin "git notes"
+  *
+@@ -708,7 +706,7 @@
+ 	struct strbuf msg = STRBUF_INIT;
+ 	struct object_id oid, parent_oid;
+ 	struct notes_tree *t;
+-	struct commit *partial = NULL;
++	struct commit *partial;
+ 	struct pretty_print_context pretty_ctx;
+ 	void *local_ref_to_free;
+ 	int ret;
