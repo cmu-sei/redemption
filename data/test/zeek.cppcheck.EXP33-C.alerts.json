@@ -30,7 +30,7 @@
     "repairable": "true",
     "rationale": "The code line for the alert is a constructor for Dbgwatch with input parameter of a pointer to an `Expr`: `DbgWatch::DbgWatch(Expr* expr_to_watch)`. No initialization of variable `var` happens is done in that constructor. In fact, there's an InternalError function called instead, with error `DbgWatch unimplemented`. DbgWatch class and explicit constructors are declared in file src/DbgWatch.h and `var` is specified as a protected variable of type `Obj *`. There is also a protected `Expr* expr`. Neither constructor (one takes an `Expr*` parameter, other takes `Obj *` parameter) assigns the protected variables to the constructor's parameter. It looks like the DbWatch constructors haven't been implemented, as the error messages in the DbgWatch.cc files state. While both constructors leave their fields uninitialized, the `internalError()` method suggests that those fields will never be read. Therefore, the verdict is false positive. Per team discussion, ACR implementation of a fix to initialize the `var` variable (and also the `expr` variable) in the constructor is feasible and sufficiently low effort for practicality in the current project.",
     "randomness": "random",
-    "issue": ""
+    "issue": "REM-232"
   },
   {
     "rule": "EXP33-C",
@@ -72,7 +72,7 @@
     "repairable": "true",
     "rationale": "The code line alerted on is `rc = proxyGetHostID(myHostID, &pError);` `myHostID` is declared on line 42138: `uuid_t myHostID;` Per GPT, it's a type commonly used to represent a Universally Unique Identifier, where `the specific declaration of uuid_t` can depend on the library or platform you're using` and often the OSSP UUID library is used (e.g., `#include <uuid/uid.h>`. There's no initialization within the code between the declaration of `myHostID` and using it as a function parameter. The `uuid_t` depends on the operating system, and type affects possible repair. E.g., if it's a struct, then to initialize it you need to know which fields to initialize. We can do an automated repair of this by changing `uuid_t myHostID;` to `uuid_t myHostID = {};`. Using `= {}` will default-initialize a struct, union, array (that is, set all individual types to 0), per the C23 standard's s6.7.10p11.",
     "randomness": "random",
-    "issue": ""
+    "issue": "REM-229"
   },
   {
     "rule": "EXP33-C",

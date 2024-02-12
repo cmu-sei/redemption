@@ -129,7 +129,7 @@ hereafter referred to as *fields*.
 
 * `repairable` : string
 
-    A manual determination as to whether an alert is repairable.
+    A manual determination as to whether an alert is **practically** repairable, **within the context of our current research project**. If developing an automated repair that integrates into our framework seems feasible and not too much effort given the current stage, capabilities, and milestone commitments of the project, then we may mark this field true. We currently limit repairs to repairs that do not negatively impact code maintainability nor comprehension by code maintainers/developers, so we may mark this field false despite finding a way to fix the alert, if the fix would negatively impact code maintainability or comprehension. This field might be marked false even if an automated repair for the same type of code flaw (and/or same type of code construct that triggers the same static analysis alert) has been developed and published by others (code publication and/or documentation publication). 
 
 * `rule` : string
 
@@ -139,7 +139,7 @@ hereafter referred to as *fields*.
 
 * `satisfactory` : string
 
-    Whether the current automated process generates the desired repair
+    Whether the current automated process generates the desired repair, as specified in the `repairable` field.
     (or lack of repair).
 
 * `skipped_repair` : string
@@ -157,7 +157,10 @@ hereafter referred to as *fields*.
     violates the specified rule. This may be `true` (means true
     positive), `false` (means false positive), `true (complex)` (means
     assumed true since it's too complex to determine for certain,
-    given our time constraints);
+    given our time constraints). 
+    For more detail on the adjudication rules and lexicon we developed to enable clear and consistent adjudications, see this paper:
+    Svoboda, David, Lori Flynn, and Will Snavely. "Static Analysis Alert Audits: Lexicon & Rules." 2016 IEEE Cybersecurity Development (SecDev). IEEE, 2016.
+    Our adjudications use a slightly-revised version of those rules: In this project, if the alert message provides more specificity about the region of the identified code line to adjudicate (e.g., if it specifies a particular variable), we use that information. 
 
 * `why_skipped` : string
 
