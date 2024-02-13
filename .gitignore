@@ -12,6 +12,10 @@
 .DS_Store
 .ccls-cache/
 
-code/acr/test/out/*
-
-notes.org
+# Created by ACR on first run
+code/acr/llvm/CMakeCache.txt
+code/acr/llvm/CMakeFiles/
+code/acr/llvm/Makefile
+code/acr/llvm/cmake_install.cmake
+code/acr/llvm/libNullDom.so
+code/acr/test/out/acr.h

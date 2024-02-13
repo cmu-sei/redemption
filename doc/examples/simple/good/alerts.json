@@ -1,0 +1,38 @@
+[
+  {
+    "rule": "EXP34-C",
+    "file": "test_errors.c",
+    "line": "11",
+    "column": "24",
+    "tool": "cppcheck_oss",
+    "checker": "nullPointer",
+    "message": "Null pointer dereference: q"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "test_errors.c",
+    "line": "21",
+    "column": "24",
+    "tool": "cppcheck_oss",
+    "checker": "nullPointer",
+    "message": "Null pointer dereference: q"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "test_errors.c",
+    "line": "31",
+    "column": "24",
+    "tool": "cppcheck_oss",
+    "checker": "nullPointer",
+    "message": "Null pointer dereference: q"
+  },
+  {
+    "rule": "EXP34-C",
+    "file": "test_errors.c",
+    "line": "41",
+    "column": "24",
+    "tool": "cppcheck_oss",
+    "checker": "nullPointer",
+    "message": "Null pointer dereference: q"
+  }
+]

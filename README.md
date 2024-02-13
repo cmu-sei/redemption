@@ -72,6 +72,8 @@ Again, all tests should pass.
 
 ## Running the Redemption Tool
 
+For a simple demo of running the tool, see the [simple example](doc/examples/simple/README.md).
+
 ### Static Analysis
 
 The Redemption Tool presumes that you have static-analysis tool output.  It currently supports three SA tools:  `clang_tidy_oss` or `cppcheck_oss` or `rosecheckers_oss`. Each SA tool should produce a file with the alerts it generated. If `$TOOL` represents your tool, instructions for generating the alerts file live in `data/$TOOL/$TOOL.md`.  We will assume you have run the tool, and created the alerts file, which we will call `alerts.txt`. (The actual file need not be a text file).  Finally, when you produced your SA output, the code you ran was in a directory which we'll call the `$BASE_DIR`.

@@ -1,5 +1,5 @@
---- /host/data/test/out/src/3rdparty/patricia.c	2024-01-08 19:02:51.247932079 +0000
-+++ /oss/zeek/src/3rdparty/patricia.c	2023-11-21 18:09:52.000000000 +0000
+--- /host/data/test/out/src/3rdparty/patricia.c	2024-02-07 16:38:11.428240538 +0000
++++ /oss/zeek/src/3rdparty/patricia.c	2024-01-03 15:36:16.887061676 +0000
 @@ -1,5 +1,3 @@
 -#include "acr.h"
 -
@@ -19,7 +19,7 @@
    addr = prefix_touchar(prefix);
    bitlen = prefix->bitlen;
  
--  while (null_check(node)->bit < bitlen) {
+-  while (null_check(node, return 0)->bit < bitlen) {
 +  while (node->bit < bitlen) {
  
      if (node->prefix) {

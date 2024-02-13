@@ -1,5 +1,5 @@
---- /host/data/test/out/src/3rdparty/sqlite3.c	2023-11-30 21:28:33.242727919 +0000
-+++ /oss/zeek/src/3rdparty/sqlite3.c	2023-11-29 16:02:32.000000000 +0000
+--- /host/data/test/out/src/3rdparty/sqlite3.c	2024-02-07 18:00:05.421239584 +0000
++++ /oss/zeek/src/3rdparty/sqlite3.c	2024-01-03 15:36:16.925061677 +0000
 @@ -1,5 +1,3 @@
 -#include "acr.h"
 -
@@ -55,7 +55,7 @@
      *pnSize = n;
      assert( nSrc<=nPayload );
      testcase( nSrc<nPayload );
--    memcpy(pPayload, null_check(pSrc), nSrc);
+-    memcpy(pPayload, null_check(pSrc, return 0), nSrc);
 +    memcpy(pPayload, pSrc, nSrc);
      memset(pPayload+nSrc, 0, nPayload-nSrc);
      return SQLITE_OK;
@@ -64,7 +64,7 @@
              || sqlite3PagerIswriteable(pPage->pDbPage) );
  
      if( nSrc>=n ){
--      memcpy(pPayload, null_check(pSrc), n);
+-      memcpy(pPayload, null_check(pSrc, return 0), n);
 +      memcpy(pPayload, pSrc, n);
      }else if( nSrc>0 ){
        n = nSrc;
@@ -145,7 +145,7 @@
      pTab = pParse->pTriggerTab;
    }else{
      assert( pTabList );
--    for(iSrc=0; iSrc<null_check(pTabList)->nSrc; iSrc++){
+-    for(iSrc=0; iSrc<null_check(pTabList, return)->nSrc; iSrc++){
 +    for(iSrc=0; iSrc<pTabList->nSrc; iSrc++){
        if( pExpr->iTable==pTabList->a[iSrc].iCursor ){
          pTab = pTabList->a[iSrc].pTab;
@@ -154,7 +154,7 @@
  #ifndef SQLITE_OMIT_ALTERTABLE
    if( !pSelect && IsOrdinaryTable(p) ){
      assert( pCons && pEnd );
--    if( null_check(pCons)->z==0 ){
+-    if( null_check(pCons, return)->z==0 ){
 +    if( pCons->z==0 ){
        pCons = pEnd;
      }
@@ -199,7 +199,7 @@
      int nSubSrc;
      u8 jointype = 0;
      assert( pSub!=0 );
--    pSubSrc = null_check(pSub)->pSrc;     /* FROM clause of subquery */
+-    pSubSrc = null_check(pSub, return 0)->pSrc;     /* FROM clause of subquery */
 +    pSubSrc = pSub->pSrc;     /* FROM clause of subquery */
      nSubSrc = pSubSrc->nSrc;  /* Number of terms in subquery FROM clause */
      pSrc = pParent->pSrc;     /* FROM clause of the outer query */
@@ -217,7 +217,7 @@
            pIdxInfo->idxStr = 0;
            pIdxInfo->needToFreeIdxStr = 0;
          }
--        *null_check(pbRetryLimit) = 1;
+-        *null_check(pbRetryLimit, return 0) = 1;
 +        *pbRetryLimit = 1;
          return SQLITE_OK;
        }
@@ -235,7 +235,7 @@
      zFilename += sqlite3Strlen30(zFilename) + 1;
      zFilename += sqlite3Strlen30(zFilename) + 1;
    }
--  return null_check(zFilename)[0] ? zFilename : 0;
+-  return null_check(zFilename, return NULL)[0] ? zFilename : 0;
 +  return zFilename[0] ? zFilename : 0;
  }
  

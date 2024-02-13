@@ -73,9 +73,8 @@ Exempt_Files: [
     "data/test/toy/.*.c",
     "data/test/toy/.*.h",
     "data/zeek5/.*.txt",
-    "denylist.txt",
-    "manifest.txt",
-    "paper.*",
+    "doc/examples/.*/good/.*",
+    "doc/examples/.*/.*.c",
     ]
 
 

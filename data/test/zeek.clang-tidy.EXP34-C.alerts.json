@@ -180,7 +180,12 @@
     "column": "5",
     "tool": "clang-tidy",
     "checker": "clang-analyzer-core.NonNullParamChecker",
-    "message": "Null pointer passed to 2nd parameter expecting 'nonnull'"
+    "message": "Null pointer passed to 2nd parameter expecting 'nonnull'",
+    "satisfactory": "true",
+    "verdict": "true",
+    "repairable": "true",
+    "rationale": "No check that z might be null",
+    "randomness": "non-random, selected manually while adjudicating similar alert"
   },
   {
     "rule": "EXP34-C",

@@ -70,6 +70,8 @@ class Brainstem(AstVisitor):
     def visit_CXXMethodDecl(self, node):
         self.handle_functions(node)
     def handle_functions(self, node):
+        if "inner" not in node:
+            return
         d = dict();
         d["name"] = node["name"]
         return_type = get_function_return_type(node)
