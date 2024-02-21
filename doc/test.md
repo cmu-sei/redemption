@@ -1,5 +1,7 @@
 # How to Test the Automated Code Repair (ACR) tool
 
+## Copyright
+
 <legal>
 'Redemption' Automated Code Repair Tool
 Copyright 2023, 2024 Carnegie Mellon University.
@@ -74,6 +76,9 @@ To complete this test, we do the following:
       Until ACR does the Right Thing on >=80% of alerts,
         Fix ACR bugs and re-test.
 
+### Measuring and Improving Satisfactory Alert Redemption
+
+One of our measures of satisfactory alert redemption is done by randomly selecting alerts to manually adjudicate (using web-based random number generators and the number of alerts in the output), manually adjudicating and analyzing if automated repair should be done, then inspecting if our tool automatically and correctly repairs them. Scripts like `data/test/adjudicated_alerts_info_and_repair.py` and `data/test/test_satisfaction_status_tables.sh` help automate the process of running tests on the adjudicated alerts and then gathering overall statistics on satisfactorily handling the adjudicated alerts into tables. The latter table-creating script specifies particular datasets, coding rules, and static analysis tools but those lists can be easily extended or substituted. You can use the scripts to measure satisfactory alert redemption on your own codebases, tools, and code flaw taxonomy items of interest. Results can be used to target efforts to integrate particular code repairs, e.g., if those would eliminate many alerts and/or alerts with code flaws of particular interest.
 ## “Stumble-Through” Testing
 
 Since there are too many alerts to verify them all, this is a preliminary test to make sure that the repair tool does not crash or hang.

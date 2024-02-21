@@ -70,7 +70,7 @@ Data related to the `scan-build` SA tool. Format similar to `clang-tidy`, `rosec
 
 ### `test` directory
 
-Data related to testing our ACR tool on git and zeek. Not useful for our paper.
+Data and scripts related to testing our ACR tool on git and zeek. Not useful for our paper.
 
 ### `join_pivot.sql`
 
