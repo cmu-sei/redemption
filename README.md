@@ -137,7 +137,7 @@ rm -rf test/step
 
 ## Extending the Redemption Tool
 
-Documentation detail about useful environment variables and further testing is in [doc/running_tests.md](doc/running_tests.md). Also, a lot more detail about our system that may be of interest to others interested in extending it or just understanding it better is in the [doc](doc) directory.
+Documentation detail about useful environment variables and further testing is in [doc/regression_tests.md](doc/regression_tests.md). Also, a lot more detail about our system that may be of interest to others interested in extending it or just understanding it better is in the [doc](doc) directory.
 
 ## Troubleshooting
 

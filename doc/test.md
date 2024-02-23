@@ -1,5 +1,4 @@
-# How to Test the Automated Code Repair (ACR) tool
-
+# How to Test the Redemption tool
 ## Copyright
 
 <legal>
@@ -23,11 +22,7 @@ subject to its own license.
 DM23-2165
 </legal>
 
-## Component Testing
-
-We are using Pytest to test the various components.
-
-## OSS Tests
+## Test Components
 
 To test the entire ACR tool, we have produced alerts using these SA tools:
  * cppcheck
@@ -41,9 +36,36 @@ The alerts were produced by running SA tools over the following OSS codebases:
  * git
  * zeek
 
-## Sample Alert Testing
+## Types of Tests
+### Regression Tests
 
-In this scenario, we pick a single C file that has 1 or more alerts that we wish to repair. We have ACR repair the alerts, and then compare the repaired source code against an 'answer' source code file. The test passes if the test result matches the answer file.
+Verifies that each improvement to the tool does not cause bugs or failures to previously-working code.
+
+#### Procedure
+
+Regression tests are automatically checked by Bamboo after every push.
+
+All regressions are mitigated before changes are merged into the main branch.
+
+See the [regression_tests.md](regression_tests.md) document for technical details on how to run regression tests.
+
+### “Stumble-Through” Tests
+
+Since there are too many alerts to verify them all, this is a preliminary test to make sure that the repair tool does not crash or hang.
+
+#### Procedure
+
+Create empty answer files for every test case.  The easiest way to do this would be to grep answer_file in the relevant json files, and pipe the grep output to touch to create the .ans files.
+
+Then run the tests. The tests might take several hours to complete. But bugs might appear.  Perhaps ACR will crash, or throw exceptions. Create JIRA issues for any such errors.
+
+The test succeeds if they complete with no exceptions or crashes. It does not matter what the output of the tests are; that will be tested separately.
+
+When done, you can eliminate the empty answer files.
+
+### Sample Alert Experiments
+
+In this scenario, we pick a single C file that has 1 or more alerts that we wish to repair. We have ACR repair the alerts, and then compare the repaired source code against an 'answer' source code file. The experiment is successful if the test result matches the answer file.
 
 The following two tables indicates how many alerts were generated:
 
@@ -67,39 +89,56 @@ The test data will be made available, but in a disabled fashion. To enable a tes
  3. If the test generates the correct answer, update the answer file with its answer.
     Otherwise, report a bug.
 
-To complete this test, we do the following:
+#### Procedure:
+
+To complete this experiment, we do the following:
 
     For each tool/guideline/codebase,
       Pick N random alerts; N=5 for now. For each alert,
         Manually check if ACR did the right thing:
         (repaired correctly or correctly refused to repair.)
       Until ACR does the Right Thing on >=80% of alerts,
-        Fix ACR bugs and re-test.
+        Fix ACR bugs and re-run this experiment.
 
-### Measuring and Improving Satisfactory Alert Redemption
+Each file has about 5 test cases with randomness="random".  Many of these test cases already are satisfactory, and so they have pre-existing .ans files, and they are regularly tested by our CI process. You can rerun these just to be sure, or you can trust that if the output changes on these test cases, the CI system will warn us of failures.
+
+However, some test cases failed in the past, and those are not tested by our CI process, and they lack an .ans file.  So you'll need to create an empty (stub) .ans file for each test case.  Then rerun the experiments.
+
+For each previously-failed test cases, you'll have output, which may or may not match the (empty) .ans file you created.  Inspect the output file, and if it is correct, then the experiment now succeeds...yay!  In each such case, create a new .ans file for that test case (and push it to the repo), so that our CI system starts regularly testing that case. And mark satisfactory=true for that test case in the appropriate json file.  Note that if the output file indicates that a repair was performed, you'll need to inspect it to make sure the repair is correct.
+
+If a previously-failed test case still fails, it should be marked satisfactory=false (if it isn't already). You should create a new JIRA issue for the failed test case, and indicate the issue number in the issue field for that test case in the json file.
+
+After running test cases, you should update the table above with the ratio of satisfactory test cases to all test cases.  This is the minimal satisfaction ratio (MSR)
+
+ * If the MSR is 100%, that means ACR correctly repairs all of the alerts in that bucket. we are done with it.
+ * If the MSR is >80%, that means ACR repairs not all alerts, but enough that we can consider that bucket done.
+ * If the MSR is <80%, but the team agrees that fixing remaining bugs would be expensive, then again you can consider this task done.
+ * Otherwise, the task is not done. Once the newly-created JIRA issues are fixed, you'll re-run this experiment.
+Script outputs two .csv 'tables'. First to fill in ratios values in bottom table, second to determine color (<80% red).  Script is test_satisfaction_status_tables.sh, which is now in the main branch of redemption.public. 
+
+Once deemed correct, sample alerts are preserved and act as regression tests for Bamboo. As with regression tests, any change in behavior of a correct sample alert is mitigated before the change is merged into the main branch.
+
+#### Measuring and Improving Satisfactory Alert Redemption
 
 One of our measures of satisfactory alert redemption is done by randomly selecting alerts to manually adjudicate (using web-based random number generators and the number of alerts in the output), manually adjudicating and analyzing if automated repair should be done, then inspecting if our tool automatically and correctly repairs them. Scripts like `data/test/adjudicated_alerts_info_and_repair.py` and `data/test/test_satisfaction_status_tables.sh` help automate the process of running tests on the adjudicated alerts and then gathering overall statistics on satisfactorily handling the adjudicated alerts into tables. The latter table-creating script specifies particular datasets, coding rules, and static analysis tools but those lists can be easily extended or substituted. You can use the scripts to measure satisfactory alert redemption on your own codebases, tools, and code flaw taxonomy items of interest. Results can be used to target efforts to integrate particular code repairs, e.g., if those would eliminate many alerts and/or alerts with code flaws of particular interest.
-## “Stumble-Through” Testing
 
-Since there are too many alerts to verify them all, this is a preliminary test to make sure that the repair tool does not crash or hang.
+### Integration Experiments
 
-In this test, we run the repair tool on all alerts in all codebases. The test fails if the tool crashes, hangs, or throws exceptions.
+In this scenario, we build an OSS codebase and run its own testing mechanisms. We then repair a subset of alerts on that codebase. We then re-build the codebase and run it through its tests. If the tests behave identically to the un-repaired tests, then our experiment is successful.
 
-For this test, it does not matter whether the tool correctly repairs any alerts. The main point is that the tool contains no bugs or exceptions that prevent us from testing all the alerts.
+#### Procedure
 
-## Integration Testing
-
-In this scenario, we build an OSS codebase and run its own testing mechanisms. We then repair a subset of alerts on that codebase. We then re-build the codebase and run it through its tests. If the tests behave identically to the un-repaired tests, then our test passes.
+For the codebase (git or zeek), build it and run its own testing mechanisms. Then apply the repairs for each tool (cppcheck, clang-tidy, or rosecheckers), and each rule (EXP34-C, EXP33-C, or MSC12-C), creating an 'improved build'. Then re-build the codebase and run it through its tests. If the tests behave identically to the un-repaired tests, then our experiment succeeds.
 
 The `codebases.yml` file indicates how to build and test each codebase.
 
-The Git testsuite is reliable; but Zeek's testsuite is less reliable. (TODO fill out details)
+Before doing this experiment, we should complete the Sample Alert Experiment for the same rule/tool/codebase.
 
-Before doing this testing, we should complete the Sample Alert Testing for the same rule/tool/codebase.
+### Performance Experiments
 
-## Performance Testing
+This experiment confirms that the repairs imposed on code do not significantly impede performance
 
-This test confirms that the repairs imposed on code do not significantly impede performance
+#### Procedure
 
     Compile original codebases; run their internal testing mechanism.
     Measure the time and usage of the testing mechanisms.
@@ -109,9 +148,11 @@ This test confirms that the repairs imposed on code do not significantly impede 
 
 Time should be <5% slower. Memory usage should be equivalent.
 
-## Recurrence Testing
+### Recurrence Experiments
 
 This test confirms that the code has been repaired, according to the SA tools.
+
+#### Procedure
 
     Run the repair tool on all codebases.
     We rerun SA tools on the repaired code.

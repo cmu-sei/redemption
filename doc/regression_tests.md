@@ -1,6 +1,6 @@
-# Running tests
+# Regression tests
 
-This document has information about running tests, relevant to tests in a) the `prereq` container; b) the `test` container; and c) data and tests that you extend the system with. It also provides environment variables that may be useful for tests.
+This document has information about how to run the various regression tests, relevant to tests in a) the `prereq` container; b) the `test` container; and c) data and tests that you extend the system with. It also provides environment variables that may be useful for tests.
 
 It extends information provided in the [main README.md](../README.md) about how to build the containers, run them, set environment variables, troubleshoot, and more.
 
