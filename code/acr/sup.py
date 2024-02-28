@@ -173,6 +173,9 @@ def run(*, compile_cmds_file, alerts, step_dir, base_dir, combined_hand_out, out
     compile_commands = read_json_file(compile_cmds_file)
     num_tus = len(compile_commands)
     indiv_hand_filenames = []
+    
+    if base_dir == "/":
+        raise Exception('Error: base_dir may not be the root directory ("/").')
 
     for (tu_index, cmd) in enumerate(compile_commands):
         compile_dir = ear.get_compile_dir(cmd)

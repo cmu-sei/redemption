@@ -52,7 +52,7 @@ def parse_args():
             raise ValueError("Expecting 'true' or 'false'")
     parser = argparse.ArgumentParser(description='Creates repaired source-code files')
     parser.add_argument("source_file", type=str, help="The source-code file to repair")
-    parser.add_argument("compile_commands", type=str, help="The compile_comands.json file (produced by Bear) or \"autogen\"")
+    parser.add_argument("compile_commands", type=str, help="The compile_commands.json file (produced by Bear) or \"autogen\"")
     parser.add_argument("alerts", type=str, help="Static-analysis alerts")
     parser.add_argument('--repaired-src', type=str, dest="out_src_dir", help="Directory to write repaired source files")
     parser.add_argument('--step-dir', type=str, dest="step_dir", required=True, help="Directory to write intermediate files of the steps of the process")
@@ -95,8 +95,27 @@ def run(source_file, compile_commands, alerts, *, out_src_dir=None, step_dir=Non
         if single_file_mode is None:
             single_file_mode = True
 
+    if not os.path.exists(source_file):
+        raise Exception(f'Error: The specified source-code file ({source_file}) does not exist.')
+    if os.path.isdir(source_file):
+        raise Exception(f'Error: The specified source-code file ({source_file}) is a directory, not a regular file.')
+
+    orig_source_file = source_file
+    source_file = os.path.realpath(source_file)
+
     if (base_dir is None):
         base_dir = os.path.dirname(source_file)
+        if base_dir == "/":
+            if source_file == orig_source_file:
+                src_name_dump = repr(source_file)
+            else:
+                src_name_dump = repr(orig_source_file) + " -> " + repr(source_file)
+            raise Exception(f'Error: The source-code file ({src_name_dump}) resides directly in the root directory ("/"); this is not supported.')
+
+    base_dir = os.path.realpath(base_dir)
+
+    if base_dir == "/":
+        raise Exception('Error: base_dir may not be the root directory ("/").')
 
     source_base_name = os.path.basename(source_file)
     source_base_name = strip_filename_extension(source_base_name)
