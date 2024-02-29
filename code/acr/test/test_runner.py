@@ -104,7 +104,7 @@ def run(stringinput, tests_file,
         directory=".",
         step_dir="/host/code/acr/test/step",
         repair_in_place=None,
-        single_file_mode=None,
+        repair_includes_mode=None,
         **extra_kwargs):
     tests_info = read_yaml_file(os.path.join(directory, tests_file))
     out_location = os.path.realpath("out/")
@@ -141,7 +141,7 @@ def run(stringinput, tests_file,
                     file_to_repair = os.path.realpath(os.path.join(base_dir, file_to_repair))
                 else:
                     file_to_repair = os.path.realpath(os.path.join(file_to_repair))
-                single_file_mode = False
+                repair_includes_mode = True
             else:
                 file_to_repair = cur_c_file
 
@@ -173,7 +173,7 @@ def run(stringinput, tests_file,
                      base_dir=base_dir,
                      step_dir=step_dir,
                      repair_in_place=repair_in_place,
-                     single_file_mode=single_file_mode)
+                     repair_includes_mode=repair_includes_mode)
             test_results_file = os.path.join(out_location, filename)
             if cur_answer_file.endswith(".json"):
                 test_results_file = os.path.join(step_dir, os.path.basename(cur_answer_file))
@@ -194,7 +194,7 @@ def run(stringinput, tests_file,
                         print_test_cmd()
                     else:
                         print("  pass: test result and answer key are same")
-                        cleanup(test_results_filepath=test_results_file, out_location=out_location, filename=filename, step_dir=step_dir, repair_in_place=repair_in_place, single_file_mode=single_file_mode, file_prefix=file_prefix)
+                        cleanup(test_results_filepath=test_results_file, out_location=out_location, filename=filename, step_dir=step_dir, repair_in_place=repair_in_place, repair_includes_mode=repair_includes_mode, file_prefix=file_prefix)
                 else:
                     print("  FAIL: test result exists, but answer key does not exist")
                     print("        missing answer key : " + cur_answer_file)
@@ -208,7 +208,7 @@ def run(stringinput, tests_file,
                     print_test_cmd()
                 else:
                     print("  pass: test result and answer key both do not exist")
-                    cleanup(test_results_filepath=test_results_file, out_location=out_location, filename=filename, step_dir=step_dir, repair_in_place=repair_in_place, single_file_mode=single_file_mode, file_prefix=file_prefix)
+                    cleanup(test_results_filepath=test_results_file, out_location=out_location, filename=filename, step_dir=step_dir, repair_in_place=repair_in_place, repair_includes_mode=repair_includes_mode, file_prefix=file_prefix)
 
     if all_diff_results:
         print("#"*70)
@@ -234,7 +234,7 @@ def run_and_check_if_answer(stringinput, tests_file,
                             directory=".",
                             step_dir="/host/code/acr/test/step",
                             repair_in_place=None,
-                            single_file_mode=None,
+                            repair_includes_mode=None,
                             stop_if_no_answer_file=False,
                             **extra_kwargs):
     print("run_and_check_if_answer for tests_file: ", tests_file)
@@ -273,7 +273,7 @@ def run_and_check_if_answer(stringinput, tests_file,
                     file_to_repair = os.path.realpath(os.path.join(base_dir, file_to_repair))
                 else:
                     file_to_repair = os.path.realpath(os.path.join(file_to_repair))
-                single_file_mode = False
+                repair_includes_mode = True
             else:
                 file_to_repair = cur_c_file
 
@@ -306,7 +306,7 @@ def run_and_check_if_answer(stringinput, tests_file,
                      base_dir=base_dir,
                      step_dir=step_dir,
                      repair_in_place=repair_in_place,
-                     single_file_mode=single_file_mode)
+                     repair_includes_mode=repair_includes_mode)
             test_results_file = os.path.join(out_location, filename)
             if cur_answer_file.endswith(".json"):
                 test_results_file = os.path.join(step_dir, os.path.basename(cur_answer_file))
@@ -341,7 +341,7 @@ def run_and_check_if_answer(stringinput, tests_file,
                         all_passed_or_none_tested = 0
                     else:
                         print("  pass: test result and answer key are same")
-                        cleanup(test_results_filepath=test_results_file, out_location=out_location, filename=filename, step_dir=step_dir, repair_in_place=repair_in_place, single_file_mode=single_file_mode, file_prefix=file_prefix)
+                        cleanup(test_results_filepath=test_results_file, out_location=out_location, filename=filename, step_dir=step_dir, repair_in_place=repair_in_place, repair_includes_mode=repair_includes_mode, file_prefix=file_prefix)
                 else:
                     print("  FAIL: test result exists, but answer key does not exist AND stop_if_no_answer_file is True")
                     all_passed_or_none_tested = 0
@@ -356,9 +356,9 @@ def run_and_check_if_answer(stringinput, tests_file,
                         all_passed_or_none_tested = 0
                 else:
                     print("  pass: test result and answer key both do not exist")
-                    cleanup(test_results_filepath=test_results_file, out_location=out_location, filename=filename, step_dir=step_dir, repair_in_place=repair_in_place, single_file_mode=single_file_mode, file_prefix=file_prefix)
+                    cleanup(test_results_filepath=test_results_file, out_location=out_location, filename=filename, step_dir=step_dir, repair_in_place=repair_in_place, repair_includes_mode=repair_includes_mode, file_prefix=file_prefix)
             # Below cleans up ear, brain -out.json and some .ll files
-            cleanup(test_results_filepath=test_results_file, out_location=out_location, filename=filename, step_dir=step_dir, repair_in_place=repair_in_place, single_file_mode=single_file_mode, file_prefix=file_prefix)
+            cleanup(test_results_filepath=test_results_file, out_location=out_location, filename=filename, step_dir=step_dir, repair_in_place=repair_in_place, repair_includes_mode=repair_includes_mode, file_prefix=file_prefix)
 
         else:
             #print("test_runner: os.path.exists(cur_answer_file) is False and stop_if_no_answer_file is True")
@@ -387,7 +387,7 @@ def dir_final_cleanup(step_dir, step_dir_prev_existed):
         os.system(cmd)
 
 # this function can clean up after passing tests
-def cleanup(filename, out_location, step_dir, test_results_filepath=None, file_prefix=None, repair_in_place=None, single_file_mode=None, base_dir=None, additional_files=None):
+def cleanup(filename, out_location, step_dir, test_results_filepath=None, file_prefix=None, repair_in_place=None, repair_includes_mode=None, base_dir=None, additional_files=None):
     if os.getenv('pytest_keep') == "true":
         return
     if(additional_files != None):

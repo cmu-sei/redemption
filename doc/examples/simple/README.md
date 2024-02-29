@@ -73,7 +73,7 @@ Here is an example of how to run a built-in end-to-end automated code repair tes
 ```sh
 pushd /host/code/acr
 mkdir test/step
-python3 ./end_to_end_acr.py  /host/doc/examples/simple/test_errors.c  autogen  /host/doc/examples/simple/alerts.json  --step-dir test/step  --repaired-src /host/doc/examples/simple/out  --single-file true 
+python3 ./end_to_end_acr.py  /host/doc/examples/simple/test_errors.c  autogen  /host/doc/examples/simple/alerts.json  --step-dir test/step  --repaired-src /host/doc/examples/simple/out  --repair-includes false
 rm -rf test/step
 popd
 ```

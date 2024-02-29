@@ -187,7 +187,7 @@ def test_e2e_06a():
     compile_commands="autogen"
     alerts="test/header_null_ptr.alerts.json"
     out_src_dir="test/out"
-    single_file_mode=True
+    repair_includes_mode=False
 
     cur_dir = os.getcwd()
     os.chdir("..")
@@ -198,13 +198,13 @@ def test_e2e_06a():
             alerts=alerts,
             step_dir=out_src_dir,
             out_src_dir=out_src_dir,
-            single_file_mode=single_file_mode)
+            repair_includes_mode=repair_includes_mode)
     finally:
         os.chdir(cur_dir)
     assert(not os.path.exists("out/header_null_ptr.h"))
     files_to_delete = ["out/header_null_ptr.ast.json", "out/acr.h", "out/header_null_ptr.repairs.json"]
     for x in files_to_delete:
-        test_runner.cleanup(source_file, out_location=out_src_dir, step_dir=out_src_dir, single_file_mode=single_file_mode, additional_files=x)
+        test_runner.cleanup(source_file, out_location=out_src_dir, step_dir=out_src_dir, repair_includes_mode=repair_includes_mode, additional_files=x)
     test_runner.dir_final_cleanup("out/header_in_subdir", step_dir_prev_existed=step_dir_prev_existed)
 
 
@@ -220,7 +220,7 @@ def test_e2e_06b():
     alerts="test/header_null_ptr.alerts.json"
     step_dir="test/out"
     out_src_dir="test/out"
-    single_file_mode=False
+    repair_includes_mode=True
     os.system("cp header_null_ptr.c header_null_ptr.h out/")
     cur_dir = os.getcwd()
     os.chdir("..")
@@ -231,14 +231,14 @@ def test_e2e_06b():
             alerts=alerts,
             step_dir=step_dir,
             out_src_dir=out_src_dir,
-            single_file_mode=single_file_mode)
+            repair_includes_mode=repair_includes_mode)
     finally:
         os.chdir(cur_dir)
     assert cmp_file_normalize("header_null_ptr.repaired.answer.h", "out/header_null_ptr.h")
 
-    test_runner.cleanup(source_file, out_location=out_src_dir, step_dir=step_dir, single_file_mode=single_file_mode, additional_files="out/header_null_ptr.h out/header_null_ptr.c")
+    test_runner.cleanup(source_file, out_location=out_src_dir, step_dir=step_dir, repair_includes_mode=repair_includes_mode, additional_files="out/header_null_ptr.h out/header_null_ptr.c")
     os.chdir("..")
-    test_runner.cleanup(source_file, out_location=out_src_dir, step_dir=step_dir, single_file_mode=single_file_mode)
+    test_runner.cleanup(source_file, out_location=out_src_dir, step_dir=step_dir, repair_includes_mode=repair_includes_mode)
     test_runner.dir_final_cleanup(step_dir, step_dir_prev_existed=step_dir_prev_existed)
     os.chdir(cur_dir)
 
@@ -325,18 +325,18 @@ def test_header_in_subdir_a():
     source_file="header_in_subdir.c"
     step_dir="out"
     out_src_dir="out"
-    single_file_mode=False
+    repair_includes_mode=True
     end_to_end_acr.run(
         compile_commands=compile_commands,
         alerts=alerts,
         source_file=source_file,
         step_dir=step_dir,
         out_src_dir=out_src_dir,
-        single_file_mode=single_file_mode)
+        repair_includes_mode=repair_includes_mode)
     assert cmp_file_normalize("header_in_subdir.repaired.c", "out/header_in_subdir.c")
     assert cmp_file_normalize("header_in_subdir.repaired.h", "out/header_in_subdir/header.h")
     fixed_c_file = out_src_dir+"/"+source_file
-    test_runner.cleanup(source_file, out_location=out_src_dir, test_results_filepath=fixed_c_file, step_dir=step_dir, single_file_mode=single_file_mode)
+    test_runner.cleanup(source_file, out_location=out_src_dir, test_results_filepath=fixed_c_file, step_dir=step_dir, repair_includes_mode=repair_includes_mode)
     test_runner.dir_final_cleanup("out/header_in_subdir", False)
 
 
@@ -348,7 +348,7 @@ def test_header_in_subdir_b():
     source_file="out/header_in_subdir.c"
     step_dir="out"
     base_dir="out"
-    single_file_mode=False
+    repair_includes_mode=True
     repair_in_place=True
     end_to_end_acr.run(
         compile_commands=compile_commands,
@@ -356,12 +356,12 @@ def test_header_in_subdir_b():
         source_file=source_file,
         step_dir=step_dir,
         base_dir=base_dir,
-        single_file_mode=single_file_mode,
+        repair_includes_mode=repair_includes_mode,
         repair_in_place=repair_in_place)
     assert cmp_file_normalize("header_in_subdir.repaired.c", "out/header_in_subdir.c")
     assert cmp_file_normalize("header_in_subdir.repaired.h", "out/header_in_subdir/header.h")
     fixed_c_file = source_file
-    test_runner.cleanup(source_file, out_location=step_dir, test_results_filepath=fixed_c_file, step_dir=step_dir, single_file_mode=single_file_mode, repair_in_place=repair_in_place, base_dir=base_dir)
+    test_runner.cleanup(source_file, out_location=step_dir, test_results_filepath=fixed_c_file, step_dir=step_dir, repair_includes_mode=repair_includes_mode, repair_in_place=repair_in_place, base_dir=base_dir)
     test_runner.dir_final_cleanup("out/header_in_subdir", False)
 
 def test_super01_normal():
@@ -457,4 +457,3 @@ def test_already_repaired():
 def test_in_range():
     import is_indep
     is_indep.test_in_range()
-

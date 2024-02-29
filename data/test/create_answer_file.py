@@ -39,7 +39,7 @@ sys.path.append('../../code/acr/test')
 from test_runner import run_test, cleanup, dir_final_cleanup, read_yaml_file
 
 
-def run_create_answer_if_not_there(stringinput, tests_file, directory=".", step_dir="/host/code/acr/test/step", repair_in_place=None, single_file_mode=None):
+def run_create_answer_if_not_there(stringinput, tests_file, directory=".", step_dir="/host/code/acr/test/step", repair_in_place=None, repair_includes_mode=None):
     print("tests_file: ", tests_file)
     tests_info = read_yaml_file(directory + "/" + tests_file)
     out_location = os.path.realpath("out/")
@@ -84,7 +84,7 @@ def run_create_answer_if_not_there(stringinput, tests_file, directory=".", step_
             for old_file in old_files:
                 os.remove(old_file)
 
-            run_test(source_file=cur_c_file, compile_commands=cur_compile_cmds_file, alerts=cur_alerts_file, out_src_dir=out_location, base_dir=base_dir, step_dir=step_dir, repair_in_place=repair_in_place, single_file_mode=single_file_mode)
+            run_test(source_file=cur_c_file, compile_commands=cur_compile_cmds_file, alerts=cur_alerts_file, out_src_dir=out_location, base_dir=base_dir, step_dir=step_dir, repair_in_place=repair_in_place, repair_includes_mode=repair_includes_mode)
 
             test_results_file = os.path.join(out_location, filename)
 
@@ -105,7 +105,7 @@ def run_create_answer_if_not_there(stringinput, tests_file, directory=".", step_
                         else:
                             print("  SAME but fine: acr ran, but no code repair. Test result and initial file are same")
                             # Do limited cleanup, but leave answer file
-                            cleanup(test_results_filepath=test_results_file, out_location=out_location, filename=filename, step_dir=step_dir, repair_in_place=repair_in_place, single_file_mode=single_file_mode, file_prefix=file_prefix)
+                            cleanup(test_results_filepath=test_results_file, out_location=out_location, filename=filename, step_dir=step_dir, repair_in_place=repair_in_place, repair_includes_mode=repair_includes_mode, file_prefix=file_prefix)
                     else:
                         print("  FAIL: test result exists, but cur_c_file does not exist")
                         acr_or_failed_test = 2 # failed test
@@ -116,7 +116,7 @@ def run_create_answer_if_not_there(stringinput, tests_file, directory=".", step_
                     else:
                         print("  Same: test result and cur_answer_file both do not exist")
                         # Do limited cleanup, but leave answer file
-                        cleanup(test_results_filepath=test_results_file, out_location=out_location, filename=filename, step_dir=step_dir, repair_in_place=repair_in_place, single_file_mode=single_file_mode, file_prefix=file_prefix)
+                        cleanup(test_results_filepath=test_results_file, out_location=out_location, filename=filename, step_dir=step_dir, repair_in_place=repair_in_place, repair_includes_mode=repair_includes_mode, file_prefix=file_prefix)
                 caf.close()
 
     dir_final_cleanup(step_dir, step_dir_prev_existed)

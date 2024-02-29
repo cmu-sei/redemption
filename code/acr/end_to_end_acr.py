@@ -59,8 +59,8 @@ def parse_args():
         help="Base directory of the project")
     parser.add_argument('--in-place', action="store_true", dest="repair_in_place",
         help="Sets repaired-src directory to base-dir")
-    parser.add_argument('--single-file', type=text_to_bool, dest="single_file_mode", metavar="{true,false}",
-        help="Whether to repair only the single specified source file (as opposed to also repairing #include'd header files).  Choices: [true, false].")
+    parser.add_argument('--repair-includes', type=text_to_bool, dest="repair_includes_mode", metavar="{true,false}",
+        help="Whether to repair #include'd header files or only the single specified source file.  Choices: [true, false].")
     parser.add_argument('--skip-dom', type=text_to_bool,  metavar="{true,false}",
         help="Skip dominator analysis")
     parser.add_argument('--no-patch', type=bool, default=False, dest="no_patch", help="Don't add patch clauses to alerts")
@@ -72,14 +72,14 @@ def main():
     run(**vars(cmdline_args))
 
 
-def run(source_file, compile_commands, alerts, *, out_src_dir=None, step_dir=None, base_dir=None, single_file_mode=None, repair_in_place=False, skip_dom=None, no_patch=False):
+def run(source_file, compile_commands, alerts, *, out_src_dir=None, step_dir=None, base_dir=None, repair_includes_mode=None, repair_in_place=False, skip_dom=None, no_patch=False):
     if os.getenv('acr_emit_invocation'):
         print("end_to_end_acr.py{}{}{}{}{}{}{} {} {} {}".format(
             f" --repaired-src {out_src_dir}" if out_src_dir else "",
             f" --step-dir {step_dir}" if step_dir else "",
             f" --base-dir {base_dir}" if base_dir else "",
             " --in-place" if repair_in_place else "",
-            " --single-file" if single_file_mode else "",
+            " --repair-includes" if repair_includes_mode else "",
             " --skip-dom true" if skip_dom else "",
             " --no-patch" if no_patch else "",
             source_file, compile_commands, alerts))
@@ -90,11 +90,8 @@ def run(source_file, compile_commands, alerts, *, out_src_dir=None, step_dir=Non
         if not (out_src_dir is None):
             raise Exception("Cannot specify both '--in-place' and --repaired-src'.")
         out_src_dir = base_dir
-        if single_file_mode is None:
-            single_file_mode = False
-    else:
-        if single_file_mode is None:
-            single_file_mode = True
+    if repair_includes_mode is None:
+        repair_includes_mode = False
 
     if not os.path.exists(source_file):
         raise Exception(f'Error: The specified source-code file ({source_file}) does not exist.')
@@ -139,8 +136,8 @@ def run(source_file, compile_commands, alerts, *, out_src_dir=None, step_dir=Non
     if out_src_dir and not no_patch:
         import glove
         kwargs = {}
-        if single_file_mode:
-            kwargs = {"single_file": source_file}
+        if not repair_includes_mode:
+            kwargs = {"repair_only": source_file}
         print_progress("Running glove module...")
         glove.run(edits_file=brain_out_file, output_dir=out_src_dir, comp_dir=compile_dir, base_dir=base_dir, **kwargs)
 

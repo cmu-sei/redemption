@@ -95,7 +95,7 @@ Since the script and its arguments are subject to change, the best way to identi
 Currently, that command provides the following information about required and optional arguments:
 
 ```
-usage: end_to_end_acr.py [-h] [--repaired-src OUT_SRC_DIR] --step-dir STEP_DIR [-b BASE_DIR] [--in-place] [--single-file {true,false}]
+    usage: end_to_end_acr.py [-h] [--repaired-src OUT_SRC_DIR] --step-dir STEP_DIR [-b BASE_DIR] [--in-place] [--repair-includes {true,false}]
                          [--skip-dom {true,false}]
                          source_file compile_commands alerts
 
@@ -114,7 +114,7 @@ options:
   -b BASE_DIR, --base-dir BASE_DIR
                         Base directory of the project
   --in-place            Sets repaired-src directory to base-dir
-  --single-file {true,false}
+  --repair-includes {true,false}
                         Whether to repair only the single specified source file (as opposed to also repairing #include'd header
                         files). Choices: [true, false].
   --skip-dom {true,false}
@@ -233,7 +233,7 @@ Here is an example of how to run a built-in end-to-end automated code repair tes
 ```sh
 pushd /host/code/acr
 mkdir test/step
-python3 ./end_to_end_acr.py  /oss/git/config.c  /host/data/compile_commands.git.json  /host/data/test/sample.alerts.json    --step-dir test/step  --repaired-src test/out --base-dir /oss/git --single-file false
+python3 ./end_to_end_acr.py  /oss/git/config.c  /host/data/compile_commands.git.json  /host/data/test/sample.alerts.json    --step-dir test/step  --repaired-src test/out --base-dir /oss/git --repair-includes false
 rm -rf test/step
 ```
 

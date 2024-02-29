@@ -44,7 +44,7 @@ def parse_args():
     parser.add_argument('--cd', type=str, dest="comp_dir", default=".", help="Current directory used for compile command")
     parser.add_argument('-b', "--base-dir", type=str, dest="base_dir",
         help="Base directory of the project")
-    parser.add_argument('--single-file', type=str, dest="single_file",
+    parser.add_argument('--repair-only', type=str, dest="repair_only",
         help="Repair the single specified source file (don't repair header files).")
     cmdline_args = parser.parse_args()
     return cmdline_args
@@ -53,17 +53,17 @@ def main():
     cmdline_args = parse_args()
     run(**vars(cmdline_args))
 
-def run(edits_file, output_dir, *, comp_dir=".", base_dir=None, single_file=None):
+def run(edits_file, output_dir, *, comp_dir=".", base_dir=None, repair_only=None):
     if os.getenv('acr_emit_invocation'):
         print("glove.py -o {} --cd {}{}{} {}".format(
             output_dir, comp_dir,
             f" -b {base_dir}" if base_dir is not None else "",
-            f" --single-file {single_file}" if single_file is not None else "",
+            f" --repair-includes {repair_only}" if repair_only is not None else "",
             edits_file))
     outdir = output_dir
     outdir = os.path.realpath(outdir)
-    if single_file:
-        single_file = os.path.realpath(single_file)
+    if repair_only:
+        repair_only = os.path.realpath(repair_only)
     if (base_dir is None):
         base_dir = comp_dir
     base_dir = os.path.realpath(base_dir)
@@ -84,7 +84,7 @@ def run(edits_file, output_dir, *, comp_dir=".", base_dir=None, single_file=None
     repaired_files = []
     for (filename, edit_list) in edits_by_file.items():
         abs_filename = os.path.realpath(os.path.join(base_dir, filename))
-        if single_file and (abs_filename != os.path.realpath(single_file)):
+        if repair_only and (abs_filename != os.path.realpath(repair_only)):
             print("Warning: Skipping #include'd file: %s" % filename)
             continue
         outname = os.path.realpath(outdir + "/" + remove_base_dir(abs_filename))

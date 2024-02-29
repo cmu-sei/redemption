@@ -54,13 +54,13 @@ class Tester(object):
         os.chdir(cur_dir)
         return ast
 
-def run(source_file,  alerts, base_dir, step_dir, repair_in_place, single_file_mode, out_src_dir, compile_commands_file="autogen",):
+def run(source_file,  alerts, base_dir, step_dir, repair_in_place, repair_includes_mode, out_src_dir, compile_commands_file="autogen",):
     output_filename = source_file+".repairs.json"
     source_file = os.path.realpath(source_file)
 
     # TODO: Handle multiple files with same name in different directories
-    #print("source_file: ", source_file, " compile_commands: ", compile_commands_file, " alerts: ", alerts, " base_dir: ", base_dir, " out_src_dir: ", out_src_dir, " step_dir ", step_dir, " repair_in_place: ", repair_in_place, " single_file_mode: ", single_file_mode)
-    end_to_end_acr.run(source_file=source_file, compile_commands=compile_commands_file, alerts=alerts, base_dir=base_dir, out_src_dir=out_src_dir, step_dir=step_dir, repair_in_place=repair_in_place, single_file_mode=single_file_mode)
+    #print("source_file: ", source_file, " compile_commands: ", compile_commands_file, " alerts: ", alerts, " base_dir: ", base_dir, " out_src_dir: ", out_src_dir, " step_dir ", step_dir, " repair_in_place: ", repair_in_place, " repair_includes_mode: ", repair_includes_mode)
+    end_to_end_acr.run(source_file=source_file, compile_commands=compile_commands_file, alerts=alerts, base_dir=base_dir, out_src_dir=out_src_dir, step_dir=step_dir, repair_in_place=repair_in_place, repair_includes_mode=repair_includes_mode)
 
 
 def parse_args():
