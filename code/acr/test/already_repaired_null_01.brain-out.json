@@ -13,6 +13,11 @@
           "Dominated by the following nullness checks (identified by (line, col) pairs): [[8, 13]]"
         ]
       }
-    ]
+    ],
+    "why_skipped": [
+      "In a macro expansion at end of expression",
+      "Dominated by the following nullness checks (identified by (line, col) pairs): [[8, 13]]"
+    ],
+    "patch": []
   }
 ]

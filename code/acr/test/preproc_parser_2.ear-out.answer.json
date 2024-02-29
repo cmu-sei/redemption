@@ -165,12 +165,14 @@
         "begin": {
           "offset": 100,
           "col": 1,
-          "tokLen": 3
+          "tokLen": 3,
+          "line": 3
         },
         "end": {
           "offset": 128,
           "col": 29,
-          "tokLen": 2
+          "tokLen": 2,
+          "line": 3
         },
         "file": "$BASE/preproc_parser_2.c"
       },
@@ -188,12 +190,14 @@
             "begin": {
               "offset": 128,
               "col": 29,
-              "tokLen": 2
+              "tokLen": 2,
+              "line": 3
             },
             "end": {
               "offset": 128,
               "col": 29,
-              "tokLen": 2
+              "tokLen": 2,
+              "line": 3
             },
             "file": "$BASE/preproc_parser_2.c"
           },
@@ -218,12 +222,14 @@
         "begin": {
           "offset": 139,
           "col": 1,
-          "tokLen": 3
+          "tokLen": 3,
+          "line": 6
         },
         "end": {
           "offset": 143,
           "col": 5,
-          "tokLen": 1
+          "tokLen": 1,
+          "line": 6
         },
         "file": "$BASE/preproc_parser_2.c"
       },
@@ -245,13 +251,14 @@
   },
   "comments_db": {
     "$BASE/preproc_parser_2.c": [
-      [0, 99],
+      [0, 100],
       [106, 115],
       [118, 127]
     ]
   },
   "newlines_db": {
     "$BASE/preproc_parser_2.c": [
+      65,
       99,
       131,
       132,

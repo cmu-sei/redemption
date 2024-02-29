@@ -32,6 +32,7 @@ DM23-2165
 ```bash
 export acr_show_progress=true   # Show progress and timing
 export acr_warn_unlocated_alerts=true # Warn when alerts cannot be located in AST
+export acr_emit_invocation=true # Show subprogram invocation information
 export parser_cache=/host/code/acr/test/cache/ # Cache the output of the ear module, else set to ""
 export pytest_keep=true         # Keep output of individual modules (ear, brain, etc.). Regardless, the *.nulldom.json intermediate file is kept.
 export pytest_no_catch=true     # Break into debugger with "-m pdb" instead of catching exception

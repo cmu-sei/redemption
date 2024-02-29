@@ -107,8 +107,8 @@ def test_ear_03():
 
 def test_brain_03():
     os.system("rm -f out/simple_null_check.brain-out.json")
-    #os.system("python3 ../brain.py -o out/simple_null_check.brain-out.json -a simple_null_check.alerts.json simple_null_check.ear-out.answer.json")
-    brain.run(ast_file="simple_null_check.ear-out.answer.json", alerts_filename="simple_null_check.alerts.json", output_filename="out/simple_null_check.brain-out.json")
+    #os.system("python3 ../brain.py --no-patch -o out/simple_null_check.brain-out.json -a simple_null_check.alerts.json simple_null_check.ear-out.answer.json")
+    brain.run(ast_file="simple_null_check.ear-out.answer.json", alerts_filename="simple_null_check.alerts.json", output_filename="out/simple_null_check.brain-out.json", no_patch=True)
     assert cmp_file_normalize("simple_null_check.brain-out.answer.json", "out/simple_null_check.brain-out.json", relativize_paths)
     test_runner.cleanup("simple_null_check.c", out_location="out", step_dir="out", additional_files="out/simple_null_check.brain-out.json")
 
@@ -265,7 +265,7 @@ def test_07():
     for (start, end) in comments:
         is_valid_comment = (
             (source_file_contents[start:start+2] == b"/*" and source_file_contents[end-2:end] == b"*/") or
-            (source_file_contents[start:start+2] == b"//" and source_file_contents[end:end+1] == b"\n"))
+            (source_file_contents[start:start+2] == b"//" and source_file_contents[end-1:end] == b"\n"))
         assert(is_valid_comment)
     test_runner.cleanup(source_filename, out_location="out", step_dir="out", additional_files="out/preproc_parser_2.ear-out.json")
 
@@ -288,8 +288,7 @@ def test_e2e_013():
             out_src_dir=out_src_dir)
     finally:
         os.chdir(cur_dir)
-    assert cmp_file_normalize("macros_near_null_checks.brain-out.json", "out/macros_near_null_checks.brain-out.json")
-    assert cmp_file_normalize("macros_near_null_checks.hand-out.json",  "out/macros_near_null_checks.hand-out.json")
+    assert cmp_file_normalize("macros_near_null_checks.hand-out.json",  "out/macros_near_null_checks.brain-out.json")
     assert cmp_file_normalize("macros_near_null_checks.repaired.c",     "out/macros_near_null_checks.c")
     test_runner.cleanup(source_file, out_location=out_src_dir, step_dir=step_dir, additional_files="out/macros_near_null_checks.* out/acr.h")
 
@@ -433,13 +432,14 @@ def test_dom_null_derefs():
         compile_commands="autogen",
         alerts=alerts,
         step_dir=step_dir,
-        out_src_dir=step_dir)
+        out_src_dir=step_dir,
+        no_patch=True)
     assert cmp_file_normalize("dom-null-derefs.nulldom.json", "out/dom-null-derefs.nulldom.json")
     assert cmp_file_normalize("dom-null-derefs.brain-out.json", "out/dom-null-derefs.brain-out.json")
     if os.getenv('pytest_keep') != "true":
         os.system("rm -f out/dom-null-derefs*.*")
 
-def test_dom_null_derefs():
+def test_already_repaired():
     os.system("rm -f out/already_repaired_null_01.*")
     alerts="already_repaired_null_01.alerts.json"
     step_dir="out"

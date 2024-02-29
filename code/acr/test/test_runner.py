@@ -357,7 +357,7 @@ def run_and_check_if_answer(stringinput, tests_file,
                 else:
                     print("  pass: test result and answer key both do not exist")
                     cleanup(test_results_filepath=test_results_file, out_location=out_location, filename=filename, step_dir=step_dir, repair_in_place=repair_in_place, single_file_mode=single_file_mode, file_prefix=file_prefix)
-            # Below cleans up ear, brain, and hand -out.json and some .ll files
+            # Below cleans up ear, brain -out.json and some .ll files
             cleanup(test_results_filepath=test_results_file, out_location=out_location, filename=filename, step_dir=step_dir, repair_in_place=repair_in_place, single_file_mode=single_file_mode, file_prefix=file_prefix)
 
         else:
@@ -405,7 +405,7 @@ def cleanup(filename, out_location, step_dir, test_results_filepath=None, file_p
             test_results_filepath = out_location + "/" + filename
         cmd = "rm {0}".format(test_results_filepath)
         os.system(cmd)
-        for x in ("brain", "ear", "hand"):
+        for x in ("brain", "ear"):
             results_filepath = os.path.realpath(os.path.join(step_dir,file_prefix+"."+x+"-out.json"))
             cmd = "rm {0}".format(results_filepath)
             os.system(cmd)

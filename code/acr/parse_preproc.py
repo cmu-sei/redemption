@@ -76,6 +76,7 @@ class MacroParser(object):
         self.len_text = len(text)
         self.cur_tok = None
         self.peekahead_tok = None
+        self.idtoken = re.compile(b"[A-Za-z0-9_]+")
 
     def init_token_reader(self):
         self.advance_token()
@@ -92,18 +93,26 @@ class MacroParser(object):
         self.peekahead_tok = None
         return None
 
+    def check_nl(self):
+        if self.text[self.i:self.i+1] == b'\n':
+            self.newlines.append(self.i)
+
     def try_advance_token(self):
         start = self.i
         text = self.text
         if text[self.i:self.i+2] == b"//":
             try:
                 prev_char = None
+                self.i += 2
                 while True:
                     if not(self.i < self.len_text):
                         return None
                     cur_char = text[self.i:self.i+1]
-                    if cur_char == b'\n' and prev_char != b'\\':
-                        break
+                    if cur_char == b'\n':
+                        self.newlines.append(self.i)
+                        if prev_char != b'\\':
+                            self.i += 1
+                            break
                     self.i += 1
                     prev_char = cur_char
             except IndexError:
@@ -114,11 +123,11 @@ class MacroParser(object):
             while text[self.i:self.i+2] != b'*/':
                 if not(self.i < self.len_text):
                     return None
+                self.check_nl()
                 self.i += 1
             self.i += 2
             return CommentToken(self.text[start : self.i], start, self.i)
-            return None
-        m = re.compile(b"[A-Za-z0-9_]+").match(text, self.i)
+        m = self.idtoken.match(text, self.i)
         if m:
             assert(m.start() == self.i)
             self.i = m.end()
@@ -129,10 +138,12 @@ class MacroParser(object):
             while not(text[self.i : self.i+1] == quot and text[self.i - 1 : self.i] != b'\\'):
                 if not(self.i < self.len_text):
                     return None
+                self.check_nl()
                 self.i += 1
             self.i += 1
             return Blob
         if text[self.i : self.i+1] in [b'\n']:
+            self.newlines.append(start)
             self.i += 1
             return NewlineToken(start)
         if text[self.i : self.i+1] in [b' ', b'\t', b'\r']:
@@ -146,10 +157,10 @@ class MacroParser(object):
 
     def parse_toplevel(self):
         assert(self.cur_tok == None)
-        self.init_token_reader()
+        self.newlines = []
         directives = []
         comments = []
-        newlines = []
+        self.init_token_reader()
         while (self.cur_tok != None):
             if get_punc_text(self.cur_tok) == b"#":
                 start = self.cur_tok.start
@@ -162,10 +173,8 @@ class MacroParser(object):
             elif isinstance(self.cur_tok, CommentToken):
                 #print(self.cur_tok)
                 comments.append(self.cur_tok[1:3])
-            elif isinstance(self.cur_tok, NewlineToken):
-                newlines.append(self.cur_tok.start)
             self.advance_token()
-        return {"directives": directives, "comments": comments, "newlines": newlines}
+        return {"directives": directives, "comments": comments, "newlines": self.newlines}
 
 
 def read_whole_file(filename):

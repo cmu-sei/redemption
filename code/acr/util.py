@@ -144,46 +144,42 @@ class AstVisitor(object):
         pass
 
     def visit(self, node):
-        if isinstance(node, list):
-            return [self.visit(x) for x in node]
-        if node == {}:
-            return node
-        if node is None:
-            return node
-        if isinstance(node, (str, int)):
-            return node
-        node_type = node.get('kind')
-        if node_type is None:
-            return node
-        #print("Visiting " + node_type)
-        fn_visit = getattr(type(self), "visit_" + node_type,
-            lambda _, x: self.visitdefault(x))
+        match node:
+            case [*_]:
+                return [self.visit(x) for x in node]
+            case None:
+                return node
+            case {'kind': node_type}:
+                #print("Visiting " + node_type)
+                fn_visit = getattr(type(self), "visit_" + node_type,
+                    lambda _, x: self.visitdefault(x))
 
-        loc_file = None
-        if node.get('loc') and node['loc'].get('file'):
-            loc_file = node['loc'].get('file')
+                loc_file = None
 
-        if node.get("range") and node["range"].get("file"):
-            loc_file = node['range'].get('file')
+                match node:
+                    case {'range': {'file': f}} | {'loc': {'file': f}}:
+                        loc_file = f
 
-        if loc_file:
-            #old_file = self.file_name
-            self.file_name = loc_file
-            #print("filename: " + loc_file)
+                if loc_file:
+                    #old_file = self.file_name
+                    self.file_name = loc_file
+                    #print("filename: " + loc_file)
 
-        #old_line = None
-        if node.get("range") and node["range"].get("begin"):
-            if node["range"]["begin"].get("line"):
-                self.cur_line = node["range"]["begin"]["line"]
-            elif node["range"]["begin"].get("expansionLoc",{}).get("line"):
-                self.cur_line = node["range"]["begin"]["expansionLoc"]["line"]
+                #old_line = None
+                match node:
+                    case {"range": {"begin": ({"line": line}
+                                              | {"expansionLoc": {"line": line}})}}:
+                        self.cur_line = line
 
-        self.node_stack.append(node)
-        self.previsit(node)
-        ret = fn_visit(self, node)
-        self.node_stack.pop()
+                self.node_stack.append(node)
+                self.previsit(node)
+                ret = fn_visit(self, node)
+                self.node_stack.pop()
 
-        return ret
+                return ret
+
+            case _:
+                return node
 
     def visitdefault(self, node):
         return dict([(k, self.visit(v)) for (k,v) in node.items()])

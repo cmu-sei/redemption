@@ -33,10 +33,176 @@ import subprocess
 from util import *
 from is_indep import is_indep_of_cond_directives
 from brainstem import Brainstem
+from alert import alert_from_dict
+from collections import namedtuple
+from collections.abc import Mapping
+from collections.abc import Sequence
+from SortedCollection import SortedCollection
+from itertools import takewhile
+
+class ASTContext:
+    """An ASTContext adds a path history to an dictionary.
+
+    Speficially, an ASTContext acts just like an dictionary or a list,
+    except that retrieving a value using get or __getitem__ will wrap
+    any dictionary or list values in an ASTContext.  This wrapper
+    keeps track of the parent dictionary of the value.  Calling parent
+    on an ASTContext will return that parent dictionary, also wrapped
+    as an ASTContext.
+    """
+
+    def __new__(cls, val, path=False, **kwds):
+        if path:
+            if isinstance(val[0], dict):
+                inst = ASTMappingContext.__new__(ASTMappingContext, {}, **kwds)
+            elif isinstance(val[0], list):
+                inst = ASTSequenceContext.__new__(ASTSequenceContext, [], **kwds)
+            else:
+                return val[0]
+            inst.path = val
+            inst.name_proxy = kwds.get('name_proxy')
+            return inst
+        if isinstance(val, ASTContext):
+            return val.__class__(val, **kwds)
+        if isinstance(val, dict):
+            return ASTMappingContext(val, **kwds)
+        if isinstance(val, list):
+            return ASTSequenceContext(val, **kwds)
+        return val
+
+    def __init__(self, val, path=False, name_proxy=None):
+        self.name_proxy = name_proxy
+        if isinstance(val, ASTContext):
+            self.path = val.path
+            if self.name_proxy is None:
+                self.name_proxy = val.name_proxy
+        elif path:
+            self.path = val
+        else:
+            self.path = (val, None)
+
+    def __getattr__(self, name):
+        return getattr(self.name_proxy, name)
+
+    def current(self):
+        return self.path[0]
+
+    def __len__(self):
+        return len(self.current())
+
+    def __iter__(self):
+        for x in self.current():
+            yield ASTContext((x, self.path), path=True, name_proxy=self.name_proxy)
+
+    def __contains__(self, key):
+        return key in self.current()
+
+    def __repr__(self):
+        return f"ASTContext({self.current()})"
+
+    def parent(self, kindonly = False):
+        """Return the parent ASTContext, or None if there is no parent."""
+        current = self
+        while True:
+            val = current.path[1]
+            if val is None:
+                return None
+            current = ASTContext(val, path=True, name_proxy=self.name_proxy)
+            if not kindonly or (isinstance(current, Mapping) and 'kind' in current):
+                return current
+
+    def root(self):
+        """Return the top parent."""
+        (current, parent) = self.path
+        while path is not None:
+            (current, parent) = parent
+        return ASTContext(val, path=True, name_proxy=self.name_proxy)
+
+    def _get_lc(self, end):
+        match self:
+            case {'line': line, 'col': col, 'tokLen': toklen}:
+                if end:
+                    # In clang's AST, ranges are deliniated by tokens,
+                    # not offsets.  These tokens have offsets and
+                    # sizes.  To get the end of a range, you have to
+                    # take the end token location and add the token
+                    # length to that.
+                    return (line, col + toklen)
+                else:
+                    return (line, col)
+        return None
+
+    def _get_range_part(self, part):
+        try:
+            rng = self.get("range")
+        except AttributeError:
+            return None
+        if rng is None:
+            return None
+        val = rng[part]
+        fn = rng.get('file')
+        real = None
+        atleastone = None
+        for key in ['expansionLoc', 'spellingLoc']:
+            sub = val.get(key)
+            if sub is not None:
+                atleastone = sub
+                if fn is None or sub.get('file') == fn:
+                    real = sub
+        if real is None:
+            return atleastone if atleastone is not None else val
+        return real
+
+    def get_begin(self):
+        return self._get_range_part('begin')
+
+    def get_end(self):
+        return self._get_range_part('end')
+
+    def get_begin_lc(self):
+        n = self.get_begin()
+        if n is None:
+            return None
+        return n._get_lc(False)
+
+    def get_end_lc(self):
+        n = self.get_end()
+        if n is None:
+            return None
+        return n._get_lc(True)
+
+    def __getitem__(self, key):
+        return ASTContext((self.current()[key], self.path), path=True,
+                          name_proxy=self.name_proxy)
+
+    def __eq__(self, other):
+        if isinstance(ASTContext, other):
+            other = other.current()
+        return self.current() == other
+
+class ASTConcreteContext(ASTContext):
+
+    def __new__(cls, *args, **kwds):
+        return object.__new__(cls)
+
+class ASTMappingContext(ASTConcreteContext, Mapping):
+
+    def is_mapping(self):
+        return True
+
+class ASTSequenceContext(ASTConcreteContext, Sequence):
+
+    def is_mapping(self):
+        return False
+
 
 class Brain(AstVisitor):
+
+    Location = namedtuple('Location', ['file', 'begin', 'end'])
+
     def __init__(self, ast):
-        AstVisitor.__init__(self)
+        super().__init__()
+        self.intervals = []
         self.alerts_by_line = None
         self.alerts_by_lc = None
         self.preproc_db = ast["preproc_db"]
@@ -45,10 +211,39 @@ class Brain(AstVisitor):
         self.uninit_vars = {}
         self.var_decls_by_id = {}
         self.enable_msc12 = ((os.getenv('REPAIR_MSC12') or "").lower() != "false")
+        self.no_patch = False
 
         brainstem = Brainstem();
         brainstem.visit(ast)
         self.error_handling_db = brainstem.error_handling_db
+
+    @staticmethod
+    def update_why(a):
+        # This is only added to emulate what the old hand module
+        # did.  It should eventually go away.
+        why = a["repair_algo"][1].get("why")
+        if why is not None:
+            a["why_skipped"] = why
+        a["patch"] = []
+
+    def mark_skipped_alert(self, alert, reason):
+        match alert:
+            case {"repair_algo": ["skip", kwargs]}:
+                if reason not in kwargs["why"]:
+                    kwargs["why"].append(reason)
+            case _:
+                alert["repair_algo"] = ["skip", {"why": [reason]}]
+        self.update_why(alert)
+
+    def is_indep_of_macros(self, node, alert):
+        ret = True
+        if in_macro_at_start(node):
+            self.mark_skipped_alert(alert, "In a macro expansion at beginning of expression")
+            ret = False
+        if in_macro_at_end(node):
+            self.mark_skipped_alert(alert, "In a macro expansion at end of expression")
+            ret = False
+        return ret
 
     def check_repairability(self, alert, node):
         # Note: We need to check in_macro_at_{start,end} before calling
@@ -56,223 +251,61 @@ class Brain(AstVisitor):
         # is_indep_of_cond_directives throws a KeyError if inside a macro.
         def in_base_dir(pathname):
             return pathname.startswith(self.base_dir + "/")
-        if not in_base_dir(self.file_name):
-            mark_skipped_alert(alert, "Outside of base_dir")
+        filename = node["range"]["file"]
+        if not in_base_dir(filename):
+            self.mark_skipped_alert(alert, "Outside of base_dir")
             return
-        if not is_indep_of_macros(node, alert):
+        if not self.is_indep_of_macros(node, alert):
             return
-        if not is_indep_of_cond_directives(node, self.preproc_db[self.file_name]):
-            mark_skipped_alert(alert, "Contains preprocessor directives")
+        if not is_indep_of_cond_directives(node, self.preproc_db[filename]):
+            self.mark_skipped_alert(alert, "Contains preprocessor directives")
             return
 
     def previsit(self, node):
         if node["kind"] == "VarDecl":
             self.var_decls_by_id[node["id"]] = node
-        def get_node_begin_col(node):
-            try:
-                return node["range"]["begin"]["col"]
-            except:
-                pass
-            try:
-                return node["range"]["begin"]["expansionLoc"]["col"]
-            except:
-                pass
-            return None
-        def get_node_loc_col(node):
-            try:
-                return node["loc"]["col"]
-            except:
-                return None
-        col = get_node_begin_col(node)
-        if col is None:
-            return
-        try:
-            alerts_by_rule_id = self.alerts_by_lc[self.file_name][self.cur_line][col]
-        except KeyError:
-            return
-        ###
-        alert = alerts_by_rule_id.get("EXP33-C")
-        if not alert:
-            try:
-                alert = self.alerts_by_lc[self.file_name][self.cur_line][get_node_loc_col(node)]["EXP33-C"]
-            except:
-                pass
-        if alert:
-            if self.try_uninit_var_repair(node, alert):
-                alert["ast_id"] = node['id']
-                self.check_repairability(alert, node)
-        #
-        alert = alerts_by_rule_id.get("MSC12-C")
-        def try_msc12():
-            alert["ast_id"] = node['id']
-            if not self.enable_msc12:
-                alert["repair_algo"] = ["skip", {"why": ["Repair of MSC12-C is disabled; set env var REPAIR_MSC12=true to enable it."]}]
-                return
-            alert["repair_algo"] = ["msc12c", {}]
 
-            try:
-                macro_file = node['range']['begin']['spellingLoc']['file']
-            except KeyError:
-                macro_file = None
-            if macro_file and macro_file.endswith("/assert.h"):
-                mark_skipped_alert(alert, "False positive: inside an assert")
-                return
-            if self.try_deadinit_var_repair(node, alert):
-                self.check_repairability(alert, node)
-                return
-            if alert.get("checker", "").startswith("uselessAssignment"):
-                if node["kind"] != "DeclRefExpr":
+        match node:
+            case {'range': {'file': filename, 'begin': _, 'end': _}}:
+                begin = node.get_begin_lc()
+                if begin is None:
                     return
-                asgn = self.node_stack[-2]
-                if asgn["kind"] != "BinaryOperator" or not asgn["opcode"].startswith("="):
+                end = node.get_end_lc()
+                if end is None:
                     return
-                self.check_repairability(alert, node)
-                if is_skipped_alert(alert):
-                    return
-                alert["repair_algo"] = ["del_unused_asgn", {"asgn_id":asgn["id"]}]
-                return
-
-            self.check_repairability(alert, node)
-
-        if alert:
-            try_msc12()
-        ###
-        alert = alerts_by_rule_id.get("EXP34-C")
-        if alert:
-            self.try_null_ptr_repair(node, alert, whole_expr=True)
-
-    def get_alert_at_cursor(self, alert_rule_id):
-        try:
-            alert = self.alerts_by_line[self.file_name][self.cur_line][alert_rule_id]
-        except KeyError:
-            alert = None
-        return alert
-
-    def get_error_handler_at_cursor(self):
-        fn_decl_node = self.get_enclosing_function()
-        try:
-            eh = self.error_handling_db[fn_decl_node["id"]]["error_handler"]
-            error_handler = {"handle_error": eh}
-        except:
-            error_handler = dict()
-        return error_handler
-
-    def get_decl_of_var(self, node):
-        if node["kind"] == "VarDecl":
-            return node
-        if node["kind"] != "DeclRefExpr":
-            return None
-        decl_id = node.get("referencedDecl",{}).get("prevId")
-        if not decl_id:
-            return None
-        decl_node = self.var_decls_by_id.get(decl_id)
-        if not decl_node:
-            return None
-        return decl_node
-
-    def try_uninit_var_repair(self, node, alert):
-        def get_uninit_var_name(alert):
-            message = alert.get("message","")
-            m = re.match("variable '([^']*)' is not initialized", message)
-            if m:
-                return m.group(1)
-            m = re.match("Uninitialized variable: (.*)", message)
-            if m:
-                return m.group(1)
-            return None
-        var = get_uninit_var_name(alert)
-        if var:
-            decl_node = self.get_decl_of_var(node)
-            if not decl_node:
-                return False
-            alert["repair_algo"] = ["initialize_var", {"decl_id": decl_node["id"]}]
-            return True
-        else:
-            return False
-
-    def try_deadinit_var_repair(self, node, alert):
-        def get_deadinit_var_name(alert):
-            message = alert.get("message","")
-            m = re.match("^Redundant initialization for '([^']*)'.*", message)
-            if m:
-                return m.group(1)
-            return None
-        var = get_deadinit_var_name(alert)
-        if var:
-            decl_node = self.get_decl_of_var(node)
-            if not decl_node:
-                return False
-            alert["repair_algo"] = ["repair_deadinit_var", {"decl_id": decl_node["id"]}]
-            return True
-        else:
-            return False
-
-    def try_null_ptr_repair(self, node, alert=None, whole_expr=False):
-        if alert is None:
-            alert = self.get_alert_at_cursor("EXP34-C")
-        match alert:
-            case None:
-                return
-            case {'repair_algo': [_, _]} if not whole_expr:
-                return
-            case {'tool': 'rosecheckers',
-              'repair_algo': ['add_null_check', {"whole_expr": True}]}:
-                # If we've already repaired this as a whole_expr, stop
-                return
-        message = alert.get("message","")
-        m = re.match("Null pointer passed to ([0-9]+).. parameter", message)
-        if m:
-            if node.get("kind") != "CallExpr":
-                return
-            param_ordinal = int(m.group(1))
-            node = node["inner"][param_ordinal]
-        kwargs = self.get_error_handler_at_cursor()
-        kwargs["whole_expr"] = whole_expr
-        alert["ast_id"] = node['id']
-        alert["repair_algo"] = ["add_null_check", kwargs]
-        self.check_repairability(alert, node)
-
-    def visit_UnaryOperator(self, node):
-        if node['opcode'] == '*':
-            self.try_null_ptr_repair(node)
-        self.visitdefault(node)
-
-    def visit_ArraySubscriptExpr(self, node):
-        self.try_null_ptr_repair(node)
-        self.visitdefault(node)
-
-    def visit_MemberExpr(self, node):
-        if node["isArrow"]:
-            self.try_null_ptr_repair(node)
-        self.visitdefault(node)
-
-    def get_enclosing_function(self):
-        for node in reversed(self.node_stack):
-            if isinstance(node, dict) and node["kind"] == "FunctionDecl":
-                return node;
-        return None
+                self.intervals.append((self.Location(filename, begin, end), node))
 
     def parse_alerts(self, alerts_filename):
-        self.alert_list = read_json_file(alerts_filename)
+        alert_list = read_json_file(alerts_filename)
+        self.alert_list = [alert_from_dict(x) for x in alert_list]
         self.alerts_by_line = {}
         self.alerts_by_lc = {}
         cur_alert_id = 1
+
+        def add(alert, alert_list):
+            rule = alert['rule']
+            for a in alert_list:
+                if a['rule'] == rule:
+                    self.mark_skipped_alert(alert, f"Duplicate of alert_id={a['alert_id']}")
+                    return False
+            alert_list.append(alert)
+
         for a in self.alert_list:
             if not a['file'].startswith("/"):
                 # Relative pathnames in the Alerts file are considered to be
                 # relative to the base_dir.
                 a['file'] = os.path.join(self.base_dir, a['file'])
             a['file'] = os.path.realpath(a['file'])
-            (filename, line, col, rule)  = (a['file'], int(a['line']), int(a.get("column",-1)), a['rule'])
+            (filename, line, col, rule)  = (a['file'], int(a['line']), a.get("column"), a['rule'])
             a["alert_id"] = cur_alert_id
             cur_alert_id += 1
-            val = set_dict_path(self.alerts_by_line, filename, line, rule, a)
-            if not val is a:
-                mark_skipped_alert(a, f"Duplicate of alert_id={val['alert_id']}")
-            if col:
-                val = setdefault_dict_path(self.alerts_by_lc, filename, line, col, rule, a)
+            val = setdefault_dict_path(self.alerts_by_line, filename, line, rule, a)
+            if not val is a and col is None:
+                self.mark_skipped_alert(a, f"Duplicate of alert_id={val['alert_id']}")
+            if col is not None:
+                val = setdefault_dict_path(self.alerts_by_lc, filename, line, int(col), rule, a)
                 if not val is a:
-                    mark_skipped_alert(a, f"Duplicate of alert_id={val['alert_id']}")
+                    self.mark_skipped_alert(a, f"Duplicate of alert_id={val['alert_id']}")
 
     def fixup_nulldom_info(self):
         def fixup(cur_deref):
@@ -330,7 +363,7 @@ class Brain(AstVisitor):
             if cur_alert["rule"] == "EXP34-C":
                 dom_checks = self.get_dominating_null_checks(cur_alert)
                 if dom_checks:
-                    mark_skipped_alert(cur_alert, "Dominated by the following nullness checks (identified by (line, col) pairs): %s" % dom_checks)
+                    self.mark_skipped_alert(cur_alert, "Dominated by the following nullness checks (identified by (line, col) pairs): %s" % dom_checks)
 
 
     def mark_dependent_alerts(self):
@@ -338,8 +371,100 @@ class Brain(AstVisitor):
             if cur_alert["rule"] == "EXP34-C":
                 dom_alert = self.get_dominating_fixed_alert(cur_alert)
                 if dom_alert:
-                    mark_skipped_alert(cur_alert, "Dominated by alert %d" % dom_alert["alert_id"])
+                    self.mark_skipped_alert(cur_alert, "Dominated by alert %d" % dom_alert["alert_id"])
 
+    @staticmethod
+    def _key(item):
+        # Sort nodes based on filename, start location, end location.
+        # An extra 0 is placed before the end location, so we can
+        # always find the end of a range of intervals that begins with
+        # the same start location.
+        loc, _ = item
+        return (loc.file, loc.begin, (0, loc.end))
+
+    def minimum_spanning(self, node, lc):
+        while node is not None:
+            if node.is_mapping():
+                begin = node.get_begin_lc()
+                end = node.get_end_lc()
+                if end is not None and begin is not None and begin <= lc and end > lc:
+                    return node
+            node = node.parent()
+
+    def locate(self, filename, lc):
+        try:
+            if lc[1] == -1:
+                # Handle the line-number only case.  In this case,
+                # return the largest non-overlapping nodes that start
+                # on that line.
+                idx, (key, node) = self.intervals.find_ge((filename, lc, (1, None)))
+                items = (self.intervals[i] for i in range(idx, len(self.intervals)))
+                candidates = takewhile(lambda x: (x[0].file == filename
+                                                  and x[0].begin[0] == lc[0]),
+                                       items)
+                first = next(candidates, None)
+                if first is None:
+                    return None
+                nodes = [first]
+                for (loc, node) in candidates:
+                    end = nodes[-1][0].end
+                    if loc.begin > end:
+                        nodes.append((loc, node))
+                    else:
+                        begin = nodes[-1][0].begin
+                        if loc.begin <= begin and loc.end >= end:
+                            nodes[-1] = (loc, node)
+                return ([x[1] for x in nodes], False)
+            else:
+                idx, (key, node) = self.intervals.find_le((filename, lc, (1, None)))
+                if key.file != filename:
+                    return None
+                new_node = self.minimum_spanning(node, lc)
+                if new_node is node:
+                    items = (self.intervals[i] for i in range(idx, 0, -1))
+                    nodes = takewhile(lambda x: (x[0].file == filename
+                                                      and x[0].begin == key.begin),
+                                           items)
+                    return ([x[1] for x in nodes], True)
+                else:
+                    return ([new_node], False)
+        except ValueError:
+            return None
+
+    def run(self, ast):
+        self.visit(ast)
+        self.intervals = SortedCollection(iterable=self.intervals, key=self._key)
+        for a in self.alert_list:
+            # If already "repaired", don't attempt to re-repair it.
+            # This is primarily for alerts marked as "duplicates".
+            if "repair_algo" in a:
+                continue
+            (filename, line, col)  = (a['file'], int(a['line']), int(a.get("column",-1)))
+            lc = (line, col)
+            nodes = self.locate(filename, lc)
+            if nodes is not None:
+                # To conform to the old brain behavior, if the lc from
+                # the node matches the searched-for lc, consider this
+                # a whole_expr.  For whole_exprs, we attempt to repair
+                # each subexpr that matches the lc, allowing the last
+                # repaired one to succeed.  This functionality is only
+                # used by EXP34-C, and should be replaced by moving
+                # this logic to the alert itself.  It currently is
+                # here because the brain has to do less work to find
+                # the matching intervals (nodes).
+                nodes, whole_expr = nodes
+                a.whole_expr = whole_expr
+                last_node = None
+                for node in nodes:
+                    repair_node = a.attempt_repair(node)
+                    if repair_node is not None:
+                        last_node = repair_node
+                        self.check_repairability(a, repair_node)
+                if (not self.no_patch and last_node is not None):
+                    if a["repair_algo"][0] != "skip":
+                        a.attempt_patch(last_node)
+                    elif not self.no_patch:
+                        self.update_why(a)
 
 def build_NullDom_if_necessary():
     script_dir = os.path.dirname(os.path.realpath(__file__))
@@ -378,35 +503,12 @@ def in_macro_at_start(ast):
 def in_macro_at_end(ast):
     return ("spellingLoc" in ast['range']['end'])
 
-def mark_skipped_alert(alert, reason):
-    match alert:
-        case {"repair_algo": ["skip", kwargs]}:
-            kwargs["why"].append(reason)
-        case _:
-            alert["repair_algo"] = ["skip", {"why": [reason]}]
-
-def is_skipped_alert(alert):
-    match alert:
-        case {"repair_algo": ["skip", _]}:
-            return True
-        case _:
-            return False
-
-def is_indep_of_macros(node, alert):
-    ret = True
-    if in_macro_at_start(node):
-        mark_skipped_alert(alert, "In a macro expansion at beginning of expression")
-        ret = False
-    if in_macro_at_end(node):
-        mark_skipped_alert(alert, "In a macro expansion at end of expression")
-        ret = False
-    return ret
-
 def parse_args():
     parser = argparse.ArgumentParser(description='Repairs source-code AST')
     parser.add_argument("ast_file", type=str, help="Clang AST from the Ear module (in JSON format)")
     parser.add_argument('-o', type=str, metavar="OUTPUT_FILE", dest="output_filename", required=True, help="Output filename")
     parser.add_argument('-a', type=str, metavar="ALERTS_FILE", dest="alerts_filename", required=True, help="Static-analysis alerts")
+    parser.add_argument('--no-patch', type=bool, default=False, dest="no_patch", help="Don't add patch clauses to alerts")
     cmdline_args = parser.parse_args()
     return cmdline_args
 
@@ -415,19 +517,25 @@ def main():
     cmdline_args = parse_args()
     run(**vars(cmdline_args))
 
-def run(ast_file, alerts_filename, output_filename, skip_dom=False):
+def run(ast_file, alerts_filename, output_filename, skip_dom=False, no_patch=False):
     if os.getenv('acr_emit_invocation'):
-        print(f"brain.py -o {output_filename} -a {alerts_filename} {ast_file}")
+        print("brain.py -o {0} -a {1}{3} {2}".format(
+            output_filename, alerts_filename, ast_file,
+            " --no-patch" if no_patch else ""))
     ll_file = get_ast_file_base(ast_file) + ".ll"
     ast = read_json_file(ast_file)
     brain = Brain(ast)
+    brain.no_patch = no_patch
     brain.parse_alerts(alerts_filename)
     brain.nulldom_info = get_nulldom_info(ll_file)
     brain.map_nulldom_locs_to_alerts()
-    brain.visit(ast)
+    brain.run(ASTContext(ast, name_proxy=brain))
     if not skip_dom:
         brain.mark_dependent_alerts()
         brain.mark_already_checked_null_alerts()
+    if not no_patch:
+        for alert in brain.alert_list:
+            alert.setdefault("patch", [])
     with open(output_filename, 'w') as outfile:
         outfile.write(json.dumps(brain.alert_list, indent=2) + "\n")
 

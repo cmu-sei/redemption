@@ -1,5 +1,5 @@
---- /host/data/test/out/src/3rdparty/sqlite3.c	2024-02-07 18:00:05.421239584 +0000
-+++ /oss/zeek/src/3rdparty/sqlite3.c	2024-01-03 15:36:16.925061677 +0000
+--- /host/data/test/out/src/3rdparty/sqlite3.c	2024-02-26 19:09:11.576732660 +0000
++++ /oss/zeek/src/3rdparty/sqlite3.c	2024-02-19 15:34:20.000000000 +0000
 @@ -1,5 +1,3 @@
 -#include "acr.h"
 -
@@ -177,7 +177,12 @@
          i16 iCol = pIdx->aiColumn[i];
          assert( iCol>=0 );
          pLeft = exprTableRegister(pParse, pTab, regData, iCol);
-@@ -124878,7 +124876,7 @@
+@@ -124874,11 +124872,11 @@
+ 
+     switch( action ){
+       case OE_Restrict:
+-        null_check(pStep, return NULL)->op = TK_SELECT;
++        pStep->op = TK_SELECT;
          break;
        case OE_Cascade:
          if( !pChanges ){

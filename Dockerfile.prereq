@@ -60,5 +60,9 @@ RUN apt-get update \
     && apt-get --purge -y autoremove \
     && apt-get clean
 
-
 CMD ["/bin/bash"]
+
+# code/acr/SortedCollection.py was manually downloaded from
+#   https://code.activestate.com/recipes/577197-sortedcollection/
+#   License: MIT
+

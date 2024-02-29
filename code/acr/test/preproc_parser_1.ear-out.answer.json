@@ -165,12 +165,14 @@
         "begin": {
           "offset": 4,
           "col": 5,
-          "tokLen": 6
+          "tokLen": 6,
+          "line": 1
         },
         "end": {
           "offset": 4,
           "col": 5,
-          "tokLen": 6
+          "tokLen": 6,
+          "line": 1
         },
         "file": "/host/code/acr/test/preproc_parser_1.c"
       },
@@ -212,12 +214,14 @@
             "begin": {
               "offset": 4,
               "col": 5,
-              "tokLen": 6
+              "tokLen": 6,
+              "line": 1
             },
             "end": {
               "offset": 4,
               "col": 5,
-              "tokLen": 6
+              "tokLen": 6,
+              "line": 1
             },
             "file": "/host/code/acr/test/preproc_parser_1.c"
           },
@@ -231,18 +235,21 @@
       "loc": {
         "offset": 4,
         "col": 5,
-        "tokLen": 6
+        "tokLen": 6,
+        "line": 1
       },
       "range": {
         "begin": {
           "offset": 0,
           "col": 1,
-          "tokLen": 3
+          "tokLen": 3,
+          "line": 1
         },
         "end": {
           "offset": 34,
           "col": 35,
-          "tokLen": 1
+          "tokLen": 1,
+          "line": 1
         },
         "file": "/host/code/acr/test/preproc_parser_1.c"
       },
@@ -261,18 +268,21 @@
           "loc": {
             "offset": 23,
             "col": 24,
-            "tokLen": 6
+            "tokLen": 6,
+            "line": 1
           },
           "range": {
             "begin": {
               "offset": 11,
               "col": 12,
-              "tokLen": 5
+              "tokLen": 5,
+              "line": 1
             },
             "end": {
               "offset": 23,
               "col": 24,
-              "tokLen": 6
+              "tokLen": 6,
+              "line": 1
             },
             "file": "/host/code/acr/test/preproc_parser_1.c"
           },
@@ -298,12 +308,14 @@
             "begin": {
               "offset": 4,
               "col": 5,
-              "tokLen": 6
+              "tokLen": 6,
+              "line": 1
             },
             "end": {
               "offset": 4,
               "col": 5,
-              "tokLen": 6
+              "tokLen": 6,
+              "line": 1
             },
             "file": "/host/code/acr/test/preproc_parser_1.c"
           },
@@ -324,7 +336,8 @@
         "begin": {
           "offset": 38,
           "col": 1,
-          "tokLen": 3
+          "tokLen": 3,
+          "line": 3
         },
         "end": {
           "offset": 644,
@@ -372,7 +385,8 @@
                 "end": {
                   "offset": 72,
                   "col": 22,
-                  "tokLen": 1
+                  "tokLen": 1,
+                  "line": 4
                 },
                 "file": "/host/code/acr/test/preproc_parser_1.c"
               },
@@ -383,18 +397,21 @@
                   "loc": {
                     "offset": 59,
                     "col": 9,
-                    "tokLen": 1
+                    "tokLen": 1,
+                    "line": 4
                   },
                   "range": {
                     "begin": {
                       "offset": 55,
                       "col": 5,
-                      "tokLen": 3
+                      "tokLen": 3,
+                      "line": 4
                     },
                     "end": {
                       "offset": 61,
                       "col": 11,
-                      "tokLen": 1
+                      "tokLen": 1,
+                      "line": 4
                     },
                     "file": "/host/code/acr/test/preproc_parser_1.c"
                   },
@@ -412,12 +429,14 @@
                         "begin": {
                           "offset": 61,
                           "col": 11,
-                          "tokLen": 1
+                          "tokLen": 1,
+                          "line": 4
                         },
                         "end": {
                           "offset": 61,
                           "col": 11,
-                          "tokLen": 1
+                          "tokLen": 1,
+                          "line": 4
                         },
                         "file": "/host/code/acr/test/preproc_parser_1.c"
                       },
@@ -435,18 +454,21 @@
                   "loc": {
                     "offset": 64,
                     "col": 14,
-                    "tokLen": 1
+                    "tokLen": 1,
+                    "line": 4
                   },
                   "range": {
                     "begin": {
                       "offset": 55,
                       "col": 5,
-                      "tokLen": 3
+                      "tokLen": 3,
+                      "line": 4
                     },
                     "end": {
                       "offset": 66,
                       "col": 16,
-                      "tokLen": 1
+                      "tokLen": 1,
+                      "line": 4
                     },
                     "file": "/host/code/acr/test/preproc_parser_1.c"
                   },
@@ -464,12 +486,14 @@
                         "begin": {
                           "offset": 66,
                           "col": 16,
-                          "tokLen": 1
+                          "tokLen": 1,
+                          "line": 4
                         },
                         "end": {
                           "offset": 66,
                           "col": 16,
-                          "tokLen": 1
+                          "tokLen": 1,
+                          "line": 4
                         },
                         "file": "/host/code/acr/test/preproc_parser_1.c"
                       },
@@ -487,18 +511,21 @@
                   "loc": {
                     "offset": 69,
                     "col": 19,
-                    "tokLen": 1
+                    "tokLen": 1,
+                    "line": 4
                   },
                   "range": {
                     "begin": {
                       "offset": 55,
                       "col": 5,
-                      "tokLen": 3
+                      "tokLen": 3,
+                      "line": 4
                     },
                     "end": {
                       "offset": 71,
                       "col": 21,
-                      "tokLen": 1
+                      "tokLen": 1,
+                      "line": 4
                     },
                     "file": "/host/code/acr/test/preproc_parser_1.c"
                   },
@@ -516,12 +543,14 @@
                         "begin": {
                           "offset": 71,
                           "col": 21,
-                          "tokLen": 1
+                          "tokLen": 1,
+                          "line": 4
                         },
                         "end": {
                           "offset": 71,
                           "col": 21,
-                          "tokLen": 1
+                          "tokLen": 1,
+                          "line": 4
                         },
                         "file": "/host/code/acr/test/preproc_parser_1.c"
                       },
@@ -548,7 +577,8 @@
                 "end": {
                   "offset": 95,
                   "col": 22,
-                  "tokLen": 1
+                  "tokLen": 1,
+                  "line": 5
                 },
                 "file": "/host/code/acr/test/preproc_parser_1.c"
               },
@@ -559,18 +589,21 @@
                   "loc": {
                     "offset": 82,
                     "col": 9,
-                    "tokLen": 1
+                    "tokLen": 1,
+                    "line": 5
                   },
                   "range": {
                     "begin": {
                       "offset": 78,
                       "col": 5,
-                      "tokLen": 3
+                      "tokLen": 3,
+                      "line": 5
                     },
                     "end": {
                       "offset": 84,
                       "col": 11,
-                      "tokLen": 1
+                      "tokLen": 1,
+                      "line": 5
                     },
                     "file": "/host/code/acr/test/preproc_parser_1.c"
                   },
@@ -588,12 +621,14 @@
                         "begin": {
                           "offset": 84,
                           "col": 11,
-                          "tokLen": 1
+                          "tokLen": 1,
+                          "line": 5
                         },
                         "end": {
                           "offset": 84,
                           "col": 11,
-                          "tokLen": 1
+                          "tokLen": 1,
+                          "line": 5
                         },
                         "file": "/host/code/acr/test/preproc_parser_1.c"
                       },
@@ -611,18 +646,21 @@
                   "loc": {
                     "offset": 87,
                     "col": 14,
-                    "tokLen": 1
+                    "tokLen": 1,
+                    "line": 5
                   },
                   "range": {
                     "begin": {
                       "offset": 78,
                       "col": 5,
-                      "tokLen": 3
+                      "tokLen": 3,
+                      "line": 5
                     },
                     "end": {
                       "offset": 89,
                       "col": 16,
-                      "tokLen": 1
+                      "tokLen": 1,
+                      "line": 5
                     },
                     "file": "/host/code/acr/test/preproc_parser_1.c"
                   },
@@ -639,12 +677,14 @@
                         "begin": {
                           "offset": 89,
                           "col": 16,
-                          "tokLen": 1
+                          "tokLen": 1,
+                          "line": 5
                         },
                         "end": {
                           "offset": 89,
                           "col": 16,
-                          "tokLen": 1
+                          "tokLen": 1,
+                          "line": 5
                         },
                         "file": "/host/code/acr/test/preproc_parser_1.c"
                       },
@@ -662,18 +702,21 @@
                   "loc": {
                     "offset": 92,
                     "col": 19,
-                    "tokLen": 1
+                    "tokLen": 1,
+                    "line": 5
                   },
                   "range": {
                     "begin": {
                       "offset": 78,
                       "col": 5,
-                      "tokLen": 3
+                      "tokLen": 3,
+                      "line": 5
                     },
                     "end": {
                       "offset": 94,
                       "col": 21,
-                      "tokLen": 1
+                      "tokLen": 1,
+                      "line": 5
                     },
                     "file": "/host/code/acr/test/preproc_parser_1.c"
                   },
@@ -691,12 +734,14 @@
                         "begin": {
                           "offset": 94,
                           "col": 21,
-                          "tokLen": 1
+                          "tokLen": 1,
+                          "line": 5
                         },
                         "end": {
                           "offset": 94,
                           "col": 21,
-                          "tokLen": 1
+                          "tokLen": 1,
+                          "line": 5
                         },
                         "file": "/host/code/acr/test/preproc_parser_1.c"
                       },
@@ -723,7 +768,8 @@
                 "end": {
                   "offset": 102,
                   "col": 5,
-                  "tokLen": 38
+                  "tokLen": 38,
+                  "line": 7
                 },
                 "file": "/host/code/acr/test/preproc_parser_1.c"
               },
@@ -740,12 +786,14 @@
                     "begin": {
                       "offset": 102,
                       "col": 5,
-                      "tokLen": 38
+                      "tokLen": 38,
+                      "line": 7
                     },
                     "end": {
                       "offset": 102,
                       "col": 5,
-                      "tokLen": 38
+                      "tokLen": 38,
+                      "line": 7
                     },
                     "file": "/host/code/acr/test/preproc_parser_1.c"
                   },
@@ -770,7 +818,8 @@
                 "end": {
                   "offset": 146,
                   "col": 5,
-                  "tokLen": 19
+                  "tokLen": 19,
+                  "line": 8
                 },
                 "file": "/host/code/acr/test/preproc_parser_1.c"
               },
@@ -787,12 +836,14 @@
                     "begin": {
                       "offset": 146,
                       "col": 5,
-                      "tokLen": 19
+                      "tokLen": 19,
+                      "line": 8
                     },
                     "end": {
                       "offset": 146,
                       "col": 5,
-                      "tokLen": 19
+                      "tokLen": 19,
+                      "line": 8
                     },
                     "file": "/host/code/acr/test/preproc_parser_1.c"
                   },
@@ -841,7 +892,8 @@
                     "end": {
                       "offset": 269,
                       "col": 5,
-                      "tokLen": 1
+                      "tokLen": 1,
+                      "line": 14
                     },
                     "file": "/host/code/acr/test/preproc_parser_1.c"
                   },
@@ -943,7 +995,8 @@
                                 "end": {
                                   "offset": 283,
                                   "col": 5,
-                                  "tokLen": 1
+                                  "tokLen": 1,
+                                  "line": 16
                                 },
                                 "file": "/host/code/acr/test/preproc_parser_1.c"
                               },
@@ -978,7 +1031,8 @@
                         "end": {
                           "offset": 324,
                           "col": 9,
-                          "tokLen": 1
+                          "tokLen": 1,
+                          "line": 20
                         },
                         "file": "/host/code/acr/test/preproc_parser_1.c"
                       },
@@ -995,12 +1049,14 @@
                             "begin": {
                               "offset": 324,
                               "col": 9,
-                              "tokLen": 1
+                              "tokLen": 1,
+                              "line": 20
                             },
                             "end": {
                               "offset": 324,
                               "col": 9,
-                              "tokLen": 1
+                              "tokLen": 1,
+                              "line": 20
                             },
                             "file": "/host/code/acr/test/preproc_parser_1.c"
                           },
@@ -1037,7 +1093,8 @@
                 "end": {
                   "offset": 352,
                   "col": 25,
-                  "tokLen": 1
+                  "tokLen": 1,
+                  "line": 22
                 },
                 "file": "/host/code/acr/test/preproc_parser_1.c"
               },
@@ -1053,12 +1110,14 @@
                     "begin": {
                       "offset": 332,
                       "col": 5,
-                      "tokLen": 6
+                      "tokLen": 6,
+                      "line": 22
                     },
                     "end": {
                       "offset": 332,
                       "col": 5,
-                      "tokLen": 6
+                      "tokLen": 6,
+                      "line": 22
                     },
                     "file": "/host/code/acr/test/preproc_parser_1.c"
                   },
@@ -1075,12 +1134,14 @@
                         "begin": {
                           "offset": 332,
                           "col": 5,
-                          "tokLen": 6
+                          "tokLen": 6,
+                          "line": 22
                         },
                         "end": {
                           "offset": 332,
                           "col": 5,
-                          "tokLen": 6
+                          "tokLen": 6,
+                          "line": 22
                         },
                         "file": "/host/code/acr/test/preproc_parser_1.c"
                       },
@@ -1107,12 +1168,14 @@
                     "begin": {
                       "offset": 339,
                       "col": 12,
-                      "tokLen": 10
+                      "tokLen": 10,
+                      "line": 22
                     },
                     "end": {
                       "offset": 339,
                       "col": 12,
-                      "tokLen": 10
+                      "tokLen": 10,
+                      "line": 22
                     },
                     "file": "/host/code/acr/test/preproc_parser_1.c"
                   },
@@ -1129,12 +1192,14 @@
                         "begin": {
                           "offset": 339,
                           "col": 12,
-                          "tokLen": 10
+                          "tokLen": 10,
+                          "line": 22
                         },
                         "end": {
                           "offset": 339,
                           "col": 12,
-                          "tokLen": 10
+                          "tokLen": 10,
+                          "line": 22
                         },
                         "file": "/host/code/acr/test/preproc_parser_1.c"
                       },
@@ -1151,12 +1216,14 @@
                             "begin": {
                               "offset": 339,
                               "col": 12,
-                              "tokLen": 10
+                              "tokLen": 10,
+                              "line": 22
                             },
                             "end": {
                               "offset": 339,
                               "col": 12,
-                              "tokLen": 10
+                              "tokLen": 10,
+                              "line": 22
                             },
                             "file": "/host/code/acr/test/preproc_parser_1.c"
                           },
@@ -1177,12 +1244,14 @@
                     "begin": {
                       "offset": 351,
                       "col": 24,
-                      "tokLen": 1
+                      "tokLen": 1,
+                      "line": 22
                     },
                     "end": {
                       "offset": 351,
                       "col": 24,
-                      "tokLen": 1
+                      "tokLen": 1,
+                      "line": 22
                     },
                     "file": "/host/code/acr/test/preproc_parser_1.c"
                   },
@@ -1199,12 +1268,14 @@
                         "begin": {
                           "offset": 351,
                           "col": 24,
-                          "tokLen": 1
+                          "tokLen": 1,
+                          "line": 22
                         },
                         "end": {
                           "offset": 351,
                           "col": 24,
-                          "tokLen": 1
+                          "tokLen": 1,
+                          "line": 22
                         },
                         "file": "/host/code/acr/test/preproc_parser_1.c"
                       },
@@ -1239,7 +1310,8 @@
                 "end": {
                   "offset": 433,
                   "col": 16,
-                  "tokLen": 1
+                  "tokLen": 1,
+                  "line": 26
                 },
                 "file": "/host/code/acr/test/preproc_parser_1.c"
               },
@@ -1250,18 +1322,21 @@
                   "loc": {
                     "offset": 427,
                     "col": 10,
-                    "tokLen": 1
+                    "tokLen": 1,
+                    "line": 26
                   },
                   "range": {
                     "begin": {
                       "offset": 422,
                       "col": 5,
-                      "tokLen": 3
+                      "tokLen": 3,
+                      "line": 26
                     },
                     "end": {
                       "offset": 432,
                       "col": 15,
-                      "tokLen": 1
+                      "tokLen": 1,
+                      "line": 26
                     },
                     "file": "/host/code/acr/test/preproc_parser_1.c"
                   },
@@ -1279,12 +1354,14 @@
                         "begin": {
                           "offset": 431,
                           "col": 14,
-                          "tokLen": 1
+                          "tokLen": 1,
+                          "line": 26
                         },
                         "end": {
                           "offset": 432,
                           "col": 15,
-                          "tokLen": 1
+                          "tokLen": 1,
+                          "line": 26
                         },
                         "file": "/host/code/acr/test/preproc_parser_1.c"
                       },
@@ -1303,12 +1380,14 @@
                             "begin": {
                               "offset": 432,
                               "col": 15,
-                              "tokLen": 1
+                              "tokLen": 1,
+                              "line": 26
                             },
                             "end": {
                               "offset": 432,
                               "col": 15,
-                              "tokLen": 1
+                              "tokLen": 1,
+                              "line": 26
                             },
                             "file": "/host/code/acr/test/preproc_parser_1.c"
                           },
@@ -1341,12 +1420,14 @@
                         "begin": {
                           "offset": 363,
                           "col": 8,
-                          "tokLen": 53
+                          "tokLen": 53,
+                          "line": 24
                         },
                         "end": {
                           "offset": 415,
                           "col": 60,
-                          "tokLen": 1
+                          "tokLen": 1,
+                          "line": 24
                         },
                         "file": "/host/code/acr/test/preproc_parser_1.c"
                       },
@@ -1357,18 +1438,21 @@
                           "loc": {
                             "offset": 363,
                             "col": 8,
-                            "tokLen": 53
+                            "tokLen": 53,
+                            "line": 24
                           },
                           "range": {
                             "begin": {
                               "offset": 363,
                               "col": 8,
-                              "tokLen": 53
+                              "tokLen": 53,
+                              "line": 24
                             },
                             "end": {
                               "offset": 415,
                               "col": 60,
-                              "tokLen": 1
+                              "tokLen": 1,
+                              "line": 24
                             },
                             "file": "/host/code/acr/test/preproc_parser_1.c"
                           },
@@ -1379,18 +1463,21 @@
                               "loc": {
                                 "offset": 363,
                                 "col": 8,
-                                "tokLen": 53
+                                "tokLen": 53,
+                                "line": 24
                               },
                               "range": {
                                 "begin": {
                                   "offset": 363,
                                   "col": 8,
-                                  "tokLen": 53
+                                  "tokLen": 53,
+                                  "line": 24
                                 },
                                 "end": {
                                   "offset": 415,
                                   "col": 60,
-                                  "tokLen": 1
+                                  "tokLen": 1,
+                                  "line": 24
                                 },
                                 "file": "/host/code/acr/test/preproc_parser_1.c"
                               },
@@ -1441,7 +1528,8 @@
                     "end": {
                       "offset": 440,
                       "col": 5,
-                      "tokLen": 1
+                      "tokLen": 1,
+                      "line": 28
                     },
                     "file": "/host/code/acr/test/preproc_parser_1.c"
                   },
@@ -1466,7 +1554,8 @@
                     "begin": {
                       "offset": 444,
                       "col": 9,
-                      "tokLen": 1
+                      "tokLen": 1,
+                      "line": 28
                     },
                     "end": {
                       "offset": 525,
@@ -1542,7 +1631,8 @@
                                 "end": {
                                   "offset": 504,
                                   "col": 7,
-                                  "tokLen": 1
+                                  "tokLen": 1,
+                                  "line": 36
                                 },
                                 "file": "/host/code/acr/test/preproc_parser_1.c"
                               },
@@ -1561,12 +1651,14 @@
                                     "begin": {
                                       "offset": 504,
                                       "col": 7,
-                                      "tokLen": 1
+                                      "tokLen": 1,
+                                      "line": 36
                                     },
                                     "end": {
                                       "offset": 504,
                                       "col": 7,
-                                      "tokLen": 1
+                                      "tokLen": 1,
+                                      "line": 36
                                     },
                                     "file": "/host/code/acr/test/preproc_parser_1.c"
                                   },
@@ -1583,12 +1675,14 @@
                                         "begin": {
                                           "offset": 504,
                                           "col": 7,
-                                          "tokLen": 1
+                                          "tokLen": 1,
+                                          "line": 36
                                         },
                                         "end": {
                                           "offset": 504,
                                           "col": 7,
-                                          "tokLen": 1
+                                          "tokLen": 1,
+                                          "line": 36
                                         },
                                         "file": "/host/code/acr/test/preproc_parser_1.c"
                                       },
@@ -1627,7 +1721,8 @@
                         "end": {
                           "offset": 525,
                           "col": 9,
-                          "tokLen": 1
+                          "tokLen": 1,
+                          "line": 38
                         },
                         "file": "/host/code/acr/test/preproc_parser_1.c"
                       },
@@ -1644,12 +1739,14 @@
                             "begin": {
                               "offset": 525,
                               "col": 9,
-                              "tokLen": 1
+                              "tokLen": 1,
+                              "line": 38
                             },
                             "end": {
                               "offset": 525,
                               "col": 9,
-                              "tokLen": 1
+                              "tokLen": 1,
+                              "line": 38
                             },
                             "file": "/host/code/acr/test/preproc_parser_1.c"
                           },
@@ -1686,7 +1783,8 @@
                 "end": {
                   "offset": 564,
                   "col": 36,
-                  "tokLen": 1
+                  "tokLen": 1,
+                  "line": 40
                 },
                 "file": "/host/code/acr/test/preproc_parser_1.c"
               },
@@ -1702,12 +1800,14 @@
                     "begin": {
                       "offset": 533,
                       "col": 5,
-                      "tokLen": 6
+                      "tokLen": 6,
+                      "line": 40
                     },
                     "end": {
                       "offset": 533,
                       "col": 5,
-                      "tokLen": 6
+                      "tokLen": 6,
+                      "line": 40
                     },
                     "file": "/host/code/acr/test/preproc_parser_1.c"
                   },
@@ -1724,12 +1824,14 @@
                         "begin": {
                           "offset": 533,
                           "col": 5,
-                          "tokLen": 6
+                          "tokLen": 6,
+                          "line": 40
                         },
                         "end": {
                           "offset": 533,
                           "col": 5,
-                          "tokLen": 6
+                          "tokLen": 6,
+                          "line": 40
                         },
                         "file": "/host/code/acr/test/preproc_parser_1.c"
                       },
@@ -1756,12 +1858,14 @@
                     "begin": {
                       "offset": 540,
                       "col": 12,
-                      "tokLen": 18
+                      "tokLen": 18,
+                      "line": 40
                     },
                     "end": {
                       "offset": 540,
                       "col": 12,
-                      "tokLen": 18
+                      "tokLen": 18,
+                      "line": 40
                     },
                     "file": "/host/code/acr/test/preproc_parser_1.c"
                   },
@@ -1778,12 +1882,14 @@
                         "begin": {
                           "offset": 540,
                           "col": 12,
-                          "tokLen": 18
+                          "tokLen": 18,
+                          "line": 40
                         },
                         "end": {
                           "offset": 540,
                           "col": 12,
-                          "tokLen": 18
+                          "tokLen": 18,
+                          "line": 40
                         },
                         "file": "/host/code/acr/test/preproc_parser_1.c"
                       },
@@ -1800,12 +1906,14 @@
                             "begin": {
                               "offset": 540,
                               "col": 12,
-                              "tokLen": 18
+                              "tokLen": 18,
+                              "line": 40
                             },
                             "end": {
                               "offset": 540,
                               "col": 12,
-                              "tokLen": 18
+                              "tokLen": 18,
+                              "line": 40
                             },
                             "file": "/host/code/acr/test/preproc_parser_1.c"
                           },
@@ -1826,12 +1934,14 @@
                     "begin": {
                       "offset": 560,
                       "col": 32,
-                      "tokLen": 1
+                      "tokLen": 1,
+                      "line": 40
                     },
                     "end": {
                       "offset": 560,
                       "col": 32,
-                      "tokLen": 1
+                      "tokLen": 1,
+                      "line": 40
                     },
                     "file": "/host/code/acr/test/preproc_parser_1.c"
                   },
@@ -1848,12 +1958,14 @@
                         "begin": {
                           "offset": 560,
                           "col": 32,
-                          "tokLen": 1
+                          "tokLen": 1,
+                          "line": 40
                         },
                         "end": {
                           "offset": 560,
                           "col": 32,
-                          "tokLen": 1
+                          "tokLen": 1,
+                          "line": 40
                         },
                         "file": "/host/code/acr/test/preproc_parser_1.c"
                       },
@@ -1880,12 +1992,14 @@
                     "begin": {
                       "offset": 563,
                       "col": 35,
-                      "tokLen": 1
+                      "tokLen": 1,
+                      "line": 40
                     },
                     "end": {
                       "offset": 563,
                       "col": 35,
-                      "tokLen": 1
+                      "tokLen": 1,
+                      "line": 40
                     },
                     "file": "/host/code/acr/test/preproc_parser_1.c"
                   },
@@ -1902,12 +2016,14 @@
                         "begin": {
                           "offset": 563,
                           "col": 35,
-                          "tokLen": 1
+                          "tokLen": 1,
+                          "line": 40
                         },
                         "end": {
                           "offset": 563,
                           "col": 35,
-                          "tokLen": 1
+                          "tokLen": 1,
+                          "line": 40
                         },
                         "file": "/host/code/acr/test/preproc_parser_1.c"
                       },
@@ -1942,7 +2058,8 @@
                 "end": {
                   "offset": 641,
                   "col": 12,
-                  "tokLen": 1
+                  "tokLen": 1,
+                  "line": 44
                 },
                 "file": "/host/code/acr/test/preproc_parser_1.c"
               },
@@ -1954,12 +2071,14 @@
                     "begin": {
                       "offset": 641,
                       "col": 12,
-                      "tokLen": 1
+                      "tokLen": 1,
+                      "line": 44
                     },
                     "end": {
                       "offset": 641,
                       "col": 12,
-                      "tokLen": 1
+                      "tokLen": 1,
+                      "line": 44
                     },
                     "file": "/host/code/acr/test/preproc_parser_1.c"
                   },
@@ -1991,10 +2110,10 @@
   "comments_db": {
     "/host/code/acr/test/preproc_parser_1.c": [
       [171, 184],
-      [189, 201],
-      [207, 263],
-      [360, 416],
-      [572, 628]
+      [189, 202],
+      [207, 264],
+      [360, 417],
+      [572, 629]
     ]
   },
   "newlines_db": {

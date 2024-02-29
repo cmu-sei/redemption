@@ -60,6 +60,7 @@ Exempt_Files: [
     "License.*",
     "code/acr/llvm/CMakeLists.txt",
     "code/acr/llvm/CMakeCache.txt",
+    "code/acr/SortedCollection.py",
     "code/acr/test/.*.c",
     "code/acr/test/.*.h",
     "code/acr/test/.*.ll",

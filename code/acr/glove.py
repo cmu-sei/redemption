@@ -54,6 +54,12 @@ def main():
     run(**vars(cmdline_args))
 
 def run(edits_file, output_dir, *, comp_dir=".", base_dir=None, single_file=None):
+    if os.getenv('acr_emit_invocation'):
+        print("glove.py -o {} --cd {}{}{} {}".format(
+            output_dir, comp_dir,
+            f" -b {base_dir}" if base_dir is not None else "",
+            f" --single-file {single_file}" if single_file is not None else "",
+            edits_file))
     outdir = output_dir
     outdir = os.path.realpath(outdir)
     if single_file:

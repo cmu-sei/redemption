@@ -1,9 +1,9 @@
 [
-##################
+################## 
 # Function: foo
-##################
+################## 
 [
-  ["dom-null-derefs.c", [10, 8]], {
+  ["$BASE/dom-null-derefs.c", [10, 8]], {
     "derefs": [
     ],
     "null_checks": [
@@ -11,7 +11,7 @@
   }
 ],
 [
-  ["dom-null-derefs.c", [13, 12]], {
+  ["$BASE/dom-null-derefs.c", [13, 12]], {
     "derefs": [
       [10, 8],
     ],
@@ -20,9 +20,18 @@
     ]
   }
 ],
-##################
 [
-  ["dom-null-derefs.c", [11, 12]], {
+  ["$BASE/dom-null-derefs.c", [18, 10]], {
+    "derefs": [
+      [10, 8],
+    ],
+    "null_checks": [
+    ]
+  }
+],
+################## 
+[
+  ["$BASE/dom-null-derefs.c", [11, 12]], {
     "derefs": [
     ],
     "null_checks": [
@@ -30,7 +39,7 @@
   }
 ],
 [
-  ["dom-null-derefs.c", [16, 16]], {
+  ["$BASE/dom-null-derefs.c", [16, 16]], {
     "derefs": [
       [11, 12],
     ],
@@ -40,7 +49,7 @@
   }
 ],
 [
-  ["dom-null-derefs.c", [19, 12]], {
+  ["$BASE/dom-null-derefs.c", [19, 12]], {
     "derefs": [
       [11, 12],
     ],
@@ -48,15 +57,6 @@
     ]
   }
 ],
-##################
-[
-  ["dom-null-derefs.c", [18, 10]], {
-    "derefs": [
-    ],
-    "null_checks": [
-    ]
-  }
-],
-##################
+################## 
 # Function: main
 ]

@@ -35,6 +35,8 @@ import re
 import hashlib
 import shutil
 import shlex
+import functools
+import bisect
 
 class EarException(Exception):
     pass
@@ -135,6 +137,7 @@ def run_ear_for_cmd(cmd, ast_file, base_dir, ll_outfile):
     ast_json["base_dir"] = base_dir
     ast_json["compile_dir"] = compile_dir
     ast_json["file"] = cur_file = os.path.realpath(os.path.join(compile_dir, cmd['file']))
+    @functools.lru_cache(maxsize=None)
     def add_path(s):
         return os.path.realpath(os.path.join(compile_dir, s))
     print_progress("Processing AST...")
@@ -150,6 +153,7 @@ def run_ear_for_cmd(cmd, ast_file, base_dir, ll_outfile):
         preproc_db[cur_file] = info['directives']
         comments_db[cur_file] = info['comments']
         newlines_db[cur_file] = info['newlines']
+    add_line_numbers(ast_json, newlines_db, add_path)
     ast_json["preproc_db"] = preproc_db
     ast_json["comments_db"] = comments_db
     ast_json["newlines_db"] = newlines_db
@@ -201,12 +205,43 @@ def write_ear_output_for_cmd(cmd, ast_file, base_dir):
 
 
 def run_ear_for_source_file(source_file, compile_cmds_file=None, ast_file=None, base_dir=None):
+    if os.getenv('acr_emit_invocation'):
+        print("ear.py -s {}{}{}{}".format(
+            source_file,
+            f" -c {compile_cmds_file}" if compile_cmds_file is not None else "",
+            f" -o {ast_file}" if ast_file is not None else "",
+            f" -b {base_dir}" if base_dir is not None else ""))
     assert(ast_file != None)
     if base_dir:
         base_dir = os.path.realpath(base_dir)
     cmd = get_compile_cmd_for_source_file(source_file, compile_cmds_file, base_dir)
     write_ear_output_for_cmd(cmd, ast_file, base_dir)
 
+def add_line_numbers(node, newlines, add_path, /):
+    def add_line_numbers_helper(node, current_id, current_file, /):
+        match node:
+            case [*_]:
+                for x in node:
+                    add_line_numbers_helper(x, current_id, current_file)
+            case {}:
+                current_id = node.get("id", current_id)
+                match node:
+                    case {"file": fn}:
+                        current_file = add_path(fn)
+                offset = node.get("offset")
+                if offset is not None and "line" not in node:
+                    indices = newlines.get(current_file)
+                    if indices is not None:
+                        idx = bisect.bisect_left(indices, offset)
+                        node["line"] = idx + 1
+                        if "col" not in node:
+                            if idx == 0:
+                                node["col"] = offset + 1
+                            else:
+                                node["col"] = offset - indices[idx - 1]
+                for x in node.values():
+                    add_line_numbers_helper(x, current_id, current_file)
+    add_line_numbers_helper(node, None, None)
 
 def add_filenames(node, p_cur_filename, add_path):
     if isinstance(node, list):

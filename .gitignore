@@ -19,3 +19,6 @@ code/acr/llvm/Makefile
 code/acr/llvm/cmake_install.cmake
 code/acr/llvm/libNullDom.so
 code/acr/test/out/acr.h
+
+# Emacs backup files
+*~
