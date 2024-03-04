@@ -36,7 +36,7 @@ The alerts were produced by running SA tools over the following OSS codebases:
  * git
  * zeek
 
-## Types of Tests
+## Types of Tests and Experiments
 ### Regression Tests
 
 Verifies that each improvement to the tool does not cause bugs or failures to previously-working code.
@@ -100,7 +100,7 @@ To complete this experiment, we do the following:
       Until ACR does the Right Thing on >=80% of alerts,
         Fix ACR bugs and re-run this experiment.
 
-Each file has about 5 test cases with randomness="random".  Many of these test cases already are satisfactory, and so they have pre-existing .ans files, and they are regularly tested by our CI process. You can rerun these just to be sure, or you can trust that if the output changes on these test cases, the CI system will warn us of failures.
+Each file has about 5 test cases with randomness=random.  Many of these test cases already are satisfactory, and so they have pre-existing .ans files, and they are regularly tested by our CI process. You can rerun these just to be sure, or you can trust that if the output changes on these test cases, the CI system will warn us of failures.
 
 However, some test cases failed in the past, and those are not tested by our CI process, and they lack an .ans file.  So you'll need to create an empty (stub) .ans file for each test case.  Then rerun the experiments.
 
@@ -119,9 +119,111 @@ Script outputs two .csv 'tables'. First to fill in ratios values in bottom table
 Once deemed correct, sample alerts are preserved and act as regression tests for Bamboo. As with regression tests, any change in behavior of a correct sample alert is mitigated before the change is merged into the main branch.
 
 #### Measuring and Improving Satisfactory Alert Redemption
+##### Features
+
+Each test case has a set of explicit features:
+
+ * randomness random
+ 
+This feature suggests alerts that should be considered part of this experiment. We should only consider alerts where randomness=random.
+
+ * verdict (true|false|complex)
+
+A determination of whether the alert indicates a weakness in the code (true), does not indicate a weakness in the code (false), or cannot be adequately audited (complex). Complex verdicts are judged to be true for purposes of this experiment.
+ 
+ * repairable (true|false)
+ 
+Whether we believe the Redemption tool should repair the code (true) or not. 
+ 
+ * satisfactory (true|wontfix|false)
+
+We designed the Redemption tool to repair some of the true positives, as well as some of the false positives; we never designed it to repair everything, or intended it to recognize all false positives.
+
+The satisfactory=true means that the tool has performed correctly, providing a correct repair on true positives, and either providing a benign repair on false positives, or providing no repair and identifying correctly that an alert is a false positive.
+
+The satisfactory=wontfix means that while the tool's output is incorrect, the tool has performed exactly as it is designed to do, and we "gave up"; that is, we are not going to improve its behavior.
+
+Finally, satisfactory=false means that the tool's output is incorrect, and we treat this as a bug to fix.
+
+In theory, the experiment is concluded when there are no remaining alerts with satisfactory=false. All alerts we examine will have satisfactory to be true or wontfix.
+
+There is also two features that can be determined from running the Redemption tool on the test case.
+
+ * patch (empty|nonempty)
+
+Indicates if the Redemption tool actually proposed a repair patch for the code (nonempty).  Alerts from the brain module will contain a 'patch' slot which may be an empty or nonempty list; you can use this to determine the patch feature. Or see if Redemption presented a file distinct from the un-repaired source.
+
+ * is-false-positive (true|false)
+ 
+This feature indicates if the Redemption tool determined that an alert is a false positive and thus warrants no repair. It would always be false of Redemption provided a repair, or provided no repair for other reasons. Alerts from the brain module will contain a 'why_skipped' slot which contains a list. If there is a string in that list which beings with the text "Dominated by the following nullness checks", then is-false-positive=true, otherwise it is false.
+ 
+##### Result States
+
+After running Redemption on a test case, we can deem its output to always fit in exactly one of these states.
+
+###### State A: satisfactory=true, verdict=(true|complex)
+
+The code should have been repaired, and Redemption supplied a correct patch.
+
+Implies repairable=true, patch=nonempty
+
+###### State B: satisfactory=true, verdict=false, patch=nonempty
+
+Even though the alert is a false positive, Redemption supplied a correct (non-breaking) patch.
+
+Implies repairable=true
+
+###### State C: satisfactory=true, verdict=false, is-false-positive=true
+
+The alert is a false positive, and Redemption recognized this and provided no repair.
+
+Implies repairable=false, patch=empty
+
+###### State D: satisfactory=wontfix|false, verdict=true|complex, patch=empty
+
+The code should have been repaired, but Redemption provided no repair
+
+For some of these repairable=false and satisfactory=wontfix, which means we did not expect the tool to repair the alert, but it still yields a sub-optimal value.
+
+###### State E: satisfactory=wontfix|false, verdict=true|complex, patch=nonempty
+
+The code should have been repaired, and Redemption provided a patch, but the patch was incorrect.
+
+###### State F: satisfactory=wontfix|false, verdict=false, patch=empty, is-false-positive=false
+
+The alert was a false positive, and the code wasn't repaired, but for reasons other than the alert being deemed a false-positive
+
+###### State G: satisfactory=wontfix|false, verdict=false, patch=nonempty
+
+The alert was a false positive, but Redemption provided an incorrect patch.
+
+To qualify for this state, the patch must break the code.
+
+##### Result State Summary
+
+Clearly, A+B+C+D+E+F+G=100% of test cases in an experiment.  When we update this test data, we will verify that these states total 100% of alerts in the test case. We will add an assertion to catch this error.
+
+For the experiment to succeed:
+ * G == 0 (otherwise our tool has a showstopper bug)
+ * A+B+C >= 80% of the test cases (4/5)
+
+```
+    |                      |    satisfactory=       |
+    |                      |   true | wontfix|false |
+    |----------------------+--------+---------------|
+    | verdict=true|complex |     A  |        (D, E) |
+    | verdict=false        | (B, C) |      (F, G=0) |
+    |----------------------+--------+---------------|
+    |                      |  >=80% |         <=20% |
+```
+
+The test case results of each bucket can be presented as six numbers in the fashion: A-B-C-D-E-F. Success can be indicated by coloring the background green (success) or red (failure).  A, B, and C should be green, they measure success. D, E, and F could be orange, as they measure failure.
+
+##### Technical Details
 
 One of our measures of satisfactory alert redemption is done by randomly selecting alerts to manually adjudicate (using web-based random number generators and the number of alerts in the output), manually adjudicating and analyzing if automated repair should be done, then inspecting if our tool automatically and correctly repairs them. Scripts like `data/test/adjudicated_alerts_info_and_repair.py` and `data/test/test_satisfaction_status_tables.sh` help automate the process of running tests on the adjudicated alerts and then gathering overall statistics on satisfactorily handling the adjudicated alerts into tables. The latter table-creating script specifies particular datasets, coding rules, and static analysis tools but those lists can be easily extended or substituted. You can use the scripts to measure satisfactory alert redemption on your own codebases, tools, and code flaw taxonomy items of interest. Results can be used to target efforts to integrate particular code repairs, e.g., if those would eliminate many alerts and/or alerts with code flaws of particular interest.
 
+<a name="integration-experiments"></a>
 ### Integration Experiments
 
 In this scenario, we build an OSS codebase and run its own testing mechanisms. We then repair a subset of alerts on that codebase. We then re-build the codebase and run it through its tests. If the tests behave identically to the un-repaired tests, then our experiment is successful.
