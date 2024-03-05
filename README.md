@@ -101,9 +101,8 @@ Since the script and its arguments are subject to change, the best way to identi
 Currently, that command provides the following information about required and optional arguments:
 
 ```
-usage: end_to_end_acr.py [-h] [--repaired-src OUT_SRC_DIR] [--step-dir STEP_DIR] [-b BASE_DIR] [--in-place]
-                         [--repair-includes {true,false}] [--skip-dom {true,false}] [--no-patch NO_PATCH]
-                         source_file compile_commands alerts
+usage: end_to_end_acr.py [-h] [--repaired-src OUT_SRC_DIR] --step-dir STEP_DIR [-b BASE_DIR] [--in-place] [--repair-includes {true,false}]
+                     source_file compile_commands alerts
 
 Creates repaired source-code files
 
@@ -123,8 +122,6 @@ options:
   --repair-includes {true,false}
                         Whether to repair only the single specified source file (as opposed to also repairing #include'd header
                         files). Choices: [true, false].
-  --skip-dom {true,false}
-                        Skip dominator analysis
 
 See the Redemption README.md file For more info.
 ```
@@ -176,11 +173,12 @@ As specified [above](#detail-about-the-end_to_end_acrpy-script), the `STEP_DIR` 
 
 ```bash
 export acr_show_progress=true   # Show progress and timing
-export acr_warn_unlocated_alerts=true # Warn when alerts cannot be located in AST
-export parser_cache=/host/code/acr/test/cache/ # Cache the output of the ear module, else set to ""
+export acr_warn_unlocated_alerts=true  # Warn when alerts cannot be located in AST
+export acr_skip_dom=false       # Skip dominator analysis
+export parser_cache=/host/code/acr/test/cache/  # Cache the output of the ear module, else set to ""
 export pytest_keep=true         # Keep output of individual modules (ear, brain, etc.). Regardless, the *.nulldom.json intermediate file is kept.
 export pytest_no_catch=true     # Break into debugger with "-m pdb" instead of catching exception
-export REPAIR_MSC12=true     # Repair MSC12-C alerts (By default, the system DOES do the repair. The system does not do this repair if this variable is set to `false`)
+export REPAIR_MSC12=true        # Repair MSC12-C alerts (By default, the system DOES do the repair. The system does not do this repair if this variable is set to `false`)
 ```
 
 

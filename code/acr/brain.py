@@ -517,7 +517,7 @@ def main():
     cmdline_args = parse_args()
     run(**vars(cmdline_args))
 
-def run(ast_file, alerts_filename, output_filename, skip_dom=False, no_patch=False):
+def run(ast_file, alerts_filename, output_filename, no_patch=False):
     if os.getenv('acr_emit_invocation'):
         print("brain.py -o {0} -a {1}{3} {2}".format(
             output_filename, alerts_filename, ast_file,
@@ -530,6 +530,7 @@ def run(ast_file, alerts_filename, output_filename, skip_dom=False, no_patch=Fal
     brain.nulldom_info = get_nulldom_info(ll_file)
     brain.map_nulldom_locs_to_alerts()
     brain.run(ASTContext(ast, name_proxy=brain))
+    skip_dom=(os.getenv('acr_skip_dom') or "false").lower() == "true"
     if not skip_dom:
         brain.mark_dependent_alerts()
         brain.mark_already_checked_null_alerts()
