@@ -50,6 +50,7 @@ Exempt_Extensions: [
     csv,
     tsv,
     ans, # usually these are a diff
+    crt
 ]
 
 
@@ -64,6 +65,8 @@ Exempt_Files: [
     "code/acr/test/.*.c",
     "code/acr/test/.*.h",
     "code/acr/test/.*.ll",
+    "code/clang/.*.h",
+    "code/clang/.*.cpp",
     "data/cppcheck/.*/cppcheck.xml",
     "data/clang-tidy/.*/clang-tidy.txt",
     "data/rosecheckers/.*/rosecheckers.txt",

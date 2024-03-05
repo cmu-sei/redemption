@@ -1,0 +1,16 @@
+{
+  "clang": "/opt/clang/build/bin/clang",
+  "scenarios":
+  [
+    { 
+      "name": "test10",
+      "json": "test10.json",
+      "source": "test10.c"
+    },
+    { 
+      "name": "test-fp",
+      "json": "test-fp.json",
+      "source": "test-fp.c"
+    }
+  ]
+}

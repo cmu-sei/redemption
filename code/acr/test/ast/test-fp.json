@@ -1,0 +1,255 @@
+{
+  "id": "0x557b96d5cf28",
+  "kind": "TranslationUnitDecl",
+  "loc": {},
+  "range": {
+    "begin": {},
+    "end": {}
+  },
+  "inner": [
+    {
+      "id": "0x557b96d5d750",
+      "kind": "TypedefDecl",
+      "loc": {},
+      "range": {
+        "begin": {},
+        "end": {}
+      },
+      "isImplicit": true,
+      "name": "__int128_t",
+      "type": {
+        "qualType": "__int128"
+      },
+      "inner": [
+        {
+          "id": "0x557b96d5d4f0",
+          "kind": "BuiltinType",
+          "type": {
+            "qualType": "__int128"
+          }
+        }
+      ]
+    },
+    {
+      "id": "0x557b96d5d7c0",
+      "kind": "TypedefDecl",
+      "loc": {},
+      "range": {
+        "begin": {},
+        "end": {}
+      },
+      "isImplicit": true,
+      "name": "__uint128_t",
+      "type": {
+        "qualType": "unsigned __int128"
+      },
+      "inner": [
+        {
+          "id": "0x557b96d5d510",
+          "kind": "BuiltinType",
+          "type": {
+            "qualType": "unsigned __int128"
+          }
+        }
+      ]
+    },
+    {
+      "id": "0x557b96d5dac8",
+      "kind": "TypedefDecl",
+      "loc": {},
+      "range": {
+        "begin": {},
+        "end": {}
+      },
+      "isImplicit": true,
+      "name": "__NSConstantString",
+      "type": {
+        "qualType": "struct __NSConstantString_tag"
+      },
+      "inner": [
+        {
+          "id": "0x557b96d5d8a0",
+          "kind": "RecordType",
+          "type": {
+            "qualType": "struct __NSConstantString_tag"
+          },
+          "decl": {
+            "id": "0x557b96d5d818",
+            "kind": "RecordDecl",
+            "name": "__NSConstantString_tag"
+          }
+        }
+      ]
+    },
+    {
+      "id": "0x557b96d5db60",
+      "kind": "TypedefDecl",
+      "loc": {},
+      "range": {
+        "begin": {},
+        "end": {}
+      },
+      "isImplicit": true,
+      "name": "__builtin_ms_va_list",
+      "type": {
+        "qualType": "char *"
+      },
+      "inner": [
+        {
+          "id": "0x557b96d5db20",
+          "kind": "PointerType",
+          "type": {
+            "qualType": "char *"
+          },
+          "inner": [
+            {
+              "id": "0x557b96d5cfd0",
+              "kind": "BuiltinType",
+              "type": {
+                "qualType": "char"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "0x557b96d5de58",
+      "kind": "TypedefDecl",
+      "loc": {},
+      "range": {
+        "begin": {},
+        "end": {}
+      },
+      "isImplicit": true,
+      "name": "__builtin_va_list",
+      "type": {
+        "qualType": "struct __va_list_tag[1]"
+      },
+      "inner": [
+        {
+          "id": "0x557b96d5de00",
+          "kind": "ConstantArrayType",
+          "type": {
+            "qualType": "struct __va_list_tag[1]"
+          },
+          "size": 1,
+          "inner": [
+            {
+              "id": "0x557b96d5dc40",
+              "kind": "RecordType",
+              "type": {
+                "qualType": "struct __va_list_tag"
+              },
+              "decl": {
+                "id": "0x557b96d5dbb8",
+                "kind": "RecordDecl",
+                "name": "__va_list_tag"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "0x557b96db96a8",
+      "kind": "VarDecl",
+      "loc": {
+        "offset": 11,
+        "file": "test/test-fp.c",
+        "line": 1,
+        "col": 12,
+        "tokLen": 3
+      },
+      "range": {
+        "begin": {
+          "offset": 0,
+          "col": 1,
+          "tokLen": 4
+        },
+        "end": {
+          "offset": 31,
+          "col": 32,
+          "tokLen": 1
+        }
+      },
+      "name": "bar",
+      "mangledName": "bar",
+      "type": {
+        "qualType": "char **(*)(const int **)"
+      },
+      "inner": [
+        {
+          "id": "0x557b96db95b0",
+          "kind": "FunctionProtoType",
+          "type": {
+            "qualType": "char **(const int **)"
+          },
+          "cc": "cdecl",
+          "inner": [
+            {
+              "id": "0x557b96db9580",
+              "kind": "PointerType",
+              "type": {
+                "qualType": "char **"
+              },
+              "inner": [
+                {
+                  "id": "0x557b96d5db20",
+                  "kind": "PointerType",
+                  "type": {
+                    "qualType": "char *"
+                  },
+                  "inner": [
+                    {
+                      "id": "0x557b96d5cfd0",
+                      "kind": "BuiltinType",
+                      "type": {
+                        "qualType": "char"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "0x557b96d5deb0",
+              "kind": "PointerType",
+              "type": {
+                "qualType": "const int **"
+              },
+              "inner": [
+                {
+                  "id": "0x557b96d5d920",
+                  "kind": "PointerType",
+                  "type": {
+                    "qualType": "const int *"
+                  },
+                  "inner": [
+                    {
+                      "id": "0x557b96d5d031",
+                      "kind": "QualType",
+                      "type": {
+                        "qualType": "const int"
+                      },
+                      "qualifiers": "const",
+                      "inner": [
+                        {
+                          "id": "0x557b96d5d030",
+                          "kind": "BuiltinType",
+                          "type": {
+                            "qualType": "int"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

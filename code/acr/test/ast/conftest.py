@@ -1,6 +1,4 @@
-#!/bin/sh
-
-# To be called after containers are built
+# -*- coding: utf-8 -*-
 
 # <legal>
 # 'Redemption' Automated Code Repair Tool
@@ -29,19 +27,14 @@
 # DM23-2165
 # </legal>
 
+import pytest
+import json
 
-docker run --rm  -v ${PWD}:/host  --workdir /host  docker.cc.cert.org/redemption/prereq \
-       rm junit.basic.xml junit.oss.xml junit.clang.xml ; \
-       echo cleaned
+def pytest_addoption(parser):
+  parser.addoption("--config", action="store", help="Path to the JSON configuration file")
 
-docker run --rm  -v ${PWD}:/host  --workdir /host/code/acr/test  docker.cc.cert.org/redemption/prereq \
-       pytest --junit-xml=junit.basic.xml ; \
-       echo basic pytest done
-
-docker run --rm  -v ${PWD}:/host  --workdir /host/data/test  docker.cc.cert.org/redemption/test \
-       pytest --junit-xml=junit.oss.xml ; \
-       echo oss pytest done
-
-docker run --rm  -v ${PWD}:/host  --workdir /host/code/acr/test/ast  docker.cc.cert.org/redemption/prereq \
-       pytest --junit-xml=junit.clang.xml -s ast_comparer.py --config scenarios.json ; \
-       echo clang pytest done
+@pytest.fixture
+def config(request):
+  config_path = request.config.getoption("--config")
+  with open(config_path, "r") as f:
+    return json.load(f)
