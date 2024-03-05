@@ -101,8 +101,8 @@ Since the script and its arguments are subject to change, the best way to identi
 Currently, that command provides the following information about required and optional arguments:
 
 ```
-    usage: end_to_end_acr.py [-h] [--repaired-src OUT_SRC_DIR] --step-dir STEP_DIR [-b BASE_DIR] [--in-place] [--repair-includes {true,false}]
-                         [--skip-dom {true,false}]
+usage: end_to_end_acr.py [-h] [--repaired-src OUT_SRC_DIR] [--step-dir STEP_DIR] [-b BASE_DIR] [--in-place]
+                         [--repair-includes {true,false}] [--skip-dom {true,false}] [--no-patch NO_PATCH]
                          source_file compile_commands alerts
 
 Creates repaired source-code files
@@ -116,7 +116,7 @@ options:
   -h, --help            show this help message and exit
   --repaired-src OUT_SRC_DIR
                         Directory to write repaired source files
-  --step-dir STEP_DIR   Directory to write intermediate files of the steps of the process
+  --step-dir STEP_DIR   Directory to write intermediate files of the steps of the process. (default: temporary directory)
   -b BASE_DIR, --base-dir BASE_DIR
                         Base directory of the project
   --in-place            Sets repaired-src directory to base-dir
@@ -142,7 +142,7 @@ Currently, that provides this information about required and optional arguments:
 
 ```
 python3 ./code/acr/sup.py --help
-usage: sup.py [-h] -c COMPILE_CMDS_FILE -a ALERTS -t STEP_DIR -b BASE_DIR -e COMBINED_HAND_OUT [--inject-hand-output]
+usage: sup.py [-h] -c COMPILE_CMDS_FILE -a ALERTS [-t STEP_DIR] -b BASE_DIR -e COMBINED_HAND_OUT [--inject-hand-output]
               [--repaired-src OUT_SRC_DIR]
 
 Creates repaired source-code files
@@ -154,7 +154,8 @@ options:
   -a ALERTS, --alerts ALERTS
                         Static-analysis alerts
   -t STEP_DIR, --step-dir STEP_DIR
-                        Directory to write intermediate files of the steps of the process
+                        Directory to write intermediate files of the steps of the process. (default: temporary
+                        directory)
   -b BASE_DIR, --base-dir BASE_DIR
                         Base directory of the project
   -e COMBINED_HAND_OUT  Output file (JSON) for combined edits
@@ -246,9 +247,8 @@ Here is an example of how to run a built-in end-to-end automated code repair tes
 
 ```sh
 pushd /host/code/acr
-mkdir test/step
-python3 ./end_to_end_acr.py  /oss/git/config.c  /host/data/compile_commands.git.json  /host/data/test/sample.alerts.json    --step-dir test/step  --repaired-src test/out --base-dir /oss/git --repair-includes false
-rm -rf test/step
+python3 ./end_to_end_acr.py  /oss/git/config.c  /host/data/compile_commands.git.json  \
+    /host/data/test/sample.alerts.json  --repaired-src test/out  --base-dir /oss/git  --repair-includes false
 ```
 
 You can see the repair using this command:
@@ -262,9 +262,8 @@ To test a single C file that needs no fancy compile commands, you can use the `a
 
 ```sh
 pushd /host/code/acr
-mkdir test/step
-python3 ./end_to_end_acr.py test/test_errors.c autogen test/test_errors.alerts.json  --base-dir test --step-dir test/step --repaired-src  test/out
-rm -rf test/step
+python3 ./end_to_end_acr.py test/test_errors.c autogen test/test_errors.alerts.json  --base-dir test \
+    --repaired-src  test/out
 ```
 
 <a name="example-execution-to-repair-a-codebase"></a>

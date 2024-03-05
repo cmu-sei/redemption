@@ -36,6 +36,7 @@ import argparse
 import tempfile
 import ear, brain, hand
 import pprint
+from tempfile import TemporaryDirectory
 from collections import OrderedDict, defaultdict
 from util import *
 
@@ -54,8 +55,8 @@ def parse_args():
         help="The compile_comands.json file produced by Bear")
     parser.add_argument("-a", "--alerts", type=str, required=True,
         help="Static-analysis alerts")
-    parser.add_argument("-t", "--step-dir", type=str, dest="step_dir", required=True,
-        help="Directory to write intermediate files of the steps of the process")
+    parser.add_argument("-t", '--step-dir', type=str, dest="step_dir", default=None,
+                        help="Directory to write intermediate files of the steps of the process. (default: temporary directory)")
     parser.add_argument("-b", "--base-dir", type=str, dest="base_dir", required=True,
         help="Base directory of the project")
     parser.add_argument("-e", type=str, dest="combined_hand_out", required=True,
@@ -168,43 +169,54 @@ def combine_hand_outs(indiv_hand_filenames):
 
     return combined_alert_list
 
-def run(*, compile_cmds_file, alerts, step_dir, base_dir, combined_hand_out, out_src_dir=None, inject_hand_output=False):
+def run(*, compile_cmds_file, alerts, base_dir, combined_hand_out, step_dir=None, out_src_dir=None, inject_hand_output=False):
     base_dir = os.path.realpath(base_dir)
     compile_commands = read_json_file(compile_cmds_file)
     num_tus = len(compile_commands)
     indiv_hand_filenames = []
-    
+
     if base_dir == "/":
         raise Exception('Error: base_dir may not be the root directory ("/").')
 
-    for (tu_index, cmd) in enumerate(compile_commands):
-        compile_dir = ear.get_compile_dir(cmd)
-        cur_file = os.path.realpath(os.path.join(compile_dir, cmd['file']))
-        if not cur_file.startswith(base_dir + "/"):
-            raise Exception("Error: Source file %r is not in the base dir %r" % (cur_file, base_dir))
+    temp_step_dir = None
+    if step_dir is None:
+        temp_step_dir = TemporaryDirectory()
+        step_dir = temp_step_dir.name
 
-        source_base_name = os.path.basename(cur_file)
-        source_base_name = strip_filename_extension(source_base_name)
-        source_base_name = source_base_name + "." + (("tu%0"+str(len(str(num_tus)))+"d") % tu_index)
+    try:
+        for (tu_index, cmd) in enumerate(compile_commands):
+            compile_dir = ear.get_compile_dir(cmd)
+            cur_file = os.path.realpath(os.path.join(compile_dir, cmd['file']))
+            if not cur_file.startswith(base_dir + "/"):
+                raise Exception("Error: Source file %r is not in the base dir %r" % (cur_file, base_dir))
 
-        ast_filename = step_dir + "/" + source_base_name + ".ear-out.json"
-        brain_out_file = step_dir + "/" + source_base_name + ".brain-out.json"
-        hand_out_file = step_dir + "/" + source_base_name + ".hand-out.json"
+            source_base_name = os.path.basename(cur_file)
+            source_base_name = strip_filename_extension(source_base_name)
+            source_base_name = source_base_name + "." + (("tu%0"+str(len(str(num_tus)))+"d") % tu_index)
 
-        skip_generating_hand_out = inject_hand_output and os.path.exists(hand_out_file)
-        if not skip_generating_hand_out:
-            ear.write_ear_output_for_cmd(cmd, ast_filename, base_dir)
-            brain.run(ast_file=ast_filename, alerts_filename=alerts, output_filename=brain_out_file)
-            hand.run(ast_file=ast_filename, alerts_filename=brain_out_file, output_filename=hand_out_file, warn_missing=False)
-        indiv_hand_filenames.append(hand_out_file)
+            ast_filename = step_dir + "/" + source_base_name + ".ear-out.json"
+            brain_out_file = step_dir + "/" + source_base_name + ".brain-out.json"
+            hand_out_file = step_dir + "/" + source_base_name + ".hand-out.json"
 
-    combined_alerts = combine_hand_outs(indiv_hand_filenames)
-    with open(combined_hand_out, 'w') as outfile:
-        outfile.write(json.dumps(combined_alerts, indent=2) + "\n")
+            skip_generating_hand_out = inject_hand_output and os.path.exists(hand_out_file)
+            if not skip_generating_hand_out:
+                ear.write_ear_output_for_cmd(cmd, ast_filename, base_dir)
+                brain.run(ast_file=ast_filename, alerts_filename=alerts, output_filename=brain_out_file)
+                hand.run(ast_file=ast_filename, alerts_filename=brain_out_file, output_filename=hand_out_file, warn_missing=False)
+            indiv_hand_filenames.append(hand_out_file)
 
-    if out_src_dir:
-        import glove
-        glove.run(edits_file=combined_hand_out, output_dir=out_src_dir, base_dir=base_dir)
+        combined_alerts = combine_hand_outs(indiv_hand_filenames)
+        with open(combined_hand_out, 'w') as outfile:
+            outfile.write(json.dumps(combined_alerts, indent=2) + "\n")
+
+        if out_src_dir:
+            import glove
+            glove.run(edits_file=combined_hand_out, output_dir=out_src_dir, base_dir=base_dir)
+
+    finally:
+        if temp_step_dir is not None:
+            temp_step_dir.cleanup()
+
 
 if __name__ == "__main__":
     main()

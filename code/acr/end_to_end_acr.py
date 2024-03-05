@@ -36,6 +36,7 @@ import argparse
 import tempfile
 import ear
 import brain
+from tempfile import TemporaryDirectory
 from collections import OrderedDict, defaultdict
 from util import *
 
@@ -54,7 +55,7 @@ def parse_args():
     parser.add_argument("compile_commands", type=str, help="The compile_commands.json file (produced by Bear) or \"autogen\"")
     parser.add_argument("alerts", type=str, help="Static-analysis alerts")
     parser.add_argument('--repaired-src', type=str, dest="out_src_dir", help="Directory to write repaired source files")
-    parser.add_argument('--step-dir', type=str, dest="step_dir", required=True, help="Directory to write intermediate files of the steps of the process")
+    parser.add_argument('--step-dir', type=str, dest="step_dir", default=None, help="Directory to write intermediate files of the steps of the process. (default: temporary directory)")
     parser.add_argument('-b', "--base-dir", type=str, dest="base_dir",
         help="Base directory of the project")
     parser.add_argument('--in-place', action="store_true", dest="repair_in_place",
@@ -118,28 +119,34 @@ def run(source_file, compile_commands, alerts, *, out_src_dir=None, step_dir=Non
     source_base_name = os.path.basename(source_file)
     source_base_name = strip_filename_extension(source_base_name)
 
-    assert(step_dir)
-    brain_out_file = step_dir + "/" + source_base_name + ".brain-out.json"
-    ast_filename   = step_dir + "/" + source_base_name + ".ear-out.json"
-
-
     if not os.path.exists(alerts):
         sys.stderr.write("Error: Alerts file %r doesn't exist!\n" % alerts)
         sys.exit(1)
 
+    temp_step_dir = None
+    if step_dir is None:
+        temp_step_dir = TemporaryDirectory()
+        step_dir = temp_step_dir.name
 
-    print_progress("Running ear module...")
-    ear.run_ear_for_source_file(source_file, compile_commands, ast_filename, base_dir=base_dir)
-    print_progress("Running brain module...")
-    brain.run(ast_file=ast_filename, alerts_filename=alerts, output_filename=brain_out_file, skip_dom=skip_dom, no_patch=no_patch)
-    compile_dir = read_json_file(ast_filename)["compile_dir"]
-    if out_src_dir and not no_patch:
-        import glove
-        kwargs = {}
-        if not repair_includes_mode:
-            kwargs = {"repair_only": source_file}
-        print_progress("Running glove module...")
-        glove.run(edits_file=brain_out_file, output_dir=out_src_dir, comp_dir=compile_dir, base_dir=base_dir, **kwargs)
+    try:
+        brain_out_file = step_dir + "/" + source_base_name + ".brain-out.json"
+        ast_filename   = step_dir + "/" + source_base_name + ".ear-out.json"
+
+        print_progress("Running ear module...")
+        ear.run_ear_for_source_file(source_file, compile_commands, ast_filename, base_dir=base_dir)
+        print_progress("Running brain module...")
+        brain.run(ast_file=ast_filename, alerts_filename=alerts, output_filename=brain_out_file, skip_dom=skip_dom, no_patch=no_patch)
+        compile_dir = read_json_file(ast_filename)["compile_dir"]
+        if out_src_dir and not no_patch:
+            import glove
+            kwargs = {}
+            if not repair_includes_mode:
+                kwargs = {"repair_only": source_file}
+            print_progress("Running glove module...")
+            glove.run(edits_file=brain_out_file, output_dir=out_src_dir, comp_dir=compile_dir, base_dir=base_dir, **kwargs)
+    finally:
+        if temp_step_dir is not None:
+            temp_step_dir.cleanup()
 
     print_progress("Finished!")
 
