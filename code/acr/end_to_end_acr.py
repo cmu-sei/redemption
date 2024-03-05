@@ -50,7 +50,8 @@ def parse_args():
             return False
         else:
             raise ValueError("Expecting 'true' or 'false'")
-    parser = argparse.ArgumentParser(description='Creates repaired source-code files')
+    parser = argparse.ArgumentParser(description="Creates repaired source-code files",
+                                     epilog="See the Redemption README.md file For more info.")
     parser.add_argument("source_file", type=str, help="The source-code file to repair")
     parser.add_argument("compile_commands", type=str, help="The compile_commands.json file (produced by Bear) or \"autogen\"")
     parser.add_argument("alerts", type=str, help="Static-analysis alerts")

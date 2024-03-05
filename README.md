@@ -125,6 +125,8 @@ options:
                         files). Choices: [true, false].
   --skip-dom {true,false}
                         Skip dominator analysis
+
+See the Redemption README.md file For more info.
 ```
 
 As specified above, the `STEP_DIR` is a directory the tool uses to put intermediate files of the steps of the process, including output from `brain` with enhanced AST and enhanced alerts, plus repairs that may be applied. This information is useful for understanding more about a particular repair, for instance if the repair result is not as you expected. The `*.nulldom.json` intermediate files are stored there even if environment variable `pytest_keep` is set to `false`. Output of other individual modules (ear, brain, etc.) are stored in `STEP_DIR` only if environment variable `pytest_keep` is set to `true`.
@@ -164,6 +166,7 @@ options:
   --repaired-src OUT_SRC_DIR
                         Directory to write repaired source files (or omit to refrain from running the glove module)
 
+See the Redemption README.md file For more info.
 ```
 
 As specified [above](#detail-about-the-end_to_end_acrpy-script), the `STEP_DIR` is a directory the tool uses to put intermediate files of the steps of the process, including output from `brain` with enhanced AST and enhanced alerts, plus repairs that may be applied. This information is useful for understanding more about a particular repair, for instance if the repair result is not as you expected. The `*.nulldom.json` intermediate files are stored there even if environment variable `pytest_keep` is set to `false`. Output of other individual modules (ear, brain, etc.) are stored in `STEP_DIR` only if environment variable `pytest_keep` is set to `true`.
