@@ -100,16 +100,99 @@ class ASTContext:
     def __repr__(self):
         return f"ASTContext({self.current()})"
 
-    def parent(self, kindonly = False):
-        """Return the parent ASTContext, or None if there is no parent."""
+    def parent(self, kind = False):
+        """Return the parent ASTContext, or None if there is no parent.
+        If kind is True, find the first ancestor that is a map that
+        has a "kind" field.
+        """
         current = self
         while True:
             val = current.path[1]
             if val is None:
                 return None
             current = ASTContext(val, path=True, name_proxy=self.name_proxy)
-            if not kindonly or (isinstance(current, Mapping) and 'kind' in current):
+            if not kind or "kind" in current:
                 return current
+
+    def find_through_parents(self, kind_or_predicate):
+        """Search through parents for a specific type of node.
+
+        The first matching node can be the current node (self).
+
+        If kind_or_predicate is a string, find the first
+        node that has that kind.  If kind_or_predicate is a
+        callable, find the first ancestor for which the result of
+        calling the predicate with the node evaluates to truth.
+        """
+        current = self
+        if callable(kind_or_predicate):
+            check = kind_or_predicate
+        else:
+            check = lambda x: x.is_mapping() and x.get('kind') == kind_or_predicate
+        while True:
+            if check(current):
+                return current
+            val = current.path[1]
+            if val is None:
+                return None
+            current = ASTContext(val, path=True, name_proxy=self.name_proxy)
+
+    def find_through_descendants(self, predicate, found_nothing=None):
+        """Search through descendants for nodes that match predicate.
+
+        The predicate takes a single node as an argument.  It can
+        return True, False, or a tuple of two elements.
+
+        If True or False, the value determines whether the current
+        node is added to the list of returned nodes.
+
+        If the return value is a pair, the behavior is determined by
+        the first element of the pair.  If the first element is True,
+        the second element is added to the list of returned values,
+        and recusrsion will continue on this node.  If the first
+        element is False, the second element is added to the list of
+        returned values, but recursion will stop in this node.  If the
+        first element is None, the second element is returned as the
+        only return value of the traversal (not in a list).
+
+        If nothing is found, the value of found_nothing is returned.
+        """
+        def traverse(node, accumulator):
+            match predicate(node):
+                case True:
+                    accumulator.append(node)
+                    cont = True
+                case False:
+                    cont = True
+                case (None, _) as x:
+                    return x
+                case ((True | False) as c, x):
+                    accumulator.append(x)
+                    cont = c
+                case x:
+                    accumulator.append(x)
+                    cont = True
+            if not cont:
+                return accumulator
+            if node.is_mapping():
+                nodes = node.values()
+            else:
+                nodes = node
+            for x in nodes:
+                if isinstance(x, ASTContext):
+                    match traverse(x, accumulator):
+                        case (None, _) as x:
+                            return x
+                        case x:
+                            accumulator = x
+            return accumulator
+        match traverse(self, list()):
+            case (None, x):
+                return x
+            case []:
+                return found_nothing
+            case x:
+                return x
 
     def root(self):
         """Return the top parent."""
@@ -208,9 +291,7 @@ class Brain(AstVisitor):
         self.preproc_db = ast["preproc_db"]
         self.base_dir = ast["base_dir"]
         self.compile_dir = ast["compile_dir"]
-        self.uninit_vars = {}
         self.var_decls_by_id = {}
-        self.enable_msc12 = ((os.getenv('REPAIR_MSC12') or "").lower() != "false")
         self.no_patch = False
 
         brainstem = Brainstem();
@@ -296,6 +377,7 @@ class Brain(AstVisitor):
                 # relative to the base_dir.
                 a['file'] = os.path.join(self.base_dir, a['file'])
             a['file'] = os.path.realpath(a['file'])
+            # column is optional, so we use a.get() to retrieve it
             (filename, line, col, rule)  = (a['file'], int(a['line']), a.get("column"), a['rule'])
             a["alert_id"] = cur_alert_id
             cur_alert_id += 1
@@ -439,6 +521,7 @@ class Brain(AstVisitor):
             # This is primarily for alerts marked as "duplicates".
             if "repair_algo" in a:
                 continue
+            # column is optional, so we use a.get() to retrieve it
             (filename, line, col)  = (a['file'], int(a['line']), int(a.get("column",-1)))
             lc = (line, col)
             nodes = self.locate(filename, lc)

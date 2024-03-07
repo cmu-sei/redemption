@@ -43,34 +43,19 @@ class Alert(OrderedDict):
     def attempt_patch(self, context):
         raise NotImplementedError
 
-    def mark_skipped_alert(self, reason):
-        match self:
-            case {"repair_algo": ["skip", kwargs]}:
-                kwargs["why"].append(reason)
-            case _:
-                self["repair_algo"] = ["skip", {"why": [reason]}]
-
-
-def get_decl_of_var(node):
-    if node["kind"] == "VarDecl":
-        return node
-    if node["kind"] != "DeclRefExpr":
-        return None
-    decl_id = node.get("referencedDecl",{}).get("prevId")
-    if not decl_id:
-        return None
-    decl_node = node.var_decls_by_id.get(decl_id)
-    if not decl_node:
-        return None
-    return decl_node
-
-
-def get_enclosing_function(node):
-    while node is not None:
-        if node.is_mapping() and node.get("kind") == "FunctionDecl":
+    @staticmethod
+    def get_decl_of_var(node):
+        if node["kind"] == "VarDecl":
             return node
-        node = node.parent()
-    return None
+        if node["kind"] != "DeclRefExpr":
+            return None
+        decl_id = node.get("referencedDecl",{}).get("prevId")
+        if not decl_id:
+            return None
+        decl_node = node.var_decls_by_id.get(decl_id)
+        if not decl_node:
+            return None
+        return decl_node
 
 class NullAlert(Alert):
     """An alert that will not repair anything"""
@@ -98,7 +83,7 @@ class EXP33_C(Alert):
         var = get_uninit_var_name(self)
         if var is None:
             return None
-        decl_node = get_decl_of_var(context)
+        decl_node = self.get_decl_of_var(context)
         if decl_node is None:
             return None
         self.decl_node = decl_node
@@ -154,7 +139,7 @@ class MSC12_C(Alert):
         self["repair_algo"] = ["msc12c", {}]
         macro_file = get_dict_path(context, 'range', 'begin', 'spellingLoc', 'file')
         if macro_file is not None and macro_file.endswith("/assert.h"):
-            self.mark_skipped_alert("False positive: inside an assert")
+            context.mark_skipped_alert(self, "False positive: inside an assert")
             return None
         if self.try_deadinit_var_repair(context):
             self["ast_id"] = context['id']
@@ -211,7 +196,7 @@ class MSC12_C(Alert):
 class EXP34_C(Alert):
 
     def get_error_handler_at_cursor(self, context):
-        fn_decl_node = get_enclosing_function(context)
+        fn_decl_node = context.find_through_parents("FunctionDecl")
         try:
             eh = context.error_handling_db[fn_decl_node["id"]]["error_handler"]
             error_handler = {"handle_error": eh}
@@ -219,29 +204,16 @@ class EXP34_C(Alert):
             error_handler = dict()
         return error_handler
 
-    class FoundException(Exception):
-        pass
-
-    class Visitor(AstVisitor):
-        def __init__(self, alert):
-            super().__init__()
-            self.alert = alert
-
-        def previsit(self, node):
+    def find_dereference_locus(self, node):
+        def match_dereference(node):
             match node:
                 case ({'kind': "UnaryOperator", "opcode": "*"}
                       | {'kind': "ArraySubscriptExpr"}
                       | {'kind': "MemberExpr", "isArrow": _}):
-                    self.alert.context = node
-                    raise self.alert.FoundException()
-
-    def find_dereference_locus(self, node):
-        visitor = self.Visitor(self)
-        try:
-            visitor.visit(node)
-        except self.FoundException:
-            return True
-        return False
+                    return (None, node)
+            return False
+        self.context = node.find_through_descendants(match_dereference)
+        return self.context is not None
 
     def attempt_repair(self, context):
         match self:
