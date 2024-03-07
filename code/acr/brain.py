@@ -446,6 +446,7 @@ class Brain(AstVisitor):
                 dom_checks = self.get_dominating_null_checks(cur_alert)
                 if dom_checks:
                     self.mark_skipped_alert(cur_alert, "Dominated by the following nullness checks (identified by (line, col) pairs): %s" % dom_checks)
+                    cur_alert["is_false_positive"] = True
 
 
     def mark_dependent_alerts(self):
