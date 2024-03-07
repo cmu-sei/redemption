@@ -26,6 +26,8 @@
 // DM23-2165
 // </legal>
 
+#include <stdlib.h>
+
 #define null_check(p_expr, ...)                             \
   ({ typeof(p_expr) _sei_acr_temp_bc_p = (p_expr);          \
     if (!_sei_acr_temp_bc_p) {                                               \
