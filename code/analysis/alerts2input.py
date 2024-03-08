@@ -84,7 +84,7 @@ SELECT * FROM Alerts, Checkers WHERE Checkers.tool="''' + tool + '''" AND Checke
             csv_reader = csv.DictReader(in_file, dialect="excel")
             for data in csv_reader:
                 if "CWE" in data.keys() and data["rule"] is None:
-                    data["rule"] = data["CWE"]
+                    data["rule"] = "CWE-" + data["CWE"]
                 if "NONE" == data["rule"]:
                     continue
 

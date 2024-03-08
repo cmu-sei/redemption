@@ -1,6 +1,6 @@
 [
   {
-    "rule": "476",
+    "rule": "CWE-476",
     "file": "builtin/push.c",
     "line": "671",
     "column": "6",
@@ -9,7 +9,7 @@
     "message": "Either the condition '!remote' is redundant or there is possible null pointer dereference: remote."
   },
   {
-    "rule": "476",
+    "rule": "CWE-476",
     "file": "reftable/block.c",
     "line": "445",
     "column": "40",
@@ -18,7 +18,7 @@
     "message": "Either the condition 'blockp' is redundant or there is possible null pointer dereference: blockp."
   },
   {
-    "rule": "476",
+    "rule": "CWE-476",
     "file": "builtin/fast-import.c",
     "line": "1286",
     "column": "31",
@@ -27,7 +27,7 @@
     "message": "Either the condition '!c' is redundant or there is possible null pointer dereference: c."
   },
   {
-    "rule": "476",
+    "rule": "CWE-476",
     "file": "builtin/fast-import.c",
     "line": "2548",
     "column": "22",
@@ -36,7 +36,7 @@
     "message": "Either the condition '!buf' is redundant or there is possible null pointer dereference: buf."
   },
   {
-    "rule": "476",
+    "rule": "CWE-476",
     "file": "builtin/fast-import.c",
     "line": "3332",
     "column": "3",
@@ -45,7 +45,7 @@
     "message": "Either the condition '!f' is redundant or there is possible null pointer dereference: f."
   },
   {
-    "rule": "476",
+    "rule": "CWE-476",
     "file": "builtin/unpack-objects.c",
     "line": "238",
     "column": "23",
@@ -54,7 +54,7 @@
     "message": "Either the condition '!obj_buf' is redundant or there is possible null pointer dereference: obj_buf."
   },
   {
-    "rule": "476",
+    "rule": "CWE-476",
     "file": "builtin/unpack-objects.c",
     "line": "300",
     "column": "3",
@@ -63,7 +63,7 @@
     "message": "Either the condition '!obj' is redundant or there is possible null pointer dereference: obj."
   },
   {
-    "rule": "476",
+    "rule": "CWE-476",
     "file": "builtin/unpack-objects.c",
     "line": "411",
     "column": "3",
@@ -72,7 +72,7 @@
     "message": "Either the condition '!blob' is redundant or there is possible null pointer dereference: blob."
   },
   {
-    "rule": "476",
+    "rule": "CWE-476",
     "file": "builtin/rev-parse.c",
     "line": "721",
     "column": "10",
@@ -81,7 +81,7 @@
     "message": "Either the condition '!gitdir' is redundant or there is possible null pointer dereference: gitdir."
   },
   {
-    "rule": "476",
+    "rule": "CWE-476",
     "file": "builtin/rev-parse.c",
     "line": "772",
     "column": "17",
@@ -90,7 +90,7 @@
     "message": "Either the condition '!arg' is redundant or there is possible null pointer dereference: arg."
   },
   {
-    "rule": "476",
+    "rule": "CWE-476",
     "file": "trace2/tr2_tgt_normal.c",
     "line": "173",
     "column": "37",
@@ -99,7 +99,7 @@
     "message": "Either the condition 'parent_names' is redundant or there is possible null pointer dereference: parent_names++."
   },
   {
-    "rule": "476",
+    "rule": "CWE-476",
     "file": "builtin/checkout.c",
     "line": "788",
     "column": "29",
@@ -108,7 +108,7 @@
     "message": "Either the condition '!tree' is redundant or there is possible null pointer dereference: tree."
   },
   {
-    "rule": "476",
+    "rule": "CWE-476",
     "file": "builtin/branch.c",
     "line": "853",
     "column": "19",
@@ -117,7 +117,7 @@
     "message": "Either the condition '!branch' is redundant or there is possible null pointer dereference: branch."
   },
   {
-    "rule": "476",
+    "rule": "CWE-476",
     "file": "builtin/fetch.c",
     "line": "623",
     "column": "4",

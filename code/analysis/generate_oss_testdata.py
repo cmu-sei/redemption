@@ -40,7 +40,7 @@
 #   cd data/test
 #   for CODE in git zeek; do
 #     for TOOL in cppcheck; do
-#       for RULE in 476 561; do
+#       for RULE in CWE-476 CWE-561; do
 #         python3 ../../code/analysis/generate_oss_testdata.py ../$TOOL/$CODE/${TOOL}_cwe.tsv $CODE /oss/$CODE $RULE $TOOL ../compile_commands.$CODE.json > ./$CODE.$TOOL.$RULE.test.yml
 #   done ; done ; done
 #
@@ -78,7 +78,7 @@ def run(alerts_file, codebase, base_dir, rule, tool, compile_cmds_file):
             if "tool" in data.keys() and data["tool"] != tool:
                 continue
             if "CWE" in data.keys():
-                data["rule"] = data["CWE"]
+                data["rule"] = "CWE-" + data["CWE"]
             if "rule" in data.keys() and data["rule"] != rule:
                 continue
             paths.add(data["Path"])
