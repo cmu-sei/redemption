@@ -133,7 +133,11 @@ A determination of whether the alert indicates a weakness in the code (true), do
  
  * repairable (true|false)
  
-Whether we believe the Redemption tool should repair the code (true) or not. 
+Whether we believe the Redemption tool should repair the code, regardless of whether the alert is true or a false positive.
+ 
+ * is-false-positive (true|false)
+ 
+This flag indicates if the Redemption tool determined that an alert is a false positive and thus warrants no repair. We expect this flag to be false if Redemption provided a repair, or provided no repair for other reasons. Ideally this flag correlates with the alert actually being a false positive (even though we are more interested in repairing false positives than identifying them.)
  
  * satisfactory (true|wontfix|false)
 
@@ -147,16 +151,12 @@ Finally, satisfactory=false means that the tool's output is incorrect, and we tr
 
 In theory, the experiment is concluded when there are no remaining alerts with satisfactory=false. All alerts we examine will have satisfactory to be true or wontfix.
 
-There is also two features that can be determined from running the Redemption tool on the test case.
+There is also a feature that can be determined from running the Redemption tool on the test case.
 
  * patch (empty|nonempty)
 
 Indicates if the Redemption tool actually proposed a repair patch for the code (nonempty).  Alerts from the brain module will contain a 'patch' slot which may be an empty or nonempty list; you can use this to determine the patch feature. Or see if Redemption presented a file distinct from the un-repaired source.
 
- * is-false-positive (true|false)
- 
-This feature indicates if the Redemption tool determined that an alert is a false positive and thus warrants no repair. It would always be false of Redemption provided a repair, or provided no repair for other reasons. Alerts from the brain module will contain a 'why_skipped' slot which contains a list. If there is a string in that list which beings with the text "Dominated by the following nullness checks", then is-false-positive=true, otherwise it is false.
- 
 ##### Result States
 
 After running Redemption on a test case, we can deem its output to always fit in exactly one of these states.
@@ -175,7 +175,7 @@ Implies repairable=true
 
 ###### State C: satisfactory=true, verdict=false, is-false-positive=true
 
-The alert is a false positive, and Redemption recognized this and provided no repair.
+The alert is a false positive, and Redemption correctly recognized this and provided no repair.
 
 Implies repairable=false, patch=empty
 
@@ -191,7 +191,7 @@ The code should have been repaired, and Redemption provided a patch, but the pat
 
 ###### State F: satisfactory=wontfix|false, verdict=false, patch=empty, is-false-positive=false
 
-The alert was a false positive, and the code wasn't repaired, but for reasons other than the alert being deemed a false-positive
+The alert was a false positive, and Redemption provided no repair. However, Redemption did not acknowledge that the alert was a false positive (and thus its lack of repair was for a completely different reason.)
 
 ###### State G: satisfactory=wontfix|false, verdict=false, patch=nonempty
 
