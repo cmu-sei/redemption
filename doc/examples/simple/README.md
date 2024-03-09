@@ -27,7 +27,7 @@ This is a demo scenario involving the Redemption of False Positives project.  Un
 
 ### Source Code
 
-We are using the `test_errors.c` source file (which is very similar to [this test example](../../../code/acr/test/test_errors.c).  This compiles using Clang with no warnings, but segfaults when run.  This is because it dereference null pointers on lines 11, 21, 31, and 41.
+We are using the `test_errors.c` source file (which is very similar to [this test example](../../../code/acr/test/test_errors.c).  This compiles using Clang with no warnings, but segfaults when run.  This is because it dereferences null pointers on lines 11, 21, 31, and 41.
 
 ### The "good" directory
 
@@ -39,7 +39,7 @@ diff -ru . good
 
 ### Static Analysis
 
-Produce static analysis on the given C file, using Cppcheck 2.4.1.  Before generating this output, you should have the `factunder/cppcheck:latest` Docker image downloaded.
+Produce static analysis on the given C file, using Cppcheck 2.4.1.  Before generating this output, you should have the `facthunder/cppcheck:latest` Docker image downloaded.
 
 ``` sh
 docker pull facthunder/cppcheck:latest
