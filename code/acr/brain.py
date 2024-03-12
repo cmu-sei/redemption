@@ -465,9 +465,12 @@ class Brain(AstVisitor):
         loc, _ = item
         return (loc.file, loc.begin, (0, loc.end))
 
-    def minimum_spanning(self, node, lc):
+    def minimum_spanning(self, node, lc, filename):
         while node is not None:
             if node.is_mapping():
+                fn = get_dict_path(node, "range", "file")
+                if fn != filename:
+                    return None
                 begin = node.get_begin_lc()
                 end = node.get_end_lc()
                 if end is not None and begin is not None and begin <= lc and end > lc:
@@ -502,13 +505,15 @@ class Brain(AstVisitor):
                 idx, (key, node) = self.intervals.find_le((filename, lc, (1, None)))
                 if key.file != filename:
                     return None
-                new_node = self.minimum_spanning(node, lc)
+                new_node = self.minimum_spanning(node, lc, filename)
                 if new_node is node:
                     items = (self.intervals[i] for i in range(idx, 0, -1))
                     nodes = takewhile(lambda x: (x[0].file == filename
                                                       and x[0].begin == key.begin),
                                            items)
                     return ([x[1] for x in nodes], True)
+                elif new_node is None:
+                    return None
                 else:
                     return ([new_node], False)
         except ValueError:
