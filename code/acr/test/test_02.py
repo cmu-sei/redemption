@@ -133,7 +133,6 @@ def test_end_to_end_test():
         step_dir_prev_existed = False
     os.system("mkdir -p out")
     os.system("rm -f out/simple_null_check.c")
-    #os.system("cd ..; python3 end_to_end_acr.py test/simple_null_check.c test/simple_null_check_compile_cmds.json test/simple_null_check.alerts.json -o test/out/simple_null_check.repairs.json --ast-dir test/out --repaired-src test/out")
     source_file="test/simple_null_check.c"
     compile_commands="autogen"
     alerts="test/simple_null_check.alerts.json"
@@ -151,7 +150,34 @@ def test_end_to_end_test():
     finally:
         os.chdir(cur_dir)
     assert cmp_file_normalize("test_e2e_02.repaired.c", "out/simple_null_check.c")
-    #assert cmp_file_normalize("test02.parser.answer.json", "out/simple_null_check.c.ast.json", delete_ids_and_filenames)
+    fixed_c_file = out_src_dir+"/"+source_file
+    test_runner.cleanup(source_file, out_location=out_src_dir, step_dir="out", additional_files="out/test02.ast.json out/simple_null_check.repairs.json out/simple_null_check.c out/acr.h")
+    test_runner.dir_final_cleanup("out/header_in_subdir", step_dir_prev_existed=step_dir_prev_existed)
+
+def test_CWE_476_test():
+    if(os.path.exists("out")):
+        step_dir_prev_existed = True
+    else:
+        step_dir_prev_existed = False
+    os.system("mkdir -p out")
+    os.system("rm -f out/simple_null_check.c")
+    source_file="test/simple_null_check.c"
+    compile_commands="autogen"
+    alerts="test/simple_null_check.CWE-476.alerts.json"
+    out_src_dir="test/out"
+
+    cur_dir = os.getcwd()
+    os.chdir("..")
+    try:
+        end_to_end_acr.run(
+            source_file=source_file,
+            compile_commands=compile_commands,
+            alerts=alerts,
+            step_dir=out_src_dir,
+            out_src_dir=out_src_dir)
+    finally:
+        os.chdir(cur_dir)
+    assert cmp_file_normalize("test_e2e_02.repaired.c", "out/simple_null_check.c")
     fixed_c_file = out_src_dir+"/"+source_file
     test_runner.cleanup(source_file, out_location=out_src_dir, step_dir="out", additional_files="out/test02.ast.json out/simple_null_check.repairs.json out/simple_null_check.c out/acr.h")
     test_runner.dir_final_cleanup("out/header_in_subdir", step_dir_prev_existed=step_dir_prev_existed)

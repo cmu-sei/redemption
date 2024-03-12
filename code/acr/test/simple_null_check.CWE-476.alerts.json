@@ -1,0 +1,7 @@
+[
+  {
+    "rule": "CWE-476",
+    "file": "simple_null_check.c",
+    "line": 8
+  }
+]

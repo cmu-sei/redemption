@@ -275,11 +275,21 @@ class EXP34_C(Alert):
             [byte_end, byte_end, closer]]]
         self["patch"] = [edit]
 
+class CWE_476(EXP34_C):
+    # Currently an exact duplicate of EXP34_C
+    pass
+
+class CWE_561(MSC12_C):
+    # Currently an exact duplicate of MSC12_C
+    pass
+
 
 rule_list = {
+    "CWE-476": CWE_476,
+    "CWE-561": CWE_561,
     "EXP33-C": EXP33_C,
-    "MSC12-C": MSC12_C,
-    "EXP34-C": EXP34_C
+    "EXP34-C": EXP34_C,
+    "MSC12-C": MSC12_C
 }
 
 

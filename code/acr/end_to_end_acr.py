@@ -74,7 +74,7 @@ def main():
 
 def run(source_file, compile_commands, alerts, *, out_src_dir=None, step_dir=None, base_dir=None, repair_includes_mode=None, repair_in_place=False, no_patch=False):
     if os.getenv('acr_emit_invocation'):
-        print("end_to_end_acr.py{}{}{}{}{}{}{} {} {} {}".format(
+        print("end_to_end_acr.py{}{}{}{}{}{} {} {} {}".format(
             f" --repaired-src {out_src_dir}" if out_src_dir else "",
             f" --step-dir {step_dir}" if step_dir else "",
             f" --base-dir {base_dir}" if base_dir else "",
