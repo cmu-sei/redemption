@@ -43,6 +43,14 @@ This command starts a Bash shell in the container:
 docker run -it --rm docker.cc.cert.org/redemption/distrib  bash
 ```
 
+Note that this container contains the entire Redemption code...this is useful if you intend to run Redemption, but have no plans to modify or tweak the code.  If you plan to modify the code, use the `prereq` container instead:
+
+```sh
+docker run -it --rm -v ${PWD}:/host -w /host  docker.cc.cert.org/redemption/prereq  bash
+```
+
+Unlike the `distrib` container, the `prereq` container does not contain the Redemption code...it just contains dependencies necessary to run Redemption. But the Redemption code lives outside the container, on a shared volume.  This allows you to modify the Redemption code on the host, while accessing it within the container.
+
 <a name="simple-sanity-test"></a>
 ### Simple Sanity Test
 
