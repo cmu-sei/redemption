@@ -36,6 +36,7 @@ import argparse
 import tempfile
 import ear, brain, hand
 import pprint
+import hashlib
 from tempfile import TemporaryDirectory
 from collections import OrderedDict, defaultdict
 from util import *
@@ -60,7 +61,7 @@ def parse_args():
                         help="Directory to write intermediate files of the steps of the process. (default: temporary directory)")
     parser.add_argument("-b", "--base-dir", type=str, dest="base_dir", required=True,
         help="Base directory of the project")
-    parser.add_argument("-e", type=str, dest="combined_hand_out", required=True,
+    parser.add_argument("-e", type=str, dest="combined_hand_out", required=False,
         help="Output file (JSON) for combined edits")
     parser.add_argument('--inject-hand-output', action="store_true", required=False,
         help="If hand-module output files already exist, use them instead of regenerating them (this is for debugging/testing purposes)")
@@ -170,7 +171,7 @@ def combine_hand_outs(indiv_hand_filenames):
 
     return combined_alert_list
 
-def run(*, compile_cmds_file, alerts, base_dir, combined_hand_out, step_dir=None, out_src_dir=None, inject_hand_output=False):
+def run(*, compile_cmds_file, alerts, base_dir, combined_hand_out=None, step_dir=None, out_src_dir=None, inject_hand_output=False):
     base_dir = os.path.realpath(base_dir)
     compile_commands = read_json_file(compile_cmds_file)
     num_tus = len(compile_commands)
@@ -183,6 +184,11 @@ def run(*, compile_cmds_file, alerts, base_dir, combined_hand_out, step_dir=None
     if step_dir is None:
         temp_step_dir = TemporaryDirectory()
         step_dir = temp_step_dir.name
+
+    if combined_hand_out is None:
+        hashval = hashlib.sha256(read_whole_file(compile_cmds_file, "b") + read_whole_file(alerts, "b")).hexdigest()[:24]
+        base_name = strip_filename_extension(os.path.basename(compile_cmds_file))
+        combined_hand_out = f"{step_dir}/{hashval}.combined.json"
 
     try:
         for (tu_index, cmd) in enumerate(compile_commands):
