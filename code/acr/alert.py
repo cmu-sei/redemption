@@ -84,7 +84,7 @@ class EXP33_C(Alert):
         if var is None:
             return None
         decl_node = self.get_decl_of_var(context)
-        if decl_node is None:
+        if decl_node is None or decl_node.get("name") != var:
             return None
         self.decl_node = decl_node
         self["repair_algo"] = ["initialize_var", {"decl_id": decl_node["id"]}]
@@ -102,10 +102,10 @@ class EXP33_C(Alert):
         elif self.decl_node["type"].get("desugaredQualType","").startswith(("struct","union")):
             init_val = "{}"
         try:
-            end = self.decl_node.get_end()
-            byte_end = end['offset'] + end['tokLen']
+            loc = self.decl_node["loc"]
+            byte_end = loc['offset'] + loc['tokLen']
         except KeyError:
-            self["why_skipped"] = "AST node is missing range offset information"
+            self["why_skipped"] = "AST node is missing VarDecl location information"
             self["patch"] = []
             return False
         edit = [self['file'], [
