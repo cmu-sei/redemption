@@ -205,7 +205,7 @@
     "tool": "clang-tidy",
     "checker": "clang-analyzer-core.NonNullParamChecker",
     "message": "Null pointer passed to 1st parameter expecting 'nonnull'",
-    "satisfactory": "false",
+    "satisfactory": "true",
     "verdict": "complex",
     "repairable": "true",
     "rationale": "The alert is for the following line: `chmod(*final_name, 0444);` The column number for the alert isn't very helpful. The first parameter to the function (specified in the alert message, so this narrows our code examination on the alerted-about-line) is `const char **final_name`. This parameter `*final_name` could have two potential problems: `final_name` could be NULL, and, if it isn't, then `*final_name` could be NULL. The former problem is Dependent, since if `final_name` were NULL, it is dereferenced on line 1490, and should be repaired there. However, the alert message specifies that NULL might be the parameter passed to `chmod()`, which is the latter problem. Using the project's alert auditing rule 5B, we audit only for that. Due to complexity of analysis, we assume the verdict is true. ACR should repair that.",

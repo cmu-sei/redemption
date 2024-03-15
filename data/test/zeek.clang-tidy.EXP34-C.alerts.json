@@ -387,10 +387,10 @@
     "tool": "clang-tidy",
     "checker": "clang-analyzer-core.NullDereference",
     "message": "Access to field 'pSrc' results in a dereference of a null pointer (loaded from variable 'pSub')",
-    "satisfactory": "false",
+    "satisfactory": "true",
     "verdict": "false",
     "repairable": "false",
-    "rationale": "The line immediately before checks if `pSub` is null, so wouldn't reach this line if it was. This line 138598 wouldn't be a problem (`pSubSrc = pSub->pSrc;`). The *next* line might be a problem, though. (It is `nSubSrc = pSubSrc->nSrc;`), if pSub->pSrc equalled null. There's not a check for null within the function, for that field in that next line. However, since that next line number is different than the alerted-for line, we ignore that next line's possible problem (using our auditing rules). Thus, this alert is a false positive. Although calls to `assert` (i.e., `#define NDEBUG`) go away in release builds, we decided that `assert()` statements are good enough, since they communicate the programmer's intentions",
+    "rationale": "The line immediately before checks if `pSub` is null, so wouldn't reach this line if it was. This line 138598 wouldn't be a problem (`pSubSrc = pSub->pSrc;`). The *next* line might be a problem, though. (It is `nSubSrc = pSubSrc->nSrc;`), if pSub->pSrc equalled null. There's not a check for null within the function, for that field in that next line. However, since that next line number is different than the alerted-for line, we ignore that next line's possible problem (using our auditing rules). Thus, this alert is a false positive. Although calls to `assert` (i.e., `#define NDEBUG`) go away in release builds, we decided that `assert()` statements are good enough, since they communicate the programmer's intentions.",
     "randomness": "true",
     "issue": "REM-213"
   },
