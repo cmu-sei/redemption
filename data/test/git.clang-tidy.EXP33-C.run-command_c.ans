@@ -1,0 +1,236 @@
+--- /host/data/test/out/run-command.c	2024-03-15 19:07:07.468291888 +0000
++++ /oss/git/run-command.c	2024-03-05 20:45:27.543563334 +0000
+@@ -1,5 +1,3 @@
+-#include "acr.h"
+-
+ #include "cache.h"
+ #include "run-command.h"
+ #include "exec-cmd.h"
+@@ -105,7 +103,7 @@
+ 
+ static void clear_child_for_cleanup(pid_t pid)
+ {
+-	struct child_to_clean **pp = NULL;
++	struct child_to_clean **pp;
+ 
+ 	for (pp = &children_to_clean; *pp; pp = &(*pp)->next) {
+ 		struct child_to_clean *clean_me = *pp;
+@@ -441,11 +439,11 @@
+ static char **prep_childenv(const char *const *deltaenv)
+ {
+ 	extern char **environ;
+-	char **childenv = NULL;
++	char **childenv;
+ 	struct string_list env = STRING_LIST_INIT_DUP;
+ 	struct strbuf key = STRBUF_INIT;
+-	const char *const *p = NULL;
+-	int i = 0;
++	const char *const *p;
++	int i;
+ 
+ 	/* Construct a sorted string list consisting of the current environ */
+ 	for (p = (const char *const *) environ; p && *p; p++) {
+@@ -541,8 +539,8 @@
+ 
+ static int wait_or_whine(pid_t pid, const char *argv0, int in_signal)
+ {
+-	int status = 0, code = -1;
+-	pid_t waiting = 0;
++	int status, code = -1;
++	pid_t waiting;
+ 	int failed_errno = 0;
+ 
+ 	while ((waiting = waitpid(pid, &status, 0)) < 0 && errno == EINTR)
+@@ -582,8 +580,8 @@
+ static void trace_add_env(struct strbuf *dst, const char *const *deltaenv)
+ {
+ 	struct string_list envs = STRING_LIST_INIT_DUP;
+-	const char *const *e = NULL;
+-	int i = 0;
++	const char *const *e;
++	int i;
+ 	int printed_unset = 0;
+ 
+ 	/* Last one wins, see run-command.c:prep_childenv() for context */
+@@ -621,7 +619,7 @@
+ 	for (i = 0; i < envs.nr; i++) {
+ 		const char *var = envs.items[i].string;
+ 		const char *val = envs.items[i].util;
+-		const char *oldval = NULL;
++		const char *oldval;
+ 
+ 		if (!val)
+ 			continue;
+@@ -660,10 +658,10 @@
+ 
+ int start_command(struct child_process *cmd)
+ {
+-	int need_in = 0, need_out = 0, need_err = 0;
++	int need_in, need_out, need_err;
+ 	int fdin[2], fdout[2], fderr[2];
+-	int failed_errno = 0;
+-	char *str = NULL;
++	int failed_errno;
++	char *str;
+ 
+ 	/*
+ 	 * In case of errors we must keep the promise to close FDs
+@@ -733,7 +731,7 @@
+ {
+ 	int notify_pipe[2];
+ 	int null_fd = -1;
+-	char **childenv = NULL;
++	char **childenv;
+ 	struct strvec argv = STRVEC_INIT;
+ 	struct child_err cerr;
+ 	struct atfork_state as;
+@@ -769,7 +767,7 @@
+ 	cmd->pid = fork();
+ 	failed_errno = errno;
+ 	if (!cmd->pid) {
+-		int sig = 0;
++		int sig;
+ 		/*
+ 		 * Ensure the default die/error/warn routines do not get
+ 		 * called, they can take stdio locks and malloc.
+@@ -995,7 +993,7 @@
+ 
+ int run_command(struct child_process *cmd)
+ {
+-	int code = 0;
++	int code;
+ 
+ 	if (cmd->out < 0 || cmd->err < 0)
+ 		BUG("run_command with a pipe can cause deadlock");
+@@ -1015,7 +1013,7 @@
+ static void *run_thread(void *data)
+ {
+ 	struct async *async = data;
+-	intptr_t ret = 0;
++	intptr_t ret;
+ 
+ 	if (async->isolate_sigpipe) {
+ 		sigset_t mask;
+@@ -1136,9 +1134,9 @@
+ 
+ int start_async(struct async *async)
+ {
+-	int need_in = 0, need_out = 0;
++	int need_in, need_out;
+ 	int fdin[2], fdout[2];
+-	int proc_in = 0, proc_out = 0;
++	int proc_in, proc_out;
+ 
+ 	need_in = async->in < 0;
+ 	if (need_in) {
+@@ -1302,7 +1300,7 @@
+ static int pump_io_round(struct io_pump *slots, int nr, struct pollfd *pfd)
+ {
+ 	int pollsize = 0;
+-	int i = 0;
++	int i;
+ 
+ 	for (i = 0; i < nr; i++) {
+ 		struct io_pump *io = &slots[i];
+@@ -1332,7 +1330,7 @@
+ 			continue;
+ 
+ 		if (io->type == POLLOUT) {
+-			ssize_t len = 0;
++			ssize_t len;
+ 
+ 			/*
+ 			 * Don't use xwrite() here. It loops forever on EAGAIN,
+@@ -1378,8 +1376,8 @@
+ 
+ static int pump_io(struct io_pump *slots, int nr)
+ {
+-	struct pollfd *pfd = NULL;
+-	int i = 0;
++	struct pollfd *pfd;
++	int i;
+ 
+ 	for (i = 0; i < nr; i++)
+ 		slots[i].error = 0;
+@@ -1579,8 +1577,8 @@
+ static int pp_start_one(struct parallel_processes *pp,
+ 			const struct run_process_parallel_opts *opts)
+ {
+-	size_t i = 0;
+-	int code = 0;
++	size_t i;
++	int code;
+ 
+ 	for (i = 0; i < opts->processes; i++)
+ 		if (pp->children[i].state == GIT_CP_FREE)
+@@ -1634,7 +1632,7 @@
+ 			     const struct run_process_parallel_opts *opts,
+ 			     int output_timeout)
+ {
+-	int i = 0;
++	int i;
+ 
+ 	while ((i = poll(pp->pfd, opts->processes, output_timeout) < 0)) {
+ 		if (errno == EINTR)
+@@ -1673,8 +1671,8 @@
+ static int pp_collect_finished(struct parallel_processes *pp,
+ 			       const struct run_process_parallel_opts *opts)
+ {
+-	int code = 0;
+-	size_t i = 0;
++	int code;
++	size_t i;
+ 	int result = 0;
+ 
+ 	while (pp->nr_processes > 0) {
+@@ -1738,7 +1736,7 @@
+ 
+ void run_processes_parallel(const struct run_process_parallel_opts *opts)
+ {
+-	int i = 0, code = 0;
++	int i, code;
+ 	int output_timeout = 100;
+ 	int spawn_cap = 4;
+ 	struct parallel_processes_for_signal pp_sig;
+@@ -1794,7 +1792,7 @@
+ 
+ int run_auto_maintenance(int quiet)
+ {
+-	int enabled = 0;
++	int enabled;
+ 	struct child_process maint = CHILD_PROCESS_INIT;
+ 
+ 	if (!git_config_get_bool("maintenance.auto", &enabled) &&
+@@ -1811,7 +1809,7 @@
+ 
+ void prepare_other_repo_env(struct strvec *env, const char *new_git_dir)
+ {
+-	const char * const *var = NULL;
++	const char * const *var;
+ 
+ 	for (var = local_repo_env; *var; var++) {
+ 		if (strcmp(*var, CONFIG_DATA_ENVIRONMENT) &&
+@@ -1827,10 +1825,10 @@
+ 				      unsigned int timeout_sec)
+ {
+ 	enum start_bg_result sbgr = SBGR_ERROR;
+-	int ret = 0;
+-	int wait_status = 0;
+-	pid_t pid_seen = 0;
+-	time_t time_limit = 0;
++	int ret;
++	int wait_status;
++	pid_t pid_seen;
++	time_t time_limit;
+ 
+ 	/*
+ 	 * We do not allow clean-on-exit because the child process
+@@ -1886,7 +1884,7 @@
+ 			 * The callback said to give it more time to boot up
+ 			 * (subject to our timeout limit).
+ 			 */
+-			time_t now = 0;
++			time_t now;
+ 
+ 			time(&now);
+ 			if (now < time_limit)
