@@ -27,10 +27,16 @@
 // </legal>
 
 #include <stdlib.h>
+#include <stdio.h>
+
+// Note: `__typeof__` is a GCC/Clang extension; change `__typeof__` to `typeof`
+// for C23-compliant compilers that don't recognize `__typeof__`.
+// This file also uses the GCC "statement-expr" extension; see
+// https://gcc.gnu.org/onlinedocs/gcc/Statement-Exprs.html
 
 #define null_check(p_expr, ...)                             \
-  ({ typeof(p_expr) _sei_acr_temp_bc_p = (p_expr);          \
-    if (!_sei_acr_temp_bc_p) {                                               \
+  ({ __typeof__(p_expr) _sei_acr_temp_bc_p = (p_expr);      \
+    if (!_sei_acr_temp_bc_p) {                              \
         __VA_ARGS__;                                        \
         printf("Exiting due to detected impending null pointer dereference in file %s, function %s, line %d\n", __FILE__, __func__, __LINE__); \
         exit(1);                                            \
