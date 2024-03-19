@@ -67,10 +67,10 @@
     "tool": "cppcheck",
     "checker": "uninitvar",
     "message": "Uninitialized variable: myHostID",
-    "satisfactory": "false",
-    "verdict": "true",
+    "satisfactory": "wontfix",
+    "verdict": "false",
     "repairable": "true",
-    "rationale": "The code line alerted on is `rc = proxyGetHostID(myHostID, &pError);` `myHostID` is declared on line 42138: `uuid_t myHostID;` Per GPT, it's a type commonly used to represent a Universally Unique Identifier, where `the specific declaration of uuid_t` can depend on the library or platform you're using` and often the OSSP UUID library is used (e.g., `#include <uuid/uid.h>`. There's no initialization within the code between the declaration of `myHostID` and using it as a function parameter. The `uuid_t` depends on the operating system, and type affects possible repair. E.g., if it's a struct, then to initialize it you need to know which fields to initialize. We can do an automated repair of this by changing `uuid_t myHostID;` to `uuid_t myHostID = {};`. Using `= {}` will default-initialize a struct, union, array (that is, set all individual types to 0), per the C23 standard's s6.7.10p11.",
+    "rationale": "In fact, this is dead code. It lies inside an #ifdef that spans lines 41751 to 42768. Cppcheck reports alerts in ifdef'd-out code, but clang doesn't build ASTs out of them, so repairing this will require something fancier than Clang AST's.  More details: The uuid_t type is defined as an array of 16 unsigned chars, both in Linux and Mac (https://developer.apple.com/documentation/foundation/uuid_t), and this is Mac-specific code.  Thus, line 42138 creates the array, so its pointer points to valid space, but leaves the array elements uninitialized. The elements are initialized later using memset() inside proxyGetHostID(). Since myHostID is an array, passing it directly to to proxyGetHostID() is correct, because it devolves to a pointer. Therefore this alert is a false positive. However an automated repair is easy: changing `uuid_t myHostID;` to `uuid_t myHostID = {};`. Using `= {}` will default-initialize a struct, union, array (that is, set all individual types to 0), per the C23 standard's s6.7.10p11.",
     "randomness": "random",
     "issue": "REM-229"
   },
