@@ -1,0 +1,31 @@
+default:
+  tags:
+     - zarf
+# For local runner use:
+#    - local-scale-runner
+
+stages:
+  - build
+  - test
+  - deploy
+
+build:
+  stage: build
+  script:
+    - make build
+
+test:
+  stage: test
+  script:
+    - make test
+  artifacts:
+    paths:
+      - cppcheck.xml
+
+deploy:
+  stage: deploy
+  script:
+    - make deploy
+  artifacts:
+    paths:
+      - distrib/*.tgz
