@@ -149,7 +149,7 @@ Currently, that provides this information about required and optional arguments:
 
 ```
 python3 ./code/acr/sup.py --help
-usage: sup.py [-h] -c COMPILE_CMDS_FILE -a ALERTS [-t STEP_DIR] -b BASE_DIR [-e COMBINED_HAND_OUT] [--inject-hand-output]
+usage: sup.py [-h] -c COMPILE_CMDS_FILE -a ALERTS [-t STEP_DIR] -b BASE_DIR [-e COMBINED_BRAIN_OUT] [--inject-brain-output]
               [--repaired-src OUT_SRC_DIR]
 
 Creates repaired source-code files
@@ -165,8 +165,8 @@ options:
                         directory)
   -b BASE_DIR, --base-dir BASE_DIR
                         Base directory of the project
-  -e COMBINED_HAND_OUT  Output file (JSON) for combined edits
-  --inject-hand-output  If hand-module output files already exist, use them instead of regenerating them (this is for
+  -e COMBINED_BRAIN_OUT  Output file (JSON) for combined edits
+  --inject-brain-output  If brain-module output files already exist, use them instead of regenerating them (this is for
                         debugging/testing purposes)
   --repaired-src OUT_SRC_DIR
                         Directory to write repaired source files (or omit to refrain from running the glove module)

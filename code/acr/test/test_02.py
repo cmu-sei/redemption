@@ -396,56 +396,56 @@ def test_super01_normal():
     alerts="super01.alerts.json"
     step_dir="out"
     base_dir="."
-    combined_hand_out="out/super01.combined-hand.json"
+    combined_brain_out="out/super01.combined-brain.json"
     sup.run(
         compile_cmds_file=compile_cmds_file,
         alerts=alerts,
         step_dir=step_dir,
         base_dir=base_dir,
-        combined_hand_out=combined_hand_out)
-    assert cmp_file_normalize("out/super01.combined-hand.json", "super01.normal.combined-hand.json")
+        combined_brain_out=combined_brain_out)
+    assert cmp_file_normalize("out/super01.combined-brain.json", "super01.normal.combined-brain.json")
     test_runner.cleanup(base_dir, out_location=step_dir, test_results_filepath="out", step_dir=step_dir, base_dir=base_dir, additional_files="out/super01*.*")
 
 def test_super01_smell_check():
     os.system("rm -f out/super01*.*")
-    # This test injects a modified version of the hand-module output,
+    # This test injects a modified version of the brain-module output,
     # to test that conflicting repairs are detected.
     compile_cmds_file="super01_compile_cmds.json"
     alerts="super01.alerts.json"
     step_dir="out"
     base_dir="."
-    combined_hand_out="out/super01.combined-hand.json"
-    inject_hand_output=True
-    os.system("cp super01b.tu1.hand-out.smell_check.json out/super01b.tu1.hand-out.json")
+    combined_brain_out="out/super01.combined-brain.json"
+    inject_brain_output=True
+    os.system("cp super01b.tu1.brain-out.smell_check.json out/super01b.tu1.brain-out.json")
     sup.run(
         compile_cmds_file=compile_cmds_file,
         alerts=alerts,
         step_dir=step_dir,
         base_dir=base_dir,
-        combined_hand_out=combined_hand_out,
-        inject_hand_output=True)
-    assert cmp_file_normalize("out/super01.combined-hand.json", "super01.smell-check.combined-hand.json")
+        combined_brain_out=combined_brain_out,
+        inject_brain_output=True)
+    assert cmp_file_normalize("out/super01.combined-brain.json", "super01.smell-check.combined-brain.json")
     test_runner.cleanup(base_dir, out_location=step_dir, test_results_filepath="out", step_dir=step_dir, base_dir=base_dir, additional_files="out/super01*.*")
 
 def test_super01_bothstars():
     os.system("rm -f out/super01*.*")
-    # This test injects a modified version of the hand-module output,
+    # This test injects a modified version of the brain-module output,
     # to test that the conflicting-repair detector isn't too aggressive.
     compile_cmds_file="super01_compile_cmds.json"
     alerts="super01.alerts.json"
     step_dir="out"
     base_dir="."
-    combined_hand_out="out/super01.combined-hand.json"
-    inject_hand_output=True
-    os.system("cp super01a.tu0.hand-out.bothstars.json out/super01a.tu0.hand-out.json")
+    combined_brain_out="out/super01.combined-brain.json"
+    inject_brain_output=True
+    os.system("cp super01a.tu0.brain-out.bothstars.json out/super01a.tu0.brain-out.json")
     sup.run(
         compile_cmds_file=compile_cmds_file,
         alerts=alerts,
         step_dir=step_dir,
         base_dir=base_dir,
-        combined_hand_out=combined_hand_out,
-        inject_hand_output=inject_hand_output)
-    assert cmp_file_normalize("out/super01.combined-hand.json", "super01.bothstars.combined-hand.json")
+        combined_brain_out=combined_brain_out,
+        inject_brain_output=inject_brain_output)
+    assert cmp_file_normalize("out/super01.combined-brain.json", "super01.bothstars.combined-brain.json")
     test_runner.cleanup(base_dir, out_location=step_dir, test_results_filepath="out", step_dir=step_dir, base_dir=base_dir, additional_files="out/super01*.*")
 
 def test_dom_null_derefs():
