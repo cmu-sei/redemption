@@ -1,6 +1,6 @@
-# Redemption Project Simple Demo
+# Redemption Project Codebase Demo
 
-This example demonstrates repairing a single C file with the Redemption tool
+This example demonstrates repairing a multiple-file codebase with the Redemption tool
 
 ## Copyright
 
@@ -25,14 +25,14 @@ subject to its own license.
 DM23-2165
 </legal>
 
-This is a demo scenario involving the Redemption of False Positives project.  Unless stated otherwise, any shell commands you execute should be done in this directory (`doc/examples/simple`)
+This is a demo scenario involving the Redemption of False Positives project.  Unless stated otherwise, any shell commands you execute should be done in this directory (`doc/examples/codebase`)
 
 ## Running the Redemption Tool
 ### Source Code
 
-We are using the `test_errors.c` source file (which is very similar to [this test example](../../../code/acr/test/test_errors.c).  This compiles using Clang with no warnings, but segfaults when run.  This is because it dereference null pointers on lines 11, 21, 31, and 41.
+We are using the `dos2unix` codebase, version 7.5.2. It is freely available from [dos2unix.sourceforge.io/](https://sourceforge.net/projects/dos2unix/files/dos2unix/7.5.2/dos2unix-7.5.2.tar.gz/download).  For this demo, you should download `dos2unix-7.5.2`, unpack it, and place it in a `dos2unix-7.5.2` sub-directory of this directory (`doc/examples/codebase`).
 
-### The "good" directory
+### The `good` directory
 
 This directory contains output for each of the steps below. As you run each step, you should compare your current directory's file contents with the good directory. Assuming your step was run correctly, there will be no differences between the files that appear in both your directory and the good directory.
 
@@ -40,38 +40,46 @@ This directory contains output for each of the steps below. As you run each step
 diff -ru . good
 ```
 
-### Static Analysis
-
-Produce static analysis on the given C file, using Cppcheck 2.4.1.  Before generating this output, you should have the `factunder/cppcheck:latest` Docker image downloaded.
-
-``` sh
-docker pull facthunder/cppcheck:latest
-```
-
-To generate output of the Cppcheck static analysis tool, use this command:
-
-``` sh
-docker run --rm  -v ${PWD}:/host -w /host  facthunder/cppcheck:latest  sh -c 'cppcheck -v --enable="all" --language="c" --force --xml /host/test_errors.c 2> cppcheck.xml'
-```
-
-### Convert to Redemption Input
+### Creating a build file
 
 For the rest of these instructions, you should execute the commands inside the `distrib` Docker container, and `cd` into this directory.  To set this up, use this command:
 
 ``` sh
-docker run -it --rm  docker.cc.cert.org/redemption/distrib  bash
+docker run -it --rm  -v ${PWD}:/host  docker.cc.cert.org/redemption/distrib  bash
 ```
 
 Then, inside the shell this command gives you:
 
 ``` sh
-pushd doc/examples/simple
+pushd doc/examples/codebase
 ```
+
+The following command, when run in the `distrib` container, creates the `compile_commands.json` file for dos2unix:
+
+``` sh
+pushd dos2unix-7.5.2
+bear -- make CC=clang
+make clean
+mv compile_commands.json  ..
+popd
+```
+
+### Static Analysis
+
+Produce static analysis on the given C file, using Clang-tidy 16.0.6, which lives in the Redemption container.  Use this command:
+
+``` sh
+pushd dos2unix-7.5.2
+clang-tidy -checks='*' *.c  > ../clang-tidy.txt
+popd
+```
+
+### Convert to Redemption Input
 
 The next step is to convert the `cppcheck.xml` format into a simple JSON format that the redemption tool understands. The `alerts2input.py` file produces suitable JSON files. So you must run this script first; it will create the `alerts.json` file with the alerts you will use.
 
 ``` sh
-python3 /host/code/analysis/alerts2input.py  /host  cppcheck_oss  cppcheck.xml  alerts.json
+python3 /host/code/analysis/alerts2input.py  ${PWD}/dos2unix-7.5.2  clang_tidy_oss  clang-tidy.txt  alerts.json
 ```
 
 ### Execution
@@ -79,14 +87,14 @@ python3 /host/code/analysis/alerts2input.py  /host  cppcheck_oss  cppcheck.xml  
 Here is an example of how to run a built-in end-to-end automated code repair test, within the container (you can change the `out` directory location or directory name, but you must create that directory before running the command):
 
 ```sh
-EXAMPLE=/host/doc/examples/simple
+EXAMPLE=/host/doc/examples/codebase
 pushd /host/code/acr
-python3 ./end_to_end_acr.py  ${EXAMPLE}/test_errors.c  autogen  ${EXAMPLE}/alerts.json  --repaired-src ${EXAMPLE}/out  --repair-includes false
+python3 sup.py  -c ${EXAMPLE}/compile_commands.json  -a ${EXAMPLE}/alerts.json  -b ${EXAMPLE}/dos2unix-7.5.2  --repaired-src ${EXAMPLE}/out
 popd
 ```
 
 You can see the repairs using this command:
 
 ```sh
-diff -u test_errors.c out
+diff -ru dos2unix-7.5.2 out
 ```

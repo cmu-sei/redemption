@@ -149,7 +149,7 @@ Currently, that provides this information about required and optional arguments:
 
 ```
 python3 ./code/acr/sup.py --help
-usage: sup.py [-h] -c COMPILE_CMDS_FILE -a ALERTS [-t STEP_DIR] -b BASE_DIR -e COMBINED_HAND_OUT [--inject-hand-output]
+usage: sup.py [-h] -c COMPILE_CMDS_FILE -a ALERTS [-t STEP_DIR] -b BASE_DIR [-e COMBINED_HAND_OUT] [--inject-hand-output]
               [--repaired-src OUT_SRC_DIR]
 
 Creates repaired source-code files

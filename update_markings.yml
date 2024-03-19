@@ -80,6 +80,7 @@ Exempt_Files: [
     "data/zeek5/.*.txt",
     "doc/examples/.*/good/.*",
     "doc/examples/.*/.*.c",
+    "doc/examples/codebase/dos2unix.*/.*",
     ]
 
 

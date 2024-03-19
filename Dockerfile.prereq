@@ -96,3 +96,8 @@ CMD ["/bin/bash"]
 # code/acr/SortedCollection.py was manually downloaded from
 #   https://code.activestate.com/recipes/577197-sortedcollection/
 #   License: MIT
+
+# doc/examples/codebase/dos2unix-7.5.2 is used as an example (in doc/examples/codebase)
+# but is not part of this distribution.
+#   https://dos2unix.sourceforge.io/
+#   License: FreeBSD-style
