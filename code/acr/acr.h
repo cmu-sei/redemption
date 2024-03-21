@@ -26,8 +26,16 @@
 // DM23-2165
 // </legal>
 
-#include <stdlib.h>
-#include <stdio.h>
+#if __STDC_VERSION__ >= 202311L
+#  define ACR_NORETURN [[noreturn]]
+#elif __STDC_VERSION__ >= 201112L
+#  define ACR_NORETURN _Noreturn
+#else
+#  define ACR_NORETURN
+#endif
+
+int printf(const char *restrict format, ...);
+ACR_NORETURN void exit(int status);
 
 // Note: `__typeof__` is a GCC/Clang extension; change `__typeof__` to `typeof`
 // for C23-compliant compilers that don't recognize `__typeof__`.

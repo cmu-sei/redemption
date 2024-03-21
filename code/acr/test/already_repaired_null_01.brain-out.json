@@ -4,7 +4,7 @@
     "file": "/host/code/acr/test/already_repaired_null_01.c",
     "line": 8,
     "alert_id": 1,
-    "ast_id": 2721,
+    "ast_id": 2730,
     "repair_algo": [
       "skip",
       {
