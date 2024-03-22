@@ -29,7 +29,7 @@
 from collections import OrderedDict
 import os
 import re
-from util import get_dict_path, AstVisitor
+from util import get_dict_path, AstVisitor, read_file_range
 
 class Alert(OrderedDict):
     """A Redemption alert."""
