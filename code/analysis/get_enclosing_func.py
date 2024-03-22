@@ -26,7 +26,8 @@
 # </legal>
 
 ######################################################################
-# Example usage, using func_bounds.test_errors.json produced by extract_func_names_lines_clang.py:
+# Example usage, using func_bounds.test_errors.json produced by 
+# extract_func_names_lines_clang.py or extract_ear_func_bounds.py:
 #
 # python3 /host/code/analysis/get_enclosing_func.py /host/code/acr/test/test_errors.c 10 func_bounds.test_errors.json
 ######################################################################

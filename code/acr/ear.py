@@ -37,6 +37,7 @@ import shutil
 import shlex
 import functools
 import bisect
+import gzip
 
 class EarException(Exception):
     pass
@@ -163,26 +164,31 @@ def run_ear_for_cmd(cmd, ast_file, base_dir, ll_outfile):
     print_progress("Condensing JSON...")
     ast2 = condense_json_int_pairs(ast2)
     print_progress("Writing AST to file...")
-    with open(ast_file, 'w') as outfile:
+    if ast_file.endswith(".gz"):
+        fn_open = lambda name, mode: gzip.open(name, mode, compresslevel=7)
+    else:
+        fn_open = open
+    with fn_open(ast_file, 'wt') as outfile:
         outfile.write(ast2)
 
 def write_ear_output_for_cmd(cmd, ast_file, base_dir):
-    cache_dir = os.getenv('parser_cache')
+    cache_dir = os.getenv('acr_parser_cache')
     if cache_dir and not cache_dir.startswith("/"):
-        print("ERROR: environment variable 'parser_cache' must be an absolute path!")
+        print("ERROR: environment variable 'acr_parser_cache' must be an absolute path!")
         cache_dir = None
     compile_dir = os.path.realpath(get_compile_dir(cmd))
     base_dir = os.path.realpath(base_dir or compile_dir)
     ast_file = os.path.realpath(ast_file)
     ll_outfile = get_ast_file_base(ast_file) + ".ll"
     if (not cache_dir) or not os.path.isdir(cache_dir):
-        if os.getenv('parser_cache_verbose'):
+        if os.getenv('acr_parser_cache_verbose'):
             print("No cache dir")
         return run_ear_for_cmd(cmd, ast_file, base_dir, ll_outfile)
     cur_file = os.path.realpath(os.path.join(compile_dir, cmd['file']))
     hashval = hashlib.sha256(repr([cur_file, cmd]).encode("utf-8")).digest().hex()[:24]
     cache_base_name = os.path.splitext(os.path.basename(cmd["file"]))[0]
-    cache_ast_file = cache_dir + "/" + cache_base_name + "." + hashval + ".ear-out.json"
+    opt_gz = (".gz" if ast_file.endswith(".gz") else "")
+    cache_ast_file = cache_dir + "/" + cache_base_name + "." + hashval + ".ear-out.json" + opt_gz
     cache_ll_file  = cache_dir + "/" + cache_base_name + "." + hashval + ".ll"
     script_dir = os.path.dirname(os.path.realpath(__file__))
     okay_cache = (
@@ -192,12 +198,12 @@ def write_ear_output_for_cmd(cmd, ast_file, base_dir):
         is_newer_file(cache_ast_file, __file__) and
         (not is_newer_file(cache_ast_file, cache_ll_file)))
     if okay_cache:
-        if os.getenv('parser_cache_verbose'):
+        if os.getenv('acr_parser_cache_verbose'):
             print("Using cached ear output for " + cmd["file"])
         shutil.copy(cache_ast_file, ast_file)
         shutil.copy(cache_ll_file, ll_outfile)
     else:
-        if os.getenv('parser_cache_verbose'):
+        if os.getenv('acr_parser_cache_verbose'):
             print("Generating ear output for " + cmd["file"])
         run_ear_for_cmd(cmd, ast_file, base_dir, ll_outfile)
         shutil.copy(ast_file, cache_ast_file)
@@ -335,7 +341,7 @@ def find_included_files_aux(node, files):
 def parse_args():
     parser = argparse.ArgumentParser(description='Creates AST files from source code')
     parser.add_argument('-o', "--ast-file", type=str, dest="ast_file",
-        required=True, help="Filename for output AST file, must end in '.ear-out.json'")
+        required=True, help="Filename for output AST file, must end in '.ear-out.json' or '.ear-out.json.gz'")
     parser.add_argument('-s', "--source-file", type=str, dest="source_file",
         required=True, help="Source '.c' file")
     parser.add_argument('-c', "--compile-commands", type=str, dest="compile_cmds_file",

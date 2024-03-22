@@ -29,6 +29,9 @@
 import sys, os, re, pdb, argparse, json, traceback
 from collections import OrderedDict, defaultdict
 import time
+import gzip
+
+__all__ = ['json', 'OrderedDict', 'JSONFileException', 'stop', 'read_whole_file', 'read_json_file', 'read_file_range', 'get_dict_path', 'set_dict_path', 'setdefault_dict_path', 'print_progress', 'condense_json_int_pairs', 'strip_filename_extension', 'get_ast_file_base', 'is_nonzero_file', 'is_newer_file', 'AstVisitor']
 
 class JSONFileException(Exception):
     pass
@@ -40,7 +43,11 @@ def read_whole_file(filename, mode_mod=""):
         return the_file.read()
 
 def read_json_file(filename):
-    with open(filename, 'r') as f:
+    if filename.endswith(".gz"):
+        fn_open = gzip.open
+    else:
+        fn_open = open
+    with fn_open(filename, 'rt') as f:
         try:
             data = json.load(f, object_pairs_hook=OrderedDict)
         except Exception as e:
@@ -106,15 +113,15 @@ def strip_filename_extension(filename):
 def get_ast_file_base(ast_file):
     # TODO: some test files are still using the old command-line arguments; fix this.
     #assert ast_file.endswith(".ear-out.json"), ast_file
-    is_okay = re.search("[.][^.]*[.]json$", ast_file)
+    is_okay = re.search("[.][^.]*[.]json(.gz)?$", ast_file)
     if not is_okay:
         traceback.print_stack()
         sys.stderr.write("\nBad filename: %r\n" % ast_file)
         sys.stderr.write("Expecting something like: 'path/foo.ear-out.json'\n")
         sys.exit(1)
     ast_file_base = ast_file
-    ast_file_base = re.sub("[.]answer[.]json$", ".json", ast_file_base)
-    ast_file_base = re.sub("[.][^.]*[.]json$", "", ast_file_base)
+    ast_file_base = re.sub("[.]answer[.]json(.gz)?$", ".json", ast_file_base)
+    ast_file_base = re.sub("[.][^.]*[.]json(.gz)?$", "", ast_file_base)
     return ast_file_base
 
 def is_nonzero_file(filename):

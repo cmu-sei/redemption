@@ -33,7 +33,7 @@ DM23-2165
 export acr_show_progress=true   # Show progress and timing
 export acr_warn_unlocated_alerts=true # Warn when alerts cannot be located in AST
 export acr_emit_invocation=true # Show subprogram invocation information
-export parser_cache=/host/code/acr/test/cache/ # Cache the output of the ear module, else set to ""
+export acr_parser_cache=/host/code/acr/test/cache/ # Cache the output of the ear module, else set to ""
 export pytest_keep=true         # Keep output of individual modules (ear, brain, etc.). Regardless, the *.nulldom.json intermediate file is kept.
 export pytest_no_catch=true     # Break into debugger with "-m pdb" instead of catching exception
 export REPAIR_MSC12=true     # Repair MSC12-C alerts (By default, the system DOES do the repair. The system does not do this repair if this variable is set to `false`)
@@ -93,11 +93,11 @@ After verifying that the test outputs `FAILED` as expected, re-comment the three
 
 ## Speeding up Testing by Cacheing Output of Ear Module
 
-The ear module (which runs Clang on the codebase) usually takes a majority of the run time of the tool.  To speed things up, the output of the ear module can be cached by specifying a cache directory with the `parser_cache` environment variable:
+The ear module (which runs Clang on the codebase) usually takes a majority of the run time of the tool.  To speed things up, the output of the ear module can be cached by specifying a cache directory with the `acr_parser_cache` environment variable:
 
 ```sh
 mkdir /host/code/acr/test/cache/
-export parser_cache=/host/code/acr/test/cache/
+export acr_parser_cache=/host/code/acr/test/cache/
 ```
 
 On one machine, this reduces the testing time from 2.8 seconds to 1.1 seconds (testing using the `pytest` command, per above).

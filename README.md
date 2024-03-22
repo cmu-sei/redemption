@@ -183,7 +183,9 @@ As specified [above](#detail-about-the-end_to_end_acrpy-script), the `STEP_DIR` 
 export acr_show_progress=true   # Show progress and timing
 export acr_warn_unlocated_alerts=true  # Warn when alerts cannot be located in AST
 export acr_skip_dom=false       # Skip dominator analysis
-export parser_cache=/host/code/acr/test/cache/  # Cache the output of the ear module, else set to ""
+export acr_parser_cache=/host/code/acr/test/cache/  # Cache the output of the ear module, else set to ""
+export acr_parser_cache_verbose=true # Print messages about the cache, for debugging/troubleshooting
+export acr_gzip_ear_out=true    # Compresses the output of the ear module
 export pytest_keep=true         # Keep output of individual modules (ear, brain, etc.). Regardless, the *.nulldom.json intermediate file is kept.
 export pytest_no_catch=true     # Break into debugger with "-m pdb" instead of catching exception
 export REPAIR_MSC12=true        # Repair MSC12-C alerts (By default, the system DOES do the repair. The system does not do this repair if this variable is set to `false`)

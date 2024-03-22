@@ -129,6 +129,8 @@ def run(source_file, compile_commands, alerts, *, out_src_dir=None, step_dir=Non
     try:
         brain_out_file = step_dir + "/" + source_base_name + ".brain-out.json"
         ast_filename   = step_dir + "/" + source_base_name + ".ear-out.json"
+        if (os.getenv('acr_gzip_ear_out') or "").lower() == "true":
+            ast_filename += ".gz"
 
         print_progress("Running ear module...")
         ear.run_ear_for_source_file(source_file, compile_commands, ast_filename, base_dir=base_dir)
