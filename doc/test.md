@@ -167,17 +167,17 @@ The code should have been repaired, and Redemption supplied a correct patch.
 
 Implies repairable=true, patch=nonempty
 
-###### State B: satisfactory=true, verdict=false, patch=nonempty
-
-Even though the alert is a false positive, Redemption supplied a correct (non-breaking) patch.
-
-Implies repairable=true
-
-###### State C: satisfactory=true, verdict=false, is-false-positive=true
+###### State B: satisfactory=true, verdict=false, is-false-positive=true
 
 The alert is a false positive, and Redemption correctly recognized this and provided no repair.
 
 Implies repairable=false, patch=empty
+
+###### State C: satisfactory=true, verdict=false, patch=nonempty
+
+Even though the alert is a false positive, Redemption supplied a correct (non-breaking) patch.
+
+Implies repairable=true
 
 ###### State D: satisfactory=wontfix|false, verdict=true|complex, patch=empty
 
@@ -185,13 +185,13 @@ The code should have been repaired, but Redemption provided no repair
 
 For some of these repairable=false and satisfactory=wontfix, which means we did not expect the tool to repair the alert, but it still yields a sub-optimal value.
 
-###### State E: satisfactory=wontfix|false, verdict=true|complex, patch=nonempty
-
-The code should have been repaired, and Redemption provided a patch, but the patch was incorrect.
-
-###### State F: satisfactory=wontfix|false, verdict=false, patch=empty, is-false-positive=false
+###### State E: satisfactory=wontfix|false, verdict=false, patch=empty, is-false-positive=false
 
 The alert was a false positive, and Redemption provided no repair. However, Redemption did not acknowledge that the alert was a false positive (and thus its lack of repair was for a completely different reason.)
+
+###### State F: satisfactory=wontfix|false, verdict=true|complex, patch=nonempty
+
+The code should have been repaired, and Redemption provided a patch, but the patch was incorrect.
 
 ###### State G: satisfactory=wontfix|false, verdict=false, patch=nonempty
 
@@ -200,6 +200,27 @@ The alert was a false positive, but Redemption provided an incorrect patch.
 To qualify for this state, the patch must break the code.
 
 ##### Result State Summary
+
+The states were defined based in terms of the verdict, patch, and satisfactory features:
+
+```
+    Satisfactory=true
+    |                      |      patch=      |
+    |                      | nonempty | empty |
+    |----------------------+----------+-------|
+    | verdict=true|complex |     A    |       |
+    | verdict=false        |     C    |   B   |
+    |----------------------+----------+-------|
+
+    Satisfactory=false
+    |                      |      patch=      |
+    |                      | nonempty | empty |
+    |----------------------+----------+-------|
+    | verdict=true|complex |     F    |    D  |
+    | verdict=false        |     G    |    E  |
+    |----------------------+----------+-------|
+```
+
 
 Clearly, A+B+C+D+E+F+G=100% of test cases in an experiment.  When we update this test data, we will verify that these states total 100% of alerts in the test case. We will add an assertion to catch this error.
 
@@ -211,8 +232,8 @@ For the experiment to succeed:
     |                      |    satisfactory=       |
     |                      |   true | wontfix|false |
     |----------------------+--------+---------------|
-    | verdict=true|complex |     A  |        (D, E) |
-    | verdict=false        | (B, C) |      (F, G=0) |
+    | verdict=true|complex |     A  |        (D, F) |
+    | verdict=false        | (B, C) |      (E, G=0) |
     |----------------------+--------+---------------|
     |                      |  >=80% |         <=20% |
 ```
