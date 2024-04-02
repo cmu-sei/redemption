@@ -21,7 +21,7 @@ DM23-2165
 
 Run like this:
 ```sh
-CodeChecker check --build 'clang -Weverything -Wno-c++98-compat -Wno-c++98-compat-pedantic -Wno-missing-prototypes -Wno-missing-variable-declarations -Wno-disabled-macro-expansion -c false/afterfail.cpp false/typedef.c true/badnull.c true/bindunused.c true/deadstore.c true/hhx.c'
+CodeChecker check --build 'clang -Weverything -Wno-c++98-compat -Wno-c++98-compat-pedantic -Wno-missing-prototypes -Wno-missing-variable-declarations -Wno-disabled-macro-expansion -c false/afterfail.cpp false/pcapbreakloop.c false/typedef.c false/syntaxerror.cpp true/badnull.c true/bindunused.c true/deadstore.c true/hhx.c'
 ```
 Alerts from files in `true/` are true positives. Alerts from files in `false/` are false positives.
 
