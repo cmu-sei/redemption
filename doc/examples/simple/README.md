@@ -42,7 +42,7 @@ diff -ru . good
 
 ### Static Analysis
 
-Produce static analysis on the given C file, using Cppcheck 2.4.1.  Before generating this output, you should have the `factunder/cppcheck:latest` Docker image downloaded.
+Produce static analysis on the given C file, using Cppcheck 2.4.1.  Before generating this output, you should have the `facthunder/cppcheck:latest` Docker image downloaded.
 
 ``` sh
 docker pull facthunder/cppcheck:latest
