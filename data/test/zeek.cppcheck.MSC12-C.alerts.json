@@ -777,7 +777,7 @@
     "message": "Same expression on both sides of '^'.",
     "randomness": "disqualified sample",
     "verdict": "",
-    "rationale": "This alert appears in dead code (code that is #ifdef'd out) in the current compilation.",
+    "rationale": "This alert appears in dead code (code that is #ifdef'd out) in the current compilation. If it weren't disqualified, then this would be marked as complex, because the ^ operator for V4x64u is overloaded, and overloaded operators might not have the same semantics as usual.",
     "repairable": "false",
     "satisfactory": ""
   },
@@ -860,7 +860,7 @@
     "message": "Assignment of function parameter has no effect outside the function. Did you forget dereferencing it?",
     "randomness": "disqualified sample",
     "verdict": "",
-    "rationale": "Inside an excluded #if..#endif block",
+    "rationale": "Inside an excluded #if..#endif block. If it weren't disqualified, then this would be marked as a true positive, and based on the comment above the function, it may have been intended to be `*pResOut=0` instead of `pResOut=0`.",
     "repairable": "false",
     "satisfactory": ""
   },
