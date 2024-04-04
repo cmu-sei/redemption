@@ -357,7 +357,13 @@
     "column": "4",
     "tool": "rosecheckers",
     "checker": "MSC12-C",
-    "message": "Detect and remove code that has no effect"
+    "message": "Detect and remove code that has no effect",
+    "randomness": "random",
+    "verdict": "false",
+    "rationale": "The flagged line logs an error message, which is a meaningful side effect when regex compilation fails.",
+    "repairable": "false",
+    "satisfactory": "",
+    "llm_output_file": "491a06ea51477ddf8ea24310.txt"
   },
   {
     "rule": "MSC12-C",
@@ -528,7 +534,13 @@
     "column": "3",
     "tool": "rosecheckers",
     "checker": "MSC12-C",
-    "message": "Detect and remove code that has no effect"
+    "message": "Detect and remove code that has no effect",
+    "randomness": "sample",
+    "verdict": "false",
+    "rationale": "The call to add_remote_or_group meaningfully alters program state and affects execution flow, thus is not 'code that has no effect'.",
+    "repairable": "false",
+    "satisfactory": "",
+    "llm_output_file": "7fde5de322bbd3b2f3d1070e.txt"
   },
   {
     "rule": "MSC12-C",
@@ -609,7 +621,13 @@
     "column": "5",
     "tool": "rosecheckers",
     "checker": "MSC12-C",
-    "message": "Detect and remove code that has no effect"
+    "message": "Detect and remove code that has no effect",
+    "randomness": "random",
+    "verdict": "false",
+    "rationale": "Logging an error message is a meaningful side effect, which contradicts the alert's claim that the code has no effect.",
+    "repairable": "false",
+    "satisfactory": "",
+    "llm_output_file": "6c3ab4a4110652782290d871.txt"
   },
   {
     "rule": "MSC12-C",
@@ -1545,7 +1563,13 @@
     "column": "4",
     "tool": "rosecheckers",
     "checker": "MSC12-C",
-    "message": "Detect and remove code that has no effect"
+    "message": "Detect and remove code that has no effect",
+    "randomness": "random and sample",
+    "verdict": "false",
+    "rationale": "The line logs an error message, hence has a side effect.",
+    "repairable": "false",
+    "satisfactory": "",
+    "llm_output_file": "6672095f4d52d159b50c678f.txt"
   },
   {
     "rule": "MSC12-C",
@@ -2382,7 +2406,13 @@
     "column": "3",
     "tool": "rosecheckers",
     "checker": "MSC12-C",
-    "message": "Detect and remove code that has no effect"
+    "message": "Detect and remove code that has no effect",
+    "randomness": "random and sample",
+    "verdict": "false",
+    "rationale": "The assertion acts as a safety check during development, not code without effect.",
+    "repairable": "false",
+    "satisfactory": "",
+    "llm_output_file": "d7dd1d33bd6ea6b994863aa1.txt"
   },
   {
     "rule": "MSC12-C",
@@ -2769,7 +2799,13 @@
     "column": "6",
     "tool": "rosecheckers",
     "checker": "MSC12-C",
-    "message": "Detect and remove code that has no effect"
+    "message": "Detect and remove code that has no effect",
+    "randomness": "sample",
+    "verdict": "false",
+    "rationale": "The computation of 'd' and its subsequent application directly impacts loop control and algorithm correctness, aligning with expected behavior in a search algorithm context.",
+    "repairable": "false",
+    "satisfactory": "",
+    "llm_output_file": "bdea9bade356ff4255160c6c.txt"
   },
   {
     "rule": "MSC12-C",
@@ -3318,7 +3354,13 @@
     "column": "4",
     "tool": "rosecheckers",
     "checker": "MSC12-C",
-    "message": "Detect and remove code that has no effect"
+    "message": "Detect and remove code that has no effect",
+    "randomness": "sample",
+    "verdict": "false",
+    "rationale": "The macro likely has side effects in non-release builds, making its presence justified and not a violation of MSC12-C.",
+    "repairable": "false",
+    "satisfactory": "",
+    "llm_output_file": "433099cf0293d5220e10aedf.txt"
   },
   {
     "rule": "MSC12-C",
@@ -5730,7 +5772,13 @@
     "column": "3",
     "tool": "rosecheckers",
     "checker": "MSC12-C",
-    "message": "Detect and remove code that has no effect"
+    "message": "Detect and remove code that has no effect",
+    "randomness": "random",
+    "verdict": "false",
+    "rationale": "The flagged line logs an error, which is a meaningful side effect.",
+    "repairable": "false",
+    "satisfactory": "",
+    "llm_output_file": "84b72598e6a4ff36325ddac8.txt"
   },
   {
     "rule": "MSC12-C",

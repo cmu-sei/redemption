@@ -1,0 +1,1 @@
+{"verdict": "false", "rationale": "The ASSERT(f) serves as a check to ensure that the cast was successful, which is an effect during debugging but might have no effect in a release build where asserts might be disabled."}

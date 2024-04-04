@@ -1,0 +1,9 @@
+The flagged line of code:
+```
+error(_("patch failed: %s:%ld"), name, frag->oldpos); // Line 3247
+```
+is a call to an error reporting function with the purpose of logging or displaying an error message when a patch application fails on a fragment. This line of code has a clear side effect: displaying or logging an error message. It is not a no-op (no operation) line of code, and it executes under a specific condition (when `apply_one_fragment` fails).
+
+Therefore, the alert by the tool regarding this code having "no effect" is incorrect.
+
+`{"verdict": "false", "rationale": "The line logs an error message, hence has a side effect."}`

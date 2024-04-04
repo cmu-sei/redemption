@@ -1,0 +1,1 @@
+{"verdict": "uncertain", "rationale": "The context of macro usage and external enabling conditions for 'neg_zero' state cannot be fully determined without additional code."}

@@ -76,7 +76,7 @@ Exempt_Files: [
     "data/test/sample.alerts.txt",
     "data/test/toy/.*.c",
     "data/test/toy/.*.h",
-    "data/test/llm/[-0-9a-f]*.md",
+    "data/test/llm/[-0-9a-f]*.*",
     "data/zeek5/.*.txt",
     "doc/examples/.*/good/.*",
     "doc/examples/.*/.*.c",

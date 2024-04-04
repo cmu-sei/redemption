@@ -1,0 +1,1 @@
+{"verdict": "false", "rationale": "The statement `(void)yyg;` serves to explicitly ignore the unused parameter `yyg`, thereby preventing compiler warnings about unused variables."}

@@ -1,0 +1,1 @@
+{"verdict": "false", "rationale": "The check against `p2` is ensuring that it is within the valid range of header fields to parse, not checking its sign."}

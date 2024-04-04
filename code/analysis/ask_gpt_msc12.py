@@ -39,6 +39,8 @@ sys.path.append('/host/code/acr')
 from util import *
 from get_enclosing_func import get_enclosing_func
 
+import tiktoken
+tokenizer = tiktoken.encoding_for_model("gpt-4")
 
 prompt_msc12c = (
 r"""
@@ -60,7 +62,7 @@ If code is live in any build, then it should not be considered dead; e.g., an al
 
 A label that is created as a result of a macro expansion should not be considered a violation of MSC12-C even if it is never used.
 
-Below, I provide the entirety of the function that contains the flagged line of code:
+Below, I provide the function that contains the flagged line of code.  If parts of the function have been elided, the elided parts are marked by a line consisting of "...".
 ```
 {code_snippet}
 (Note that the function might use macros defined elsewhere and not provided above.)
@@ -70,22 +72,20 @@ Below, I provide the entirety of the function that contains the flagged line of 
 
 prompt_useless_asgn = (
 r"""
-I want you to adjudicate a static-analysis alert.
-The alert concerns CERT Secure Coding Rule MSC12-C: Detect and remove code that has no effect or is never executed.
-Statements or expressions that have no effect should be identified and removed from code.
+The following static-analysis alert concerns CERT Secure Coding Rule MSC12-C: Detect and remove code that has no effect or is never executed.
+"Statements or expressions that have no effect should be identified and removed from code."
 
 Alert details:
 {alert_details}
 
 The flagged line of code is marked `// Line {line_num}` in the code below.
 
-If the variable is read after the flagged assignment, then the alert is a false positive.  (Here, "after" means temporarily after, not lexically after; i.e., beware of GOTOs and loop backjumps.)
-If the variable ever has its address taken (via the `&` operator), then consider the alert a false positive.
-If the variable is never read after the flagged assignment and it never has its address taken, then the alert is a true positive.
+1. Identify the variable that is flagged by the alert.
+2. Identify whether the variable ever has its address taken (such as by the `&` operator). If it does, then consider the alert a false positive and print the line where the variable's address is taken.
+3. Identify whether the variable is read after the flagged assignment.  If it is, then consider the alert to be false positive and print the line where the variable is read after the flagged line.  (This line must contain the variable as an rvalue.)  (Here, "after" means temporally after, not lexically after; i.e., beware of GOTOs and loop backjumps.)  If the variable is read on a line that is lexically subsequent to the flagged line, then indicate roughly how many lines below the flagged line it is.  If it is lexically above the flagged line, then indicate the backjump taken to reach it.
+4. If none of the above caused you to consider the alert to be a false positive, then consider the alert to be a true positive.
 
 You may assume that no macro expansions include the flagged variable (unless the variable is an argument to the macro).
-
-Identify: (1) where, if anywhere, the variable ever has its addressen taken and (2) where, if anywhere, the variable is read after the flagged assignment.
 
 If the alert is a true positive, say `{{"verdict": "true", "rationale": "%s"}}` at the end of your response.
 If the alert is a false positive, say `{{"verdict": "false", "rationale": "%s"}}`.
@@ -138,7 +138,7 @@ def main():
             prompt = prompt_msc12c.format(**vars())
         print(prompt)
         messages = [
-            {"role": "system", "content": "You are ChatGPT, a large language model trained by OpenAI, based on the GPT-4 architecture.\n" + 
+            {"role": "system", "content": "You are ChatGPT, a large language model trained by OpenAI, based on the GPT-4 architecture.\n" +
                                           "Knowledge cutoff: 2021-09\n" + "Current date: 2023-09-09"},
             {"role": "user", "content": prompt},
         ]
@@ -151,6 +151,7 @@ def main():
                 api_key=os.environ.get("OPENAI_API_KEY"),
             )
         chat_completion = openai_client.chat.completions.create(
+            #model="gpt-4-0125-preview",
             model="gpt-4-turbo-preview",
             messages=messages
         )
@@ -172,11 +173,17 @@ def main():
 
 
     for alert in alerts:
-        if alert.get("verdict") == "" and alert.get("rationale") == "":
+        if alert.get("verdict") in ["","???"] and alert.get("rationale") in ["", "???"]:
             filename = alert["file"]
             if args.base_dir:
                 filename = os.path.join(args.base_dir, alert["file"])
             code_snippet = get_enclosing_func(filename, int(alert["line"]), func_bounds)
+            num_tok = len(tokenizer.encode(code_snippet))
+            if num_tok > 5000:
+                num_lines = code_snippet.count("\n")
+                print(json.dumps(alert, indent=2))
+                print(f"Error: function snippet is too big ({num_tok} tokens, {num_lines} lines)!")
+                continue
             if not code_snippet:
                 print(json.dumps(alert, indent=2))
                 print("Error: Couldn't find containing function!")
@@ -185,7 +192,7 @@ def main():
                 ask_alert(alert, code_snippet)
             break
 
-    
+
     with open(args.o, "w") as outfile:
         outfile.write(json.dumps(alerts, indent=2) + "\n")
 

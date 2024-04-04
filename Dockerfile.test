@@ -80,4 +80,12 @@ RUN cd /oss/zeek ; \
     bear -- make 2>&1 | tee -a make.log
 
 
+# Other packages
+RUN apt-get update \
+    && DEBIAN_FRONTEND=noninteractive apt-get -y install --no-install-recommends \
+        jq \
+        && apt-get --purge -y autoremove \
+    && apt-get clean
+
+
 CMD ["/bin/bash"]

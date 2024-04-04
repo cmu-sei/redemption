@@ -996,7 +996,13 @@
     "column": "4",
     "tool": "rosecheckers",
     "checker": "MSC12-C",
-    "message": "Detect and remove code that has no effect"
+    "message": "Detect and remove code that has no effect",
+    "randomness": "random",
+    "verdict": "false",
+    "rationale": "The ASSERT(f) serves as a check to ensure that the cast was successful, which is an effect during debugging but might have no effect in a release build where asserts might be disabled.",
+    "repairable": "false",
+    "satisfactory": "",
+    "llm_output_file": "c9ce54fed2cdc5e60f4a984e.txt"
   },
   {
     "rule": "MSC12-C",
@@ -1077,7 +1083,13 @@
     "column": "2",
     "tool": "rosecheckers",
     "checker": "MSC12-C",
-    "message": "Detect and remove code that has no effect"
+    "message": "Detect and remove code that has no effect",
+    "randomness": "sample",
+    "verdict": "false",
+    "rationale": "The alert is a false positive because the statement throws an exception, which affects control flow by terminating the function execution immediately.",
+    "repairable": "false",
+    "satisfactory": "",
+    "llm_output_file": "f04be414de8dcc9fab88567e.txt"
   },
   {
     "rule": "MSC12-C",
@@ -1554,7 +1566,13 @@
     "column": "2",
     "tool": "rosecheckers",
     "checker": "MSC12-C",
-    "message": "Detect and remove code that has no effect"
+    "message": "Detect and remove code that has no effect",
+    "randomness": "random",
+    "verdict": "false",
+    "rationale": "The ASSERT statement is a conditional check that will have an effect in debug builds, ensuring that the 'f' parameter is not null before proceeding.",
+    "repairable": "false",
+    "satisfactory": "",
+    "llm_output_file": "162216fa2406cb5fb98b0f5e.txt"
   },
   {
     "rule": "MSC12-C",
@@ -2076,7 +2094,13 @@
     "column": "5",
     "tool": "rosecheckers",
     "checker": "MSC12-C",
-    "message": "Detect and remove code that has no effect"
+    "message": "Detect and remove code that has no effect",
+    "randomness": "random",
+    "verdict": "false",
+    "rationale": "The assert has a meaningful effect in debug builds, ensuring that necessary preconditions for the fiber switch are met.",
+    "repairable": "false",
+    "satisfactory": "",
+    "llm_output_file": "70f1ba16ebb72efd4193c554.txt"
   },
   {
     "rule": "MSC12-C",
@@ -2328,7 +2352,13 @@
     "column": "5",
     "tool": "rosecheckers",
     "checker": "MSC12-C",
-    "message": "Detect and remove code that has no effect"
+    "message": "Detect and remove code that has no effect",
+    "randomness": "sample",
+    "verdict": "complex",
+    "rationale": "The 'set_for_each' macro likely expands to code that performs operations with side effects.",
+    "repairable": "false",
+    "satisfactory": "",
+    "llm_output_file": "f91e704168e4b7f0937c6b53.txt"
   },
   {
     "rule": "MSC12-C",
@@ -2490,7 +2520,13 @@
     "column": "5",
     "tool": "rosecheckers",
     "checker": "MSC12-C",
-    "message": "Detect and remove code that has no effect"
+    "message": "Detect and remove code that has no effect",
+    "randomness": "random",
+    "verdict": "false",
+    "rationale": "The `assert` statement is used to enforce the assumption that `tags` is not `NULL`, impacting runtime behavior in debug builds.",
+    "repairable": "false",
+    "satisfactory": "",
+    "llm_output_file": "b709feda1db2eb86227f8979.txt"
   },
   {
     "rule": "MSC12-C",
@@ -2598,7 +2634,13 @@
     "column": "3",
     "tool": "rosecheckers",
     "checker": "MSC12-C",
-    "message": "Detect and remove code that has no effect"
+    "message": "Detect and remove code that has no effect",
+    "randomness": "sample",
+    "verdict": "false",
+    "rationale": "The adjustments of stack pointers are essential for maintaining stack integrity post-resize, ensuring correct parser operation.",
+    "repairable": "false",
+    "satisfactory": "",
+    "llm_output_file": "2798d99ac4aa75b35fe9fd4d.txt"
   },
   {
     "rule": "MSC12-C",
@@ -2715,7 +2757,13 @@
     "column": "2",
     "tool": "rosecheckers",
     "checker": "MSC12-C",
-    "message": "Detect and remove code that has no effect"
+    "message": "Detect and remove code that has no effect",
+    "randomness": "sample",
+    "verdict": "false",
+    "rationale": "The statement `(void)yyg;` serves to explicitly ignore the unused parameter `yyg`, thereby preventing compiler warnings about unused variables.",
+    "repairable": "false",
+    "satisfactory": "",
+    "llm_output_file": "8d46dead60798d70f0fe14ee.txt"
   },
   {
     "rule": "MSC12-C",
@@ -4263,7 +4311,13 @@
     "column": "6",
     "tool": "rosecheckers",
     "checker": "MSC12-C",
-    "message": "Detect and remove code that has no effect"
+    "message": "Detect and remove code that has no effect",
+    "randomness": "random and sample",
+    "verdict": "false",
+    "rationale": "The assert statement is a sanity check for debugging, and surrounding code modifies program state.",
+    "repairable": "false",
+    "satisfactory": "",
+    "llm_output_file": "9d85636b750aead0aed9c584.txt"
   },
   {
     "rule": "MSC12-C",

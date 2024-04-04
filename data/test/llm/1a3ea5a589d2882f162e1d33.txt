@@ -1,0 +1,22 @@
+The flagged line of code is part of a function whose aim is to read a bitmap structure from a memory-mapped file, adjusting the internal pointers and values based on the contents of that file. The static analysis alert suggests that the assignment to the `len` variable on the flagged line has no effect outside the function.
+
+From the details provided, the alert ("Assignment of function parameter has no effect outside the function.") is focused on the `len` variable being updated, but having no discernible effect afterward. To accurately adjudicate the alert, we must consider if `len` is used after the flagged assignment and if its address is taken.
+
+1. **The Address of `len` Taken**: Within the provided code snippet, there's no operation that takes the address of `len`. So, there's no instance of `&len`.
+
+2. **Read After Flagged Assignment**: After the flagged line (`len -= sizeof(uint32_t); // Line 131`), `len` is used in the final return statement (`return ptr - (const uint8_t *)map;`). However, this use does not directly read `len` itself but is involved in computing the return value by calculating the difference between the current position of `ptr` and its original position, which indicates how many bytes have been read. The value of `len` after its last update does not have a direct contribution to the logic or output of the function from what is provided.
+
+Considering the purposes of the `len` variable within this function:
+- It's used to check if enough data remains to be processed at various points.
+- Its final adjustment (the assignment flagged by the tool) is to subtract `sizeof(uint32_t)` corresponding to the last data read (the `rlw` value), but nothing in the provided code snippet utilizes `len` after this point to make decisions or perform operations based on its value.
+
+This observation seems to support the tool's alert that the final assignment to `len` does not contribute to the function's external behavior, as `len` itself is not examined or used after this subtraction, at least within the visible scope of the code provided.
+
+**Verdict**:
+Given the information and the code provided:
+
+```json
+{"verdict": "true", "rationale": "The final update to 'len' does not affect function outcomes as 'len' is not used afterward nor is its address taken, rendering this assignment ineffective in the context of the function's external behavior."}
+```
+
+This conclusion stands unless there's a non-visible side effect or reliance on `len`'s final value that's not apparent in the given snippet.

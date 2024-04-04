@@ -27,6 +27,7 @@
 
 ######################################################################
 # Example usage:
+# export acr_gzip_ear_out=true
 # export acr_parser_cache=/host/code/acr/test/cache/
 # mkdir $acr_parser_cache -p
 # cd /host/data/test
@@ -47,8 +48,17 @@ from util import *
 func_bounds = []
 
 class FuncVisitor(AstVisitor):
-    def visit_CXXMethodDecl(self, node):
-        self.visit_FunctionDecl(node)
+    def previsit(self, node):
+        if not isinstance(node, dict):
+            return
+        func_like_decls = [
+            "CXXMethodDecl",
+            "CXXConstructorDecl",
+            "CXXDestructorDecl",
+            "CXXConversionDecl",
+        ]
+        if node.get("kind") in func_like_decls:
+            self.visit_FunctionDecl(node)
 
     def visit_FunctionDecl(self, node):
         filename = get_dict_path(node, "range", "file")
