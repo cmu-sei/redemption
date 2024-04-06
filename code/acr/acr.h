@@ -35,7 +35,7 @@
 #endif
 
 int printf(const char *restrict format, ...);
-ACR_NORETURN void exit(int status);
+ACR_NORETURN void abort(void);
 
 // Note: `__typeof__` is a GCC/Clang extension; change `__typeof__` to `typeof`
 // for C23-compliant compilers that don't recognize `__typeof__`.
@@ -47,7 +47,7 @@ ACR_NORETURN void exit(int status);
     if (!_sei_acr_temp_bc_p) {                              \
         __VA_ARGS__;                                        \
         printf("Exiting due to detected impending null pointer dereference in file %s, function %s, line %d\n", __FILE__, __func__, __LINE__); \
-        exit(1);                                            \
+        abort();                                            \
     };                                                      \
     _sei_acr_temp_bc_p;                                     \
   })
