@@ -292,29 +292,19 @@ class Brain(AstVisitor):
         self.base_dir = ast["base_dir"]
         self.compile_dir = ast["compile_dir"]
         self.var_decls_by_id = {}
-        self.no_patch = False
 
         brainstem = Brainstem();
         brainstem.visit(ast)
         self.error_handling_db = brainstem.error_handling_db
 
-    @staticmethod
-    def update_why(a):
-        # This is only added to emulate what the old hand module
-        # did.  It should eventually go away.
-        why = a["repair_algo"][1].get("why")
-        if why is not None:
-            a["why_skipped"] = why
-        a["patch"] = []
-
     def mark_skipped_alert(self, alert, reason):
         match alert:
-            case {"repair_algo": ["skip", kwargs]}:
-                if reason not in kwargs["why"]:
-                    kwargs["why"].append(reason)
+            case {"why_skipped": reasons}:
+                if reason not in reasons:
+                    reasons.append(reason)
             case _:
-                alert["repair_algo"] = ["skip", {"why": [reason]}]
-        self.update_why(alert)
+                alert["why_skipped"] = [reason]
+        alert["patch"] = []
 
     def is_indep_of_macros(self, node, alert):
         ret = True
@@ -424,7 +414,7 @@ class Brain(AstVisitor):
             # If it is mapped to multiple alerts, check that each alert is repairable.
             ret = None
             for dom_alert in dom_alerts:
-                if dom_alert["repair_algo"] == []:
+                if dom_alert["patch"] == []:
                     ret = None
                     break
                 else:
@@ -525,7 +515,7 @@ class Brain(AstVisitor):
         for a in self.alert_list:
             # If already "repaired", don't attempt to re-repair it.
             # This is primarily for alerts marked as "duplicates".
-            if "repair_algo" in a:
+            if "patch" in a:
                 continue
             # column is optional, so we use a.get() to retrieve it
             (filename, line, col)  = (a['file'], int(a['line']), int(a.get("column",-1)))
@@ -549,11 +539,8 @@ class Brain(AstVisitor):
                     if repair_node is not None:
                         last_node = repair_node
                         self.check_repairability(a, repair_node)
-                if (not self.no_patch and last_node is not None):
-                    if a["repair_algo"][0] != "skip":
-                        a.attempt_patch(last_node)
-                    elif not self.no_patch:
-                        self.update_why(a)
+                if last_node is not None and "why_skipped" not in a:
+                    a.attempt_patch(last_node)
 
 def build_NullDom_if_necessary():
     script_dir = os.path.dirname(os.path.realpath(__file__))
@@ -597,7 +584,6 @@ def parse_args():
     parser.add_argument("ast_file", type=str, help="Clang AST from the Ear module (in JSON format)")
     parser.add_argument('-o', type=str, metavar="OUTPUT_FILE", dest="output_filename", required=True, help="Output filename")
     parser.add_argument('-a', type=str, metavar="ALERTS_FILE", dest="alerts_filename", required=True, help="Static-analysis alerts")
-    parser.add_argument('--no-patch', type=bool, default=False, dest="no_patch", help="Don't add patch clauses to alerts")
     cmdline_args = parser.parse_args()
     return cmdline_args
 
@@ -606,15 +592,13 @@ def main():
     cmdline_args = parse_args()
     run(**vars(cmdline_args))
 
-def run(ast_file, alerts_filename, output_filename, no_patch=False):
+def run(ast_file, alerts_filename, output_filename):
     if os.getenv('acr_emit_invocation'):
-        print("brain.py -o {0} -a {1}{3} {2}".format(
-            output_filename, alerts_filename, ast_file,
-            " --no-patch" if no_patch else ""))
+        print("brain.py -o {} -a {}{}".format(
+            output_filename, alerts_filename, ast_file))
     ll_file = get_ast_file_base(ast_file) + ".ll"
     ast = read_json_file(ast_file)
     brain = Brain(ast)
-    brain.no_patch = no_patch
     brain.parse_alerts(alerts_filename)
     brain.nulldom_info = get_nulldom_info(ll_file)
     brain.map_nulldom_locs_to_alerts()
@@ -623,9 +607,8 @@ def run(ast_file, alerts_filename, output_filename, no_patch=False):
     if not skip_dom:
         brain.mark_dependent_alerts()
         brain.mark_already_checked_null_alerts()
-    if not no_patch:
-        for alert in brain.alert_list:
-            alert.setdefault("patch", [])
+    for alert in brain.alert_list:
+        alert.setdefault("patch", [])
     with open(output_filename, 'w') as outfile:
         outfile.write(json.dumps(brain.alert_list, indent=2) + "\n")
 

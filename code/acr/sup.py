@@ -136,26 +136,19 @@ def combine_brain_outs(indiv_brain_filenames):
 
     def combine_alert(alert_id, variants):
         non_empty = []
-        algos = None
         for (v, filename) in zip(variants, indiv_brain_filenames):
             if v['alert_id'] != alert_id:
                 print(f"Error in {filename}: Expecting alert_id {alert_id} but found alert_id {v['alert_id']}.")
             if v['patch'] != []:
                 non_empty.append(tuplize(v['patch']))
-                if algos is None:
-                    algos = v.get('repair_algo')
         combined = variants[0].copy()
         if all_equal(non_empty):
-            if algos:
-                combined['repair_algo'] = algos
             if 'patch' in combined:
                 del combined['patch']
             combined['patch'] = non_empty[0]
         elif len(non_empty) == 0:
             pass
         else:
-            if 'repair_algo' in combined:
-                del combined['repair_algo']
             combined['patch'] = []
             combined['why_skipped'] = "Different repairs from different translation units"
             combined['conflicting_repairs'] = sorted(non_empty)

@@ -32,7 +32,7 @@ import os, sys
 import shlex
 import re
 sys.path.append('..')
-import ear, brain, hand, glove, end_to_end_acr, sup
+import ear, brain, glove, end_to_end_acr, sup
 import test_runner
 from util import *
 
@@ -78,18 +78,6 @@ def cmp_file_normalize(file1, file2, fn_norm=None):
 # TODO: make a temp dir instead of using "out" in current directory;
 # see https://docs.pytest.org/en/6.2.x/fixture.html
 
-
-# def test_hand_fail():
-    # if(os.path.exists("out")):
-    #     step_dir_prev_existed = True
-    # else:
-    #     step_dir_prev_existed = False
-    # os.system("mkdir -p out")
-    # os.system("python3 glove.py test02.edits.answer.json -o out")
-    # assert cmp_file_normalize("hand_fail.repaired.answer.c", "out/simple_null_check.c")
-    # test_runner.cleanup("simple_null_check.c", out_location="out", step_dir="out", additional_files="out/simple_null_check.c")
-    # test_runner.dir_final_cleanup(step_dir="out", step_dir_prev_existed=True)
-
 def test_ear_03():
     os.system("rm -f test/out/simple_null_check.ear-out.json")
     cur_dir = os.getcwd()
@@ -108,21 +96,14 @@ def test_ear_03():
 def test_brain_03():
     os.system("rm -f out/simple_null_check.brain-out.json")
     #os.system("python3 ../brain.py --no-patch -o out/simple_null_check.brain-out.json -a simple_null_check.alerts.json simple_null_check.ear-out.answer.json")
-    brain.run(ast_file="simple_null_check.ear-out.answer.json", alerts_filename="simple_null_check.alerts.json", output_filename="out/simple_null_check.brain-out.json", no_patch=True)
+    brain.run(ast_file="simple_null_check.ear-out.answer.json", alerts_filename="simple_null_check.alerts.json", output_filename="out/simple_null_check.brain-out.json")
     assert cmp_file_normalize("simple_null_check.brain-out.answer.json", "out/simple_null_check.brain-out.json", relativize_paths)
     test_runner.cleanup("simple_null_check.c", out_location="out", step_dir="out", additional_files="out/simple_null_check.brain-out.json")
-
-def test_hand_03():
-    os.system("rm -f out/simple_null_check.hand-out.json")
-    #os.system("python3 ../hand.py -o out/simple_null_check.hand-out.json -a simple_null_check.brain-out.answer.json simple_null_check.ear-out.answer.json")
-    hand.run(ast_file="simple_null_check.ear-out.answer.json", alerts_filename="simple_null_check.brain-out.answer.json", output_filename="out/simple_null_check.hand-out.json")
-    assert cmp_file_normalize("simple_null_check.hand-out.answer.json", "out/simple_null_check.hand-out.json", relativize_paths)
-    test_runner.cleanup("simple_null_check.c", out_location="out", step_dir="out", additional_files="out/simple_null_check.hand-out.json")
 
 def test_glove_03():
     os.system("rm -f out/simple_null_check.c")
     #os.system("python3 ../glove.py simple_null_check.hand-out.answer.json -o out")
-    glove.run(edits_file="simple_null_check.hand-out.answer.json", output_dir="out", comp_dir=".")
+    glove.run(edits_file="simple_null_check.brain-out.answer.json", output_dir="out", comp_dir=".")
     assert cmp_file_normalize("simple_null_check.repaired.answer.c", "out/simple_null_check.c")
     test_runner.cleanup("simple_null_check.c", out_location="out", step_dir="out", additional_files="out/acr.h out/simple_null_check.c")
 
@@ -314,7 +295,7 @@ def test_e2e_013():
             out_src_dir=out_src_dir)
     finally:
         os.chdir(cur_dir)
-    assert cmp_file_normalize("macros_near_null_checks.hand-out.json",  "out/macros_near_null_checks.brain-out.json")
+    assert cmp_file_normalize("macros_near_null_checks.brain-out.json",  "out/macros_near_null_checks.brain-out.json")
     assert cmp_file_normalize("macros_near_null_checks.repaired.c",     "out/macros_near_null_checks.c")
     test_runner.cleanup(source_file, out_location=out_src_dir, step_dir=step_dir, additional_files="out/macros_near_null_checks.* out/acr.h")
 
@@ -458,8 +439,7 @@ def test_dom_null_derefs():
         compile_commands="autogen",
         alerts=alerts,
         step_dir=step_dir,
-        out_src_dir=step_dir,
-        no_patch=True)
+        out_src_dir=step_dir)
     assert cmp_file_normalize("dom-null-derefs.nulldom.json", "out/dom-null-derefs.nulldom.json")
     assert cmp_file_normalize("dom-null-derefs.brain-out.json", "out/dom-null-derefs.brain-out.json")
     if os.getenv('pytest_keep') != "true":

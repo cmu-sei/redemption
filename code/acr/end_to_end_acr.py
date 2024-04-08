@@ -63,7 +63,6 @@ def parse_args():
         help="Sets repaired-src directory to base-dir")
     parser.add_argument('--repair-includes', type=text_to_bool, dest="repair_includes_mode", metavar="{true,false}",
         help="Whether to repair #include'd header files or only the single specified source file.  Choices: [true, false].")
-    parser.add_argument('--no-patch', type=bool, default=False, dest="no_patch", help="Don't add patch clauses to alerts")
     cmdline_args = parser.parse_args()
     return cmdline_args
 
@@ -72,15 +71,14 @@ def main():
     run(**vars(cmdline_args))
 
 
-def run(source_file, compile_commands, alerts, *, out_src_dir=None, step_dir=None, base_dir=None, repair_includes_mode=None, repair_in_place=False, no_patch=False):
+def run(source_file, compile_commands, alerts, *, out_src_dir=None, step_dir=None, base_dir=None, repair_includes_mode=None, repair_in_place=False):
     if os.getenv('acr_emit_invocation'):
-        print("end_to_end_acr.py{}{}{}{}{}{} {} {} {}".format(
+        print("end_to_end_acr.py{}{}{}{}{} {} {} {}".format(
             f" --repaired-src {out_src_dir}" if out_src_dir else "",
             f" --step-dir {step_dir}" if step_dir else "",
             f" --base-dir {base_dir}" if base_dir else "",
             " --in-place" if repair_in_place else "",
             " --repair-includes" if repair_includes_mode else "",
-            " --no-patch" if no_patch else "",
             source_file, compile_commands, alerts))
 
     if repair_in_place == True:
@@ -135,9 +133,9 @@ def run(source_file, compile_commands, alerts, *, out_src_dir=None, step_dir=Non
         print_progress("Running ear module...")
         ear.run_ear_for_source_file(source_file, compile_commands, ast_filename, base_dir=base_dir)
         print_progress("Running brain module...")
-        brain.run(ast_file=ast_filename, alerts_filename=alerts, output_filename=brain_out_file, no_patch=no_patch)
+        brain.run(ast_file=ast_filename, alerts_filename=alerts, output_filename=brain_out_file)
         compile_dir = read_json_file(ast_filename)["compile_dir"]
-        if out_src_dir and not no_patch:
+        if out_src_dir:
             import glove
             kwargs = {}
             if not repair_includes_mode:

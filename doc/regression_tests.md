@@ -184,11 +184,11 @@ for y in `ls *.test.yml`; do python3 test_oss.py $y; done
 
 ### `.ans` File Names
 
-Automated tests currently automatically name the resulting intermediate and repaired files based on the input `.c` filename and NOT including the filepath. The intermediate filenames are `<filenamePrefix>.{hand,brain,ear,nulldom}-out.json` and `<filenamePrefix>.ll` which are put into the default directory (in container, `/host/code/acr/test/step`) `redemption/code/acr/test/step/` if in your container, you previously set `export pytest_keep=true`. (CAUTION: Automated tests of the same `.c` filename but different alerts and/or compile commands files will overwrite test results files from each other. JIRA issue 238 will address modifying intermediate filenames to avoid collisions.)
+Automated tests currently automatically name the resulting intermediate and repaired files based on the input `.c` filename and NOT including the filepath. The intermediate filenames are `<filenamePrefix>.{brain,ear,nulldom}-out.json` and `<filenamePrefix>.ll` which are put into the default directory (in container, `/host/code/acr/test/step`) `redemption/code/acr/test/step/` if in your container, you previously set `export pytest_keep=true`. (CAUTION: Automated tests of the same `.c` filename but different alerts and/or compile commands files will overwrite test results files from each other. JIRA issue 238 will address modifying intermediate filenames to avoid collisions.)
 
 ### Warnings for Un-located Alerts
 
-When the redemption tool cannot match an alert to a location in the source code, the hand module has an option to print an error message `Warning: Missing ast_id for alert N`.  To turn on this message, set the environment variable `acr_warn_unlocated_alerts` to `true`.
+When the redemption tool cannot match an alert to a location in the source code, the brain module has an option to print an error message `Warning: Missing ast_id for alert N`.  To turn on this message, set the environment variable `acr_warn_unlocated_alerts` to `true`.
 
 ### Showing progress
 

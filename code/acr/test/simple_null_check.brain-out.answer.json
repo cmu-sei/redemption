@@ -5,11 +5,22 @@
     "line": 8,
     "alert_id": 1,
     "ast_id": 1033,
-    "repair_algo": [
-      "add_null_check",
-      {
-        "whole_expr": false
-      }
+    "patch": [
+      [
+        "/host/code/acr/test/simple_null_check.c",
+        [
+          [
+            156,
+            156,
+            "null_check("
+          ],
+          [
+            157,
+            157,
+            ")"
+          ]
+        ]
+      ]
     ]
   }
 ]

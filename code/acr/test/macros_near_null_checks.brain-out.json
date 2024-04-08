@@ -5,11 +5,22 @@
     "line": 14,
     "alert_id": 1,
     "ast_id": 1066,
-    "repair_algo": [
-      "add_null_check",
-      {
-        "whole_expr": false
-      }
+    "patch": [
+      [
+        "/host/code/acr/test/macros_near_null_checks.c",
+        [
+          [
+            316,
+            316,
+            "null_check("
+          ],
+          [
+            317,
+            317,
+            ")"
+          ]
+        ]
+      ]
     ]
   },
   {
@@ -18,15 +29,11 @@
     "line": 15,
     "alert_id": 2,
     "ast_id": 1085,
-    "repair_algo": [
-      "skip",
-      {
-        "why": [
-          "In a macro expansion at beginning of expression",
-          "In a macro expansion at end of expression"
-        ]
-      }
-    ]
+    "why_skipped": [
+      "In a macro expansion at beginning of expression",
+      "In a macro expansion at end of expression"
+    ],
+    "patch": []
   },
   {
     "rule": "EXP34-C",
@@ -34,11 +41,22 @@
     "line": 16,
     "alert_id": 3,
     "ast_id": 1097,
-    "repair_algo": [
-      "add_null_check",
-      {
-        "whole_expr": false
-      }
+    "patch": [
+      [
+        "/host/code/acr/test/macros_near_null_checks.c",
+        [
+          [
+            389,
+            389,
+            "null_check("
+          ],
+          [
+            404,
+            404,
+            ")"
+          ]
+        ]
+      ]
     ]
   },
   {
@@ -47,14 +65,10 @@
     "line": 17,
     "alert_id": 4,
     "ast_id": 1113,
-    "repair_algo": [
-      "skip",
-      {
-        "why": [
-          "In a macro expansion at end of expression"
-        ]
-      }
-    ]
+    "why_skipped": [
+      "In a macro expansion at end of expression"
+    ],
+    "patch": []
   },
   {
     "rule": "EXP34-C",
@@ -62,15 +76,11 @@
     "line": 18,
     "alert_id": 5,
     "ast_id": 1131,
-    "repair_algo": [
-      "skip",
-      {
-        "why": [
-          "In a macro expansion at beginning of expression",
-          "In a macro expansion at end of expression"
-        ]
-      }
-    ]
+    "why_skipped": [
+      "In a macro expansion at beginning of expression",
+      "In a macro expansion at end of expression"
+    ],
+    "patch": []
   },
   {
     "rule": "EXP34-C",
@@ -78,15 +88,11 @@
     "line": 19,
     "alert_id": 6,
     "ast_id": 1155,
-    "repair_algo": [
-      "skip",
-      {
-        "why": [
-          "In a macro expansion at beginning of expression",
-          "In a macro expansion at end of expression"
-        ]
-      }
-    ]
+    "why_skipped": [
+      "In a macro expansion at beginning of expression",
+      "In a macro expansion at end of expression"
+    ],
+    "patch": []
   },
   {
     "rule": "EXP34-C",
@@ -94,13 +100,9 @@
     "line": 20,
     "alert_id": 7,
     "ast_id": 1172,
-    "repair_algo": [
-      "skip",
-      {
-        "why": [
-          "In a macro expansion at beginning of expression"
-        ]
-      }
-    ]
+    "why_skipped": [
+      "In a macro expansion at beginning of expression"
+    ],
+    "patch": []
   }
 ]

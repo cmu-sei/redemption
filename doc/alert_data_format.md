@@ -119,14 +119,6 @@ hereafter referred to as *fields*.
 
     Manual analysis of the alert.
 
-* `repair_algo` : list
-
-    The algorithm, with attached information, that should be used for
-    the repair.  This is a list of two elements.  The first element is
-    a string which represents the algorithm.  The second element is
-    any data that needs to be attached to the algorithm, and is
-    specific to each algorithm.
-
 * `repairable` : string
 
     A manual determination as to whether an alert is **practically** repairable, **within the context of our current research project**. If developing an automated repair that integrates into our framework seems feasible and not too much effort given the current stage, capabilities, and milestone commitments of the project, then we may mark this field true. We currently limit repairs to repairs that do not negatively impact code maintainability nor comprehension by code maintainers/developers, so we may mark this field false despite finding a way to fix the alert, if the fix would negatively impact code maintainability or comprehension. This field might be marked false even if an automated repair for the same type of code flaw (and/or same type of code construct that triggers the same static analysis alert) has been developed and published by others (code publication and/or documentation publication). 
@@ -168,27 +160,26 @@ hereafter referred to as *fields*.
 
 ## Table of field usage
 
-| Field                 | Required | Created By | Used By          |
-|:----------------------|----------|:-----------|:-----------------|
-| `rule`                | yes      | author     | brain            |
-| `file`                | yes      | author     | brain            |
-| `line`                | yes      | author     | brain            |
-| `column`              |          | author     | brain            |
-| `tool`                |          | author     | brain            |
-| `checker`             |          | author     | brain            |
-| `message`             |          | author     | brain            |
-| `satisfactory`        |          | author     |                  |
-| `verdict`             |          | author     |                  |
-| `repairable`          |          | author     |                  |
-| `rationale`           |          | author     |                  |
-| `randomness`          |          | author     |                  |
-| `issue`               |          | author     |                  |
-| `ast_id`              |          | brain      |                  |
-| `repair_algo`         |          | brain      | brain, hand, sup |
-| `alert_id`            |          | brain      | brain, sup       |
-| `patch`               |          | hand, sup  | glove, sup       |
-| `why_skipped`         |          | hand, sup  |                  |
-| `edits`               |          | author     | glove            |
-| `skipped_repair`      |          | sup        |                  |
-| `overlapping_alerts`  |          | sup        |                  |
-| `conflicting_repairs` |          | sup        |                  |
+| Field                 | Required | Created By | Used By    |
+|:----------------------|----------|:-----------|:-----------|
+| `rule`                | yes      | author     | brain      |
+| `file`                | yes      | author     | brain      |
+| `line`                | yes      | author     | brain      |
+| `column`              |          | author     | brain      |
+| `tool`                |          | author     | brain      |
+| `checker`             |          | author     | brain      |
+| `message`             |          | author     | brain      |
+| `satisfactory`        |          | author     |            |
+| `verdict`             |          | author     |            |
+| `repairable`          |          | author     |            |
+| `rationale`           |          | author     |            |
+| `randomness`          |          | author     |            |
+| `issue`               |          | author     |            |
+| `ast_id`              |          | brain      |            |
+| `alert_id`            |          | brain      | brain, sup |
+| `patch`               |          | brain, sup | glove, sup |
+| `why_skipped`         |          | brain, sup |            |
+| `edits`               |          | author     | glove      |
+| `skipped_repair`      |          | sup        |            |
+| `overlapping_alerts`  |          | sup        |            |
+| `conflicting_repairs` |          | sup        |            |

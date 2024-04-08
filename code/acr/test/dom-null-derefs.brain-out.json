@@ -5,11 +5,22 @@
     "line": 10,
     "alert_id": 1,
     "ast_id": 2734,
-    "repair_algo": [
-      "add_null_check",
-      {
-        "whole_expr": false
-      }
+    "patch": [
+      [
+        "/host/code/acr/test/dom-null-derefs.c",
+        [
+          [
+            175,
+            175,
+            "null_check("
+          ],
+          [
+            176,
+            176,
+            ")"
+          ]
+        ]
+      ]
     ]
   },
   {
@@ -18,11 +29,22 @@
     "line": 11,
     "alert_id": 2,
     "ast_id": 2739,
-    "repair_algo": [
-      "add_null_check",
-      {
-        "whole_expr": false
-      }
+    "patch": [
+      [
+        "/host/code/acr/test/dom-null-derefs.c",
+        [
+          [
+            190,
+            190,
+            "null_check("
+          ],
+          [
+            195,
+            195,
+            ")"
+          ]
+        ]
+      ]
     ]
   },
   {
@@ -31,20 +53,11 @@
     "line": 13,
     "alert_id": 3,
     "ast_id": 2749,
-    "repair_algo": [
-      "skip",
-      {
-        "why": [
-          "Dominated by alert 1",
-          "Dominated by the following nullness checks (identified by (line, col) pairs): [[12, 9]]"
-        ]
-      }
-    ],
+    "patch": [],
     "why_skipped": [
       "Dominated by alert 1",
       "Dominated by the following nullness checks (identified by (line, col) pairs): [[12, 9]]"
     ],
-    "patch": [],
     "is_false_positive": true
   },
   {
@@ -53,20 +66,11 @@
     "line": 16,
     "alert_id": 4,
     "ast_id": 2759,
-    "repair_algo": [
-      "skip",
-      {
-        "why": [
-          "Dominated by alert 2",
-          "Dominated by the following nullness checks (identified by (line, col) pairs): [[15, 9]]"
-        ]
-      }
-    ],
+    "patch": [],
     "why_skipped": [
       "Dominated by alert 2",
       "Dominated by the following nullness checks (identified by (line, col) pairs): [[15, 9]]"
     ],
-    "patch": [],
     "is_false_positive": true
   },
   {
@@ -75,18 +79,10 @@
     "line": 18,
     "alert_id": 5,
     "ast_id": 2765,
-    "repair_algo": [
-      "skip",
-      {
-        "why": [
-          "Dominated by alert 1"
-        ]
-      }
-    ],
+    "patch": [],
     "why_skipped": [
       "Dominated by alert 1"
-    ],
-    "patch": []
+    ]
   },
   {
     "rule": "EXP34-C",
@@ -94,17 +90,9 @@
     "line": 19,
     "alert_id": 6,
     "ast_id": 2771,
-    "repair_algo": [
-      "skip",
-      {
-        "why": [
-          "Dominated by alert 2"
-        ]
-      }
-    ],
+    "patch": [],
     "why_skipped": [
       "Dominated by alert 2"
-    ],
-    "patch": []
+    ]
   }
 ]

@@ -33,7 +33,7 @@
  
      if (node->prefix) {
  #ifdef PATRICIA_DEBUG
-@@ -754,10 +752,10 @@
+@@ -754,7 +752,7 @@
      node = calloc(1, sizeof *node);
      if (node == NULL)
        out_of_memory("patricia/patricia_lookup: unable to allocate memory");
@@ -41,12 +41,8 @@
 +    node->bit = prefix->bitlen;
      node->prefix = Ref_Prefix(prefix);
      node->parent = NULL;
--    null_check(node)->l = node->r = NULL;
-+    node->l = node->r = NULL;
-     node->data = NULL;
-     patricia->head = node;
- #ifdef PATRICIA_DEBUG
-@@ -866,10 +864,10 @@
+     node->l = node->r = NULL;
+@@ -866,7 +864,7 @@
    new_node = calloc(1, sizeof *new_node);
    if (new_node == NULL)
      out_of_memory("patricia/patricia_lookup: unable to allocate memory");
@@ -54,11 +50,7 @@
 +  new_node->bit = prefix->bitlen;
    new_node->prefix = Ref_Prefix(prefix);
    new_node->parent = NULL;
--  null_check(new_node)->l = new_node->r = NULL;
-+  new_node->l = new_node->r = NULL;
-   new_node->data = NULL;
-   patricia->num_active_node++;
- 
+   new_node->l = new_node->r = NULL;
 @@ -915,9 +913,9 @@
      glue = calloc(1, sizeof *glue);
      if (glue == NULL)

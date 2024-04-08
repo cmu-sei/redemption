@@ -49,12 +49,6 @@
     "file": "$BASE/super01b.c",
     "line": 4,
     "alert_id": 2,
-    "repair_algo": [
-      "add_null_check",
-      {
-        "whole_expr": false
-      }
-    ],
     "patch": [
       [
         "$BASE/super01b.c",
@@ -79,12 +73,6 @@
     "line": 2,
     "alert_id": 3,
     "ast_id": 2150,
-    "repair_algo": [
-      "add_null_check",
-      {
-        "whole_expr": false
-      }
-    ],
     "patch": [
       [
         "$BASE/super01.h",

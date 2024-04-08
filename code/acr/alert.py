@@ -32,7 +32,21 @@ import re
 from util import get_dict_path, AstVisitor, read_file_range
 
 class Alert(OrderedDict):
-    """A Redemption alert."""
+    """A Redemption alert.
+
+    An Alert is fundamentally an ordered dictionary.  This dictionary
+    represents the JSON information for the alert.
+
+    The main interfaces for an alert are the attempt_repair and
+    attempt_patch methods.  attempt_repair is called with an AST node.
+    If the repair attempt succeeds it should return the AST node
+    associated with the repair, otherwise it should return None.
+    attempt_patch is called on Alerts for which attempt_repair
+    succeeded.  It should modify the JSON dictionary to apply an
+    appropriate patch.  Data can be transmitted between the repair and
+    patch processes by storing that data in attributes on the Alert
+    instance.
+    """
 
     def __init__(self, val):
         super().__init__(val)
@@ -87,7 +101,6 @@ class EXP33_C(Alert):
         if decl_node is None or decl_node.get("name") != var:
             return None
         self.decl_node = decl_node
-        self["repair_algo"] = ["initialize_var", {"decl_id": decl_node["id"]}]
         self["ast_id"] = decl_node['id']
         return context
 
@@ -126,17 +139,19 @@ class MSC12_C(Alert):
         if not decl_node:
             return False
         self.decl_node = decl_node
-        self["repair_algo"] = ["repair_deadinit_var", {"decl_id": self.decl_node["id"]}]
+        self.repair_algo = "repair_deadinit_var"
         return True
 
     def attempt_repair(self, context):
         if not self.enable_msc12:
             self["ast_id"] = context['id']
-            self["repair_algo"] = ["skip", {"why": ["Repair of MSC12-C is disabled; set env var REPAIR_MSC12=true to enable it."]}]
+            context.mark_skipped_alert(
+                self,
+                "Repair of MSC12-C is disabled; set env var REPAIR_MSC12=true to enable it.")
             return None
         # TODO: This probably shouldn't happen here, but is kept for
         # comparison purposes
-        self["repair_algo"] = ["msc12c", {}]
+        self.repair_algo = "msc12c"
         macro_file = get_dict_path(context, 'range', 'begin', 'spellingLoc', 'file')
         if macro_file is not None and macro_file.endswith("/assert.h"):
             context.mark_skipped_alert(self, "False positive: inside an assert")
@@ -151,13 +166,13 @@ class MSC12_C(Alert):
             if (self.decl_node["kind"] != "BinaryOperator"
                 or not self.decl_node["opcode"].startswith("=")):
                 return None
-            self["repair_algo"] = ["del_unused_asgn", {"asgn_id": self.decl_node["id"]}]
+            self.repair_algo = "del_unused_asgn"
             self["ast_id"] = context['id']
             return context
         return None
 
     def attempt_patch(self, context):
-        algo = self["repair_algo"][0]
+        algo = self.repair_algo
         if algo == "repair_deadinit_var":
             try:
                 filename = self.decl_node["range"]["file"]
@@ -199,10 +214,9 @@ class EXP34_C(Alert):
         fn_decl_node = context.find_through_parents("FunctionDecl")
         try:
             eh = context.error_handling_db[fn_decl_node["id"]]["error_handler"]
-            error_handler = {"handle_error": eh}
+            return eh
         except:
-            error_handler = dict()
-        return error_handler
+            return None
 
     def find_dereference_locus(self, node):
         def match_dereference(node):
@@ -219,11 +233,10 @@ class EXP34_C(Alert):
         match self:
             case None:
                 return None
-            case {'repair_algo': [_, _]} if not self.whole_expr:
+            case {'patch': _} if not self.whole_expr:
                 return None
-            case {'tool': 'rosecheckers',
-              'repair_algo': ['add_null_check', {"whole_expr": True}]}:
-                # If we've already repaired this as a whole_expr, stop
+            case {'tool': 'rosecheckers', 'ast_id': _} if getattr(
+                    self, 'saved_whole_expr', False):
                 return None
         message = self.get("message","")
         m = re.match("Null pointer passed to ([0-9]+).. parameter", message)
@@ -237,10 +250,9 @@ class EXP34_C(Alert):
                 return None
         else:
             self.context = context
-        kwargs = self.get_error_handler_at_cursor(self.context)
-        kwargs["whole_expr"] = self.whole_expr
         self["ast_id"] = self.context['id']
-        self["repair_algo"] = ["add_null_check", kwargs]
+        self.handle_error = self.get_error_handler_at_cursor(self.context)
+        self.saved_whole_expr = self.whole_expr
         return self.context
 
     @staticmethod
@@ -265,9 +277,8 @@ class EXP34_C(Alert):
         byte_start = ptr_subexpr.get_begin()['offset'] - 1
         end = ptr_subexpr.get_end()
         byte_end = end['offset'] + end['tokLen']
-        handle_error = self["repair_algo"][1].get("handle_error")
-        if handle_error is not None:
-            closer = ", " + handle_error + ")"
+        if self.handle_error is not None:
+            closer = ", " + self.handle_error + ")"
         else:
             closer = ")"
         edit = [self['file'], [
