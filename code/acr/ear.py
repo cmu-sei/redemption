@@ -38,14 +38,14 @@ import shlex
 import functools
 import bisect
 import gzip
+import textwrap
+import argparse
 
 class EarException(Exception):
     pass
 
-def run_clang_parse(compile_cmd, ll_outfile):
-    print_progress("Running Clang...")
-    cur_dir = os.getcwd()
-    os.chdir(get_compile_dir(compile_cmd))
+def run_clang_parse(compile_cmd, ll_outfile, hashval, raw_ast_dir=None, output_clang_script=None):
+    print_progress(f"Running Clang on {compile_cmd['file']}...")
     args = compile_cmd['arguments']
     compiler = args[0]
     if compiler.endswith("clang++"):
@@ -65,24 +65,89 @@ def run_clang_parse(compile_cmd, ll_outfile):
             new_args.append(args[i])
             i += 1
     args = new_args
-    #ast = subprocess.check_output(args + "-Xclang -ast-dump=json -fsyntax-only".split())
+
+    if raw_ast_dir is not None:
+        ast_out_dir = os.path.realpath(raw_ast_dir)
+        if (not ast_out_dir) or not os.path.isdir(ast_out_dir):
+            sys.stderr.write(f"Error: \"--raw-ast-dir {ast_out_dir}\": directory doesn't exit!\n")
+            sys.exit(1)
+    else:
+        ast_out_dir = "$ast_out_dir"
+
+    cache_base_name = os.path.splitext(os.path.basename(compile_cmd["file"]))[0][:20]
+    assert(shlex.quote(cache_base_name) == cache_base_name)
+    cache_ast_file = f"{ast_out_dir}/{cache_base_name}.{hashval}.raw.ast.json.gz"
+    stderr_file    = f"{ast_out_dir}/{cache_base_name}.{hashval}.raw.stderr.txt"
+    retcode_file   = f"{ast_out_dir}/{cache_base_name}.{hashval}.raw.retcode.txt"
+    ll_raw_file    = f"{ast_out_dir}/{cache_base_name}.{hashval}.raw.ll"
+
     proc_args = args + "-Xclang -ast-dump=json -fsyntax-only".split()
-    ast_proc = subprocess.run(proc_args, capture_output=True, encoding="utf-8")
+    ll_args = args + "-Xclang -disable-O0-optnone -g -S -O0 -fno-inline -emit-llvm -o".split()
+    cmd_line = (
+        "cd " + get_compile_dir(compile_cmd) + "\n" +
+        shlex.join(proc_args))
+
+
+    if output_clang_script is not None:
+        with open(output_clang_script, 'a') as outfile:
+            outfile.write(
+                cmd_line + f" 2> {stderr_file} | gzip > {cache_ast_file}; echo $? > {retcode_file}\n")
+            outfile.write(shlex.join(ll_args) + " " + ll_raw_file + "\n")
+        raise EarDryExit()
+
+    cur_dir = os.getcwd()
+    os.chdir(get_compile_dir(compile_cmd))
+    if raw_ast_dir is not None:
+        class AttrDict(dict):
+            def __getattr__(self, item):
+                return self[item]
+        try:
+            ast_proc = AttrDict({
+                "stdout": read_whole_file(cache_ast_file),
+                "stderr": read_whole_file(stderr_file),
+                "returncode": int(read_whole_file(retcode_file)),
+            })
+        except FileNotFoundError as exc:
+            raise EarException(f"File not found: {exc.filename!r}") from None
+    else:
+        ast_proc = subprocess.run(proc_args, capture_output=True, encoding="utf-8")
     ast = ast_proc.stdout
     if ast_proc.returncode != 0:
         sys.stderr.write("="*78 + "\n")
         err_msg = ("Clang encountered an error!\n" +
-            "Command line:\n" +
-            "cd " + get_compile_dir(compile_cmd) + "\n" +
-            shlex.join(proc_args) + "\n" +
+            "Command line:\n" + cmd_line + "\n" +
             "Error message:\n" + ast_proc.stderr + "\n")
         os.chdir(cur_dir)
         raise EarException(err_msg)
-
-    subprocess.check_output(args + "-Xclang -disable-O0-optnone -g -S -O0 -fno-inline -emit-llvm -o".split() + [ll_outfile])
+    if raw_ast_dir is not None:
+        shutil.copy(ll_raw_file, ll_outfile)
+    else:
+        subprocess.check_output(ll_args + [ll_outfile])
     os.chdir(cur_dir)
+
     print_progress("Finished running Clang.  JSON AST size: %d characters." % len(ast))
     return ast
+
+def init_clang_script(shell_file):
+    try:
+        with open(shell_file, 'w') as outfile:
+            outfile.write(textwrap.dedent(
+                """\
+                #!/bin/sh
+
+                ast_out_dir=$1\n
+                if [ "$#" -ne 1 ]; then
+                    echo "Usage $0 ast_out_dir"
+                    exit 1
+                fi
+                if [ ! -d "$ast_out_dir" ]; then
+                    echo "Error: Output directory ($ast_out_dir) does not exist!"
+                    exit 1
+                fi
+                ast_out_dir=`realpath $ast_out_dir`
+                """))
+    except Exception as exc:
+        print(exc)
 
 def get_compile_dir(compile_cmd):
     script_dir = os.path.dirname(os.path.realpath(__file__))
@@ -126,11 +191,10 @@ def get_compile_cmd_for_source_file(source_file, compile_cmds_file, base_dir):
         return cmd
     err_msg = (("Error: source file %r not found in compile commands!\n" % source_file) +
         ("Files available in compile commands: %r" % skipped_files))
-    print(err_msg)
     raise Exception(err_msg)
 
-def run_ear_for_cmd(cmd, ast_file, base_dir, ll_outfile):
-    ast1 = run_clang_parse(cmd, ll_outfile)
+def run_ear_for_cmd(cmd, ast_file, base_dir, ll_outfile, hashval, raw_ast_dir=None, output_clang_script=None):
+    ast1 = run_clang_parse(cmd, ll_outfile, hashval, raw_ast_dir, output_clang_script)
     print_progress("Parsing JSON AST...")
     ast_json = json.loads(ast1, object_pairs_hook=OrderedDict)
     compile_dir = os.path.realpath(get_compile_dir(cmd))
@@ -171,32 +235,38 @@ def run_ear_for_cmd(cmd, ast_file, base_dir, ll_outfile):
     with fn_open(ast_file, 'wt') as outfile:
         outfile.write(ast2)
 
-def write_ear_output_for_cmd(cmd, ast_file, base_dir):
+def write_ear_output_for_cmd(cmd, base_dir, ast_file=None, raw_ast_dir=None, output_clang_script=None):
     cache_dir = os.getenv('acr_parser_cache')
     if cache_dir and not cache_dir.startswith("/"):
         print("ERROR: environment variable 'acr_parser_cache' must be an absolute path!")
         cache_dir = None
     compile_dir = os.path.realpath(get_compile_dir(cmd))
     base_dir = os.path.realpath(base_dir or compile_dir)
-    ast_file = os.path.realpath(ast_file)
-    ll_outfile = get_ast_file_base(ast_file) + ".ll"
+    ll_outfile = None
+    if  ast_file is not None:
+        ast_file = os.path.realpath(ast_file)
+        ll_outfile = get_ast_file_base(ast_file) + ".ll"
+    hashval = hashlib.sha256(repr(cmd).encode("utf-8")).digest().hex()[:24]
     if (not cache_dir) or not os.path.isdir(cache_dir):
         if os.getenv('acr_parser_cache_verbose'):
             print("No cache dir")
-        return run_ear_for_cmd(cmd, ast_file, base_dir, ll_outfile)
+        return run_ear_for_cmd(cmd, ast_file, base_dir, ll_outfile, hashval, raw_ast_dir, output_clang_script)
+
     cur_file = os.path.realpath(os.path.join(compile_dir, cmd['file']))
-    hashval = hashlib.sha256(repr([cur_file, cmd]).encode("utf-8")).digest().hex()[:24]
-    cache_base_name = os.path.splitext(os.path.basename(cmd["file"]))[0]
-    opt_gz = (".gz" if ast_file.endswith(".gz") else "")
-    cache_ast_file = cache_dir + "/" + cache_base_name + "." + hashval + ".ear-out.json" + opt_gz
-    cache_ll_file  = cache_dir + "/" + cache_base_name + "." + hashval + ".ll"
+    cache_base_name = os.path.splitext(os.path.basename(cmd["file"]))[0][:20]
     script_dir = os.path.dirname(os.path.realpath(__file__))
-    okay_cache = (
-        is_nonzero_file(cache_ast_file) and
-        is_nonzero_file(cache_ll_file) and
-        is_newer_file(cache_ast_file, cur_file) and
-        is_newer_file(cache_ast_file, __file__) and
-        (not is_newer_file(cache_ast_file, cache_ll_file)))
+
+    okay_cache = None
+    if ast_file is not None:
+        opt_gz = (".gz" if ast_file.endswith(".gz") else "")
+        cache_ast_file = cache_dir + "/" + cache_base_name + "." + hashval + ".ear-out.json" + opt_gz
+        cache_ll_file  = cache_dir + "/" + cache_base_name + "." + hashval + ".ll"
+        okay_cache = (
+            is_nonzero_file(cache_ast_file) and
+            is_nonzero_file(cache_ll_file) and
+            is_newer_file(cache_ast_file, cur_file) and
+            is_newer_file(cache_ast_file, __file__) and
+            (not is_newer_file(cache_ast_file, cache_ll_file)))
     if okay_cache:
         if os.getenv('acr_parser_cache_verbose'):
             print("Using cached ear output for " + cmd["file"])
@@ -205,23 +275,33 @@ def write_ear_output_for_cmd(cmd, ast_file, base_dir):
     else:
         if os.getenv('acr_parser_cache_verbose'):
             print("Generating ear output for " + cmd["file"])
-        run_ear_for_cmd(cmd, ast_file, base_dir, ll_outfile)
+        run_ear_for_cmd(cmd, ast_file, base_dir, ll_outfile, hashval, raw_ast_dir, output_clang_script)
         shutil.copy(ast_file, cache_ast_file)
         shutil.copy(ll_outfile, cache_ll_file)
 
 
-def run_ear_for_source_file(source_file, compile_cmds_file=None, ast_file=None, base_dir=None):
+def run_ear_for_source_file(source_file, compile_cmds_file=None, ast_file=None, base_dir=None,
+        output_clang_script=None, raw_ast_dir=None):
     if os.getenv('acr_emit_invocation'):
-        print("ear.py -s {}{}{}{}".format(
+        print("ear.py -s {}{}{}{}{}{}".format(
             source_file,
             f" -c {compile_cmds_file}" if compile_cmds_file is not None else "",
             f" -o {ast_file}" if ast_file is not None else "",
-            f" -b {base_dir}" if base_dir is not None else ""))
-    assert(ast_file != None)
+            f" -b {base_dir}" if base_dir is not None else "",
+            f" -C {output_clang_script}" if output_clang_script is not None else "",
+            f" -r {raw_ast_dir}" if raw_ast_dir is not None else ""))
     if base_dir:
         base_dir = os.path.realpath(base_dir)
+    if raw_ast_dir is None and output_clang_script is None:
+        if compile_cmds_file is None and ast_file is None:
+            sys.stderr.write("Must provide either compile_cmds_file or ast_file when running complete ear module")
+            sys.exit(1)
+
+    if output_clang_script is not None:
+        init_clang_script(output_clang_script)
     cmd = get_compile_cmd_for_source_file(source_file, compile_cmds_file, base_dir)
-    write_ear_output_for_cmd(cmd, ast_file, base_dir)
+    write_ear_output_for_cmd(cmd, base_dir, ast_file, raw_ast_dir, output_clang_script)
+
 
 def add_line_numbers(node, newlines, add_path, /):
     def add_line_numbers_helper(node, current_id, current_file, /):
@@ -340,20 +420,28 @@ def find_included_files_aux(node, files):
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Creates AST files from source code')
-    parser.add_argument('-o', "--ast-file", type=str, dest="ast_file",
-        required=True, help="Filename for output AST file, must end in '.ear-out.json' or '.ear-out.json.gz'")
-    parser.add_argument('-s', "--source-file", type=str, dest="source_file",
-        required=True, help="Source '.c' file")
     parser.add_argument('-c', "--compile-commands", type=str, dest="compile_cmds_file",
-        help="The compile_comands.json file produced by Bear")
+        required=True, help="The compile_comands.json file produced by Bear")
     parser.add_argument('-b', "--base-dir", type=str, dest="base_dir",
         help="Base directory of the project")
+    parser.add_argument('-s', "--source-file", type=str, dest="source_file",
+        required=True, help="Source '.c' file")
+    parser.add_argument('-o', "--ast-file", type=str, dest="ast_file",
+        help="Filename for output AST file, must end in '.ear-out.json' or '.ear-out.json.gz'")
+    parser.add_argument('-C', "--output-clang-script", type=str, dest="output_clang_script",
+        help="Generate script that runs Clang, but do no further processing")
+    parser.add_argument('-r', "--raw-ast-dir", type=str, dest="raw_ast_dir",
+        help="Process contents of AST directory, rather than source code")
+
     cmdline_args = parser.parse_args()
     return cmdline_args
 
 def main():
     cmdline_args = parse_args()
-    run_ear_for_source_file(**vars(cmdline_args))
+    try:
+        run_ear_for_source_file(**vars(cmdline_args))
+    except EarDryExit:
+        return  # thrown to terminate phase 1
 
 if __name__ == "__main__":
     main()

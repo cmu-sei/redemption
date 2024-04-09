@@ -31,9 +31,9 @@
 codebases: # All the codebases that we list
 
   dos2unix:
-    url: "https://sourceforge.net/projects/dos2unix/files/dos2unix/7.4.3/dos2unix-7.4.3.tar.gz"
+    url: "https://sourceforge.net/projects/dos2unix/files/dos2unix/7.5.2/dos2unix-7.5.2.tar.gz"
     notes: "Download using wget"
-    stable_version: "7.4.3"
+    stable_version: "7.5.2"
     license: "FreeBSD style"
 
     dependencies:

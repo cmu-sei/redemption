@@ -31,15 +31,22 @@ from collections import OrderedDict, defaultdict
 import time
 import gzip
 
-__all__ = ['json', 'OrderedDict', 'JSONFileException', 'stop', 'read_whole_file', 'read_json_file', 'read_file_range', 'get_dict_path', 'set_dict_path', 'setdefault_dict_path', 'print_progress', 'condense_json_int_pairs', 'strip_filename_extension', 'get_ast_file_base', 'is_nonzero_file', 'is_newer_file', 'AstVisitor']
+__all__ = ['json', 'OrderedDict', 'JSONFileException', 'EarDryExit', 'stop', 'read_whole_file', 'read_json_file', 'read_file_range', 'get_dict_path', 'set_dict_path', 'setdefault_dict_path', 'print_progress', 'condense_json_int_pairs', 'strip_filename_extension', 'get_ast_file_base', 'is_nonzero_file', 'is_newer_file', 'AstVisitor']
 
 class JSONFileException(Exception):
+    pass
+
+class EarDryExit(Exception):
     pass
 
 stop = pdb.set_trace
 
 def read_whole_file(filename, mode_mod=""):
-    with open(filename, 'r'+mode_mod) as the_file:
+    if filename.endswith(".gz"):
+        fn_open = gzip.open
+    else:
+        fn_open = open
+    with fn_open(filename, 'r'+mode_mod) as the_file:
         return the_file.read()
 
 def read_json_file(filename):

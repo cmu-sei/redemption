@@ -109,27 +109,36 @@ Since the script and its arguments are subject to change, the best way to identi
 Currently, that command provides the following information about required and optional arguments:
 
 ```
-usage: end_to_end_acr.py [-h] [--repaired-src OUT_SRC_DIR] --step-dir STEP_DIR [-b BASE_DIR] [--in-place] [--repair-includes {true,false}]
-                     source_file compile_commands alerts
+usage: end_to_end_acr.py [-h] [-a ALERTS] [--repaired-src OUT_SRC_DIR] [--step-dir STEP_DIR] [-b BASE_DIR] [--in-place]
+                         [--repair-includes {true,false}] [--no-patch NO_PATCH] [-C OUTPUT_CLANG_SCRIPT]
+                         [-r RAW_AST_DIR]
+                         source_file compile_commands
 
 Creates repaired source-code files
 
 positional arguments:
   source_file           The source-code file to repair
-  compile_commands      The compile_comands.json file (produced by Bear) or "autogen"
-  alerts                Static-analysis alerts
+  compile_commands      The compile_commands.json file (produced by Bear) or "autogen"
 
 options:
   -h, --help            show this help message and exit
+  -a ALERTS, --alerts ALERTS
+                        Static-analysis alerts
   --repaired-src OUT_SRC_DIR
                         Directory to write repaired source files
-  --step-dir STEP_DIR   Directory to write intermediate files of the steps of the process. (default: temporary directory)
+  --step-dir STEP_DIR   Directory to write intermediate files of the steps of the process. (default: temporary
+                        directory)
   -b BASE_DIR, --base-dir BASE_DIR
                         Base directory of the project
   --in-place            Sets repaired-src directory to base-dir
   --repair-includes {true,false}
-                        Whether to repair only the single specified source file (as opposed to also repairing #include'd header
-                        files). Choices: [true, false].
+                        Whether to repair #include'd header files or only the single specified source file. Choices:
+                        [true, false].
+  --no-patch NO_PATCH   Don't add patch clauses to alerts
+  -C OUTPUT_CLANG_SCRIPT, --output-clang-script OUTPUT_CLANG_SCRIPT
+                        Generate script that runs Clang, but do no further processing
+  -r RAW_AST_DIR, --raw-ast-dir RAW_AST_DIR
+                        Process contents of AST directory, rather than source code
 
 See the Redemption README.md file For more info.
 ```
@@ -148,9 +157,8 @@ Since the script and its arguments are subject to change, the best way to identi
 Currently, that provides this information about required and optional arguments:
 
 ```
-python3 ./code/acr/sup.py --help
-usage: sup.py [-h] -c COMPILE_CMDS_FILE -a ALERTS [-t STEP_DIR] -b BASE_DIR [-e COMBINED_BRAIN_OUT] [--inject-brain-output]
-              [--repaired-src OUT_SRC_DIR]
+usage: sup.py [-h] -c COMPILE_CMDS_FILE [-a ALERTS] [-t STEP_DIR] -b BASE_DIR [-e COMBINED_BRAIN_OUT]
+              [--inject-brain-output] [--repaired-src OUT_SRC_DIR] [-C OUTPUT_CLANG_SCRIPT] [-r RAW_AST_DIR]
 
 Creates repaired source-code files
 
@@ -165,11 +173,17 @@ options:
                         directory)
   -b BASE_DIR, --base-dir BASE_DIR
                         Base directory of the project
-  -e COMBINED_BRAIN_OUT  Output file (JSON) for combined edits
-  --inject-brain-output  If brain-module output files already exist, use them instead of regenerating them (this is for
+  -e COMBINED_BRAIN_OUT
+                        Output file (JSON) for combined edits
+  --inject-brain-output
+                        If brain-module output files already exist, use them instead of regenerating them (this is for
                         debugging/testing purposes)
   --repaired-src OUT_SRC_DIR
                         Directory to write repaired source files (or omit to refrain from running the glove module)
+  -C OUTPUT_CLANG_SCRIPT, --output-clang-script OUTPUT_CLANG_SCRIPT
+                        Generate script that runs Clang, but do no further processing
+  -r RAW_AST_DIR, --raw-ast-dir RAW_AST_DIR
+                        Process contents of AST directory, rather than source code
 
 See the Redemption README.md file For more info.
 ```
@@ -189,6 +203,7 @@ export acr_gzip_ear_out=true    # Compresses the output of the ear module
 export pytest_keep=true         # Keep output of individual modules (ear, brain, etc.). Regardless, the *.nulldom.json intermediate file is kept.
 export pytest_no_catch=true     # Break into debugger with "-m pdb" instead of catching exception
 export REPAIR_MSC12=true        # Repair MSC12-C alerts (By default, the system DOES do the repair. The system does not do this repair if this variable is set to `false`)
+export acr_default_lang_std=foo # Adds "--std=foo" to the beginning of the arguments given to Clang.
 ```
 
 
@@ -259,7 +274,7 @@ Here is an example of how to run a built-in end-to-end automated code repair tes
 ```sh
 pushd /host/code/acr
 python3 ./end_to_end_acr.py  /oss/git/config.c  /host/data/compile_commands.git.json  \
-    /host/data/test/sample.alerts.json  --repaired-src test/out  --base-dir /oss/git  --repair-includes false
+    --alerts /host/data/test/sample.alerts.json  --repaired-src test/out  --base-dir /oss/git  --repair-includes false
 ```
 
 You can see the repair using this command:
@@ -273,8 +288,8 @@ To test a single C file that needs no fancy compile commands, you can use the `a
 
 ```sh
 pushd /host/code/acr
-python3 ./end_to_end_acr.py test/test_errors.c autogen test/test_errors.alerts.json  --base-dir test \
-    --repaired-src  test/out
+python3 ./end_to_end_acr.py  test/test_errors.c  autogen  --alerts test/test_errors.alerts.json  \
+    --base-dir test  --repaired-src test/out
 ```
 
 <a name="example-execution-to-repair-a-codebase"></a>
@@ -285,6 +300,62 @@ You may need to share a volume, as discussed [above](#volume-sharing-and-docker-
 Our tool requires that you have a single command to build the entire codebase. (There are some exceptions involving single files and `autogen`, as mentioned [above](#example-execution-to-repair-a-single-file).) This command could be a call to `clang` or some other compiler. It could be a build command like `make` or `ninja`. It could even be a shell script. To be precise, this can be any command that can be passed to `bear`, a tool for generating a compilation database for `clang` tooling.  For more info on `bear`, see: https://github.com/rizsotto/Bear ).
 
 Run `bear` on the single-command build system (e.g., run `bear` on the makefile). Then, run the superscript `code/acr/sup.py`, giving it the `compile_commands.json` file created by `bear` and specifying code, alerts, etc. as discussed in the [above section on `sup.py`](#detail-about-the-suppy-script).
+
+
+### Codebases that cannot be built within the Redemption container
+
+Normally, Clang is invoked from within the Redemption tool.  For codebases that cannot be built within the Redemption container, we also provide an alternative method: The Redemption tool can be split into two phases:  The first phase can generate a shell script that uses Clang to generate syntactic data about the code.  You can then run this script on the platform where your code can be built.  After running the script, you can re-run the ACR process in the second phase to use the files generated by Clang to repair the code.
+
+This does presume that your platform that builds the code can run Clang with Redemption's patch. It can also run `bear` and that you can produce static-analysis alerts for the code (independently of running Redemption).
+
+#### Example running everything within a single container:
+
+This is a short example that just demonstrates the command-line arguments used for running Clang separately:
+- `--ear-mode phase1 --ear-script-out path/run_clang.sh` for generating the script to run Clang.
+- `--ear-mode phase2 --raw-ast-dir path` for continuing the Redemption process after running Clang to generate the AST files and `.ll` files.
+
+```bash
+mkdir -p /host/code/acr/test/cache
+cd /host/code/acr
+./end_to_end_acr.py  --repaired-src test/out  --step-dir test/out  test/macros_near_null_checks.c  autogen  \
+    --output-clang-script test/cache/run_clang.sh
+bash test/cache/run_clang.sh test/cache
+./end_to_end_acr.py  --repaired-src test/out  --step-dir test/out  test/macros_near_null_checks.c  autogen  \
+    --alerts test/macros_near_null_checks.alerts.json  --raw-ast-dir test/cache
+```
+
+#### Example running Clang outside the Redemption container:
+
+1. On the host (i.e., outside the Redemption docker container): Run bear to generate `compile_commands.json`.
+
+2. Mount the codebase in the Redemption container so that the base directory in the same as it is in the host.  (Making a symbolic link (`ln -s`) instead of directly mounting in the right place probably won't work, because `os.path.realpath` resolves symlinks.)  Inside the Redemption container:
+
+```bash
+mkdir -p /host/code/acr/test/cache
+cd /host/code/acr
+./end_to_end_acr.py  --repaired-src test/out  --step-dir test/out  test/macros_near_null_checks.c  autogen  \
+    --output-clang-script test/cache/run_clang.sh
+```
+
+3. Copy `run_clang.sh` to the host and run:
+
+```bash
+ast_out_dir=/tmp/ast_out
+mkdir -p $ast_out_dir
+bash run_clang.sh $ast_out_dir
+cd $ast_out_dir
+tar czf raw_ast_files.tar.gz *
+```
+
+4. Copy `raw_ast_files.tar.gz` to the Redemption container and then:
+
+```bash
+cd /host/code/acr/test/cache
+tar xf raw_ast_files.tar.gz
+cd /host/code/acr
+./end_to_end_acr.py  --repaired-src test/out  --step-dir test/out  test/macros_near_null_checks.c  autogen  \
+    --alerts test/macros_near_null_checks.alerts.json  --raw-ast-dir test/cache
+```
 
 ## Extending the Redemption Tool
 

@@ -54,7 +54,7 @@ def parse_args():
                                      epilog="See the Redemption README.md file For more info.")
     parser.add_argument("source_file", type=str, help="The source-code file to repair")
     parser.add_argument("compile_commands", type=str, help="The compile_commands.json file (produced by Bear) or \"autogen\"")
-    parser.add_argument("alerts", type=str, help="Static-analysis alerts")
+    parser.add_argument('-a', "--alerts", type=str, help="Static-analysis alerts")
     parser.add_argument('--repaired-src', type=str, dest="out_src_dir", help="Directory to write repaired source files")
     parser.add_argument('--step-dir', type=str, dest="step_dir", default=None, help="Directory to write intermediate files of the steps of the process. (default: temporary directory)")
     parser.add_argument('-b', "--base-dir", type=str, dest="base_dir",
@@ -63,6 +63,10 @@ def parse_args():
         help="Sets repaired-src directory to base-dir")
     parser.add_argument('--repair-includes', type=text_to_bool, dest="repair_includes_mode", metavar="{true,false}",
         help="Whether to repair #include'd header files or only the single specified source file.  Choices: [true, false].")
+    parser.add_argument('-C', "--output-clang-script", type=str, dest="output_clang_script",
+        help="Generate script that runs Clang, but do no further processing")
+    parser.add_argument('-r', "--raw-ast-dir", type=str, dest="raw_ast_dir",
+        help="Process contents of AST directory, rather than source code")
     cmdline_args = parser.parse_args()
     return cmdline_args
 
@@ -71,29 +75,42 @@ def main():
     run(**vars(cmdline_args))
 
 
-def run(source_file, compile_commands, alerts, *, out_src_dir=None, step_dir=None, base_dir=None, repair_includes_mode=None, repair_in_place=False):
+def run(source_file, compile_commands, *, alerts=None, out_src_dir=None, step_dir=None, base_dir=None,
+        repair_includes_mode=None, repair_in_place=False,
+        output_clang_script=None, raw_ast_dir=None, **run_kwargs):
     if os.getenv('acr_emit_invocation'):
-        print("end_to_end_acr.py{}{}{}{}{} {} {} {}".format(
+        print("end_to_end_acr.py{}{}{}{}{}{} {} {} {} {}".format(
+            f" --alerts {alerts}" if alerts else "",
             f" --repaired-src {out_src_dir}" if out_src_dir else "",
             f" --step-dir {step_dir}" if step_dir else "",
             f" --base-dir {base_dir}" if base_dir else "",
             " --in-place" if repair_in_place else "",
             " --repair-includes" if repair_includes_mode else "",
-            source_file, compile_commands, alerts))
+            f" -C {output_clang_script}" if output_clang_script is not None else "",
+            f" -r {raw_ast_dir}" if raw_ast_dir is not None else "",
+           source_file, compile_commands))
 
     if repair_in_place == True:
         if (base_dir is None):
-            raise Exception("Option '--in_place' requires that base_dir be set.")
+            sys.stderr.write("Option '--in_place' requires that base_dir be set.")
+            sys.exit(1)
         if not (out_src_dir is None):
-            raise Exception("Cannot specify both '--in-place' and --repaired-src'.")
+            sys.stderr.write("Cannot specify both '--in-place' and --repaired-src'.")
+            sys.exit(1)
         out_src_dir = base_dir
     if repair_includes_mode is None:
         repair_includes_mode = False
 
     if not os.path.exists(source_file):
-        raise Exception(f'Error: The specified source-code file ({source_file}) does not exist.')
+        sys.stderr.write(f'Error: The specified source-code file ({source_file}) does not exist.')
+        sys.exit(1)
     if os.path.isdir(source_file):
-        raise Exception(f'Error: The specified source-code file ({source_file}) is a directory, not a regular file.')
+        sys.stderr.write(f'Error: The specified source-code file ({source_file}) is a directory, not a regular file.')
+        sys.exit(1)
+
+    if alerts is None and output_clang_script is None:
+        sys.stderr.write("Must provide either file of alerts or output Clang script")
+        sys.exit(1)
 
     orig_source_file = source_file
     source_file = os.path.realpath(source_file)
@@ -115,7 +132,7 @@ def run(source_file, compile_commands, alerts, *, out_src_dir=None, step_dir=Non
     source_base_name = os.path.basename(source_file)
     source_base_name = strip_filename_extension(source_base_name)
 
-    if not os.path.exists(alerts):
+    if alerts is not None and not os.path.exists(alerts):
         sys.stderr.write("Error: Alerts file %r doesn't exist!\n" % alerts)
         sys.exit(1)
 
@@ -131,7 +148,11 @@ def run(source_file, compile_commands, alerts, *, out_src_dir=None, step_dir=Non
             ast_filename += ".gz"
 
         print_progress("Running ear module...")
-        ear.run_ear_for_source_file(source_file, compile_commands, ast_filename, base_dir=base_dir)
+        try:
+            ear.run_ear_for_source_file(source_file, compile_commands, ast_filename, base_dir=base_dir,
+                                        output_clang_script=output_clang_script, raw_ast_dir=raw_ast_dir)
+        except EarDryExit:
+            return  # thrown to terminate phase 1
         print_progress("Running brain module...")
         brain.run(ast_file=ast_filename, alerts_filename=alerts, output_filename=brain_out_file)
         compile_dir = read_json_file(ast_filename)["compile_dir"]

@@ -55,8 +55,7 @@ def parse_args():
                                      epilog="See the Redemption README.md file For more info.")
     parser.add_argument("-c", "--compile_commands", type=str, required=True, dest="compile_cmds_file",
         help="The compile_comands.json file produced by Bear")
-    parser.add_argument("-a", "--alerts", type=str, required=True,
-        help="Static-analysis alerts")
+    parser.add_argument("-a", "--alerts", type=str, help="Static-analysis alerts")
     parser.add_argument("-t", '--step-dir', type=str, dest="step_dir", default=None,
                         help="Directory to write intermediate files of the steps of the process. (default: temporary directory)")
     parser.add_argument("-b", "--base-dir", type=str, dest="base_dir", required=True,
@@ -69,6 +68,10 @@ def parse_args():
         # because currently we need to hack the brain output files to get a conflict.
     parser.add_argument('--repaired-src', type=str, dest="out_src_dir", required=False,
         help="Directory to write repaired source files (or omit to refrain from running the glove module)")
+    parser.add_argument('-C', "--output-clang-script", type=str, dest="output_clang_script",
+        help="Generate script that runs Clang, but do no further processing")
+    parser.add_argument('-r', "--raw-ast-dir", type=str, dest="raw_ast_dir",
+        help="Process contents of AST directory, rather than source code")
     cmdline_args = parser.parse_args()
     return cmdline_args
 
@@ -164,14 +167,33 @@ def combine_brain_outs(indiv_brain_filenames):
 
     return combined_alert_list
 
-def run(*, compile_cmds_file, alerts, base_dir, combined_brain_out=None, step_dir=None, out_src_dir=None, inject_brain_output=False):
+def run(*, compile_cmds_file, base_dir, alerts=None, combined_brain_out=None,
+        step_dir=None, out_src_dir=None, inject_brain_output=False,
+        output_clang_script=None, raw_ast_dir=None, **kwargs):
+    if os.getenv('acr_emit_invocation'):
+        print("sup.py{}{}{}{}{}{}{}{}{}".format(
+            f" --compile_commands {compile_commands_dir}" if compile_commands else "",
+            f" --alerts {alerts}" if alerts else "",
+            f" --step-dir {step_dir}" if step_dir else "",
+            f" --base-dir {base_dir}" if base_dir else "",
+            f" -e {combined_brain_out}" if combined_brain_out else "",
+            f" --inject-brain-output {store_true}" if store_true else "",
+            f" --repaired-src {out_src_dir}" if out_src_dir else "",
+            f" -C {output_clang_script}" if output_clang_script is not None else "",
+            f" -r {raw_ast_dir}" if raw_ast_dir is not None else ""))
+
     base_dir = os.path.realpath(base_dir)
     compile_commands = read_json_file(compile_cmds_file)
     num_tus = len(compile_commands)
     indiv_brain_filenames = []
 
     if base_dir == "/":
-        raise Exception('Error: base_dir may not be the root directory ("/").')
+        sys.stderr.write('Error: base_dir may not be the root directory ("/").')
+        sys.exit(1)
+
+    if alerts is None and output_clang_script is None:
+        sys.stderr.write("Must provide either file of alerts or output Clang script")
+        sys.exit(1)
 
     temp_step_dir = None
     if step_dir is None:
@@ -179,9 +201,12 @@ def run(*, compile_cmds_file, alerts, base_dir, combined_brain_out=None, step_di
         step_dir = temp_step_dir.name
 
     if combined_brain_out is None:
-        hashval = hashlib.sha256(read_whole_file(compile_cmds_file, "b") + read_whole_file(alerts, "b")).hexdigest()[:24]
+        hashval = hashlib.sha256(read_whole_file(compile_cmds_file, "b")).hexdigest()[:24]
         base_name = strip_filename_extension(os.path.basename(compile_cmds_file))
         combined_brain_out = f"{step_dir}/{hashval}.combined.json"
+
+    if output_clang_script is not None:
+        ear.init_clang_script(output_clang_script)
 
     try:
         for (tu_index, cmd) in enumerate(compile_commands):
@@ -199,9 +224,16 @@ def run(*, compile_cmds_file, alerts, base_dir, combined_brain_out=None, step_di
 
             skip_generating_brain_out = inject_brain_output and os.path.exists(brain_out_file)
             if not skip_generating_brain_out:
-                ear.write_ear_output_for_cmd(cmd, ast_filename, base_dir)
+                try:
+                    ear.write_ear_output_for_cmd(cmd, base_dir, ast_file=ast_filename,
+                                                 output_clang_script=output_clang_script, raw_ast_dir=raw_ast_dir)
+                except EarDryExit:
+                    continue  # thrown to terminate ear in phase 1
                 brain.run(ast_file=ast_filename, alerts_filename=alerts, output_filename=brain_out_file)
             indiv_brain_filenames.append(brain_out_file)
+
+        if output_clang_script is not None:
+            return
 
         combined_alerts = combine_brain_outs(indiv_brain_filenames)
         with open(combined_brain_out, 'w') as outfile:
