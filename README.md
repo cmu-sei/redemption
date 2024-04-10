@@ -26,6 +26,36 @@ DM23-2165
 </legal>
 
 <a name="build-instructions"></a>
+## Capabilities
+
+The Redemption tool makes repairs to C/C++ source code based on alerts produced by certain static-analysis tools.
+
+<a name="static-analysis tools"></a>
+### Static-Analysis Tools
+
+Redemption is currently able to identify alerts from the following static-analysis tools:
+
+| Tool         | Version | License      | Container                                        | Origin                                       |
+|--------------|---------|--------------|--------------------------------------------------|----------------------------------------------|
+| Clang-tidy   | 16.0.6  | LLVM Release | silkeh/clang:latest                              | https://clang.llvm.org/extra/clang-tidy      |
+| Cppcheck     | 2.4.1   | GPL v3       | facthunder/cppcheck:latest                       | https://cppcheck.sourceforge.io/             |
+| Rosecheckers |         | CMU (OSS)    | ghcr.io/cmu-sei/cert-rosecheckers/rosebud:latest | https://github.com/cmu-sei/cert-rosecheckers |
+
+You may run other tools, or create alerts manually; however Redemption has not been tested with alerts produced by other tools.
+
+<a name="alert categories"></a>
+### Alert Categories
+
+Redemption can currently repair the following categories of alerts. These alerts will often have a [MITRE CWE](https://cwe.mitre.org/) number associated with them, or a rule in the [SEI CERT C Coding Standard](https://wiki.sei.cmu.edu/confluence/display/c/SEI+CERT+C+Coding+Standard).
+
+| Category                 | CERT Rule ID | CWE ID |
+|--------------------------|--------------|--------|
+| Null Pointer Dereference | EXP34-C      | 476    |
+| Uninitialized Value Read | EXP33-C      |        |
+| Unused Variable          | MSC13-C      | 561    |
+
+We hope to add more categories soon.
+
 ## Build instructions
 
 The code is designed to run inside a Docker container, which means you will need Docker. To build the Docker container:
