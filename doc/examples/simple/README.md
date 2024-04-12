@@ -40,6 +40,10 @@ This directory contains output for each of the steps below. As you run each step
 diff -ru . good
 ```
 
+If you want to skip a step (or if you are having trouble with the step), you can bypass it by copying the appropriate file from the `good` directory to the current one. For example, in the next step, you create a `cppcheck.xml` file.  To skip this step, copy the `good/cppcheck.xml` file to the current directory, and use it for the subsequent steps.
+
+You can try to use other methods than what we prescribe to produce these output files. For example, we recommend using Cppcheck 2.4.1 as contained in the `facthunder/cppcheck:latest` Docker container. Alternately, you could download Cppcheck from Github, or compile it from source or install it using `yum` or some other package manager.  You can also experiment with different (or newer) versions of Cppcheck.  The instructions we provide have been tested by SEI.  Using a different version of Cppcheck may generate different alerts than what we expect, or a different version of Cppcheck may output a different format of alert, that our parser does not expect.  You will encounter any such problems when you compare the `cppcheck.xml` file you produced with the one provided in the `good` subdirectory.
+
 ### Static Analysis
 
 Produce static analysis on the given C file, using Cppcheck 2.4.1.  Before generating this output, you should have the `facthunder/cppcheck:latest` Docker image downloaded.

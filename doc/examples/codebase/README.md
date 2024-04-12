@@ -40,6 +40,10 @@ This directory contains output for each of the steps below. As you run each step
 diff -ru . good
 ```
 
+If you want to skip a step (or if you are having trouble with the step), you can bypass it by copying the appropriate file from the `good` directory to the current one. For example, in the next step, you create a `compile_commands.json` file.  To skip this step, copy the `good/compile_commands.json` file to the current directory, and use it for the subsequent steps.
+
+You can try to repair other codebases, or other versions of the `dos2unix` codebase.  The instructions we provide have been tested by SEI.  Using a different codebase, or different version of `dos2unix` may not work completely with our example. For example, a different version of `dos2unix` may not generate the same alerts with clang-tidy as we suggest, and a different version of clang-tidy may also generate a different set of alerts, or may even use a format of alert that our parser does not expect. You will encounter any such problems when you compare the `clang-tidy.txt` file you produced with the one provided in the `good` subdirectory.
+
 ### Creating a build file
 
 For the rest of these instructions, you should execute the commands inside the `distrib` Docker container, and `cd` into this directory.  To set this up, use this command:
