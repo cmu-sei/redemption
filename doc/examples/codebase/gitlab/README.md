@@ -1,4 +1,4 @@
-# Redemption project simple Gitlab demo
+# Redemption project codebase Gitlab demo
 
 ## Copyright
 
@@ -28,7 +28,7 @@ DM23-2165
 
  1. Create a project in Gitlab; it should contain the contents of this directory, including the `Makefile`, `README.md` (this file), the `.gitlab-ci.yml` file, and the `src` subdirectory (as well as everything else). For the SEI, the site was:
  
-https://gitlab.sandbox.labz.s-box.org/sei-svoboda/redemption
+https://gitlab.sandbox.labz.s-box.org/sei-svoboda/redemption_codebase
 
 If you create your own Gitlab project, the internal site will be specific to to you.
 
@@ -42,17 +42,21 @@ The SEI internal site for creating variables was:
 
 https://gitlab.sandbox.labz.s-box.org/sei-svoboda/redemption_codebase/-/settings/ci_cd
 
+If you create your own Gitlab project, the internal site will be specific to you.
+
  4. Create a CI variable containing the name of the Redemption Docker image.
  
 For the SEI internal variable this was:
 
-    REDEMPTION_IMAGE=registry.sandbox.labz.s-box.org/sei-svoboda/redemption:distrib
+    REDEMPTION_IMAGE=registry.sandbox.labz.s-box.org/sei-svoboda/redemption:superscript
+
+(For now, this is distinct from the `distrib` image, so gitlab runs latest image)
 
  5. Create a CI variable containing the URL of the codebase (minus the protocol prefix).
  
 For the SEI internal variable this was:
 
-    CODEBASE_URL=gitlab.sandbox.labz.s-box.org/sei-svoboda/redemption.git
+    CODEBASE_URL=gitlab.sandbox.labz.s-box.org/sei-svoboda/redemption_codebase.git
 
 The [`create-pull-request.sh` script](CI/create-pull-request.sh) and [Makefile](Makefile) will need these variables.
 
@@ -67,11 +71,19 @@ docker push registry.sandbox.labz.s-box.org/sei-svoboda/redemption:distrib
 
 Note the token should be the same token you pushed any pre-existing docker images (currently, the 'simple' token).
 
+ 7. We are using the `dos2unix` codebase, version 7.5.2. It is freely available from [dos2unix.sourceforge.io/](https://sourceforge.net/projects/dos2unix/files/dos2unix/7.5.2/dos2unix-7.5.2.tar.gz/download).  For this demo, you should download `dos2unix-7.5.2`, unpack it, and place its contents in the `src` sub-directory. You could use these commands:
+ 
+```sh
+tar xzf dos2unix-7.5.2.tar.gz 
+cp -r dos2unix-7.5.2/* src
+rm -rf dos2unix-7.5.2
+```
+
 ## To run the demo:
 
 Make some trivial change in [the source code](src/test_errors.c).
 
-Bring up the [pipeline URL](https://gitlab.sandbox.labz.s-box.org/sei-svoboda/redemption/-/pipelines); it is  good to watch as Gitlab does its work:
+Bring up the [pipeline URL](https://gitlab.sandbox.labz.s-box.org/sei-svoboda/redemption_codebase/-/pipelines); it is good to watch as Gitlab does its work:
 
 Then commit and push your trivial changes.
 

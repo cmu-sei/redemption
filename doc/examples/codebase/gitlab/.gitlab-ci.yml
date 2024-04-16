@@ -1,0 +1,32 @@
+default:
+  tags:
+     - zarf
+# For local runner use:
+#    - local-scale-runner
+
+stages:
+  - build
+  - test
+  - deploy
+
+build:
+  stage: build
+  script:
+    - make build
+  artifacts:
+    paths:
+      - distrib/*.tgz
+      - compile_commands.json
+
+test:
+  stage: test
+  script:
+    - make test
+  artifacts:
+    paths:
+      - clang-tidy.txt
+
+deploy:
+  stage: deploy
+  script:
+    - make deploy

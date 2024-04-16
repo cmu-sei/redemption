@@ -24,13 +24,14 @@ cppcheck.xml:
 
 clang-tidy.txt:
 	@echo "Running clang-tidy"
-	docker run --rm -v ${CI_PROJECT_DIR}/src:/src silkeh/clang clang-tidy -checks='*' /src/toy.c | tee $@
+	docker run --rm -v ${CI_PROJECT_DIR}:/data -w /data/src  silkeh/clang  bash -c "clang-tidy -checks='*' *.c" > $@
 
 
 deploy:	publish repair
 
 publish:
 	@echo "Publishing"
+	-mkdir distrib
 	cd src ; tar czf ../distrib/toy.tgz * ; cd ..
 
 alerts.json:	sa
@@ -44,4 +45,4 @@ repair:	alerts.json
 
 clean:
 	@echo "Cleaning"
-	-rm -rf *.o rosecheckers.txt clang-tidy.txt cppcheck.xml alerts.json out distrib/*.tgz
+	-rm -rf *.o rosecheckers.txt clang-tidy.txt cppcheck.xml alerts.json out distrib
