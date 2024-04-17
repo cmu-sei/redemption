@@ -30,6 +30,8 @@ DM23-2165
 
 The Redemption tool makes repairs to C/C++ source code based on alerts produced by certain static-analysis tools.
 
+For more details of the background and capabilities of the Redemption tool, see this [presentation](https://www.sei.cmu.edu/publications/annual-reviews/2023-research-review/research-review-article.cfm?customel_datapageid_326381=495820) from the [SEI Research Review 2023](https://www.sei.cmu.edu/publications/annual-reviews/2023-research-review/).
+
 <a name="static-analysis tools"></a>
 ### Static-Analysis Tools
 
