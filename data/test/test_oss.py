@@ -44,7 +44,10 @@ def parse_args():
                         help="The YML files to test")
     parser.add_argument("-k", type=str, dest="stringinput",
                         help="Only run tests (or yml files) whose name contain the given substring")
+    parser.add_argument("-e", action="store_true", dest="examine_is_fp", help="To determine if the test fails, examine the is_false_positive and patch attributes. Writes output to file named <YAML_FILENAME>.alerts_info.json")    
     return parser.parse_args()
+
+
 
 test_args = {
     "yfiles": glob.glob("*.test.yml"),
@@ -57,15 +60,15 @@ def stringinput():
 
 @pytest.mark.parametrize("yfile", test_args["yfiles"])
 def test_oss(yfile):
-    run_oss("", yfile)
+    run_oss(False, "", yfile)
 
-def run_oss(stringinput, yfile):
-    assert(run_and_check_if_answer(stringinput, yfile, stop_if_no_answer_file=True) == 1)
+def run_oss(examine_is_fp, stringinput, yfile):
+    assert(run_and_check_if_answer(examine_is_fp, stringinput, yfile, stop_if_no_answer_file=True) == 1)
     print("test_oss: passed " + yfile)
 
-def run_all(stringinput, files):
+def run_all(examine_is_fp, stringinput, files):
     for yfile in files:
-        run_oss(stringinput, yfile)
+        run_oss(examine_is_fp, stringinput, yfile)
 
 if __name__ == "__main__":
     test_args = parse_args()

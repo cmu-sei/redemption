@@ -157,6 +157,10 @@ There is also a feature that can be determined from running the Redemption tool 
 
 Indicates if the Redemption tool actually proposed a repair patch for the code (nonempty).  Alerts from the brain module will contain a 'patch' slot which may be an empty or nonempty list; you can use this to determine the patch feature. Or see if Redemption presented a file distinct from the un-repaired source.
 
+##### Using and Logging Some Test Data Per Alert
+
+To determine if a test fails, as described in the `Results States` section, we must examine the `is_false_positive` and `patch` attributes. To use (to analyze test pass status) and to log this per-alert data from test runs, use the argument `-e` when running `test_runner.py` and `test_oss.py`. This stores `patch` and `is_false_positive` values (`true` or `false`), writing this data to a file named `<YAML_FILENAME>.alerts_info.json`. The JSON structure is indexed in order by filename, code flaw/weakness name (e.g., `EXP34-C`), then alert ID (string holds integer matching alert's order the alerts file). The `[patch, is_fp]` information stored is a list of 2 Booleans.
+
 ##### Result States
 
 After running Redemption on a test case, we can deem its output to always fit in exactly one of these states.
