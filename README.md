@@ -53,7 +53,7 @@ Redemption can currently repair the following categories of alerts. These alerts
 | Category                 | CERT Rule ID | CWE ID |
 |--------------------------|--------------|--------|
 | Null Pointer Dereference | EXP34-C      | 476    |
-| Uninitialized Value Read | EXP33-C      |        |
+| Uninitialized Value Read | EXP33-C      | 908    |
 | Unused Variable          | MSC13-C      | 561    |
 
 We hope to add more categories soon.
