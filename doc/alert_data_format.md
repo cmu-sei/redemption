@@ -61,7 +61,11 @@ hereafter referred to as *fields*.
 
 * `column` : string
 
-    The column associated with the alert.
+    The starting column associated with the alert.
+
+* `end_column` : string
+
+    The ending column associated with the alert.
 
 * `conflicting_repairs` : list
 
@@ -86,6 +90,10 @@ hereafter referred to as *fields*.
 * `line` : string
 
     The line number of the `file` associated with the alert.
+
+* `end_line` : string
+
+    The end line number of the `file` associated with the alert.
 
 * `message` : string
 
@@ -166,6 +174,8 @@ hereafter referred to as *fields*.
 | `file`                | yes      | author     | brain      |
 | `line`                | yes      | author     | brain      |
 | `column`              |          | author     | brain      |
+| `end_line`            |          | author     | brain      |
+| `end_column`          |          | author     | brain      |
 | `tool`                |          | author     | brain      |
 | `checker`             |          | author     | brain      |
 | `message`             |          | author     | brain      |

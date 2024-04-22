@@ -65,7 +65,8 @@ def canonicalize_path(dirstack, filename):
 
 
 def processFile(input_file, output_file):
-    output_file.write("\t".join(["Checker","Path","Line","Column","Message"]) + "\n")
+    output_file.write("\t".join(["Checker","Path","Line","Column","Message",
+                                 "Tool","End_Line","End_Column"]) + "\n")
 
     inCtrFlag = 0
     message = ""
@@ -91,7 +92,8 @@ def processFile(input_file, output_file):
             message = parse.group(5)
             message = message.strip().replace("\t", " ")
             checker = parse.group(6)
-            column_values = "\t".join([checker, file_path, line_number, column_number, message])
+            column_values = "\t".join([checker, file_path, line_number, column_number, message,
+                                       "clang_tidy_oss", "0", "0"])
             output_file.write(column_values + "\n")
 
 

@@ -37,7 +37,8 @@ import xml.etree.ElementTree as ET
 
 
 def process_v18(root, output_file):
-    output_file.write("\t".join(["Checker","Path","Line","Column","Message","CWE"]) + "\n")
+    output_file.write("\t".join(["Checker","Path","Line","Column","Message","CWE",
+                                 "Tool","End_Line","End_Column"]) + "\n")
     for errors in root.iter("errors"):
         for node in errors.iter("error"):
             checker = node.get("id")
@@ -55,7 +56,7 @@ def process_v18(root, output_file):
             line_number = location.get("line")
             column_number = location.get("column")
 
-            column_values = "\t".join([checker, file_path, line_number, column_number, message, cwe])
+            column_values = "\t".join([checker, file_path, line_number, column_number, message, cwe, "cppcheck_oss", "0", "0"])
             output_file.write(column_values + "\n")
 
 
@@ -65,7 +66,8 @@ def process_v16(root, output_file):
     # Since cppcheck alerts map to a single source file line, we just have 5 elements per line (i.e., no secondary messages).
     # checker_id        source_file_path        line_number        column_number       alert message
 
-    output_file.write("\t".join(["Checker","Path","Line","Column","Message"]) + "\n")
+    output_file.write("\t".join(["Checker","Path","Line","Column","Message",
+                                 "Tool","End_Line","End_Column"]) + "\n")
     for node in root.iter("error"):
         checker = node.get("id")
         file_path = node.get("file")
@@ -77,7 +79,7 @@ def process_v16(root, output_file):
         if file_path is None or "" == file_path.strip():
             continue
 
-        column_values = "\t".join([checker, file_path, line_number, column_number, message])
+        column_values = "\t".join([checker, file_path, line_number, column_number, message, cwe, "cppcheck_oss", "0", "0"])
         output_file.write(column_values + "\n")
 
 

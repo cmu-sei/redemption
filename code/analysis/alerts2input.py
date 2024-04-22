@@ -71,7 +71,7 @@ def run(base_dir, tool, alerts_file, output_file):
 .headers on
 .output /tmp/alerts2input/alerts3.csv
 .mode csv
-SELECT * FROM Alerts, Checkers WHERE Checkers.tool="''' + tool + '''" AND Checkers.checker=Alerts.checker;
+SELECT * FROM Alerts, Checkers WHERE Checkers.tool=Alerts.tool AND Checkers.checker=Alerts.checker;
 '''
         cmds_sql = os.path.join(temp_dir, "cmds.sql")
         with open(cmds_sql, "w") as o:
@@ -93,6 +93,8 @@ SELECT * FROM Alerts, Checkers WHERE Checkers.tool="''' + tool + '''" AND Checke
                             "file": data["Path"],
                             "line": data["Line"],
                             "column": data["Column"],
+                            "end-line": data["End_Line"],
+                            "end-column": data["End_Column"],
                             "tool": tool,
                             "checker": data["Checker"],
                             "message": data["Message"]}

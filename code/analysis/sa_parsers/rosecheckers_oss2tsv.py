@@ -47,7 +47,8 @@ import os
 
 
 def processFile(input_file, output_file):
-    output_file.write("\t".join(["Checker","Path","Line","Column","Message"]) + "\n")
+    output_file.write("\t".join(["Checker","Path","Line","Column","Message",
+                                 "Tool","End_Line","End_Column"]) + "\n")
 
     directory = ""
     file_path = None
@@ -85,7 +86,8 @@ def processFile(input_file, output_file):
             file_path = directory + "/" + file_name
             file_path = file_path.strip()
 
-        column_values = "\t".join([checker, file_path, line_number, column_number, message])
+        column_values = "\t".join([checker, file_path, line_number, column_number, message
+                                       "rosecheckers_oss", "0", "0"])
         output_file.write(column_values + "\n")
 
 

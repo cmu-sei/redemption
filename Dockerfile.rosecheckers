@@ -72,7 +72,7 @@ RUN python3 -m pip install --upgrade pip && \
     add-apt-repository ppa:rmescandon/yq && \
     apt install yq
 
-# Cppcheck 2.9 (not in Ubuntu repos as of 18.04)
+# Cppcheck 2.9
 RUN wget https://github.com/danmar/cppcheck/archive/refs/tags/2.9.tar.gz \
     && tar xzf 2.9.tar.gz \
     && rm 2.9.tar.gz \
