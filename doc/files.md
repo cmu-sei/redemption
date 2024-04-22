@@ -21,7 +21,7 @@ subject to its own license.
 DM23-2165
 </legal>
 
-All of the files in your local redemption directory can be partitioned as follows:
+All of the files in your public redemption directory can be partitioned as follows:
 
 ## Files not known to Git
 
@@ -34,68 +34,34 @@ The `.gitignore` file contains glob patterns to indicate all files ignored by Gi
 ## Files known to Git
 
 You can browse these files at the appropriate Bitbucket location:
-https://bitbucket.cc.cert.org/bitbucket/projects/REM/repos/redemption/browse
-
-One thing our software should contain is a manifest file. This is merely a listing of every file in our codebase that should go into a release. It can therefore also be used to identify files that are not part of the software.  We could also have multiple manifest files if we make multiple releases including different subsets of files.
-
-The following command creates a manifest listing every file in the directory, excluding files in .git:
-
-(All commands should be executed in the top-level `redemption` directory)
-
-```shell
-find . -path ./.git -prune -o -type f -print | LC_ALL=C sort > manifest.txt
-```
-
-The file can then be manually edited in any text editor.
-
-If you edit the file, please re-sort the file. While not strictly necessary, keeping the file sorted will help keep it organized as well as preventing duplicate files.
-
-Consequently all the files in Git can be partitioned as follows:
-
-#### Files not in the manifest
-
-These files do not get released.
-
-To list every file in your local `redemption` directory that is not in the manifest:
-
-```shell
-find . -path ./.git -prune -o -type f \( -exec grep -Fqx '{}' manifest.txt \; -o -print \)
-```
-
-This includes all files not known to Git. For files known to Git, execute this command after checking out a fresh copy of the project.
-
-To remove every file in your local `redemption` directory that is not in the manifest:
-
-```shell
-find . -path ./.git -prune -o -type f \( -exec grep -Fqx '{}' manifest.txt \; -o -execdir rm '{}' \; \)
-```
-
-#### Files in the manifest
+https://bitbucket.cc.cert.org/bitbucket/projects/REM/repos/redemption.public/browse
+or on Github:
+https://github.com/cmu-sei/redemption
 
 These files do get released. They also get tested by our CI system.
 
-Most of the files that are human-readable must be adorned with copyright statements. This is accomplished by the `update_copyright.py` script.  Each file that needs a copyright must have the following tags: `<legal></legal>`. These tags should be 'commented-out' using the file's convention for comments. The update_copyright script injects the current copyright test inside these `<legal>` tags. The copyright text lives in the `ABOUT` file.
+Most of the files that are human-readable must be adorned with copyright statements. This is accomplished by the `update_copyright.py` script.  Each file that needs a copyright must have the following tags: `<legal>` and `</legal>`. These tags should be 'commented-out' using the file's convention for comments. The `update_markings.py` script injects the current copyright test inside these `<legal>` tags. The copyright text lives in the `ABOUT` file.
 
-If you create a new human-readable file, you should endow it with `<legal></legal>` tags, near the top of the file. Generally, the tags should go after the title, or after a comment indicating what the file is.
+If you create a new human-readable file, you should endow it with `<legal>` and `</legal>` tags, near the top of the file. Generally, the tags should go after the title, or after a comment indicating what the file is.  You could then run `update_markings.py` to provide the copyright info. Or you could copy the legal tags from a suitable pre-existing file. There are pytests in `update_markings.py` which will fail if a file should have legal tags, but lacks them.
 
-Consequently all the files in the manifest can be partitioned as follows:
+Consequently all the files in the repository can be partitioned as follows:
 
-##### Non-human-readable files
+#### Non-human-readable files
 
 These files are indicated by their suffix (.e.g. `jpeg`, `mp3`, etc)
 
-##### Files with legal tags
+#### Files with legal tags
 
 The `grep` command can tell you which files have `<legal>` tags.
 
-##### Files that need not contain legal tags
+#### Files that need not contain legal tags
 
-The `update_copyright.py` script currently lists a set of files that could (in theory) have `<legal>` tags but do not need them.
+The `update_markings.yml` file currently lists a set of files that could (in theory) have `<legal>` tags but do not need them.
 
-##### Files that should have legal tags but don't
+#### Files that should have legal tags but don't
 
 If a file is human-readable, lacks `<legal>` tags, and is not listed as exempt from `<legal>` tags, this is an error. To see which files should have `<legal>` tags but don't, use this command:
 
 ```shell
-python3 ./update_copyright.py -w
+pytest update_markings.py
 ```
