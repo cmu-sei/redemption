@@ -52,30 +52,33 @@ Produce static analysis on the given C file, using Cppcheck 2.4.1.  Before gener
 docker pull facthunder/cppcheck:latest
 ```
 
-To generate output of the Cppcheck static analysis tool, use this command:
+To generate output of the Cppcheck static analysis tool, go into the directory containing this README file, and use this command:
 
 ``` sh
-docker run --rm  -v ${PWD}:/host -w /host  facthunder/cppcheck:latest  sh -c 'cppcheck -v --enable="all" --language="c" --force --xml /host/test_errors.c 2> cppcheck.xml'
+docker run --rm  -v ${PWD}:/code -w /code  facthunder/cppcheck:latest  sh -c 'cppcheck -v --enable="all" --language="c" --force --xml /code/test_errors.c 2> cppcheck.xml'
 ```
 
 ### Convert to Redemption Input
 
-For the rest of these instructions, you should execute the commands inside the `distrib` Docker container, and `cd` into this directory.  To set this up, use this command:
+For the rest of these instructions, you should execute the commands inside the `distrib` Docker container, and `cd` into this directory. 
+
+To set this up, use this command:
 
 ``` sh
-docker run -it --rm  docker.cc.cert.org/redemption/distrib  bash
+docker run -it --rm  -v ${PWD}:/code  docker.cc.cert.org/redemption/distrib  bash
 ```
 
 Then, inside the shell this command gives you:
 
 ``` sh
 pushd doc/examples/simple
+cp /code/cppcheck.xml .
 ```
 
 The next step is to convert the `cppcheck.xml` format into a simple JSON format that the redemption tool understands. The `alerts2input.py` file produces suitable JSON files. So you must run this script first; it will create the `alerts.json` file with the alerts you will use.
 
 ``` sh
-python3 /host/code/analysis/alerts2input.py  /host  cppcheck_oss  cppcheck.xml  alerts.json
+python3 /host/code/analysis/alerts2input.py  /code  cppcheck_oss  cppcheck.xml  alerts.json
 ```
 
 ### Execution
