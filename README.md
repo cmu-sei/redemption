@@ -63,7 +63,7 @@ We hope to add more categories soon.
 The code is designed to run inside a Docker container, which means you will need Docker. To build the Docker container:
 
 ```sh
-docker  build  -f Dockerfile.prereq  -t docker.cc.cert.org/redemption/prereq  .
+docker  build -f Dockerfile.prereq   -t docker.cc.cert.org/redemption/prereq   .
 docker  build -f Dockerfile.distrib  -t docker.cc.cert.org/redemption/distrib  .
 ```
 
@@ -332,7 +332,6 @@ You may need to share a volume, as discussed [above](#volume-sharing-and-docker-
 Our tool requires that you have a single command to build the entire codebase. (There are some exceptions involving single files and `autogen`, as mentioned [above](#example-execution-to-repair-a-single-file).) This command could be a call to `clang` or some other compiler. It could be a build command like `make` or `ninja`. It could even be a shell script. To be precise, this can be any command that can be passed to `bear`, a tool for generating a compilation database for `clang` tooling.  For more info on `bear`, see: https://github.com/rizsotto/Bear ).
 
 Run `bear` on the single-command build system (e.g., run `bear` on the makefile). Then, run the superscript `code/acr/sup.py`, giving it the `compile_commands.json` file created by `bear` and specifying code, alerts, etc. as discussed in the [above section on `sup.py`](#detail-about-the-suppy-script).
-
 
 ### Codebases that cannot be built within the Redemption container
 

@@ -1,0 +1,145 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-I/usr/include/luajit-2.1",
+      "-c",
+      "-o",
+      "obj/wrk.o",
+      "src/wrk.c"
+    ],
+    "directory": "/legacy/wrk-4.2.0",
+    "file": "/legacy/wrk-4.2.0/src/wrk.c",
+    "output": "/legacy/wrk-4.2.0/obj/wrk.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-I/usr/include/luajit-2.1",
+      "-c",
+      "-o",
+      "obj/net.o",
+      "src/net.c"
+    ],
+    "directory": "/legacy/wrk-4.2.0",
+    "file": "/legacy/wrk-4.2.0/src/net.c",
+    "output": "/legacy/wrk-4.2.0/obj/net.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-I/usr/include/luajit-2.1",
+      "-c",
+      "-o",
+      "obj/ssl.o",
+      "src/ssl.c"
+    ],
+    "directory": "/legacy/wrk-4.2.0",
+    "file": "/legacy/wrk-4.2.0/src/ssl.c",
+    "output": "/legacy/wrk-4.2.0/obj/ssl.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-I/usr/include/luajit-2.1",
+      "-c",
+      "-o",
+      "obj/aprintf.o",
+      "src/aprintf.c"
+    ],
+    "directory": "/legacy/wrk-4.2.0",
+    "file": "/legacy/wrk-4.2.0/src/aprintf.c",
+    "output": "/legacy/wrk-4.2.0/obj/aprintf.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-I/usr/include/luajit-2.1",
+      "-c",
+      "-o",
+      "obj/stats.o",
+      "src/stats.c"
+    ],
+    "directory": "/legacy/wrk-4.2.0",
+    "file": "/legacy/wrk-4.2.0/src/stats.c",
+    "output": "/legacy/wrk-4.2.0/obj/stats.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-I/usr/include/luajit-2.1",
+      "-c",
+      "-o",
+      "obj/script.o",
+      "src/script.c"
+    ],
+    "directory": "/legacy/wrk-4.2.0",
+    "file": "/legacy/wrk-4.2.0/src/script.c",
+    "output": "/legacy/wrk-4.2.0/obj/script.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-I/usr/include/luajit-2.1",
+      "-c",
+      "-o",
+      "obj/units.o",
+      "src/units.c"
+    ],
+    "directory": "/legacy/wrk-4.2.0",
+    "file": "/legacy/wrk-4.2.0/src/units.c",
+    "output": "/legacy/wrk-4.2.0/obj/units.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-I/usr/include/luajit-2.1",
+      "-c",
+      "-o",
+      "obj/ae.o",
+      "src/ae.c"
+    ],
+    "directory": "/legacy/wrk-4.2.0",
+    "file": "/legacy/wrk-4.2.0/src/ae.c",
+    "output": "/legacy/wrk-4.2.0/obj/ae.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-I/usr/include/luajit-2.1",
+      "-c",
+      "-o",
+      "obj/zmalloc.o",
+      "src/zmalloc.c"
+    ],
+    "directory": "/legacy/wrk-4.2.0",
+    "file": "/legacy/wrk-4.2.0/src/zmalloc.c",
+    "output": "/legacy/wrk-4.2.0/obj/zmalloc.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-I/usr/include/luajit-2.1",
+      "-c",
+      "-o",
+      "obj/http_parser.o",
+      "src/http_parser.c"
+    ],
+    "directory": "/legacy/wrk-4.2.0",
+    "file": "/legacy/wrk-4.2.0/src/http_parser.c",
+    "output": "/legacy/wrk-4.2.0/obj/http_parser.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-I/usr/include/luajit-2.1",
+      "-c",
+      "-o",
+      "obj/bytecode.o",
+      "obj/bytecode.c"
+    ],
+    "directory": "/legacy/wrk-4.2.0",
+    "file": "/legacy/wrk-4.2.0/obj/bytecode.c",
+    "output": "/legacy/wrk-4.2.0/obj/bytecode.o"
+  }
+]

@@ -30,7 +30,11 @@ This is a demo scenario involving the Redemption of False Positives project.  Un
 ## Running the Redemption Tool
 ### Source Code
 
-We are using the `dos2unix` codebase, version 7.5.2. It is freely available from [dos2unix.sourceforge.io/](https://sourceforge.net/projects/dos2unix/files/dos2unix/7.5.2/dos2unix-7.5.2.tar.gz/download).  For this demo, you should download `dos2unix-7.5.2`, unpack it, and place it in a `dos2unix-7.5.2` sub-directory of this directory (`doc/examples/codebase`).
+We are using the `dos2unix` codebase, version 7.5.2. It is freely available from [dos2unix.sourceforge.io/](https://sourceforge.net/projects/dos2unix/files/dos2unix/7.5.2/dos2unix-7.5.2.tar.gz/download).  For this demo, you should download `dos2unix-7.5.2`, unpack it, and place its contents in the `src` sub-directory. You could use this command:
+ 
+```sh
+tar xzf dos2unix-7.5.2.tar.gz 
+```
 
 ### The `good` directory
 
@@ -51,6 +55,8 @@ For the rest of these instructions, you should execute the commands inside the `
 ``` sh
 docker run -it --rm  -v ${PWD}:/host  docker.cc.cert.org/redemption/distrib  bash
 ```
+
+(See the toplevel [README.md](../../../README.md) instructions for details on how to build this container if necessary.
 
 Then, inside the shell this command gives you:
 

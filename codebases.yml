@@ -113,3 +113,19 @@ codebases: # All the codebases that we list
     clean: "make clean"
 
     binary: "build/src/zeek"
+
+
+  wrk:
+    suite: "free"
+    git: "https://github.com/wg/wrk"
+    stable_version: "4.2.0"
+    license: "Modified Apache License 2.0"
+
+    dependencies:
+      apt-get: ["luajit", "libluajit-5.1-dev", "libssl-dev"]
+
+    build:
+      default: 'make WITH_OPENSSL=/usr WITH_LUAJIT=/usr CFLAGS="-I/usr/include/luajit-2.1 "'
+
+    clean: "make clean"
+    binary: "wrk"

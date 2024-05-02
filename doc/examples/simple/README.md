@@ -68,6 +68,8 @@ To set this up, use this command:
 docker run -it --rm  -v ${PWD}:/code  docker.cc.cert.org/redemption/distrib  bash
 ```
 
+(See the toplevel [README.md](../../../README.md) instructions for details on how to build this container if necessary.
+
 Then, inside the shell this command gives you:
 
 ``` sh
