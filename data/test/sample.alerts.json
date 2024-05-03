@@ -4,8 +4,8 @@
     "file": "dir.h",
     "line": "540",
     "column": "52",
-    "end-line": "0",
-    "end-column": "0",
+    "end-line": "540",
+    "end-column": "52",
     "tool": "clang_tidy_oss",
     "checker": "clang-analyzer-core.NullDereference",
     "message": "Access to field 'ce_namelen' results in a dereference of a null pointer (loaded from variable 'ce')"
@@ -15,8 +15,8 @@
     "file": "hash.h",
     "line": "249",
     "column": "6",
-    "end-line": "0",
-    "end-column": "0",
+    "end-line": "249",
+    "end-column": "6",
     "tool": "clang_tidy_oss",
     "checker": "clang-analyzer-core.uninitialized.Branch",
     "message": "Branch condition evaluates to a garbage value"
@@ -26,8 +26,8 @@
     "file": "hash.h",
     "line": "268",
     "column": "2",
-    "end-line": "0",
-    "end-column": "0",
+    "end-line": "268",
+    "end-column": "2",
     "tool": "clang_tidy_oss",
     "checker": "clang-analyzer-core.NonNullParamChecker",
     "message": "Null pointer passed to 2nd parameter expecting 'nonnull'"
@@ -37,8 +37,8 @@
     "file": "abspath.c",
     "line": "21",
     "column": "57",
-    "end-line": "0",
-    "end-column": "0",
+    "end-line": "21",
+    "end-column": "57",
     "tool": "clang_tidy_oss",
     "checker": "google-readability-braces-around-statements,hicpp-braces-around-statements,readability-braces-around-statements",
     "message": "statement should be inside braces"

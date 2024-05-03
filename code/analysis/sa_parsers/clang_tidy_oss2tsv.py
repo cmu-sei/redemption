@@ -72,6 +72,7 @@ def processFile(input_file, output_file):
     message = ""
     links = ""
     dirstack = []
+    state = None
 
     for line in input_file:
         line = line.strip()
@@ -83,17 +84,23 @@ def processFile(input_file, output_file):
         if (line == "popd") and len(dirstack) > 0:
             del dirstack[len(dirstack) - 1]
 
-         # 1-line alerts
+        # Line with alert
         parse = re.match(r"^([^ :]*?\.(c|C|cpp|cxx|h|H)):([0-9]*):([0-9]*): warning: *(\S.*?) \[(.*)\]$", line)
-        if (parse != None and parse.group(2) != ""):
+        if (state is None and parse is not None and parse.group(2) != ""):
+            state = "info_line"
             file_path = canonicalize_path( dirstack, parse.group(1))
             line_number = parse.group(3)
             column_number = parse.group(4)
             message = parse.group(5)
             message = message.strip().replace("\t", " ")
             checker = parse.group(6)
+
+        parse = re.match(r"\^\~*", line)
+        if state == "info_line" and parse is not None:
+            state = None
+            end_column_number = int(column_number) + len(line) - 1
             column_values = "\t".join([checker, file_path, line_number, column_number, message,
-                                       "clang_tidy_oss", "0", "0"])
+                                       "clang_tidy_oss", line_number, str(end_column_number)])
             output_file.write(column_values + "\n")
 
 

@@ -357,7 +357,8 @@
     "column": "2",
     "tool": "clang-tidy",
     "checker": "clang-analyzer-valist.Uninitialized",
-    "message": "Function 'vfprintf' is called with an uninitialized va_list argument"
+    "message": "Function 'vfprintf' is called with an uninitialized va_list argument",
+    "end-column": "28"
   },
   {
     "rule": "EXP33-C",
@@ -5955,7 +5956,8 @@
     "column": "3",
     "tool": "clang-tidy",
     "checker": "clang-analyzer-valist.Uninitialized",
-    "message": "Function 'vfprintf' is called with an uninitialized va_list argument"
+    "message": "Function 'vfprintf' is called with an uninitialized va_list argument",
+    "end-column": "23"
   },
   {
     "rule": "EXP33-C",
@@ -9510,7 +9512,8 @@
     "column": "20",
     "tool": "clang-tidy",
     "checker": "clang-analyzer-core.uninitialized.Branch",
-    "message": "Branch condition evaluates to a garbage value"
+    "message": "Branch condition evaluates to a garbage value",
+    "end-column": "31"
   },
   {
     "rule": "EXP33-C",
@@ -11337,7 +11340,8 @@
     "column": "3",
     "tool": "clang-tidy",
     "checker": "clang-analyzer-valist.Uninitialized",
-    "message": "Function 'vsnprintf' is called with an uninitialized va_list argument"
+    "message": "Function 'vsnprintf' is called with an uninitialized va_list argument",
+    "end-column": "46"
   },
   {
     "rule": "EXP33-C",
@@ -14973,7 +14977,8 @@
     "column": "2",
     "tool": "clang-tidy",
     "checker": "clang-analyzer-valist.Uninitialized",
-    "message": "Function 'vsnprintf' is called with an uninitialized va_list argument"
+    "message": "Function 'vsnprintf' is called with an uninitialized va_list argument",
+    "end-column": "44"
   },
   {
     "rule": "EXP33-C",
@@ -26700,7 +26705,8 @@
     "column": "2",
     "tool": "clang-tidy",
     "checker": "clang-analyzer-valist.Uninitialized",
-    "message": "Function 'vprintf' is called with an uninitialized va_list argument"
+    "message": "Function 'vprintf' is called with an uninitialized va_list argument",
+    "end-column": "17"
   },
   {
     "rule": "EXP33-C",
@@ -30633,7 +30639,8 @@
     "column": "2",
     "tool": "clang-tidy",
     "checker": "clang-analyzer-valist.Uninitialized",
-    "message": "Function 'vfprintf' is called with an uninitialized va_list argument"
+    "message": "Function 'vfprintf' is called with an uninitialized va_list argument",
+    "end-column": "26"
   },
   {
     "rule": "EXP33-C",
@@ -40851,7 +40858,8 @@
     "column": "2",
     "tool": "clang-tidy",
     "checker": "clang-analyzer-valist.Uninitialized",
-    "message": "Function 'vfprintf' is called with an uninitialized va_list argument"
+    "message": "Function 'vfprintf' is called with an uninitialized va_list argument",
+    "end-column": "30"
   },
   {
     "rule": "EXP33-C",
@@ -42435,7 +42443,8 @@
     "column": "8",
     "tool": "clang-tidy",
     "checker": "clang-analyzer-valist.Uninitialized",
-    "message": "Function 'vsnprintf' is called with an uninitialized va_list argument"
+    "message": "Function 'vsnprintf' is called with an uninitialized va_list argument",
+    "end-column": "43"
   },
   {
     "rule": "EXP33-C",
@@ -50877,7 +50886,8 @@
     "column": "2",
     "tool": "clang-tidy",
     "checker": "clang-analyzer-valist.Uninitialized",
-    "message": "Function 'vfprintf' is called with an uninitialized va_list argument"
+    "message": "Function 'vfprintf' is called with an uninitialized va_list argument",
+    "end-column": "26"
   },
   {
     "rule": "EXP33-C",
@@ -57447,7 +57457,8 @@
     "column": "8",
     "tool": "clang-tidy",
     "checker": "clang-analyzer-valist.Uninitialized",
-    "message": "Function 'vsnprintf' is called with an uninitialized va_list argument"
+    "message": "Function 'vsnprintf' is called with an uninitialized va_list argument",
+    "end-column": "35"
   },
   {
     "rule": "EXP33-C",
@@ -70563,7 +70574,8 @@
     "column": "9",
     "tool": "clang-tidy",
     "checker": "clang-analyzer-valist.Uninitialized",
-    "message": "Function 'vfprintf' is called with an uninitialized va_list argument"
+    "message": "Function 'vfprintf' is called with an uninitialized va_list argument",
+    "end-column": "38"
   },
   {
     "rule": "EXP33-C",
@@ -71940,7 +71952,8 @@
     "column": "8",
     "tool": "clang-tidy",
     "checker": "clang-analyzer-valist.Uninitialized",
-    "message": "Function 'vprintf' is called with an uninitialized va_list argument"
+    "message": "Function 'vprintf' is called with an uninitialized va_list argument",
+    "end-column": "23"
   },
   {
     "rule": "EXP33-C",
@@ -71958,7 +71971,8 @@
     "column": "8",
     "tool": "clang-tidy",
     "checker": "clang-analyzer-valist.Uninitialized",
-    "message": "Function 'vfprintf' is called with an uninitialized va_list argument"
+    "message": "Function 'vfprintf' is called with an uninitialized va_list argument",
+    "end-column": "28"
   },
   {
     "rule": "EXP33-C",
@@ -76098,7 +76112,8 @@
     "column": "2",
     "tool": "clang-tidy",
     "checker": "clang-analyzer-valist.Uninitialized",
-    "message": "Function 'vsnprintf' is called with an uninitialized va_list argument"
+    "message": "Function 'vsnprintf' is called with an uninitialized va_list argument",
+    "end-column": "42"
   },
   {
     "rule": "EXP33-C",
@@ -79149,7 +79164,8 @@
     "column": "3",
     "tool": "clang-tidy",
     "checker": "clang-analyzer-valist.Uninitialized",
-    "message": "Function 'vfprintf' is called with an uninitialized va_list argument"
+    "message": "Function 'vfprintf' is called with an uninitialized va_list argument",
+    "end-column": "27"
   },
   {
     "rule": "EXP33-C",
@@ -79743,7 +79759,8 @@
     "column": "8",
     "tool": "clang-tidy",
     "checker": "clang-analyzer-valist.Uninitialized",
-    "message": "Function 'vsnprintf' is called with an uninitialized va_list argument"
+    "message": "Function 'vsnprintf' is called with an uninitialized va_list argument",
+    "end-column": "35"
   },
   {
     "rule": "EXP33-C",
@@ -79797,7 +79814,8 @@
     "column": "8",
     "tool": "clang-tidy",
     "checker": "clang-analyzer-valist.Uninitialized",
-    "message": "Function 'vfprintf' is called with an uninitialized va_list argument"
+    "message": "Function 'vfprintf' is called with an uninitialized va_list argument",
+    "end-column": "27"
   },
   {
     "rule": "EXP33-C",

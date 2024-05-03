@@ -99,7 +99,8 @@
     "column": "24",
     "tool": "clang-tidy",
     "checker": "clang-analyzer-core.NonNullParamChecker",
-    "message": "Null pointer passed to 1st parameter expecting 'nonnull'"
+    "message": "Null pointer passed to 1st parameter expecting 'nonnull'",
+    "end-column": "39"
   },
   {
     "rule": "EXP34-C",
@@ -108,7 +109,8 @@
     "column": "3",
     "tool": "clang-tidy",
     "checker": "clang-analyzer-core.NullDereference",
-    "message": "Dereference of null pointer"
+    "message": "Dereference of null pointer",
+    "end-column": "50"
   },
   {
     "rule": "EXP34-C",
@@ -126,7 +128,8 @@
     "column": "9",
     "tool": "clang-tidy",
     "checker": "clang-analyzer-core.NullDereference",
-    "message": "Access to field 'origin' results in a dereference of a null pointer"
+    "message": "Access to field 'origin' results in a dereference of a null pointer",
+    "end-column": "47"
   },
   {
     "rule": "EXP34-C",
@@ -168,7 +171,8 @@
     "column": "23",
     "tool": "clang-tidy",
     "checker": "clang-analyzer-core.NonNullParamChecker",
-    "message": "Null pointer passed to 2nd parameter expecting 'nonnull'"
+    "message": "Null pointer passed to 2nd parameter expecting 'nonnull'",
+    "end-column": "47"
   },
   {
     "rule": "EXP34-C",
@@ -177,7 +181,8 @@
     "column": "12",
     "tool": "clang-tidy",
     "checker": "clang-analyzer-core.NonNullParamChecker",
-    "message": "Null pointer passed to 1st parameter expecting 'nonnull'"
+    "message": "Null pointer passed to 1st parameter expecting 'nonnull'",
+    "end-column": "26"
   },
   {
     "rule": "EXP34-C",
@@ -255,7 +260,8 @@
     "column": "7",
     "tool": "clang-tidy",
     "checker": "clang-analyzer-core.NullDereference",
-    "message": "Array access (from variable 'use_strategies') results in a null pointer dereference"
+    "message": "Array access (from variable 'use_strategies') results in a null pointer dereference",
+    "end-column": "20"
   },
   {
     "rule": "EXP34-C",
@@ -288,7 +294,8 @@
     "column": "6",
     "tool": "clang-tidy",
     "checker": "clang-analyzer-core.NonNullParamChecker",
-    "message": "Null pointer passed to 1st parameter expecting 'nonnull'"
+    "message": "Null pointer passed to 1st parameter expecting 'nonnull'",
+    "end-column": "29"
   },
   {
     "rule": "EXP34-C",
@@ -297,7 +304,8 @@
     "column": "14",
     "tool": "clang-tidy",
     "checker": "clang-analyzer-core.NonNullParamChecker",
-    "message": "Null pointer passed to 1st parameter expecting 'nonnull'"
+    "message": "Null pointer passed to 1st parameter expecting 'nonnull'",
+    "end-column": "31"
   },
   {
     "rule": "EXP34-C",
@@ -396,7 +404,8 @@
     "column": "9",
     "tool": "clang-tidy",
     "checker": "clang-analyzer-core.NullDereference",
-    "message": "Access to field 'broken_pair' results in a dereference of a null pointer (loaded from variable 'pp')"
+    "message": "Access to field 'broken_pair' results in a dereference of a null pointer (loaded from variable 'pp')",
+    "end-column": "10"
   },
   {
     "rule": "EXP34-C",
@@ -414,7 +423,8 @@
     "column": "19",
     "tool": "clang-tidy",
     "checker": "clang-analyzer-core.NullDereference",
-    "message": "Access to field 'next' results in a dereference of a null pointer (loaded from field 'trie')"
+    "message": "Access to field 'next' results in a dereference of a null pointer (loaded from field 'trie')",
+    "end-column": "29"
   },
   {
     "rule": "EXP34-C",
@@ -522,7 +532,8 @@
     "column": "9",
     "tool": "clang-tidy",
     "checker": "clang-analyzer-core.NonNullParamChecker",
-    "message": "Null pointer passed to 1st parameter expecting 'nonnull'"
+    "message": "Null pointer passed to 1st parameter expecting 'nonnull'",
+    "end-column": "38"
   },
   {
     "rule": "EXP34-C",
@@ -531,7 +542,8 @@
     "column": "31",
     "tool": "clang-tidy",
     "checker": "clang-analyzer-core.NullDereference",
-    "message": "Array access (from variable 'msg') results in a null pointer dereference"
+    "message": "Array access (from variable 'msg') results in a null pointer dereference",
+    "end-column": "66"
   },
   {
     "rule": "EXP34-C",
@@ -549,7 +561,8 @@
     "column": "8",
     "tool": "clang-tidy",
     "checker": "clang-analyzer-core.NonNullParamChecker",
-    "message": "Null pointer passed to 1st parameter expecting 'nonnull'"
+    "message": "Null pointer passed to 1st parameter expecting 'nonnull'",
+    "end-column": "31"
   },
   {
     "rule": "EXP34-C",
@@ -558,7 +571,8 @@
     "column": "7",
     "tool": "clang-tidy",
     "checker": "clang-analyzer-core.NonNullParamChecker",
-    "message": "Null pointer passed to 1st parameter expecting 'nonnull'"
+    "message": "Null pointer passed to 1st parameter expecting 'nonnull'",
+    "end-column": "30"
   },
   {
     "rule": "EXP34-C",
@@ -585,7 +599,8 @@
     "column": "25",
     "tool": "clang-tidy",
     "checker": "clang-analyzer-core.NullDereference",
-    "message": "Access to field 'refname' results in a dereference of a null pointer"
+    "message": "Access to field 'refname' results in a dereference of a null pointer",
+    "end-column": "49"
   },
   {
     "rule": "EXP34-C",
@@ -723,7 +738,8 @@
     "column": "9",
     "tool": "clang-tidy",
     "checker": "clang-analyzer-core.NonNullParamChecker",
-    "message": "Null pointer passed to 1st parameter expecting 'nonnull'"
+    "message": "Null pointer passed to 1st parameter expecting 'nonnull'",
+    "end-column": "15"
   },
   {
     "rule": "EXP34-C",

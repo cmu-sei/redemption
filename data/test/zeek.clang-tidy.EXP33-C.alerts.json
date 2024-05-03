@@ -1932,7 +1932,8 @@
     "column": "13",
     "tool": "clang-tidy",
     "checker": "clang-analyzer-core.uninitialized.Assign",
-    "message": "Assigned value is garbage or undefined"
+      "message": "Assigned value is garbage or undefined",
+    "end-column": "26"
   },
   {
     "rule": "EXP33-C",

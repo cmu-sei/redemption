@@ -117,7 +117,8 @@
     "column": "21",
     "tool": "clang-tidy",
     "checker": "clang-analyzer-core.NullDereference",
-    "message": "Access to field 'maxbits' results in a dereference of a null pointer (loaded from variable 'patricia')"
+    "message": "Access to field 'maxbits' results in a dereference of a null pointer (loaded from variable 'patricia')",
+    "end-column": "45"
   },
   {
     "rule": "EXP34-C",
@@ -126,7 +127,8 @@
     "column": "19",
     "tool": "clang-tidy",
     "checker": "clang-analyzer-core.NullDereference",
-    "message": "Array access (from variable 'outlist') results in a null pointer dereference"
+    "message": "Array access (from variable 'outlist') results in a null pointer dereference",
+    "end-column": "40"
   },
   {
     "rule": "EXP34-C",
@@ -272,20 +274,22 @@
     "column": "5",
     "tool": "clang-tidy",
     "checker": "clang-analyzer-core.NonNullParamChecker",
-    "message": "Null pointer passed to 2nd parameter expecting 'nonnull'"
+    "message": "Null pointer passed to 2nd parameter expecting 'nonnull'",
+    "end-column": "51"
   },
   {
     "rule": "EXP34-C",
     "file": "src/3rdparty/sqlite3.c",
     "line": "99971",
     "column": "9",
+    "end-column": "49",
     "tool": "clang-tidy",
     "checker": "clang-analyzer-core.NonNullParamChecker",
     "message": "Null pointer passed to 1st parameter expecting 'nonnull'",
     "satisfactory": "false",
     "verdict": "true",
     "repairable": "true",
-      "rationale": "The code line alerted on is `memcpy((u8*)pChunk->zChunk + iChunkOffset, zWrite, iSpace);` Our project uses auditing rule 5B to narrow the part of the alerted-about code line based on the alert message, though the column provided is not helpful. Although the line above, there's a check to ensure pChunk is not null, there's no check that `pChunk->zChunk` is null. ACR should add a check. Additional analysis:  We ignore the following issue, since it is about another parameter (not warned about in the error message). The first parameter sent to `memcpy` on line 99971 was a parameter into the function `memjrnlWrite`. `* zBuf` is one of the parameters into the function `memjrnlWrite` and `*zWrite` was set equal to that. The alert message is clearly about the first parameter, not the `* zBuf` parameter. So, if the `* zWrite` value was null, then issue. (see https://cplusplus.com/reference/cstring/memcpy ) `void * memcpy( void * destination, const void * source, size_t num);`",
+    "rationale": "The code line alerted on is `memcpy((u8*)pChunk->zChunk + iChunkOffset, zWrite, iSpace);` Our project uses auditing rule 5B to narrow the part of the alerted-about code line based on the alert message, though the column provided is not helpful. Although the line above, there's a check to ensure pChunk is not null, there's no check that `pChunk->zChunk` is null. ACR should add a check. Additional analysis:  We ignore the following issue, since it is about another parameter (not warned about in the error message). The first parameter sent to `memcpy` on line 99971 was a parameter into the function `memjrnlWrite`. `* zBuf` is one of the parameters into the function `memjrnlWrite` and `*zWrite` was set equal to that. The alert message is clearly about the first parameter, not the `* zBuf` parameter. So, if the `* zWrite` value was null, then issue. (see https://cplusplus.com/reference/cstring/memcpy ) `void * memcpy( void * destination, const void * source, size_t num);`",
     "randomness": "true",
     "issue": "REM-212"
   },
@@ -341,7 +345,8 @@
     "column": "46",
     "tool": "clang-tidy",
     "checker": "clang-analyzer-core.NullDereference",
-    "message": "Access to field 'z' results in a dereference of a null pointer (loaded from variable 'pName')"
+    "message": "Access to field 'z' results in a dereference of a null pointer (loaded from variable 'pName')",
+    "end-column": "50"
   },
   {
     "rule": "EXP34-C",
@@ -377,13 +382,15 @@
     "column": "45",
     "tool": "clang-tidy",
     "checker": "clang-analyzer-core.NullDereference",
-    "message": "Access to field 'tnum' results in a dereference of a null pointer (loaded from variable 'pSrcIdx')"
+    "message": "Access to field 'tnum' results in a dereference of a null pointer (loaded from variable 'pSrcIdx')",
+    "end-column": "51"
   },
   {
     "rule": "EXP34-C",
     "file": "src/3rdparty/sqlite3.c",
     "line": "138598",
     "column": "15",
+    "end-column": "18",
     "tool": "clang-tidy",
     "checker": "clang-analyzer-core.NullDereference",
     "message": "Access to field 'pSrc' results in a dereference of a null pointer (loaded from variable 'pSub')",
@@ -393,15 +400,6 @@
     "rationale": "The line immediately before checks if `pSub` is null, so wouldn't reach this line if it was. This line 138598 wouldn't be a problem (`pSubSrc = pSub->pSrc;`). The *next* line might be a problem, though. (It is `nSubSrc = pSubSrc->nSrc;`), if pSub->pSrc equalled null. There's not a check for null within the function, for that field in that next line. However, since that next line number is different than the alerted-for line, we ignore that next line's possible problem (using our auditing rules). Thus, this alert is a false positive. Although calls to `assert` (i.e., `#define NDEBUG`) go away in release builds, we decided that `assert()` statements are good enough, since they communicate the programmer's intentions.",
     "randomness": "true",
     "issue": "REM-213"
-  },
-  {
-    "rule": "EXP34-C",
-    "file": "src/3rdparty/sqlite3.c",
-    "line": "145056",
-    "column": "14",
-    "tool": "clang-tidy",
-    "checker": "clang-analyzer-core.NullDereference",
-    "message": "Access to field 'iDataCur' results in a dereference of a null pointer (loaded from variable 'pUpsert')"
   },
   {
     "rule": "EXP34-C",
@@ -428,7 +426,8 @@
     "column": "10",
     "tool": "clang-tidy",
     "checker": "clang-analyzer-core.NullDereference",
-    "message": "Array access (from variable 'zFilename') results in a null pointer dereference"
+    "message": "Array access (from variable 'zFilename') results in a null pointer dereference",
+    "end-column": "18"
   },
   {
     "rule": "EXP34-C",

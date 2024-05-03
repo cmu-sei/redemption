@@ -75,13 +75,16 @@ def run(alerts_file, codebase, base_dir, rule, tool, compile_cmds_file):
             dialect = "excel"
         csv_reader = csv.DictReader(in_file, dialect=dialect)
         for data in csv_reader:
-            if "tool" in data.keys() and data["tool"] != tool:
-                continue
+            # if "tool" in data.keys() and data["tool"] != tool
+            #     continue
             if "CWE" in data.keys():
                 data["rule"] = "CWE-" + data["CWE"]
             if "rule" in data.keys() and data["rule"] != rule:
                 continue
-            paths.add(data["Path"])
+            path = data["Path"]
+            if path.startswith("./"):
+                path = path[2:]
+            paths.add(path)
 
             # Produce alert
             sa_alert = {"rule": rule,
@@ -91,6 +94,12 @@ def run(alerts_file, codebase, base_dir, rule, tool, compile_cmds_file):
                         "tool": tool,
                         "checker": data["Checker"],
                         "message": data["Message"]}
+
+            if "End_Line" in data.keys() and data["End_Line"] != 0 and data["End_Line"] != data["Line"]:
+                sa_alert["end-line"] = data["End_Line"]
+            if "End_Column" in data.keys() and data["End_Column"] != 0 and data["End_Column"] != data["Column"]:
+                sa_alert["end-column"] = data["End_Column"]
+
             sa_alerts.append(sa_alert)
 
     with open(sa_alerts_file, "w") as out_file:

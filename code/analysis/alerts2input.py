@@ -98,6 +98,12 @@ SELECT * FROM Alerts, Checkers WHERE Checkers.tool=Alerts.tool AND Checkers.chec
                             "tool": tool,
                             "checker": data["Checker"],
                             "message": data["Message"]}
+
+                if data["End_Line"] != 0 and data["End_Line"] != data["Line"]:
+                    sa_alert["end-line"] = data["End_Line"]
+                if data["End_Column"] != 0 and data["End_Column"] != data["Column"]:
+                    sa_alert["end-column"] = data["End_Column"]
+
                 sa_alerts.append(sa_alert)
 
         with open(output_file, "w") as out_file:
