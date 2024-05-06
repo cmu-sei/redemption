@@ -40,11 +40,6 @@ test_dir = os.path.dirname(os.path.realpath(__file__))
 sys.path.insert(1, test_dir + "/..")
 import end_to_end_acr
 
-def read_json_file(filename):
-    with open(filename, 'r') as f:
-        data = json.load(f)
-    return data
-
 class Tester(object):
     def run_clang_parse(self, compile_cmd):
         cur_dir = os.getcwd()

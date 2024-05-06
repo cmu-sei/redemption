@@ -8,9 +8,9 @@
       "obj/wrk.o",
       "src/wrk.c"
     ],
-    "directory": "/legacy/wrk-4.2.0",
-    "file": "/legacy/wrk-4.2.0/src/wrk.c",
-    "output": "/legacy/wrk-4.2.0/obj/wrk.o"
+    "directory": "/legacy/wrk",
+    "file": "/legacy/wrk/src/wrk.c",
+    "output": "/legacy/wrk/obj/wrk.o"
   },
   {
     "arguments": [
@@ -21,9 +21,9 @@
       "obj/net.o",
       "src/net.c"
     ],
-    "directory": "/legacy/wrk-4.2.0",
-    "file": "/legacy/wrk-4.2.0/src/net.c",
-    "output": "/legacy/wrk-4.2.0/obj/net.o"
+    "directory": "/legacy/wrk",
+    "file": "/legacy/wrk/src/net.c",
+    "output": "/legacy/wrk/obj/net.o"
   },
   {
     "arguments": [
@@ -34,9 +34,9 @@
       "obj/ssl.o",
       "src/ssl.c"
     ],
-    "directory": "/legacy/wrk-4.2.0",
-    "file": "/legacy/wrk-4.2.0/src/ssl.c",
-    "output": "/legacy/wrk-4.2.0/obj/ssl.o"
+    "directory": "/legacy/wrk",
+    "file": "/legacy/wrk/src/ssl.c",
+    "output": "/legacy/wrk/obj/ssl.o"
   },
   {
     "arguments": [
@@ -47,9 +47,9 @@
       "obj/aprintf.o",
       "src/aprintf.c"
     ],
-    "directory": "/legacy/wrk-4.2.0",
-    "file": "/legacy/wrk-4.2.0/src/aprintf.c",
-    "output": "/legacy/wrk-4.2.0/obj/aprintf.o"
+    "directory": "/legacy/wrk",
+    "file": "/legacy/wrk/src/aprintf.c",
+    "output": "/legacy/wrk/obj/aprintf.o"
   },
   {
     "arguments": [
@@ -60,9 +60,9 @@
       "obj/stats.o",
       "src/stats.c"
     ],
-    "directory": "/legacy/wrk-4.2.0",
-    "file": "/legacy/wrk-4.2.0/src/stats.c",
-    "output": "/legacy/wrk-4.2.0/obj/stats.o"
+    "directory": "/legacy/wrk",
+    "file": "/legacy/wrk/src/stats.c",
+    "output": "/legacy/wrk/obj/stats.o"
   },
   {
     "arguments": [
@@ -73,9 +73,9 @@
       "obj/script.o",
       "src/script.c"
     ],
-    "directory": "/legacy/wrk-4.2.0",
-    "file": "/legacy/wrk-4.2.0/src/script.c",
-    "output": "/legacy/wrk-4.2.0/obj/script.o"
+    "directory": "/legacy/wrk",
+    "file": "/legacy/wrk/src/script.c",
+    "output": "/legacy/wrk/obj/script.o"
   },
   {
     "arguments": [
@@ -86,9 +86,9 @@
       "obj/units.o",
       "src/units.c"
     ],
-    "directory": "/legacy/wrk-4.2.0",
-    "file": "/legacy/wrk-4.2.0/src/units.c",
-    "output": "/legacy/wrk-4.2.0/obj/units.o"
+    "directory": "/legacy/wrk",
+    "file": "/legacy/wrk/src/units.c",
+    "output": "/legacy/wrk/obj/units.o"
   },
   {
     "arguments": [
@@ -99,9 +99,9 @@
       "obj/ae.o",
       "src/ae.c"
     ],
-    "directory": "/legacy/wrk-4.2.0",
-    "file": "/legacy/wrk-4.2.0/src/ae.c",
-    "output": "/legacy/wrk-4.2.0/obj/ae.o"
+    "directory": "/legacy/wrk",
+    "file": "/legacy/wrk/src/ae.c",
+    "output": "/legacy/wrk/obj/ae.o"
   },
   {
     "arguments": [
@@ -112,9 +112,9 @@
       "obj/zmalloc.o",
       "src/zmalloc.c"
     ],
-    "directory": "/legacy/wrk-4.2.0",
-    "file": "/legacy/wrk-4.2.0/src/zmalloc.c",
-    "output": "/legacy/wrk-4.2.0/obj/zmalloc.o"
+    "directory": "/legacy/wrk",
+    "file": "/legacy/wrk/src/zmalloc.c",
+    "output": "/legacy/wrk/obj/zmalloc.o"
   },
   {
     "arguments": [
@@ -125,9 +125,9 @@
       "obj/http_parser.o",
       "src/http_parser.c"
     ],
-    "directory": "/legacy/wrk-4.2.0",
-    "file": "/legacy/wrk-4.2.0/src/http_parser.c",
-    "output": "/legacy/wrk-4.2.0/obj/http_parser.o"
+    "directory": "/legacy/wrk",
+    "file": "/legacy/wrk/src/http_parser.c",
+    "output": "/legacy/wrk/obj/http_parser.o"
   },
   {
     "arguments": [
@@ -138,8 +138,8 @@
       "obj/bytecode.o",
       "obj/bytecode.c"
     ],
-    "directory": "/legacy/wrk-4.2.0",
-    "file": "/legacy/wrk-4.2.0/obj/bytecode.c",
-    "output": "/legacy/wrk-4.2.0/obj/bytecode.o"
+    "directory": "/legacy/wrk",
+    "file": "/legacy/wrk/obj/bytecode.c",
+    "output": "/legacy/wrk/obj/bytecode.o"
   }
 ]

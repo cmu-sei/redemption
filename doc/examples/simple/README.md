@@ -90,7 +90,7 @@ Here is an example of how to run a built-in end-to-end automated code repair tes
 ```sh
 EXAMPLE=/host/doc/examples/simple
 pushd /host/code/acr
-python3 ./end_to_end_acr.py  ${EXAMPLE}/test_errors.c  autogen  ${EXAMPLE}/alerts.json  --repaired-src ${EXAMPLE}/out  --repair-includes false
+python3 ./end_to_end_acr.py  ${EXAMPLE}/test_errors.c  autogen  --alerts ${EXAMPLE}/alerts.json  --repaired-src ${EXAMPLE}/out
 popd
 ```
 

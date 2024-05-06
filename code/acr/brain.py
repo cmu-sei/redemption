@@ -31,6 +31,7 @@ from collections import OrderedDict, defaultdict
 import subprocess
 
 from util import *
+from make_run_clang import read_json_file
 from is_indep import is_indep_of_cond_directives
 from brainstem import Brainstem
 from alert import alert_from_dict

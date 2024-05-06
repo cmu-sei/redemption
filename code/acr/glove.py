@@ -36,6 +36,7 @@ from collections import OrderedDict, defaultdict
 from pathlib import Path
 
 from util import *
+from make_run_clang import read_json_file
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Creates repaired source-code files')

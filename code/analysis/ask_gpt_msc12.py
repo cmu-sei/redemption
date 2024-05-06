@@ -37,6 +37,7 @@ stop = pdb.set_trace
 
 sys.path.append('/host/code/acr')
 from util import *
+from make_run_clang import read_json_file
 from get_enclosing_func import get_enclosing_func
 
 import tiktoken

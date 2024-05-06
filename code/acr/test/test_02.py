@@ -35,6 +35,7 @@ sys.path.append('..')
 import ear, brain, glove, end_to_end_acr, sup
 import test_runner
 from util import *
+from make_run_clang import read_json_file
 
 def read_whole_file(filename):
     with open(filename, 'r') as the_file:

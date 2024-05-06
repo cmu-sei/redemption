@@ -33,6 +33,7 @@ import random
 
 sys.path.append('../../code/acr')
 from util import *
+from make_run_clang import read_json_file
 
 
 def parse_args():

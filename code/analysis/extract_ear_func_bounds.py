@@ -44,6 +44,7 @@ import json
 
 sys.path.append('/host/code/acr')
 from util import *
+from make_run_clang import read_json_file
 
 func_bounds = []
 
@@ -89,7 +90,7 @@ class FuncVisitor(AstVisitor):
         body = get_body(inner)
         if body is None:
             return
-        
+
         def get_line(subnode):
             if not subnode:
                 return None
@@ -108,11 +109,11 @@ def parse_args():
     parser.add_argument('-f', type=str, dest="single_input_file", required=False, help="Run on just the single specified ear output file")
     parser.add_argument('-o', type=str, dest="out_file", required=True, help="Output file")
     return parser.parse_args()
- 
+
 
 def main():
     args = parse_args()
- 
+
     cache_dir = os.getenv('acr_parser_cache')
     if (not cache_dir) or not cache_dir.startswith("/"):
         print("ERROR: environment variable 'acr_parser_cache' must be an absolute path!")

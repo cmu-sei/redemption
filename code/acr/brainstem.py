@@ -30,6 +30,7 @@ import sys, os, re, pdb, argparse, json
 from collections import OrderedDict, defaultdict
 
 from util import *
+from make_run_clang import read_json_file
 
 # FIXME: Ugly hack...we should be getting Clang to provide this info in the JSON
 def get_function_return_type(node):

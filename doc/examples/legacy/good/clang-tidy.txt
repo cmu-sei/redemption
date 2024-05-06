@@ -1,665 +1,711 @@
-error: too many errors emitted, stopping now [clang-diagnostic-error]
-/legacy/wrk-4.2.0/src/ae_epoll.c:32:1: warning: system include sys/epoll.h not allowed [llvmlibc-restrict-system-libc-headers]
+/legacy/wrk/src/ae_epoll.c:32:1: warning: system include sys/epoll.h not allowed [llvmlibc-restrict-system-libc-headers]
 #include <sys/epoll.h>
 ^~~~~~~~~~~~~~~~~~~~~~
-/legacy/wrk-4.2.0/src/ae_epoll.c:34:16: warning: accessing fields in struct 'aeApiState' is inefficient due to poor alignment; currently aligned to 8 bytes, but recommended alignment is 16 bytes [altera-struct-pack-align]
+/legacy/wrk/src/ae_epoll.c:34:16: warning: accessing fields in struct 'aeApiState' is inefficient due to poor alignment; currently aligned to 8 bytes, but recommended alignment is 16 bytes [altera-struct-pack-align]
 typedef struct aeApiState {
                ^
-/legacy/wrk-4.2.0/src/ae_epoll.c:34:16: note: use "__attribute__((aligned(16)))" to align struct 'aeApiState' to 16 bytes
-/legacy/wrk-4.2.0/src/ae_epoll.c:39:24: error: unknown type name 'aeEventLoop' [clang-diagnostic-error]
+/legacy/wrk/src/ae_epoll.c:34:16: note: use "__attribute__((aligned(16)))" to align struct 'aeApiState' to 16 bytes
+/legacy/wrk/src/ae_epoll.c:39:24: error: unknown type name 'aeEventLoop' [clang-diagnostic-error]
 static int aeApiCreate(aeEventLoop *eventLoop) {
                        ^
-/legacy/wrk-4.2.0/src/ae_epoll.c:39:37: warning: pointer parameter 'eventLoop' can be pointer to const [readability-non-const-parameter]
+/legacy/wrk/src/ae_epoll.c:39:37: warning: pointer parameter 'eventLoop' can be pointer to const [readability-non-const-parameter]
 static int aeApiCreate(aeEventLoop *eventLoop) {
                                     ^
                        const 
-/legacy/wrk-4.2.0/src/ae_epoll.c:40:17: error: incompatible integer to pointer conversion initializing 'aeApiState *' (aka 'struct aeApiState *') with an expression of type 'int' [clang-diagnostic-int-conversion]
+/legacy/wrk/src/ae_epoll.c:40:17: error: incompatible integer to pointer conversion initializing 'aeApiState *' (aka 'struct aeApiState *') with an expression of type 'int' [clang-diagnostic-int-conversion]
     aeApiState *state = zmalloc(sizeof(aeApiState));
                 ^       ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/legacy/wrk-4.2.0/src/ae_epoll.c:40:25: error: call to undeclared function 'zmalloc'; ISO C99 and later do not support implicit function declarations [clang-diagnostic-implicit-function-declaration]
+/legacy/wrk/src/ae_epoll.c:40:25: error: call to undeclared function 'zmalloc'; ISO C99 and later do not support implicit function declarations [clang-diagnostic-implicit-function-declaration]
     aeApiState *state = zmalloc(sizeof(aeApiState));
                         ^
-/legacy/wrk-4.2.0/src/ae_epoll.c:40:25: warning: integer to pointer cast pessimizes optimization opportunities [performance-no-int-to-ptr]
-/legacy/wrk-4.2.0/src/ae_epoll.c:42:16: warning: statement should be inside braces [hicpp-braces-around-statements,readability-braces-around-statements]
+/legacy/wrk/src/ae_epoll.c:40:25: warning: integer to pointer cast pessimizes optimization opportunities [performance-no-int-to-ptr]
+/legacy/wrk/src/ae_epoll.c:42:16: warning: statement should be inside braces [hicpp-braces-around-statements,readability-braces-around-statements]
     if (!state) return -1;
                ^
                 {
-/legacy/wrk-4.2.0/src/ae_epoll.c:45:9: error: call to undeclared function 'zfree'; ISO C99 and later do not support implicit function declarations [clang-diagnostic-implicit-function-declaration]
+/legacy/wrk/src/ae_epoll.c:45:9: error: call to undeclared function 'zfree'; ISO C99 and later do not support implicit function declarations [clang-diagnostic-implicit-function-declaration]
         zfree(state);
         ^
-/legacy/wrk-4.2.0/src/ae_epoll.c:48:19: warning: prefer epoll_create() to epoll_create1() because epoll_create1() allows EPOLL_CLOEXEC [android-cloexec-epoll-create]
+/legacy/wrk/src/ae_epoll.c:48:19: warning: prefer epoll_create() to epoll_create1() because epoll_create1() allows EPOLL_CLOEXEC [android-cloexec-epoll-create]
     state->epfd = epoll_create(1024); /* 1024 is just a hint for the kernel */
                   ^~~~~~~~~~~~~~~~~~
                   epoll_create1(EPOLL_CLOEXEC)
-/legacy/wrk-4.2.0/src/ae_epoll.c:48:32: warning: 1024 is a magic number; consider replacing it with a named constant [cppcoreguidelines-avoid-magic-numbers,readability-magic-numbers]
+/legacy/wrk/src/ae_epoll.c:48:32: warning: 1024 is a magic number; consider replacing it with a named constant [cppcoreguidelines-avoid-magic-numbers,readability-magic-numbers]
     state->epfd = epoll_create(1024); /* 1024 is just a hint for the kernel */
                                ^
-/legacy/wrk-4.2.0/src/ae_epoll.c:50:9: error: call to undeclared function 'zfree'; ISO C99 and later do not support implicit function declarations [clang-diagnostic-implicit-function-declaration]
+/legacy/wrk/src/ae_epoll.c:50:9: error: call to undeclared function 'zfree'; ISO C99 and later do not support implicit function declarations [clang-diagnostic-implicit-function-declaration]
         zfree(state->events);
         ^
-/legacy/wrk-4.2.0/src/ae_epoll.c:58:24: error: unknown type name 'aeEventLoop' [clang-diagnostic-error]
+/legacy/wrk/src/ae_epoll.c:58:24: error: unknown type name 'aeEventLoop' [clang-diagnostic-error]
 static int aeApiResize(aeEventLoop *eventLoop, int setsize) {
                        ^
-/legacy/wrk-4.2.0/src/ae_epoll.c:61:19: error: incompatible integer to pointer conversion assigning to 'struct epoll_event *' from 'int' [clang-diagnostic-int-conversion]
+/legacy/wrk/src/ae_epoll.c:61:19: error: incompatible integer to pointer conversion assigning to 'struct epoll_event *' from 'int' [clang-diagnostic-int-conversion]
     state->events = zrealloc(state->events, sizeof(struct epoll_event)*setsize);
                   ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/legacy/wrk-4.2.0/src/ae_epoll.c:61:21: error: call to undeclared function 'zrealloc'; ISO C99 and later do not support implicit function declarations [clang-diagnostic-implicit-function-declaration]
+/legacy/wrk/src/ae_epoll.c:61:21: error: call to undeclared function 'zrealloc'; ISO C99 and later do not support implicit function declarations [clang-diagnostic-implicit-function-declaration]
     state->events = zrealloc(state->events, sizeof(struct epoll_event)*setsize);
                     ^
-/legacy/wrk-4.2.0/src/ae_epoll.c:61:21: warning: integer to pointer cast pessimizes optimization opportunities [performance-no-int-to-ptr]
-/legacy/wrk-4.2.0/src/ae_epoll.c:65:23: error: unknown type name 'aeEventLoop' [clang-diagnostic-error]
+/legacy/wrk/src/ae_epoll.c:61:21: warning: integer to pointer cast pessimizes optimization opportunities [performance-no-int-to-ptr]
+/legacy/wrk/src/ae_epoll.c:65:23: error: unknown type name 'aeEventLoop' [clang-diagnostic-error]
 static void aeApiFree(aeEventLoop *eventLoop) {
                       ^
-/legacy/wrk-4.2.0/src/ae_epoll.c:68:5: error: call to undeclared function 'close'; ISO C99 and later do not support implicit function declarations [clang-diagnostic-implicit-function-declaration]
+/legacy/wrk/src/ae_epoll.c:68:5: error: call to undeclared function 'close'; ISO C99 and later do not support implicit function declarations [clang-diagnostic-implicit-function-declaration]
     close(state->epfd);
     ^
-/legacy/wrk-4.2.0/src/ae_epoll.c:69:5: error: call to undeclared function 'zfree'; ISO C99 and later do not support implicit function declarations [clang-diagnostic-implicit-function-declaration]
+/legacy/wrk/src/ae_epoll.c:69:5: error: call to undeclared function 'zfree'; ISO C99 and later do not support implicit function declarations [clang-diagnostic-implicit-function-declaration]
     zfree(state->events);
     ^
-/legacy/wrk-4.2.0/src/ae_epoll.c:73:26: error: unknown type name 'aeEventLoop' [clang-diagnostic-error]
+/legacy/wrk/src/ae_epoll.c:73:26: error: unknown type name 'aeEventLoop' [clang-diagnostic-error]
 static int aeApiAddEvent(aeEventLoop *eventLoop, int fd, int mask) {
                          ^
-/legacy/wrk-4.2.0/src/ae_epoll.c:73:54: warning: parameter name 'fd' is too short, expected at least 3 characters [readability-identifier-length]
+/legacy/wrk/src/ae_epoll.c:73:54: warning: parameter name 'fd' is too short, expected at least 3 characters [readability-identifier-length]
 static int aeApiAddEvent(aeEventLoop *eventLoop, int fd, int mask) {
                                                      ^
-/legacy/wrk-4.2.0/src/ae_epoll.c:75:24: warning: variable name 'ee' is too short, expected at least 3 characters [readability-identifier-length]
+/legacy/wrk/src/ae_epoll.c:75:24: warning: variable name 'ee' is too short, expected at least 3 characters [readability-identifier-length]
     struct epoll_event ee = {0}; /* avoid valgrind warning */
                        ^
-/legacy/wrk-4.2.0/src/ae_epoll.c:78:9: warning: variable name 'op' is too short, expected at least 3 characters [readability-identifier-length]
+/legacy/wrk/src/ae_epoll.c:78:9: warning: variable name 'op' is too short, expected at least 3 characters [readability-identifier-length]
     int op = eventLoop->events[fd].mask == AE_NONE ?
         ^
-/legacy/wrk-4.2.0/src/ae_epoll.c:78:44: error: use of undeclared identifier 'AE_NONE' [clang-diagnostic-error]
+/legacy/wrk/src/ae_epoll.c:78:44: error: use of undeclared identifier 'AE_NONE' [clang-diagnostic-error]
     int op = eventLoop->events[fd].mask == AE_NONE ?
                                            ^
-/legacy/wrk-4.2.0/src/ae_epoll.c:83:16: error: use of undeclared identifier 'AE_READABLE' [clang-diagnostic-error]
+/legacy/wrk/src/ae_epoll.c:83:16: error: use of undeclared identifier 'AE_READABLE' [clang-diagnostic-error]
     if (mask & AE_READABLE) ee.events |= EPOLLIN;
                ^
-/legacy/wrk-4.2.0/src/ae_epoll.c:83:28: warning: statement should be inside braces [hicpp-braces-around-statements,readability-braces-around-statements]
+/legacy/wrk/src/ae_epoll.c:83:28: warning: statement should be inside braces [hicpp-braces-around-statements,readability-braces-around-statements]
     if (mask & AE_READABLE) ee.events |= EPOLLIN;
                            ^
                             {
-/legacy/wrk-4.2.0/src/ae_epoll.c:84:16: error: use of undeclared identifier 'AE_WRITABLE' [clang-diagnostic-error]
+/legacy/wrk/src/ae_epoll.c:84:16: error: use of undeclared identifier 'AE_WRITABLE' [clang-diagnostic-error]
     if (mask & AE_WRITABLE) ee.events |= EPOLLOUT;
                ^
-/legacy/wrk-4.2.0/src/ae_epoll.c:84:28: warning: statement should be inside braces [hicpp-braces-around-statements,readability-braces-around-statements]
+/legacy/wrk/src/ae_epoll.c:84:28: warning: statement should be inside braces [hicpp-braces-around-statements,readability-braces-around-statements]
     if (mask & AE_WRITABLE) ee.events |= EPOLLOUT;
                            ^
                             {
-/legacy/wrk-4.2.0/src/ae_epoll.c:86:48: warning: statement should be inside braces [hicpp-braces-around-statements,readability-braces-around-statements]
+/legacy/wrk/src/ae_epoll.c:86:48: warning: statement should be inside braces [hicpp-braces-around-statements,readability-braces-around-statements]
     if (epoll_ctl(state->epfd,op,fd,&ee) == -1) return -1;
                                                ^
                                                 {
-/legacy/wrk-4.2.0/src/ae_epoll.c:90:27: error: unknown type name 'aeEventLoop' [clang-diagnostic-error]
+/legacy/wrk/src/ae_epoll.c:90:27: error: unknown type name 'aeEventLoop' [clang-diagnostic-error]
 static void aeApiDelEvent(aeEventLoop *eventLoop, int fd, int delmask) {
                           ^
-/legacy/wrk-4.2.0/src/ae_epoll.c:90:55: warning: parameter name 'fd' is too short, expected at least 3 characters [readability-identifier-length]
+/legacy/wrk/src/ae_epoll.c:90:55: warning: parameter name 'fd' is too short, expected at least 3 characters [readability-identifier-length]
 static void aeApiDelEvent(aeEventLoop *eventLoop, int fd, int delmask) {
                                                       ^
-/legacy/wrk-4.2.0/src/ae_epoll.c:92:24: warning: variable name 'ee' is too short, expected at least 3 characters [readability-identifier-length]
+/legacy/wrk/src/ae_epoll.c:92:24: warning: variable name 'ee' is too short, expected at least 3 characters [readability-identifier-length]
     struct epoll_event ee = {0}; /* avoid valgrind warning */
                        ^
-/legacy/wrk-4.2.0/src/ae_epoll.c:93:47: warning: use of a signed integer operand with a unary bitwise operator [hicpp-signed-bitwise]
+/legacy/wrk/src/ae_epoll.c:93:47: warning: use of a signed integer operand with a unary bitwise operator [hicpp-signed-bitwise]
     int mask = eventLoop->events[fd].mask & (~delmask);
                                              ~^~~~~~~
-/legacy/wrk-4.2.0/src/ae_epoll.c:96:16: error: use of undeclared identifier 'AE_READABLE' [clang-diagnostic-error]
+/legacy/wrk/src/ae_epoll.c:96:16: error: use of undeclared identifier 'AE_READABLE' [clang-diagnostic-error]
     if (mask & AE_READABLE) ee.events |= EPOLLIN;
                ^
-/legacy/wrk-4.2.0/src/ae_epoll.c:96:28: warning: statement should be inside braces [hicpp-braces-around-statements,readability-braces-around-statements]
+/legacy/wrk/src/ae_epoll.c:96:28: warning: statement should be inside braces [hicpp-braces-around-statements,readability-braces-around-statements]
     if (mask & AE_READABLE) ee.events |= EPOLLIN;
                            ^
                             {
-/legacy/wrk-4.2.0/src/ae_epoll.c:97:16: error: use of undeclared identifier 'AE_WRITABLE' [clang-diagnostic-error]
+/legacy/wrk/src/ae_epoll.c:97:16: error: use of undeclared identifier 'AE_WRITABLE' [clang-diagnostic-error]
     if (mask & AE_WRITABLE) ee.events |= EPOLLOUT;
                ^
-/legacy/wrk-4.2.0/src/ae_epoll.c:97:28: warning: statement should be inside braces [hicpp-braces-around-statements,readability-braces-around-statements]
+/legacy/wrk/src/ae_epoll.c:97:28: warning: statement should be inside braces [hicpp-braces-around-statements,readability-braces-around-statements]
     if (mask & AE_WRITABLE) ee.events |= EPOLLOUT;
                            ^
                             {
-/legacy/wrk-4.2.0/src/ae_epoll.c:99:17: error: use of undeclared identifier 'AE_NONE' [clang-diagnostic-error]
+/legacy/wrk/src/ae_epoll.c:99:17: error: use of undeclared identifier 'AE_NONE' [clang-diagnostic-error]
     if (mask != AE_NONE) {
                 ^
-/legacy/wrk-4.2.0/src/ae_epoll.c:108:35: warning: pointer parameter 'eventLoop' can be pointer to const [readability-non-const-parameter]
+/legacy/wrk/src/ae_epoll.c:108:22: error: unknown type name 'aeEventLoop' [clang-diagnostic-error]
+static int aeApiPoll(aeEventLoop *eventLoop, struct timeval *tvp) {
+                     ^
+/legacy/wrk/src/ae_epoll.c:108:35: warning: pointer parameter 'eventLoop' can be pointer to const [readability-non-const-parameter]
 static int aeApiPoll(aeEventLoop *eventLoop, struct timeval *tvp) {
                                   ^
                      const 
-/legacy/wrk-4.2.0/src/ae_epoll.c:110:5: warning: multiple declarations in a single statement reduces readability [readability-isolate-declaration]
+/legacy/wrk/src/ae_epoll.c:110:5: warning: multiple declarations in a single statement reduces readability [readability-isolate-declaration]
     int retval, numevents = 0;
     ^~~~~~~~~~~~~~~~~~~~~~~~~~
-/legacy/wrk-4.2.0/src/ae_epoll.c:110:9: warning: variable 'retval' is not initialized [cppcoreguidelines-init-variables]
+/legacy/wrk/src/ae_epoll.c:110:9: warning: variable 'retval' is not initialized [cppcoreguidelines-init-variables]
     int retval, numevents = 0;
         ^
 note: this fix will not be applied because it overlaps with another fix
-/legacy/wrk-4.2.0/src/ae_epoll.c:113:32: warning: 1000 is a magic number; consider replacing it with a named constant [cppcoreguidelines-avoid-magic-numbers,readability-magic-numbers]
+/legacy/wrk/src/ae_epoll.c:113:32: warning: 1000 is a magic number; consider replacing it with a named constant [cppcoreguidelines-avoid-magic-numbers,readability-magic-numbers]
             tvp ? (tvp->tv_sec*1000 + tvp->tv_usec/1000) : -1);
                                ^
-/legacy/wrk-4.2.0/src/ae_epoll.c:113:52: warning: 1000 is a magic number; consider replacing it with a named constant [cppcoreguidelines-avoid-magic-numbers,readability-magic-numbers]
+/legacy/wrk/src/ae_epoll.c:113:52: warning: 1000 is a magic number; consider replacing it with a named constant [cppcoreguidelines-avoid-magic-numbers,readability-magic-numbers]
             tvp ? (tvp->tv_sec*1000 + tvp->tv_usec/1000) : -1);
                                                    ^
-/legacy/wrk-4.2.0/src/ae_epoll.c:115:13: warning: variable 'j' is not initialized [cppcoreguidelines-init-variables]
+/legacy/wrk/src/ae_epoll.c:115:13: warning: variable 'j' is not initialized [cppcoreguidelines-init-variables]
         int j;
             ^
               = 0
-/legacy/wrk-4.2.0/src/ae_epoll.c:115:13: warning: variable name 'j' is too short, expected at least 3 characters [readability-identifier-length]
-/legacy/wrk-4.2.0/src/ae_epoll.c:118:9: warning: kernel performance could be improved by unrolling this loop with a '#pragma unroll' directive [altera-unroll-loops]
+/legacy/wrk/src/ae_epoll.c:115:13: warning: variable name 'j' is too short, expected at least 3 characters [readability-identifier-length]
+/legacy/wrk/src/ae_epoll.c:118:9: warning: kernel performance could be improved by unrolling this loop with a '#pragma unroll' directive [altera-unroll-loops]
         for (j = 0; j < numevents; j++) {
         ^
-/legacy/wrk-4.2.0/src/ae_epoll.c:118:21: warning: backward branch (for loop) is ID-dependent due to variable reference to 'numevents' and may cause performance degradation [altera-id-dependent-backward-branch]
+/legacy/wrk/src/ae_epoll.c:118:21: warning: backward branch (for loop) is ID-dependent due to variable reference to 'numevents' and may cause performance degradation [altera-id-dependent-backward-branch]
         for (j = 0; j < numevents; j++) {
                     ^
-/legacy/wrk-4.2.0/src/ae_epoll.c:120:33: warning: variable name 'e' is too short, expected at least 3 characters [readability-identifier-length]
+/legacy/wrk/src/ae_epoll.c:120:33: warning: variable name 'e' is too short, expected at least 3 characters [readability-identifier-length]
             struct epoll_event *e = state->events+j;
                                 ^
-/legacy/wrk-4.2.0/src/ae_evport.c:31:1: warning: system include assert.h not allowed [llvmlibc-restrict-system-libc-headers]
+/legacy/wrk/src/ae_epoll.c:122:37: warning: statement should be inside braces [hicpp-braces-around-statements,readability-braces-around-statements]
+            if (e->events & EPOLLIN) mask |= AE_READABLE;
+                                    ^
+                                     {
+/legacy/wrk/src/ae_epoll.c:122:46: error: use of undeclared identifier 'AE_READABLE' [clang-diagnostic-error]
+            if (e->events & EPOLLIN) mask |= AE_READABLE;
+                                             ^
+/legacy/wrk/src/ae_epoll.c:123:38: warning: statement should be inside braces [hicpp-braces-around-statements,readability-braces-around-statements]
+            if (e->events & EPOLLOUT) mask |= AE_WRITABLE;
+                                     ^
+                                      {
+/legacy/wrk/src/ae_epoll.c:123:47: error: use of undeclared identifier 'AE_WRITABLE' [clang-diagnostic-error]
+            if (e->events & EPOLLOUT) mask |= AE_WRITABLE;
+                                              ^
+/legacy/wrk/src/ae_epoll.c:124:38: warning: statement should be inside braces [hicpp-braces-around-statements,readability-braces-around-statements]
+            if (e->events & EPOLLERR) mask |= AE_WRITABLE;
+                                     ^
+                                      {
+/legacy/wrk/src/ae_epoll.c:124:47: error: use of undeclared identifier 'AE_WRITABLE' [clang-diagnostic-error]
+            if (e->events & EPOLLERR) mask |= AE_WRITABLE;
+                                              ^
+/legacy/wrk/src/ae_epoll.c:125:38: warning: statement should be inside braces [hicpp-braces-around-statements,readability-braces-around-statements]
+            if (e->events & EPOLLHUP) mask |= AE_WRITABLE;
+                                     ^
+                                      {
+/legacy/wrk/src/ae_epoll.c:125:47: error: use of undeclared identifier 'AE_WRITABLE' [clang-diagnostic-error]
+            if (e->events & EPOLLHUP) mask |= AE_WRITABLE;
+                                              ^
+/legacy/wrk/src/ae_evport.c:31:1: warning: system include assert.h not allowed [llvmlibc-restrict-system-libc-headers]
 #include <assert.h>
 ^~~~~~~~~~~~~~~~~~~
-/legacy/wrk-4.2.0/src/ae_evport.c:32:1: warning: system include errno.h not allowed [llvmlibc-restrict-system-libc-headers]
+/legacy/wrk/src/ae_evport.c:32:1: warning: system include errno.h not allowed [llvmlibc-restrict-system-libc-headers]
 #include <errno.h>
 ^~~~~~~~~~~~~~~~~~
-/legacy/wrk-4.2.0/src/ae_evport.c:33:1: warning: #includes are not sorted properly [llvm-include-order]
+/legacy/wrk/src/ae_evport.c:33:1: warning: #includes are not sorted properly [llvm-include-order]
 #include <port.h>
 ^
 note: this fix will not be applied because it overlaps with another fix
-/legacy/wrk-4.2.0/src/ae_evport.c:33:10: error: 'port.h' file not found [clang-diagnostic-error]
+/legacy/wrk/src/ae_evport.c:33:10: error: 'port.h' file not found [clang-diagnostic-error]
 #include <port.h>
          ^~~~~~~~
-/legacy/wrk-4.2.0/src/ae_evport.c:34:1: warning: system include poll.h not allowed [llvmlibc-restrict-system-libc-headers]
+/legacy/wrk/src/ae_evport.c:34:1: warning: system include poll.h not allowed [llvmlibc-restrict-system-libc-headers]
 #include <poll.h>
 ^~~~~~~~~~~~~~~~~
-/legacy/wrk-4.2.0/src/ae_evport.c:36:1: warning: #includes are not sorted properly [llvm-include-order]
+/legacy/wrk/src/ae_evport.c:36:1: warning: #includes are not sorted properly [llvm-include-order]
 #include <sys/types.h>
 ^
 note: this fix will not be applied because it overlaps with another fix
-/legacy/wrk-4.2.0/src/ae_evport.c:36:1: warning: system include sys/types.h not allowed [llvmlibc-restrict-system-libc-headers]
+/legacy/wrk/src/ae_evport.c:36:1: warning: system include sys/types.h not allowed [llvmlibc-restrict-system-libc-headers]
 #include <sys/types.h>
 ^~~~~~~~~~~~~~~~~~~~~~
-/legacy/wrk-4.2.0/src/ae_evport.c:37:1: warning: system include sys/time.h not allowed [llvmlibc-restrict-system-libc-headers]
+/legacy/wrk/src/ae_evport.c:37:1: warning: system include sys/time.h not allowed [llvmlibc-restrict-system-libc-headers]
 #include <sys/time.h>
 ^~~~~~~~~~~~~~~~~~~~~
-/legacy/wrk-4.2.0/src/ae_evport.c:39:1: warning: system include stdio.h not allowed [llvmlibc-restrict-system-libc-headers]
+/legacy/wrk/src/ae_evport.c:39:1: warning: system include stdio.h not allowed [llvmlibc-restrict-system-libc-headers]
 #include <stdio.h>
 ^~~~~~~~~~~~~~~~~~
-/legacy/wrk-4.2.0/src/ae_evport.c:41:12: warning: variable 'evport_debug' is non-const and globally accessible, consider making it const [cppcoreguidelines-avoid-non-const-global-variables]
+/legacy/wrk/src/ae_evport.c:41:12: warning: variable 'evport_debug' is non-const and globally accessible, consider making it const [cppcoreguidelines-avoid-non-const-global-variables]
 static int evport_debug = 0;
            ^
-/legacy/wrk-4.2.0/src/ae_evport.c:66:1: warning: replace macro with enum [modernize-macro-to-enum]
+/legacy/wrk/src/ae_evport.c:66:1: warning: replace macro with enum [modernize-macro-to-enum]
 #define MAX_EVENT_BATCHSZ 512
 ^~~~~~~~
                           =
-/legacy/wrk-4.2.0/src/ae_evport.c:66:9: warning: macro 'MAX_EVENT_BATCHSZ' defines an integral constant; prefer an enum instead [modernize-macro-to-enum]
+/legacy/wrk/src/ae_evport.c:66:9: warning: macro 'MAX_EVENT_BATCHSZ' defines an integral constant; prefer an enum instead [modernize-macro-to-enum]
 #define MAX_EVENT_BATCHSZ 512
         ^
-/legacy/wrk-4.2.0/src/ae_evport.c:68:16: warning: accessing fields in struct 'aeApiState' is inefficient due to poor alignment; currently aligned to 4 bytes, but recommended alignment is 128 bytes [altera-struct-pack-align]
+/legacy/wrk/src/ae_evport.c:68:16: warning: accessing fields in struct 'aeApiState' is inefficient due to poor alignment; currently aligned to 4 bytes, but recommended alignment is 128 bytes [altera-struct-pack-align]
 typedef struct aeApiState {
                ^
-/legacy/wrk-4.2.0/src/ae_evport.c:68:16: note: use "__attribute__((aligned(128)))" to align struct 'aeApiState' to 128 bytes
-/legacy/wrk-4.2.0/src/ae_evport.c:75:37: warning: pointer parameter 'eventLoop' can be pointer to const [readability-non-const-parameter]
+/legacy/wrk/src/ae_evport.c:68:16: note: use "__attribute__((aligned(128)))" to align struct 'aeApiState' to 128 bytes
+/legacy/wrk/src/ae_evport.c:75:37: warning: pointer parameter 'eventLoop' can be pointer to const [readability-non-const-parameter]
 static int aeApiCreate(aeEventLoop *eventLoop) {
                                     ^
                        const 
-/legacy/wrk-4.2.0/src/ae_evport.c:76:9: warning: variable 'i' is not initialized [cppcoreguidelines-init-variables]
+/legacy/wrk/src/ae_evport.c:76:9: warning: variable 'i' is not initialized [cppcoreguidelines-init-variables]
     int i;
         ^
           = 0
-/legacy/wrk-4.2.0/src/ae_evport.c:76:9: warning: variable name 'i' is too short, expected at least 3 characters [readability-identifier-length]
-/legacy/wrk-4.2.0/src/ae_evport.c:77:25: warning: integer to pointer cast pessimizes optimization opportunities [performance-no-int-to-ptr]
+/legacy/wrk/src/ae_evport.c:76:9: warning: variable name 'i' is too short, expected at least 3 characters [readability-identifier-length]
+/legacy/wrk/src/ae_evport.c:77:25: warning: integer to pointer cast pessimizes optimization opportunities [performance-no-int-to-ptr]
     aeApiState *state = zmalloc(sizeof(aeApiState));
                         ^
-/legacy/wrk-4.2.0/src/ae_evport.c:78:16: warning: statement should be inside braces [hicpp-braces-around-statements,readability-braces-around-statements]
+/legacy/wrk/src/ae_evport.c:78:16: warning: statement should be inside braces [hicpp-braces-around-statements,readability-braces-around-statements]
     if (!state) return -1;
                ^
                 {
-/legacy/wrk-4.2.0/src/ae_evport.c:88:5: warning: kernel performance could be improved by unrolling this loop with a '#pragma unroll' directive [altera-unroll-loops]
+/legacy/wrk/src/ae_evport.c:88:5: warning: kernel performance could be improved by unrolling this loop with a '#pragma unroll' directive [altera-unroll-loops]
     for (i = 0; i < MAX_EVENT_BATCHSZ; i++) {
     ^
-/legacy/wrk-4.2.0/src/ae_evport.c:97:52: warning: parameter 'setsize' is unused [misc-unused-parameters]
+/legacy/wrk/src/ae_evport.c:97:52: warning: parameter 'setsize' is unused [misc-unused-parameters]
 static int aeApiResize(aeEventLoop *eventLoop, int setsize) {
                                              ~~~~~~^~~~~~~
-/legacy/wrk-4.2.0/src/ae_evport.c:109:54: warning: parameter name 'fd' is too short, expected at least 3 characters [readability-identifier-length]
+/legacy/wrk/src/ae_evport.c:109:54: warning: parameter name 'fd' is too short, expected at least 3 characters [readability-identifier-length]
 static int aeApiLookupPending(aeApiState *state, int fd) {
                                                      ^
-/legacy/wrk-4.2.0/src/ae_evport.c:110:9: warning: variable 'i' is not initialized [cppcoreguidelines-init-variables]
+/legacy/wrk/src/ae_evport.c:110:9: warning: variable 'i' is not initialized [cppcoreguidelines-init-variables]
     int i;
         ^
           = 0
-/legacy/wrk-4.2.0/src/ae_evport.c:110:9: warning: variable name 'i' is too short, expected at least 3 characters [readability-identifier-length]
-/legacy/wrk-4.2.0/src/ae_evport.c:112:5: warning: kernel performance could be improved by unrolling this loop with a '#pragma unroll' directive [altera-unroll-loops]
+/legacy/wrk/src/ae_evport.c:110:9: warning: variable name 'i' is too short, expected at least 3 characters [readability-identifier-length]
+/legacy/wrk/src/ae_evport.c:112:5: warning: kernel performance could be improved by unrolling this loop with a '#pragma unroll' directive [altera-unroll-loops]
     for (i = 0; i < state->npending; i++) {
     ^
-/legacy/wrk-4.2.0/src/ae_evport.c:113:41: warning: statement should be inside braces [google-readability-braces-around-statements,hicpp-braces-around-statements,readability-braces-around-statements]
+/legacy/wrk/src/ae_evport.c:113:41: warning: statement should be inside braces [google-readability-braces-around-statements,hicpp-braces-around-statements,readability-braces-around-statements]
         if (state->pending_fds[i] == fd)
                                         ^
                                          {
-/legacy/wrk-4.2.0/src/ae_evport.c:123:46: warning: 3 adjacent parameters of 'aeApiAssociate' of similar type ('int') are easily swapped by mistake [bugprone-easily-swappable-parameters]
+/legacy/wrk/src/ae_evport.c:123:46: warning: 3 adjacent parameters of 'aeApiAssociate' of similar type ('int') are easily swapped by mistake [bugprone-easily-swappable-parameters]
 static int aeApiAssociate(const char *where, int portfd, int fd, int mask) {
                                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/legacy/wrk-4.2.0/src/ae_evport.c:123:50: note: the first parameter in the range is 'portfd'
+/legacy/wrk/src/ae_evport.c:123:50: note: the first parameter in the range is 'portfd'
 static int aeApiAssociate(const char *where, int portfd, int fd, int mask) {
                                                  ^~~~~~
-/legacy/wrk-4.2.0/src/ae_evport.c:123:70: note: the last parameter in the range is 'mask'
+/legacy/wrk/src/ae_evport.c:123:70: note: the last parameter in the range is 'mask'
 static int aeApiAssociate(const char *where, int portfd, int fd, int mask) {
                                                                      ^~~~
-/legacy/wrk-4.2.0/src/ae_evport.c:123:62: warning: parameter name 'fd' is too short, expected at least 3 characters [readability-identifier-length]
+/legacy/wrk/src/ae_evport.c:123:62: warning: parameter name 'fd' is too short, expected at least 3 characters [readability-identifier-length]
 static int aeApiAssociate(const char *where, int portfd, int fd, int mask) {
                                                              ^
-/legacy/wrk-4.2.0/src/ae_evport.c:125:5: warning: multiple declarations in a single statement reduces readability [readability-isolate-declaration]
+/legacy/wrk/src/ae_evport.c:125:5: warning: multiple declarations in a single statement reduces readability [readability-isolate-declaration]
     int rv, err;
     ^~~~~~~~~~~~
-/legacy/wrk-4.2.0/src/ae_evport.c:125:9: warning: variable 'rv' is not initialized [cppcoreguidelines-init-variables]
+/legacy/wrk/src/ae_evport.c:125:9: warning: variable 'rv' is not initialized [cppcoreguidelines-init-variables]
     int rv, err;
         ^
 note: this fix will not be applied because it overlaps with another fix
-/legacy/wrk-4.2.0/src/ae_evport.c:125:9: warning: variable name 'rv' is too short, expected at least 3 characters [readability-identifier-length]
-/legacy/wrk-4.2.0/src/ae_evport.c:125:13: warning: variable 'err' is not initialized [cppcoreguidelines-init-variables]
+/legacy/wrk/src/ae_evport.c:125:9: warning: variable name 'rv' is too short, expected at least 3 characters [readability-identifier-length]
+/legacy/wrk/src/ae_evport.c:125:13: warning: variable 'err' is not initialized [cppcoreguidelines-init-variables]
     int rv, err;
             ^
 note: this fix will not be applied because it overlaps with another fix
-/legacy/wrk-4.2.0/src/ae_evport.c:127:28: warning: statement should be inside braces [google-readability-braces-around-statements,hicpp-braces-around-statements,readability-braces-around-statements]
+/legacy/wrk/src/ae_evport.c:127:28: warning: statement should be inside braces [google-readability-braces-around-statements,hicpp-braces-around-statements,readability-braces-around-statements]
     if (mask & AE_READABLE)
                            ^
                             {
-/legacy/wrk-4.2.0/src/ae_evport.c:128:9: warning: use of a signed integer operand with a binary bitwise operator [hicpp-signed-bitwise]
+/legacy/wrk/src/ae_evport.c:128:9: warning: use of a signed integer operand with a binary bitwise operator [hicpp-signed-bitwise]
         events |= POLLIN;
         ^~~~~~ ~~
-/legacy/wrk-4.2.0/src/ae_evport.c:129:28: warning: statement should be inside braces [google-readability-braces-around-statements,hicpp-braces-around-statements,readability-braces-around-statements]
+/legacy/wrk/src/ae_evport.c:129:28: warning: statement should be inside braces [google-readability-braces-around-statements,hicpp-braces-around-statements,readability-braces-around-statements]
     if (mask & AE_WRITABLE)
                            ^
                             {
-/legacy/wrk-4.2.0/src/ae_evport.c:130:9: warning: use of a signed integer operand with a binary bitwise operator [hicpp-signed-bitwise]
+/legacy/wrk/src/ae_evport.c:130:9: warning: use of a signed integer operand with a binary bitwise operator [hicpp-signed-bitwise]
         events |= POLLOUT;
         ^~~~~~ ~~
-/legacy/wrk-4.2.0/src/ae_evport.c:132:22: warning: statement should be inside braces [google-readability-braces-around-statements,hicpp-braces-around-statements,readability-braces-around-statements]
+/legacy/wrk/src/ae_evport.c:132:22: warning: statement should be inside braces [google-readability-braces-around-statements,hicpp-braces-around-statements,readability-braces-around-statements]
     if (evport_debug)
                      ^
                       {
-/legacy/wrk-4.2.0/src/ae_evport.c:133:9: warning: the value returned by this function should be used [cert-err33-c]
+/legacy/wrk/src/ae_evport.c:133:9: warning: the value returned by this function should be used [cert-err33-c]
         fprintf(stderr, "%s: port_associate(%d, 0x%x) = ", where, fd, events);
         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/legacy/wrk-4.2.0/src/ae_evport.c:133:9: note: cast the expression to void to silence this warning
-/legacy/wrk-4.2.0/src/ae_evport.c:139:22: warning: statement should be inside braces [google-readability-braces-around-statements,hicpp-braces-around-statements,readability-braces-around-statements]
+/legacy/wrk/src/ae_evport.c:133:9: note: cast the expression to void to silence this warning
+/legacy/wrk/src/ae_evport.c:139:22: warning: statement should be inside braces [google-readability-braces-around-statements,hicpp-braces-around-statements,readability-braces-around-statements]
     if (evport_debug)
                      ^
                       {
-/legacy/wrk-4.2.0/src/ae_evport.c:140:9: warning: the value returned by this function should be used [cert-err33-c]
+/legacy/wrk/src/ae_evport.c:140:9: warning: the value returned by this function should be used [cert-err33-c]
         fprintf(stderr, "%d (%s)\n", rv, rv == 0 ? "no error" : strerror(err));
         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/legacy/wrk-4.2.0/src/ae_evport.c:140:9: note: cast the expression to void to silence this warning
-/legacy/wrk-4.2.0/src/ae_evport.c:140:65: warning: function is not thread safe [concurrency-mt-unsafe]
+/legacy/wrk/src/ae_evport.c:140:9: note: cast the expression to void to silence this warning
+/legacy/wrk/src/ae_evport.c:140:65: warning: function is not thread safe [concurrency-mt-unsafe]
         fprintf(stderr, "%d (%s)\n", rv, rv == 0 ? "no error" : strerror(err));
                                                                 ^
-/legacy/wrk-4.2.0/src/ae_evport.c:143:9: warning: the value returned by this function should be used [cert-err33-c]
+/legacy/wrk/src/ae_evport.c:143:9: warning: the value returned by this function should be used [cert-err33-c]
         fprintf(stderr, "%s: port_associate: %s\n", where, strerror(err));
         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/legacy/wrk-4.2.0/src/ae_evport.c:143:9: note: cast the expression to void to silence this warning
-/legacy/wrk-4.2.0/src/ae_evport.c:143:60: warning: function is not thread safe [concurrency-mt-unsafe]
+/legacy/wrk/src/ae_evport.c:143:9: note: cast the expression to void to silence this warning
+/legacy/wrk/src/ae_evport.c:143:60: warning: function is not thread safe [concurrency-mt-unsafe]
         fprintf(stderr, "%s: port_associate: %s\n", where, strerror(err));
                                                            ^
-/legacy/wrk-4.2.0/src/ae_evport.c:145:27: warning: statement should be inside braces [google-readability-braces-around-statements,hicpp-braces-around-statements,readability-braces-around-statements]
+/legacy/wrk/src/ae_evport.c:145:27: warning: statement should be inside braces [google-readability-braces-around-statements,hicpp-braces-around-statements,readability-braces-around-statements]
         if (err == EAGAIN)
                           ^
                            {
-/legacy/wrk-4.2.0/src/ae_evport.c:146:13: warning: the value returned by this function should be used [cert-err33-c]
+/legacy/wrk/src/ae_evport.c:146:13: warning: the value returned by this function should be used [cert-err33-c]
             fprintf(stderr, "aeApiAssociate: event port limit exceeded.");
             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/legacy/wrk-4.2.0/src/ae_evport.c:146:13: note: cast the expression to void to silence this warning
-/legacy/wrk-4.2.0/src/ae_evport.c:152:54: warning: parameter name 'fd' is too short, expected at least 3 characters [readability-identifier-length]
+/legacy/wrk/src/ae_evport.c:146:13: note: cast the expression to void to silence this warning
+/legacy/wrk/src/ae_evport.c:152:54: warning: parameter name 'fd' is too short, expected at least 3 characters [readability-identifier-length]
 static int aeApiAddEvent(aeEventLoop *eventLoop, int fd, int mask) {
                                                      ^
-/legacy/wrk-4.2.0/src/ae_evport.c:154:5: warning: multiple declarations in a single statement reduces readability [readability-isolate-declaration]
+/legacy/wrk/src/ae_evport.c:154:5: warning: multiple declarations in a single statement reduces readability [readability-isolate-declaration]
     int fullmask, pfd;
     ^~~~~~~~~~~~~~~~~~
-/legacy/wrk-4.2.0/src/ae_evport.c:154:9: warning: variable 'fullmask' is not initialized [cppcoreguidelines-init-variables]
+/legacy/wrk/src/ae_evport.c:154:9: warning: variable 'fullmask' is not initialized [cppcoreguidelines-init-variables]
     int fullmask, pfd;
         ^
 note: this fix will not be applied because it overlaps with another fix
-/legacy/wrk-4.2.0/src/ae_evport.c:154:19: warning: variable 'pfd' is not initialized [cppcoreguidelines-init-variables]
+/legacy/wrk/src/ae_evport.c:154:19: warning: variable 'pfd' is not initialized [cppcoreguidelines-init-variables]
     int fullmask, pfd;
                   ^
 note: this fix will not be applied because it overlaps with another fix
-/legacy/wrk-4.2.0/src/ae_evport.c:156:22: warning: statement should be inside braces [google-readability-braces-around-statements,hicpp-braces-around-statements,readability-braces-around-statements]
+/legacy/wrk/src/ae_evport.c:156:22: warning: statement should be inside braces [google-readability-braces-around-statements,hicpp-braces-around-statements,readability-braces-around-statements]
     if (evport_debug)
                      ^
                       {
-/legacy/wrk-4.2.0/src/ae_evport.c:157:9: warning: the value returned by this function should be used [cert-err33-c]
+/legacy/wrk/src/ae_evport.c:157:9: warning: the value returned by this function should be used [cert-err33-c]
         fprintf(stderr, "aeApiAddEvent: fd %d mask 0x%x\n", fd, mask);
         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/legacy/wrk-4.2.0/src/ae_evport.c:157:9: note: cast the expression to void to silence this warning
-/legacy/wrk-4.2.0/src/ae_evport.c:174:26: warning: statement should be inside braces [google-readability-braces-around-statements,hicpp-braces-around-statements,readability-braces-around-statements]
+/legacy/wrk/src/ae_evport.c:157:9: note: cast the expression to void to silence this warning
+/legacy/wrk/src/ae_evport.c:174:26: warning: statement should be inside braces [google-readability-braces-around-statements,hicpp-braces-around-statements,readability-braces-around-statements]
         if (evport_debug)
                          ^
                           {
-/legacy/wrk-4.2.0/src/ae_evport.c:175:13: warning: the value returned by this function should be used [cert-err33-c]
+/legacy/wrk/src/ae_evport.c:175:13: warning: the value returned by this function should be used [cert-err33-c]
             fprintf(stderr, "aeApiAddEvent: adding to pending fd %d\n", fd);
             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/legacy/wrk-4.2.0/src/ae_evport.c:175:13: note: cast the expression to void to silence this warning
-/legacy/wrk-4.2.0/src/ae_evport.c:176:9: warning: use of a signed integer operand with a binary bitwise operator [hicpp-signed-bitwise]
+/legacy/wrk/src/ae_evport.c:175:13: note: cast the expression to void to silence this warning
+/legacy/wrk/src/ae_evport.c:176:9: warning: use of a signed integer operand with a binary bitwise operator [hicpp-signed-bitwise]
         state->pending_masks[pfd] |= fullmask;
         ^~~~~~~~~~~~~~~~~~~~~~~~~ ~~
-/legacy/wrk-4.2.0/src/ae_evport.c:183:55: warning: parameter name 'fd' is too short, expected at least 3 characters [readability-identifier-length]
+/legacy/wrk/src/ae_evport.c:183:55: warning: parameter name 'fd' is too short, expected at least 3 characters [readability-identifier-length]
 static void aeApiDelEvent(aeEventLoop *eventLoop, int fd, int mask) {
                                                       ^
-/legacy/wrk-4.2.0/src/ae_evport.c:185:5: warning: multiple declarations in a single statement reduces readability [readability-isolate-declaration]
+/legacy/wrk/src/ae_evport.c:185:5: warning: multiple declarations in a single statement reduces readability [readability-isolate-declaration]
     int fullmask, pfd;
     ^~~~~~~~~~~~~~~~~~
-/legacy/wrk-4.2.0/src/ae_evport.c:185:9: warning: variable 'fullmask' is not initialized [cppcoreguidelines-init-variables]
+/legacy/wrk/src/ae_evport.c:185:9: warning: variable 'fullmask' is not initialized [cppcoreguidelines-init-variables]
     int fullmask, pfd;
         ^
 note: this fix will not be applied because it overlaps with another fix
-/legacy/wrk-4.2.0/src/ae_evport.c:185:19: warning: variable 'pfd' is not initialized [cppcoreguidelines-init-variables]
+/legacy/wrk/src/ae_evport.c:185:19: warning: variable 'pfd' is not initialized [cppcoreguidelines-init-variables]
     int fullmask, pfd;
                   ^
 note: this fix will not be applied because it overlaps with another fix
-/legacy/wrk-4.2.0/src/ae_evport.c:187:22: warning: statement should be inside braces [google-readability-braces-around-statements,hicpp-braces-around-statements,readability-braces-around-statements]
+/legacy/wrk/src/ae_evport.c:187:22: warning: statement should be inside braces [google-readability-braces-around-statements,hicpp-braces-around-statements,readability-braces-around-statements]
     if (evport_debug)
                      ^
                       {
-/legacy/wrk-4.2.0/src/ae_evport.c:188:9: warning: the value returned by this function should be used [cert-err33-c]
+/legacy/wrk/src/ae_evport.c:188:9: warning: the value returned by this function should be used [cert-err33-c]
         fprintf(stderr, "del fd %d mask 0x%x\n", fd, mask);
         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/legacy/wrk-4.2.0/src/ae_evport.c:188:9: note: cast the expression to void to silence this warning
-/legacy/wrk-4.2.0/src/ae_evport.c:193:26: warning: statement should be inside braces [google-readability-braces-around-statements,hicpp-braces-around-statements,readability-braces-around-statements]
+/legacy/wrk/src/ae_evport.c:188:9: note: cast the expression to void to silence this warning
+/legacy/wrk/src/ae_evport.c:193:26: warning: statement should be inside braces [google-readability-braces-around-statements,hicpp-braces-around-statements,readability-braces-around-statements]
         if (evport_debug)
                          ^
                           {
-/legacy/wrk-4.2.0/src/ae_evport.c:194:13: warning: the value returned by this function should be used [cert-err33-c]
+/legacy/wrk/src/ae_evport.c:194:13: warning: the value returned by this function should be used [cert-err33-c]
             fprintf(stderr, "deleting event from pending fd %d\n", fd);
             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/legacy/wrk-4.2.0/src/ae_evport.c:194:13: note: cast the expression to void to silence this warning
-/legacy/wrk-4.2.0/src/ae_evport.c:201:9: warning: use of a signed integer operand with a binary bitwise operator [hicpp-signed-bitwise]
+/legacy/wrk/src/ae_evport.c:194:13: note: cast the expression to void to silence this warning
+/legacy/wrk/src/ae_evport.c:201:9: warning: use of a signed integer operand with a binary bitwise operator [hicpp-signed-bitwise]
         state->pending_masks[pfd] &= ~mask;
         ^~~~~~~~~~~~~~~~~~~~~~~~~ ~~
-/legacy/wrk-4.2.0/src/ae_evport.c:201:39: warning: use of a signed integer operand with a unary bitwise operator [hicpp-signed-bitwise]
+/legacy/wrk/src/ae_evport.c:201:39: warning: use of a signed integer operand with a unary bitwise operator [hicpp-signed-bitwise]
         state->pending_masks[pfd] &= ~mask;
                                      ~^~~~
-/legacy/wrk-4.2.0/src/ae_evport.c:203:50: warning: statement should be inside braces [google-readability-braces-around-statements,hicpp-braces-around-statements,readability-braces-around-statements]
+/legacy/wrk/src/ae_evport.c:203:50: warning: statement should be inside braces [google-readability-braces-around-statements,hicpp-braces-around-statements,readability-braces-around-statements]
         if (state->pending_masks[pfd] == AE_NONE)
                                                  ^
                                                   {
-/legacy/wrk-4.2.0/src/ae_evport.c:223:26: warning: statement should be inside braces [google-readability-braces-around-statements,hicpp-braces-around-statements,readability-braces-around-statements]
+/legacy/wrk/src/ae_evport.c:223:26: warning: statement should be inside braces [google-readability-braces-around-statements,hicpp-braces-around-statements,readability-braces-around-statements]
         if (evport_debug)
                          ^
                           {
-/legacy/wrk-4.2.0/src/ae_evport.c:224:13: warning: the value returned by this function should be used [cert-err33-c]
+/legacy/wrk/src/ae_evport.c:224:13: warning: the value returned by this function should be used [cert-err33-c]
             fprintf(stderr, "aeApiDelEvent: port_dissociate(%d)\n", fd);
             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/legacy/wrk-4.2.0/src/ae_evport.c:224:13: note: cast the expression to void to silence this warning
-/legacy/wrk-4.2.0/src/ae_evport.c:245:5: warning: multiple declarations in a single statement reduces readability [readability-isolate-declaration]
+/legacy/wrk/src/ae_evport.c:224:13: note: cast the expression to void to silence this warning
+/legacy/wrk/src/ae_evport.c:245:5: warning: multiple declarations in a single statement reduces readability [readability-isolate-declaration]
     struct timespec timeout, *tsp;
     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/legacy/wrk-4.2.0/src/ae_evport.c:245:31: warning: variable 'tsp' is not initialized [cppcoreguidelines-init-variables]
+/legacy/wrk/src/ae_evport.c:245:31: warning: variable 'tsp' is not initialized [cppcoreguidelines-init-variables]
     struct timespec timeout, *tsp;
                               ^
 note: this fix will not be applied because it overlaps with another fix
-/legacy/wrk-4.2.0/src/ae_evport.c:246:5: warning: multiple declarations in a single statement reduces readability [readability-isolate-declaration]
+/legacy/wrk/src/ae_evport.c:246:5: warning: multiple declarations in a single statement reduces readability [readability-isolate-declaration]
     int mask, i;
     ^~~~~~~~~~~~
-/legacy/wrk-4.2.0/src/ae_evport.c:246:9: warning: variable 'mask' is not initialized [cppcoreguidelines-init-variables]
+/legacy/wrk/src/ae_evport.c:246:9: warning: variable 'mask' is not initialized [cppcoreguidelines-init-variables]
     int mask, i;
         ^
 note: this fix will not be applied because it overlaps with another fix
-/legacy/wrk-4.2.0/src/ae_evport.c:246:15: warning: variable 'i' is not initialized [cppcoreguidelines-init-variables]
+/legacy/wrk/src/ae_evport.c:246:15: warning: variable 'i' is not initialized [cppcoreguidelines-init-variables]
     int mask, i;
               ^
 note: this fix will not be applied because it overlaps with another fix
-/legacy/wrk-4.2.0/src/ae_evport.c:246:15: warning: variable name 'i' is too short, expected at least 3 characters [readability-identifier-length]
-/legacy/wrk-4.2.0/src/ae_evport.c:255:5: warning: kernel performance could be improved by unrolling this loop with a '#pragma unroll' directive [altera-unroll-loops]
+/legacy/wrk/src/ae_evport.c:246:15: warning: variable name 'i' is too short, expected at least 3 characters [readability-identifier-length]
+/legacy/wrk/src/ae_evport.c:255:5: warning: kernel performance could be improved by unrolling this loop with a '#pragma unroll' directive [altera-unroll-loops]
     for (i = 0; i < state->npending; i++) {
     ^
-/legacy/wrk-4.2.0/src/ae_evport.c:256:41: warning: statement should be inside braces [google-readability-braces-around-statements,hicpp-braces-around-statements,readability-braces-around-statements]
+/legacy/wrk/src/ae_evport.c:256:41: warning: statement should be inside braces [google-readability-braces-around-statements,hicpp-braces-around-statements,readability-braces-around-statements]
         if (state->pending_fds[i] == -1)
                                         ^
                                          {
-/legacy/wrk-4.2.0/src/ae_evport.c:274:42: warning: 1000 is a magic number; consider replacing it with a named constant [cppcoreguidelines-avoid-magic-numbers,readability-magic-numbers]
+/legacy/wrk/src/ae_evport.c:274:42: warning: 1000 is a magic number; consider replacing it with a named constant [cppcoreguidelines-avoid-magic-numbers,readability-magic-numbers]
         timeout.tv_nsec = tvp->tv_usec * 1000;
                                          ^
-/legacy/wrk-4.2.0/src/ae_evport.c:287:46: warning: statement should be inside braces [google-readability-braces-around-statements,hicpp-braces-around-statements,readability-braces-around-statements]
+/legacy/wrk/src/ae_evport.c:287:46: warning: statement should be inside braces [google-readability-braces-around-statements,hicpp-braces-around-statements,readability-braces-around-statements]
         if (errno == ETIME || errno == EINTR)
                                              ^
                                               {
-/legacy/wrk-4.2.0/src/ae_kqueue.c:32:1: warning: #includes are not sorted properly [llvm-include-order]
+/legacy/wrk/src/ae_kqueue.c:32:1: warning: #includes are not sorted properly [llvm-include-order]
 #include <sys/types.h>
 ^
 note: this fix will not be applied because it overlaps with another fix
-/legacy/wrk-4.2.0/src/ae_kqueue.c:32:1: warning: system include sys/types.h not allowed [llvmlibc-restrict-system-libc-headers]
+/legacy/wrk/src/ae_kqueue.c:32:1: warning: system include sys/types.h not allowed [llvmlibc-restrict-system-libc-headers]
 #include <sys/types.h>
 ^~~~~~~~~~~~~~~~~~~~~~
-/legacy/wrk-4.2.0/src/ae_kqueue.c:33:10: error: 'sys/event.h' file not found [clang-diagnostic-error]
+/legacy/wrk/src/ae_kqueue.c:33:10: error: 'sys/event.h' file not found [clang-diagnostic-error]
 #include <sys/event.h>
          ^~~~~~~~~~~~~
-/legacy/wrk-4.2.0/src/ae_kqueue.c:34:1: warning: system include sys/time.h not allowed [llvmlibc-restrict-system-libc-headers]
+/legacy/wrk/src/ae_kqueue.c:34:1: warning: system include sys/time.h not allowed [llvmlibc-restrict-system-libc-headers]
 #include <sys/time.h>
 ^~~~~~~~~~~~~~~~~~~~~
-/legacy/wrk-4.2.0/src/ae_kqueue.c:36:16: warning: accessing fields in struct 'aeApiState' is inefficient due to poor alignment; currently aligned to 8 bytes, but recommended alignment is 16 bytes [altera-struct-pack-align]
+/legacy/wrk/src/ae_kqueue.c:36:16: warning: accessing fields in struct 'aeApiState' is inefficient due to poor alignment; currently aligned to 8 bytes, but recommended alignment is 16 bytes [altera-struct-pack-align]
 typedef struct aeApiState {
                ^
-/legacy/wrk-4.2.0/src/ae_kqueue.c:36:16: note: use "__attribute__((aligned(16)))" to align struct 'aeApiState' to 16 bytes
-/legacy/wrk-4.2.0/src/ae_kqueue.c:41:37: warning: pointer parameter 'eventLoop' can be pointer to const [readability-non-const-parameter]
+/legacy/wrk/src/ae_kqueue.c:36:16: note: use "__attribute__((aligned(16)))" to align struct 'aeApiState' to 16 bytes
+/legacy/wrk/src/ae_kqueue.c:41:37: warning: pointer parameter 'eventLoop' can be pointer to const [readability-non-const-parameter]
 static int aeApiCreate(aeEventLoop *eventLoop) {
                                     ^
                        const 
-/legacy/wrk-4.2.0/src/ae_kqueue.c:42:25: warning: integer to pointer cast pessimizes optimization opportunities [performance-no-int-to-ptr]
+/legacy/wrk/src/ae_kqueue.c:42:25: warning: integer to pointer cast pessimizes optimization opportunities [performance-no-int-to-ptr]
     aeApiState *state = zmalloc(sizeof(aeApiState));
                         ^
-/legacy/wrk-4.2.0/src/ae_kqueue.c:44:16: warning: statement should be inside braces [hicpp-braces-around-statements,readability-braces-around-statements]
+/legacy/wrk/src/ae_kqueue.c:44:16: warning: statement should be inside braces [hicpp-braces-around-statements,readability-braces-around-statements]
     if (!state) return -1;
                ^
                 {
-/legacy/wrk-4.2.0/src/ae_kqueue.c:75:50: warning: 2 adjacent parameters of 'aeApiAddEvent' of similar type ('int') are easily swapped by mistake [bugprone-easily-swappable-parameters]
+/legacy/wrk/src/ae_kqueue.c:75:50: warning: 2 adjacent parameters of 'aeApiAddEvent' of similar type ('int') are easily swapped by mistake [bugprone-easily-swappable-parameters]
 static int aeApiAddEvent(aeEventLoop *eventLoop, int fd, int mask) {
                                                  ^~~~~~~~~~~~~~~~
-/legacy/wrk-4.2.0/src/ae_kqueue.c:75:54: note: the first parameter in the range is 'fd'
+/legacy/wrk/src/ae_kqueue.c:75:54: note: the first parameter in the range is 'fd'
 static int aeApiAddEvent(aeEventLoop *eventLoop, int fd, int mask) {
                                                      ^~
-/legacy/wrk-4.2.0/src/ae_kqueue.c:75:62: note: the last parameter in the range is 'mask'
+/legacy/wrk/src/ae_kqueue.c:75:62: note: the last parameter in the range is 'mask'
 static int aeApiAddEvent(aeEventLoop *eventLoop, int fd, int mask) {
                                                              ^~~~
-/legacy/wrk-4.2.0/src/ae_kqueue.c:75:54: warning: parameter name 'fd' is too short, expected at least 3 characters [readability-identifier-length]
+/legacy/wrk/src/ae_kqueue.c:75:54: warning: parameter name 'fd' is too short, expected at least 3 characters [readability-identifier-length]
 static int aeApiAddEvent(aeEventLoop *eventLoop, int fd, int mask) {
                                                      ^
-/legacy/wrk-4.2.0/src/ae_kqueue.c:77:19: warning: variable name 'ke' is too short, expected at least 3 characters [readability-identifier-length]
+/legacy/wrk/src/ae_kqueue.c:77:19: warning: variable name 'ke' is too short, expected at least 3 characters [readability-identifier-length]
     struct kevent ke;
                   ^
-/legacy/wrk-4.2.0/src/ae_kqueue.c:81:62: warning: statement should be inside braces [hicpp-braces-around-statements,readability-braces-around-statements]
+/legacy/wrk/src/ae_kqueue.c:81:62: warning: statement should be inside braces [hicpp-braces-around-statements,readability-braces-around-statements]
         if (kevent(state->kqfd, &ke, 1, NULL, 0, NULL) == -1) return -1;
                                                              ^
                                                               {
-/legacy/wrk-4.2.0/src/ae_kqueue.c:85:62: warning: statement should be inside braces [hicpp-braces-around-statements,readability-braces-around-statements]
+/legacy/wrk/src/ae_kqueue.c:85:62: warning: statement should be inside braces [hicpp-braces-around-statements,readability-braces-around-statements]
         if (kevent(state->kqfd, &ke, 1, NULL, 0, NULL) == -1) return -1;
                                                              ^
                                                               {
-/legacy/wrk-4.2.0/src/ae_kqueue.c:90:51: warning: 2 adjacent parameters of 'aeApiDelEvent' of similar type ('int') are easily swapped by mistake [bugprone-easily-swappable-parameters]
+/legacy/wrk/src/ae_kqueue.c:90:51: warning: 2 adjacent parameters of 'aeApiDelEvent' of similar type ('int') are easily swapped by mistake [bugprone-easily-swappable-parameters]
 static void aeApiDelEvent(aeEventLoop *eventLoop, int fd, int mask) {
                                                   ^~~~~~~~~~~~~~~~
-/legacy/wrk-4.2.0/src/ae_kqueue.c:90:55: note: the first parameter in the range is 'fd'
+/legacy/wrk/src/ae_kqueue.c:90:55: note: the first parameter in the range is 'fd'
 static void aeApiDelEvent(aeEventLoop *eventLoop, int fd, int mask) {
                                                       ^~
-/legacy/wrk-4.2.0/src/ae_kqueue.c:90:63: note: the last parameter in the range is 'mask'
+/legacy/wrk/src/ae_kqueue.c:90:63: note: the last parameter in the range is 'mask'
 static void aeApiDelEvent(aeEventLoop *eventLoop, int fd, int mask) {
                                                               ^~~~
-/legacy/wrk-4.2.0/src/ae_kqueue.c:90:55: warning: parameter name 'fd' is too short, expected at least 3 characters [readability-identifier-length]
+/legacy/wrk/src/ae_kqueue.c:90:55: warning: parameter name 'fd' is too short, expected at least 3 characters [readability-identifier-length]
 static void aeApiDelEvent(aeEventLoop *eventLoop, int fd, int mask) {
                                                       ^
-/legacy/wrk-4.2.0/src/ae_kqueue.c:92:19: warning: variable name 'ke' is too short, expected at least 3 characters [readability-identifier-length]
+/legacy/wrk/src/ae_kqueue.c:92:19: warning: variable name 'ke' is too short, expected at least 3 characters [readability-identifier-length]
     struct kevent ke;
                   ^
-/legacy/wrk-4.2.0/src/ae_kqueue.c:104:35: warning: pointer parameter 'eventLoop' can be pointer to const [readability-non-const-parameter]
+/legacy/wrk/src/ae_kqueue.c:104:35: warning: pointer parameter 'eventLoop' can be pointer to const [readability-non-const-parameter]
 static int aeApiPoll(aeEventLoop *eventLoop, struct timeval *tvp) {
                                   ^
                      const 
-/legacy/wrk-4.2.0/src/ae_kqueue.c:106:5: warning: multiple declarations in a single statement reduces readability [readability-isolate-declaration]
+/legacy/wrk/src/ae_kqueue.c:106:5: warning: multiple declarations in a single statement reduces readability [readability-isolate-declaration]
     int retval, numevents = 0;
     ^~~~~~~~~~~~~~~~~~~~~~~~~~
-/legacy/wrk-4.2.0/src/ae_kqueue.c:106:9: warning: variable 'retval' is not initialized [cppcoreguidelines-init-variables]
+/legacy/wrk/src/ae_kqueue.c:106:9: warning: variable 'retval' is not initialized [cppcoreguidelines-init-variables]
     int retval, numevents = 0;
         ^
 note: this fix will not be applied because it overlaps with another fix
-/legacy/wrk-4.2.0/src/ae_kqueue.c:111:42: warning: 1000 is a magic number; consider replacing it with a named constant [cppcoreguidelines-avoid-magic-numbers,readability-magic-numbers]
+/legacy/wrk/src/ae_kqueue.c:111:42: warning: 1000 is a magic number; consider replacing it with a named constant [cppcoreguidelines-avoid-magic-numbers,readability-magic-numbers]
         timeout.tv_nsec = tvp->tv_usec * 1000;
                                          ^
-/legacy/wrk-4.2.0/src/ae_kqueue.c:120:13: warning: variable 'j' is not initialized [cppcoreguidelines-init-variables]
+/legacy/wrk/src/ae_kqueue.c:120:13: warning: variable 'j' is not initialized [cppcoreguidelines-init-variables]
         int j;
             ^
               = 0
-/legacy/wrk-4.2.0/src/ae_kqueue.c:120:13: warning: variable name 'j' is too short, expected at least 3 characters [readability-identifier-length]
-/legacy/wrk-4.2.0/src/ae_kqueue.c:123:9: warning: kernel performance could be improved by unrolling this loop with a '#pragma unroll' directive [altera-unroll-loops]
+/legacy/wrk/src/ae_kqueue.c:120:13: warning: variable name 'j' is too short, expected at least 3 characters [readability-identifier-length]
+/legacy/wrk/src/ae_kqueue.c:123:9: warning: kernel performance could be improved by unrolling this loop with a '#pragma unroll' directive [altera-unroll-loops]
         for(j = 0; j < numevents; j++) {
         ^
-/legacy/wrk-4.2.0/src/ae_kqueue.c:123:20: warning: backward branch (for loop) is ID-dependent due to variable reference to 'numevents' and may cause performance degradation [altera-id-dependent-backward-branch]
+/legacy/wrk/src/ae_kqueue.c:123:20: warning: backward branch (for loop) is ID-dependent due to variable reference to 'numevents' and may cause performance degradation [altera-id-dependent-backward-branch]
         for(j = 0; j < numevents; j++) {
                    ^
-/legacy/wrk-4.2.0/src/ae_kqueue.c:125:28: warning: variable name 'e' is too short, expected at least 3 characters [readability-identifier-length]
+/legacy/wrk/src/ae_kqueue.c:125:28: warning: variable name 'e' is too short, expected at least 3 characters [readability-identifier-length]
             struct kevent *e = state->events+j;
                            ^
-/legacy/wrk-4.2.0/src/ae_select.c:32:1: warning: #includes are not sorted properly [llvm-include-order]
+/legacy/wrk/src/ae_select.c:32:1: warning: #includes are not sorted properly [llvm-include-order]
 #include <sys/select.h>
 ^
 note: this fix will not be applied because it overlaps with another fix
-/legacy/wrk-4.2.0/src/ae_select.c:32:1: warning: system include sys/select.h not allowed [llvmlibc-restrict-system-libc-headers]
+/legacy/wrk/src/ae_select.c:32:1: warning: system include sys/select.h not allowed [llvmlibc-restrict-system-libc-headers]
 #include <sys/select.h>
 ^~~~~~~~~~~~~~~~~~~~~~~
-/legacy/wrk-4.2.0/src/ae_select.c:33:1: warning: system include string.h not allowed [llvmlibc-restrict-system-libc-headers]
+/legacy/wrk/src/ae_select.c:33:1: warning: system include string.h not allowed [llvmlibc-restrict-system-libc-headers]
 #include <string.h>
 ^~~~~~~~~~~~~~~~~~~
-/legacy/wrk-4.2.0/src/ae_select.c:35:16: warning: accessing fields in struct 'aeApiState' is inefficient due to poor alignment; currently aligned to 8 bytes, but recommended alignment is 512 bytes [altera-struct-pack-align]
+/legacy/wrk/src/ae_select.c:35:16: warning: accessing fields in struct 'aeApiState' is inefficient due to poor alignment; currently aligned to 8 bytes, but recommended alignment is 512 bytes [altera-struct-pack-align]
 typedef struct aeApiState {
                ^
-/legacy/wrk-4.2.0/src/ae_select.c:35:16: note: use "__attribute__((aligned(512)))" to align struct 'aeApiState' to 512 bytes
-/legacy/wrk-4.2.0/src/ae_select.c:42:24: error: unknown type name 'aeEventLoop' [clang-diagnostic-error]
+/legacy/wrk/src/ae_select.c:35:16: note: use "__attribute__((aligned(512)))" to align struct 'aeApiState' to 512 bytes
+/legacy/wrk/src/ae_select.c:42:24: error: unknown type name 'aeEventLoop' [clang-diagnostic-error]
 static int aeApiCreate(aeEventLoop *eventLoop) {
                        ^
-/legacy/wrk-4.2.0/src/ae_select.c:42:37: warning: pointer parameter 'eventLoop' can be pointer to const [readability-non-const-parameter]
+/legacy/wrk/src/ae_select.c:42:37: warning: pointer parameter 'eventLoop' can be pointer to const [readability-non-const-parameter]
 static int aeApiCreate(aeEventLoop *eventLoop) {
                                     ^
                        const 
-/legacy/wrk-4.2.0/src/ae_select.c:43:17: error: incompatible integer to pointer conversion initializing 'aeApiState *' (aka 'struct aeApiState *') with an expression of type 'int' [clang-diagnostic-int-conversion]
+/legacy/wrk/src/ae_select.c:43:17: error: incompatible integer to pointer conversion initializing 'aeApiState *' (aka 'struct aeApiState *') with an expression of type 'int' [clang-diagnostic-int-conversion]
     aeApiState *state = zmalloc(sizeof(aeApiState));
                 ^       ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/legacy/wrk-4.2.0/src/ae_select.c:43:25: error: call to undeclared function 'zmalloc'; ISO C99 and later do not support implicit function declarations [clang-diagnostic-implicit-function-declaration]
+/legacy/wrk/src/ae_select.c:43:25: error: call to undeclared function 'zmalloc'; ISO C99 and later do not support implicit function declarations [clang-diagnostic-implicit-function-declaration]
     aeApiState *state = zmalloc(sizeof(aeApiState));
                         ^
-/legacy/wrk-4.2.0/src/ae_select.c:43:25: warning: integer to pointer cast pessimizes optimization opportunities [performance-no-int-to-ptr]
-/legacy/wrk-4.2.0/src/ae_select.c:45:16: warning: statement should be inside braces [hicpp-braces-around-statements,readability-braces-around-statements]
+/legacy/wrk/src/ae_select.c:43:25: warning: integer to pointer cast pessimizes optimization opportunities [performance-no-int-to-ptr]
+/legacy/wrk/src/ae_select.c:45:16: warning: statement should be inside braces [hicpp-braces-around-statements,readability-braces-around-statements]
     if (!state) return -1;
                ^
                 {
-/legacy/wrk-4.2.0/src/ae_select.c:52:24: error: unknown type name 'aeEventLoop' [clang-diagnostic-error]
+/legacy/wrk/src/ae_select.c:52:24: error: unknown type name 'aeEventLoop' [clang-diagnostic-error]
 static int aeApiResize(aeEventLoop *eventLoop, int setsize) {
                        ^
-/legacy/wrk-4.2.0/src/ae_select.c:54:31: warning: statement should be inside braces [hicpp-braces-around-statements,readability-braces-around-statements]
+/legacy/wrk/src/ae_select.c:54:31: warning: statement should be inside braces [hicpp-braces-around-statements,readability-braces-around-statements]
     if (setsize >= FD_SETSIZE) return -1;
                               ^
                                {
-/legacy/wrk-4.2.0/src/ae_select.c:58:23: error: unknown type name 'aeEventLoop' [clang-diagnostic-error]
+/legacy/wrk/src/ae_select.c:58:23: error: unknown type name 'aeEventLoop' [clang-diagnostic-error]
 static void aeApiFree(aeEventLoop *eventLoop) {
                       ^
-/legacy/wrk-4.2.0/src/ae_select.c:59:5: error: call to undeclared function 'zfree'; ISO C99 and later do not support implicit function declarations [clang-diagnostic-implicit-function-declaration]
+/legacy/wrk/src/ae_select.c:59:5: error: call to undeclared function 'zfree'; ISO C99 and later do not support implicit function declarations [clang-diagnostic-implicit-function-declaration]
     zfree(eventLoop->apidata);
     ^
-/legacy/wrk-4.2.0/src/ae_select.c:62:26: error: unknown type name 'aeEventLoop' [clang-diagnostic-error]
+/legacy/wrk/src/ae_select.c:62:26: error: unknown type name 'aeEventLoop' [clang-diagnostic-error]
 static int aeApiAddEvent(aeEventLoop *eventLoop, int fd, int mask) {
                          ^
-/legacy/wrk-4.2.0/src/ae_select.c:62:50: warning: 2 adjacent parameters of 'aeApiAddEvent' of similar type ('int') are easily swapped by mistake [bugprone-easily-swappable-parameters]
+/legacy/wrk/src/ae_select.c:62:50: warning: 2 adjacent parameters of 'aeApiAddEvent' of similar type ('int') are easily swapped by mistake [bugprone-easily-swappable-parameters]
 static int aeApiAddEvent(aeEventLoop *eventLoop, int fd, int mask) {
                                                  ^~~~~~~~~~~~~~~~
-/legacy/wrk-4.2.0/src/ae_select.c:62:54: note: the first parameter in the range is 'fd'
+/legacy/wrk/src/ae_select.c:62:54: note: the first parameter in the range is 'fd'
 static int aeApiAddEvent(aeEventLoop *eventLoop, int fd, int mask) {
                                                      ^~
-/legacy/wrk-4.2.0/src/ae_select.c:62:62: note: the last parameter in the range is 'mask'
+/legacy/wrk/src/ae_select.c:62:62: note: the last parameter in the range is 'mask'
 static int aeApiAddEvent(aeEventLoop *eventLoop, int fd, int mask) {
                                                              ^~~~
-/legacy/wrk-4.2.0/src/ae_select.c:62:54: warning: parameter name 'fd' is too short, expected at least 3 characters [readability-identifier-length]
+/legacy/wrk/src/ae_select.c:62:54: warning: parameter name 'fd' is too short, expected at least 3 characters [readability-identifier-length]
 static int aeApiAddEvent(aeEventLoop *eventLoop, int fd, int mask) {
                                                      ^
-/legacy/wrk-4.2.0/src/ae_select.c:65:16: error: use of undeclared identifier 'AE_READABLE' [clang-diagnostic-error]
+/legacy/wrk/src/ae_select.c:65:16: error: use of undeclared identifier 'AE_READABLE' [clang-diagnostic-error]
     if (mask & AE_READABLE) FD_SET(fd,&state->rfds);
                ^
-/legacy/wrk-4.2.0/src/ae_select.c:65:28: warning: statement should be inside braces [hicpp-braces-around-statements,readability-braces-around-statements]
+/legacy/wrk/src/ae_select.c:65:28: warning: statement should be inside braces [hicpp-braces-around-statements,readability-braces-around-statements]
     if (mask & AE_READABLE) FD_SET(fd,&state->rfds);
                            ^
                             {
-/legacy/wrk-4.2.0/src/ae_select.c:66:16: error: use of undeclared identifier 'AE_WRITABLE' [clang-diagnostic-error]
+/legacy/wrk/src/ae_select.c:66:16: error: use of undeclared identifier 'AE_WRITABLE' [clang-diagnostic-error]
     if (mask & AE_WRITABLE) FD_SET(fd,&state->wfds);
                ^
-/legacy/wrk-4.2.0/src/ae_select.c:66:28: warning: statement should be inside braces [hicpp-braces-around-statements,readability-braces-around-statements]
+/legacy/wrk/src/ae_select.c:66:28: warning: statement should be inside braces [hicpp-braces-around-statements,readability-braces-around-statements]
     if (mask & AE_WRITABLE) FD_SET(fd,&state->wfds);
                            ^
                             {
-/legacy/wrk-4.2.0/src/ae_select.c:70:27: error: unknown type name 'aeEventLoop' [clang-diagnostic-error]
+/legacy/wrk/src/ae_select.c:70:27: error: unknown type name 'aeEventLoop' [clang-diagnostic-error]
 static void aeApiDelEvent(aeEventLoop *eventLoop, int fd, int mask) {
                           ^
-/legacy/wrk-4.2.0/src/ae_select.c:70:51: warning: 2 adjacent parameters of 'aeApiDelEvent' of similar type ('int') are easily swapped by mistake [bugprone-easily-swappable-parameters]
+/legacy/wrk/src/ae_select.c:70:51: warning: 2 adjacent parameters of 'aeApiDelEvent' of similar type ('int') are easily swapped by mistake [bugprone-easily-swappable-parameters]
 static void aeApiDelEvent(aeEventLoop *eventLoop, int fd, int mask) {
                                                   ^~~~~~~~~~~~~~~~
-/legacy/wrk-4.2.0/src/ae_select.c:70:55: note: the first parameter in the range is 'fd'
+/legacy/wrk/src/ae_select.c:70:55: note: the first parameter in the range is 'fd'
 static void aeApiDelEvent(aeEventLoop *eventLoop, int fd, int mask) {
                                                       ^~
-/legacy/wrk-4.2.0/src/ae_select.c:70:63: note: the last parameter in the range is 'mask'
+/legacy/wrk/src/ae_select.c:70:63: note: the last parameter in the range is 'mask'
 static void aeApiDelEvent(aeEventLoop *eventLoop, int fd, int mask) {
                                                               ^~~~
-/legacy/wrk-4.2.0/src/ae_select.c:70:55: warning: parameter name 'fd' is too short, expected at least 3 characters [readability-identifier-length]
+/legacy/wrk/src/ae_select.c:70:55: warning: parameter name 'fd' is too short, expected at least 3 characters [readability-identifier-length]
 static void aeApiDelEvent(aeEventLoop *eventLoop, int fd, int mask) {
                                                       ^
-/legacy/wrk-4.2.0/src/ae_select.c:73:16: error: use of undeclared identifier 'AE_READABLE' [clang-diagnostic-error]
+/legacy/wrk/src/ae_select.c:73:16: error: use of undeclared identifier 'AE_READABLE' [clang-diagnostic-error]
     if (mask & AE_READABLE) FD_CLR(fd,&state->rfds);
                ^
-/legacy/wrk-4.2.0/src/ae_select.c:73:28: warning: statement should be inside braces [hicpp-braces-around-statements,readability-braces-around-statements]
+/legacy/wrk/src/ae_select.c:73:28: warning: statement should be inside braces [hicpp-braces-around-statements,readability-braces-around-statements]
     if (mask & AE_READABLE) FD_CLR(fd,&state->rfds);
                            ^
                             {
-/legacy/wrk-4.2.0/src/ae_select.c:74:16: error: use of undeclared identifier 'AE_WRITABLE' [clang-diagnostic-error]
+/legacy/wrk/src/ae_select.c:74:16: error: use of undeclared identifier 'AE_WRITABLE' [clang-diagnostic-error]
     if (mask & AE_WRITABLE) FD_CLR(fd,&state->wfds);
                ^
-/legacy/wrk-4.2.0/src/ae_select.c:74:28: warning: statement should be inside braces [hicpp-braces-around-statements,readability-braces-around-statements]
+/legacy/wrk/src/ae_select.c:74:28: warning: statement should be inside braces [hicpp-braces-around-statements,readability-braces-around-statements]
     if (mask & AE_WRITABLE) FD_CLR(fd,&state->wfds);
                            ^
                             {
-/legacy/wrk-4.2.0/src/ae_select.c:77:22: error: unknown type name 'aeEventLoop' [clang-diagnostic-error]
+/legacy/wrk/src/ae_select.c:77:22: error: unknown type name 'aeEventLoop' [clang-diagnostic-error]
 static int aeApiPoll(aeEventLoop *eventLoop, struct timeval *tvp) {
                      ^
-/legacy/wrk-4.2.0/src/ae_select.c:77:35: warning: pointer parameter 'eventLoop' can be pointer to const [readability-non-const-parameter]
+/legacy/wrk/src/ae_select.c:77:35: warning: pointer parameter 'eventLoop' can be pointer to const [readability-non-const-parameter]
 static int aeApiPoll(aeEventLoop *eventLoop, struct timeval *tvp) {
                                   ^
                      const 
-/legacy/wrk-4.2.0/src/ae_select.c:79:5: warning: multiple declarations in a single statement reduces readability [readability-isolate-declaration]
+/legacy/wrk/src/ae_select.c:79:5: warning: multiple declarations in a single statement reduces readability [readability-isolate-declaration]
     int retval, j, numevents = 0;
     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/legacy/wrk-4.2.0/src/ae_select.c:79:9: warning: variable 'retval' is not initialized [cppcoreguidelines-init-variables]
+/legacy/wrk/src/ae_select.c:79:9: warning: variable 'retval' is not initialized [cppcoreguidelines-init-variables]
     int retval, j, numevents = 0;
         ^
 note: this fix will not be applied because it overlaps with another fix
-/legacy/wrk-4.2.0/src/ae_select.c:79:17: warning: variable 'j' is not initialized [cppcoreguidelines-init-variables]
+/legacy/wrk/src/ae_select.c:79:17: warning: variable 'j' is not initialized [cppcoreguidelines-init-variables]
     int retval, j, numevents = 0;
                 ^
 note: this fix will not be applied because it overlaps with another fix
-/legacy/wrk-4.2.0/src/ae_select.c:79:17: warning: variable name 'j' is too short, expected at least 3 characters [readability-identifier-length]
-/legacy/wrk-4.2.0/src/ae_select.c:87:9: warning: kernel performance could be improved by unrolling this loop with a '#pragma unroll' directive [altera-unroll-loops]
+/legacy/wrk/src/ae_select.c:79:17: warning: variable name 'j' is too short, expected at least 3 characters [readability-identifier-length]
+/legacy/wrk/src/ae_select.c:87:9: warning: kernel performance could be improved by unrolling this loop with a '#pragma unroll' directive [altera-unroll-loops]
         for (j = 0; j <= eventLoop->maxfd; j++) {
         ^
-/legacy/wrk-4.2.0/src/ae_select.c:89:13: error: use of undeclared identifier 'aeFileEvent' [clang-diagnostic-error]
+/legacy/wrk/src/ae_select.c:89:13: error: use of undeclared identifier 'aeFileEvent' [clang-diagnostic-error]
             aeFileEvent *fe = &eventLoop->events[j];
             ^
-/legacy/wrk-4.2.0/src/ae_select.c:89:26: error: use of undeclared identifier 'fe' [clang-diagnostic-error]
+/legacy/wrk/src/ae_select.c:89:26: error: use of undeclared identifier 'fe' [clang-diagnostic-error]
             aeFileEvent *fe = &eventLoop->events[j];
                          ^
-/legacy/wrk-4.2.0/src/ae_select.c:91:17: error: use of undeclared identifier 'fe' [clang-diagnostic-error]
+/legacy/wrk/src/ae_select.c:91:17: error: use of undeclared identifier 'fe' [clang-diagnostic-error]
             if (fe->mask == AE_NONE) continue;
                 ^
-/legacy/wrk-4.2.0/src/ae_select.c:91:29: error: use of undeclared identifier 'AE_NONE' [clang-diagnostic-error]
+/legacy/wrk/src/ae_select.c:91:29: error: use of undeclared identifier 'AE_NONE' [clang-diagnostic-error]
             if (fe->mask == AE_NONE) continue;
                             ^
-/legacy/wrk-4.2.0/src/ae_select.c:91:37: warning: statement should be inside braces [hicpp-braces-around-statements,readability-braces-around-statements]
+/legacy/wrk/src/ae_select.c:91:37: warning: statement should be inside braces [hicpp-braces-around-statements,readability-braces-around-statements]
             if (fe->mask == AE_NONE) continue;
                                     ^
                                      {
-/legacy/wrk-4.2.0/src/ae_select.c:92:17: error: use of undeclared identifier 'fe' [clang-diagnostic-error]
+/legacy/wrk/src/ae_select.c:92:17: error: use of undeclared identifier 'fe' [clang-diagnostic-error]
             if (fe->mask & AE_READABLE && FD_ISSET(j,&state->_rfds))
                 ^
-/legacy/wrk-4.2.0/src/ae_select.c:92:28: error: use of undeclared identifier 'AE_READABLE' [clang-diagnostic-error]
+/legacy/wrk/src/ae_select.c:92:28: error: use of undeclared identifier 'AE_READABLE' [clang-diagnostic-error]
             if (fe->mask & AE_READABLE && FD_ISSET(j,&state->_rfds))
                            ^
-/legacy/wrk-4.2.0/src/ae_select.c:92:69: warning: statement should be inside braces [google-readability-braces-around-statements,hicpp-braces-around-statements,readability-braces-around-statements]
+/legacy/wrk/src/ae_select.c:92:69: warning: statement should be inside braces [google-readability-braces-around-statements,hicpp-braces-around-statements,readability-braces-around-statements]
             if (fe->mask & AE_READABLE && FD_ISSET(j,&state->_rfds))
                                                                     ^
                                                                      {
+/legacy/wrk/src/ae_select.c:93:25: error: use of undeclared identifier 'AE_READABLE' [clang-diagnostic-error]
+                mask |= AE_READABLE;
+                        ^
+/legacy/wrk/src/ae_select.c:94:17: error: use of undeclared identifier 'fe' [clang-diagnostic-error]
+            if (fe->mask & AE_WRITABLE && FD_ISSET(j,&state->_wfds))
+                ^
+/legacy/wrk/src/ae_select.c:94:28: error: use of undeclared identifier 'AE_WRITABLE' [clang-diagnostic-error]
+            if (fe->mask & AE_WRITABLE && FD_ISSET(j,&state->_wfds))
+                           ^
+/legacy/wrk/src/ae_select.c:94:69: warning: statement should be inside braces [google-readability-braces-around-statements,hicpp-braces-around-statements,readability-braces-around-statements]
+            if (fe->mask & AE_WRITABLE && FD_ISSET(j,&state->_wfds))
+                                                                    ^
+                                                                     {
+/legacy/wrk/src/ae_select.c:95:25: error: use of undeclared identifier 'AE_WRITABLE' [clang-diagnostic-error]
+                mask |= AE_WRITABLE;
+                        ^
 src/ae.c:33:1: warning: #includes are not sorted properly [llvm-include-order]
 #include <stdio.h>
 ^
@@ -10020,7 +10066,7 @@ src/zmalloc.c:344:46: warning: pointer parameter 'field' can be pointer to const
 size_t zmalloc_get_smap_bytes_by_field(char *field, long pid) {
                                              ^
                                        const 
-/legacy/wrk-4.2.0/src/zmalloc.h:87:6: warning: redundant 'zlibc_free' declaration [readability-redundant-declaration]
+/legacy/wrk/src/zmalloc.h:87:6: warning: redundant 'zlibc_free' declaration [readability-redundant-declaration]
 void zlibc_free(void *ptr);
      ^
 src/zmalloc.c:38:6: note: previously declared here

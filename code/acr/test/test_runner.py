@@ -43,7 +43,7 @@ import test_known_inputs_output
 import end_to_end_acr
 import json
 from enum import Enum
-from util import read_json_file
+from make_run_clang import read_json_file
 
 stop = pdb.set_trace
 
@@ -72,7 +72,7 @@ def parse_args():
     parser.add_argument("--check-ans", action="store_true", dest="check_ans")
     parser.add_argument("--create-ans", action="store_true", dest="create_ans", help="Create '.ans' file if it doesn't exist")
     parser.add_argument("-e", action="store_true", dest="examine_is_fp", help="To determine if the test fails, examine the is_false_positive and patch attributes. Writes output to file named <YAML_FILENAME>.alerts_info.json")
-    
+
     argparse.cmdline_args = parser.parse_args()
     if argparse.cmdline_args.create_ans:
         argparse.cmdline_args.check_ans = True
@@ -257,8 +257,8 @@ def run_and_check_if_answer(examine_is_fp, stringinput, tests_file,
     all_passed_or_none_tested = 1
     count_results_compared = 0
     count_skipped_tests = 0
-    pass_status = PassStatus.NOT_RUN 
-    answer_file_exists = False 
+    pass_status = PassStatus.NOT_RUN
+    answer_file_exists = False
     is_fp = False
     a_patch = False
     dict_alert_info_patches_fps.clear()
@@ -352,10 +352,10 @@ def run_and_check_if_answer(examine_is_fp, stringinput, tests_file,
         else:
             count_skipped_tests += 1
             pass_status = PassStatus.NOT_RUN
-            if(answer_file_exists == False): 
+            if(answer_file_exists == False):
                 print("  pass(not run): no answer file, and this test wasn't run since stop_if_no_answer_file is True.")
             else:
-                print("  pass(not run): this test wasn't run, no test string match though it had an answer file.")                
+                print("  pass(not run): this test wasn't run, no test string match though it had an answer file.")
             pass
         if((pass_status != PassStatus.PASSED) and (pass_status != PassStatus.NOT_RUN)):
             all_passed_or_none_tested = 0
@@ -363,15 +363,15 @@ def run_and_check_if_answer(examine_is_fp, stringinput, tests_file,
 
     if(examine_is_fp):
         # Select info goes to *alerts_info.json file, per test.yml file.
-        # Convert and write JSON object to file        
+        # Convert and write JSON object to file
         alerts_info_filename = tests_file+".alerts_info.json"
-        with open(alerts_info_filename, "w") as outfile: 
+        with open(alerts_info_filename, "w") as outfile:
             json.dump(dict_alert_info_patches_fps, outfile, sort_keys=True, indent=4)
         outfile.close()
-    
+
     # reset the dictionary for the next time test_runner.py is called
     dict_alert_info_patches_fps.clear()
-    
+
     if all_diff_results:
         print("#"*70)
         print("Diff results:")
@@ -450,7 +450,7 @@ def get_alert_patch_and_fp_info_from_brain_output(file_prefix, step_dir, file_to
             patch = ("patch" in x and x["patch"] != [])
             is_fp = ("is_false_positive" in x and ((x["is_false_positive"] == True) or (x["is_false_positive"] == "true")))
 
-            if(file == file_to_repair):  
+            if(file == file_to_repair):
                 return_is_fp = is_fp
                 return_patch = patch
             # either enter new info OR
@@ -490,7 +490,7 @@ def determine_pass_status(examine_is_fp,
         # For set of brain output files, log info per alert with no patch in any brain output file.
         # A brain output file may have info for more than one alert. Also, it is deleted after the test, by default.
 
-        a_patch, is_fp = get_alert_patch_and_fp_info_from_brain_output(file_prefix, step_dir, file_to_repair) 
+        a_patch, is_fp = get_alert_patch_and_fp_info_from_brain_output(file_prefix, step_dir, file_to_repair)
         print("get_alert_patch_and_fp_info_from_brain_output returned is_fp: ", is_fp)
         print("and a_patch: ", a_patch)
 
@@ -500,7 +500,7 @@ def determine_pass_status(examine_is_fp,
     if (os.path.exists(test_results_file)):
         if (answer_file_exists or (stop_if_no_answer_file == False) or extra_kwargs.get("create_ans")):
             # The OSS repaired files are often large, so answer files are patch files (diff -u).
-            # Therefore, our comparison is between an answer file (containing an older diff between 
+            # Therefore, our comparison is between an answer file (containing an older diff between
             # repaired file and original file) and a diff between the newly-repaired file and the original file.
             # We use interdiff to ignore timestamp differences between diff files.
             diff_from_original = subprocess.run(['diff', '-u', test_results_file, file_to_repair], capture_output=True)
@@ -542,7 +542,7 @@ def determine_pass_status(examine_is_fp,
             else:
                 print("  FAIL: test result does not exist, but non-null answer key does exist")
                 print("        file: " + test_results_file)
-                ret_pass_status = PassStatus.FAILED 
+                ret_pass_status = PassStatus.FAILED
         else:
             print("  FAIL: test result and answer key both do not exist")
             ret_pass_status = PassStatus.NO_ANS # no .ans file, ran test because of special argument
