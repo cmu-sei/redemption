@@ -162,6 +162,7 @@ export acr_skip_dom=false       # Skip dominator analysis
 export acr_parser_cache=/host/code/acr/test/cache/  # Cache the output of the ear module, else set to ""
 export acr_parser_cache_verbose=true # Print messages about the cache, for debugging/troubleshooting
 export acr_gzip_ear_out=true    # Compresses the output of the ear module
+export acr_ignore_ast_id=true   # Tests pass even if AST IDs are different
 export pytest_keep=true         # Keep output of individual modules (ear, brain, etc.). Regardless, the *.nulldom.json intermediate file is kept.
 export pytest_no_catch=true     # Break into debugger with "-m pdb" instead of catching exception
 export REPAIR_MSC12=true        # Repair MSC12-C alerts (By default, the system DOES do the repair. The system does not do this repair if this variable is set to `false`)

@@ -46,10 +46,13 @@ def read_whole_file_as_bytes(filename):
         return the_file.read()
 
 def delete_ids(s):
-    return re.sub('"id": "[A-Za-z0-9]*"', '"id": ""', s)
+    s = re.sub('"id": "[A-Za-z0-9]*"', '"id": ""', s)
+    s = re.sub('"ast_id": [0-9]*', '"ast_id": ""', s)
+    return s
 
 def delete_ids_and_filenames(s):
     s = re.sub('"id": "[A-Za-z0-9]*"', '"id": ""', s)
+    s = re.sub('"ast_id": [0-9]*', '"ast_id": ""', s)
     s = re.sub('"file": "[^"]*"', '"file": ""', s)
     s = re.sub('"base_dir": "[^"]*"', '"compile_dir": ""', s)
     s = re.sub('"compile_dir": "[^"]*"', '"compile_dir": ""', s)
@@ -67,7 +70,10 @@ def cmp_file_normalize(file1, file2, fn_norm=None):
     if (fn_norm is None):
         fn_norm = lambda x: x
     def norm_base(s):
-        return re.sub("[$]BASE[/]", "/host/code/acr/test/", s)
+        s = re.sub("[$]BASE[/]", "/host/code/acr/test/", s)
+        if os.getenv('acr_ignore_ast_id') == "true":
+            s = delete_ids(s)
+        return s
     fc1 = fn_norm(norm_base(read_whole_file(file1)))
     fc2 = fn_norm(norm_base(read_whole_file(file2)))
     ret = (fc1 == fc2)
