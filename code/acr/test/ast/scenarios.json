@@ -1,16 +1,30 @@
 {
   "clang": "/opt/clang/build/bin/clang",
-  "scenarios":
-  [
-    { 
-      "name": "test10",
-      "json": "test10.json",
-      "source": "test10.c"
+  "scenarios": [
+    {
+      "name": "test-function-pointers: uninitialized function pointers",
+      "json": "test-function-pointers.json",
+      "source": "test-function-pointers.c"
     },
-    { 
-      "name": "test-fp",
-      "json": "test-fp.json",
-      "source": "test-fp.c"
+    {
+      "name": "test-functions: declarations and definitions",
+      "json": "test-functions.json",
+      "source": "test-functions.c"
+    },
+    {
+      "name": "test-pointers-init: initialized and uninitialized pointers",
+      "json": "test-pointers-init.json",
+      "source": "test-pointers-init.c"
+    },
+    {
+      "name": "test-pointers: uninitialized pointers",
+      "json": "test-pointers.json",
+      "source": "test-pointers.c"
+    },
+    {
+      "name": "test-structs",
+      "json": "test-structs.json",
+      "source": "test-structs.c"
     }
   ]
 }

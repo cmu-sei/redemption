@@ -79,14 +79,13 @@ RUN /usr/sbin/update-ca-certificates
 RUN mkdir /opt/clang && \
     git clone --depth=1 --branch llvmorg-15.0.7 https://github.com/llvm/llvm-project.git /opt/clang
 
-# modified AST traverser required to be compiled into clang. this file exists within
+# modified AST traverser required to be compiled into clang. these files exist within
 # the redemption code base
-COPY /code/clang/ASTNodeTraverser.h /opt/clang/clang/include/clang/AST
-# COPY /code/clang/ASTDumper.h /opt/clang/clang/include/clang/AST
-# COPY /code/clang/TextNodeDumper.cpp /opt/clang/clang/lib/AST
+COPY /code/clang/*.h /opt/clang/clang/include/clang/AST
+COPY /code/clang/*.cpp /opt/clang/clang/lib/AST
 
 RUN mkdir /opt/clang/build && \
-    cmake -G Ninja -S/opt/clang/llvm -B/opt/clang/build -DLLVM_ENABLE_PROJECTS="clang;lldb" -DLLVM_ENABLE_RUNTIMES="libcxx;libcxxabi" -DLLVM_USE_LINKER=lld -DLLVM_BUILD_TESTS=OFF -DLLVM_TARGETS_TO_BUILD="X86" -DLLVM_BUILD_EXAMPLES=OFF -DLLVM_INCLUDE_EXAMPLES=OFF -DLLVM_LIBDIR_SUFFIX=64 -DCMAKE_BUILD_TYPE=Release && \
+    cmake -G Ninja -S/opt/clang/llvm -B/opt/clang/build -DLLVM_ENABLE_PROJECTS="clang" -DLLVM_USE_LINKER=lld -DLLVM_BUILD_TESTS=OFF -DLLVM_TARGETS_TO_BUILD="X86" -DLLVM_BUILD_EXAMPLES=OFF -DLLVM_INCLUDE_EXAMPLES=OFF -DLLVM_LIBDIR_SUFFIX=64 -DCMAKE_BUILD_TYPE=Release && \
     ninja -C /opt/clang/build
 
 # clang is built in /opt/clang/build/bin

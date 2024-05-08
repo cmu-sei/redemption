@@ -124,10 +124,12 @@ def compare_json_nodes(node1, node2):
     else:
       if node1 != node2:
 
-        # id and file are flexible components of the AST tree.
+        # ids and file are flexible components of the AST tree.
         # the id can change between generations or between builds.
-        # the file will changed based on the location provided to clang
+        # the file will change based on the location provided to clang
         if (path != "id" and path[-3:] != ".id" and 
+            path != "refId" and path[-6:] != ".refId" and 
+            path != "referencedMemberDecl" and path[-21:] != ".referencedMemberDecl" and 
             path != "file" and path[-5:] != ".file"):
           
           nonlocal mismatches

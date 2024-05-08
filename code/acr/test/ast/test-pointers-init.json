@@ -1,0 +1,504 @@
+{
+  "id": "0x556964e1ef48",
+  "kind": "TranslationUnitDecl",
+  "loc": {},
+  "range": {
+    "begin": {},
+    "end": {}
+  },
+  "inner": [
+    {
+      "id": "0x556964e1f770",
+      "kind": "TypedefDecl",
+      "loc": {},
+      "range": {
+        "begin": {},
+        "end": {}
+      },
+      "isImplicit": true,
+      "name": "__int128_t",
+      "type": {
+        "qualType": "__int128"
+      },
+      "typeDetails": [
+        {
+          "id": "0x556964e1f510",
+          "kind": "BuiltinType",
+          "type": {
+            "qualType": "__int128"
+          }
+        }
+      ]
+    },
+    {
+      "id": "0x556964e1f7e0",
+      "kind": "TypedefDecl",
+      "loc": {},
+      "range": {
+        "begin": {},
+        "end": {}
+      },
+      "isImplicit": true,
+      "name": "__uint128_t",
+      "type": {
+        "qualType": "unsigned __int128"
+      },
+      "typeDetails": [
+        {
+          "id": "0x556964e1f530",
+          "kind": "BuiltinType",
+          "type": {
+            "qualType": "unsigned __int128"
+          }
+        }
+      ]
+    },
+    {
+      "id": "0x556964e1fae8",
+      "kind": "TypedefDecl",
+      "loc": {},
+      "range": {
+        "begin": {},
+        "end": {}
+      },
+      "isImplicit": true,
+      "name": "__NSConstantString",
+      "type": {
+        "qualType": "struct __NSConstantString_tag"
+      },
+      "typeDetails": [
+        {
+          "id": "0x556964e1f8c0",
+          "kind": "RecordType",
+          "type": {
+            "qualType": "struct __NSConstantString_tag"
+          },
+          "decl": {
+            "id": "0x556964e1f838",
+            "kind": "RecordDecl",
+            "name": "__NSConstantString_tag"
+          }
+        }
+      ]
+    },
+    {
+      "id": "0x556964e1fb80",
+      "kind": "TypedefDecl",
+      "loc": {},
+      "range": {
+        "begin": {},
+        "end": {}
+      },
+      "isImplicit": true,
+      "name": "__builtin_ms_va_list",
+      "type": {
+        "qualType": "char *"
+      },
+      "typeDetails": [
+        {
+          "id": "0x556964e1fb40",
+          "kind": "PointerType",
+          "type": {
+            "qualType": "char *"
+          },
+          "typeDetails": [
+            {
+              "id": "0x556964e1eff0",
+              "kind": "BuiltinType",
+              "type": {
+                "qualType": "char"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "0x556964e1fe78",
+      "kind": "TypedefDecl",
+      "loc": {},
+      "range": {
+        "begin": {},
+        "end": {}
+      },
+      "isImplicit": true,
+      "name": "__builtin_va_list",
+      "type": {
+        "qualType": "struct __va_list_tag[1]"
+      },
+      "typeDetails": [
+        {
+          "id": "0x556964e1fe20",
+          "kind": "ConstantArrayType",
+          "type": {
+            "qualType": "struct __va_list_tag[1]"
+          },
+          "size": 1,
+          "typeDetails": [
+            {
+              "id": "0x556964e1fc60",
+              "kind": "RecordType",
+              "type": {
+                "qualType": "struct __va_list_tag"
+              },
+              "decl": {
+                "id": "0x556964e1fbd8",
+                "kind": "RecordDecl",
+                "name": "__va_list_tag"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "0x556964e7b480",
+      "kind": "VarDecl",
+      "loc": {
+        "offset": 4,
+        "file": "./test-pointers-init.c",
+        "line": 1,
+        "col": 5,
+        "tokLen": 4
+      },
+      "range": {
+        "begin": {
+          "offset": 0,
+          "col": 1,
+          "tokLen": 3
+        },
+        "end": {
+          "offset": 4,
+          "col": 5,
+          "tokLen": 4
+        }
+      },
+      "name": "varA",
+      "mangledName": "varA",
+      "type": {
+        "qualType": "int"
+      }
+    },
+    {
+      "id": "0x556964e7b570",
+      "kind": "VarDecl",
+      "loc": {
+        "offset": 15,
+        "line": 2,
+        "col": 6,
+        "tokLen": 4
+      },
+      "range": {
+        "begin": {
+          "offset": 10,
+          "col": 1,
+          "tokLen": 3
+        },
+        "end": {
+          "offset": 22,
+          "col": 13,
+          "tokLen": 1
+        }
+      },
+      "name": "varB",
+      "mangledName": "varB",
+      "type": {
+        "qualType": "int *"
+      },
+      "init": "c",
+      "pointeeTypeDetail": {
+        "id": "0x556964e1f050",
+        "kind": "QualType",
+        "type": {
+          "qualType": "int"
+        },
+        "qualifiers": ""
+      },
+      "inner": [
+        {
+          "id": "0x556964e7b5f8",
+          "kind": "ImplicitCastExpr",
+          "range": {
+            "begin": {
+              "offset": 22,
+              "col": 13,
+              "tokLen": 1
+            },
+            "end": {
+              "offset": 22,
+              "col": 13,
+              "tokLen": 1
+            }
+          },
+          "type": {
+            "qualType": "int *"
+          },
+          "valueCategory": "prvalue",
+          "castKind": "NullToPointer",
+          "inner": [
+            {
+              "id": "0x556964e7b5d8",
+              "kind": "IntegerLiteral",
+              "range": {
+                "begin": {
+                  "offset": 22,
+                  "col": 13,
+                  "tokLen": 1
+                },
+                "end": {
+                  "offset": 22,
+                  "col": 13,
+                  "tokLen": 1
+                }
+              },
+              "type": {
+                "qualType": "int"
+              },
+              "valueCategory": "prvalue",
+              "value": "0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "0x556964e7b658",
+      "kind": "VarDecl",
+      "loc": {
+        "offset": 32,
+        "line": 3,
+        "col": 7,
+        "tokLen": 4
+      },
+      "range": {
+        "begin": {
+          "offset": 26,
+          "col": 1,
+          "tokLen": 3
+        },
+        "end": {
+          "offset": 39,
+          "col": 14,
+          "tokLen": 1
+        }
+      },
+      "name": "varC",
+      "mangledName": "varC",
+      "type": {
+        "qualType": "int **"
+      },
+      "init": "c",
+      "pointeeTypeDetail": {
+        "id": "0x556964e7b530",
+        "kind": "QualType",
+        "type": {
+          "qualType": "int *"
+        },
+        "qualifiers": "",
+        "pointeeTypeDetail": {
+          "refId": "0x556964e1f050"
+        }
+      },
+      "inner": [
+        {
+          "id": "0x556964e7b6e0",
+          "kind": "ImplicitCastExpr",
+          "range": {
+            "begin": {
+              "offset": 39,
+              "col": 14,
+              "tokLen": 1
+            },
+            "end": {
+              "offset": 39,
+              "col": 14,
+              "tokLen": 1
+            }
+          },
+          "type": {
+            "qualType": "int **"
+          },
+          "valueCategory": "prvalue",
+          "castKind": "NullToPointer",
+          "inner": [
+            {
+              "id": "0x556964e7b6c0",
+              "kind": "IntegerLiteral",
+              "range": {
+                "begin": {
+                  "offset": 39,
+                  "col": 14,
+                  "tokLen": 1
+                },
+                "end": {
+                  "offset": 39,
+                  "col": 14,
+                  "tokLen": 1
+                }
+              },
+              "type": {
+                "qualType": "int"
+              },
+              "valueCategory": "prvalue",
+              "value": "0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "0x556964e7b718",
+      "kind": "VarDecl",
+      "loc": {
+        "offset": 50,
+        "line": 4,
+        "col": 7,
+        "tokLen": 4
+      },
+      "range": {
+        "begin": {
+          "offset": 44,
+          "col": 1,
+          "tokLen": 3
+        },
+        "end": {
+          "offset": 57,
+          "col": 14,
+          "tokLen": 1
+        }
+      },
+      "name": "varD",
+      "mangledName": "varD",
+      "type": {
+        "qualType": "int **"
+      },
+      "init": "c",
+      "pointeeTypeDetail": {
+        "refId": "0x556964e7b530",
+        "pointeeTypeDetail": {
+          "refId": "0x556964e1f050"
+        }
+      },
+      "inner": [
+        {
+          "id": "0x556964e7b7a0",
+          "kind": "ImplicitCastExpr",
+          "range": {
+            "begin": {
+              "offset": 57,
+              "col": 14,
+              "tokLen": 1
+            },
+            "end": {
+              "offset": 57,
+              "col": 14,
+              "tokLen": 1
+            }
+          },
+          "type": {
+            "qualType": "int **"
+          },
+          "valueCategory": "prvalue",
+          "castKind": "NullToPointer",
+          "inner": [
+            {
+              "id": "0x556964e7b780",
+              "kind": "IntegerLiteral",
+              "range": {
+                "begin": {
+                  "offset": 57,
+                  "col": 14,
+                  "tokLen": 1
+                },
+                "end": {
+                  "offset": 57,
+                  "col": 14,
+                  "tokLen": 1
+                }
+              },
+              "type": {
+                "qualType": "int"
+              },
+              "valueCategory": "prvalue",
+              "value": "0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "0x556964e7b7d8",
+      "kind": "VarDecl",
+      "loc": {
+        "offset": 66,
+        "line": 5,
+        "col": 7,
+        "tokLen": 4
+      },
+      "range": {
+        "begin": {
+          "offset": 60,
+          "col": 1,
+          "tokLen": 3
+        },
+        "end": {
+          "offset": 66,
+          "col": 7,
+          "tokLen": 4
+        }
+      },
+      "name": "varE",
+      "mangledName": "varE",
+      "type": {
+        "qualType": "int **"
+      },
+      "pointeeTypeDetail": {
+        "refId": "0x556964e7b530",
+        "pointeeTypeDetail": {
+          "refId": "0x556964e1f050"
+        }
+      }
+    },
+    {
+      "id": "0x556964e7b888",
+      "kind": "VarDecl",
+      "loc": {
+        "offset": 79,
+        "line": 6,
+        "col": 8,
+        "tokLen": 4
+      },
+      "range": {
+        "begin": {
+          "offset": 72,
+          "col": 1,
+          "tokLen": 3
+        },
+        "end": {
+          "offset": 79,
+          "col": 8,
+          "tokLen": 4
+        }
+      },
+      "name": "varF",
+      "mangledName": "varF",
+      "type": {
+        "qualType": "int ***"
+      },
+      "pointeeTypeDetail": {
+        "id": "0x556964e7b610",
+        "kind": "QualType",
+        "type": {
+          "qualType": "int **"
+        },
+        "qualifiers": "",
+        "pointeeTypeDetail": {
+          "refId": "0x556964e7b530",
+          "pointeeTypeDetail": {
+            "refId": "0x556964e1f050"
+          }
+        }
+      }
+    }
+  ]
+}

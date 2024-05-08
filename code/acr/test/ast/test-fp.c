@@ -1,1 +1,0 @@
-char ** ( *bar )( const int ** );

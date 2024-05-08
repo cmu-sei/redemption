@@ -1,5 +1,5 @@
 {
-  "id": "0x557b96d5cf28",
+  "id": "0x55e9851f5888",
   "kind": "TranslationUnitDecl",
   "loc": {},
   "range": {
@@ -8,7 +8,7 @@
   },
   "inner": [
     {
-      "id": "0x557b96d5d750",
+      "id": "0x55e9851f60b0",
       "kind": "TypedefDecl",
       "loc": {},
       "range": {
@@ -22,7 +22,7 @@
       },
       "inner": [
         {
-          "id": "0x557b96d5d4f0",
+          "id": "0x55e9851f5e50",
           "kind": "BuiltinType",
           "type": {
             "qualType": "__int128"
@@ -31,7 +31,7 @@
       ]
     },
     {
-      "id": "0x557b96d5d7c0",
+      "id": "0x55e9851f6120",
       "kind": "TypedefDecl",
       "loc": {},
       "range": {
@@ -45,7 +45,7 @@
       },
       "inner": [
         {
-          "id": "0x557b96d5d510",
+          "id": "0x55e9851f5e70",
           "kind": "BuiltinType",
           "type": {
             "qualType": "unsigned __int128"
@@ -54,7 +54,7 @@
       ]
     },
     {
-      "id": "0x557b96d5dac8",
+      "id": "0x55e9851f6428",
       "kind": "TypedefDecl",
       "loc": {},
       "range": {
@@ -68,13 +68,13 @@
       },
       "inner": [
         {
-          "id": "0x557b96d5d8a0",
+          "id": "0x55e9851f6200",
           "kind": "RecordType",
           "type": {
             "qualType": "struct __NSConstantString_tag"
           },
           "decl": {
-            "id": "0x557b96d5d818",
+            "id": "0x55e9851f6178",
             "kind": "RecordDecl",
             "name": "__NSConstantString_tag"
           }
@@ -82,7 +82,7 @@
       ]
     },
     {
-      "id": "0x557b96d5db60",
+      "id": "0x55e9851f64c0",
       "kind": "TypedefDecl",
       "loc": {},
       "range": {
@@ -96,14 +96,14 @@
       },
       "inner": [
         {
-          "id": "0x557b96d5db20",
+          "id": "0x55e9851f6480",
           "kind": "PointerType",
           "type": {
             "qualType": "char *"
           },
           "inner": [
             {
-              "id": "0x557b96d5cfd0",
+              "id": "0x55e9851f5930",
               "kind": "BuiltinType",
               "type": {
                 "qualType": "char"
@@ -114,7 +114,7 @@
       ]
     },
     {
-      "id": "0x557b96d5de58",
+      "id": "0x55e9851f67b8",
       "kind": "TypedefDecl",
       "loc": {},
       "range": {
@@ -128,7 +128,7 @@
       },
       "inner": [
         {
-          "id": "0x557b96d5de00",
+          "id": "0x55e9851f6760",
           "kind": "ConstantArrayType",
           "type": {
             "qualType": "struct __va_list_tag[1]"
@@ -136,13 +136,13 @@
           "size": 1,
           "inner": [
             {
-              "id": "0x557b96d5dc40",
+              "id": "0x55e9851f65a0",
               "kind": "RecordType",
               "type": {
                 "qualType": "struct __va_list_tag"
               },
               "decl": {
-                "id": "0x557b96d5dbb8",
+                "id": "0x55e9851f6518",
                 "kind": "RecordDecl",
                 "name": "__va_list_tag"
               }
@@ -152,14 +152,14 @@
       ]
     },
     {
-      "id": "0x557b96db96a8",
+      "id": "0x55e985251ef8",
       "kind": "VarDecl",
       "loc": {
         "offset": 11,
-        "file": "test/test-fp.c",
+        "file": "./test-function-pointers.c",
         "line": 1,
         "col": 12,
-        "tokLen": 3
+        "tokLen": 8
       },
       "range": {
         "begin": {
@@ -168,88 +168,97 @@
           "tokLen": 4
         },
         "end": {
-          "offset": 31,
-          "col": 32,
+          "offset": 36,
+          "col": 37,
+          "tokLen": 1
+        }
+      },
+      "name": "char_bar",
+      "mangledName": "char_bar",
+      "type": {
+        "qualType": "char **(*)(const int **)"
+      }
+    },
+    {
+      "id": "0x55e9852522b8",
+      "kind": "VarDecl",
+      "loc": {
+        "offset": 46,
+        "line": 2,
+        "col": 8,
+        "tokLen": 3
+      },
+      "range": {
+        "begin": {
+          "offset": 39,
+          "col": 1,
+          "tokLen": 4
+        },
+        "end": {
+          "offset": 65,
+          "col": 27,
+          "tokLen": 1
+        }
+      },
+      "name": "foo",
+      "mangledName": "foo",
+      "type": {
+        "qualType": "long (*)(int (*)(short))"
+      }
+    },
+    {
+      "id": "0x55e9852523e0",
+      "kind": "VarDecl",
+      "loc": {
+        "offset": 74,
+        "line": 3,
+        "col": 7,
+        "tokLen": 3
+      },
+      "range": {
+        "begin": {
+          "offset": 68,
+          "col": 1,
+          "tokLen": 3
+        },
+        "end": {
+          "offset": 84,
+          "col": 17,
           "tokLen": 1
         }
       },
       "name": "bar",
       "mangledName": "bar",
       "type": {
-        "qualType": "char **(*)(const int **)"
+        "qualType": "int (*)(short)"
+      }
+    },
+    {
+      "id": "0x55e985252508",
+      "kind": "VarDecl",
+      "loc": {
+        "offset": 93,
+        "line": 4,
+        "col": 7,
+        "tokLen": 4
       },
-      "inner": [
-        {
-          "id": "0x557b96db95b0",
-          "kind": "FunctionProtoType",
-          "type": {
-            "qualType": "char **(const int **)"
-          },
-          "cc": "cdecl",
-          "inner": [
-            {
-              "id": "0x557b96db9580",
-              "kind": "PointerType",
-              "type": {
-                "qualType": "char **"
-              },
-              "inner": [
-                {
-                  "id": "0x557b96d5db20",
-                  "kind": "PointerType",
-                  "type": {
-                    "qualType": "char *"
-                  },
-                  "inner": [
-                    {
-                      "id": "0x557b96d5cfd0",
-                      "kind": "BuiltinType",
-                      "type": {
-                        "qualType": "char"
-                      }
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "id": "0x557b96d5deb0",
-              "kind": "PointerType",
-              "type": {
-                "qualType": "const int **"
-              },
-              "inner": [
-                {
-                  "id": "0x557b96d5d920",
-                  "kind": "PointerType",
-                  "type": {
-                    "qualType": "const int *"
-                  },
-                  "inner": [
-                    {
-                      "id": "0x557b96d5d031",
-                      "kind": "QualType",
-                      "type": {
-                        "qualType": "const int"
-                      },
-                      "qualifiers": "const",
-                      "inner": [
-                        {
-                          "id": "0x557b96d5d030",
-                          "kind": "BuiltinType",
-                          "type": {
-                            "qualType": "int"
-                          }
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
+      "range": {
+        "begin": {
+          "offset": 87,
+          "col": 1,
+          "tokLen": 3
+        },
+        "end": {
+          "offset": 104,
+          "col": 18,
+          "tokLen": 1
         }
-      ]
+      },
+      "name": "test",
+      "mangledName": "test",
+      "type": {
+        "qualType": "int (*)(short)"
+      }
     }
   ]
 }
