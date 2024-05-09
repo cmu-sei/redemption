@@ -1,0 +1,24 @@
+[
+  {
+    "rule": "MSC13-C",
+    "file": "uninit_variable_clangtidy_fp_2.c",
+    "line": "1",
+    "column": "14",
+    "end-line": "0",
+    "end-column": "0",
+    "tool": "clang_tidy_oss",
+    "checker": "misc-unused-parameters",
+    "message": "parameter 'm' is unused"
+  },
+  {
+    "rule": "EXP33-C",
+    "file": "uninit_variable_clangtidy_fp_2.c",
+    "line": "2",
+    "column": "9",
+    "end-line": "0",
+    "end-column": "0",
+    "tool": "clang_tidy_oss",
+    "checker": "cppcoreguidelines-init-variables",
+    "message": "variable 'y' is not initialized"
+  }
+]

@@ -100,6 +100,9 @@ class EXP33_C(Alert):
         decl_node = self.get_decl_of_var(context)
         if decl_node is None or decl_node.get("name") != var:
             return None
+        # Don't try to initialize a variable declaration if it already has an initializer
+        if "init" in decl_node:
+            return None
         self.decl_node = decl_node
         self["ast_id"] = decl_node['id']
         return context

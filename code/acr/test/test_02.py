@@ -470,3 +470,18 @@ def test_already_repaired():
 def test_in_range():
     import is_indep
     is_indep.test_in_range()
+
+def test_uninit_variable_clangtidy_false_positive():
+    os.system("rm -f out/uninit_variable_clangtidy_fp*.*")
+    alerts="uninit_variable_clangtidy_fp.alerts.json"
+    step_dir="out"
+    base_dir="."
+    end_to_end_acr.run(
+        source_file="uninit_variable_clangtidy_fp.c",
+        compile_commands="autogen",
+        alerts=alerts,
+        step_dir=step_dir,
+        out_src_dir=step_dir)
+    assert cmp_file_normalize("uninit_variable_clangtidy_fp.brain-out.json", "out/uninit_variable_clangtidy_fp.brain-out.json")
+    if os.getenv('pytest_keep') != "true":
+        os.system("rm -f out/uninit_variable_clangtidy_fp*.*")
