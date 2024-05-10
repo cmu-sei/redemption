@@ -80,7 +80,7 @@ Produce static analysis on the given C file, using Clang-tidy 16.0.6, which live
 
 ``` sh
 pushd dos2unix-7.5.2
-clang-tidy -checks='*'  -extra-arg=-ferror-limit=0  *.c  > ../clang-tidy.txt
+grep --color=none '"file":' ../compile_commands.json | sed 's/"file"://;  s/",/"/;' | sort -u  | xargs clang-tidy -checks='*'  > ../clang-tidy.txt
 popd
 ```
 
