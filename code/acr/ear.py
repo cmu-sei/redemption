@@ -65,7 +65,7 @@ def run_clang_parse(compile_cmd, clang_output_dir, generated=False):
             sys.stderr.write(f"Error: \"--raw-ast-dir {clang_output_dir}\": directory doesn't exit!\n")
             sys.exit(1)
 
-    environ = {"ast_out_dir": clang_output_dir}
+    environ = {**os.environ, "ast_out_dir": clang_output_dir}
     cur_dir = os.getcwd()
     os.chdir(compile_dir)
     if generated is False:
