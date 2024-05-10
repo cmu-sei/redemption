@@ -104,13 +104,7 @@ docker run -it --rm  -v ${PWD}:/legacy  docker.cc.cert.org/redemption/distrib  b
 
 (See the toplevel [README.md](../../../README.md) instructions for details on how to build this container if necessary.
 
-Then, inside the shell this command gives you:
-
-``` sh
-cd /legacy
-```
-
-You could try building `wrk` inside this container, however, you will get compilation errors, because you have not installed the necessary dependencies.
+(You could try building `wrk` inside this container, however, you will get compilation errors, because you have not installed the necessary dependencies.)
 
 ### Creating a build file (Platform container)
 
@@ -129,10 +123,8 @@ Produce static analysis on the given C file, using Clang-tidy in the `platform` 
 
 ``` sh
 cd /legacy/wrk
-clang-tidy  -checks='*'  -extra-arg=-ferror-limit=0  src/*.c  > ../clang-tidy.txt
+grep --color=none '"file":' ../compile_commands.json | sed 's/"file"://;  s/",/"/;' | sort -u  | xargs clang-tidy -checks='*'  > ../clang-tidy.txt
 ```
-
-The command will produce scary "Error while processing" messages. This is fine as long as the clang-tidy.txt file that is produced matches the one in the `good` directory.
 
 ### Convert to Redemption Input (Redemption container)
 

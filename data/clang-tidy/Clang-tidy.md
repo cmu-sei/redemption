@@ -44,7 +44,7 @@ Running a Scan
 
 ### Command Line
 
-You will want to create a `compile_commandsproject.json` file, and the easiest
+You will want to create a `compile_commands.json` file, and the easiest
 way to do this is to use the `bear` command with your build process.
 If your project is built using a `make build` command, then you can
 do:
@@ -66,4 +66,11 @@ Once this is done, you can run clang-tidy on the sources:
 clang-tidy -checks='*' ${SOURCE} > clang-tidy.txt
 ```
 
-Note that clang-tidy will reference the compile_commands.json file for compilation details if the file exists, even if you don't specify it on the command line. So you will get better results if you create it before running clang-tidy.
+Note that clang-tidy will reference the `compile_commands.json` file for compilation details if the file exists, even if you don't specify it on the command line. So you will get better results if you create it before running clang-
+tidy.
+
+If you want to run clang-tidy only on source files in the `compile_commands.json` file, you could use this command:
+
+```sh
+grep --color=none '"file":' compile_commands.json | sed 's/"file"://;  s/",/"/;' | sort -u  | xargs clang-tidy -checks='*'  > ../clang-tidy.txt
+```
