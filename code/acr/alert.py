@@ -37,24 +37,45 @@ class Alert(OrderedDict):
     An Alert is fundamentally an ordered dictionary.  This dictionary
     represents the JSON information for the alert.
 
-    The main interfaces for an alert are the attempt_repair and
-    attempt_patch methods.  attempt_repair is called with an AST node.
-    If the repair attempt succeeds it should return the AST node
-    associated with the repair, otherwise it should return None.
-    attempt_patch is called on Alerts for which attempt_repair
-    succeeded.  It should modify the JSON dictionary to apply an
-    appropriate patch.  Data can be transmitted between the repair and
-    patch processes by storing that data in attributes on the Alert
-    instance.
+    The main interfaces for an alert are the locate_repairable_node
+    and attempt_patch methods.  locate_repairable_node is called with
+    an AST node.  If the repair attempt succeeds it should return the
+    AST node associated with the repair, otherwise it should return
+    None.  attempt_patch is called on Alerts for which
+    locate_repairable_node succeeded.  It should modify the JSON
+    dictionary to apply an appropriate patch.  Data can be transmitted
+    between the repair and patch processes by storing that data in
+    attributes on the Alert instance.
+
     """
 
     def __init__(self, val):
         super().__init__(val)
 
-    def attempt_repair(self, context):
+    def filter_nodes(self, ast_node_list):
+        """Filter the list of repairable AST nodes.
+
+        From the given list of AST nodes, returns the list of nodes
+        that this alert should consider for repair.  The list of nodes
+        is assumed to be in order from shallowest to deepest in AST
+        traversal order.
+        """
+        return ast_node_list
+
+    def locate_repairable_node(self, astnode):
+        """Determine if and how the expression `astnode` can be repaired.
+
+        Return None if a repair cannot be attempted.  Return the AST
+        node central to the repair if a repair can be attempted.  This
+        function can modify alert state.
+        """
         raise NotImplementedError
 
     def attempt_patch(self, context):
+        """Add patch information to the alert that repairs the issue.
+
+        Return True if the patch succeeded, False otherwise.
+        """
         raise NotImplementedError
 
     @staticmethod
@@ -74,7 +95,7 @@ class Alert(OrderedDict):
 class NullAlert(Alert):
     """An alert that will not repair anything"""
 
-    def attempt_repair(self, context):
+    def locate_repairable_node(self, context):
         return None
 
     def attempt_patch(self, context):
@@ -84,7 +105,7 @@ class NullAlert(Alert):
 class EXP33_C(Alert):
     """An alert that handles EXP33_C repairs"""
 
-    def attempt_repair(self, context):
+    def locate_repairable_node(self, context):
         def get_uninit_var_name(alert):
             message = alert.get("message","")
             m = re.match("variable '([^']*)' is not initialized", message)
@@ -145,7 +166,7 @@ class MSC12_C(Alert):
         self.repair_algo = "repair_deadinit_var"
         return True
 
-    def attempt_repair(self, context):
+    def locate_repairable_node(self, context):
         if not self.enable_msc12:
             self["ast_id"] = context['id']
             context.mark_skipped_alert(
@@ -213,6 +234,10 @@ class MSC12_C(Alert):
 
 class EXP34_C(Alert):
 
+    def __init__(self, *args, **kwds):
+        self.dereference_type = None
+        super().__init__(*args, **kwds)
+
     def get_error_handler_at_cursor(self, context):
         fn_decl_node = context.find_through_parents("FunctionDecl")
         try:
@@ -221,18 +246,67 @@ class EXP34_C(Alert):
         except:
             return None
 
+    clang_tidy_patterns = (
+        [("member", re.compile(r"Access to field '(?P<field>[^']*)' results in a dereference of a null pointer \(loaded from variable '(?P<var>[^']*)\)")),
+         ("array", re.compile(r"Array access (\(from variable '(?P<variable>[^']*')\)|\(via field '(?P<field>[^']*')\)) results in a null pointer dereference"))
+         ]
+    )
+
+    def get_dereference_type(self):
+        if self.dereference_type is None:
+            self.dereference_type = False
+            if self.get("tool", "") == "clang-tidy":
+                msg = self.get("message", None)
+                if msg is not None:
+                    for typ, pattern in self.clang_tidy_patterns:
+                        if pattern.search(msg):
+                            self.dereference_type = typ
+                            break
+        return self.dereference_type
+
+    def dereference_matches(self, typ):
+        dereference_type = self.get_dereference_type()
+        return not dereference_type or dereference_type == typ
+
+    def pointer_filter(self, node):
+        match node:
+            case {'kind': "UnaryOperator", "opcode": "*"} if (
+                    self.dereference_matches('pointer')):
+                return True
+            case {'kind': "ArraySubscriptExpr"} if (
+                    self.dereference_matches('array')):
+                return True
+            case {'kind': "MemberExpr", "isArrow": True} if (
+                    self.dereference_matches('member')):
+                return True
+            # This case handles the part where rosecheckers marks calls to malloc
+            case {'kind': "CallExpr"} if self.get("tool") == "rosecheckers":
+                return True
+            case _:
+                return False
+
+    def line_pointer_filter(self):
+        line = int(self['line'])
+        def filter(node):
+            return self.pointer_filter(node) and node.get_begin()['line'] == line
+        return filter
+
     def find_dereference_locus(self, node):
-        def match_dereference(node):
-            match node:
-                case ({'kind': "UnaryOperator", "opcode": "*"}
-                      | {'kind': "ArraySubscriptExpr"}
-                      | {'kind': "MemberExpr", "isArrow": _}):
-                    return (None, node)
-            return False
-        self.context = node.find_through_descendants(match_dereference)
+        dereference_type = None
+        msg = self.get("message")
+        if msg is not None and self.get("tool", "") == "clang-tidy":
+            for typ, pattern in self.clang_tidy_patterns:
+                if pattern.search(msg):
+                    dereference_type = typ
+                    break
+        pf = self.pointer_filter if "column" in self else self.line_pointer_filter()
+        pointers = filter(pf, node.traverse_descendants())
+        self.context = None
+        for item in pointers:
+            self.context = item;
         return self.context is not None
 
-    def attempt_repair(self, context):
+    def locate_repairable_node(self, context):
         match self:
             case None:
                 return None
@@ -251,6 +325,8 @@ class EXP34_C(Alert):
         elif not self.whole_expr:
             if not self.find_dereference_locus(context):
                 return None
+        elif not self.pointer_filter(context):
+            return None
         else:
             self.context = context
         self["ast_id"] = self.context['id']
@@ -263,9 +339,7 @@ class EXP34_C(Alert):
         return ast_node["type"]["qualType"].endswith("*")
 
     def attempt_patch(self, context):
-        if self.whole_expr:
-            ptr_subexpr = self.context
-        elif self.context.get('opcode') == '*':
+        if self.context.get('opcode') == '*':
             ptr_subexpr = self.context['inner'][0]
         elif self.context["kind"] == "ArraySubscriptExpr":
             ptr_subexpr = self.context["inner"][0]
@@ -274,6 +348,10 @@ class EXP34_C(Alert):
                 ptr_subexpr = self.context["inner"][1]
         elif self.context["kind"] == "MemberExpr" and self.context.get("isArrow"):
             ptr_subexpr = self.context["inner"][0]
+        elif self.context["kind"] == "CallExpr":
+            ptr_subexpr = self.context
+        elif self.whole_expr:
+            ptr_subexpr = self.context
         else:
             raise Exception("Unrecognized node passed to add_null_check, and whole_expr isn't true.")
 

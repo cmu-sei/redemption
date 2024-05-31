@@ -170,12 +170,12 @@ def run(*, compile_cmds_file, base_dir, alerts=None, combined_brain_out=None,
         step_dir=None, out_src_dir=None, inject_brain_output=False, raw_ast_dir=None, **kwargs):
     if os.getenv('acr_emit_invocation'):
         print("sup.py{}{}{}{}{}{}{}{}".format(
-            f" --compile_commands {compile_commands_dir}" if compile_commands else "",
+            f" --compile_commands {compile_cmds_file}" if compile_cmds_file else "",
             f" --alerts {alerts}" if alerts else "",
             f" --step-dir {step_dir}" if step_dir else "",
             f" --base-dir {base_dir}" if base_dir else "",
             f" -e {combined_brain_out}" if combined_brain_out else "",
-            f" --inject-brain-output {store_true}" if store_true else "",
+            f" --inject-brain-output" if inject_brain_output else "",
             f" --repaired-src {out_src_dir}" if out_src_dir else "",
             f" -r {raw_ast_dir}" if raw_ast_dir is not None else ""))
 

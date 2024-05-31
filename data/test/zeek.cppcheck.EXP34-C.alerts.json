@@ -108,7 +108,8 @@
     "column": "5",
     "tool": "cppcheck",
     "checker": "nullPointerRedundantCheck",
-    "message": "Either the condition 'node==NULL' is redundant or there is possible null pointer dereference: node."
+    "message": "Either the condition 'node==NULL' is redundant or there is possible null pointer dereference: node.",
+    "comment": "This alert generates a false positive.  The dereferencing should be dominated by previous derefererences, and it is in the nulldom output.  But there are two expressions on this line, and the brain automatically ignores domination references when they occur more than once on a line."
   },
   {
     "rule": "EXP34-C",

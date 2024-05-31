@@ -1,0 +1,17 @@
+--- /host/data/test/out/branch.c	2024-05-31 15:41:49.810841316 +0000
++++ /oss/git/branch.c	2024-04-25 15:50:26.000000000 +0000
+@@ -1,5 +1,3 @@
+-#include "acr.h"
+-
+ #include "git-compat-util.h"
+ #include "cache.h"
+ #include "config.h"
+@@ -162,7 +160,7 @@
+ 			printf_ln(rebasing ?
+ 				_("branch '%s' set up to track '%s' by rebasing.") :
+ 				_("branch '%s' set up to track '%s'."),
+-				local, null_check(friendly_ref_names.items, return 0)[0].string);
++				local, friendly_ref_names.items[0].string);
+ 		} else {
+ 			printf_ln(_("branch '%s' set up to track:"), local);
+ 			for_each_string_list_item(item, &friendly_ref_names)

@@ -4,6 +4,6 @@
   { "rule": "EXP34-C", "file": "macros_near_null_checks.c", "line": 16 },
   { "rule": "EXP34-C", "file": "macros_near_null_checks.c", "line": 17 },
   { "rule": "EXP34-C", "file": "macros_near_null_checks.c", "line": 18 },
-  { "rule": "EXP34-C", "file": "macros_near_null_checks.c", "line": 19 },
-  { "rule": "EXP34-C", "file": "macros_near_null_checks.c", "line": 20 }
+  { "rule": "EXP34-C", "file": "macros_near_null_checks.c", "line": 19, "column": 33 },
+  { "rule": "EXP34-C", "file": "macros_near_null_checks.c", "line": 20, "column": 33 }
 ]

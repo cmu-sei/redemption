@@ -86,6 +86,7 @@
     "rule": "EXP34-C",
     "file": "/host/code/acr/test/macros_near_null_checks.c",
     "line": 19,
+    "column": 33,
     "alert_id": 6,
     "ast_id": 1155,
     "why_skipped": [
@@ -98,6 +99,7 @@
     "rule": "EXP34-C",
     "file": "/host/code/acr/test/macros_near_null_checks.c",
     "line": 20,
+    "column": 33,
     "alert_id": 7,
     "ast_id": 1172,
     "why_skipped": [

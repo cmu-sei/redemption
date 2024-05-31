@@ -4,14 +4,14 @@
     "file": "$BASE/super01a.c",
     "line": 9,
     "alert_id": 1,
-    "ast_id": 2178,
+    "ast_id": 2180,
     "patch": [
       [
         "$BASE/super01a.c",
         [
           [
-            145,
-            145,
+            146,
+            146,
             "null_check("
           ],
           [

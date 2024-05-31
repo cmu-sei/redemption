@@ -138,62 +138,21 @@ class ASTContext:
                 return None
             current = ASTContext(val, path=True, name_proxy=self.name_proxy)
 
-    def find_through_descendants(self, predicate, found_nothing=None):
-        """Search through descendants for nodes that match predicate.
+    def traverse_descendants(self):
+        """Return a generator for all this node's descendants.
 
-        The predicate takes a single node as an argument.  It can
-        return True, False, or a tuple of two elements.
-
-        If True or False, the value determines whether the current
-        node is added to the list of returned nodes.
-
-        If the return value is a pair, the behavior is determined by
-        the first element of the pair.  If the first element is True,
-        the second element is added to the list of returned values,
-        and recusrsion will continue on this node.  If the first
-        element is False, the second element is added to the list of
-        returned values, but recursion will stop in this node.  If the
-        first element is None, the second element is returned as the
-        only return value of the traversal (not in a list).
-
-        If nothing is found, the value of found_nothing is returned.
+        This will return all ASTContext nodes, in depth-traversal
+        order, starting with self.
         """
-        def traverse(node, accumulator):
-            match predicate(node):
-                case True:
-                    accumulator.append(node)
-                    cont = True
-                case False:
-                    cont = True
-                case (None, _) as x:
-                    return x
-                case ((True | False) as c, x):
-                    accumulator.append(x)
-                    cont = c
-                case x:
-                    accumulator.append(x)
-                    cont = True
-            if not cont:
-                return accumulator
-            if node.is_mapping():
-                nodes = node.values()
-            else:
-                nodes = node
-            for x in nodes:
-                if isinstance(x, ASTContext):
-                    match traverse(x, accumulator):
-                        case (None, _) as x:
-                            return x
-                        case x:
-                            accumulator = x
-            return accumulator
-        match traverse(self, list()):
-            case (None, x):
-                return x
-            case []:
-                return found_nothing
-            case x:
-                return x
+        yield self
+        if self.is_mapping():
+            nodes = self.values()
+        else:
+            nodes = self
+        for node in nodes:
+            if isinstance(node, ASTContext):
+                for val in node.traverse_descendants():
+                    yield val
 
     def root(self):
         """Return the top parent."""
@@ -282,7 +241,7 @@ class ASTSequenceContext(ASTConcreteContext, Sequence):
 
 class Brain(AstVisitor):
 
-    Location = namedtuple('Location', ['file', 'begin', 'end'])
+    Location = namedtuple('Location', ['file', 'begin', 'end', 'id'])
 
     def __init__(self, ast):
         super().__init__()
@@ -345,7 +304,10 @@ class Brain(AstVisitor):
                 end = node.get_end_lc()
                 if end is None:
                     return
-                self.intervals.append((self.Location(filename, begin, end), node))
+                node_id = node.get("id", None)
+                if isinstance(node_id, str):
+                    node_id = node.get("prevId", 0)
+                self.intervals.append((self.Location(filename, begin, end, node_id), node))
 
     def parse_alerts(self, alerts_filename):
         alert_list = read_json_file(alerts_filename)
@@ -454,7 +416,7 @@ class Brain(AstVisitor):
         # always find the end of a range of intervals that begins with
         # the same start location.
         loc, _ = item
-        return (loc.file, loc.begin, (0, loc.end))
+        return (loc.file, loc.begin, (0, loc.end), -loc.id)
 
     def minimum_spanning(self, node, lc, filename):
         while node is not None:
@@ -534,9 +496,10 @@ class Brain(AstVisitor):
                 # the matching intervals (nodes).
                 nodes, whole_expr = nodes
                 a.whole_expr = whole_expr
+                nodes = a.filter_nodes(nodes)
                 last_node = None
                 for node in nodes:
-                    repair_node = a.attempt_repair(node)
+                    repair_node = a.locate_repairable_node(node)
                     if repair_node is not None:
                         last_node = repair_node
                         self.check_repairability(a, repair_node)
@@ -595,7 +558,7 @@ def main():
 
 def run(ast_file, alerts_filename, output_filename):
     if os.getenv('acr_emit_invocation'):
-        print("brain.py -o {} -a {}{}".format(
+        print("brain.py -o {} -a {} {}".format(
             output_filename, alerts_filename, ast_file))
     ll_file = get_ast_file_base(ast_file) + ".ll"
     ast = read_json_file(ast_file)

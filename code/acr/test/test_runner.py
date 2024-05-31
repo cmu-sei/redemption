@@ -348,7 +348,7 @@ def run_and_check_if_answer(examine_is_fp, stringinput, tests_file,
                           filename=filename,
                           cur_answer_file=cur_answer_file,
                           out_location=out_location,
-                          extra_kwargs=extra_kwargs)
+                          **extra_kwargs)
         else:
             count_skipped_tests += 1
             pass_status = PassStatus.NOT_RUN
@@ -509,7 +509,6 @@ def determine_pass_status(examine_is_fp,
                 # Store diffs between the test_results_file and the original file
                 df.write("%s" % diff_from_original.stdout.decode())
                 # The decode() is so newlines are not converted to \n in file
-            df.close()
 
             if extra_kwargs.get("create_ans") and not answer_file_exists:
                 print("  Creating answer file: " + cur_answer_file)
@@ -542,6 +541,7 @@ def determine_pass_status(examine_is_fp,
             else:
                 print("  FAIL: test result does not exist, but non-null answer key does exist")
                 print("        file: " + test_results_file)
+                print("        answer file: " + cur_answer_file)
                 ret_pass_status = PassStatus.FAILED
         else:
             print("  FAIL: test result and answer key both do not exist")

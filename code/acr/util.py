@@ -166,9 +166,11 @@ class AstVisitor(object):
                         self.cur_line = line
 
                 self.node_stack.append(node)
-                self.previsit(node)
-                ret = fn_visit(self, node)
-                self.node_stack.pop()
+                try:
+                    self.previsit(node)
+                    ret = fn_visit(self, node)
+                finally:
+                    self.node_stack.pop()
 
                 return ret
 

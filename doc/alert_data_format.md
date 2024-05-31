@@ -67,6 +67,10 @@ hereafter referred to as *fields*.
 
     The ending column associated with the alert.
 
+* `comment` : string
+
+    Commentary useful for Redemption developers.
+
 * `conflicting_repairs` : list
 
     A list of repairs that were unable to be used due to conflicts.
@@ -185,6 +189,7 @@ hereafter referred to as *fields*.
 | `rationale`           |          | author     |            |
 | `randomness`          |          | author     |            |
 | `issue`               |          | author     |            |
+| `comment`             |          | author     |            |
 | `ast_id`              |          | brain      |            |
 | `alert_id`            |          | brain      | brain, sup |
 | `patch`               |          | brain, sup | glove, sup |
