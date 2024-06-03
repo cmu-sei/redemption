@@ -1,0 +1,17 @@
+--- /host/data/test/out/build/auxil/spicy/spicy/3rdparty/justrx/justrx/autogen/re-scan.c	2024-05-24 17:23:41.096803021 +0000
++++ /oss/zeek/build/auxil/spicy/spicy/3rdparty/justrx/justrx/autogen/re-scan.c	2024-05-23 12:03:53.982188495 +0000
+@@ -1,5 +1,3 @@
+-#include "acr.h"
+-
+ #line 2 "/oss/zeek/build/auxil/spicy/spicy/3rdparty/justrx/justrx/autogen/re-scan.c"
+ 
+ #line 4 "/oss/zeek/build/auxil/spicy/spicy/3rdparty/justrx/justrx/autogen/re-scan.c"
+@@ -2299,7 +2297,7 @@
+ 
+     /* Destroy the main struct (reentrant only). */
+     yyfree ( yyscanner , yyscanner );
+-    (void) NULL;
++    yyscanner = NULL;
+     return 0;
+ }
+ 
