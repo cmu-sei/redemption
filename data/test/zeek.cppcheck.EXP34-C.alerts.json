@@ -27,7 +27,7 @@
     "repairable": "false",
     "rationale": "There's a check for if the `calloc` return value is null. If yes, an externally-defined function `out_of_memory` is called. That function calls `abort()`, which causes abnormal program termination unless SIGABRT is being caught by a signal handler passed to signal and the handler does not return. Thus, false positive.",
     "randomness": "random and first_five",
-    "issue": ""
+    "issue": "REM-206"
   },
   {
     "rule": "EXP34-C",
