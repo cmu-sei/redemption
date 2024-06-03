@@ -568,11 +568,11 @@ def run(ast_file, alerts_filename, output_filename):
     brain.map_nulldom_locs_to_alerts()
     brain.run(ASTContext(ast, name_proxy=brain))
     skip_dom=(os.getenv('acr_skip_dom') or "false").lower() == "true"
+    for alert in brain.alert_list:
+        alert.setdefault("patch", [])
     if not skip_dom:
         brain.mark_dependent_alerts()
         brain.mark_already_checked_null_alerts()
-    for alert in brain.alert_list:
-        alert.setdefault("patch", [])
     with open(output_filename, 'w') as outfile:
         outfile.write(json.dumps(brain.alert_list, indent=2) + "\n")
 
