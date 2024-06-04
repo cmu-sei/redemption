@@ -156,17 +156,18 @@ As specified [above](#detail-about-the-end_to_end_acrpy-script), the `STEP_DIR` 
 #### Environment variables
 
 ```bash
-export acr_show_progress=true   # Show progress and timing
-export acr_warn_unlocated_alerts=true  # Warn when alerts cannot be located in AST
-export acr_skip_dom=false       # Skip dominator analysis
+export acr_default_lang_std=foo # Adds "--std=foo" to the beginning of the arguments given to Clang.
+export acr_emit_invocation=true # Show subprogram invocation information
+export acr_gzip_ear_out=true    # Compresses the AST (compresses the output of the ear module)
+export acr_ignore_ast_id=true   # Tests pass even if AST IDs are different
 export acr_parser_cache=/host/code/acr/test/cache/  # Cache the output of the ear module, else set to ""
 export acr_parser_cache_verbose=true # Print messages about the cache, for debugging/troubleshooting
-export acr_gzip_ear_out=true    # Compresses the output of the ear module
-export acr_ignore_ast_id=true   # Tests pass even if AST IDs are different
+export acr_show_progress=true   # Show progress and timing
+export acr_skip_dom=false       # Skip dominator analysis
+export acr_warn_unlocated_alerts=true  # Warn when alerts cannot be located in AST
 export pytest_keep=true         # Keep output of individual modules (ear, brain, etc.). Regardless, the *.nulldom.json intermediate file is kept.
 export pytest_no_catch=true     # Break into debugger with "-m pdb" instead of catching exception
 export REPAIR_MSC12=true        # Repair MSC12-C alerts (By default, the system DOES do the repair. The system does not do this repair if this variable is set to `false`)
-export acr_default_lang_std=foo # Adds "--std=foo" to the beginning of the arguments given to Clang.
 ```
 
 

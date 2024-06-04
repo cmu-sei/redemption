@@ -820,7 +820,7 @@
     "verdict": "true",
     "rationale": "True positive.. Line 90137 is pC->nHdrParsed = 0; and nothing between that line and line 90175 modifies pC->nHdrParsed, so line 90175 is equivalent to assert( 0<=p2 );, but p2 is declared as u32 p2; and so is unsigned, meaning there's no possible way that condition can ever be false.  Not repairable, as inside an assert().  However, the assert could be manually removed.",
     "repairable": "false",
-    "satisfactory": "false",
+    "satisfactory": "wontfix",
     "llm_output_file": "dfd8eb56320fd1475c913d34.txt"
   },
   {
@@ -1136,7 +1136,7 @@
     "verdict": "true",
     "rationale": "The operation maximizes a value without comparing unsigned expression 'pLoop->u.btree.nBtm' to less than zero.  Also, this is inside a macro. (A good manual repair would declare mnExtraReg as an unsigned int)",
     "repairable": "false",
-    "satisfactory": "false",
+    "satisfactory": "wontfix",
     "llm_output_file": "4a7c1cc19e8c1110cca2da3e.txt"
   },
   {
@@ -1238,7 +1238,7 @@
     "verdict": "false",
     "rationale": "Macro expansion. GPT-4 says: The flagged line involves stack management and debugging output, not assignment or dereferencing of function parameters.",
     "repairable": "false",
-    "satisfactory": "true",
+    "satisfactory": "false",
     "llm_output_file": "6675a362374d5f30b7614261.txt"
   }
 ]

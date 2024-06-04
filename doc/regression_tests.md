@@ -29,17 +29,7 @@ DM23-2165
 
 ## Summary of environment variables
 
-```bash
-export acr_show_progress=true   # Show progress and timing
-export acr_warn_unlocated_alerts=true # Warn when alerts cannot be located in AST
-export acr_emit_invocation=true # Show subprogram invocation information
-export acr_parser_cache=/host/code/acr/test/cache/ # Cache the output of the ear module, else set to ""
-export pytest_keep=true         # Keep output of individual modules (ear, brain, etc.). Regardless, the *.nulldom.json intermediate file is kept.
-export pytest_no_catch=true     # Break into debugger with "-m pdb" instead of catching exception
-export REPAIR_MSC12=true     # Repair MSC12-C alerts (By default, the system DOES do the repair. The system does not do this repair if this variable is set to `false`)
-```
-
-See the [main README.md](../README.md) for information about environment variables `XDG_RUNTIME_DIR` and `DBUS_SESSION_BUS_ADDRESS`.
+See the [main README.md](../README.md) for information about environment variables, including `XDG_RUNTIME_DIR` and `DBUS_SESSION_BUS_ADDRESS`.
 
 ## Limiting `pytest` Tests Performed
 
@@ -124,7 +114,7 @@ All tests should pass.
 
 
 Note (applies to the test container only): The above `pytest` command takes a very long time complete (e.g., over 2 hours for the 145 tests in git.rosecheckers.MSC12-C.test.yml alone) when `*MSC12-C*test.yml` files are included in the testing.
-To exclude them, can move the `*MSC12-C*test.yml` files from the `data/test` directory to another location.
+To exclude them, move the `*MSC12-C*test.yml` files from the `data/test` directory to another location.
 If you do not move them, but only set their repairs to false (`export REPAIR_MSC12=false`), testing time will still be longer than if they were moved.
 
 ## More Details about Running Tests

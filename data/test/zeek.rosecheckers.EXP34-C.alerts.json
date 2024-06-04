@@ -7,12 +7,12 @@
     "tool": "rosecheckers",
     "checker": "EXP34-C",
     "message": "Ensure pointer is valid before dereferencing it",
-    "satisfactory": "false",
+    "satisfactory": "true",
     "verdict": "true",
     "repairable": "true",
     "rationale": "A malloc is done, then the pointer is dereferenced without a check first in case it is null.",
     "randomness": "random and first_five",
-    "issue": "REM-129"
+    "issue": ""
   },
   {
     "rule": "EXP34-C",

@@ -65,7 +65,7 @@ When done, you can eliminate the empty answer files.
 
 ### Sample Alert Experiments
 
-In this scenario, we pick a single C file that has 1 or more alerts that we wish to repair. We have ACR repair the alerts, and then compare the repaired source code against an 'answer' source code file. The experiment is successful if the test result matches the answer file.
+In this scenario, we pick a single C file that has 1 or more alerts that we wish to repair. We have ACR repair the alerts, and then compare the repaired source code against an 'answer' source code file. The `answer` source code file has been *manually* analyzed and verified as a correct repair, by one or more experts. The experiment is successful if the test result matches the answer file.
 
 The following two tables indicates how many alerts were generated:
 
@@ -81,7 +81,7 @@ The following two tables indicates how many alerts were generated:
 | clang-tidy   |      44 |    5225 |         |
 | rosecheckers |      17 |         |     480 |
 
-This totals >16,000 alerts! We were planning on testing all alerts, but this is too many to test.  For the bigger categories, we will have to test just a random sample of them.
+This totals more than 16,000 alerts! Initially, we planned to test all alerts, but this is too many to test. For the bigger categories, we therefore do this type of test on only a random sample of the alerts.
 
 The test data will be made available, but in a disabled fashion. To enable a test, the tester will:
  1. Enable a single source file, tool, and CERT rule.
@@ -117,6 +117,8 @@ After running test cases, you should update the table above with the ratio of sa
 Script outputs two .csv 'tables'. First to fill in ratios values in bottom table, second to determine color (<80% red).  Script is test_satisfaction_status_tables.sh, which is now in the main branch of redemption.public. 
 
 Once deemed correct, sample alerts are preserved and act as regression tests for Bamboo. As with regression tests, any change in behavior of a correct sample alert is mitigated before the change is merged into the main branch.
+
+_(Related to the discussion above about effort to manually adjudicate alerts: We welcome your contributions of alert adjudications for these 3 codebases, to help the community that uses, tests, and develops Redemption! Contributions of alert adjudications should be provided in the same format as the existing adjudications in the alerts.json files and should include sufficient information in the `rationale` field to enable our experts to validate the provided rationale. The contributed filename should be constructed as follows, same as the existing `alerts.json` files used for this testing: `{git,zeek}.{cppcheck, clang-tidy, rosecheckers, <OTHER_SA_TOOLNAME>}.{<CODE_FLAW_ID>}.alerts.json`)_
 
 #### Measuring and Improving Satisfactory Alert Redemption
 ##### Features

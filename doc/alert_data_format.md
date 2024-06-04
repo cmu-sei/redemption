@@ -127,6 +127,17 @@ hereafter referred to as *fields*.
     file), and `random and first five` if the alert was selected both
     those ways.
 
+Entries have a different set of meanings and selection methods for the MSC12-C test suite data than they do for the other test suite data. For the MSC12-C test suite data, we initially had a disappointing set of test results (and of randomly selected alerts). To produce more-useful test data, we created a new sample set, reusing some specially-selected alerts from our initial set of randomly-selected alerts, and selecting other new target alerts to adjudicate. The full description of meanings and labels for this MSC12-C data is specified in [MSC12-C.alert.special.selection.md](MSC12-C.alert.special.selection.md).
+
+Labels for the MSC-12C `randomness` field:
+
+* If the alert was originally randomly selected and now not included due to being in a now-excluded category, now the randomness entry is set to `disqualified random`.
+* If the alert was originally randomly selected and now included, now the randomness entry is set to `random and sample`.
+* If the alert was not previously selected, but is now part of the sample testing, the randomness entry is set to `sample`.
+* If the alert was originally selected as part of the sample, then later disqualified, its randomness entry is set to `disqualified sample`
+* If the alert was originally randomly selected and now its randomness entry is set to `random` (but not `random and sample`), that means it is not included in the sample set due to being "boring". Such an alert is in a targeted alert category, but one (or more) of the original randomly-selected alerts was chosen for the sample testing set, and this alert was not. 
+
+
 * `rationale` : string
 
     Manual analysis of the alert.
