@@ -42,7 +42,7 @@
     "repairable": "true",
     "rationale": "The function definition is in reftable/block.c. There are 11 uses of the function, which would be too time-consuming to trace, for this task. Assume it is a true positive, since it would take too much analysis to determine if there is no null parameter, for each time the function is called. Additional analysis specific to the tool's message is that even if `blockp` is never null, then the condition is redundant as the message says. However, the verdict is `complex` rather than `true positive` since the audit is for EXP34-C instead of the tool's message.",
     "randomness": "first_five",
-    "issue": "REM-128"
+    "issue": "DONE REM-128"
   },
   {
     "rule": "EXP34-C",

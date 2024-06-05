@@ -12,7 +12,7 @@
     "repairable": "true",
     "rationale": "There's a check on line 309 if `payload == nullptr`, but it only returns if `hdr.payload_len != 0`. If `hdr.payload_len != 0`, it continues to the switch on line 319. Then, it reaches this line even if null.",
     "randomness": "random",
-    "issue": "REM-344 and REM-212"
+    "issue": "DONE REM-344 REM-212"
   },
   {
     "rule": "EXP34-C",
@@ -27,7 +27,7 @@
     "repairable": "true",
     "rationale": "There's a check on line 309 if `payload == nullptr`, but it only returns if `hdr.payload_len != 0`. If `hdr.payload_len != 0`, it continues to the switch on line 319. Then, it reaches this line even if null.",
     "randomness": "top_five",
-    "issue": "REM-212"
+    "issue": "DONE REM-212"
   },
   {
     "rule": "EXP34-C",
@@ -42,7 +42,7 @@
     "repairable": "true",
     "rationale": "There's a check on line 309 if `payload == nullptr`, but it only returns if `hdr.payload_len != 0`. If `hdr.payload_len != 0`, it continues to the switch on line 319. Then, it reaches this line even if null.",
     "randomness": "top_five",
-    "issue": "REM-212"
+    "issue": "DONE REM-212"
   },
   {
     "rule": "EXP34-C",
@@ -57,7 +57,7 @@
     "repairable": "true",
     "rationale": "There's a check on line 309 if `payload == nullptr`, but it only returns if `hdr.payload_len != 0`. If `hdr.payload_len != 0`, it continues to the switch on line 319. Then, it reaches this line even if null.",
     "randomness": "top_five",
-    "issue": "REM-212"
+    "issue": "DONE REM-212"
   },
   {
     "rule": "EXP34-C",
@@ -72,7 +72,7 @@
     "repairable": "true",
     "rationale": "There's a check on line 309 if `payload == nullptr`, but it only returns if `hdr.payload_len != 0`. If `hdr.payload_len != 0`, it continues to the switch on line 319. Then, it reaches this line even if null.",
     "randomness": "top_five",
-    "issue": "REM-212"
+    "issue": "DONE REM-212"
   },
   {
     "rule": "EXP34-C",
@@ -247,7 +247,7 @@
     "repairable": "true",
     "rationale": "True positive. No repair was done by ACR.",
     "randomness": "random",
-    "issue": "REM-344 and REM-128"
+    "issue": "DONE REM-344 REM-128"
   },
   {
     "rule": "EXP34-C",
@@ -291,7 +291,7 @@
     "repairable": "true",
     "rationale": "The code line alerted on is `memcpy((u8*)pChunk->zChunk + iChunkOffset, zWrite, iSpace);` Our project uses auditing rule 5B to narrow the part of the alerted-about code line based on the alert message, though the column provided is not helpful. Although the line above, there's a check to ensure pChunk is not null, there's no check that `pChunk->zChunk` is null. ACR should add a check. Additional analysis:  We ignore the following issue, since it is about another parameter (not warned about in the error message). The first parameter sent to `memcpy` on line 99971 was a parameter into the function `memjrnlWrite`. `* zBuf` is one of the parameters into the function `memjrnlWrite` and `*zWrite` was set equal to that. The alert message is clearly about the first parameter, not the `* zBuf` parameter. So, if the `* zWrite` value was null, then issue. (see https://cplusplus.com/reference/cstring/memcpy ) `void * memcpy( void * destination, const void * source, size_t num);`",
     "randomness": "random",
-    "issue": "REM-344 and REM-212"
+    "issue": "DONE REM-344 REM-212"
   },
   {
     "rule": "EXP34-C",
@@ -399,7 +399,7 @@
     "repairable": "false",
     "rationale": "The line immediately before checks if `pSub` is null, so wouldn't reach this line if it was. This line 138598 wouldn't be a problem (`pSubSrc = pSub->pSrc;`). The *next* line might be a problem, though. (It is `nSubSrc = pSubSrc->nSrc;`), if pSub->pSrc equalled null. There's not a check for null within the function, for that field in that next line. However, since that next line number is different than the alerted-for line, we ignore that next line's possible problem (using our auditing rules). Thus, this alert is a false positive. Although calls to `assert` (i.e., `#define NDEBUG`) go away in release builds, we decided that `assert()` statements are good enough, since they communicate the programmer's intentions.",
     "randomness": "random",
-    "issue": "REM-344 and REM-213"
+    "issue": "DONE REM-344 REM-213"
   },
   {
     "rule": "EXP34-C",
@@ -451,6 +451,6 @@
     "repairable": "false",
     "rationale": "`char * buffer` is the second parameter into the funciton. Line 298 increments that, then assigns to it. Ther is a check (using a special function) on line 295 that `buffer != 0`. It uses a special function `RAPIDJSON_ASSERT(`. That is defined in auxil/rapidjson/test/unittest/unittest.h : #define RAPIDSON_ASSERT(x) (!(x)? throw AssertException(RAPIDJSON_STRINGIFY(x)): (void)Ou`. So, false positive.",
     "randomness": "random",
-    "issue": ""
+    "issue": "REM-344"
   }
 ]
