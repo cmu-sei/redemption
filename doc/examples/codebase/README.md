@@ -2,6 +2,8 @@
 
 This example demonstrates repairing a multiple-file codebase with the Redemption tool
 
+Unless stated otherwise, any shell commands you execute should be done in this directory (`doc/examples/codebase`)
+
 ## Copyright
 
 <legal>
@@ -25,12 +27,10 @@ subject to its own license.
 DM23-2165
 </legal>
 
-This is a demo scenario involving the Redemption of False Positives project.  Unless stated otherwise, any shell commands you execute should be done in this directory (`doc/examples/codebase`)
-
 ## Running the Redemption Tool
 ### Source Code
 
-We are using the `dos2unix` codebase, version 7.5.2. It is freely available from [dos2unix.sourceforge.io/](https://sourceforge.net/projects/dos2unix/files/dos2unix/7.5.2/dos2unix-7.5.2.tar.gz/download).  For this demo, you should download `dos2unix-7.5.2`, unpack it, and place its contents in the `src` sub-directory. You could use this command:
+We are using the `dos2unix` codebase, version 7.5.2. It is freely available from [dos2unix.sourceforge.io/](https://sourceforge.net/projects/dos2unix/files/dos2unix/7.5.2/dos2unix-7.5.2.tar.gz/download).  For this demo, you should download `dos2unix-7.5.2`, unpack it, and place its contents in a `dos2unix-7.5.2` sub-directory in the `doc/examples/codebase` directory. You could use this command:
  
 ```sh
 tar xzf dos2unix-7.5.2.tar.gz 
@@ -50,7 +50,7 @@ You can try to repair other codebases, or other versions of the `dos2unix` codeb
 
 ### Creating a build file
 
-For the rest of these instructions, you should execute the commands inside the `distrib` Docker container, and `cd` into this directory.  To set this up, use this command:
+For the rest of these instructions, you should execute the commands inside the `distrib` Docker container, and `cd` into this directory.  To set this up, run this command in the top-level Redemption directory:
 
 ``` sh
 docker run -it --rm  -v ${PWD}:/host  docker.cc.cert.org/redemption/distrib  bash
@@ -58,7 +58,7 @@ docker run -it --rm  -v ${PWD}:/host  docker.cc.cert.org/redemption/distrib  bas
 
 (See the toplevel [README.md](../../../README.md) instructions for details on how to build this container if necessary.
 
-Then, inside the shell this command gives you:
+Then, inside the shell this command gives you, go back to the demo directory:
 
 ``` sh
 pushd doc/examples/codebase

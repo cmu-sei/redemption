@@ -2,6 +2,8 @@
 
 This example demonstrates repairing a single C file with the Redemption tool
 
+Unless stated otherwise, any shell commands you execute should be done in this directory (`doc/examples/simple`)
+
 ## Copyright
 
 <legal>
@@ -24,8 +26,6 @@ This Software includes and/or makes use of Third-Party Software each
 subject to its own license.
 DM23-2165
 </legal>
-
-This is a demo scenario involving the Redemption of False Positives project.  Unless stated otherwise, any shell commands you execute should be done in this directory (`doc/examples/simple`)
 
 ## Running the Redemption Tool
 ### Source Code
@@ -52,7 +52,7 @@ Produce static analysis on the given C file, using Cppcheck 2.4.1.  Before gener
 docker pull facthunder/cppcheck:latest
 ```
 
-To generate output of the Cppcheck static analysis tool, go into the directory containing this README file, and use this command:
+To generate output of the Cppcheck static analysis tool, go into the directory containing this README file (`doc/examples/simple`), and use this command:
 
 ``` sh
 docker run --rm  -v ${PWD}:/code -w /code  facthunder/cppcheck:latest  sh -c 'cppcheck -v --enable="all" --language="c" --force --xml /code/test_errors.c 2> cppcheck.xml'
@@ -65,6 +65,7 @@ For the rest of these instructions, you should execute the commands inside the `
 To set this up, use this command:
 
 ``` sh
+cd ../../..
 docker run -it --rm  -v ${PWD}:/code  docker.cc.cert.org/redemption/distrib  bash
 ```
 
