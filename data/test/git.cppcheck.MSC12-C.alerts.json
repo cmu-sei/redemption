@@ -45,7 +45,8 @@
     "rationale": "The adjustment to 'argc' does not show a direct, subsequent utilized effect within the scope of the provided snippet.",
     "repairable": "true",
     "satisfactory": "false",
-    "llm_output_file": "0c75080058757f2a749cbaad.txt"
+    "llm_output_file": "0c75080058757f2a749cbaad.txt",
+    "issue": "REM-350"
   },
   {
     "rule": "MSC12-C",
@@ -108,7 +109,8 @@
     "rationale": "The modification of the parameter has no observable effect outside the function, and the modified value is not used within the function after modification.",
     "repairable": "true",
     "satisfactory": "false",
-    "llm_output_file": "080c6c3dc5b8529759e3b325.txt"
+    "llm_output_file": "080c6c3dc5b8529759e3b325.txt",
+    "issue": "REM-350"
   },
   {
     "rule": "MSC12-C",
@@ -159,7 +161,8 @@
     "rationale": "The reassigned value of 'argc' after line 38 is neither used nor does its address taken for any further operations within the function.",
     "repairable": "true",
     "satisfactory": "true",
-    "llm_output_file": "e4c98ac0223d7ec9ab341932.txt"
+    "llm_output_file": "e4c98ac0223d7ec9ab341932.txt",
+    "issue": "REM-350"
   },
   {
     "rule": "MSC12-C",
@@ -204,7 +207,8 @@
     "rationale": "The assignment to argc does not influence the function outcome or control flow beyond its point.",
     "repairable": "true",
     "satisfactory": "false",
-    "llm_output_file": "e8eeb8c1250bb7c8b40a4507.txt"
+    "llm_output_file": "e8eeb8c1250bb7c8b40a4507.txt",
+    "issue": "REM-350"
   },
   {
     "rule": "MSC12-C",
@@ -255,7 +259,8 @@
     "rationale": "The final update to 'len' does not affect function outcomes as 'len' is not used afterward nor is its address taken, rendering this assignment ineffective in the context of the function's external behavior.",
     "repairable": "true",
     "satisfactory": "false",
-    "llm_output_file": "1a3ea5a589d2882f162e1d33.txt"
+    "llm_output_file": "1a3ea5a589d2882f162e1d33.txt",
+    "issue": "REM-350"
   },
   {
     "rule": "MSC12-C",

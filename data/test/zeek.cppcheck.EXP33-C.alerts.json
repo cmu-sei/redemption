@@ -30,7 +30,7 @@
     "repairable": "true",
     "rationale": "The code line for the alert is a constructor for Dbgwatch with input parameter of a pointer to an `Expr`: `DbgWatch::DbgWatch(Expr* expr_to_watch)`. No initialization of variable `var` happens is done in that constructor. In fact, there's an InternalError function called instead, with error `DbgWatch unimplemented`. DbgWatch class and explicit constructors are declared in file src/DbgWatch.h and `var` is specified as a protected variable of type `Obj *`. There is also a protected `Expr* expr`. Neither constructor (one takes an `Expr*` parameter, other takes `Obj *` parameter) assigns the protected variables to the constructor's parameter. It looks like the DbWatch constructors haven't been implemented, as the error messages in the DbgWatch.cc files state. While both constructors leave their fields uninitialized, the `internalError()` method suggests that those fields will never be read. Therefore, the verdict is false positive. Per team discussion, ACR implementation of a fix to initialize the `var` variable (and also the `expr` variable) in the constructor is feasible and sufficiently low effort for practicality in the current project.",
     "randomness": "random and sample",
-    "issue": "REM-232"
+    "issue": "REM-340 and REM-232"
   },
   {
     "rule": "EXP33-C",
@@ -72,7 +72,7 @@
     "repairable": "true",
     "rationale": "In fact, this is dead code. It lies inside an #ifdef that spans lines 41751 to 42768. Cppcheck reports alerts in ifdef'd-out code, but clang doesn't build ASTs out of them, so repairing this will require something fancier than Clang AST's.  More details: The uuid_t type is defined as an array of 16 unsigned chars, both in Linux and Mac (https://developer.apple.com/documentation/foundation/uuid_t), and this is Mac-specific code.  Thus, line 42138 creates the array, so its pointer points to valid space, but leaves the array elements uninitialized. The elements are initialized later using memset() inside proxyGetHostID(). Since myHostID is an array, passing it directly to to proxyGetHostID() is correct, because it devolves to a pointer. Therefore this alert is a false positive. However an automated repair is easy: changing `uuid_t myHostID;` to `uuid_t myHostID = {};`. Using `= {}` will default-initialize a struct, union, array (that is, set all individual types to 0), per the C23 standard's s6.7.10p11.",
     "randomness": "disqualified random",
-    "issue": "REM-229"
+    "issue": "DONE REM-229"
   },
   {
     "rule": "EXP33-C",
@@ -86,8 +86,9 @@
     "verdict": "complex",
     "repairable": "true",
     "rationale": "Yes, the member variable isn't initialized in the constructor.  But that doesn't mean that it is read before it is initialized.",
-    "randomness": "sample"
-  },
+    "randomness": "sample",
+    "issue": "REM-232"
+ },
   {
     "rule": "EXP33-C",
     "file": "src/RandTest.cc",
@@ -119,7 +120,7 @@
     "repairable": "true",
     "rationale": "The code line alerted on is `network_info() = default;`, with an explicitly-defaulted definition of a default constructor inside of class declaration as used for default constructors since C++11. The condition being audited is EXP33-C, which is about use of an uninitialized variable. Simply not initializing the variable `port` in the constructor is insufficient to violate EXP33-C. Although this alert is a false positive, per previous team discussion weighing SEI work to develop the auto-repair versus benefit of eliminating some alerts, the recommendation will be to repair the code to initialize the variable when declared.",
     "randomness": "random and sample",
-    "issue": ""
+    "issue": "REM-232"
   },
   {
     "rule": "EXP33-C",
@@ -134,7 +135,7 @@
     "repairable": "false",
     "rationale": "The alert is for the code line of the constructor: `SafePathOp() : result(), error() { }`. The alert message is not correct, the member variable is initialized in the constructor. However, the rule EXP33-C does not require that variables be initialized in their constructor, so it is a false positive for EXP33-C violation.",
     "randomness": "random and sample",
-    "issue": ""
+    "issue": "REM-340"
   },
   {
     "rule": "EXP33-C",
@@ -185,7 +186,7 @@
     "repairable": "false",
     "rationale": "The alert is for this code line: `Type() = default;` All fields get initialized to their default values being set to 0 or initialized by their default constructors. Per our auditing rules, there is no violation of EXP33-C in this line because there is no read of uninitialized memory in the alerted code line. Further, the rule EXP33-C does not require that variables be initialized in their constructor.",
     "randomness": "random and sample",
-    "issue": ""
+    "issue": "REM-340"
   },
   {
     "rule": "EXP33-C",

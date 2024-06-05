@@ -821,7 +821,8 @@
     "rationale": "True positive.. Line 90137 is pC->nHdrParsed = 0; and nothing between that line and line 90175 modifies pC->nHdrParsed, so line 90175 is equivalent to assert( 0<=p2 );, but p2 is declared as u32 p2; and so is unsigned, meaning there's no possible way that condition can ever be false.  Not repairable, as inside an assert().  However, the assert could be manually removed.",
     "repairable": "false",
     "satisfactory": "wontfix",
-    "llm_output_file": "dfd8eb56320fd1475c913d34.txt"
+    "llm_output_file": "dfd8eb56320fd1475c913d34.txt",
+    "issue": "REM-351"
   },
   {
     "rule": "MSC12-C",
@@ -876,7 +877,8 @@
     "verdict": "",
     "rationale": "Inside an excluded #if..#endif block. If the code were live, it would be a true positive, and repairable by deleting line 37733.",
     "repairable": "false",
-    "satisfactory": ""
+    "satisfactory": "false",
+    "issue": ""
   },
   {
     "rule": "MSC12-C",
@@ -1095,7 +1097,8 @@
     "rationale": "Unsigned expressions can never be less than zero, making this check almost ineffective. It is still useful for checking for == 0.",
     "repairable": "true",
     "satisfactory": "false",
-    "llm_output_file": "f8d878f8a3a1281f0d82c3b9.txt"
+    "llm_output_file": "f8d878f8a3a1281f0d82c3b9.txt",
+    "issue": "REM-351"
   },
   {
     "rule": "MSC12-C",
@@ -1137,7 +1140,8 @@
     "rationale": "The operation maximizes a value without comparing unsigned expression 'pLoop->u.btree.nBtm' to less than zero.  Also, this is inside a macro. (A good manual repair would declare mnExtraReg as an unsigned int)",
     "repairable": "false",
     "satisfactory": "wontfix",
-    "llm_output_file": "4a7c1cc19e8c1110cca2da3e.txt"
+    "llm_output_file": "4a7c1cc19e8c1110cca2da3e.txt",
+    "issue": "REM-351"
   },
   {
     "rule": "MSC12-C",
