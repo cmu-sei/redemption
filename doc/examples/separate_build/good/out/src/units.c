@@ -60,7 +60,7 @@ static char *format_units(long double n, units *m, int p) {
 static int scan_units(char *s, uint64_t *n, units *m) {
     uint64_t base = 0, scale = 1;
     char unit[3] = { 0, 0, 0 };
-    int i = 0, c = 0;
+    int i = 0, c;
 
     if ((c = sscanf(s, "%"SCNu64"%2s", &base, unit)) < 1) return -1;
 

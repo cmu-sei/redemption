@@ -238,7 +238,7 @@ void *thread_main(void *arg) {
 static int connect_socket(thread *thread, connection *c) {
     struct addrinfo *addr = thread->addr;
     struct aeEventLoop *loop = thread->loop;
-    int fd = 0, flags = 0;
+    int fd = 0, flags;
 
     fd = socket(addr->ai_family, addr->ai_socktype, addr->ai_protocol);
 

@@ -635,8 +635,8 @@ size_t http_parser_execute (http_parser *parser,
                             const char *data,
                             size_t len)
 {
-  char c = 0, ch = 0;
-  int8_t unhex_val = 0;
+  char c = 0, ch;
+  int8_t unhex_val;
   const char *p = data;
   const char *header_field_mark = 0;
   const char *header_value_mark = 0;
@@ -2196,7 +2196,7 @@ static int
 http_parse_host(const char * buf, struct http_parser_url *u, int found_at) {
   enum http_host_state s = 0;
 
-  const char *p = NULL;
+  const char *p;
   size_t buflen = u->field_data[UF_HOST].off + u->field_data[UF_HOST].len;
 
   assert(u->field_set & (1 << UF_HOST));
@@ -2284,8 +2284,8 @@ http_parser_parse_url(const char *buf, size_t buflen, int is_connect,
                       struct http_parser_url *u)
 {
   enum state s = 0;
-  const char *p = NULL;
-  enum http_parser_url_fields uf = 0, old_uf = 0;
+  const char *p;
+  enum http_parser_url_fields uf = 0, old_uf;
   int found_at = 0;
 
   u->port = u->field_set = 0;

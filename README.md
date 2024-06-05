@@ -32,7 +32,7 @@ The Redemption tool makes repairs to C/C++ source code based on alerts produced 
 
 For more details of the background and capabilities of the Redemption tool, see this [presentation](https://www.sei.cmu.edu/publications/annual-reviews/2023-research-review/research-review-article.cfm?customel_datapageid_326381=495820) from the [SEI Research Review 2023](https://www.sei.cmu.edu/publications/annual-reviews/2023-research-review/).
 
-<a name="static-analysis tools"></a>
+<a name="static-analysis-tools"></a>
 ### Static-Analysis Tools
 
 Redemption is currently able to identify alerts from the following static-analysis tools:
@@ -45,7 +45,7 @@ Redemption is currently able to identify alerts from the following static-analys
 
 You may run other tools, or create alerts manually; however Redemption has not been tested with alerts produced by other tools.
 
-<a name="alert categories"></a>
+<a name="alert-categories"></a>
 ### Alert Categories
 
 Redemption can currently repair the following categories of alerts. These alerts will often have a [MITRE CWE](https://cwe.mitre.org/) number associated with them, or a rule in the [SEI CERT C Coding Standard](https://wiki.sei.cmu.edu/confluence/display/c/SEI+CERT+C+Coding+Standard).
@@ -54,7 +54,7 @@ Redemption can currently repair the following categories of alerts. These alerts
 |--------------------------|--------------|--------|
 | Null Pointer Dereference | EXP34-C      | 476    |
 | Uninitialized Value Read | EXP33-C      | 908    |
-| Unused Variable          | MSC13-C      | 561    |
+| Ineffective Code         | MSC12-C      | 561    |
 
 We hope to add more categories soon.
 
@@ -106,9 +106,19 @@ docker run -it --rm -v ${PWD}:/host -w /host docker.cc.cert.org/redemption/test 
 ```
 
 <a name="running-the-redemption-tool"></a>
-## Running the Redemption Tool
+## Demos
 
-For a simple demo example of running the tool, see the [simple demo example](doc/examples/simple/README.md).
+In the `doc/examples` directory, there are several demos, each living in its own directory. The following table lists each demo; its title is the same as the folder containing the demo. The demos differ in the properties of the code they repair, and this is reflected in the `Codebase` column:
+
+| Demo Title       | Codebase                                          |
+|------------------+---------------------------------------------------|
+| `simple`         | Simple C source file                              |
+| `codebase`       | Multi-file OSS codebase                           |
+| `separate_build` | OSS codebase requiring separate build environment |
+
+If you are new to the Redemption tool, we recommend going through at least one of these demos.  If you wish to repair a single C file, you should study the `simple` demo. If you wish to repair a multi-file codebase, and you can build the codebase in the Redemption container, you should study the `codebase` demo. If your code does not build in the Redemption container, you should study the `separate_build` demo.
+
+## Running the Redemption Tool
 
 <a name="background"></a>
 ### Background
@@ -276,7 +286,7 @@ Normally, Clang is invoked from within the Redemption tool.  For codebases that 
 
 This does presume that your platform that builds the code can run Clang with Redemption's patch. It can also run `bear` and that you can produce static-analysis alerts for the code (independently of running Redemption).
 
-See the [Legacy Instructions](doc/examples/legacy/README.md) for an example of repairing such a codebase.
+See the [Separate_Build Instructions](doc/examples/separate_build/README.md) for an example of repairing such a codebase.
 
 #### Example running everything within a single container:
 

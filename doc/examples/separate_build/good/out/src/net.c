@@ -35,7 +35,7 @@ status sock_write(connection *c, char *buf, size_t len, size_t *n) {
 }
 
 size_t sock_readable(connection *c) {
-    int n = 0, rc = 0;
+    int n = 0, rc;
     rc = ioctl(c->fd, FIONREAD, &n);
     return rc == -1 ? 0 : n;
 }

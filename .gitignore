@@ -25,7 +25,7 @@ code/acr/llvm/cmake_install.cmake
 code/acr/llvm/libNullDom.so
 code/acr/test/out/acr.h
 doc/examples/codebase/dos2unix-7.5.2
-doc/examples/legacy/wrk
+doc/examples/separate_codebase/wrk
 
 # Emacs backup files
 *~

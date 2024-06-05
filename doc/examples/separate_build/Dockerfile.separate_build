@@ -1,6 +1,6 @@
-# This file makes a container that builds the legacy code in this demo
+# This file makes a container that builds the separate_build code in this demo
 
-# docker  build -f Dockerfile.legacy  -t docker.cc.cert.org/redemption/legacy  .
+# docker  build -f Dockerfile.separate_build  -t docker.cc.cert.org/redemption/separate_build  .
 
 # <legal>
 # 'Redemption' Automated Code Repair Tool

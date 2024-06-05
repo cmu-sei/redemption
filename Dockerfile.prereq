@@ -101,7 +101,7 @@ CMD ["/bin/bash"]
 #   https://dos2unix.sourceforge.io/
 #   License: FreeBSD-style
 
-# doc/examples/legacy/wrk-4.2.0 is used as an example (in doc/examples/legacy)
+# doc/examples/separate_build/wrk-4.2.0 is used as an example (in doc/examples/separate_build)
 # but is not part of this distribution.
 #   https://github.com/wg/wrk
 #   License: Modified Apache License 2.0

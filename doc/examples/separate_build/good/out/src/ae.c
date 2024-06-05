@@ -164,7 +164,7 @@ void aeDeleteFileEvent(aeEventLoop *eventLoop, int fd, int mask)
     fe->mask = fe->mask & (~mask);
     if (fd == eventLoop->maxfd && fe->mask == AE_NONE) {
         /* Update the max fd */
-        int j = 0;
+        int j;
 
         for (j = eventLoop->maxfd-1; j >= 0; j--)
             if (eventLoop->events[j].mask != AE_NONE) break;
@@ -263,7 +263,7 @@ static aeTimeEvent *aeSearchNearestTimer(aeEventLoop *eventLoop)
 /* Process time events */
 static int processTimeEvents(aeEventLoop *eventLoop) {
     int processed = 0;
-    aeTimeEvent *te = NULL, *prev = NULL;
+    aeTimeEvent *te = NULL, *prev;
     long long maxId = 0;
     time_t now = time(NULL);
 

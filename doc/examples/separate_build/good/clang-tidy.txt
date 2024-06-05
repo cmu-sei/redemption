@@ -9358,7 +9358,7 @@ src/zmalloc.c:344:46: warning: pointer parameter 'field' can be pointer to const
 size_t zmalloc_get_smap_bytes_by_field(char *field, long pid) {
                                              ^
                                        const 
-/legacy/wrk/src/zmalloc.h:87:6: warning: redundant 'zlibc_free' declaration [readability-redundant-declaration]
+/separate_build/wrk/src/zmalloc.h:87:6: warning: redundant 'zlibc_free' declaration [readability-redundant-declaration]
 void zlibc_free(void *ptr);
      ^
 src/zmalloc.c:38:6: note: previously declared here

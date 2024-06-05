@@ -9,7 +9,7 @@
 
 char *aprintf(char **s, const char *fmt, ...) {
     char *c = NULL;
-    int n = 0, len = 0;
+    int n = 0, len;
     va_list ap;
 
     va_start(ap, fmt);
