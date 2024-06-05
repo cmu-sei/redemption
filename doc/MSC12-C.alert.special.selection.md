@@ -22,7 +22,7 @@ subject to its own license.
 DM23-2165
 </legal>
 
-## MSC-12C Alert Special Selection
+## MSC12-C Alert Special Selection
 
 The `randomness` field in the `alerts.json` test suite data files for the alerts mapped to violations of coding rule MSC12-C are different than those for the other test suite data described in [alert_data_format.md](alert_data_format.md) and [test.md](test.md).
 

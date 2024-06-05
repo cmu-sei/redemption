@@ -68247,7 +68247,7 @@
     "tool": "clang-tidy",
     "checker": "cppcoreguidelines-init-variables",
     "message": "variable 'failed_errno' is not initialized",
-    "satisfactory": "false",
+    "satisfactory": "true",
     "verdict": "false",
     "repairable": "true",
     "rationale": "No read of uninitialized memory on this line. Instead, the line is just a declaration of a variable: `int failed_errno;`. Per our alert auditing rules, we should not examine other later code lines. DETAIL: There are only two reads of failed_errno in this function, which happen on lines 714 and 716. There is an initalization which happens on line 702, prior to both of those reads. `failed_errno = errno;` Per team discussion, ACR implementation of a fix to initialize the variable is feasible and sufficiently low effort for practicality in the current project. Therefore, despite being a false positive, we recommend a repair to remove the alert and possible EXP33-C violation in a different code location.",
