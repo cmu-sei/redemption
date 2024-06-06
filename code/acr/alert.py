@@ -234,10 +234,6 @@ class MSC12_C(Alert):
 
 class EXP34_C(Alert):
 
-    def __init__(self, *args, **kwds):
-        self.dereference_type = None
-        super().__init__(*args, **kwds)
-
     def get_error_handler_at_cursor(self, context):
         fn_decl_node = context.find_through_parents("FunctionDecl")
         try:
@@ -246,44 +242,22 @@ class EXP34_C(Alert):
         except:
             return None
 
-    clang_tidy_patterns = (
-        [("member", re.compile(r"Access to field '(?P<field>[^']*)' results in a dereference of a null pointer \(loaded from variable '(?P<var>[^']*)\)")),
-         ("array", re.compile(r"Array access (\(from variable '(?P<variable>[^']*')\)|\(via field '(?P<field>[^']*')\)) results in a null pointer dereference"))
-         ]
-    )
-
-    def get_dereference_type(self):
-        if self.dereference_type is None:
-            self.dereference_type = False
-            if self.get("tool", "") == "clang-tidy":
-                msg = self.get("message", None)
-                if msg is not None:
-                    for typ, pattern in self.clang_tidy_patterns:
-                        if pattern.search(msg):
-                            self.dereference_type = typ
-                            break
-        return self.dereference_type
-
-    def dereference_matches(self, typ):
-        dereference_type = self.get_dereference_type()
-        return not dereference_type or dereference_type == typ
-
-    def pointer_filter(self, node):
+    def pointer_classifier(self, node):
         match node:
-            case {'kind': "UnaryOperator", "opcode": "*"} if (
-                    self.dereference_matches('pointer')):
-                return True
-            case {'kind': "ArraySubscriptExpr"} if (
-                    self.dereference_matches('array')):
-                return True
-            case {'kind': "MemberExpr", "isArrow": True} if (
-                    self.dereference_matches('member')):
-                return True
+            case {'kind': "UnaryOperator", "opcode": "*"}:
+                return 'pointer'
+            case {'kind': "ArraySubscriptExpr"}:
+                return 'array'
+            case {'kind': "MemberExpr", "isArrow": True}:
+                return 'member'
             # This case handles the part where rosecheckers marks calls to malloc
             case {'kind': "CallExpr"} if self.get("tool") == "rosecheckers":
-                return True
+                return 'call'
             case _:
                 return False
+
+    def pointer_filter(self, node):
+        return bool(self.pointer_classifier(node))
 
     def line_pointer_filter(self):
         line = int(self['line'])
@@ -292,66 +266,55 @@ class EXP34_C(Alert):
         return filter
 
     def find_dereference_locus(self, node):
-        dereference_type = None
-        msg = self.get("message")
-        if msg is not None and self.get("tool", "") == "clang-tidy":
-            for typ, pattern in self.clang_tidy_patterns:
-                if pattern.search(msg):
-                    dereference_type = typ
-                    break
         pf = self.pointer_filter if "column" in self else self.line_pointer_filter()
         pointers = filter(pf, node.traverse_descendants())
-        self.context = None
+        context = None
         for item in pointers:
-            self.context = item;
-        return self.context is not None
+            context = item;
+        return context
 
-    def locate_repairable_node(self, context):
-        match self:
-            case None:
-                return None
-            case {'patch': _} if not self.whole_expr:
-                return None
-            case {'tool': 'rosecheckers', 'ast_id': _} if getattr(
-                    self, 'saved_whole_expr', False):
-                return None
-        message = self.get("message","")
-        m = re.match("Null pointer passed to ([0-9]+).. parameter", message)
-        if m:
-            if context.get("kind") != "CallExpr":
-                return None
-            param_ordinal = int(m.group(1))
-            self.context = context["inner"][param_ordinal]
-        elif not self.whole_expr:
-            if not self.find_dereference_locus(context):
-                return None
+    def find_node(self, context):
+        """Given an AST node, return the AST node that should be repaired.
+
+        Returns None if a proper candidate node cannot be found.
+        """
+        if not self.whole_expr:
+            return self.find_dereference_locus(context)
         elif not self.pointer_filter(context):
             return None
-        else:
-            self.context = context
-        self["ast_id"] = self.context['id']
-        self.handle_error = self.get_error_handler_at_cursor(self.context)
+        return context
+
+    def locate_repairable_node(self, context):
+        if not self.whole_expr and "patch" in self:
+            return None
+
+        context = self.find_node(context)
+        if context is None:
+            return None
+        self["ast_id"] = context['id']
+        self.handle_error = self.get_error_handler_at_cursor(context)
         self.saved_whole_expr = self.whole_expr
-        return self.context
+        return context
 
     @staticmethod
     def is_expr_of_ptr_type(ast_node):
+        # TODO: Should use the new type information once that is available
         return ast_node["type"]["qualType"].endswith("*")
 
     def attempt_patch(self, context):
-        if self.context.get('opcode') == '*':
-            ptr_subexpr = self.context['inner'][0]
-        elif self.context["kind"] == "ArraySubscriptExpr":
-            ptr_subexpr = self.context["inner"][0]
+        if context.get('opcode') == '*':
+            ptr_subexpr = context['inner'][0]
+        elif context["kind"] == "ArraySubscriptExpr":
+            ptr_subexpr = context["inner"][0]
             if (not self.is_expr_of_ptr_type(ptr_subexpr)
-                and self.is_expr_of_ptr_type(self.context["inner"][1])):
-                ptr_subexpr = self.context["inner"][1]
-        elif self.context["kind"] == "MemberExpr" and self.context.get("isArrow"):
-            ptr_subexpr = self.context["inner"][0]
-        elif self.context["kind"] == "CallExpr":
-            ptr_subexpr = self.context
+                and self.is_expr_of_ptr_type(context["inner"][1])):
+                ptr_subexpr = context["inner"][1]
+        elif context["kind"] == "MemberExpr" and context.get("isArrow"):
+            ptr_subexpr = context["inner"][0]
+        elif context["kind"] == "CallExpr":
+            ptr_subexpr = context
         elif self.whole_expr:
-            ptr_subexpr = self.context
+            ptr_subexpr = context
         else:
             raise Exception("Unrecognized node passed to add_null_check, and whole_expr isn't true.")
 
@@ -367,6 +330,56 @@ class EXP34_C(Alert):
             [byte_end, byte_end, closer]]]
         self["patch"] = [edit]
 
+
+class EXP34_C_CLANG_TIDY(EXP34_C):
+
+    dereference_patterns = (
+        [("member", re.compile(r"Access to field '(?P<field>[^']*)' results in a dereference of a null pointer \(loaded from variable '(?P<var>[^']*)\)")),
+         ("array", re.compile(r"Array access (\(from variable '(?P<variable>[^']*')\)|\(via field '(?P<field>[^']*')\)) results in a null pointer dereference"))
+         ]
+    )
+
+    def get_dereference_type(self):
+        self.dereference_type = False
+        msg = self.get("message", None)
+        if msg is not None:
+            for typ, pattern in self.dereference_patterns:
+                if pattern.search(msg):
+                    self.dereference_type = typ
+                    break
+
+    def pointer_filter(self, node):
+        locus_type = self.pointer_classifier(node)
+        if locus_type and self.dereference_type:
+            return locus_type == self.dereference_type
+        return bool(locus_type)
+
+    def locate_repairable_node(self, node):
+        self.get_dereference_type()
+        return super().locate_repairable_node(node)
+
+    def find_node(self, context):
+        message = self.get("message","")
+        m = re.match("Null pointer passed to ([0-9]+).. parameter", message)
+        if m:
+            if context.get("kind") != "CallExpr":
+                return None
+            param_ordinal = int(m.group(1))
+            return context["inner"][param_ordinal]
+        return super().find_node(context)
+
+
+class EXP34_C_CPPCHECK(EXP34_C):
+    pass
+
+class EXP34_C_ROSECHECKERS(EXP34_C):
+
+    def locate_repairable_node(self, context):
+        if "ast_id" in self and getattr(self, 'saved_whole_expr', False):
+            return None
+        return super().locate_repairable_node(context)
+
+
 class CWE_476(EXP34_C):
     # Currently an exact duplicate of EXP34_C
     pass
@@ -376,16 +389,35 @@ class CWE_561(MSC12_C):
     pass
 
 
+# Rule list is a map of rule names to a list of candidates.  Each
+# candidate is a pair of a match dictionary and an alert class.  A
+# match dictionary is a map of alert keys to regular expression
+# strings.
 rule_list = {
-    "CWE-476": CWE_476,
-    "CWE-561": CWE_561,
-    "EXP33-C": EXP33_C,
-    "EXP34-C": EXP34_C,
-    "MSC12-C": MSC12_C
+    "CWE-476": [({}, CWE_476)],
+    "CWE-561": [({}, CWE_561)],
+    "EXP33-C": [({}, EXP33_C)],
+    "EXP34-C": [({"tool": "cppcheck"}, EXP34_C_CPPCHECK),
+                ({"tool": "clang-tidy"}, EXP34_C_CLANG_TIDY),
+                ({"tool": "rosecheckers"}, EXP34_C_ROSECHECKERS),
+                ({}, EXP34_C)],
+    "MSC12-C": [({}, MSC12_C)]
 }
 
 
 def alert_from_dict(json_alert):
     rule = json_alert.get("rule")
-    cls = rule_list.get(rule, NullAlert)
-    return cls(json_alert)
+    candidate = rule_list.get(rule, [({}, NullAlert)])
+    for (option, cls) in candidate:
+        found = cls
+        for k, v in option.items():
+            val = json_alert.get(k)
+            if val is None or re.search(v, val) is None:
+                found = None
+                break
+        if found is not None:
+            return found(json_alert)
+    return NullAlert(json_alert)
+
+
+
