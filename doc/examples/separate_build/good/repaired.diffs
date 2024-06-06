@@ -1,0 +1,502 @@
+Only in wrk: .git
+Only in wrk: .github
+Only in wrk: .gitignore
+Only in wrk: CHANGES
+Only in wrk: INSTALL
+Only in wrk: LICENSE
+Only in wrk: Makefile
+Only in wrk: NOTICE
+Only in wrk: README.md
+Only in wrk: SCRIPTING
+Only in out: acr.h
+Only in wrk: deps
+Only in wrk: obj
+Only in wrk: scripts
+diff --color -ru '--label=ORIGINAL' '--label=REPAIRED' -ru ORIGINAL REPAIRED
+--- ORIGINAL
++++ REPAIRED
+@@ -1,3 +1,5 @@
++#include "acr.h"
++
+ /* A simple event-driven programming library. Originally I wrote this code
+  * for the Jim's event-loop (Jim is a Tcl interpreter) but later translated
+  * it in form of a library for easy reuse.
+@@ -61,8 +63,8 @@
+ #endif
+ 
+ aeEventLoop *aeCreateEventLoop(int setsize) {
+-    aeEventLoop *eventLoop;
+-    int i;
++    aeEventLoop *eventLoop = NULL;
++    int i = 0;
+ 
+     if ((eventLoop = zmalloc(sizeof(*eventLoop))) == NULL) goto err;
+     eventLoop->events = zmalloc(sizeof(aeFileEvent)*setsize);
+@@ -104,7 +106,7 @@
+  *
+  * Otherwise AE_OK is returned and the operation is successful. */
+ int aeResizeSetSize(aeEventLoop *eventLoop, int setsize) {
+-    int i;
++    int i = 0;
+ 
+     if (setsize == eventLoop->setsize) return AE_OK;
+     if (eventLoop->maxfd >= setsize) return AE_ERR;
+@@ -187,7 +189,7 @@
+ }
+ 
+ static void aeAddMillisecondsToNow(long long milliseconds, long *sec, long *ms) {
+-    long cur_sec, cur_ms, when_sec, when_ms;
++    long cur_sec = 0, cur_ms = 0, when_sec = 0, when_ms = 0;
+ 
+     aeGetTime(&cur_sec, &cur_ms);
+     when_sec = cur_sec + milliseconds/1000;
+@@ -205,7 +207,7 @@
+         aeEventFinalizerProc *finalizerProc)
+ {
+     long long id = eventLoop->timeEventNextId++;
+-    aeTimeEvent *te;
++    aeTimeEvent *te = NULL;
+ 
+     te = zmalloc(sizeof(*te));
+     if (te == NULL) return AE_ERR;
+@@ -261,8 +263,8 @@
+ /* Process time events */
+ static int processTimeEvents(aeEventLoop *eventLoop) {
+     int processed = 0;
+-    aeTimeEvent *te, *prev;
+-    long long maxId;
++    aeTimeEvent *te = NULL, *prev;
++    long long maxId = 0;
+     time_t now = time(NULL);
+ 
+     /* If the system clock is moved to the future, and then set back to the
+@@ -286,8 +288,8 @@
+     te = eventLoop->timeEventHead;
+     maxId = eventLoop->timeEventNextId-1;
+     while(te) {
+-        long now_sec, now_ms;
+-        long long id;
++        long now_sec = 0, now_ms = 0;
++        long long id = 0;
+ 
+         /* Remove events scheduled for deletion. */
+         if (te->id == AE_DELETED_EVENT_ID) {
+@@ -316,7 +318,7 @@
+         if (now_sec > te->when_sec ||
+             (now_sec == te->when_sec && now_ms >= te->when_ms))
+         {
+-            int retval;
++            int retval = 0;
+ 
+             id = te->id;
+             retval = te->timeProc(eventLoop, id, te->clientData);
+@@ -359,14 +361,14 @@
+      * to fire. */
+     if (eventLoop->maxfd != -1 ||
+         ((flags & AE_TIME_EVENTS) && !(flags & AE_DONT_WAIT))) {
+-        int j;
++        int j = 0;
+         aeTimeEvent *shortest = NULL;
+-        struct timeval tv, *tvp;
++        struct timeval tv, *tvp = NULL;
+ 
+         if (flags & AE_TIME_EVENTS && !(flags & AE_DONT_WAIT))
+             shortest = aeSearchNearestTimer(eventLoop);
+         if (shortest) {
+-            long now_sec, now_ms;
++            long now_sec = 0, now_ms = 0;
+ 
+             aeGetTime(&now_sec, &now_ms);
+             tvp = &tv;
+Only in wrk/src: ae.h
+Only in wrk/src: ae_epoll.c
+Only in wrk/src: ae_evport.c
+Only in wrk/src: ae_kqueue.c
+Only in wrk/src: ae_select.c
+diff --color -ru '--label=ORIGINAL' '--label=REPAIRED' -ru ORIGINAL REPAIRED
+--- ORIGINAL
++++ REPAIRED
+@@ -1,3 +1,5 @@
++#include "acr.h"
++
+ // Copyright (C) 2012 - Will Glozer.  All rights reserved.
+ 
+ #include <stdarg.h>
+@@ -7,7 +9,7 @@
+ 
+ char *aprintf(char **s, const char *fmt, ...) {
+     char *c = NULL;
+-    int n, len;
++    int n = 0, len;
+     va_list ap;
+ 
+     va_start(ap, fmt);
+Only in wrk/src: aprintf.h
+Only in wrk/src: atomicvar.h
+Only in wrk/src: config.h
+diff --color -ru '--label=ORIGINAL' '--label=REPAIRED' -ru ORIGINAL REPAIRED
+--- ORIGINAL
++++ REPAIRED
+@@ -1,3 +1,5 @@
++#include "acr.h"
++
+ /* Copyright Joyent, Inc. and other Node contributors.
+  *
+  * Permission is hereby granted, free of charge, to any person obtaining a copy
+@@ -633,7 +635,7 @@
+                             const char *data,
+                             size_t len)
+ {
+-  char c, ch;
++  char c = 0, ch;
+   int8_t unhex_val;
+   const char *p = data;
+   const char *header_field_mark = 0;
+@@ -959,7 +961,7 @@
+ 
+       case s_req_method:
+       {
+-        const char *matcher;
++        const char *matcher = NULL;
+         if (UNLIKELY(ch == '\0')) {
+           SET_ERRNO(HPE_INVALID_METHOD);
+           goto error;
+@@ -1464,8 +1466,8 @@
+           switch (h_state) {
+             case h_general:
+             {
+-              const char* p_cr;
+-              const char* p_lf;
++              const char* p_cr = NULL;
++              const char* p_lf = NULL;
+               size_t limit = data + len - p;
+ 
+               limit = MIN(limit, HTTP_MAX_HEADER_SIZE);
+@@ -1494,7 +1496,7 @@
+ 
+             case h_content_length:
+             {
+-              uint64_t t;
++              uint64_t t = 0;
+ 
+               if (ch == ' ') break;
+ 
+@@ -1773,7 +1775,7 @@
+ 
+       case s_headers_done:
+       {
+-        int hasBody;
++        int hasBody = 0;
+         STRICT_CHECK(ch != LF);
+ 
+         parser->nread = 0;
+@@ -1887,7 +1889,7 @@
+ 
+       case s_chunk_size:
+       {
+-        uint64_t t;
++        uint64_t t = 0;
+ 
+         assert(parser->flags & F_CHUNKED);
+ 
+@@ -2192,7 +2194,7 @@
+ 
+ static int
+ http_parse_host(const char * buf, struct http_parser_url *u, int found_at) {
+-  enum http_host_state s;
++  enum http_host_state s = 0;
+ 
+   const char *p;
+   size_t buflen = u->field_data[UF_HOST].off + u->field_data[UF_HOST].len;
+@@ -2281,9 +2283,9 @@
+ http_parser_parse_url(const char *buf, size_t buflen, int is_connect,
+                       struct http_parser_url *u)
+ {
+-  enum state s;
++  enum state s = 0;
+   const char *p;
+-  enum http_parser_url_fields uf, old_uf;
++  enum http_parser_url_fields uf = 0, old_uf;
+   int found_at = 0;
+ 
+   u->port = u->field_set = 0;
+Only in wrk/src: http_parser.h
+Only in wrk/src: main.h
+diff --color -ru '--label=ORIGINAL' '--label=REPAIRED' -ru ORIGINAL REPAIRED
+--- ORIGINAL
++++ REPAIRED
+@@ -1,3 +1,5 @@
++#include "acr.h"
++
+ // Copyright (C) 2013 - Will Glozer.  All rights reserved.
+ 
+ #include <errno.h>
+@@ -21,7 +23,7 @@
+ }
+ 
+ status sock_write(connection *c, char *buf, size_t len, size_t *n) {
+-    ssize_t r;
++    ssize_t r = 0;
+     if ((r = write(c->fd, buf, len)) == -1) {
+         switch (errno) {
+             case EAGAIN: return RETRY;
+@@ -33,7 +35,7 @@
+ }
+ 
+ size_t sock_readable(connection *c) {
+-    int n, rc;
++    int n = 0, rc;
+     rc = ioctl(c->fd, FIONREAD, &n);
+     return rc == -1 ? 0 : n;
+ }
+Only in wrk/src: net.h
+diff --color -ru '--label=ORIGINAL' '--label=REPAIRED' -ru ORIGINAL REPAIRED
+--- ORIGINAL
++++ REPAIRED
+@@ -1,3 +1,5 @@
++#include "acr.h"
++
+ // Copyright (C) 2013 - Will Glozer.  All rights reserved.
+ 
+ #include <stdlib.h>
+@@ -271,7 +273,7 @@
+     };
+     http_parser parser;
+     char *request = NULL;
+-    size_t len, count = 0;
++    size_t len = 0, count = 0;
+ 
+     script_request(L, &request, &len);
+     http_parser_init(&parser, HTTP_REQUEST);
+@@ -358,7 +360,7 @@
+ static int script_stats_call(lua_State *L) {
+     stats *s = checkstats(L);
+     uint64_t index = lua_tonumber(L, 2);
+-    uint64_t count;
++    uint64_t count = 0;
+     lua_pushnumber(L, stats_value_at(s, index - 1, &count));
+     lua_pushnumber(L, count);
+     return 2;
+@@ -437,12 +439,12 @@
+ }
+ 
+ static int script_wrk_lookup(lua_State *L) {
+-    struct addrinfo *addrs;
++    struct addrinfo *addrs = NULL;
+     struct addrinfo hints = {
+         .ai_family   = AF_UNSPEC,
+         .ai_socktype = SOCK_STREAM
+     };
+-    int rc, index = 1;
++    int rc = 0, index = 1;
+ 
+     const char *host    = lua_tostring(L, -2);
+     const char *service = lua_tostring(L, -1);
+@@ -465,7 +467,7 @@
+ 
+ static int script_wrk_connect(lua_State *L) {
+     struct addrinfo *addr = checkaddr(L);
+-    int fd, connected = 0;
++    int fd = 0, connected = 0;
+     if ((fd = socket(addr->ai_family, addr->ai_socktype, addr->ai_protocol)) != -1) {
+         connected = connect(fd, addr->ai_addr, addr->ai_addrlen) == 0;
+         close(fd);
+@@ -515,7 +517,7 @@
+ 
+ static int push_url_part(lua_State *L, char *url, struct http_parser_url *parts, enum http_parser_url_fields field) {
+     int type = parts->field_set & (1 << field) ? LUA_TSTRING : LUA_TNIL;
+-    uint16_t off, len;
++    uint16_t off = 0, len = 0;
+     switch (type) {
+         case LUA_TSTRING:
+             off = parts->field_data[field].off;
+Only in wrk/src: script.h
+diff --color -ru '--label=ORIGINAL' '--label=REPAIRED' -ru ORIGINAL REPAIRED
+--- ORIGINAL
++++ REPAIRED
+@@ -1,3 +1,5 @@
++#include "acr.h"
++
+ // Copyright (C) 2013 - Will Glozer.  All rights reserved.
+ 
+ #include <pthread.h>
+@@ -26,7 +28,7 @@
+ }
+ 
+ status ssl_connect(connection *c, char *host) {
+-    int r;
++    int r = 0;
+     SSL_set_fd(c->ssl, c->fd);
+     SSL_set_tlsext_host_name(c->ssl, host);
+     if ((r = SSL_connect(c->ssl)) != 1) {
+@@ -46,7 +48,7 @@
+ }
+ 
+ status ssl_read(connection *c, size_t *n) {
+-    int r;
++    int r = 0;
+     if ((r = SSL_read(c->ssl, c->buf, sizeof(c->buf))) <= 0) {
+         switch (SSL_get_error(c->ssl, r)) {
+             case SSL_ERROR_WANT_READ:  return RETRY;
+@@ -59,7 +61,7 @@
+ }
+ 
+ status ssl_write(connection *c, char *buf, size_t len, size_t *n) {
+-    int r;
++    int r = 0;
+     if ((r = SSL_write(c->ssl, buf, len)) <= 0) {
+         switch (SSL_get_error(c->ssl, r)) {
+             case SSL_ERROR_WANT_READ:  return RETRY;
+Only in wrk/src: ssl.h
+Only in wrk/src: stats.c
+Only in wrk/src: stats.h
+diff --color -ru '--label=ORIGINAL' '--label=REPAIRED' -ru ORIGINAL REPAIRED
+--- ORIGINAL
++++ REPAIRED
+@@ -1,3 +1,5 @@
++#include "acr.h"
++
+ // Copyright (C) 2012 - Will Glozer.  All rights reserved.
+ 
+ #include <stdlib.h>
+@@ -56,9 +58,9 @@
+ }
+ 
+ static int scan_units(char *s, uint64_t *n, units *m) {
+-    uint64_t base, scale = 1;
++    uint64_t base = 0, scale = 1;
+     char unit[3] = { 0, 0, 0 };
+-    int i, c;
++    int i = 0, c;
+ 
+     if ((c = sscanf(s, "%"SCNu64"%2s", &base, unit)) < 1) return -1;
+ 
+Only in wrk/src: units.h
+diff --color -ru '--label=ORIGINAL' '--label=REPAIRED' -ru ORIGINAL REPAIRED
+--- ORIGINAL
++++ REPAIRED
+@@ -1,3 +1,5 @@
++#include "acr.h"
++
+ // Copyright (C) 2012 - Will Glozer.  All rights reserved.
+ 
+ #include "wrk.h"
+@@ -59,7 +61,7 @@
+ }
+ 
+ int main(int argc, char **argv) {
+-    char *url, **headers = zmalloc(argc * sizeof(char *));
++    char *url = NULL, **headers = zmalloc(argc * sizeof(char *));
+     struct http_parser_url parts = {};
+ 
+     if (parse_args(&cfg, &url, &parts, headers, argc, argv)) {
+@@ -236,7 +238,7 @@
+ static int connect_socket(thread *thread, connection *c) {
+     struct addrinfo *addr = thread->addr;
+     struct aeEventLoop *loop = thread->loop;
+-    int fd, flags;
++    int fd = 0, flags;
+ 
+     fd = socket(addr->ai_family, addr->ai_socktype, addr->ai_protocol);
+ 
+@@ -402,7 +404,7 @@
+ 
+     char  *buf = c->request + c->written;
+     size_t len = c->length  - c->written;
+-    size_t n;
++    size_t n = 0;
+ 
+     switch (sock.write(c, buf, len, &n)) {
+         case OK:    break;
+@@ -425,7 +427,7 @@
+ 
+ static void socket_readable(aeEventLoop *loop, int fd, void *data, int mask) {
+     connection *c = data;
+-    size_t n;
++    size_t n = 0;
+ 
+     do {
+         switch (sock.read(c, &n)) {
+@@ -481,7 +483,7 @@
+ 
+ static int parse_args(struct config *cfg, char **url, struct http_parser_url *parts, char **headers, int argc, char **argv) {
+     char **header = headers;
+-    int c;
++    int c = 0;
+ 
+     memset(cfg, 0, sizeof(struct config));
+     cfg->threads     = 2;
+Only in wrk/src: wrk.h
+Only in wrk/src: wrk.lua
+diff --color -ru '--label=ORIGINAL' '--label=REPAIRED' -ru ORIGINAL REPAIRED
+--- ORIGINAL
++++ REPAIRED
+@@ -1,3 +1,5 @@
++#include "acr.h"
++
+ /* zmalloc - total amount of allocated memory aware version of malloc()
+  *
+  * Copyright (c) 2009-2010, Salvatore Sanfilippo <antirez at gmail dot com>
+@@ -102,7 +104,7 @@
+     update_zmalloc_stat_alloc(zmalloc_size(ptr));
+     return ptr;
+ #else
+-    *((size_t*)ptr) = size;
++    *null_check(((size_t*)ptr)) = size;
+     update_zmalloc_stat_alloc(size+PREFIX_SIZE);
+     return (char*)ptr+PREFIX_SIZE;
+ #endif
+@@ -134,7 +136,7 @@
+     update_zmalloc_stat_alloc(zmalloc_size(ptr));
+     return ptr;
+ #else
+-    *((size_t*)ptr) = size;
++    *null_check(((size_t*)ptr)) = size;
+     update_zmalloc_stat_alloc(size+PREFIX_SIZE);
+     return (char*)ptr+PREFIX_SIZE;
+ #endif
+@@ -142,10 +144,10 @@
+ 
+ void *zrealloc(void *ptr, size_t size) {
+ #ifndef HAVE_MALLOC_SIZE
+-    void *realptr;
++    void *realptr = NULL;
+ #endif
+-    size_t oldsize;
+-    void *newptr;
++    size_t oldsize = 0;
++    void *newptr = NULL;
+ 
+     if (ptr == NULL) return zmalloc(size);
+ #ifdef HAVE_MALLOC_SIZE
+@@ -162,7 +164,7 @@
+     newptr = realloc(realptr,size+PREFIX_SIZE);
+     if (!newptr) zmalloc_oom_handler(size);
+ 
+-    *((size_t*)newptr) = size;
++    *null_check(((size_t*)newptr)) = size;
+     update_zmalloc_stat_free(oldsize);
+     update_zmalloc_stat_alloc(size);
+     return (char*)newptr+PREFIX_SIZE;
+@@ -185,8 +187,8 @@
+ 
+ void zfree(void *ptr) {
+ #ifndef HAVE_MALLOC_SIZE
+-    void *realptr;
+-    size_t oldsize;
++    void *realptr = NULL;
++    size_t oldsize = 0;
+ #endif
+ 
+     if (ptr == NULL) return;
+@@ -210,7 +212,7 @@
+ }
+ 
+ size_t zmalloc_used_memory(void) {
+-    size_t um;
++    size_t um = 0;
+     atomicGet(used_memory,um);
+     return um;
+ }
+Only in wrk/src: zmalloc.h
+Only in wrk: wrk

@@ -1,0 +1,290 @@
+Only in dos2unix-7.5.2: BUGS.txt
+Only in dos2unix-7.5.2: COPYING.txt
+Only in dos2unix-7.5.2: ChangeLog.txt
+Only in dos2unix-7.5.2: DEVEL.txt
+Only in dos2unix-7.5.2: INSTALL.txt
+Only in dos2unix-7.5.2: Makefile
+Only in dos2unix-7.5.2: NEWS.txt
+Only in dos2unix-7.5.2: README.txt
+Only in dos2unix-7.5.2: TODO.txt
+Only in out: acr.h
+Only in dos2unix-7.5.2: bcc.mak
+diff --color -r '--label=ORIGINAL' '--label=REPAIRED' -ru ORIGINAL REPAIRED
+--- ORIGINAL
++++ REPAIRED
+@@ -1,3 +1,5 @@
++#include "acr.h"
++
+ /*
+  *   Copyright (C) 2009-2024 Erwin Waterlander
+  *   All rights reserved.
+@@ -1034,7 +1036,7 @@
+   int RetVal = 0;
+ #ifdef S_ISLNK
+   struct stat StatBuf;
+-  const char *errstr;
++  const char *errstr = NULL;
+   char *targetFN = NULL;
+ 
+   if (STAT(lFN, &StatBuf)) {
+@@ -1434,8 +1436,8 @@
+   int RetVal = 0;
+   FILE *InF = NULL;
+   FILE *TempF = NULL;
+-  char *TempPath;
+-  const char *errstr;
++  char *TempPath = NULL;
++  const char *errstr = NULL;
+ #ifdef D2U_UNIFILE
+    struct _stat StatBuf;
+    wchar_t pathw[D2U_MAX_PATH];
+@@ -1444,7 +1446,7 @@
+ #endif
+   struct utimbuf UTimeBuf;
+ #ifndef NO_CHMOD
+-  mode_t mask;
++  mode_t mask = 0;
+ #endif
+   char *TargetFN = NULL;
+   int ResolveSymlinkResult = 0;
+@@ -1726,7 +1728,7 @@
+ {
+   int RetVal = 0;
+   FILE *InF = NULL;
+-  const char *errstr;
++  const char *errstr = NULL;
+ 
+   ipFlag->status = 0 ;
+ 
+@@ -2119,7 +2121,7 @@
+   if ((ipFlag->add_eol && !(ipFlag->file_info & INFO_CONVERT)) || ipFlag->file_info & INFO_EOL)
+     D2U_UTF8_FPRINTF(stdout, " %s ", eol);
+   if (*filename != '\0') {
+-    const char *ptr;
++    const char *ptr = NULL;
+     if ((ipFlag->file_info & INFO_NOPATH) && (((ptr=strrchr(filename,'/')) != NULL) || ((ptr=strrchr(filename,'\\')) != NULL)) )
+       ptr++;
+     else
+@@ -2137,7 +2139,7 @@
+ #ifdef D2U_UNICODE
+ void FileInfoW(FILE* ipInF, CFlag *ipFlag, const char *filename, int bomtype, const char *progname)
+ {
+-  wint_t TempChar;
++  wint_t TempChar = 0;
+   wint_t PreviousChar = 0;
+   unsigned int lb_dos = 0;
+   unsigned int lb_unix = 0;
+@@ -2194,7 +2196,7 @@
+ 
+ void FileInfo(FILE* ipInF, CFlag *ipFlag, const char *filename, int bomtype, const char *progname)
+ {
+-  int TempChar;
++  int TempChar = 0;
+   int PreviousChar = 0;
+   unsigned int lb_dos = 0;
+   unsigned int lb_unix = 0;
+@@ -2345,7 +2347,7 @@
+ 
+ void get_info_options(char *option, CFlag *pFlag, const char *progname)
+ {
+-  char *ptr;
++  char *ptr = NULL;
+   int default_info = 1;
+ 
+   ptr = option;
+@@ -2681,7 +2683,7 @@
+       }
+     } else {
+       /* not an option */
+-      int conversion_error;
++      int conversion_error = 0;
+       pFlag->stdio_mode = 0;
+       if (pFlag->NewFile) {
+         if (CanSwitchFileMode)
+@@ -2777,8 +2779,8 @@
+ 
+ wint_t d2u_getwc(FILE *f, int bomtype)
+ {
+-   int c_trail, c_lead;
+-   wint_t wc;
++   int c_trail = 0, c_lead = 0;
++   wint_t wc = 0;
+ 
+    if (((c_lead=fgetc(f)) == EOF)  || ((c_trail=fgetc(f)) == EOF))
+       return(WEOF);
+@@ -2795,7 +2797,7 @@
+ 
+ wint_t d2u_ungetwc(wint_t wc, FILE *f, int bomtype)
+ {
+-   int c_trail, c_lead;
++   int c_trail = 0, c_lead = 0;
+ 
+    if (bomtype == FILE_UTF16LE) { /* UTF16 little endian */
+       c_trail = (int)(wc & 0xff00);
+@@ -2819,13 +2821,13 @@
+    static char mbs[8];
+    static wchar_t lead=0x01;  /* lead get's invalid value */
+    static wchar_t wstr[3];
+-   size_t len;
++   size_t len = 0;
+ #if (defined(_WIN32) && !defined(__CYGWIN__))
+    DWORD dwFlags;
+ #endif
+ 
+    if (ipFlag->keep_utf16) {
+-     int c_trail, c_lead;
++     int c_trail = 0, c_lead = 0;
+      if (ipFlag->bomtype == FILE_UTF16LE) { /* UTF16 little endian */
+         c_trail = (int)(wc & 0xff00);
+         c_trail >>=8;
+@@ -2950,7 +2952,7 @@
+       ipFlag->status |= UNICODE_CONVERSION_ERROR ;
+       return(WEOF);
+    } else {
+-      size_t i;
++      size_t i = 0;
+       for (i=0; i<len; i++) {
+          if (fputc(mbs[i], f) == EOF)
+             return(WEOF);
+Only in dos2unix-7.5.2: common.h
+Only in dos2unix-7.5.2: djgpp.mak
+diff --color -r '--label=ORIGINAL' '--label=REPAIRED' -ru ORIGINAL REPAIRED
+--- ORIGINAL
++++ REPAIRED
+@@ -1,3 +1,5 @@
++#include "acr.h"
++
+ /*
+  *  Name: dos2unix
+  *  Documentation:
+@@ -88,7 +90,7 @@
+ #ifdef D2U_UNICODE
+ wint_t StripDelimiterW(FILE* ipInF, FILE* ipOutF, CFlag *ipFlag, wint_t CurChar, unsigned int *converted, const char *progname)
+ {
+-  wint_t TempNextChar;
++  wint_t TempNextChar = 0;
+   /* CurChar is always CR (x0d) */
+   /* In normal dos2unix mode put nothing (skip CR). */
+   /* Don't modify Mac files when in dos2unix mode. */
+@@ -134,7 +136,7 @@
+  */
+ int StripDelimiter(FILE* ipInF, FILE* ipOutF, CFlag *ipFlag, int CurChar, unsigned int *converted, const char *progname)
+ {
+-  int TempNextChar;
++  int TempNextChar = 0;
+   /* CurChar is always CR (x0d) */
+   /* In normal dos2unix mode put nothing (skip CR). */
+   /* Don't modify Mac files when in dos2unix mode. */
+@@ -181,8 +183,8 @@
+ {
+     int RetVal = 0;
+     wint_t PrevChar = WEOF;
+-    wint_t TempChar;
+-    wint_t TempNextChar;
++    wint_t TempChar = 0;
++    wint_t TempNextChar = 0;
+     unsigned int line_nr = 1;
+     unsigned int converted = 0;
+ 
+@@ -349,9 +351,9 @@
+ {
+     int RetVal = 0;
+     int PrevChar = EOF;
+-    int TempChar;
+-    int TempNextChar;
+-    int *ConvTable;
++    int TempChar = 0;
++    int TempNextChar = 0;
++    int *ConvTable = NULL;
+     unsigned int line_nr = 1;
+     unsigned int converted = 0;
+ 
+@@ -551,15 +553,15 @@
+ {
+   /* variable declarations */
+   char progname[9];
+-  CFlag *pFlag;
+-  char *ptr;
++  CFlag *pFlag = NULL;
++  char *ptr = NULL;
+   char localedir[1024];
+-  int ret;
++  int ret = 0;
+ # ifdef __MINGW64__
+   int _dowildcard = -1; /* enable wildcard expansion for Win64 */
+ # endif
+-  int  argc_new;
+-  char **argv_new;
++  int  argc_new = 0;
++  char **argv_new = NULL;
+ #ifdef D2U_UNIFILE
+   wchar_t **wargv;
+   char ***argv_glob;
+Only in dos2unix-7.5.2: dos2unix.h
+Only in dos2unix-7.5.2: emx.mak
+Only in dos2unix-7.5.2: man
+Only in dos2unix-7.5.2: po
+Only in dos2unix-7.5.2: po-man
+Only in dos2unix-7.5.2: querycp.c
+Only in dos2unix-7.5.2: querycp.h
+Only in dos2unix-7.5.2: run_clang.sh
+Only in dos2unix-7.5.2: test
+diff --color -r '--label=ORIGINAL' '--label=REPAIRED' -ru ORIGINAL REPAIRED
+--- ORIGINAL
++++ REPAIRED
+@@ -1,3 +1,5 @@
++#include "acr.h"
++
+ /*
+  *  Name: unix2dos
+  *  Documentation:
+@@ -133,7 +135,7 @@
+ int ConvertUnixToDosW(FILE* ipInF, FILE* ipOutF, CFlag *ipFlag, const char *progname)
+ {
+     int RetVal = 0;
+-    wint_t TempChar;
++    wint_t TempChar = 0;
+     wint_t PreviousChar = WEOF;
+     unsigned int line_nr = 1;
+     unsigned int converted = 0;
+@@ -315,9 +317,9 @@
+ int ConvertUnixToDos(FILE* ipInF, FILE* ipOutF, CFlag *ipFlag, const char *progname)
+ {
+     int RetVal = 0;
+-    int TempChar;
++    int TempChar = 0;
+     int PreviousChar = EOF;
+-    int *ConvTable;
++    int *ConvTable = NULL;
+     unsigned int line_nr = 1;
+     unsigned int converted = 0;
+ 
+@@ -532,15 +534,15 @@
+ {
+   /* variable declarations */
+   char progname[9];
+-  CFlag *pFlag;
+-  char *ptr;
++  CFlag *pFlag = NULL;
++  char *ptr = NULL;
+   char localedir[1024];
+-  int ret;
++  int ret = 0;
+ # ifdef __MINGW64__
+   int _dowildcard = -1; /* enable wildcard expansion for Win64 */
+ # endif
+-  int  argc_new;
+-  char **argv_new;
++  int  argc_new = 0;
++  char **argv_new = NULL;
+ #ifdef D2U_UNIFILE
+   wchar_t **wargv;
+   char ***argv_glob;
+Only in dos2unix-7.5.2: unix2dos.h
+Only in dos2unix-7.5.2: vc.mak
+Only in dos2unix-7.5.2: version.mk
+Only in dos2unix-7.5.2: wcc.mif
+Only in dos2unix-7.5.2: wccdos16.mak
+Only in dos2unix-7.5.2: wccdos32.mak
+Only in dos2unix-7.5.2: wccos2.mak
+Only in dos2unix-7.5.2: wccwin32.mak

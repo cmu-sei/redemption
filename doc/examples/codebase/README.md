@@ -30,7 +30,7 @@ DM23-2165
 ## Running the Redemption Tool
 ### Source Code
 
-We are using the `dos2unix` codebase, version 7.5.2. It is freely available from [dos2unix.sourceforge.io/](https://sourceforge.net/projects/dos2unix/files/dos2unix/7.5.2/dos2unix-7.5.2.tar.gz/download).  For this demo, you should download `dos2unix-7.5.2`, unpack it, and place its contents in a `dos2unix-7.5.2` sub-directory in the `doc/examples/codebase` directory. You could use this command:
+We are using the `dos2unix` codebase, version 7.5.2. It is freely available from [dos2unix.sourceforge.io/](https://sourceforge.net/projects/dos2unix/files/dos2unix/7.5.2/dos2unix-7.5.2.tar.gz/download).  For this demo, you should download `dos2unix-7.5.2`, unpack it, and place its contents in a `dos2unix-7.5.2` sub-directory in the `doc/examples/codebase` directory. You could use this command to unpack, which creates the required `dos2unix-7.5.2` sub-directory:
  
 ```sh
 tar xzf dos2unix-7.5.2.tar.gz 
@@ -101,10 +101,7 @@ EXAMPLE=/host/doc/examples/codebase
 pushd /host/code/acr
 python3 sup.py  -c ${EXAMPLE}/compile_commands.json  -a ${EXAMPLE}/alerts.json  -b ${EXAMPLE}/dos2unix-7.5.2  --repaired-src ${EXAMPLE}/out
 popd
+diff -ru --label=ORIGINAL --label=REPAIRED -ru  dos2unix-7.5.2  out > repaired.diffs 
 ```
 
-You can see the repairs using this command:
-
-```sh
-diff -ru dos2unix-7.5.2 out
-```
+The `repaired.diffs` file contains all the specific repairs made to the code.

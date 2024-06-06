@@ -37,6 +37,7 @@ We are using the `test_errors.c` source file (which is very similar to [this tes
 This directory contains output for each of the steps below. As you run each step, you should compare your current directory's file contents with the good directory. Assuming your step was run correctly, there will be no differences between the files that appear in both your directory and the good directory.
 
 ``` sh
+cd doc/examples/simple
 diff -ru . good
 ```
 
@@ -62,7 +63,7 @@ docker run --rm  -v ${PWD}:/code -w /code  facthunder/cppcheck:latest  sh -c 'cp
 
 For the rest of these instructions, you should execute the commands inside the `distrib` Docker container, and `cd` into this directory. 
 
-To set this up, use this command:
+To set this up, go to the base Redemption directory and run the Docker container, using these commands:
 
 ``` sh
 cd ../../..
@@ -75,7 +76,7 @@ Then, inside the shell this command gives you:
 
 ``` sh
 pushd doc/examples/simple
-cp /code/cppcheck.xml .
+cp /code/doc/examples/simple/cppcheck.xml .
 ```
 
 The next step is to convert the `cppcheck.xml` format into a simple JSON format that the redemption tool understands. The `alerts2input.py` file produces suitable JSON files. So you must run this script first; it will create the `alerts.json` file with the alerts you will use.

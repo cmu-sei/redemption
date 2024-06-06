@@ -7,8 +7,6 @@ To accomplish this demo, we will create two containers, which we call the Build 
 
 The Build Platform must be able to run Clang 15 (with our patch), and the `bear` utility. Using `bear` requires the code to be compilable using a single command, which could use a Makefile, a script, or various other options.  See the [I Cannot Install Bear](#i-cannot-install-bear) section if you can not install `bear`.
 
-[TOC]
-
 ## Copyright
 
 <legal>
@@ -33,7 +31,6 @@ DM23-2165
 </legal>
 
 This is a demo scenario involving the Redemption of False Positives project.  Unless stated otherwise, any shell commands you execute should be done in this directory (`doc/examples/separate_build`)
-
 
 <a name="clang-15-on-the-build-platform"></a>
 ## Clang 15 on the Build Platform
@@ -81,6 +78,7 @@ git checkout 4.2.0
 This directory contains output for each of the steps below. As you run each step, you should compare your current directory's file contents with the good directory. Assuming your step was run correctly, there will be no differences between the files that appear in both your directory and the good directory.
 
 ``` sh
+cd doc/examples/separate_build
 diff -ru . good
 ```
 
@@ -98,7 +96,7 @@ If you have a separate host or container that contains Clang 15 with the enhance
 
 Note that each instruction below must be run in either the Build Platform or the Repair Platform, be sure that you are executing these commands in the correct platform.
 
-<a name="build-platform">
+<a name="build-platform"></a>
 #### Build Platform
 
 In one shell, you can launch the Build Platform. To set this up, use these commands:
@@ -200,19 +198,16 @@ Note that this command can be slow...it takes 90 seconds on a local SEI machine.
 
 The final step is to run Redemption.  In this phase, Redemption repairs the source code given the Clang output from the previous shell.
 
-This step requires all of the `.ast.json.gz` and `.ll` files from the `temp` directory that were produced in the Build Platform from the previous step. This step also requires the `compile_commands.json` file produced in the Build Platform from the [Creating a Build File](#creating-a-build-file) step.
+This step requires all of the `.ast.json.gz` and `.ll` files from the `temp` directory that were produced in the Build Platform from the previous step. This step also requires the `compile_commands.json` file produced in the Build Platform from the [Creating a Build File](#creating-a-build-file) step. On one of our test machines, this resulted in a wait of around 3 minutes prior to getting output from the command.
 
 ```sh
 cd /host/code/acr
 python3 sup.py  -c /separate_build/compile_commands.json  -a /separate_build/alerts.json  -b /separate_build/wrk  --raw-ast-dir /separate_build/temp  --repaired-src /separate_build/out
-```
-
-You can now examine the repairs using this command, in either platform:
-
-```sh
 cd /separate_build
-diff -ru wrk out
+diff -ru --label=ORIGINAL --label=REPAIRED -ru  wrk  out > repaired.diffs 
 ```
+
+The `repaired.diffs` file contains all the specific repairs made to the code.
 
 <a name="troubleshooting"></a>
 ## Troubleshooting
