@@ -91,6 +91,11 @@ The test data will be made available, but in a disabled fashion. To enable a tes
 
 #### Procedure:
 
+We provide scripts that can be used to run tests and process results for the sample alert experiments and related testing.
+Details including script location, what the scripts do, and how to run them are provided
+in [scripts_supporting_sample_testing.md](scripts_supporting_sample_testing.md)
+
+
 To complete this experiment, we do the following:
 
     For each tool/guideline/codebase,
@@ -100,11 +105,11 @@ To complete this experiment, we do the following:
       Until ACR does the Right Thing on >=80% of alerts,
         Fix ACR bugs and re-run this experiment.
 
-Each file has about 5 test cases with randomness=random.  Many of these test cases already are satisfactory, and so they have pre-existing .ans files, and they are regularly tested by our CI process. You can rerun these just to be sure, or you can trust that if the output changes on these test cases, the CI system will warn us of failures.
+Each file has about 5 test cases with `randomness` value having `random` and/or `sample` in it, but not `disqualified`. If it is for coding rule MSC12-C, then there is an extra restriction: each test case's `randomness` value must have `sample` in it (but not `disqualified`). Many of these test cases already are satisfactory, and so they have pre-existing .ans files, and they are regularly tested by our CI process. You can rerun these just to be sure, or you can trust that if the output changes on these test cases, the CI system will warn us of failures.
 
 However, some test cases failed in the past, and those are not tested by our CI process, and they lack an .ans file.  So you'll need to create an empty (stub) .ans file for each test case.  Then rerun the experiments.
 
-For each previously-failed test cases, you'll have output, which may or may not match the (empty) .ans file you created.  Inspect the output file, and if it is correct, then the experiment now succeeds...yay!  In each such case, create a new .ans file for that test case (and push it to the repo), so that our CI system starts regularly testing that case. And mark satisfactory=true for that test case in the appropriate json file.  Note that if the output file indicates that a repair was performed, you'll need to inspect it to make sure the repair is correct.
+For each previously-failed test cases, you'll have output, which may or may not match the (empty) .ans file you created.  Inspect the output file, and if it is correct, then the experiment now succeeds...yay!  In each such case, create a new .ans file for that test case (and push it to the repo), so that our CI system starts regularly testing that case. And mark satisfactory=true for that test case in the appropriate json file.  Note that if the output file indicates that a repair was performed, you'll need to inspect it to make sure the repair is correct. However, after filling these satisfactory fields manually, see [scripts_supporting_sample_testing.md](scripts_supporting_sample_testing.md) information about how to run `test_satisfaction_status_table.py` to determine if the resulting state string (it codes info about multiple adjudication fields and more) is an valid value indicating one of the states A through G.
 
 If a previously-failed test case still fails, it should be marked satisfactory=false (if it isn't already). You should create a new JIRA issue for the failed test case, and indicate the issue number in the issue field for that test case in the json file.
 
@@ -114,7 +119,7 @@ After running test cases, you should update the table above with the ratio of sa
  * If the MSR is >80%, that means ACR repairs not all alerts, but enough that we can consider that bucket done.
  * If the MSR is <80%, but the team agrees that fixing remaining bugs would be expensive, then again you can consider this task done.
  * Otherwise, the task is not done. Once the newly-created JIRA issues are fixed, you'll re-run this experiment.
-Script outputs two .csv 'tables'. First to fill in ratios values in bottom table, second to determine color (<80% red).  Script is test_satisfaction_status_tables.sh, which is now in the main branch of redemption.public. 
+The `test_satisfaction_status_table.py` script outputs data at the end (after a line "*****") with state counts, state count ratios, and divided ratio data. This data can be used to fill in the bottom table entries of SEI's sample experiments wiki page by copy/pasting, and the ratio should be used to determine color of the cell with that data (<80% red).   
 
 Once deemed correct, sample alerts are preserved and act as regression tests for Bamboo. As with regression tests, any change in behavior of a correct sample alert is mitigated before the change is merged into the main branch.
 
@@ -248,7 +253,7 @@ The test case results of each bucket can be presented as six numbers in the fash
 
 ##### Technical Details
 
-One of our measures of satisfactory alert redemption is done by randomly selecting alerts to manually adjudicate (using web-based random number generators and the number of alerts in the output), manually adjudicating and analyzing if automated repair should be done, then inspecting if our tool automatically and correctly repairs them. Scripts like `data/test/adjudicated_alerts_info_and_repair.py` and `data/test/test_satisfaction_status_tables.sh` help automate the process of running tests on the adjudicated alerts and then gathering overall statistics on satisfactorily handling the adjudicated alerts into tables. The latter table-creating script specifies particular datasets, coding rules, and static analysis tools but those lists can be easily extended or substituted. You can use the scripts to measure satisfactory alert redemption on your own codebases, tools, and code flaw taxonomy items of interest. Results can be used to target efforts to integrate particular code repairs, e.g., if those would eliminate many alerts and/or alerts with code flaws of particular interest.
+One of our measures of satisfactory alert redemption is done by randomly selecting alerts to manually adjudicate (using web-based random number generators and the number of alerts in the output), manually adjudicating and analyzing if automated repair should be done, then inspecting if our tool automatically and correctly repairs them. Scripts like `data/test/adjudicated_alerts_info_and_repair.py`, `data/test/test_satisfaction_status_tables.py`, and `data/test/loop_test_oss.sh`. help automate the process of running tests on the adjudicated alerts and then gathering overall statistics on satisfactorily handling the adjudicated alerts into tables. (See [scripts_supporting_sample_testing.md](scripts_supporting_sample_testing.md) for more information about those scripts.) The latter table-creating script specifies particular datasets, coding rules, and static analysis tools but those lists can be easily extended or substituted. You can use the scripts to measure satisfactory alert redemption on your own codebases, tools, and code flaw taxonomy items of interest. Results can be used to target efforts to integrate particular code repairs, e.g., if those would eliminate many alerts and/or alerts with code flaws of particular interest.
 
 <a name="integration-experiments"></a>
 ### Integration Experiments
