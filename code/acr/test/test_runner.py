@@ -43,6 +43,7 @@ import test_known_inputs_output
 import end_to_end_acr
 import json
 from enum import Enum
+from dataclasses import dataclass
 from make_run_clang import read_json_file
 
 stop = pdb.set_trace
@@ -65,6 +66,17 @@ class PassStatus(Enum):
     NO_ANS = 3    # no ".ans" file was found; counts as a fail
     NO_PATCH = 5  # the interdiff for the .ans file matched BUT no patch and the is_false_positive field != True
 
+@dataclass
+class ReturnedPaths():
+    base_dir: str
+    cur_c_file: str
+    file_to_repair: str
+    repair_includes_mode: bool
+    filename: str
+    file_prefix: str
+    cur_compile_cmds_file: str
+    cur_alerts_file: str
+
 def parse_args():
     parser = argparse.ArgumentParser(description='Runs tests of code that creates repaired source code files')
     parser.add_argument("tests_file", type=str, help="The YAML file specifying a test list with inputs and answers")
@@ -85,6 +97,24 @@ def read_yaml_file(filename):
 
 class DummyException(Exception):
     pass
+
+def print_per_test_diff(all_diff_results):
+    if all_diff_results:
+        print("#"*70)
+        print("Diff results:")
+        print("#"*70)
+        for (test_name, diff_args, diff_stdout) in all_diff_results:
+            print("Test: " + test_name)
+            print(diff_args)
+            print(diff_stdout.decode())
+            print("#"*70)
+
+def delete_existing_files(*, out_location, file_prefix, step_dir):
+    old_files = (
+        glob.glob("%s/%s.*" % (out_location, file_prefix)) +
+        glob.glob("%s/%s.*" % (step_dir, file_prefix)))
+    for old_file in old_files:
+        os.remove(old_file)
 
 def run_test(**kwargs):
     # To print out test info as tests are being run, uncomment the following line:
@@ -111,6 +141,7 @@ def run_test(**kwargs):
 ################################################################################
 ################################################################################
 
+# TODO: test using the added optional args w. default values
 
 # If stringinput is empty string or doesn't match any test name in the .yml file, test passes.
 def run(stringinput, tests_file,
@@ -118,7 +149,9 @@ def run(stringinput, tests_file,
         step_dir="/host/code/acr/test/step",
         repair_in_place=None,
         repair_includes_mode=None,
+        stop_if_no_answer_file=False,
         **extra_kwargs):
+
     tests_info = read_yaml_file(os.path.join(directory, tests_file))
     out_location = os.path.realpath("out/")
     all_passed_or_none_tested = 1
@@ -141,61 +174,35 @@ def run(stringinput, tests_file,
         cur_answer_file = os.path.realpath(os.path.join(directory, test['answer_file']))
         if do_this:
             count_results_compared += 1
-            if ("base_dir" in test['input']):
-                base_dir = os.path.realpath(test['input']['base_dir'])
-                cur_c_file = os.path.realpath(os.path.join(base_dir, test['input']['cfile']))
-            else:
-                base_dir = None
-                cur_c_file = os.path.realpath(test['input']['cfile'])
-
-            if "hfile" in test['input'].keys():
-                file_to_repair = test['input']['hfile']
-                if ("base_dir" in test['input']):
-                    file_to_repair = os.path.realpath(os.path.join(base_dir, file_to_repair))
-                else:
-                    file_to_repair = os.path.realpath(os.path.join(file_to_repair))
-                repair_includes_mode = True
-            else:
-                file_to_repair = cur_c_file
-
-            if base_dir and file_to_repair.startswith(base_dir+"/"):
-                filename = file_to_repair[len(base_dir+"/"):]
-            else:
-                filename = os.path.basename(file_to_repair)
-            file_prefix = os.path.splitext(os.path.basename(filename))[0]
-
-            if (test['input'].get('compile_cmds_file', "autogen") != "autogen"):
-                cur_compile_cmds_file = os.path.realpath(test['input']['compile_cmds_file'])
-            else:
-                cur_compile_cmds_file = "autogen"
-            cur_alerts_file = os.path.realpath(os.path.join(directory, test['input']['alerts_file']))
+            p = set_paths(test, directory, repair_includes_mode)
 
             # Delete already-existing files, to avoid falsely reporting that
             # the test succeeds when it really fails.
-            old_files = (
-                glob.glob("%s/%s.*" % (out_location, file_prefix)) +
-                glob.glob("%s/%s.*" % (step_dir, file_prefix)))
-            for old_file in old_files:
-                os.remove(old_file)
+            delete_existing_files(out_location=out_location, file_prefix=p.file_prefix, step_dir=step_dir)
 
             # TODO: check each of files exists
-            run_test(source_file=cur_c_file,
-                     compile_commands=cur_compile_cmds_file,
-                     alerts=cur_alerts_file,
+            test_name = test['name']
+            run_test(source_file=p.cur_c_file,
+                     compile_commands=p.cur_compile_cmds_file,
+                     alerts=p.cur_alerts_file,
                      out_src_dir=out_location,
-                     base_dir=base_dir,
                      step_dir=step_dir,
-                     repair_in_place=repair_in_place,
-                     repair_includes_mode=repair_includes_mode)
-            test_results_file = os.path.join(out_location, filename)
+                     base_dir=p.base_dir,
+                     repair_includes_mode=p.repair_includes_mode,
+                     repair_in_place=repair_in_place)
+            test_results_file = os.path.join(out_location, p.filename)
             if cur_answer_file.endswith(".json"):
                 test_results_file = os.path.join(step_dir, os.path.basename(cur_answer_file))
 
+            # TODO: check if below needed (it was in next def run*)
+            # p.file_prefix = os.path.splitext(os.path.basename(p.cur_c_file))[0] # use for intermediate filenames and cleanup
+            # # If alert for a .h file, then to match brain output name, use c file
+
             def print_test_cmd():
-                print("        Test command: " + __file__ + " " + tests_file + " -k " + test['name'])
+                print("        Test command: " + __file__ + " " + tests_file + " -k " + test_name)
 
             # If no repair was possible, ACR produces no output file.
-            print("%s:" % test['name'])
+            print("%s:" % test_name)
             all_diff_results = []
             if (os.path.exists(test_results_file)):
                 if (os.path.exists(cur_answer_file)):
@@ -207,7 +214,7 @@ def run(stringinput, tests_file,
                         print_test_cmd()
                     else:
                         print("  pass: test result and answer key are same")
-                        cleanup(test_results_filepath=test_results_file, out_location=out_location, filename=filename, step_dir=step_dir, repair_in_place=repair_in_place, repair_includes_mode=repair_includes_mode, file_prefix=file_prefix)
+                        cleanup(test_results_filepath=test_results_file, out_location=out_location, filename=p.filename, step_dir=step_dir, repair_in_place=repair_in_place, repair_includes_mode=p.repair_includes_mode, file_prefix=p.file_prefix)
                 else:
                     print("  FAIL: test result exists, but answer key does not exist")
                     print("        missing answer key : " + cur_answer_file)
@@ -221,17 +228,9 @@ def run(stringinput, tests_file,
                     print_test_cmd()
                 else:
                     print("  pass: test result and answer key both do not exist")
-                    cleanup(test_results_filepath=test_results_file, out_location=out_location, filename=filename, step_dir=step_dir, repair_in_place=repair_in_place, repair_includes_mode=repair_includes_mode, file_prefix=file_prefix)
+                    cleanup(test_results_filepath=test_results_file, out_location=out_location, filename=p.filename, step_dir=step_dir, repair_in_place=repair_in_place, repair_includes_mode=p.repair_includes_mode, file_prefix=p.file_prefix)
 
-    if all_diff_results:
-        print("#"*70)
-        print("Diff results:")
-        print("#"*70)
-        for (test_name, diff_args, diff_stdout) in all_diff_results:
-            print("Test: " + test_name)
-            print(diff_args)
-            print(diff_stdout.decode())
-            print("#"*70)
+    print_per_test_diff(all_diff_results)
 
     dir_final_cleanup(step_dir, step_dir_prev_existed)
     print("count_results_compared is ", count_results_compared)
@@ -259,8 +258,6 @@ def run_and_check_if_answer(examine_is_fp, stringinput, tests_file,
     count_skipped_tests = 0
     pass_status = PassStatus.NOT_RUN
     answer_file_exists = False
-    is_fp = False
-    a_patch = False
     dict_alert_info_patches_fps.clear()
 
     if not os.path.exists(out_location):
@@ -280,72 +277,46 @@ def run_and_check_if_answer(examine_is_fp, stringinput, tests_file,
         answer_file_exists = os.path.exists(cur_answer_file)
         if(do_this and (answer_file_exists or (stop_if_no_answer_file == False))):
             count_results_compared += 1
-            if ("base_dir" in test['input']):
-                base_dir = os.path.realpath(test['input']['base_dir'])
-                cur_c_file = os.path.realpath(os.path.join(base_dir, test['input']['cfile']))
-            else:
-                base_dir = None
-                cur_c_file = os.path.realpath(test['input']['cfile'])
-
-            if "hfile" in test['input'].keys():
-                file_to_repair = test['input']['hfile']
-                if ("base_dir" in test['input']):
-                    file_to_repair = os.path.realpath(os.path.join(base_dir, file_to_repair))
-                else:
-                    file_to_repair = os.path.realpath(os.path.join(file_to_repair))
-                repair_includes_mode = True
-            else:
-                file_to_repair = cur_c_file
-
-            if base_dir and file_to_repair.startswith(base_dir+"/"):
-                filename = file_to_repair[len(base_dir+"/"):]
-            else:
-                filename = os.path.basename(file_to_repair)
-            file_prefix = os.path.splitext(os.path.basename(filename))[0]
-
-            if (test['input'].get('compile_cmds_file', "autogen") != "autogen"):
-                cur_compile_cmds_file = os.path.realpath(test['input']['compile_cmds_file'])
-            else:
-                cur_compile_cmds_file = "autogen"
-            cur_alerts_file = os.path.realpath(os.path.join(directory, test['input']['alerts_file']))
+            p = set_paths(test, directory, repair_includes_mode)
 
             # Delete already-existing files, to avoid falsely reporting that
             # the test succeeds when it really fails.
-            old_files = (
-                glob.glob("%s/%s.*" % (out_location, file_prefix)) +
-                glob.glob("%s/%s.*" % (step_dir, file_prefix)))
-            for old_file in old_files:
-                os.remove(old_file)
+            delete_existing_files(out_location=out_location, file_prefix=p.file_prefix, step_dir=step_dir)
 
             # TODO: check each of files exists
             test_name = test['name']
             print("Test command: " + __file__ + " " + tests_file + " --check-ans -k " + test_name)
-            run_test(source_file=cur_c_file,
-                     compile_commands=cur_compile_cmds_file,
-                     alerts=cur_alerts_file,
+            run_test(source_file=p.cur_c_file,
+                     compile_commands=p.cur_compile_cmds_file,
+                     alerts=p.cur_alerts_file,
                      out_src_dir=out_location,
-                     base_dir=base_dir,
                      step_dir=step_dir,
-                     repair_in_place=repair_in_place,
-                     repair_includes_mode=repair_includes_mode)
-            test_results_file = os.path.join(out_location, filename)
+                     base_dir=p.base_dir,
+                     repair_includes_mode=p.repair_includes_mode,
+                     repair_in_place=repair_in_place)
+#                     repair_in_place=repair_in_place, **extra_kwargs)
+# end_to_end_acr.run has 3 additional args at end, plus some with defaults
+#        output_clang_script=None, raw_ast_dir=None, **run_kwargs):
+
+
+            test_results_file = os.path.join(out_location, p.filename)
             if cur_answer_file.endswith(".json"):
                 test_results_file = os.path.join(step_dir, os.path.basename(cur_answer_file))
 
-            file_prefix = os.path.splitext(os.path.basename(cur_c_file))[0] # use for intermediate filenames and cleanup
+            p.file_prefix = os.path.splitext(os.path.basename(p.cur_c_file))[0] # use for intermediate filenames and cleanup
             # If alert for a .h file, then to match brain output name, use c file
 
             pass_status = determine_pass_status(examine_is_fp=examine_is_fp,
                           step_dir=step_dir,
                           repair_in_place=repair_in_place,
-                          repair_includes_mode=repair_includes_mode,
+                          repair_includes_mode=p.repair_includes_mode,
                           stop_if_no_answer_file=stop_if_no_answer_file,
-                          file_prefix=file_prefix,
-                          file_to_repair=file_to_repair,
+                          file_prefix=p.file_prefix,
+                          file_to_repair=p.file_to_repair,
                           test_name=test_name,
                           test_results_file=test_results_file,
                           answer_file_exists=answer_file_exists,
-                          filename=filename,
+                          filename=p.filename,
                           cur_answer_file=cur_answer_file,
                           out_location=out_location,
                           **extra_kwargs)
@@ -363,7 +334,6 @@ def run_and_check_if_answer(examine_is_fp, stringinput, tests_file,
 
     if(examine_is_fp):
         # Select info goes to *alerts_info.json file, per test.yml file.
-        # Convert and write JSON object to file
         alerts_info_filename = tests_file+".alerts_info.json"
         with open(alerts_info_filename, "w") as outfile:
             json.dump(dict_alert_info_patches_fps, outfile, sort_keys=True, indent=4)
@@ -372,16 +342,7 @@ def run_and_check_if_answer(examine_is_fp, stringinput, tests_file,
     # reset the dictionary for the next time test_runner.py is called
     dict_alert_info_patches_fps.clear()
 
-    if all_diff_results:
-        print("#"*70)
-        print("Diff results:")
-        print("#"*70)
-        for (test_name, diff_args, diff_stdout) in all_diff_results:
-            print("Test: " + test_name)
-            print(diff_args)
-            print(diff_stdout.decode())
-            print("#"*70)
-
+    print_per_test_diff(all_diff_results)
     dir_final_cleanup(step_dir, step_dir_prev_existed)
     print("count_results_compared is ", count_results_compared, " and count_skipped_tests is ", count_skipped_tests)
     return all_passed_or_none_tested
@@ -420,7 +381,6 @@ def cleanup(filename, out_location, step_dir, test_results_filepath=None, file_p
         dot_h_results_filepath = out_location+"/"+"acr.h"
         cmd3 = "rm {0}".format(dot_h_results_filepath)
         os.system(cmd3)
-        # delete .ll results
         ll_results_filepath = os.path.realpath(os.path.join(step_dir,file_prefix+".ll"))
         cmd4 = "rm {0}".format(ll_results_filepath)
         os.system(cmd4)
@@ -428,21 +388,63 @@ def cleanup(filename, out_location, step_dir, test_results_filepath=None, file_p
         cmd5 = "rm {0}".format(nulldom_results_filepath)
         os.system(cmd5)
 
+# return data structure containing many paths, useful for running and checking tests
+def set_paths(test, directory, repair_includes_mode):
+    rp = ReturnedPaths(base_dir="",
+                       cur_c_file="",
+                       file_to_repair="",
+                       repair_includes_mode=repair_includes_mode,
+                       filename="",
+                       file_prefix="",
+                       cur_compile_cmds_file="",
+                       cur_alerts_file=""
+                       )
+    rp.repair_includes_mode = repair_includes_mode
+    if ("base_dir" in test['input']):
+        rp.base_dir = os.path.realpath(test['input']['base_dir'])
+        rp.cur_c_file = os.path.realpath(os.path.join(rp.base_dir, test['input']['cfile']))
+    else:
+        rp.base_dir = None
+        rp.cur_c_file = os.path.realpath(test['input']['cfile'])
+    if "hfile" in test['input'].keys():
+        rp.file_to_repair = test['input']['hfile']
+        if ("base_dir" in test['input']):
+            rp.file_to_repair = os.path.realpath(os.path.join(rp.base_dir, rp.file_to_repair))
+        else:
+            rp.file_to_repair = os.path.realpath(os.path.join(rp.file_to_repair))
+        rp.repair_includes_mode = True
+    else:
+        rp.file_to_repair = rp.cur_c_file
+
+    if rp.base_dir and rp.file_to_repair.startswith(rp.base_dir+"/"):
+        rp.filename = rp.file_to_repair[len(rp.base_dir+"/"):]
+    else:
+        rp.filename = os.path.basename(rp.file_to_repair)
+    rp.file_prefix = os.path.splitext(os.path.basename(rp.filename))[0]
+
+    if (test['input'].get('compile_cmds_file', "autogen") != "autogen"):
+        rp.cur_compile_cmds_file = os.path.realpath(test['input']['compile_cmds_file'])
+    else:
+        rp.cur_compile_cmds_file = "autogen"
+
+    rp.cur_alerts_file =  os.path.realpath(os.path.join(directory, test['input']['alerts_file']))
+    return rp
+
+
 # This function gathers per-alert data from a brain output file and then edits a dictionary as/if needed.
 def get_alert_patch_and_fp_info_from_brain_output(file_prefix, step_dir, file_to_repair):
 
     is_fp = False
     patch_found = False
     alert_id = 0
-    return_is_fp = False
-    return_patch = False
+    return_is_fp_true_for_ANY_alert_in_file = False
+    return_a_patch_for_any_alert_in_file = False
 
     brain_out_file = os.path.realpath(os.path.join(step_dir, file_prefix+".brain-out.json"))
     # Below verifies processes `is_false_positive` field, using a brain output file with is_no path and is_fp true
     # brain_out_file = os.path.realpath(os.path.join("/host/code/acr/test/already_repaired_null_01.brain-out.json"))
     if(brain_out_file):
         braindata = read_json_file(brain_out_file)
-        # Iterate through the json list
         for x in braindata:
             alert_id = x["alert_id"]
             rule = x["rule"]
@@ -451,8 +453,11 @@ def get_alert_patch_and_fp_info_from_brain_output(file_prefix, step_dir, file_to
             is_fp = ("is_false_positive" in x and ((x["is_false_positive"] == True) or (x["is_false_positive"] == "true")))
 
             if(file == file_to_repair):
-                return_is_fp = is_fp
-                return_patch = patch
+                if(return_is_fp_true_for_ANY_alert_in_file == False):
+                    return_is_fp_true_for_ANY_alert_in_file = is_fp
+                if(return_a_patch_for_any_alert_in_file == False):
+                    return_a_patch_for_any_alert_in_file = patch
+
             # either enter new info OR
             # check if should modify 1. patch info (only False to True change); AND check if should modify
             #                        2. is_false_positive (only False to True change)
@@ -467,9 +472,9 @@ def get_alert_patch_and_fp_info_from_brain_output(file_prefix, step_dir, file_to
                 # Ensure that each nested key is there, prior to entering final list
                 dict_alert_info_patches_fps.setdefault(file, {}).setdefault(rule, {})[alert_id] = [patch, is_fp]
 
-    return(return_patch, return_is_fp)
+    return(return_a_patch_for_any_alert_in_file, return_is_fp_true_for_ANY_alert_in_file)
 
-def determine_pass_status(examine_is_fp,
+def determine_pass_status(*, examine_is_fp,
                             step_dir,
                             repair_in_place,
                             repair_includes_mode,
@@ -484,14 +489,16 @@ def determine_pass_status(examine_is_fp,
                             out_location,
                            **extra_kwargs):
 
+    has_is_fp_true = False
+    a_patch = False
     ret_pass_status = PassStatus.NOT_RUN
 
     if(examine_is_fp == True):
         # For set of brain output files, log info per alert with no patch in any brain output file.
         # A brain output file may have info for more than one alert. Also, it is deleted after the test, by default.
 
-        a_patch, is_fp = get_alert_patch_and_fp_info_from_brain_output(file_prefix, step_dir, file_to_repair)
-        print("get_alert_patch_and_fp_info_from_brain_output returned is_fp: ", is_fp)
+        a_patch, has_is_fp_true = get_alert_patch_and_fp_info_from_brain_output(file_prefix, step_dir, file_to_repair)
+        print("get_alert_patch_and_fp_info_from_brain_output returned has_is_fp_true: ", has_is_fp_true)
         print("and a_patch: ", a_patch)
 
     # If no repair was possible, ACR produces no output file.
@@ -519,13 +526,13 @@ def determine_pass_status(examine_is_fp,
                 subprocess.run(['rm', cur_diff_file], capture_output=True)
 
             if((len(diff_results.stdout) != 0) or (len(diff_results.stderr) != 0)):
-                print("  FAIL: test result doesn't match answer key. (run_and_check_if_answer)\n")
+                print("  FAIL: test result doesn't match answer key. (run_and_check_if_answer)\n") # state G? (test vs. alert)
                 all_diff_results.append([test_name, diff_results.args, diff_results.stdout])
                 ret_pass_status = PassStatus.FAILED
             else:
-                if((examine_is_fp == True) and (not a_patch) and (is_fp != True) and (answer_file_exists == True)):
-                    print("  failed: examine_is_fp True, no patch, is_fp not True, answer file and interdiff test result matched")
-                    ret_pass_status = PassStatus.NO_PATCH
+                if((examine_is_fp == True) and (not a_patch) and (has_is_fp_true != True) and (answer_file_exists == True)):
+                    print("  failed: examine_is_fp True, no patch, has_is_fp_true not True, answer file and interdiff test result matched")
+                    ret_pass_status = PassStatus.NO_PATCH # state D or B? (test vs. alert)
                 else:
                     print("  pass: test result and answer key are same")
                     ret_pass_status = PassStatus.PASSED
