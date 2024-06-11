@@ -173,9 +173,15 @@ class MSC12_C(Alert):
                 self,
                 "Repair of MSC12-C is disabled; set env var REPAIR_MSC12=true to enable it.")
             return None
-        # TODO: This probably shouldn't happen here, but is kept for
-        # comparison purposes
-        self.repair_algo = "msc12c"
+
+        if self.get("tool") == "cppcheck" and self.get("checker") == "unsignedLessThanZero":
+            if context.get("opcode") == "<=":
+                self.decl_node = context
+                self.repair_algo = "unsigned_less_than"
+                self["ast_id"] = context["id"]
+                return context
+            return None
+
         macro_file = get_dict_path(context, 'range', 'begin', 'spellingLoc', 'file')
         if macro_file is not None and macro_file.endswith("/assert.h"):
             context.mark_skipped_alert(self, "False positive: inside an assert")
@@ -227,6 +233,16 @@ class MSC12_C(Alert):
                 self["patch"] = []
                 return False
             edit = [self['file'], [[del_begin, del_end, "(void) "]]]
+            self["patch"] = [edit]
+        elif algo == "unsigned_less_than":
+            inner = self.decl_node["inner"]
+            if len(inner) != 2:
+                return None
+            lhs, rhs = inner
+            lhs_end = lhs.get_end()
+            begin = lhs_end["offset"] + lhs_end["tokLen"]
+            end = rhs.get_begin()["offset"]
+            edit = [self['file'], [[begin, end, " == "]]]
             self["patch"] = [edit]
         else:
             return False
