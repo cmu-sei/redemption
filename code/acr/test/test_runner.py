@@ -64,7 +64,7 @@ class PassStatus(Enum):
     FAILED = 1    # it was run but failed
     PASSED = 2    # it was run and passed
     NO_ANS = 3    # no ".ans" file was found; counts as a fail
-    NO_PATCH = 5  # the interdiff for the .ans file matched BUT no patch and the is_false_positive field != True
+    NO_PATCH = 5  # the interdiff for the .ans file matched BUT no patch and the shouldnt_fix field != True
 
 @dataclass
 class ReturnedPaths():
@@ -83,7 +83,7 @@ def parse_args():
     parser.add_argument("-k", type=str, dest="stringinput", help="only run tests which match the given substring expression")
     parser.add_argument("--check-ans", action="store_true", dest="check_ans")
     parser.add_argument("--create-ans", action="store_true", dest="create_ans", help="Create '.ans' file if it doesn't exist")
-    parser.add_argument("-e", action="store_true", dest="examine_is_fp", help="To determine if the test fails, examine the is_false_positive and patch attributes. Writes output to file named <YAML_FILENAME>.alerts_info.json")
+    parser.add_argument("-e", action="store_true", dest="examine_is_fp", help="To determine if the test fails, examine the shouldnt_fix and patch attributes. Writes output to file named <YAML_FILENAME>.alerts_info.json")
 
     argparse.cmdline_args = parser.parse_args()
     if argparse.cmdline_args.create_ans:
@@ -441,7 +441,7 @@ def get_alert_patch_and_fp_info_from_brain_output(file_prefix, step_dir, file_to
     return_a_patch_for_any_alert_in_file = False
 
     brain_out_file = os.path.realpath(os.path.join(step_dir, file_prefix+".brain-out.json"))
-    # Below verifies processes `is_false_positive` field, using a brain output file with is_no path and is_fp true
+    # Below verifies processes `shouldnt_fix` field, using a brain output file with is_no path and is_fp true
     # brain_out_file = os.path.realpath(os.path.join("/host/code/acr/test/already_repaired_null_01.brain-out.json"))
     if(brain_out_file):
         braindata = read_json_file(brain_out_file)
@@ -450,7 +450,7 @@ def get_alert_patch_and_fp_info_from_brain_output(file_prefix, step_dir, file_to
             rule = x["rule"]
             file = x["file"]
             patch = ("patch" in x and x["patch"] != [])
-            is_fp = ("is_false_positive" in x and ((x["is_false_positive"] == True) or (x["is_false_positive"] == "true")))
+            is_fp = ("shouldnt_fix" in x and ((x["shouldnt_fix"] == True) or (x["shouldnt_fix"] == "true")))
 
             if(file == file_to_repair):
                 if(return_is_fp_true_for_ANY_alert_in_file == False):
@@ -460,7 +460,7 @@ def get_alert_patch_and_fp_info_from_brain_output(file_prefix, step_dir, file_to
 
             # either enter new info OR
             # check if should modify 1. patch info (only False to True change); AND check if should modify
-            #                        2. is_false_positive (only False to True change)
+            #                        2. shouldnt_fix (only False to True change)
             try:
                 assert(dict_alert_info_patches_fps[file][rule][alert_id])
                 thispatch, this_is_fp = dict_alert_info_patches_fps[file][rule][alert_id]

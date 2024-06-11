@@ -58,7 +58,7 @@
       "Dominated by alert 1",
       "Dominated by the following nullness checks (identified by (line, col) pairs): [[12, 9]]"
     ],
-    "is_false_positive": true
+    "shouldnt_fix": true
   },
   {
     "rule": "EXP34-C",
@@ -71,7 +71,7 @@
       "Dominated by alert 2",
       "Dominated by the following nullness checks (identified by (line, col) pairs): [[15, 9]]"
     ],
-    "is_false_positive": true
+    "shouldnt_fix": true
   },
   {
     "rule": "EXP34-C",
@@ -82,7 +82,8 @@
     "patch": [],
     "why_skipped": [
       "Dominated by alert 1"
-    ]
+    ],
+    "shouldnt_fix": true
   },
   {
     "rule": "EXP34-C",
@@ -93,6 +94,7 @@
     "patch": [],
     "why_skipped": [
       "Dominated by alert 2"
-    ]
+    ],
+    "shouldnt_fix": true
   }
 ]
