@@ -142,9 +142,9 @@ A determination of whether the alert indicates a weakness in the code (true), do
  
 Whether we believe the Redemption tool should repair the code, regardless of whether the alert is true or a false positive.
  
- * is-false-positive (true|false)
+ * shouldnt_fix (true|false)
  
-This flag indicates if the Redemption tool determined that an alert is a false positive and thus warrants no repair. We expect this flag to be false if Redemption provided a repair, or provided no repair for other reasons. Ideally this flag correlates with the alert actually being a false positive (even though we are more interested in repairing false positives than identifying them.)
+This flag indicates if the Redemption tool determined that an alert is a false positive or dependent on a previous alert and thus warrants no repair. We expect this flag to be false if Redemption provided a repair, or provided no repair for other reasons. Ideally this flag correlates with the alert actually being a false positive or dependent on a previous alert (even though we are more interested in repairing such alerts rather than identifying them.)
  
  * satisfactory (true|wontfix|false)
 
@@ -178,9 +178,9 @@ The code should have been repaired, and Redemption supplied a correct patch.
 
 Implies repairable=true, patch=nonempty
 
-###### State B: satisfactory=true, verdict=false, is-false-positive=true
+###### State B: satisfactory=true, verdict=false, shouldnt_fix=true
 
-The alert is a false positive, and Redemption correctly recognized this and provided no repair.
+The alert is false or dependent, and Redemption correctly recognized this and provided no repair.
 
 Implies repairable=false, patch=empty
 
@@ -196,9 +196,9 @@ The code should have been repaired, but Redemption provided no repair
 
 For some of these repairable=false and satisfactory=wontfix, which means we did not expect the tool to repair the alert, but it still yields a sub-optimal value.
 
-###### State E: satisfactory=wontfix|false, verdict=false, patch=empty, is-false-positive=false
+###### State E: satisfactory=wontfix|false, verdict=false, patch=empty, shouldnt_fix=false
 
-The alert was a false positive, and Redemption provided no repair. However, Redemption did not acknowledge that the alert was a false positive (and thus its lack of repair was for a completely different reason.)
+The alert was false or dependent, and Redemption provided no repair. However, Redemption did not recognize that the alert was false or dependent (and thus its lack of repair was for a completely different reason.)
 
 ###### State F: satisfactory=wontfix|false, verdict=true|complex, patch=nonempty
 
@@ -206,7 +206,7 @@ The code should have been repaired, and Redemption provided a patch, but the pat
 
 ###### State G: satisfactory=wontfix|false, verdict=false, patch=nonempty
 
-The alert was a false positive, but Redemption provided an incorrect patch.
+The alert was false or dependent, but Redemption provided an incorrect patch.
 
 To qualify for this state, the patch must break the code.
 
