@@ -393,9 +393,32 @@ class EXP34_C_CPPCHECK(EXP34_C):
             case _:
                 return None
 
+    def handle_null_pointer_redundant_check(self, context):
+        if context.get('kind') == "DeclRefExpr":
+            # This is a simple variable reference
+            up = context.parent_non_implicit_cast()
+            if up is None:
+                return None
+            if up.get('kind') == "CallExpr":
+                # This variable reference is an argument to a function
+                return context
+        parent = context.parent(True)
+        if (parent is not None
+            and parent.get('kind') == "UnaryOperator"
+            and parent.get('opcode') == "*"):
+            # cppcheck points to the argument of a unary *.  This
+            # handles that case
+            return context
+        return None
+
     def find_node(self, context):
-        if self.get("checker") == "nullPointerArithmeticRedundantCheck":
+        checker = self.get("checker")
+        if checker == "nullPointerArithmeticRedundantCheck":
             return self.match_arithmetic_locus(context)
+        elif checker == "nullPointerRedundantCheck":
+            candidate = self.handle_null_pointer_redundant_check(context)
+            if candidate is not None:
+                return candidate
         return super().find_node(context)
 
 class EXP34_C_ROSECHECKERS(EXP34_C):

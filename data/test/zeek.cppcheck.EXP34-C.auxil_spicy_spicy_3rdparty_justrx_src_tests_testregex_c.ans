@@ -1,0 +1,17 @@
+--- /host/data/test/out/auxil/spicy/spicy/3rdparty/justrx/src/tests/testregex.c	2024-06-11 18:49:14.213300599 +0000
++++ /oss/zeek/auxil/spicy/spicy/3rdparty/justrx/src/tests/testregex.c	2024-04-25 15:49:44.000000000 +0000
+@@ -1,5 +1,3 @@
+-#include "acr.h"
+-
+ /*
+  * regex(3) test harness
+  *
+@@ -733,7 +731,7 @@
+                 q = c == 'u' ? (s + 5) : (char*)0;
+                 e = s + 1;
+                 while ( ! e || ! q || s < q ) {
+-                    switch ( *null_check(++s) ) {
++                    switch ( *++s ) {
+                     case 'a':
+                     case 'b':
+                     case 'c':

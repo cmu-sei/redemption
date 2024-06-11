@@ -115,6 +115,16 @@ class ASTContext:
             if not kind or "kind" in current:
                 return current
 
+    def parent_non_implicit_cast(self):
+        """Return the first ancestor that has a kind that isn't ImplicitCastExpr."""
+        current = self
+        while True:
+            current = current.parent(True)
+            if current is None:
+                return None
+            if current['kind'] != "ImplicitCastExpr":
+                return current
+
     def find_through_parents(self, kind_or_predicate):
         """Search through parents for a specific type of node.
 
