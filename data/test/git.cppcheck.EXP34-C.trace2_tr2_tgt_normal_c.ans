@@ -1,0 +1,17 @@
+--- /host/data/test/out/trace2/tr2_tgt_normal.c	2024-06-05 18:48:53.686531841 +0000
++++ /oss/git/trace2/tr2_tgt_normal.c	2024-05-09 21:57:04.440833919 +0000
+@@ -1,5 +1,3 @@
+-#include "acr.h"
+-
+ #include "cache.h"
+ #include "config.h"
+ #include "run-command.h"
+@@ -172,7 +170,7 @@
+ 
+ 	/* cmd_ancestry parent <- grandparent <- great-grandparent */
+ 	strbuf_addstr(&buf_payload, "cmd_ancestry ");
+-	while ((parent_name = *null_check(parent_names)++)) {
++	while ((parent_name = *parent_names++)) {
+ 		strbuf_addstr(&buf_payload, parent_name);
+ 		/* if we'll write another one after this, add a delimiter */
+ 		if (parent_names && *parent_names)

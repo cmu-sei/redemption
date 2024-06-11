@@ -152,29 +152,14 @@
     "line": "173",
     "column": "37",
     "tool": "cppcheck",
-    "checker": "nullPointerRedundantCheck",
-    "message": "Either the condition 'parent_names' is redundant or there is possible null pointer dereference: parent_names++.",
-    "satisfactory": "false",
-    "verdict": "complex",
-    "repairable": "true",
-    "rationale": "This alert is a near-duplicate of the following alert.  The ideal fix is the same as the following alert.",
-    "randomness": "selected manually while adjudicating similar alert",
-    "issue": "REM-150"
-  },
-  {
-    "rule": "EXP34-C",
-    "file": "trace2/tr2_tgt_normal.c",
-    "line": "173",
-    "column": "37",
-    "tool": "cppcheck",
     "checker": "nullPointerArithmeticRedundantCheck",
     "message": "Either the condition 'parent_names' is redundant or there is pointer arithmetic with NULL pointer.",
-    "satisfactory": "false",
+    "satisfactory": "true",
     "verdict": "complex",
     "repairable": "true",
     "rationale": " The line alerted is: `while ((parent_name = *parent_names++)) {` and the second parameter into the surrounding function is `const char **parent_names`. So, the line alerted dereferences a function parameter and does an arithmetic operation on it, without first checking if the dereferenced function parameter (or the function parameter) is null. True positive (assumed due to complexity). Automated repair could do both checks.",
     "randomness": "random",
-    "issue": "REM-150"
+    "issue": "REM-334 and REM-150"
   },
   {
     "rule": "EXP34-C",

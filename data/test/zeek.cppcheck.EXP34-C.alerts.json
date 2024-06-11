@@ -400,7 +400,7 @@
     "repairable": "true",
     "rationale": "There's a check above (on line 134178) if ppStmt is null, which is only checked sometimes (`#ifdef SQLITE_ENABLE_API_ARMOR`). If it's checked and the answer is yes, then the function returns. So, if and only if that `#ifdef` is true, then we only reach line 134180 if `ppStmt` isn't null. However, if that `#ifdef` was false, then we can reach line 134180 without a check in this function if the parameter was null. `sqlite3Prepare16` is defined and then called 3 times in this file. (Same thing in another file auxil/broker/3rdparty/sqlite3.c, it is defined and then used 3 times in that file.) The 5th parameter of the function `sqlite3Prepare16` is `sqlite3_stmt **ppStmt`. For the function calls in this file: 1) line 134227 call uses `pptStmt` without checking (unless the check happens in the function call `sqlite3Prepare16` that its own passed-in parameter `sqlite3_stmt **ppStmt` was not null, and also does not check that `*ppStmt` was not null.; 2) line 134239 similarly uses `pptStmt` without the two prechecks mentioned in discussion of (1).; 3) The function call on line 134252 similarly uses `pptStmt` without the two prechecks mentioned in discussion of (1). Due to complexity, it would take too much manual effort to further analyze if that could happen, so we assume it is a true positive. This is similar to saying `assert(ppStmt != 0)`, but it is nonstandard so we do not expect ACR to recognize it.",
     "randomness": "random",
-    "issue": "REM-150 DONE REM-345 REM-128"
+    "issue": "REM-148 and REM-128"
   },
   {
     "rule": "EXP34-C",

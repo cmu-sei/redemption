@@ -370,7 +370,33 @@ class EXP34_C_CLANG_TIDY(EXP34_C):
 
 
 class EXP34_C_CPPCHECK(EXP34_C):
-    pass
+
+    def match_arithmetic_locus(self, context):
+        match context:
+            case {"kind": "BinaryOperator", "opcode": ("+" | "-"),
+                  "type": { "qualType": typ },
+                  "inner" : [{"type": {"qualType": ltyp}} as lhs,
+                             {"type": {"qualType": rtyp}} as rhs]}:
+                if typ[-1] != "*":
+                    return None
+                if typ == ltyp:
+                    return lhs
+                if typ == rtyp:
+                    return rhs
+                return None
+            case {"kind": "UnaryOperator", "opcode": ("++" | "--"),
+                  "type": { "qualType": typ },
+                  "inner": [arg]}:
+                if typ[-1] != "*":
+                    return None
+                return arg
+            case _:
+                return None
+
+    def find_node(self, context):
+        if self.get("checker") == "nullPointerArithmeticRedundantCheck":
+            return self.match_arithmetic_locus(context)
+        return super().find_node(context)
 
 class EXP34_C_ROSECHECKERS(EXP34_C):
 
