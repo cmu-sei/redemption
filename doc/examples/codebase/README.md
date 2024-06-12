@@ -53,6 +53,7 @@ You can try to repair other codebases, or other versions of the `dos2unix` codeb
 For the rest of these instructions, you should execute the commands inside the `distrib` Docker container, and `cd` into this directory.  To set this up, run this command in the top-level Redemption directory:
 
 > [!WARNING]
+``` sh
 docker run -it --rm  -v ${PWD}:/host  docker.cc.cert.org/redemption/distrib  bash
 ```
 
