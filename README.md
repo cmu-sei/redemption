@@ -235,7 +235,7 @@ bear -- make
 
 To enable the Redemption container to run repairs on your local code directories, you should volume-share them with `-v` when you launch the container.  For example, to volume-share a local directory `/code`:
 
-`docker run -it --rm -v /code:/myCode docker.cc.cert.org/redemption/distrib  bash`
+`docker run -it --rm -v /<host_dir>:/home/host_code docker.cc.cert.org/redemption/distrib  bash`
 
 See https://docs.docker.com/storage/volumes/ for more information on volume-sharing.
 See https://docs.docker.com/reference/cli/docker/container/run/ for more information about options using the `docker run` command.
