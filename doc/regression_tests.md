@@ -100,6 +100,7 @@ There is also a `test` Docker container that you can build and test with. It bui
 
 ```sh
 docker  build  -f Dockerfile.test  -t docker.cc.cert.org/redemption/test  .
+> [!WARNING]
 docker run -it --rm -v ${PWD}:/host -w /host docker.cc.cert.org/redemption/test  bash
 ```
 

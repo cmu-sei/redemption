@@ -77,7 +77,7 @@ docker run -it --rm docker.cc.cert.org/redemption/distrib  bash
 
 Note that this container contains the entire Redemption code...this is useful if you intend to run Redemption, but have no plans to modify or tweak the code.  If you plan to modify the code, use the `prereq` container instead:
 
-```sh
+> [!WARNING]
 docker run -it --rm -v ${PWD}:/host -w /host  docker.cc.cert.org/redemption/prereq  bash
 ```
 
@@ -102,6 +102,7 @@ There is a `test` Docker container that you can build and test with. It builds `
 
 ```sh
 docker  build  -f Dockerfile.test  -t docker.cc.cert.org/redemption/test  .
+> [!WARNING]
 docker run -it --rm -v ${PWD}:/host -w /host docker.cc.cert.org/redemption/test  bash
 ```
 

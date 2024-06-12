@@ -29,6 +29,6 @@
 # DM23-2165
 # </legal>
 
-
-docker run --rm  -v ${PWD}:/host  --workdir /host  docker.cc.cert.org/redemption/prereq \
-  git -c safe.directory='*'  clean -dfx
+>[!WARNING]
+docker run --rm -v ${PWD}:/host --workdir /host docker.cc.cert.org/redemption/prereq \
+	git -c safe.directory='*' clean -dfx
