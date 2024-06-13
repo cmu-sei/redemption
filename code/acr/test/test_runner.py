@@ -57,7 +57,7 @@ file_handler = logging.FileHandler('logs.log')
 file_handler.setLevel(logging.DEBUG)
 file_handler.setFormatter(formatter)
 logger.addHandler(file_handler)
-dict_alert_info_patches_fps = {}
+dict_alert_info_patches_shouldnt_repairs = {}
 
 class PassStatus(Enum):
     NOT_RUN = 0
@@ -83,7 +83,7 @@ def parse_args():
     parser.add_argument("-k", type=str, dest="stringinput", help="only run tests which match the given substring expression")
     parser.add_argument("--check-ans", action="store_true", dest="check_ans")
     parser.add_argument("--create-ans", action="store_true", dest="create_ans", help="Create '.ans' file if it doesn't exist")
-    parser.add_argument("-e", action="store_true", dest="examine_is_fp", help="To determine if the test fails, examine the shouldnt_fix and patch attributes. Writes output to file named <YAML_FILENAME>.alerts_info.json")
+    parser.add_argument("-e", action="store_true", dest="examine_shouldnt_repair", help="To determine if the test fails, examine the shouldnt_fix and patch attributes. Writes output to file named <YAML_FILENAME>.alerts_info.json")
 
     argparse.cmdline_args = parser.parse_args()
     if argparse.cmdline_args.create_ans:
@@ -242,7 +242,7 @@ def run(stringinput, tests_file,
 # `run_and_check_if_answer` checks if the answer file exists, but continues testing if `stop_if_no_answer_file` is False.
 # It outputs a count of tests and number passed.
 # Currently, if `stringinput` is empty string or doesn't match any test name in the .yml file, test passes.
-def run_and_check_if_answer(examine_is_fp, stringinput, tests_file,
+def run_and_check_if_answer(examine_shouldnt_repair, stringinput, tests_file,
                             directory=".",
                             step_dir="/host/code/acr/test/step",
                             repair_in_place=None,
@@ -258,7 +258,7 @@ def run_and_check_if_answer(examine_is_fp, stringinput, tests_file,
     count_skipped_tests = 0
     pass_status = PassStatus.NOT_RUN
     answer_file_exists = False
-    dict_alert_info_patches_fps.clear()
+    dict_alert_info_patches_shouldnt_repairs.clear()
 
     if not os.path.exists(out_location):
         os.makedirs(out_location)
@@ -306,7 +306,7 @@ def run_and_check_if_answer(examine_is_fp, stringinput, tests_file,
             p.file_prefix = os.path.splitext(os.path.basename(p.cur_c_file))[0] # use for intermediate filenames and cleanup
             # If alert for a .h file, then to match brain output name, use c file
 
-            pass_status = determine_pass_status(examine_is_fp=examine_is_fp,
+            pass_status = determine_pass_status(examine_shouldnt_repair=examine_shouldnt_repair,
                           step_dir=step_dir,
                           repair_in_place=repair_in_place,
                           repair_includes_mode=p.repair_includes_mode,
@@ -332,15 +332,15 @@ def run_and_check_if_answer(examine_is_fp, stringinput, tests_file,
             all_passed_or_none_tested = 0
             print("set all_passed_or_none_tested = 0 and pass_status: ", pass_status)
 
-    if(examine_is_fp):
+    if(examine_shouldnt_repair):
         # Select info goes to *alerts_info.json file, per test.yml file.
         alerts_info_filename = tests_file+".alerts_info.json"
         with open(alerts_info_filename, "w") as outfile:
-            json.dump(dict_alert_info_patches_fps, outfile, sort_keys=True, indent=4)
+            json.dump(dict_alert_info_patches_shouldnt_repairs, outfile, sort_keys=True, indent=4)
         outfile.close()
 
     # reset the dictionary for the next time test_runner.py is called
-    dict_alert_info_patches_fps.clear()
+    dict_alert_info_patches_shouldnt_repairs.clear()
 
     print_per_test_diff(all_diff_results)
     dir_final_cleanup(step_dir, step_dir_prev_existed)
@@ -434,14 +434,14 @@ def set_paths(test, directory, repair_includes_mode):
 # This function gathers per-alert data from a brain output file and then edits a dictionary as/if needed.
 def get_alert_patch_and_fp_info_from_brain_output(file_prefix, step_dir, file_to_repair):
 
-    is_fp = False
-    patch_found = False
+    shouldnt_repair = False
+    patch = False
     alert_id = 0
-    return_is_fp_true_for_ANY_alert_in_file = False
+    return_shouldnt_repair_true_for_ANY_alert_in_file = False
     return_a_patch_for_any_alert_in_file = False
 
     brain_out_file = os.path.realpath(os.path.join(step_dir, file_prefix+".brain-out.json"))
-    # Below verifies processes `shouldnt_fix` field, using a brain output file with is_no path and is_fp true
+    # Below verifies processes `shouldnt_fix` field, using a brain output file with is_no path and shouldnt_repair true
     # brain_out_file = os.path.realpath(os.path.join("/host/code/acr/test/already_repaired_null_01.brain-out.json"))
     if(brain_out_file):
         braindata = read_json_file(brain_out_file)
@@ -450,11 +450,11 @@ def get_alert_patch_and_fp_info_from_brain_output(file_prefix, step_dir, file_to
             rule = x["rule"]
             file = x["file"]
             patch = ("patch" in x and x["patch"] != [])
-            is_fp = ("shouldnt_fix" in x and ((x["shouldnt_fix"] == True) or (x["shouldnt_fix"] == "true")))
+            shouldnt_repair = ("shouldnt_fix" in x and ((x["shouldnt_fix"] == True) or (x["shouldnt_fix"] == "true")))
 
             if(file == file_to_repair):
-                if(return_is_fp_true_for_ANY_alert_in_file == False):
-                    return_is_fp_true_for_ANY_alert_in_file = is_fp
+                if(return_shouldnt_repair_true_for_ANY_alert_in_file == False):
+                    return_shouldnt_repair_true_for_ANY_alert_in_file = shouldnt_repair
                 if(return_a_patch_for_any_alert_in_file == False):
                     return_a_patch_for_any_alert_in_file = patch
 
@@ -462,19 +462,19 @@ def get_alert_patch_and_fp_info_from_brain_output(file_prefix, step_dir, file_to
             # check if should modify 1. patch info (only False to True change); AND check if should modify
             #                        2. shouldnt_fix (only False to True change)
             try:
-                assert(dict_alert_info_patches_fps[file][rule][alert_id])
-                thispatch, this_is_fp = dict_alert_info_patches_fps[file][rule][alert_id]
-                if((not thispatch) and patch_found): #only change if was False and this is True
-                    dict_alert_info_patches_fps[file][rule][alert_id][0] = patch_found
-                if((not this_is_fp) and is_fp): #only change if was False and this is True
-                    dict_alert_info_patches_fps[file][rule][alert_id][1] = is_fp
+                assert(dict_alert_info_patches_shouldnt_repairs[file][rule][alert_id])
+                thispatch, this_shouldnt_repair = dict_alert_info_patches_shouldnt_repairs[file][rule][alert_id]
+                if((not thispatch) and patch): #only change if was False and this is True
+                    dict_alert_info_patches_shouldnt_repairs[file][rule][alert_id][0] = patch
+                if((not this_shouldnt_repair) and shouldnt_repair): #only change if was False and this is True
+                    dict_alert_info_patches_shouldnt_repairs[file][rule][alert_id][1] = shouldnt_repair
             except:
                 # Ensure that each nested key is there, prior to entering final list
-                dict_alert_info_patches_fps.setdefault(file, {}).setdefault(rule, {})[alert_id] = [patch, is_fp]
+                dict_alert_info_patches_shouldnt_repairs.setdefault(file, {}).setdefault(rule, {})[alert_id] = [patch, shouldnt_repair]
 
-    return(return_a_patch_for_any_alert_in_file, return_is_fp_true_for_ANY_alert_in_file)
+    return(return_a_patch_for_any_alert_in_file, return_shouldnt_repair_true_for_ANY_alert_in_file)
 
-def determine_pass_status(*, examine_is_fp,
+def determine_pass_status(*, examine_shouldnt_repair,
                             step_dir,
                             repair_in_place,
                             repair_includes_mode,
@@ -489,16 +489,16 @@ def determine_pass_status(*, examine_is_fp,
                             out_location,
                            **extra_kwargs):
 
-    has_is_fp_true = False
+    has_shouldnt_repair_true = False
     a_patch = False
     ret_pass_status = PassStatus.NOT_RUN
 
-    if(examine_is_fp == True):
+    if(examine_shouldnt_repair == True):
         # For set of brain output files, log info per alert with no patch in any brain output file.
         # A brain output file may have info for more than one alert. Also, it is deleted after the test, by default.
 
-        a_patch, has_is_fp_true = get_alert_patch_and_fp_info_from_brain_output(file_prefix, step_dir, file_to_repair)
-        print("get_alert_patch_and_fp_info_from_brain_output returned has_is_fp_true: ", has_is_fp_true)
+        a_patch, has_shouldnt_repair_true = get_alert_patch_and_fp_info_from_brain_output(file_prefix, step_dir, file_to_repair)
+        print("get_alert_patch_and_fp_info_from_brain_output returned has_shouldnt_repair_true: ", has_shouldnt_repair_true)
         print("and a_patch: ", a_patch)
 
     # If no repair was possible, ACR produces no output file.
@@ -530,8 +530,8 @@ def determine_pass_status(*, examine_is_fp,
                 all_diff_results.append([test_name, diff_results.args, diff_results.stdout])
                 ret_pass_status = PassStatus.FAILED
             else:
-                if((examine_is_fp == True) and (not a_patch) and (has_is_fp_true != True) and (answer_file_exists == True)):
-                    print("  failed: examine_is_fp True, no patch, has_is_fp_true not True, answer file and interdiff test result matched")
+                if((examine_shouldnt_repair == True) and (not a_patch) and (has_shouldnt_repair_true != True) and (answer_file_exists == True)):
+                    print("  failed: examine_shouldnt_repair True, no patch, has_shouldnt_repair_true not True, answer file and interdiff test result matched")
                     ret_pass_status = PassStatus.NO_PATCH # state D or B? (test vs. alert)
                 else:
                     print("  pass: test result and answer key are same")

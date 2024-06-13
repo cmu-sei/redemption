@@ -822,7 +822,7 @@
     "repairable": "false",
     "satisfactory": "wontfix",
     "llm_output_file": "dfd8eb56320fd1475c913d34.txt",
-    "issue": "REM-351"
+    "issue": "DONE REM-351"
   },
   {
     "rule": "MSC12-C",
@@ -1098,7 +1098,7 @@
     "repairable": "true",
     "satisfactory": "true",
     "llm_output_file": "f8d878f8a3a1281f0d82c3b9.txt",
-    "issue": "REM-351"
+    "issue": "DONE REM-351"
   },
   {
     "rule": "MSC12-C",
@@ -1141,7 +1141,7 @@
     "repairable": "false",
     "satisfactory": "wontfix",
     "llm_output_file": "4a7c1cc19e8c1110cca2da3e.txt",
-    "issue": "REM-351"
+    "issue": "DONE REM-351"
   },
   {
     "rule": "MSC12-C",

@@ -44,7 +44,7 @@ def parse_args():
                         help="The YML files to test")
     parser.add_argument("-k", type=str, dest="stringinput",
                         help="Only run tests (or yml files) whose name contain the given substring")
-    parser.add_argument("-e", action="store_true", dest="examine_is_fp", help="To determine if the test fails, examine the is_false_positive and patch attributes. Writes output to file named <YAML_FILENAME>.alerts_info.json")    
+    parser.add_argument("-e", action="store_true", dest="examine_shouldnt_repair", help="To determine if the test fails, examine the shouldnt_fix and patch attributes. Writes output to file named <YAML_FILENAME>.alerts_info.json")
     return parser.parse_args()
 
 
@@ -62,13 +62,13 @@ def stringinput():
 def test_oss(yfile):
     run_oss(False, "", yfile)
 
-def run_oss(examine_is_fp, stringinput, yfile):
-    assert(run_and_check_if_answer(examine_is_fp, stringinput, yfile, stop_if_no_answer_file=True) == 1)
+def run_oss(examine_shouldnt_repair, stringinput, yfile):
+    assert(run_and_check_if_answer(examine_shouldnt_repair, stringinput, yfile, stop_if_no_answer_file=True) == 1)
     print("test_oss: passed " + yfile)
 
-def run_all(examine_is_fp, stringinput, files):
+def run_all(examine_shouldnt_repair, stringinput, files):
     for yfile in files:
-        run_oss(examine_is_fp, stringinput, yfile)
+        run_oss(examine_shouldnt_repair, stringinput, yfile)
 
 if __name__ == "__main__":
     test_args = parse_args()

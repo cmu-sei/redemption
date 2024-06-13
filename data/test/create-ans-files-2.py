@@ -70,10 +70,10 @@ data = json.load(file)
 for x in data:
     if("satisfactory" in x):
         sat_value = x["satisfactory"]
-        if(sat_value == "true"):
+        if(sat_value == "false"):
             x_filename = x["file"]
             #testname = re.sub(r'[.]([^.]*)$', r'_\1', x_filename)
-            testname = re.sub(r'[/]|(?<=\w)\.(?=[^/]*$)', r'_', x_filename)            
+            testname = re.sub(r'[/]|(?<=\w)\.(?=[^/]*$)', r'_', x_filename)
             print("test_name: ", testname)
             dotansfilename = re.sub(r'\.alerts\.json$', "."+testname, alertsfilename)
             dotansfilename = dotansfilename+".ans"
@@ -84,7 +84,7 @@ for x in data:
             if(args.verbose):
                 print("file: ",x["file"])
                 print("line: ",x["line"])
-            
+
             if(args.test):
                 # Test and redirect output to a file. Create .ans file if none previously and there's a repair.
                 my_cmd = ["python3", "/host/code/acr/test/test_runner.py","-k", testname, ymlfilename, "--create-ans"]
@@ -106,4 +106,3 @@ for x in data:
                 outfile.close()
 
 file.close()
-

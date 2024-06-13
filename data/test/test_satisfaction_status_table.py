@@ -123,21 +123,21 @@ verdict_true_complex_pattern = re.compile("true|complex|true (complex)")
 satisfactory_true_pattern = re.compile("true")
 errors = 0
 
-def pass_state(*, satisfactory, patch, verdict, is_fp, repairable, cs):
-    print("satisfactory: ", satisfactory, "patch: ", patch, "verdict: ", verdict, "repairable: ", repairable, "is_fp: ", is_fp)
+def pass_state(*, satisfactory, patch, verdict, shouldnt_repair, repairable, cs):
+    print("satisfactory: ", satisfactory, "patch: ", patch, "verdict: ", verdict, "repairable: ", repairable, "shouldnt_repair: ", shouldnt_repair)
     r_tp = bool(repairable_true_pattern.match(repairable)) or "false"
     v_tcp = bool(verdict_true_complex_pattern.match(verdict)) or "false"
     s_tp = bool(satisfactory_true_pattern.match(satisfactory)) or "false"
-    #switch_string = str(s_tp).lower()+"."+str(patch).lower()+"."+str(v_tcp).lower()+"."+str(r_tp).lower()+"."+str(is_fp).lower()
+    #switch_string = str(s_tp).lower()+"."+str(patch).lower()+"."+str(v_tcp).lower()+"."+str(r_tp).lower()+"."+str(shouldnt_repair).lower()
     switch_string = str(s_tp).lower()+"."+str(patch).lower()+"."+str(v_tcp).lower()
-    # Other values not in case statements: str(r_tp).lower() and str(is_fp).lower()
+    # Other values not in case statements: str(r_tp).lower() and str(shouldnt_repair).lower()
     repairable_tp = str(r_tp).lower()
-    is_false_positive = str(is_fp).lower()
+    shouldnt_repair = str(shouldnt_repair).lower()
     found_error = 0
     print("switch_string: ", switch_string)
     match switch_string:
       # "satisfactory.patch.verdict" is the key for the states case strings below.
-      # (repairable,  is_fp)  are the additional fields to inspect. In-order: str(r_tp).lower() and str(is_fp).lower()
+      # (repairable,  shouldnt_repair)  are the additional fields to inspect. In-order: str(r_tp).lower() and str(shouldnt_repair).lower()
       case "true.true.true":
         if(repairable_tp == "false"):
           print("State A error, repairable field false. Mark `satisfaction` field false in alerts.json file, then rerun.");
@@ -145,30 +145,30 @@ def pass_state(*, satisfactory, patch, verdict, is_fp, repairable, cs):
         cs.countA += 1;
         return "A"
       case "true.true.false":
-        if((repairable_tp == "false") and (is_false_positive == "true")):
-          print("State C error, is_false_positive: ", is_false_positive, "repairable_tp: ", repairable_tp);
+        if((repairable_tp == "false") and (shouldnt_repair == "true")):
+          print("State C error, shouldnt_repair: ", shouldnt_repair, "repairable_tp: ", repairable_tp);
           cs.count_errors += 1;
         cs.countC += 1;
         return "C"
       case "true.false.true":
-        if((repairable_tp == "true") and (is_false_positive == "false")):
-          print("Error, no matching pass state. Mark `satisfaction` field false in alerts.json file, then rerun this script. is_false_positive: ", is_false_positive, "repairable_tp: ", repairable_tp);
+        if((repairable_tp == "true") and (shouldnt_repair == "false")):
+          print("Error, no matching pass state. Mark `satisfaction` field false in alerts.json file, then rerun this script. shouldnt_repair: ", shouldnt_repair, "repairable_tp: ", repairable_tp);
         cs.count_errors += 1;
         cs.count_unmatched += 1;
         return "Error, no matching pass state"
       case "true.false.false":
-        if((repairable_tp == "true") and (is_false_positive == "false")):
-            print("State B error, repairable field true and is_false_positive field false. Mark `satisfaction` field false in alerts.json file, after that the state will map to E. (Detail: It's repairable but no patch was done AND it's a false positive verdict but is_fp is false. It might have previously been marked satisfactory since code wasn't broken. By changing `satisfactory` to false, then we get state E ... OR, by changing `repairable` to false, we would get a different error message recommending another change which then results in state E.)");
+        if((repairable_tp == "true") and (shouldnt_repair == "false")):
+            print("State B error, repairable field true and shouldnt_repair field false. Mark `satisfaction` field false in alerts.json file, after that the state will map to E. (Detail: It's repairable but no patch was done AND it's a false positive verdict but shouldnt_repair is false. It might have previously been marked satisfactory since code wasn't broken. By changing `satisfactory` to false, then we get state E ... OR, by changing `repairable` to false, we would get a different error message recommending another change which then results in state E.)");
             found_error = 1;
         else:
             if(repairable_tp == "true"):
                 print("State B error, repairable_tp: ", repairable_tp);
                 found_error = 1;
-            if(is_false_positive == "false"):
-                print("State B error, is_false_positive: ", is_false_positive);
+            if(shouldnt_repair == "false"):
+                print("State B error, shouldnt_repair: ", shouldnt_repair);
                 found_error = 1;
                 if(repairable_tp == "false"):
-                    print("Mark `satisfaction` field false in alerts.json file, then rerun this script. is_false_positive: ", is_false_positive, "repairable_tp: ", repairable_tp);
+                    print("Mark `satisfaction` field false in alerts.json file, then rerun this script. shouldnt_repair: ", shouldnt_repair, "repairable_tp: ", repairable_tp);
         if(found_error == 1):
             cs.count_errors += 1;
         cs.countB += 1;
@@ -186,8 +186,8 @@ def pass_state(*, satisfactory, patch, verdict, is_fp, repairable, cs):
         cs.countD += 1;
         return "D"
       case "false.false.false":
-        if(is_false_positive == "true"):
-            print("State E error, is_false_positive: ", is_false_positive);
+        if(shouldnt_repair == "true"):
+            print("State E error, shouldnt_repair: ", shouldnt_repair);
             cs.count_errors += 1;
         cs.countE += 1;
         return "E"
@@ -257,10 +257,10 @@ for rule in rules:
                                     print("wasn't able to access braindata, skipping this alert")
                                     continue
                                 if(this_brain_data):
-                                    print("this_brain_data is [patch, is_fp]: ", this_brain_data)
+                                    print("this_brain_data is [patch, shouldnt_repair]: ", this_brain_data)
                                     patch = this_brain_data[0]
-                                    is_fp = this_brain_data[1]
-                                    state = pass_state(satisfactory=satisfactory, patch=patch, verdict=verdict,  is_fp=is_fp, repairable=repairable, cs=cs)
+                                    shouldnt_repair = this_brain_data[1]
+                                    state = pass_state(satisfactory=satisfactory, patch=patch, verdict=verdict,  shouldnt_repair=shouldnt_repair, repairable=repairable, cs=cs)
                                     print("state: ",state)
                                 else:
                                     print("this_brain_data empty for this alert")
@@ -295,7 +295,7 @@ for rule in rules:
             except KeyError:
                 print("No value_found_2")
                 continue
-            try: 
+            try:
                 value_found3 = sample_results[rule][codebase][tool][2]
             except KeyError:
                 print("No value_found_3")
@@ -308,4 +308,3 @@ for rule in rules:
             print(str(value_found1)+"%  ("+str(value_found2)+")   [Per-state counts: "+value_found3+"] ")
             print("count_unmatched, count_errors: ", str(info_found))
     print("\n") # newline per rule
-

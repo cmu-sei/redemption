@@ -427,7 +427,10 @@ class Brain(AstVisitor):
         # always find the end of a range of intervals that begins with
         # the same start location.
         loc, _ = item
-        return (loc.file, loc.begin, (0, loc.end), -loc.id)
+        loc_id = loc.id
+        if loc_id is None:
+            loc_id = 0
+        return (loc.file, loc.begin, (0, loc.end), -loc_id)
 
     def minimum_spanning(self, node, lc, filename):
         while node is not None:

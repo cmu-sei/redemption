@@ -1,0 +1,17 @@
+--- /host/data/test/out/auxil/highwayhash/highwayhash/os_specific.cc	2024-06-12 01:31:44.734078914 +0000
++++ /oss/zeek/auxil/highwayhash/highwayhash/os_specific.cc	2024-05-09 21:56:48.295833149 +0000
+@@ -1,5 +1,3 @@
+-#include "acr.h"
+-
+ // Copyright 2017 Google Inc. All Rights Reserved.
+ //
+ // Licensed under the Apache License, Version 2.0 (the "License");
+@@ -126,7 +124,7 @@
+ 
+ ThreadAffinity* GetThreadAffinity() {
+   ThreadAffinity* affinity =
+-      static_cast<ThreadAffinity*>(null_check(malloc(sizeof(ThreadAffinity))));
++      static_cast<ThreadAffinity*>(malloc(sizeof(ThreadAffinity)));
+ #if OS_WIN
+   DWORD_PTR system_affinity;
+   const BOOL ok = GetProcessAffinityMask(GetCurrentProcess(), &affinity->mask,
