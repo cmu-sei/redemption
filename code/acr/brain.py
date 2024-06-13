@@ -314,7 +314,7 @@ class Brain(AstVisitor):
                 end = node.get_end_lc()
                 if end is None:
                     return
-                node_id = node.get("id", None)
+                node_id = node.get("id", 0)
                 if isinstance(node_id, str):
                     node_id = node.get("prevId", 0)
                 self.intervals.append((self.Location(filename, begin, end, node_id), node))
