@@ -374,14 +374,46 @@ class EXP34_C_CLANG_TIDY(EXP34_C):
         self.get_dereference_type()
         return super().locate_repairable_node(node)
 
-    def find_node(self, context):
-        message = self.get("message","")
-        m = re.match("Null pointer passed to ([0-9]+).. parameter", message)
-        if m:
-            if context.get("kind") != "CallExpr":
+    def handle_generic_NonNullParamChecker(self, context):
+        """Handle a generic NonNullParamChecker alert.
+
+        In this case, we do not know which parameter has the problem,
+        so only attempt a repair if only one parameter contains a
+        pointer dereference."""
+        items = context.get("inner")
+        if items is None:
+            return None
+        match context.get('kind'):
+            case "CallExpr" | "CXXConstructExpr":
+                pass
+            case "CXXMemberCallExpr":
+                # For this case, the first item is the method to call; skip that.
+                items = iter(items)
+                next(items)
+            case _:
                 return None
-            param_ordinal = int(m.group(1))
-            return context["inner"][param_ordinal]
+        found = None
+        # Only succeed if we find a single pointer dereference among the arguments
+        for expr in items:
+            pointers = filter(self.pointer_filter, expr.traverse_descendants())
+            for pointer in pointers:
+                if found is None:
+                    found = pointer
+                else:
+                    return None
+        return found
+
+    def find_node(self, context):
+        if self.get("checker") == "clang-analyzer-core.NonNullParamChecker":
+            message = self.get("message","")
+            m = re.match("Null pointer passed to ([0-9]+).. parameter", message)
+            if m:
+                if context.get("kind") != "CallExpr":
+                    return None
+                param_ordinal = int(m.group(1))
+                return context["inner"][param_ordinal]
+            else:
+                return self.handle_generic_NonNullParamChecker(context)
         return super().find_node(context)
 
 
@@ -483,6 +515,3 @@ def alert_from_dict(json_alert):
         if found is not None:
             return found(json_alert)
     return NullAlert(json_alert)
-
-
-

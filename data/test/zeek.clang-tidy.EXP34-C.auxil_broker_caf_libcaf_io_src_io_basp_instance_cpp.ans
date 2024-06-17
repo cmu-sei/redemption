@@ -1,0 +1,62 @@
+--- /host/data/test/out/auxil/broker/caf/libcaf_io/src/io/basp/instance.cpp	2024-06-14 20:47:15.689263740 +0000
++++ /oss/zeek/auxil/broker/caf/libcaf_io/src/io/basp/instance.cpp	2024-04-25 15:49:31.000000000 +0000
+@@ -1,5 +1,3 @@
+-#include "acr.h"
+-
+ // This file is part of CAF, the C++ Actor Framework. See the file LICENSE in
+ // the main distribution directory for license terms and copyright or visit
+ // https://github.com/actor-framework/actor-framework/blob/master/LICENSE.
+@@ -322,7 +320,7 @@
+     case message_type::server_handshake: {
+       using string_list = std::vector<std::string>;
+       // Deserialize payload.
+-      binary_deserializer source{ctx, *null_check(payload)};
++      binary_deserializer source{ctx, *payload};
+       node_id source_node;
+       string_list app_ids;
+       actor_id aid = invalid_actor_id;
+@@ -378,7 +376,7 @@
+     }
+     case message_type::client_handshake: {
+       // Deserialize payload.
+-      binary_deserializer source{ctx, *null_check(payload)};
++      binary_deserializer source{ctx, *payload};
+       node_id source_node;
+       if (!source.apply(source_node)) {
+         CAF_LOG_WARNING("unable to deserialize payload of client handshake:"
+@@ -400,7 +398,7 @@
+     }
+     case message_type::routed_message: {
+       // Deserialize payload.
+-      binary_deserializer source{ctx, *null_check(payload)};
++      binary_deserializer source{ctx, *payload};
+       node_id source_node;
+       node_id dest_node;
+       if (!source.apply(source_node) || !source.apply(dest_node)) {
+@@ -426,7 +424,7 @@
+       if (worker != nullptr) {
+         CAF_LOG_DEBUG("launch BASP worker for deserializing a"
+                       << hdr.operation);
+-        worker->launch(last_hop, hdr, *null_check(payload));
++        worker->launch(last_hop, hdr, *payload);
+       } else {
+         CAF_LOG_DEBUG("out of BASP workers, continue deserializing a"
+                       << hdr.operation);
+@@ -459,7 +457,7 @@
+     }
+     case message_type::monitor_message: {
+       // Deserialize payload.
+-      binary_deserializer source{ctx, *null_check(payload)};
++      binary_deserializer source{ctx, *payload};
+       node_id source_node;
+       node_id dest_node;
+       if (!source.apply(source_node) || !source.apply(dest_node)) {
+@@ -475,7 +473,7 @@
+     }
+     case message_type::down_message: {
+       // Deserialize payload.
+-      binary_deserializer source{ctx, *null_check(payload)};
++      binary_deserializer source{ctx, *payload};
+       node_id source_node;
+       node_id dest_node;
+       error fail_state;
