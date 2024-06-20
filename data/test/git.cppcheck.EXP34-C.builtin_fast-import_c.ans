@@ -1,0 +1,44 @@
+--- /host/data/test/out/builtin/fast-import.c	2024-06-13 21:21:10.179099987 +0000
++++ /oss/git/builtin/fast-import.c	2024-05-09 21:57:04.080833902 +0000
+@@ -1,5 +1,3 @@
+-#include "acr.h"
+-
+ #include "builtin.h"
+ #include "cache.h"
+ #include "repository.h"
+@@ -1273,7 +1271,7 @@
+ 	}
+ 
+ 	c = buf;
+-	while (c != (null_check(buf) + size)) {
++	while (c != (buf + size)) {
+ 		struct tree_entry *e = new_tree_entry();
+ 
+ 		if (t->entry_count == t->entry_capacity)
+@@ -1285,7 +1283,7 @@
+ 		if (!c)
+ 			die("Corrupt mode in %s", oid_to_hex(oid));
+ 		e->versions[0].mode = e->versions[1].mode;
+-		e->name = to_atom(c, strlen(null_check(c)));
++		e->name = to_atom(c, strlen(c));
+ 		c += e->name->str_len + 1;
+ 		oidread(&e->versions[0].oid, (unsigned char *)c);
+ 		oidread(&e->versions[1].oid, (unsigned char *)c);
+@@ -2547,7 +2545,7 @@
+ {
+ 	if (!buf || size < the_hash_algo->hexsz + 6)
+ 		die("Not a valid commit: %s", oid_to_hex(&b->oid));
+-	if (memcmp("tree ", null_check(buf), 5)
++	if (memcmp("tree ", buf, 5)
+ 		|| get_oid_hex(buf + 5, &b->branch_tree.versions[1].oid))
+ 		die("The commit %s is corrupt", oid_to_hex(&b->oid));
+ 	oidcpy(&b->branch_tree.versions[0].oid,
+@@ -3332,7 +3330,7 @@
+ 	if (!f)
+ 		die(_("Expected format name:filename for submodule rewrite option"));
+ 	*f = '\0';
+-	null_check(f)++;
++	f++;
+ 	CALLOC_ARRAY(ms, 1);
+ 
+ 	fp = fopen(f, "r");

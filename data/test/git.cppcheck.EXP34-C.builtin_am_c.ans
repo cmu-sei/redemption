@@ -1,0 +1,17 @@
+--- /host/data/test/out/builtin/am.c	2024-06-13 21:24:48.971444783 +0000
++++ /oss/git/builtin/am.c	2024-05-09 21:57:04.070833902 +0000
+@@ -1,5 +1,3 @@
+-#include "acr.h"
+-
+ /*
+  * Builtin "git am"
+  *
+@@ -1370,7 +1368,7 @@
+ 	msg = strstr(buffer, "\n\n");
+ 	if (!msg)
+ 		die(_("unable to parse commit %s"), oid_to_hex(&commit->object.oid));
+-	state->msg = xstrdup(null_check(msg) + 2);
++	state->msg = xstrdup(msg + 2);
+ 	state->msg_len = strlen(state->msg);
+ 	unuse_commit_buffer(commit, buffer);
+ }

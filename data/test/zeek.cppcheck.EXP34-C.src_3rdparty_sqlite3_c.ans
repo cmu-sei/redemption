@@ -1,5 +1,5 @@
---- /host/data/test/out/src/3rdparty/sqlite3.c	2024-01-10 18:24:24.481181010 +0000
-+++ /oss/zeek/src/3rdparty/sqlite3.c	2023-11-21 18:09:52.000000000 +0000
+--- /host/data/test/out/src/3rdparty/sqlite3.c	2024-06-14 00:19:50.240661108 +0000
++++ /oss/zeek/src/3rdparty/sqlite3.c	2024-05-09 21:57:03.106833856 +0000
 @@ -1,5 +1,3 @@
 -#include "acr.h"
 -
@@ -10,7 +10,7 @@
  #endif
  
    xRecordCompare = sqlite3VdbeFindCompare(pIdxKey);
--  null_check(pIdxKey)->errCode = 0;
+-  null_check(pIdxKey, return 0)->errCode = 0;
 +  pIdxKey->errCode = 0;
    assert( pIdxKey->default_rc==1
         || pIdxKey->default_rc==0
@@ -28,7 +28,7 @@
  static int tabIsReadOnly(Parse *pParse, Table *pTab){
    sqlite3 *db;
    if( IsVirtual(pTab) ){
--    return null_check(sqlite3GetVTable, return 0)(pParse->db, pTab)->pMod->pModule->xUpdate==0;
+-    return null_check(sqlite3GetVTable(pParse->db, pTab), return 0)->pMod->pModule->xUpdate==0;
 +    return sqlite3GetVTable(pParse->db, pTab)->pMod->pModule->xUpdate==0;
    }
    if( (pTab->tabFlags & (TF_Readonly|TF_Shadow))==0 ) return 0;
@@ -51,30 +51,21 @@
    if( !sqlite3SafetyCheckOk(db)||zSql==0 ){
      return SQLITE_MISUSE_BKPT;
    }
-@@ -136374,7 +136372,7 @@
-         pColExpr = pColExpr->pRight;
-         assert( pColExpr!=0 );
-       }
--      if( null_check(pColExpr)->op==TK_COLUMN
-+      if( pColExpr->op==TK_COLUMN
-        && ALWAYS( ExprUseYTab(pColExpr) )
-        && (pTab = pColExpr->y.pTab)!=0
-       ){
 @@ -137927,7 +137925,7 @@
  #endif
      {
        Expr *pNew;
--      Expr *pCopy = null_check(pSubst->pEList->a)[pExpr->iColumn].pExpr;
+-      Expr *pCopy = null_check(pSubst, return NULL)->pEList->a[pExpr->iColumn].pExpr;
 +      Expr *pCopy = pSubst->pEList->a[pExpr->iColumn].pExpr;
        Expr ifNullRow;
        assert( pSubst->pEList!=0 && pExpr->iColumn<pSubst->pEList->nExpr );
        assert( pExpr->pRight==0 );
-@@ -173056,7 +173054,7 @@
+@@ -173106,7 +173104,7 @@
      zFilename += sqlite3Strlen30(zFilename) + 1;
      zFilename += sqlite3Strlen30(zFilename) + 1;
    }
--  return null_check(zFilename)[0] ? zFilename : 0;
-+  return zFilename[0] ? zFilename : 0;
+-  return null_check(zFilename, return NULL) + 1;
++  return zFilename + 1;
  }
- 
- /*
+ SQLITE_API const char *sqlite3_filename_wal(const char *zFilename){
+ #ifdef SQLITE_OMIT_WAL

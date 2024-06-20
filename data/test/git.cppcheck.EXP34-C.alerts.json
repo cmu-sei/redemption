@@ -22,7 +22,7 @@
     "tool": "cppcheck",
     "checker": "nullPointerArithmeticRedundantCheck",
     "message": "Either the condition '!msg' is redundant or there is pointer arithmetic with NULL pointer.",
-    "satisfactory": "false",
+    "satisfactory": "true",
     "verdict": "false",
     "repairable": "false",
     "rationale": "There already was a check if `msg` was null 2 lines above the code location that was indicated. However, what if there was an overflow? (since the current line has `msg + 2`). `xstrdup` is an error-checking version of the common `strdup` routine, which creates a duplicate of a string by allocating memory for the copy with `malloc`. They never return unless there was no problem... the caller does not need to check for a NULL return value. See https://manpages.org/xstrdup/3  Therefore, if there was an overflow causing it to be null, then the program terminates. Therefore, this alert is a false positive.",
@@ -52,12 +52,12 @@
     "tool": "cppcheck",
     "checker": "nullPointerRedundantCheck",
     "message": "Either the condition '!c' is redundant or there is possible null pointer dereference: c.",
-    "satisfactory": "false",
+    "satisfactory": "true",
     "verdict": "false",
     "repairable": "false",
     "rationale": "There is a check for `!c` being different than 0, and the program dies if so, in lines above. So, the alert is a false positive.",
     "randomness": "random and first_five",
-    "issue": "REM-206 and REM-366"
+    "issue": "REM-206 DONE REM-366"
   },
   {
     "rule": "EXP34-C",
@@ -67,7 +67,7 @@
     "tool": "cppcheck",
     "checker": "nullPointerRedundantCheck",
     "message": "Either the condition '!buf' is redundant or there is possible null pointer dereference: buf.",
-    "satisfactory": "false",
+    "satisfactory": "true",
     "verdict": "false",
     "repairable": "false",
     "rationale": "If buf is null, then the die function ends the program. This is a false positive, because the checker doesn't realize that the die function never returns.",
