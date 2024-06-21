@@ -33,7 +33,7 @@
 # DM23-2165
 # </legal>
 
-FROM ubuntu:mantic
+FROM ubuntu:noble
 
 # Apt packages
 RUN apt-get update \
