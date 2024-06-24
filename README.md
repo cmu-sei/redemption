@@ -58,6 +58,24 @@ Redemption can currently repair the following categories of alerts. These alerts
 
 We hope to add more categories soon.
 
+The repairs we make are very simple:
+
+For a null pointer dereference, we use a `null_check()` macro to protect any pointer that might be null. That is, we replace any expression `x` that might represent a null pointer, with the value `null_check(x)`. This macro is defined in [acr.h](code/acr/acr.h). and it effectively invokes error-handling code if `x` is null. Here `x` can be any expression; it need not be a pointer variable.  By default, the error-handling code aborts the program (via `abort()`), but you can override it to have more specific behaviors, such as `return NULL`, if you are inside a function that returns NULL on an error.
+
+For an uninitialized value read, we simply go to the variable's declaration, and set it to 0 (or the equivalent of 0 for the variable's type...it could be 0.0 for floats for example).
+
+For ineffective code, the simplest solution is to remove the portion of the statement or expression that is ineffective. For example, evaluating some expression, and assigning the result to a variable that is never read, such as:
+
+    x = foo(...);
+
+can be repaired by preserving the expression and removing the assignment.
+
+    (void) foo(...);
+
+(Casting a function's return value to `(void)` is a common indication that the function's return value is to be ignored. See [Exception 1 of CERT rule EXP12-C](https://wiki.sei.cmu.edu/confluence/x/mtYxBQ) for more information.
+
+Note that this code is ineffective only if the assignment can be proved not to invoke a C++ constructor, destructor, overloaded assignment operator or overloaded conversion or cast operators, which might have side effects.
+
 ## Build instructions
 
 The code is designed to run inside a Docker container, which means you will need Docker. To build the Docker container:
