@@ -95,6 +95,7 @@ docker run -it --rm docker.cc.cert.org/redemption/distrib  bash
 
 Note that this container contains the entire Redemption code...this is useful if you intend to run Redemption, but have no plans to modify or tweak the code.  If you plan to modify the code, use the `prereq` container instead:
 
+> [!WARNING]
 ```sh
 docker run -it --rm -v ${PWD}:/host -w /host  docker.cc.cert.org/redemption/prereq  bash
 ```
@@ -120,6 +121,7 @@ There is a `test` Docker container that you can build and test with. It builds `
 
 ```sh
 docker  build  -f Dockerfile.test  -t docker.cc.cert.org/redemption/test  .
+> [!WARNING]
 docker run -it --rm -v ${PWD}:/host -w /host docker.cc.cert.org/redemption/test  bash
 ```
 
@@ -253,7 +255,7 @@ bear -- make
 
 To enable the Redemption container to run repairs on your local code directories, you should volume-share them with `-v` when you launch the container.  For example, to volume-share a local directory `/code`:
 
-`docker run -it --rm -v /code:/myCode docker.cc.cert.org/redemption/distrib  bash`
+`docker run -it --rm -v /<host_dir>:/host/host_code docker.cc.cert.org/redemption/distrib  bash`
 
 See https://docs.docker.com/storage/volumes/ for more information on volume-sharing.
 See https://docs.docker.com/reference/cli/docker/container/run/ for more information about options using the `docker run` command.

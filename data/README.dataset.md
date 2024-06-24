@@ -49,11 +49,13 @@ First, build both Docker containers. Then run the first one.
 
 ``` shell
 docker build -f Dockerfile.rosecheckers -t data_container .
+> [!WARNING]
 docker run -it --rm -v ${PWD}:/host -v ${PWD}/datasets:/datasets  -w /host data_container bash
 ```
 
 ``` shell
 docker build -f Dockerfile.redemption  -t clang_tidy_data_container .
+> [!WARNING]
 docker run -it --rm -v ${PWD}:/host -v ${PWD}/datasets:/datasets  -w /host clang_tidy_data_container bash
 ```
 
