@@ -78,33 +78,55 @@ Note that this code is ineffective only if the assignment can be proved not to i
 
 ## Build instructions
 
-The code is designed to run inside a Docker container, which means you will need Docker. To build the Docker container:
+The code is designed to run inside a Docker container, which means you will need Docker. We provide three useful containers for working with Redemption.
+
+### `prereq` Image
+
+This image contains all the dependencies needed to run the repair tool, but it does not actually contain the repair tool itself. This container is useful if you wish to debug or extend the tool itself, as you can edit Redemption files on your host and immediately access them in the container.
+
+To build this Docker container:
 
 ```sh
 docker  build -f Dockerfile.prereq   -t docker.cc.cert.org/redemption/prereq   .
+```
+
+This command starts a Bash shell in the container: (Note that to run Redemption, you must make your Redemption folder available to the container...if you omit the `-v` argument and its value, the container cannot access or run the repair code.)
+
+```sh
+docker run -it --rm  -v ${PWD}:/host -w /host  docker.cc.cert.org/redemption/prereq  bash
+```
+
+### `distrib` Image
+
+This image is just like the `prereq` image, but it also contains the Redemption code.  We recommend using this container if you wish to run Redemption without modifying or extending it.
+
+The build command is:
+
+```sh
 docker  build -f Dockerfile.distrib  -t docker.cc.cert.org/redemption/distrib  .
 ```
 
-This image contains all the dependencies needed to run the repair tool. (It does not actually contain the repair tool itself.)
-
-This command starts a Bash shell in the container:
+And the run command is:
 
 ```sh
-docker run -it --rm docker.cc.cert.org/redemption/distrib  bash
+docker run -it --rm  docker.cc.cert.org/redemption/distrib  bash
 ```
 
-Note that this container contains the entire Redemption code...this is useful if you intend to run Redemption, but have no plans to modify or tweak the code.  If you plan to modify the code, use the `prereq` container instead:
+Unlike the `distrib` container, the `prereq` container does not contain the Redemption code; it just contains dependencies necessary to run Redemption. But the Redemption code lives outside the container, on a shared volume.  This allows you to modify the Redemption code on the host, while accessing it within the container.
+
+### `test` Image
+
+There is a `test` Docker image that you can use to extensively test Redemption. It downloads and builds the `git` and `zeek` OSS projects. Building zeek takes about 40 minutes on one machine.  Like the `prereq` image, the `test` image does not actually contain the Redemption code, so you will need to explicitly share the Redemption volume when you launch the container. To build and run the `test` container:  
 
 ```sh
-docker run -it --rm -v ${PWD}:/host -w /host  docker.cc.cert.org/redemption/prereq  bash
+docker  build  -f Dockerfile.test  -t docker.cc.cert.org/redemption/test  .
+docker run -it --rm  -v ${PWD}:/host -w /host  docker.cc.cert.org/redemption/test  bash
 ```
-
-Unlike the `distrib` container, the `prereq` container does not contain the Redemption code...it just contains dependencies necessary to run Redemption. But the Redemption code lives outside the container, on a shared volume.  This allows you to modify the Redemption code on the host, while accessing it within the container.
 
 <a name="simple-sanity-test"></a>
 ### Simple Sanity Test
 
-The tool has a simple sanity test that you can run in the `distrib` container. It uses pytest to run all the tests in the `/host/code/acr/test` directory of the container (all in functions with names starting with `test_`)  After launching the `distrib` container, the following commands will run a few sanity tests:
+The tool has a simple sanity test that you can run in the `distrib` container. It uses `pytest` to run all the tests in the `/host/code/acr/test` directory of the container (all in functions with names starting with `test_`)  After launching the `distrib` container, the following commands will run a few sanity tests:
 
 ```sh
 pushd /host/code/acr/test
@@ -113,17 +135,21 @@ pytest
 
 All tests should pass.
 
-<a name="docker-container-test"></a>
-### Docker Container `test`
+### Mounting other volumes
 
-There is a `test` Docker container that you can build and test with. It builds `git` and `zeek`. Building zeek takes about 40 minutes on one machine.  To build and run the `test` container:
+As with any Docker containers, you may share other folders with the Redemption container by mounting other volumes.  We recommend mounting a volume that contains the code you wish to repair. For example if your codebase to repair lives in `/opt/code`, you can mount it in any container:
 
 ```sh
-docker  build  -f Dockerfile.test  -t docker.cc.cert.org/redemption/test  .
-docker run -it --rm -v ${PWD}:/host -w /host docker.cc.cert.org/redemption/test  bash
+docker run -it --rm  -v ${PWD}:/host -w /host  -v /opt/code:/codebase  docker.cc.cert.org/redemption/prereq  bash
+docker run -it --rm  -v /opt/code:/codebase  docker.cc.cert.org/redemption/distrib  bash
 ```
 
-<a name="running-the-redemption-tool"></a>
+Many codebases are configured to build in a particular location. If your code will not build properly unless it lives in a directory like `/opt/codebase`, then you should mount it in the container in the same directory:
+
+```sh
+docker run -it --rm  -v ${PWD}:/host -w /host  -v /opt/code:/opt/code  docker.cc.cert.org/redemption/prereq  bash
+docker run -it --rm  -v /opt/code:/opt/code  docker.cc.cert.org/redemption/distrib  bash
+
 ## Demos
 
 In the `doc/examples` directory, there are several demos, each living in its own directory. The following table lists each demo; its title is the same as the folder containing the demo. The demos differ in the properties of the code they repair, and this is reflected in the `Codebase` column:
@@ -136,6 +162,7 @@ In the `doc/examples` directory, there are several demos, each living in its own
 
 If you are new to the Redemption tool, we recommend going through at least one of these demos.  If you wish to repair a single C file, you should study the `simple` demo. If you wish to repair a multi-file codebase, and you can build the codebase in the Redemption container, you should study the `codebase` demo. If your code does not build in the Redemption container, you should study the `separate_build` demo.
 
+<a name="running-the-redemption-tool"></a>
 ## Running the Redemption Tool
 
 <a name="background"></a>
@@ -251,9 +278,9 @@ bear -- make
 <a name="volume-sharing-and-docker-run"></a>
 ### Volume-sharing and `docker run`
 
-To enable the Redemption container to run repairs on your local code directories, you should volume-share them with `-v` when you launch the container.  For example, to volume-share a local directory `/code`:
+To enable the Redemption container to run repairs on your local code directories, you should volume-share them with `-v` when you launch the container.  For example, to volume-share a local directory `./code`:
 
-`docker run -it --rm -v /code:/myCode docker.cc.cert.org/redemption/distrib  bash`
+`docker run -it --rm -v ./code:/myCode docker.cc.cert.org/redemption/distrib  bash`
 
 See https://docs.docker.com/storage/volumes/ for more information on volume-sharing.
 See https://docs.docker.com/reference/cli/docker/container/run/ for more information about options using the `docker run` command.

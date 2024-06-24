@@ -50,10 +50,10 @@ You can try to repair other codebases, or other versions of the `dos2unix` codeb
 
 ### Creating a build file
 
-For the rest of these instructions, you should execute the commands inside the `distrib` Docker container, and `cd` into this directory.  To set this up, run this command in the top-level Redemption directory:
+For the rest of these instructions, you should execute the commands inside the `prereq` Docker container, and `cd` into this directory.  To set this up, run this command in the top-level Redemption directory:
 
 ``` sh
-docker run -it --rm  -v ${PWD}:/host  docker.cc.cert.org/redemption/distrib  bash
+docker run -it --rm  -v ${PWD}:/host  docker.cc.cert.org/redemption/prereq  bash
 ```
 
 (See the toplevel [README.md](../../../README.md) instructions for details on how to build this container if necessary.
@@ -64,7 +64,7 @@ Then, inside the shell this command gives you, go back to the demo directory:
 pushd doc/examples/codebase
 ```
 
-The following command, when run in the `distrib` container, creates the `compile_commands.json` file for dos2unix:
+The following command, when run in the `prereq` container, creates the `compile_commands.json` file for dos2unix:
 
 ``` sh
 pushd dos2unix-7.5.2

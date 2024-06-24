@@ -31,8 +31,8 @@
 
 
 docker run --rm  -v ${PWD}:/host  --workdir /host  docker.cc.cert.org/redemption/prereq \
-       rm junit.markings.xml ; \
-       echo cleaned
+       rm junit.markings.xml
+echo cleaned
 docker run --rm  -v ${PWD}:/host  --workdir /host  docker.cc.cert.org/redemption/prereq \
-       pytest --junit-xml=junit.markings.xml -v update_markings.py ; \
-       echo markings pytest done
+       pytest --junit-xml=junit.markings.xml -v update_markings.py
+echo markings pytest done

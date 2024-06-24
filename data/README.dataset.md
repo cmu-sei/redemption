@@ -53,7 +53,7 @@ docker run -it --rm -v ${PWD}:/host -v ${PWD}/datasets:/datasets  -w /host data_
 ```
 
 ``` shell
-docker build -f Dockerfile.redemption  -t clang_tidy_data_container .
+docker build -f Dockerfile.prereq  -t clang_tidy_data_container .
 docker run -it --rm -v ${PWD}:/host -v ${PWD}/datasets:/datasets  -w /host clang_tidy_data_container bash
 ```
 
