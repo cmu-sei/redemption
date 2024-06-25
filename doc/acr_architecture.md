@@ -1,5 +1,7 @@
 # ACR Requirements & Architecture
 
+## Copyright
+
 <legal>
 'Redemption' Automated Code Repair Tool
 Copyright 2023, 2024 Carnegie Mellon University.
@@ -136,7 +138,11 @@ The definition of the ACR_CONVERT() macro would be provided in <acr.h>. The macr
 
 ## Architecture
 
-See quarterly review slides for the architecture
+Here is a quick diagram of how the Redemption tool is put together.
+
+![Module Diagram](images/module_diagram.png)
+
+Note that this diagram is out-of-date. What used to be the Hand module has been integrated into the Brain module.
 
 ### Ear
 
@@ -173,7 +179,7 @@ Knowing when to add parentheses back to the AST was tricky and bug-prone.  So we
 
 Old ACR did use AST for de-fattening pointers, so we have some working code.
 
-### Hand
+### Glove
 
 Old ACR repository name: "make-monitoring"
 

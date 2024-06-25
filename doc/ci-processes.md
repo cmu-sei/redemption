@@ -1,5 +1,7 @@
 # Using a Continuous Integration (CI) pipeline to test the Redemption tool
 
+## Copyright
+
 <legal>
 'Redemption' Automated Code Repair Tool
 Copyright 2023, 2024 Carnegie Mellon University.
@@ -21,6 +23,8 @@ subject to its own license.
 DM23-2165
 </legal>
 
+## Continuous Integration (CI)
+
 To achieve Continuous Integration (CI) and Continuous Deployment (CD) of our Redemption Tool, we have [Atlassian Bamboo](https://www.atlassian.com/software/bamboo) and [Bitbucket](https://bitbucket.org/product) available internally at SEI. We would also like to publish the tool as OSS to [Github](https://github.com/).
 
 While the tool itself is open-source, we also maintain some private files that should not be published. Likewise, clients may ask us for private extensions to the tool, again which should not be published on Github.  Furthermore, the tool has a Git history of about 1 year, which contains private and public files, so we do not want to mirror the entire current Bitbucket repository.
@@ -39,6 +43,10 @@ Our priorities are as follows:
 * To avoid unnecessary difficulty for external users, we should not force push to the main branch on Github
 
 I now think that the goal of a non-awkward dir structure is incompatible with the proper handling of public vs private files. The former strategy of using manifest vs denylist files did a good job of filtering sensitive files, but meant that the public Git repo cannot fast-forward to the public Bitbucket repo, since the Github repo must lack the denylist or any files in it.  We could use Git branches to address the public vs private problem, but branches can easily lead to confusion and files getting leaked onto the wrong branch.  For now, for the private repo we will employ some process to load a container from the public repo with the private files it needs.
+
+Here is a data flow outline about how our tool works with Continuous Integration:
+
+![Continuous Integration](images/ci_dataflow.jpg)
 
 ## Current Plan
 

@@ -28,7 +28,9 @@ DM23-2165
 <a name="build-instructions"></a>
 ## Capabilities
 
-The Redemption tool makes repairs to C/C++ source code based on alerts produced by certain static-analysis tools.
+The Redemption tool makes repairs to C/C++ source code based on alerts produced by certain static-analysis tools.  Here is a screenshot of some repairs that the Redemption tool suggests:
+
+![IDE Screenshot](doc/images/ide_screenshot.png)
 
 For more details of the background and capabilities of the Redemption tool, see this [presentation](https://www.sei.cmu.edu/publications/annual-reviews/2023-research-review/research-review-article.cfm?customel_datapageid_326381=495820) from the [SEI Research Review 2023](https://www.sei.cmu.edu/publications/annual-reviews/2023-research-review/).
 
