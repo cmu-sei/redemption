@@ -90,6 +90,7 @@ python3 /host/code/analysis/alerts2input.py  /code  cppcheck_oss  cppcheck.xml  
 Here is an example of how to run a built-in end-to-end automated code repair test, within the container (you can change the `out` directory location or directory name, but you must create that directory before running the command):
 
 ```sh
+#[NOTES] This example is wrong "--alerts" does not work with end_to_end_acr.py
 EXAMPLE=/host/doc/examples/simple
 pushd /host/code/acr
 python3 ./end_to_end_acr.py  ${EXAMPLE}/test_errors.c  autogen  --alerts ${EXAMPLE}/alerts.json  --repaired-src ${EXAMPLE}/out

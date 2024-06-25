@@ -36,7 +36,7 @@ publish:
 
 alerts.json:	sa
 	docker run --rm  -v ${CI_PROJECT_DIR}:/data -w /data  ${REDEMPTION_IMAGE}  python3 /host/code/analysis/alerts2input.py  src  cppcheck_oss  cppcheck.xml  alerts.json
-
+#[NOTE] --alerts isn't used here. Only path of /data/alerts.json, which conflicts with the documentation in /redemption/doc/examples/simple/README.MD in Execution
 repair:	alerts.json
 	@echo "Repairing"
 	docker run --rm  -v ${CI_PROJECT_DIR}:/data -w /host/code/acr  ${REDEMPTION_IMAGE}   python3 end_to_end_acr.py  /data/src/test_errors.c  autogen  /data/alerts.json  --in-place  --base-dir /data/src --repair-includes true
