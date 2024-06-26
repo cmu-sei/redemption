@@ -156,13 +156,13 @@ For more information see `data/rosecheckers/CERT-Rosecheckers.md`.
 
 Output from this process lives in the `${TOOL}/${CODEBASE}/${TOOL}.tsv` files.
 
-For each SA tool, there is a parsing script in `/host/code/analysis/${TOOL}_oss2tsv.py` that generates a TSV (tab-separated values) file of alerts from raw SA tool output.
+For each SA tool, there is a parsing script in `/host/code/analysis/${TOOL}2tsv.py` that generates a TSV (tab-separated values) file of alerts from raw SA tool output.
 
 For example, for dos2unix and `clang_tidy`, run these commands:
 
 ``` shell
 cd /datasets/dos2unix
-python3 /host/code/analysis/clang_tidy_oss2tsv.py clang-tidy.txt clang-tidy.tsv
+python3 /host/code/analysis/clang_tidy2tsv.py clang-tidy.txt clang-tidy.tsv
 ```
 
 Ensure the first line of the TSV file has the following headers:

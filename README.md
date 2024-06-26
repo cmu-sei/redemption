@@ -151,6 +151,7 @@ Many codebases are configured to build in a particular location. If your code wi
 ```sh
 docker run -it --rm  -v ${PWD}:/host -w /host  -v /opt/code:/opt/code  docker.cc.cert.org/redemption/prereq  bash
 docker run -it --rm  -v /opt/code:/opt/code  docker.cc.cert.org/redemption/distrib  bash
+```
 
 ## Demos
 
@@ -231,7 +232,7 @@ export REPAIR_MSC12=true        # Repair MSC12-C alerts (By default, the system 
 <a name="static-analysis"></a>
 ### Static Analysis
 
-The Redemption Tool presumes that you have static-analysis (SA) tool output.  It currently supports three SA tools:  `clang_tidy_oss` or `cppcheck_oss` or `rosecheckers_oss`. Each SA tool should produce a file with the alerts it generated. If `$TOOL` represents your tool, instructions for generating the alerts file live in `data/$TOOL/$TOOL.md`.  We will assume you have run the tool, and created the alerts file, which we will call `alerts.txt`. (The actual file need not be a text file).  Finally, when you produced your SA output, the code you ran was in a directory which we'll call the `$BASE_DIR`.
+The Redemption Tool presumes that you have static-analysis (SA) tool output.  It currently supports three SA tools:  `clang_tidy` or `cppcheck` or `rosecheckers`. Each SA tool should produce a file with the alerts it generated. If `$TOOL` represents your tool, instructions for generating the alerts file live in `data/$TOOL/$TOOL.md`.  We will assume you have run the tool, and created the alerts file, which we will call `alerts.txt`. (The actual file need not be a text file).  Finally, when you produced your SA output, the code you ran was in a directory which we'll call the `$BASE_DIR`.
 
 <a name="convert-static-analysis-output-to-redemption-tool-input-alerts"></a>
 ### Convert Static Analysis Output to Redemption Tool Input Alerts
@@ -239,13 +240,13 @@ The Redemption Tool presumes that you have static-analysis (SA) tool output.  It
 Next, you must convert the `alerts.txt` format into a simple JSON format that the redemption tool understands. The `alerts2input.py` file produces suitable JSON files. So you must run this script first; it will create the `alerts.json` file with the alerts you will use.
 
 ``` sh
-python3 /host/code/analysis/alerts2input.py  $BASE_DIR  clang_tidy_oss  alerts.txt  alerts.json
+python3 /host/code/analysis/alerts2input.py  $BASE_DIR  clang_tidy  alerts.txt  alerts.json
 ```
 
 For example, the `test` Docker container contains the source code for Git, as well as Cppcheck output.  So you can convert Cppcheck's output to alerts using this script:
 
 ``` sh
-python3 /host/code/analysis/alerts2input.py  /oss/git  cppcheck_oss  /host/data/cppcheck/git/cppcheck.xml  ./alerts.json
+python3 /host/code/analysis/alerts2input.py  /oss/git  cppcheck  /host/data/cppcheck/git/cppcheck.xml  ./alerts.json
 ```
 
 <a name="manually-generated-input"></a>

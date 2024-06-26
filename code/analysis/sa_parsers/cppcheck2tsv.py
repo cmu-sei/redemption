@@ -56,7 +56,7 @@ def process_v18(root, output_file):
             line_number = location.get("line")
             column_number = location.get("column")
 
-            column_values = "\t".join([checker, file_path, line_number, column_number, message, cwe, "cppcheck_oss", "0", "0"])
+            column_values = "\t".join([checker, file_path, line_number, column_number, message, cwe, "cppcheck", "0", "0"])
             output_file.write(column_values + "\n")
 
 
@@ -79,7 +79,7 @@ def process_v16(root, output_file):
         if file_path is None or "" == file_path.strip():
             continue
 
-        column_values = "\t".join([checker, file_path, line_number, column_number, message, cwe, "cppcheck_oss", "0", "0"])
+        column_values = "\t".join([checker, file_path, line_number, column_number, message, cwe, "cppcheck", "0", "0"])
         output_file.write(column_values + "\n")
 
 

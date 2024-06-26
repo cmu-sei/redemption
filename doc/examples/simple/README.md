@@ -82,7 +82,7 @@ cp /code/doc/examples/simple/cppcheck.xml .
 The next step is to convert the `cppcheck.xml` format into a simple JSON format that the redemption tool understands. The `alerts2input.py` file produces suitable JSON files. So you must run this script first; it will create the `alerts.json` file with the alerts you will use.
 
 ``` sh
-python3 /host/code/analysis/alerts2input.py  /code  cppcheck_oss  cppcheck.xml  alerts.json
+python3 /host/code/analysis/alerts2input.py  /code  cppcheck  cppcheck.xml  alerts.json
 ```
 
 ### Execution

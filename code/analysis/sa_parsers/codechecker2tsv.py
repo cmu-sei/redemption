@@ -1,18 +1,17 @@
 #!/usr/bin/env python
 
-# Script takes a Rosecheckers output file and extracts its alert
+# Script takes a codecheckers text output file and extracts its alert
 # information
 #
 # The first argument indicates the file containing the input.
+# The data should be produced from a codecheckers process
+# A suitable command to generate the Codechecker JSON data is:
+#
+# CodeChecker parse -e json reports.codechecker > codechecker.json
+#
 # The second argument specifies the output file.
 #
-# The script should take the text data via standard input. The data
-# should be produced from a build process using make and g++.  A
-# suitable command to generate the text data is:
-#
-# make 2>&! > makelog
-#
-# This script produces only one message per alert
+# This script currently produces only one message per alert
 #
 # <legal>
 # 'Redemption' Automated Code Repair Tool
@@ -43,51 +42,38 @@
 
 import sys
 import re
-import os
+import json
+
+
+Tool_Map = {
+    "clang-tidy": "clang_tidy",
+    "cppcheck": "cppcheck",
+    "gcc": "gcc",
+    "clangsa": "clang_sa",
+}
 
 
 def processFile(input_file, output_file):
     output_file.write("\t".join(["Checker","Path","Line","Column","Message",
                                  "Tool","End_Line","End_Column"]) + "\n")
+    data = json.load( input_file)
 
-    directory = ""
-    file_path = None
+    for d in data["reports"]:
+        line_end = column_end = 0
+        if "notes" in d and len(d["notes"]) > 0:
+            line_end = d["notes"][0]["range"]["end_line"]
+            column_end = d["notes"][0]["range"]["end_col"]
+        elif "bug_path_events" in d and len(d["bug_path_events"]) > 0:
+            line_end = d["bug_path_events"][0]["range"]["end_line"]
+            column_end = d["bug_path_events"][0]["range"]["end_col"]
 
-    for line in input_file:
-        line = line.strip()
-
-        parse = re.match(r"^In directory: *(.*)$", line)
-        if (parse != None):
-            directory = parse.group(1)
-            continue
-
-        parse = re.match(r"^Compiler args are: .* (.*?)$", line)
-        if (parse != None):
-            file_path = parse.group(1)
-            suffix = os.path.splitext(file_path)[1]
-            if suffix not in [".c", ".h", ".cc", ".cxx", ".cpp", ".hpp"]:
-                file_path = None
-            else:
-                if not os.path.isabs(file_path):
-                    file_path = directory + "/" + file_path
-
-        parse = re.match(r"^(.*?):([0-9]*):([0-9]*): (warning|error): ([-A-Za-z0-9]*): (.*?) *$", line)
-
-        if (parse == None):
-            continue
-        file_name = parse.group(1)
-        line_number = parse.group(2)
-        column_number = parse.group(3)
-        checker = parse.group(5)
-        message = parse.group(6)
-        message = message.strip().replace("\t", " ")
-
-        if file_path is None:
-            file_path = directory + "/" + file_name
-            file_path = file_path.strip()
-
-        column_values = "\t".join([checker, file_path, line_number, column_number, message
-                                       "rosecheckers_oss", "0", "0"])
+        tool = Tool_Map[d["analyzer_name"]]
+        checker = d["checker_name"]
+        if checker.startswith(d["analyzer_name"]):
+            checker = checker[len(d["analyzer_name"])+1:]
+        column_values = "\t".join([
+            checker, d["file"]["path"], str(d["line"]), str(d["column"]),
+            d["message"], tool, str(line_end), str(column_end)])
         output_file.write(column_values + "\n")
 
 
@@ -95,6 +81,7 @@ if __name__ == "__main__":
 
     if len(sys.argv) != 3:
         raise TypeError("Usage: " + sys.argv[0] + " <raw-input> <tsv-output>")
+
     input_file = open(sys.argv[1], "r")
     output_file = open(sys.argv[2], "w")
 

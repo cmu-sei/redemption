@@ -41,7 +41,7 @@ clang-tidy.txt:	compile_commands.json
 deploy:	publish deploy_repair
 
 alerts.json:
-	docker run --rm  -v ${CI_PROJECT_DIR}:/data -w /data  ${REDEMPTION_IMAGE}  python3 /host/code/analysis/alerts2input.py  src  clang_tidy_oss  clang-tidy.txt  alerts.json
+	docker run --rm  -v ${CI_PROJECT_DIR}:/data -w /data  ${REDEMPTION_IMAGE}  python3 /host/code/analysis/alerts2input.py  src  clang_tidy  clang-tidy.txt  alerts.json
 
 repair:	alerts.json
 	@echo "Repairing"

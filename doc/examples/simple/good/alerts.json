@@ -6,7 +6,7 @@
     "column": "24",
     "end-line": "0",
     "end-column": "0",
-    "tool": "cppcheck_oss",
+    "tool": "cppcheck",
     "checker": "nullPointer",
     "message": "Null pointer dereference: q"
   },
@@ -17,7 +17,7 @@
     "column": "24",
     "end-line": "0",
     "end-column": "0",
-    "tool": "cppcheck_oss",
+    "tool": "cppcheck",
     "checker": "nullPointer",
     "message": "Null pointer dereference: q"
   },
@@ -28,7 +28,7 @@
     "column": "24",
     "end-line": "0",
     "end-column": "0",
-    "tool": "cppcheck_oss",
+    "tool": "cppcheck",
     "checker": "nullPointer",
     "message": "Null pointer dereference: q"
   },
@@ -39,7 +39,7 @@
     "column": "24",
     "end-line": "0",
     "end-column": "0",
-    "tool": "cppcheck_oss",
+    "tool": "cppcheck",
     "checker": "nullPointer",
     "message": "Null pointer dereference: q"
   }

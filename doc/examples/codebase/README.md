@@ -89,7 +89,7 @@ popd
 The next step is to convert the `clang-tidy.txt` format into a simple JSON format that the redemption tool understands. The `alerts2input.py` file produces suitable JSON files. So you must run this script first; it will create the `alerts.json` file with the alerts you will use.
 
 ``` sh
-python3 /host/code/analysis/alerts2input.py  ${PWD}/dos2unix-7.5.2  clang_tidy_oss  clang-tidy.txt  alerts.json
+python3 /host/code/analysis/alerts2input.py  ${PWD}/dos2unix-7.5.2  clang_tidy  clang-tidy.txt  alerts.json
 ```
 
 ### Execution

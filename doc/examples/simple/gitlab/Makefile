@@ -35,7 +35,7 @@ publish:
 	cd src ; tar czf ../distrib/toy.tgz * ; cd ..
 
 alerts.json:	sa
-	docker run --rm  -v ${CI_PROJECT_DIR}:/data -w /data  ${REDEMPTION_IMAGE}  python3 /host/code/analysis/alerts2input.py  src  cppcheck_oss  cppcheck.xml  alerts.json
+	docker run --rm  -v ${CI_PROJECT_DIR}:/data -w /data  ${REDEMPTION_IMAGE}  python3 /host/code/analysis/alerts2input.py  src  cppcheck  cppcheck.xml  alerts.json
 
 repair:	alerts.json
 	@echo "Repairing"

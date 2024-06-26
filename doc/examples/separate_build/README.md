@@ -164,7 +164,7 @@ This step requires the `clang-tidy.txt` file produced in the Build Platform from
 
 ``` sh
 cd /separate_build
-python3 /host/code/analysis/alerts2input.py  ${PWD}/wrk  clang_tidy_oss  clang-tidy.txt  alerts.json
+python3 /host/code/analysis/alerts2input.py  ${PWD}/wrk  clang_tidy  clang-tidy.txt  alerts.json
 ```
 
 ### Execution of Redemption Phase 1 (Repair Platform)

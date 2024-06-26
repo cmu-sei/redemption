@@ -100,7 +100,7 @@ def processFile(input_file, output_file):
             state = None
             end_column_number = int(column_number) + len(line) - 1
             column_values = "\t".join([checker, file_path, line_number, column_number, message,
-                                       "clang_tidy_oss", line_number, str(end_column_number)])
+                                       "clang_tidy", line_number, str(end_column_number)])
             output_file.write(column_values + "\n")
 
 

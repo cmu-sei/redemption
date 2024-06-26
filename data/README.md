@@ -37,7 +37,7 @@ The dataset will be a Zip file with the following directory contents:
   `data`: `redemption/data` directory minus some files noted below
   `paper/oss_frequency.csv`: table `redemption/paper/oss_frequency.csv`
   `paper/tables`: `redemption/paper/tables` directory minus some `redemption/paper` files noted below
-  `code/analysis`: from the `redemption/code/analysis` directory, only include the following files: `cert_rules.2016.tsv`, checkers.csv, `my-gcc.sh`, `my-g++.sh`, `{clang_tidy,cppcheck,rosecheckers}_oss2tsv.py`
+  `code/analysis`: from the `redemption/code/analysis` directory, only include the following files: `cert_rules.2016.tsv`, checkers.csv, `my-gcc.sh`, `my-g++.sh`, `{clang_tidy,cppcheck,rosecheckers}2tsv.py`
   `LICENSE.txt`: license `redemption/License.dataset.txt`
   `ABOUT`: per-file markings `redemption/ABOUT.dataset`
 

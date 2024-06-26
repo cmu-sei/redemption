@@ -33,7 +33,7 @@ import pytest
 
 def test_alerts2input():
     run_cmd = ["python3", "../../code/analysis/alerts2input.py", "/oss/git",
-           "clang_tidy_oss", "sample.alerts.txt", "sample.alerts.output.json"]
+           "clang_tidy", "sample.alerts.txt", "sample.alerts.output.json"]
     subprocess.check_call(run_cmd)
     try:
         check_cmd = ["diff", "sample.alerts.json", "sample.alerts.output.json"]
