@@ -441,14 +441,20 @@ class EXP34_C_CPPCHECK(EXP34_C):
             case _:
                 return None
 
-    def handle_null_pointer_redundant_check(self, context):
+    def handle_null_pointer(self, context):
         if context.get('kind') == "DeclRefExpr":
             # This is a simple variable reference
-            up = context.parent_non_implicit_cast()
+            last = context
+            up = last.parent(kind=True)
+            while up is not None and up.get('kind') == 'ImplicitCastExpr':
+                last = up
+                up = last.parent(kind=True)
             if up is None:
                 return None
-            if up.get('kind') == "CallExpr":
+            if up.get('kind') == "CallExpr" and up['inner'][0].get('id') != last.get('id'):
                 # This variable reference is an argument to a function
+                # (arg 0 to CallExpr is the call, not an argument of a
+                # call)
                 return context
         parent = context.parent(True)
         if (parent is not None
@@ -463,8 +469,8 @@ class EXP34_C_CPPCHECK(EXP34_C):
         checker = self.get("checker")
         if checker == "nullPointerArithmeticRedundantCheck":
             return self.match_arithmetic_locus(context)
-        elif checker == "nullPointerRedundantCheck":
-            candidate = self.handle_null_pointer_redundant_check(context)
+        elif checker in ("nullPointer", "nullPointerRedundantCheck"):
+            candidate = self.handle_null_pointer(context)
             if candidate is not None:
                 return candidate
         return super().find_node(context)
