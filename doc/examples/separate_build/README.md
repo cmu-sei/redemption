@@ -75,7 +75,7 @@ git checkout 4.2.0
 
 ### The `good` directory
 
-This directory contains output for each of the steps below. As you run each step, you should compare your current directory's file contents with the good directory. Assuming your step was run correctly, there will be no differences between the files that appear in both your directory and the good directory.
+This directory contains output for each of the steps below. As you run each step, you should compare your current directory's file contents with the good directory. Assuming your step was run correctly, there will be no differences between the files that appear in both your directory and the good directory.  There will be files in the good directory that do not appear in the current directory. But every file that appears in both directories should be identical.
 
 ``` sh
 cd doc/examples/separate_build

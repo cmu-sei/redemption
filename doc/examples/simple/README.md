@@ -34,7 +34,7 @@ We are using the `test_errors.c` source file (which is very similar to [this tes
 
 ### The "good" directory
 
-This directory contains output for each of the steps below. As you run each step, you should compare your current directory's file contents with the good directory. Assuming your step was run correctly, there will be no differences between the files that appear in both your directory and the good directory.
+This directory contains output for each of the steps below. As you run each step, you should compare your current directory's file contents with the good directory. Assuming your step was run correctly, there should be no differences between the files that appear in both your directory and the good directory.  There will be files in the good directory that do not appear in the current directory. But every file that appears in both directories should be identical.
 
 ``` sh
 cd doc/examples/simple
@@ -63,25 +63,20 @@ docker run --rm  -v ${PWD}:/code -w /code  facthunder/cppcheck:latest  sh -c 'cp
 
 For the rest of these instructions, you should execute the commands inside the `distrib` Docker container, and `cd` into this directory. 
 
-To set this up, go to the base Redemption directory and run the Docker container, using these commands:
+To set this up, run this command (in the `simple` directory):
 
 ``` sh
-cd ../../..
 docker run -it --rm  -v ${PWD}:/code  docker.cc.cert.org/redemption/distrib  bash
 ```
 
 (See the toplevel [README.md](../../../README.md) instructions for details on how to build this container if necessary.
 
-Then, inside the shell this command gives you:
-
-``` sh
-pushd doc/examples/simple
-cp /code/doc/examples/simple/cppcheck.xml .
-```
+All future shell commands will be run inside this container.
 
 The next step is to convert the `cppcheck.xml` format into a simple JSON format that the redemption tool understands. The `alerts2input.py` file produces suitable JSON files. So you must run this script first; it will create the `alerts.json` file with the alerts you will use.
 
 ``` sh
+cd /code
 python3 /host/code/analysis/alerts2input.py  /code  cppcheck  cppcheck.xml  alerts.json
 ```
 
@@ -90,10 +85,10 @@ python3 /host/code/analysis/alerts2input.py  /code  cppcheck  cppcheck.xml  aler
 Here is an example of how to run a built-in end-to-end automated code repair test, within the container (you can change the `out` directory location or directory name, but you must create that directory before running the command):
 
 ```sh
-EXAMPLE=/host/doc/examples/simple
-pushd /host/code/acr
-python3 ./end_to_end_acr.py  ${EXAMPLE}/test_errors.c  autogen  --alerts ${EXAMPLE}/alerts.json  --repaired-src ${EXAMPLE}/out
-popd
+mkdir /code/out
+cd /host/code/acr
+python3 ./end_to_end_acr.py  /code/test_errors.c  autogen  --alerts /code/alerts.json  --repaired-src /code/out
+cd /code
 ```
 
 You can see the repairs using this command:

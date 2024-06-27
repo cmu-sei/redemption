@@ -38,7 +38,7 @@ tar xzf dos2unix-7.5.2.tar.gz
 
 ### The `good` directory
 
-This directory contains output for each of the steps below. As you run each step, you should compare your current directory's file contents with the good directory. Assuming your step was run correctly, there will be no differences between the files that appear in both your directory and the good directory.
+This directory contains output for each of the steps below. As you run each step, you should compare your current directory's file contents with the good directory. Assuming your step was run correctly, there will be no differences between the files that appear in both your directory and the good directory.  There will be files in the good directory that do not appear in the current directory. But every file that appears in both directories should be identical.
 
 ``` sh
 diff -ru . good
@@ -53,7 +53,7 @@ You can try to repair other codebases, or other versions of the `dos2unix` codeb
 For the rest of these instructions, you should execute the commands inside the `prereq` Docker container, and `cd` into this directory.  To set this up, run this command in the top-level Redemption directory:
 
 ``` sh
-docker run -it --rm  -v ${PWD}:/host  docker.cc.cert.org/redemption/prereq  bash
+docker run -it --rm  -v ${PWD}:/host -w /host  docker.cc.cert.org/redemption/prereq  bash
 ```
 
 (See the toplevel [README.md](../../../README.md) instructions for details on how to build this container if necessary.
@@ -61,17 +61,17 @@ docker run -it --rm  -v ${PWD}:/host  docker.cc.cert.org/redemption/prereq  bash
 Then, inside the shell this command gives you, go back to the demo directory:
 
 ``` sh
-pushd doc/examples/codebase
+cd doc/examples/codebase
 ```
 
 The following command, when run in the `prereq` container, creates the `compile_commands.json` file for dos2unix:
 
 ``` sh
-pushd dos2unix-7.5.2
+cd dos2unix-7.5.2
 bear -- make CC=clang
 make clean
 mv compile_commands.json  ..
-popd
+cd ..
 ```
 
 ### Static Analysis
@@ -79,9 +79,9 @@ popd
 Produce static analysis on the given C file, using Clang-tidy 16.0.6, which lives in the Redemption container.  Use this command:
 
 ``` sh
-pushd dos2unix-7.5.2
+cd dos2unix-7.5.2
 grep --color=none '"file":' ../compile_commands.json | sed 's/"file"://;  s/",/"/;' | sort -u  | xargs clang-tidy -checks='*'  > ../clang-tidy.txt
-popd
+cd ..
 ```
 
 ### Convert to Redemption Input
@@ -98,9 +98,9 @@ Here is an example of how to run a built-in end-to-end automated code repair tes
 
 ```sh
 EXAMPLE=/host/doc/examples/codebase
-pushd /host/code/acr
+cd /host/code/acr
 python3 sup.py  -c ${EXAMPLE}/compile_commands.json  -a ${EXAMPLE}/alerts.json  -b ${EXAMPLE}/dos2unix-7.5.2  --repaired-src ${EXAMPLE}/out
-popd
+cd /code
 diff -ru --label=ORIGINAL --label=REPAIRED -ru  dos2unix-7.5.2  out > repaired.diffs 
 ```
 
