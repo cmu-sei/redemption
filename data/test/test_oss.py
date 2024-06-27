@@ -63,7 +63,8 @@ def test_oss(yfile):
     run_oss(False, "", yfile)
 
 def run_oss(examine_shouldnt_repair, stringinput, yfile):
-    assert(run_and_check_if_answer(examine_shouldnt_repair, stringinput, yfile, stop_if_no_answer_file=True) == 1)
+    stepdir = "/host/data/test/step"
+    assert(run_and_check_if_answer(examine_shouldnt_repair, stringinput, yfile, stop_if_no_answer_file=True, step_dir=stepdir) == 1)
     print("test_oss: passed " + yfile)
 
 def run_all(examine_shouldnt_repair, stringinput, files):

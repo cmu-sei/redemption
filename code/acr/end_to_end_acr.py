@@ -83,7 +83,7 @@ def run(source_file, compile_commands, alerts, *, out_src_dir=None, step_dir=Non
             f" --step-dir {step_dir}" if step_dir else "",
             f" --base-dir {base_dir}" if base_dir else "",
             " --in-place" if repair_in_place else "",
-            " --repair-includes" if repair_includes_mode else "",
+            " --repair-includes true" if repair_includes_mode else "",
             f" -r {raw_ast_dir}" if raw_ast_dir is not None else "",
            source_file, compile_commands))
 

@@ -180,6 +180,12 @@ def run(stringinput, tests_file,
     all_passed_or_none_tested = 1
     count_results_compared = 0
 
+    test_name = os.path.splitext(os.path.basename(tests_file))[0]
+    if test_name.endswith(".test"):
+        test_name = os.path.splitext(test_name)[0]
+    step_dir = os.path.join(step_dir, test_name)
+    out_location = os.path.join(out_location, test_name)
+
     if not os.path.exists(out_location):
         os.makedirs(out_location)
     step_dir_prev_existed = os.path.isdir(step_dir)
@@ -277,6 +283,13 @@ def run_and_check_if_answer(examine_shouldnt_repair, stringinput, tests_file,
 
     tests_info = read_yaml_file(directory + "/" + tests_file)
     out_location = os.path.realpath("out/")
+
+    test_name = os.path.splitext(os.path.basename(tests_file))[0]
+    if test_name.endswith(".test"):
+        test_name = os.path.splitext(test_name)[0]
+    step_dir = os.path.join(step_dir, test_name)
+    out_location = os.path.join(out_location, test_name)
+
     all_passed_or_none_tested = 1
     count_results_compared = 0
     count_skipped_tests = 0
