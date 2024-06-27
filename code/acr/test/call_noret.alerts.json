@@ -1,0 +1,8 @@
+[
+  {
+    "rule": "EXP34-C",
+    "file": "call_noret.c",
+    "line": 18,
+    "col": 12
+  }
+]

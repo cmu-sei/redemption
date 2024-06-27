@@ -542,7 +542,7 @@ def get_nulldom_info(ll_file):
     nulldom_so = build_NullDom_if_necessary()
     nulldom_info = subprocess.check_output(
         ("opt-15 -enable-new-pm=0 -load " + nulldom_so +
-        " -mem2reg -sroa -domtree -nulldom -disable-output").split() + [ll_file])
+        " -add-no-return -simplifycfg -mem2reg -sroa -domtree -nulldom -disable-output").split() + [ll_file])
     nulldom_info = nulldom_info.decode("utf-8")
     nulldom_filename = os.path.splitext(ll_file)[0] + ".nulldom.json"
     with open(nulldom_filename, 'w') as outfile:

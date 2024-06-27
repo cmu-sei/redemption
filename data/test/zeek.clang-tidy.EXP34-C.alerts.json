@@ -336,7 +336,9 @@
     "column": "9",
     "tool": "clang-tidy",
     "checker": "clang-analyzer-core.NullDereference",
-    "message": "Access to field 'z' results in a dereference of a null pointer (loaded from variable 'pCons')"
+    "message": "Access to field 'z' results in a dereference of a null pointer (loaded from variable 'pCons')",
+    "satisfactory": "true",
+    "repairable": "false"
   },
   {
     "rule": "EXP34-C",

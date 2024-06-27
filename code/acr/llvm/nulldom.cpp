@@ -49,6 +49,12 @@
 #include <llvm/IR/Dominators.h>
 #include <llvm/Analysis/DominanceFrontier.h>
 
+#include <stdlib.h>
+#include <iostream>
+#include <string>
+#include <vector>
+#include <sstream>
+
 using namespace llvm;
 using namespace std;
 
@@ -245,3 +251,70 @@ static llvm::RegisterPass<NullDomPass> X(
               "NullDom: Identify whether pointer dereferences are dominated by null checks",
               false, true
 );
+
+
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+
+
+class AddNoReturnPass : public llvm::FunctionPass
+{
+public:
+  static char ID;
+
+  AddNoReturnPass() : llvm::FunctionPass(ID) { }
+  ~AddNoReturnPass(){ }
+
+  std::vector<std::string> splitString(const std::string &str, char delimiter) {
+    std::vector<std::string> result;
+    std::stringstream ss(str);
+    std::string item;
+
+    while (getline(ss, item, delimiter)) {
+        result.push_back(item);
+    }
+
+    return result;
+  }
+
+  bool doInitialization(llvm::Module &M) override {
+    char* no_ret_env = getenv("NORETURN_FUNCTIONS");
+    if (!no_ret_env) {
+      return false;
+    }
+    std::string no_ret_str = std::string(no_ret_env);
+    // Remove all spaces
+    no_ret_str.erase(std::remove(no_ret_str.begin(), no_ret_str.end(), ' '),
+                     no_ret_str.end());
+    // Split by commas
+    vector<string> noret_names = splitString(no_ret_str, ',');
+    // Add 'noreturn' attribute to each specified function
+    for (int i=0; i < noret_names.size(); i++) {
+      llvm::Function* func = M.getFunction(noret_names[i]);
+      //errs() << noret_names[i] << ": " << func << "\n";
+      if (func) {
+        func->addFnAttr(Attribute::NoReturn);
+      }
+    }
+    return false;
+  }
+
+  virtual void getAnalysisUsage(AnalysisUsage &AU) const override {
+    AU.setPreservesCFG();
+  }
+
+  bool runOnFunction(llvm::Function &F) override
+  {
+    return false;
+  }
+
+};
+
+char AddNoReturnPass::ID = 0;
+
+static llvm::RegisterPass<AddNoReturnPass> Y(
+              "add-no-return",
+              "AddNoReturn",
+              false, true
+);
+

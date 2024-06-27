@@ -73,6 +73,19 @@ tests:
     cfile: try_01.cpp
     alerts_file: empty.alerts.json
 
+- answer_file: call_noret.unset_answer.c
+  input:
+    cfile: call_noret.c
+    alerts_file: call_noret.alerts.json
+
+- answer_file: call_noret.set_answer.c
+  note: "The answer file should not exist, because no repairs are made."
+  env:
+    NORETURN_FUNCTIONS: die
+  input:
+    cfile: call_noret.c
+    alerts_file: call_noret.alerts.json
+
 #- answer_file: "arrow-null-01.repaired.c"
 #  input:
 #    alerts_file: "arrow-null-01.alerts.json"

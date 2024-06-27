@@ -116,6 +116,29 @@ def delete_existing_files(*, out_location, file_prefix, step_dir):
     for old_file in old_files:
         os.remove(old_file)
 
+def set_env_for_test(test, default_env):
+    # Note: We don't explicitly clean up the variables after each test.
+    # Instead, we always initialize the environment variables before each test.
+    # I.e., if an environment variable isn't used for a test, then we delete it
+    # here before running the test.
+    known_keys = ["NORETURN_FUNCTIONS"]
+    def look_for_extraneous_keys(env, location):
+        env_keys = set(env.keys())
+        extraneous_keys = env_keys - set(known_keys)
+        assert len(extraneous_keys) == 0, \
+            f"Error in {location}: unrecognized environment variables {extraneous_keys}."
+    look_for_extraneous_keys(test.get("env",{}), test['name'])
+    look_for_extraneous_keys(default_env, "default_env")
+    
+    for key in known_keys:
+        val = test.get("env",{}).get(key) or default_env.get(key)
+        if val is None:
+            if key in os.environ:
+                del os.environ[key]
+        else:
+            #print("%s='%s'" % (key, val))
+            os.environ[key] = val
+
 def run_test(**kwargs):
     # To print out test info as tests are being run, uncomment the following line:
     print("Running test: %r" % kwargs)
@@ -182,6 +205,7 @@ def run(stringinput, tests_file,
 
             # TODO: check each of files exists
             test_name = test['name']
+            set_env_for_test(test, tests_info.get("default_env", {}))
             run_test(source_file=p.cur_c_file,
                      compile_commands=p.cur_compile_cmds_file,
                      alerts=p.cur_alerts_file,
@@ -286,6 +310,7 @@ def run_and_check_if_answer(examine_shouldnt_repair, stringinput, tests_file,
             # TODO: check each of files exists
             test_name = test['name']
             print("Test command: " + __file__ + " " + tests_file + " --check-ans -k " + test_name)
+            set_env_for_test(test, tests_info.get("default_env", {}))
             run_test(source_file=p.cur_c_file,
                      compile_commands=p.cur_compile_cmds_file,
                      alerts=p.cur_alerts_file,
