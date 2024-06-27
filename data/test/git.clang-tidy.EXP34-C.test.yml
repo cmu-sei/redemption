@@ -1,3 +1,6 @@
+default_env:
+  NORETURN_FUNCTIONS: die
+
 tests:
 
 - answer_file: git.clang-tidy.EXP34-C.add-patch_c.ans

@@ -1,3 +1,6 @@
+default_env:
+  NORETURN_FUNCTIONS: out_of_memory
+
 tests:
 - answer_file: zeek.cppcheck.CWE-476._datasets_zeek_build_auxil_bifcl_bif_lex_cc.ans
   input:
@@ -70,4 +73,3 @@ tests:
     compile_cmds_file: ../compile_commands.zeek.json
     hfile: src/zeek/Dict.h
   name: src_zeek_Dict_h
-

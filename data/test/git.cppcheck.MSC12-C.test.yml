@@ -1,3 +1,6 @@
+default_env:
+  NORETURN_FUNCTIONS: die
+
 tests:
 
 - answer_file: git.cppcheck.MSC12-C.builtin_add_c.ans

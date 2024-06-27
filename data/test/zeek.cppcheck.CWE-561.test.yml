@@ -1,3 +1,6 @@
+default_env:
+  NORETURN_FUNCTIONS: out_of_memory
+
 tests:
 - answer_file: zeek.cppcheck.CWE-561._datasets_zeek_build_auxil_bifcl_bif_parse_cc.ans
   input:
@@ -550,4 +553,3 @@ tests:
     cfile: src/zeekygen/ReStructuredTextTable.cc
     compile_cmds_file: ../compile_commands.zeek.json
   name: src_zeekygen_ReStructuredTextTable_cc
-

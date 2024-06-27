@@ -1,20 +1,11 @@
---- /host/data/test/out/src/3rdparty/patricia.c	2024-05-28 16:16:02.226712486 +0000
-+++ /oss/zeek/src/3rdparty/patricia.c	2024-04-25 15:49:48.000000000 +0000
+--- /host/data/test/out/src/3rdparty/patricia.c	2024-06-21 18:28:18.263960866 +0000
++++ /oss/zeek/src/3rdparty/patricia.c	2024-06-21 13:46:35.725645538 +0000
 @@ -1,5 +1,3 @@
 -#include "acr.h"
 -
  /*
   * $Id: patricia.c,v 1.7 2005/12/07 20:46:41 dplonka Exp $
   * Dave Plonka <plonka@doit.wisc.edu>
-@@ -378,7 +376,7 @@
-   if (patricia == NULL)
-     out_of_memory("patricia/new_patricia: unable to allocate memory");
- 
--  null_check(patricia)->maxbits = maxbits;
-+  patricia->maxbits = maxbits;
-   patricia->head = NULL;
-   patricia->num_active_node = 0;
-   assert(maxbits <= PATRICIA_MAXBITS); /* XXX */
 @@ -567,7 +565,7 @@
    addr = prefix_touchar(prefix);
    bitlen = prefix->bitlen;
@@ -59,12 +50,9 @@
    new_node->data = NULL;
    patricia->num_active_node++;
  
-@@ -915,9 +913,9 @@
-     glue = calloc(1, sizeof *glue);
-     if (glue == NULL)
+@@ -917,7 +915,7 @@
        out_of_memory("patricia/patricia_lookup: unable to allocate memory");
--    null_check(glue)->bit = differ_bit;
-+    glue->bit = differ_bit;
+     glue->bit = differ_bit;
      glue->prefix = NULL;
 -    null_check(glue)->parent = node->parent;
 +    glue->parent = node->parent;

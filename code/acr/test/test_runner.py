@@ -129,7 +129,7 @@ def set_env_for_test(test, default_env):
             f"Error in {location}: unrecognized environment variables {extraneous_keys}."
     look_for_extraneous_keys(test.get("env",{}), test['name'])
     look_for_extraneous_keys(default_env, "default_env")
-    
+
     for key in known_keys:
         val = test.get("env",{}).get(key) or default_env.get(key)
         if val is None:
