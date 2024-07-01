@@ -39,11 +39,11 @@ For more details of the background and capabilities of the Redemption tool, see 
 
 Redemption is currently able to identify alerts from the following static-analysis tools:
 
-| Tool         | Version | License      | Container                                        | Origin                                       |
-|--------------|---------|--------------|--------------------------------------------------|----------------------------------------------|
-| Clang-tidy   | 16.0.6  | LLVM Release | silkeh/clang:latest                              | https://clang.llvm.org/extra/clang-tidy      |
-| Cppcheck     | 2.4.1   | GPL v3       | facthunder/cppcheck:latest                       | https://cppcheck.sourceforge.io/             |
-| Rosecheckers |         | CMU (OSS)    | ghcr.io/cmu-sei/cert-rosecheckers/rosebud:latest | https://github.com/cmu-sei/cert-rosecheckers |
+| Tool         | Version | License      | Container                                        | Origin            | Instructions      |
+|--------------|---------|--------------|--------------------------------------------------|-------------------|-------------------|
+| Clang-tidy   | 16.0.6  | LLVM Release | silkeh/clang:latest                              | [Clang-tidy](https://clang.llvm.org/extra/clang-tidy)   | [Clang-tidy](data/clang-tidy/Clang-tidy.md)   |
+| Cppcheck     | 2.4.1   | GPL v3       | facthunder/cppcheck:latest                       | [Cppcheck](https://cppcheck.sourceforge.io)     | [Cppcheck](data/cppcheck/Cppcheck.md)     |
+| Rosecheckers |         | CMU (OSS)    | ghcr.io/cmu-sei/cert-rosecheckers/rosebud:latest | [Rosecheckers](https://github.com/cmu-sei/cert-rosecheckers) | [Rosecheckers](data/rosecheckers/CERT-Rosecheckers.md) |
 
 You may run other tools, or create alerts manually; however Redemption has not been tested with alerts produced by other tools.
 
