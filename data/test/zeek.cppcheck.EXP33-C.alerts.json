@@ -25,12 +25,12 @@
     "tool": "cppcheck",
     "checker": "uninitMemberVar",
     "message": "Member variable 'DbgWatch::var' is not initialized in the constructor.",
-    "satisfactory": "false",
+    "satisfactory": "true",
     "verdict": "false",
     "repairable": "true",
     "rationale": "The code line for the alert is a constructor for Dbgwatch with input parameter of a pointer to an `Expr`: `DbgWatch::DbgWatch(Expr* expr_to_watch)`. No initialization of variable `var` happens is done in that constructor. In fact, there's an InternalError function called instead, with error `DbgWatch unimplemented`. DbgWatch class and explicit constructors are declared in file src/DbgWatch.h and `var` is specified as a protected variable of type `Obj *`. There is also a protected `Expr* expr`. Neither constructor (one takes an `Expr*` parameter, other takes `Obj *` parameter) assigns the protected variables to the constructor's parameter. It looks like the DbWatch constructors haven't been implemented, as the error messages in the DbgWatch.cc files state. While both constructors leave their fields uninitialized, the `internalError()` method suggests that those fields will never be read. Therefore, the verdict is false positive. Per team discussion, ACR implementation of a fix to initialize the `var` variable (and also the `expr` variable) in the constructor is feasible and sufficiently low effort for practicality in the current project.",
     "randomness": "random and sample",
-    "issue": "REM-340 and REM-232"
+    "issue": "DONE REM-340 REM-232"
   },
   {
     "rule": "EXP33-C",
@@ -82,12 +82,12 @@
     "tool": "cppcheck",
     "checker": "uninitMemberVar",
     "message": "Member variable 'network_info::port' is not initialized in the constructor.",
-    "satisfactory": "",
+    "satisfactory": "true",
     "verdict": "complex",
     "repairable": "true",
     "rationale": "Yes, the member variable isn't initialized in the constructor.  But that doesn't mean that it is read before it is initialized.",
     "randomness": "sample",
-    "issue": "REM-232"
+    "issue": "DONE REM-232"
  },
   {
     "rule": "EXP33-C",
@@ -115,12 +115,12 @@
     "tool": "cppcheck",
     "checker": "uninitMemberVar",
     "message": "Member variable 'network_info::port' is not initialized in the constructor.",
-    "satisfactory": "false",
+    "satisfactory": "true",
     "verdict": "complex",
     "repairable": "true",
     "rationale": "The code line alerted on is `network_info() = default;`, with an explicitly-defaulted definition of a default constructor inside of class declaration as used for default constructors since C++11. The condition being audited is EXP33-C, which is about use of an uninitialized variable. Simply not initializing the variable `port` in the constructor is insufficient to violate EXP33-C. Although this alert is a false positive, per previous team discussion weighing SEI work to develop the auto-repair versus benefit of eliminating some alerts, the recommendation will be to repair the code to initialize the variable when declared.",
     "randomness": "random and sample",
-    "issue": "REM-232"
+    "issue": "DONE REM-232"
   },
   {
     "rule": "EXP33-C",
@@ -130,12 +130,12 @@
     "tool": "cppcheck",
     "checker": "uninitMemberVar",
     "message": "Member variable 'SafePathOp::error' is not initialized in the constructor.",
-    "satisfactory": "false",
+    "satisfactory": "true",
     "verdict": "false",
     "repairable": "false",
     "rationale": "The alert is for the code line of the constructor: `SafePathOp() : result(), error() { }`. The alert message is not correct, the member variable is initialized in the constructor. However, the rule EXP33-C does not require that variables be initialized in their constructor, so it is a false positive for EXP33-C violation.",
     "randomness": "random and sample",
-    "issue": "REM-340"
+    "issue": "DONE REM-340 REM-232"
   },
   {
     "rule": "EXP33-C",
@@ -186,7 +186,7 @@
     "repairable": "false",
     "rationale": "The alert is for this code line: `Type() = default;` All fields get initialized to their default values being set to 0 or initialized by their default constructors. Per our auditing rules, there is no violation of EXP33-C in this line because there is no read of uninitialized memory in the alerted code line. Further, the rule EXP33-C does not require that variables be initialized in their constructor.",
     "randomness": "random and sample",
-    "issue": "REM-340"
+    "issue": "REM-385"
   },
   {
     "rule": "EXP33-C",

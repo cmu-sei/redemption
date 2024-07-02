@@ -224,12 +224,24 @@ class ASTContext:
             return None
         return n._get_lc(True)
 
+    def get_begin_offset(self):
+        n = self.get_begin()
+        if n is None:
+            return None
+        return n.get("offset")
+
+    def get_end_offset(self):
+        n = self.get_end()
+        if n is None:
+            return None
+        return n.get("offset") + n.get("tokLen")
+
     def __getitem__(self, key):
         return ASTContext((self.current()[key], self.path), path=True,
                           name_proxy=self.name_proxy)
 
     def __eq__(self, other):
-        if isinstance(ASTContext, other):
+        if isinstance(other, ASTContext):
             other = other.current()
         return self.current() == other
 
@@ -261,7 +273,7 @@ class Brain(AstVisitor):
         self.preproc_db = ast["preproc_db"]
         self.base_dir = ast["base_dir"]
         self.compile_dir = ast["compile_dir"]
-        self.var_decls_by_id = {}
+        self.decls_by_id = {}
 
         brainstem = Brainstem();
         brainstem.visit(ast)
@@ -303,8 +315,8 @@ class Brain(AstVisitor):
             return
 
     def previsit(self, node):
-        if node["kind"] == "VarDecl":
-            self.var_decls_by_id[node["id"]] = node
+        if node["kind"] in ("VarDecl", "CXXConstructorDecl"):
+            self.decls_by_id[node["id"]] = node
 
         match node:
             case {'range': {'file': filename, 'begin': _, 'end': _}}:

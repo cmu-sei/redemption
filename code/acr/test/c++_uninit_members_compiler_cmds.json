@@ -1,0 +1,11 @@
+[
+    {
+        "arguments": [
+            "clang++",
+            "-c",
+            "c++_uninit_members.cpp"
+        ],
+        "directory": "$TEST_DIR",
+        "file": "/host/code/acr/test/c++_uninit_members.cpp"
+    }
+]

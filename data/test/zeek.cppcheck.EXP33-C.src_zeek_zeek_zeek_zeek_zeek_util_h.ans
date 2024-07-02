@@ -1,0 +1,17 @@
+--- /host/data/test/out/zeek.cppcheck.EXP33-C/src/util.h	2024-07-01 18:57:14.483281962 +0000
++++ /oss/zeek/src/util.h	2024-06-22 00:26:19.000000000 +0000
+@@ -1,5 +1,3 @@
+-#include "acr.h"
+-
+ // See the file "COPYING" in the main distribution directory for copyright.
+ 
+ #pragma once
+@@ -206,7 +204,7 @@
+ 	{
+ public:
+ 	std::string result;
+-	bool error = 0;
++	bool error;
+ 
+ protected:
+ 	SafePathOp() : result(), error() { }

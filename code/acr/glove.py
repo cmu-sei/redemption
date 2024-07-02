@@ -74,14 +74,37 @@ def run(edits_file, output_dir, *, comp_dir=".", base_dir=None, repair_only=None
     if not isinstance(edit_json, list):
         edit_json = [edit_json]
     for top_item in edit_json:
-        for (filename, edit_list) in (top_item.get("edits") or top_item.get("patch")):
+        patches = top_item.get("edits") or top_item.get("patch")
+        alert_id = top_item.get("alert_id", "<unknown>")
+        for (filename, edit_list) in patches:
             edits_by_file.setdefault(filename, [])
-            edits_by_file[filename].extend(edit_list)
+            edits_by_file[filename].append((alert_id, sorted(edit_list)))
+
+    for (filename, edit_list) in edits_by_file.items():
+        ranges = sorted((edits[0][0], edits[-1][1], alert_id, edits)
+                        for (alert_id, edits) in edit_list)
+        accum = []
+        riter = iter(ranges)
+        try:
+            (_, end, alert_id, edits) = next(riter)
+            accum.extend(edits)
+            while True:
+                (nstart, nend, nalert_id, nedits) = next(riter)
+                if nstart > end:
+                    (end, alert_id) = (nend, nalert_id)
+                    accum.extend(nedits)
+                else:
+                    print(f"Warning: skipping patch for alert {nalert_id} since it intersects with the patch for alert {alert_id}.")
+        except StopIteration:
+            pass
+        edits_by_file[filename] = accum
+
     def remove_base_dir(s):
         if s.startswith(base_dir + "/"):
             return s[len(base_dir + "/"):]
         else:
             return s
+
     repaired_files = []
     for (filename, edit_list) in edits_by_file.items():
         abs_filename = os.path.realpath(os.path.join(base_dir, filename))

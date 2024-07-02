@@ -1,0 +1,191 @@
+[
+  {
+    "rule": "EXP33-C",
+    "file": "c++_uninit_members.cpp",
+    "line": 11,
+    "column": 3,
+    "tool": "cppcheck",
+    "checker": "uninitMemberVar",
+    "message": "Member variable 'A::a' is not initialized in the constructor."
+  },
+  {
+    "rule": "EXP33-C",
+    "file": "c++_uninit_members.cpp",
+    "line": 12,
+    "column": 3,
+    "tool": "cppcheck",
+    "checker": "uninitMemberVar",
+    "message": "Member variable 'A::a' is not initialized in the constructor."
+  },
+  {
+    "rule": "EXP33-C",
+    "file": "c++_uninit_members.cpp",
+    "line": 13,
+    "column": 3,
+    "tool": "cppcheck",
+    "checker": "uninitMemberVar",
+    "message": "Member variable 'A::b' is not initialized in the constructor."
+  },
+  {
+    "rule": "EXP33-C",
+    "file": "c++_uninit_members.cpp",
+    "line": 14,
+    "column": 3,
+    "tool": "cppcheck",
+    "checker": "uninitMemberVar",
+    "message": "Member variable 'A::c' is not initialized in the constructor."
+  },
+  {
+    "rule": "EXP33-C",
+    "file": "c++_uninit_members.cpp",
+    "line": 25,
+    "column": 3,
+    "tool": "cppcheck",
+    "checker": "uninitMemberVar",
+    "message": "Member variable 'B::a' is not initialized in the constructor."
+  },
+  {
+    "rule": "EXP33-C",
+    "file": "c++_uninit_members.cpp",
+    "line": 26,
+    "column": 3,
+    "tool": "cppcheck",
+    "checker": "uninitMemberVar",
+    "message": "Member variable 'B::b' is not initialized in the constructor."
+  },
+  {
+    "rule": "EXP33-C",
+    "file": "c++_uninit_members.cpp",
+    "line": 27,
+    "column": 3,
+    "tool": "cppcheck",
+    "checker": "uninitMemberVar",
+    "message": "Member variable 'B::c' is not initialized in the constructor."
+  },
+  {
+    "rule": "EXP33-C",
+    "file": "c++_uninit_members.cpp",
+    "line": 47,
+    "column": 1,
+    "tool": "cppcheck",
+    "checker": "uninitMemberVar",
+    "message": "Member variable 'C::a' is not initialized in the constructor."
+  },
+  {
+    "rule": "EXP33-C",
+    "file": "c++_uninit_members.cpp",
+    "line": 48,
+    "column": 1,
+    "tool": "cppcheck",
+    "checker": "uninitMemberVar",
+    "message": "Member variable 'C::a' is not initialized in the constructor."
+  },
+  {
+    "rule": "EXP33-C",
+    "file": "c++_uninit_members.cpp",
+    "line": 49,
+    "column": 1,
+    "tool": "cppcheck",
+    "checker": "uninitMemberVar",
+    "message": "Member variable 'C::b' is not initialized in the constructor."
+  },
+  {
+    "rule": "EXP33-C",
+    "file": "c++_uninit_members.cpp",
+    "line": 50,
+    "column": 1,
+    "tool": "cppcheck",
+    "checker": "uninitMemberVar",
+    "message": "Member variable 'C::c' is not initialized in the constructor."
+  },
+  {
+    "rule": "EXP33-C",
+    "file": "c++_uninit_members.cpp",
+    "line": 51,
+    "column": 1,
+    "tool": "cppcheck",
+    "checker": "uninitMemberVar",
+    "message": "Member variable 'C::a' is not initialized in the constructor."
+  },
+  {
+    "rule": "EXP33-C",
+    "file": "c++_uninit_members.cpp",
+    "line": 52,
+    "column": 1,
+    "tool": "cppcheck",
+    "checker": "uninitMemberVar",
+    "message": "Member variable 'C::b' is not initialized in the constructor."
+  },
+  {
+    "rule": "EXP33-C",
+    "file": "c++_uninit_members.cpp",
+    "line": 53,
+    "column": 1,
+    "tool": "cppcheck",
+    "checker": "uninitMemberVar",
+    "message": "Member variable 'C::c' is not initialized in the constructor."
+  },
+  {
+    "rule": "EXP33-C",
+    "file": "c++_uninit_members.cpp",
+    "line": 55,
+    "column": 1,
+    "tool": "cppcheck",
+    "checker": "uninitMemberVar",
+    "message": "Member variable 'D::a' is not initialized in the constructor."
+  },
+  {
+    "rule": "EXP33-C",
+    "file": "c++_uninit_members.cpp",
+    "line": 56,
+    "column": 1,
+    "tool": "cppcheck",
+    "checker": "uninitMemberVar",
+    "message": "Member variable 'D::a' is not initialized in the constructor."
+  },
+  {
+    "rule": "EXP33-C",
+    "file": "c++_uninit_members.cpp",
+    "line": 57,
+    "column": 1,
+    "tool": "cppcheck",
+    "checker": "uninitMemberVar",
+    "message": "Member variable 'D::b' is not initialized in the constructor."
+  },
+  {
+    "rule": "EXP33-C",
+    "file": "c++_uninit_members.cpp",
+    "line": 58,
+    "column": 1,
+    "tool": "cppcheck",
+    "checker": "uninitMemberVar",
+    "message": "Member variable 'D::c' is not initialized in the constructor."
+  },
+  {
+    "rule": "EXP33-C",
+    "file": "c++_uninit_members.cpp",
+    "line": 59,
+    "column": 1,
+    "tool": "cppcheck",
+    "checker": "uninitMemberVar",
+    "message": "Member variable 'D::a' is not initialized in the constructor."
+  },
+  {
+    "rule": "EXP33-C",
+    "file": "c++_uninit_members.cpp",
+    "line": 60,
+    "column": 1,
+    "tool": "cppcheck",
+    "checker": "uninitMemberVar",
+    "message": "Member variable 'D::b' is not initialized in the constructor."
+  },
+  {
+    "rule": "EXP33-C",
+    "file": "c++_uninit_members.cpp",
+    "line": 61,
+    "column": 1,
+    "tool": "cppcheck",
+    "checker": "uninitMemberVar",
+    "message": "Member variable 'D::c' is not initialized in the constructor."
+  }
+]

@@ -87,7 +87,7 @@ class Alert(OrderedDict):
         decl_id = node.get("referencedDecl",{}).get("prevId")
         if not decl_id:
             return None
-        decl_node = node.var_decls_by_id.get(decl_id)
+        decl_node = node.decls_by_id.get(decl_id)
         if not decl_node:
             return None
         return decl_node
@@ -105,22 +105,194 @@ class NullAlert(Alert):
 class EXP33_C(Alert):
     """An alert that handles EXP33_C repairs"""
 
+    def handle_uninitMemberVar(self, context):
+        # There has been a complaint abount an uninitialized member variable in a
+        # constructor.
+        if context.get('kind') != "CXXConstructorDecl":
+            return None
+
+        # Constructor data
+        inner = context.get("inner")
+
+        # Get and verify the name of the uninitialized variable
+        class_name = context.get('name')
+        if class_name is None:
+            return None
+        message = self.get('message')
+        if message is None:
+            return None
+        names = re.match(r"Member variable '(?:[^']*::)?([^':]+)::([^':]+)' is not initialized in the constructor", message)
+        if names is None:
+            return None
+        # Verify that this constructor is for the expected class
+        if names.group(1) != class_name:
+            return None
+        # This is the name of the variable that needs to be initialized
+        varName = names.group(2)
+
+        prevDecl = context.get("previousDecl")
+        if prevDecl is None:
+            # In this case, the constructor is defined in the class declaration.
+            declNode = context
+        else:
+            # This is a constructor definition outside the class declaration.
+            declNode = context.decls_by_id.get(prevDecl)
+            if declNode is None:
+                return None
+        same_file = (get_dict_path(context, "range", "file")
+                     == get_dict_path(declNode, "range", "file"))
+
+        # parent of declNode should be the class declaration.
+        parent = declNode.parent(kind=True)
+        if parent.get('kind') != "CXXRecordDecl":
+                return None
+
+        # Now we need to find any existing initializers.  We need to look for all
+        # CXXCtorInitializer nodes and verify that they are "real" initializers.
+        # initializers that are implicitly generated but not manually placed in the
+        # initializer list are given offsets identical to the constructor's offsets.
+        ctor_loc = (context['loc']['offset'], context['loc']['tokLen'])
+        ctor_offsets = (ctor_loc[0], ctor_loc[0] + ctor_loc[1])
+        initializer_list = []
+        if inner is not None:
+            def is_real_initializer(ctx):
+                match ctx:
+                    case {"kind": "CXXCtorInitializer",
+                          "inner": [{"kind": kind,
+                                     "range": {"begin": {"offset": begin_offset},
+                                               "end": {"offset": end_offset,
+                                                       "tokLen": end_length}}}]}:
+                        loc = (begin_offset, end_offset + end_length)
+                        if loc != ctor_offsets:
+                            return loc
+                return None
+            initializer_list = list(filter(is_real_initializer, inner))
+
+        # Check to make sure this variable isn't already being initialized
+        for initializer in initializer_list:
+            name = get_dict_path(initializer, "anyInit", "name")
+            if name == varName:
+                return None
+
+        siblings = declNode.parent()
+
+        # In this case, the class declaration is in the same file as the constructor
+        # definition.  We can initialize the member variable directly where the member
+        # variable is declared
+        if same_file:
+            fields = filter(lambda x: x.get("kind") == "FieldDecl" and
+                            x.get("name") == varName, siblings)
+            field = next(fields, None)
+            if field is None:
+                return None
+            if next(fields, None) is not None:
+                return None
+            self.repair_algo = "normal"
+            return field
+
+        # This is a constructor definition outside the class declaration, and the
+        # declaration is in another file.  We need to add the variable to this
+        # constructor's initializer list or add it to the constructor's body.  First we
+        # need to find the original class declaration to get the order of its member
+        # variables.
+
+        if inner is None:
+            return None
+
+        # Find the fields of the class
+        fields = filter(lambda x: x.get("kind") == "FieldDecl", siblings)
+        # field_names should have the ordering of member variables by name
+        field_names = [x["name"] for x in fields if "name" in x]
+        if varName not in field_names:
+            return None
+
+        # If the constructor is explicitly defaulted, we have no way of determining where
+        # the "= default" clause is in order to remove it.  This is redundant as we won't
+        # find a CompoundStmt below, but it's worth putting this aside as it's a special
+        # case that might be able to be handled differently if the AST changes or we are
+        # willing to do some manual inspection of the original C++ file.
+        if context.get("explicitlyDefaulted") == "default":
+            return None
+
+        # Get the body of the constructor
+        compound = next(filter(lambda x: x.get("kind") == "CompoundStmt", inner), None)
+
+        # If there are no initializers, we place our new initializer based on the location
+        # of the constructor body.
+        if len(initializer_list) == 0:
+            if compound is None:
+                return None
+            self.repair_algo = "constructor_init_pre_compound"
+            self.repair_name = varName
+            return compound
+
+        init_in_body = False
+
+        # Otherwise, we look for the first initilizer that is after our member variable in
+        # the member order list.  We will place our new initializer before that.
+        var_order = field_names.index(varName)
+        for initializer in initializer_list:
+            if initializer.get("baseInit") or initializer.get("delegatingInit"):
+                continue
+            name = get_dict_path(initializer, "anyInit", "name")
+            if name is None:
+                return None
+            order = field_names.index(name)
+            if var_order == order:
+                return None
+            if var_order < order:
+                if "range" in initializer:
+                    self.repair_algo = "constructor_init_pre_init"
+                    self.repair_name = varName
+                    return initializer
+                else:
+                    init_in_body = True
+
+        if not init_in_body:
+            # If we get here, there is no initializer that is ordered after our target
+            # variable.  Place it after the last initializer.
+            if "range" in initializer_list[-1]:
+                self.repair_algo = "constructor_init_post_init"
+                self.repair_name = varName
+                return initializer_list[-1]
+            elif compound is not None:
+                self.repair_algo = "constructor_init_after_pre_compound"
+                self.repair_name = varName
+                return compound
+
+        # Final fallback.  If we can't initialize it in the initialization list,
+        # initialize it in the constructor body.
+        if compound is None:
+            return None
+        self.repair_algo = "constructor_init_in_compound"
+        self.repair_name = varName
+        return compound
+
+
     def locate_repairable_node(self, context):
-        def get_uninit_var_name(alert):
-            message = alert.get("message","")
-            m = re.match("variable '([^']*)' is not initialized", message)
-            if m:
-                return m.group(1)
-            m = re.match("Uninitialized variable: (.*)", message)
-            if m:
-                return m.group(1)
-            return None
-        var = get_uninit_var_name(self)
-        if var is None:
-            return None
-        decl_node = self.get_decl_of_var(context)
-        if decl_node is None or decl_node.get("name") != var:
-            return None
+        match self:
+            case {"tool": "cppcheck", "checker": "uninitMemberVar"}:
+                decl_node = self.handle_uninitMemberVar(context)
+                if decl_node is None:
+                    return None
+            case _:
+                def get_uninit_var_name(alert):
+                    message = alert.get("message","")
+                    m = re.match("variable '([^']*)' is not initialized", message)
+                    if m:
+                        return m.group(1)
+                    m = re.match("Uninitialized variable: (.*)", message)
+                    if m:
+                        return m.group(1)
+                    return None
+                var = get_uninit_var_name(self)
+                if var is None:
+                    return None
+                decl_node = self.get_decl_of_var(context)
+                if decl_node is None or decl_node.get("name") != var:
+                    return None
+                self.repair_algo = "normal"
+
         # Don't try to initialize a variable declaration if it already has an initializer
         if "init" in decl_node:
             return None
@@ -128,27 +300,59 @@ class EXP33_C(Alert):
         self["ast_id"] = decl_node['id']
         return context
 
-    def attempt_patch(self, context):
-        # Create the patch
-        init_val = "0"
-        if self.decl_node["type"]["qualType"].endswith("*"):
-            if self['file'].endswith(".cpp"):
-                init_val = "nullptr"
-            else:
-                init_val = "NULL"
-        elif self.decl_node["type"].get("desugaredQualType","").startswith(("struct","union")):
-            init_val = "{}"
-        try:
-            loc = self.decl_node["loc"]
-            byte_end = loc['offset'] + loc['tokLen']
-        except KeyError:
-            self["why_skipped"] = "AST node is missing VarDecl location information"
-            self["patch"] = []
+    cpp_filename = re.compile(r".*\.([ch](xx|pp?|\+\+)|[CH](PP)?|ii|t?cc)$")
+
+    def simple_initializer_patch(self, repair, nudge = 0):
+        offset = get_dict_path(self.decl_node, "range", "begin", "offset")
+        if offset is None:
             return False
-        edit = [self['file'], [
-            [byte_end, byte_end, " = " + init_val]]]
+        edit = [self['file'], [[offset + nudge, offset + nudge, repair]]]
         self["patch"] = [edit]
         return True
+
+    def attempt_patch(self, context):
+        match self.repair_algo:
+            case "normal":
+                # Create the patch
+                init_val = "0"
+                if self.decl_node["type"]["qualType"].endswith("*"):
+                    if self.cpp_filename.match(self['file']):
+                        init_val = "nullptr"
+                    else:
+                        init_val = "NULL"
+                elif self.decl_node["type"].get("desugaredQualType","").startswith(("struct","union")):
+                    init_val = "{}"
+                try:
+                    loc = self.decl_node["loc"]
+                    byte_end = loc['offset'] + loc['tokLen']
+                except KeyError:
+                    self["why_skipped"] = "AST node is missing VarDecl location information"
+                    self["patch"] = []
+                    return False
+                edit = [self['file'], [
+                    [byte_end, byte_end, " = " + init_val]]]
+                self["patch"] = [edit]
+                return True
+            case "constructor_init_pre_compound":
+                return self.simple_initializer_patch(f" : {self.repair_name}{{}} ")
+            case "constructor_init_after_pre_compound":
+                return self.simple_initializer_patch(f", {self.repair_name}{{}} ")
+            case "constructor_init_pre_init":
+                return self.simple_initializer_patch(f" {self.repair_name}{{}}, ")
+            case "constructor_init_post_init":
+                match self.decl_node:
+                    case {'range': {"end": {"offset": offset, "tokLen": length}}}:
+                        loc = offset + length
+                        edit = [self['file'], [[loc, loc, f", {self.repair_name}{{}}"]]]
+                    case _:
+                        return False
+                self["patch"] = [edit]
+                return True
+            case "constructor_init_in_compound":
+                return self.simple_initializer_patch(f"{self.repair_name} = {{}}; ", 1)
+            case _:
+                raise AssertionError(f"Unrecognized repair_algo: {self.repair_algo}")
+
 
 class MSC12_C(Alert):
 

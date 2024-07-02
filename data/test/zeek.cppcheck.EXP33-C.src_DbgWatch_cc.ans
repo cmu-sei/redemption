@@ -1,0 +1,17 @@
+--- /host/data/test/out/zeek.cppcheck.EXP33-C/src/DbgWatch.cc	2024-07-01 18:51:54.175534103 +0000
++++ /oss/zeek/src/DbgWatch.cc	2024-06-22 00:26:19.000000000 +0000
+@@ -1,5 +1,3 @@
+-#include "acr.h"
+-
+ // Implementation of watches
+ 
+ #include "zeek/DbgWatch.h"
+@@ -19,7 +17,7 @@
+ 	}
+ 
+ DbgWatch::DbgWatch(Expr* expr_to_watch)
+-	 : var{} {
++	{
+ 	reporter->InternalError("DbgWatch unimplemented");
+ 	}
+ 

@@ -617,6 +617,8 @@ def test_errors(stringinput, out_dir):
 def test_array_null(stringinput, out_dir):
     assert run(stringinput, "array_null.yml") == 1
 
+def test_cxx_uninint_members(stringinput, out_dir):
+    assert run(stringinput, "c++_uninit_members.tests.yml") == 1
 
 def main():
     cmdline_args = parse_args()
