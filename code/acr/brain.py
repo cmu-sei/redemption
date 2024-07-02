@@ -338,14 +338,6 @@ class Brain(AstVisitor):
         self.alerts_by_lc = {}
         cur_alert_id = 1
 
-        def add(alert, alert_list):
-            rule = alert['rule']
-            for a in alert_list:
-                if a['rule'] == rule:
-                    self.mark_skipped_alert(alert, f"Duplicate of alert_id={a['alert_id']}")
-                    return False
-            alert_list.append(alert)
-
         for a in self.alert_list:
             if not a['file'].startswith("/"):
                 # Relative pathnames in the Alerts file are considered to be
@@ -356,13 +348,9 @@ class Brain(AstVisitor):
             (filename, line, col, rule)  = (a['file'], int(a['line']), a.get("column"), a['rule'])
             a["alert_id"] = cur_alert_id
             cur_alert_id += 1
-            val = setdefault_dict_path(self.alerts_by_line, filename, line, rule, a)
-            if not val is a and col is None:
-                self.mark_skipped_alert(a, f"Duplicate of alert_id={val['alert_id']}")
+            setdefault_dict_path(self.alerts_by_line, filename, line, rule, a)
             if col is not None:
-                val = setdefault_dict_path(self.alerts_by_lc, filename, line, int(col), rule, a)
-                if not val is a:
-                    self.mark_skipped_alert(a, f"Duplicate of alert_id={val['alert_id']}")
+                setdefault_dict_path(self.alerts_by_lc, filename, line, int(col), rule, a)
 
     def fixup_nulldom_info(self):
         def fixup(cur_deref):

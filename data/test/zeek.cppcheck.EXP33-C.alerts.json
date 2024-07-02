@@ -181,12 +181,12 @@
     "tool": "cppcheck",
     "checker": "uninitMemberVar",
     "message": "Member variable 'Type::is_network_order' is not initialized in the constructor.",
-    "satisfactory": "false",
+    "satisfactory": "true",
     "verdict": "false",
     "repairable": "false",
     "rationale": "The alert is for this code line: `Type() = default;` All fields get initialized to their default values being set to 0 or initialized by their default constructors. Per our auditing rules, there is no violation of EXP33-C in this line because there is no read of uninitialized memory in the alerted code line. Further, the rule EXP33-C does not require that variables be initialized in their constructor.",
     "randomness": "random and sample",
-    "issue": "REM-385"
+    "issue": "DONE REM-385"
   },
   {
     "rule": "EXP33-C",
