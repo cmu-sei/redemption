@@ -4,11 +4,11 @@
 
 struct A : Base {
   Base s1;
-  int a = 0;
+  int a = {};
   Base s2;
-  int b = 0;
+  int b = {};
   Base s3;
-  int c = 0;
+  int c = {};
   Base s4;
   A() = default;
   A(int)    : b(2), c(3) {}
@@ -18,11 +18,11 @@ struct A : Base {
 
 struct B : Base {
   Base s1;
-  int a = 0;
+  int a = {};
   Base s2;
-  int b = 0;
+  int b = {};
   Base s3;
-  int c = 0;
+  int c = {};
   Base s4;
   B(int)    : Base(-1), b(2), c(3) {}
   B(float)  : Base(-1), a(1), c(3) {}
@@ -31,11 +31,11 @@ struct B : Base {
 
 struct C : Base {
   Base s1;
-  int a = 0;
+  int a = {};
   Base s2;
-  int b = 0;
+  int b = {};
   Base s3;
-  int c = 0;
+  int c = {};
   Base s4;
   C();
   C(int);

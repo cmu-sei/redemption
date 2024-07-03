@@ -488,6 +488,7 @@ class Brain(AstVisitor):
 
     def run(self, ast):
         self.visit(ast)
+        self.cplusplus = ast.get("cplusplus", False)
         self.intervals = SortedCollection(iterable=self.intervals, key=self._key)
         for a in self.alert_list:
             # If already "repaired", don't attempt to re-repair it.

@@ -300,8 +300,6 @@ class EXP33_C(Alert):
         self["ast_id"] = decl_node['id']
         return context
 
-    cpp_filename = re.compile(r".*\.([ch](xx|pp?|\+\+)|[CH](PP)?|ii|t?cc)$")
-
     def simple_initializer_patch(self, repair, nudge = 0):
         offset = get_dict_path(self.decl_node, "range", "begin", "offset")
         if offset is None:
@@ -315,11 +313,10 @@ class EXP33_C(Alert):
             case "normal":
                 # Create the patch
                 init_val = "0"
-                if self.decl_node["type"]["qualType"].endswith("*"):
-                    if self.cpp_filename.match(self['file']):
-                        init_val = "nullptr"
-                    else:
-                        init_val = "NULL"
+                if context.cplusplus:
+                    init_val = "{}";
+                elif self.decl_node["type"]["qualType"].endswith("*"):
+                    init_val = "NULL"
                 elif self.decl_node["type"].get("desugaredQualType","").startswith(("struct","union")):
                     init_val = "{}"
                 try:

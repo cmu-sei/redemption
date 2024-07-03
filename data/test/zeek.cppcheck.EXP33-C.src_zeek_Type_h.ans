@@ -1,4 +1,4 @@
---- /host/data/test/out/zeek.cppcheck.EXP33-C/src/Type.h	2024-07-02 15:50:43.328479316 +0000
+--- /host/data/test/out/zeek.cppcheck.EXP33-C/src/Type.h	2024-07-03 16:11:28.479703460 +0000
 +++ /oss/zeek/src/Type.h	2024-06-22 00:26:19.000000000 +0000
 @@ -1,5 +1,3 @@
 -#include "acr.h"
@@ -10,10 +10,10 @@
  	void SetError();
  
  private:
--	TypeTag tag = 0;
--	InternalTypeTag internal_tag = 0;
--	bool is_network_order = 0;
--	bool base_type = 0;
+-	TypeTag tag = {};
+-	InternalTypeTag internal_tag = {};
+-	bool is_network_order = {};
+-	bool base_type = {};
 +	TypeTag tag;
 +	InternalTypeTag internal_tag;
 +	bool is_network_order;
@@ -25,11 +25,11 @@
  	std::vector<bool> managed_fields;
  
  	// Number of fields in the type.
--	int num_fields = 0;
+-	int num_fields = {};
 +	int num_fields;
  
  	// Number of fields in the type when originally declared.
--	int num_orig_fields = 0;
+-	int num_orig_fields = {};
 +	int num_orig_fields;
  
  	type_decl_list* types;

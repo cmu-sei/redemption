@@ -51,7 +51,7 @@ class EarException(Exception):
 def run_clang_parse(compile_cmd, clang_output_dir, generated=False):
     print_progress(f"Running Clang on {compile_cmd['file']}...")
 
-    (clang_cmds, clang_output_files) = get_clang_cmds(compile_cmd)
+    (clang_cmds, clang_output_files, cplusplus) = get_clang_cmds(compile_cmd)
     (compile_dir, ast_file, stderr_file, retcode_file, ll_file) = clang_output_files
 
     clang_output_dir = os.path.realpath(clang_output_dir)
@@ -95,7 +95,7 @@ def run_clang_parse(compile_cmd, clang_output_dir, generated=False):
     os.chdir(cur_dir)
 
     print_progress("Finished running Clang.")
-    return [ast_file, ll_file]
+    return [ast_file, ll_file, cplusplus]
 
 
 def update_ast( ast_json, base_dir, cmd):
@@ -132,7 +132,7 @@ def run_ear_for_cmd(cmd, base_dir, ast_file, ll_outfile, raw_ast_dir=None):
     generated = (raw_ast_dir is not None)
     if generated is False:
         raw_ast_dir = os.path.dirname(ll_outfile)
-    [ast_raw_file, ll_raw_file] = run_clang_parse(cmd, raw_ast_dir, generated)
+    [ast_raw_file, ll_raw_file, cplusplus] = run_clang_parse(cmd, raw_ast_dir, generated)
     shutil.copy(ll_raw_file, ll_outfile)
 
     print_progress("Parsing JSON AST...")
@@ -140,6 +140,7 @@ def run_ear_for_cmd(cmd, base_dir, ast_file, ll_outfile, raw_ast_dir=None):
     ast_json = json.loads(ast1, object_pairs_hook=OrderedDict)
 
     ast_json = update_ast( ast_json, base_dir, cmd)
+    ast_json["cplusplus"] = cplusplus
 
     print_progress("Converting AST to JSON string...")
     ast2 = json.dumps(ast_json, indent=2) + "\n"

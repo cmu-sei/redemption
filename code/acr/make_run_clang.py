@@ -101,13 +101,19 @@ def get_compile_cmds_for_source_file(compile_cmds_file=None, source_file=None):
     return cmds
 
 
+cxx_filename = re.compile(r".*\.([ch](xx|pp?|\+\+)|[CH](PP)?|ii|t?cc)$")
+
 def autogen_compile_cmd(source_pathname):
     source_basename = os.path.basename(source_pathname)
+    if cxx_filename.match(source_basename):
+        compiler = "clang++"
+    else:
+        compiler = "clang"
     source_dir = os.path.dirname(os.path.realpath(source_pathname))
     return (
         [
             {
-                "arguments": ["cc", "-c", source_basename],
+                "arguments": [compiler, "-c", source_basename],
                 "directory": source_dir,
                 "file": source_basename
             }
@@ -132,8 +138,10 @@ def get_clang_cmds(compile_cmd):
     compiler = args[0]
     if compiler.endswith("clang++"):
         args[0] = "clang++"
+        cplusplus = True
     else:
         args[0] = "clang"
+        cplusplus = False
     default_lang_std = os.getenv('acr_default_lang_std')
     if default_lang_std:
         args.insert(1, "--std=" + default_lang_std)
@@ -164,7 +172,8 @@ def get_clang_cmds(compile_cmd):
             shlex.join(proc_args) + f" 2> {ast_out_dir}/{stderr_file} | gzip > {ast_out_dir}/{cache_ast_file}; echo $? > {ast_out_dir}/{retcode_file}",
             shlex.join(ll_args) + " " + ast_out_dir + "/" + ll_raw_file
         ],
-        [compile_dir, cache_ast_file, stderr_file, retcode_file, ll_raw_file]
+        [compile_dir, cache_ast_file, stderr_file, retcode_file, ll_raw_file],
+        cplusplus
             ]
 
 
@@ -180,7 +189,7 @@ def run(compile_cmds_file, output_clang_script, source_file=None):
     with open(output_clang_script, 'w') as outfile:
         init_clang_script(outfile)
         for cmd in cmds:
-            (clang_cmds, files) = get_clang_cmds(cmd)
+            (clang_cmds, files, cplusplus) = get_clang_cmds(cmd)
             for clang_cmd in clang_cmds:
                 outfile.write(clang_cmd + "\n")
 
