@@ -115,6 +115,12 @@ hereafter referred to as *fields*.
 
     A list of repairs (edits).
 
+    A repair is a list of `[filename, edit-list]` pairs.  The
+    edit-list is a list of `[start, end, replacement]`, where `start`
+    and `end` are integer file byte positions, and `replacement` is a
+    string.  The `start` and `end` represent a region of the file to
+    replace with `replacement`.
+
 * `randomness` : string
 
     A (usually symbolic) reason this alert was chosen for manual
