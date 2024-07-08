@@ -684,22 +684,17 @@ class EXP34_C_ROSECHECKERS(EXP34_C):
         return super().locate_repairable_node(context)
 
 
-class CWE_476(EXP34_C):
-    # Currently an exact duplicate of EXP34_C
-    pass
-
-class CWE_561(MSC12_C):
-    # Currently an exact duplicate of MSC12_C
-    pass
-
-
 # Rule list is a map of rule names to a list of candidates.  Each
 # candidate is a pair of a match dictionary and an alert class.  A
 # match dictionary is a map of alert keys to regular expression
 # strings.
+#
+# A rule name that maps to a string is an alias.  The string it maps
+# to is the rule name that this rule name is aliasing.
+
 rule_list = {
-    "CWE-476": [({}, CWE_476)],
-    "CWE-561": [({}, CWE_561)],
+    "CWE-476": "EXP34-C",
+    "CWE-561": "MSC12-C",
     "EXP33-C": [({}, EXP33_C)],
     "EXP34-C": [({"tool": "cppcheck"}, EXP34_C_CPPCHECK),
                 ({"tool": "clang-tidy"}, EXP34_C_CLANG_TIDY),
@@ -712,6 +707,8 @@ rule_list = {
 def alert_from_dict(json_alert):
     rule = json_alert.get("rule")
     candidate = rule_list.get(rule, [({}, NullAlert)])
+    while isinstance(candidate, str):
+        candidate = rule_list[candidate]
     for (option, cls) in candidate:
         found = cls
         for k, v in option.items():
