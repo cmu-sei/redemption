@@ -485,3 +485,18 @@ def test_uninit_variable_clangtidy_false_positive():
     assert cmp_file_normalize("uninit_variable_clangtidy_fp.brain-out.json", "out/uninit_variable_clangtidy_fp.brain-out.json")
     if os.getenv('pytest_keep') != "true":
         os.system("rm -f out/uninit_variable_clangtidy_fp*.*")
+
+def test_already_repaired_null_01():
+    os.system("rm -f out/already_repaired_null_01.*")
+    alerts="already_repaired_null_01.alerts.json"
+    step_dir="out"
+    base_dir="."
+    end_to_end_acr.run(
+        source_file="already_repaired_null_01.c",
+        compile_commands="autogen",
+        alerts=alerts,
+        step_dir=step_dir,
+        out_src_dir=step_dir)
+    assert cmp_file_normalize("already_repaired_null_01.brain-out.json", "out/already_repaired_null_01.brain-out.json")
+    if os.getenv('pytest_keep') != "true":
+        os.system("rm -f out/already_repaired_null_01.*")
