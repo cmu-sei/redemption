@@ -41,6 +41,7 @@ from tempfile import TemporaryDirectory
 from collections import OrderedDict, defaultdict
 from make_run_clang import get_compile_dir, read_json_file
 from util import *
+from multiprocessing.pool import Pool
 
 def parse_args():
     def text_to_bool(s):
@@ -71,6 +72,9 @@ def parse_args():
         help="Directory to write repaired source files (or omit to refrain from running the glove module)")
     parser.add_argument('-r', "--raw-ast-dir", type=str, dest="raw_ast_dir",
         help="Process contents of AST directory, rather than source code")
+    parser.add_argument('-j', "--threads", type=int, dest="threads", default=1,
+        help="A positive integer is the numer of threads to use.  Zero means to use all processors.  A negative number is a number of processors to not use.")
+
     cmdline_args = parser.parse_args()
     return cmdline_args
 
@@ -166,6 +170,12 @@ def combine_brain_outs(indiv_brain_filenames):
 
     return combined_alert_list
 
+def execute(cmd, base_dir, ast_filename, raw_ast_dir, alerts, brain_out_file):
+    ear.write_ear_output_for_cmd(cmd, base_dir, ast_file=ast_filename,
+                                 raw_ast_dir=raw_ast_dir)
+    brain.run(ast_file=ast_filename, alerts_filename=alerts,
+              output_filename=brain_out_file)
+
 def run(*, compile_cmds_file, base_dir, alerts=None, combined_brain_out=None,
         step_dir=None, out_src_dir=None, inject_brain_output=False, raw_ast_dir=None, **kwargs):
     if os.getenv('acr_emit_invocation'):
@@ -183,6 +193,17 @@ def run(*, compile_cmds_file, base_dir, alerts=None, combined_brain_out=None,
     compile_commands = read_json_file(compile_cmds_file)
     num_tus = len(compile_commands)
     indiv_brain_filenames = []
+
+    pool = None
+    pooled = []
+    threads = kwargs.get("threads")
+    if threads is not None:
+        if threads == 0:
+            threads = os.cpu_count()
+        elif threads < 0:
+            threads = max(1, os.cpu_count() + threads)
+    if threads != 1:
+        pool = Pool(threads)
 
     if base_dir == "/":
         sys.stderr.write('Error: base_dir may not be the root directory ("/").')
@@ -213,9 +234,19 @@ def run(*, compile_cmds_file, base_dir, alerts=None, combined_brain_out=None,
             brain_out_file = step_dir + "/" + source_base_name + ".brain-out.json"
 
             skip_generating_brain_out = inject_brain_output and os.path.exists(brain_out_file)
+            args = (cmd, base_dir, ast_filename, raw_ast_dir, alerts, brain_out_file)
             if not skip_generating_brain_out:
-                ear.write_ear_output_for_cmd(cmd, base_dir, ast_file=ast_filename, raw_ast_dir=raw_ast_dir)
-                brain.run(ast_file=ast_filename, alerts_filename=alerts, output_filename=brain_out_file)
+                if pool is not None:
+                    worker = pool.apply_async(execute, args)
+                    pooled.append((worker, brain_out_file))
+                else:
+                    execute(*args)
+                    indiv_brain_filenames.append(brain_out_file)
+            else:
+                indiv_brain_filenames.append(brain_out_file)
+
+        for (worker, brain_out_file) in pooled:
+            worker.get()
             indiv_brain_filenames.append(brain_out_file)
 
         # if output_clang_script is not None:
@@ -230,6 +261,8 @@ def run(*, compile_cmds_file, base_dir, alerts=None, combined_brain_out=None,
             glove.run(edits_file=combined_brain_out, output_dir=out_src_dir, base_dir=base_dir)
 
     finally:
+        if pool is not None:
+            pool.terminate()
         if temp_step_dir is not None:
             temp_step_dir.cleanup()
 

@@ -4,7 +4,6 @@
     "file": "$BASE/super01a.c",
     "line": 9,
     "alert_id": 1,
-    "ast_id": 2180,
     "patch": [],
     "why_skipped": "Different repairs from different translation units",
     "conflicting_repairs": [
@@ -49,6 +48,7 @@
     "file": "$BASE/super01b.c",
     "line": 4,
     "alert_id": 2,
+    "ast_id": 1028,
     "patch": [
       [
         "$BASE/super01b.c",
@@ -72,7 +72,7 @@
     "file": "$BASE/super01.h",
     "line": 2,
     "alert_id": 3,
-    "ast_id": 2150,
+    "ast_id": 1020,
     "patch": [
       [
         "$BASE/super01.h",
