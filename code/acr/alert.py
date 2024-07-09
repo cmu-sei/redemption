@@ -546,6 +546,7 @@ class EXP34_C(Alert):
             [byte_start+1, byte_start+1, "null_check("],
             [byte_end, byte_end, closer]]]
         self["patch"] = [edit]
+        self["add-headers"] = ["acr.h"]
 
 
 class EXP34_C_CLANG_TIDY(EXP34_C):

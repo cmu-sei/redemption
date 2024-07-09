@@ -146,18 +146,20 @@ def combine_brain_outs(indiv_brain_filenames):
             if v['alert_id'] != alert_id:
                 print(f"Error in {filename}: Expecting alert_id {alert_id} but found alert_id {v['alert_id']}.")
             if v['patch'] != []:
-                non_empty.append(tuplize(v['patch']))
+                non_empty.append((tuplize(v['patch']), tuplize(v.get('add-headers'))))
         combined = variants[0].copy()
         if all_equal(non_empty):
             if 'patch' in combined:
                 del combined['patch']
-            combined['patch'] = non_empty[0]
+            combined['patch'] = non_empty[0][0]
+            if non_empty[0][1] is not None:
+                combined['add-headers'] = non_empty[0][1]
         elif len(non_empty) == 0:
             pass
         else:
             combined['patch'] = []
             combined['why_skipped'] = "Different repairs from different translation units"
-            combined['conflicting_repairs'] = sorted(non_empty)
+            combined['conflicting_repairs'] = sorted(x[0] for x in non_empty)
         return combined
 
     combined_alert_list = []

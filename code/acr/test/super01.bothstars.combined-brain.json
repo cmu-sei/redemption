@@ -5,6 +5,9 @@
     "line": 9,
     "alert_id": 1,
     "ast_id": 2178,
+    "add-headers": [
+      "acr.h"
+    ],
     "patch": [
       [
         "$BASE/super01a.c",
@@ -59,6 +62,9 @@
           ]
         ]
       ]
+    ],
+    "add-headers": [
+      "acr.h"
     ]
   },
   {
@@ -67,6 +73,9 @@
     "line": 2,
     "alert_id": 3,
     "ast_id": 2150,
+    "add-headers": [
+      "acr.h"
+    ],
     "patch": [
       [
         "$BASE/super01.h",

@@ -21,6 +21,9 @@
           ]
         ]
       ]
+    ],
+    "add-headers": [
+      "acr.h"
     ]
   },
   {
@@ -45,6 +48,9 @@
           ]
         ]
       ]
+    ],
+    "add-headers": [
+      "acr.h"
     ]
   },
   {
@@ -54,6 +60,9 @@
     "alert_id": 3,
     "ast_id": 2800,
     "patch": [],
+    "add-headers": [
+      "acr.h"
+    ],
     "why_skipped": [
       "Dominated by alert 1",
       "Dominated by the following nullness checks (identified by (line, col) pairs): [[12, 9]]"
@@ -67,6 +76,9 @@
     "alert_id": 4,
     "ast_id": 2810,
     "patch": [],
+    "add-headers": [
+      "acr.h"
+    ],
     "why_skipped": [
       "Dominated by alert 2",
       "Dominated by the following nullness checks (identified by (line, col) pairs): [[15, 9]]"
@@ -80,6 +92,9 @@
     "alert_id": 5,
     "ast_id": 2816,
     "patch": [],
+    "add-headers": [
+      "acr.h"
+    ],
     "why_skipped": [
       "Dominated by alert 1"
     ],
@@ -92,6 +107,9 @@
     "alert_id": 6,
     "ast_id": 2822,
     "patch": [],
+    "add-headers": [
+      "acr.h"
+    ],
     "why_skipped": [
       "Dominated by alert 2"
     ],

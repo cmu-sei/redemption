@@ -73,12 +73,16 @@ def run(edits_file, output_dir, *, comp_dir=".", base_dir=None, repair_only=None
     edit_json = read_json_file(edits_file)
     if not isinstance(edit_json, list):
         edit_json = [edit_json]
+    add_acr = set()
     for top_item in edit_json:
         patches = top_item.get("edits") or top_item.get("patch")
         alert_id = top_item.get("alert_id", "<unknown>")
+        acr = "acr.h" in top_item.get("add-headers", [])
         for (filename, edit_list) in patches:
             edits_by_file.setdefault(filename, [])
             edits_by_file[filename].append((alert_id, sorted(edit_list)))
+            if acr:
+                add_acr.add(filename)
 
     for (filename, edit_list) in edits_by_file.items():
         ranges = sorted((edits[0][0], edits[-1][1], alert_id, edits)
@@ -118,7 +122,7 @@ def run(edits_file, output_dir, *, comp_dir=".", base_dir=None, repair_only=None
         assert(abs_filename.startswith("/"))
         contents_string = read_whole_file(abs_filename, 'b')
         contents = list(contents_string)
-        if len(edit_list) > 0:
+        if len(edit_list) > 0 and filename in add_acr:
             include_line = '#include "acr.h"'
             already_present = re.search(b'^' + bytes(include_line, "utf-8") + b'$',
                                         contents_string, flags=re.MULTILINE)

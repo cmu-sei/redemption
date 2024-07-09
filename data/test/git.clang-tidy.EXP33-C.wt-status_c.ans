@@ -1,12 +1,6 @@
---- /host/data/test/out/wt-status.c	2024-03-15 17:27:35.487088394 +0000
-+++ /oss/git/wt-status.c	2024-03-05 20:45:27.646563340 +0000
-@@ -1,5 +1,3 @@
--#include "acr.h"
--
- #include "cache.h"
- #include "wt-status.h"
- #include "object.h"
-@@ -53,7 +51,7 @@
+--- /host/data/test/out/git.clang-tidy.EXP33-C/wt-status.c	2024-07-09 16:19:09.072939443 +0000
++++ /oss/git/wt-status.c	2024-06-22 00:27:47.000000000 +0000
+@@ -51,7 +51,7 @@
  {
  	struct strbuf sb = STRBUF_INIT;
  	struct strbuf linebuf = STRBUF_INIT;
@@ -15,7 +9,7 @@
  
  	strbuf_vaddf(&sb, fmt, ap);
  	if (!sb.len) {
-@@ -151,7 +149,7 @@
+@@ -149,7 +149,7 @@
  
  static void wt_longstatus_print_unmerged_header(struct wt_status *s)
  {
@@ -24,7 +18,7 @@
  	int del_mod_conflict = 0;
  	int both_deleted = 0;
  	int not_deleted = 0;
-@@ -328,8 +326,8 @@
+@@ -326,8 +326,8 @@
  	struct strbuf onebuf = STRBUF_INIT;
  	static char *padding;
  	static int label_width;
@@ -35,7 +29,7 @@
  
  	if (!padding) {
  		label_width = maxwidth(wt_status_unmerged_status_string, 1, 7);
-@@ -353,16 +351,16 @@
+@@ -351,16 +351,16 @@
  {
  	struct wt_status_change_data *d = it->util;
  	const char *c = color(change_type, s);
@@ -58,7 +52,7 @@
  
  	if (!padding) {
  		/* If DIFF_STATUS_* uses outside the range [A..Z], we're in trouble */
-@@ -444,15 +442,15 @@
+@@ -442,15 +442,15 @@
  					 void *data)
  {
  	struct wt_status *s = data;
@@ -78,7 +72,7 @@
  
  		p = q->queue[i];
  		it = string_list_insert(&s->change, p->two->path);
-@@ -508,8 +506,8 @@
+@@ -506,8 +506,8 @@
  
  static int unmerged_mask(struct index_state *istate, const char *path)
  {
@@ -89,7 +83,7 @@
  
  	pos = index_name_pos(istate, path, strlen(path));
  	if (0 <= pos)
-@@ -531,12 +529,12 @@
+@@ -529,12 +529,12 @@
  					 void *data)
  {
  	struct wt_status *s = data;
@@ -106,7 +100,7 @@
  
  		p = q->queue[i];
  		it = string_list_insert(&s->change, p->two->path);
-@@ -671,8 +669,8 @@
+@@ -669,8 +669,8 @@
  			    struct strbuf *base, const char *path,
  			    unsigned int mode, void *context)
  {
@@ -117,7 +111,7 @@
  	struct wt_status *s = context;
  	struct strbuf full_name = STRBUF_INIT;
  
-@@ -700,11 +698,11 @@
+@@ -698,11 +698,11 @@
  static void wt_status_collect_changes_initial(struct wt_status *s)
  {
  	struct index_state *istate = s->repo->index;
@@ -132,7 +126,7 @@
  		const struct cache_entry *ce = istate->cache[i];
  
  		if (!ce_path_match(istate, ce, &s->pathspec, NULL))
-@@ -759,7 +757,7 @@
+@@ -757,7 +757,7 @@
  
  static void wt_status_collect_untracked(struct wt_status *s)
  {
@@ -141,7 +135,7 @@
  	struct dir_struct dir = DIR_INIT;
  	uint64_t t_begin = getnanotime();
  	struct index_state *istate = s->repo->index;
-@@ -803,10 +801,10 @@
+@@ -801,10 +801,10 @@
  
  static int has_unmerged(struct wt_status *s)
  {
@@ -154,7 +148,7 @@
  		d = s->change.items[i].util;
  		if (d->stagemask)
  			return 1;
-@@ -854,11 +852,11 @@
+@@ -852,11 +852,11 @@
  static void wt_longstatus_print_unmerged(struct wt_status *s)
  {
  	int shown_header = 0;
@@ -169,7 +163,7 @@
  		it = &(s->change.items[i]);
  		d = it->util;
  		if (!d->stagemask)
-@@ -877,11 +875,11 @@
+@@ -875,11 +875,11 @@
  static void wt_longstatus_print_updated(struct wt_status *s)
  {
  	int shown_header = 0;
@@ -184,7 +178,7 @@
  		it = &(s->change.items[i]);
  		d = it->util;
  		if (!d->index_status ||
-@@ -905,13 +903,13 @@
+@@ -903,13 +903,13 @@
  static int wt_status_check_worktree_changes(struct wt_status *s,
  					     int *dirty_submodules)
  {
@@ -200,7 +194,7 @@
  		d = s->change.items[i].util;
  		if (!d->worktree_status ||
  		    d->worktree_status == DIFF_STATUS_UNMERGED)
-@@ -928,7 +926,7 @@
+@@ -926,7 +926,7 @@
  
  static void wt_longstatus_print_changed(struct wt_status *s)
  {
@@ -209,7 +203,7 @@
  	int worktree_changes = wt_status_check_worktree_changes(s, &dirty_submodules);
  
  	if (!worktree_changes)
-@@ -937,8 +935,8 @@
+@@ -935,8 +935,8 @@
  	wt_longstatus_print_dirty_header(s, worktree_changes < 0, dirty_submodules);
  
  	for (i = 0; i < s->change.nr; i++) {
@@ -220,7 +214,7 @@
  		it = &(s->change.items[i]);
  		d = it->util;
  		if (!d->worktree_status ||
-@@ -983,7 +981,7 @@
+@@ -981,7 +981,7 @@
  	struct child_process sm_summary = CHILD_PROCESS_INIT;
  	struct strbuf cmd_stdout = STRBUF_INIT;
  	struct strbuf summary = STRBUF_INIT;
@@ -229,7 +223,7 @@
  
  	strvec_pushf(&sm_summary.env, "GIT_INDEX_FILE=%s", s->index_file);
  
-@@ -1013,7 +1011,7 @@
+@@ -1011,7 +1011,7 @@
  	strbuf_release(&cmd_stdout);
  
  	if (s->display_comment_prefix) {
@@ -238,7 +232,7 @@
  		summary_content = strbuf_detach(&summary, &len);
  		strbuf_add_commented_lines(&summary, summary_content, len);
  		free(summary_content);
-@@ -1028,7 +1026,7 @@
+@@ -1026,7 +1026,7 @@
  				      const char *what,
  				      const char *how)
  {
@@ -247,7 +241,7 @@
  	struct strbuf buf = STRBUF_INIT;
  	static struct string_list output = STRING_LIST_INIT_DUP;
  	struct column_options copts;
-@@ -1039,8 +1037,8 @@
+@@ -1037,8 +1037,8 @@
  	wt_longstatus_print_other_header(s, what, how);
  
  	for (i = 0; i < l->nr; i++) {
@@ -258,7 +252,7 @@
  		it = &(l->items[i]);
  		path = quote_path(it->string, s->prefix, &buf, 0);
  		if (column_active(s->colopts)) {
-@@ -1074,7 +1072,7 @@
+@@ -1072,7 +1072,7 @@
  
  size_t wt_status_locate_end(const char *s, size_t len)
  {
@@ -267,7 +261,7 @@
  	struct strbuf pattern = STRBUF_INIT;
  
  	strbuf_addf(&pattern, "\n%c %s", comment_line_char, cut_line);
-@@ -1107,7 +1105,7 @@
+@@ -1105,7 +1105,7 @@
  {
  	struct rev_info rev;
  	struct setup_revision_opt opt;
@@ -276,7 +270,7 @@
  	const char *c = color(WT_STATUS_HEADER, s);
  
  	repo_init_revisions(s->repo, &rev, NULL);
-@@ -1161,10 +1159,10 @@
+@@ -1159,10 +1159,10 @@
  static void wt_longstatus_print_tracking(struct wt_status *s)
  {
  	struct strbuf sb = STRBUF_INIT;
@@ -290,7 +284,7 @@
  	uint64_t t_begin = 0;
  
  	assert(s->branch && !s->is_initial);
-@@ -1231,7 +1229,7 @@
+@@ -1229,7 +1229,7 @@
  static void show_am_in_progress(struct wt_status *s,
  				const char *color)
  {
@@ -299,7 +293,7 @@
  
  	status_printf_ln(s, color,
  		_("You are in the middle of an am session."));
-@@ -1275,7 +1273,7 @@
+@@ -1273,7 +1273,7 @@
  static int split_commit_in_progress(struct wt_status *s)
  {
  	int split_in_progress = 0;
@@ -308,7 +302,7 @@
  
  	if ((!s->amend && !s->nowarn && !s->workdir_dirty) ||
  	    !s->branch || strcmp(s->branch, "HEAD"))
-@@ -1312,8 +1310,8 @@
+@@ -1310,8 +1310,8 @@
   */
  static void abbrev_oid_in_line(struct strbuf *line)
  {
@@ -319,7 +313,7 @@
  
  	if (starts_with(line->buf, "exec ") ||
  	    starts_with(line->buf, "x ") ||
-@@ -1372,7 +1370,7 @@
+@@ -1370,7 +1370,7 @@
  				    const char *color)
  {
  	if (s->state.rebase_interactive_in_progress) {
@@ -328,7 +322,7 @@
  		int nr_lines_to_show = 2;
  
  		struct string_list have_done = STRING_LIST_INIT_DUP;
-@@ -1584,7 +1582,7 @@
+@@ -1582,7 +1582,7 @@
  {
  	struct strbuf sb = STRBUF_INIT;
  	struct object_id oid;
@@ -337,7 +331,7 @@
  
  	if (strbuf_read_file(&sb, worktree_git_path(wt, "%s", path), 0) <= 0)
  		goto got_nothing;
-@@ -1623,7 +1621,7 @@
+@@ -1621,7 +1621,7 @@
  			   const char *message, void *cb_data)
  {
  	struct grab_1st_switch_cbdata *cb = cb_data;
@@ -346,7 +340,7 @@
  
  	if (!skip_prefix(message, "checkout: moving from ", &message))
  		return 0;
-@@ -1647,7 +1645,7 @@
+@@ -1645,7 +1645,7 @@
  					struct wt_status_state *state)
  {
  	struct grab_1st_switch_cbdata cb;
@@ -355,7 +349,7 @@
  	struct object_id oid;
  	char *ref = NULL;
  
-@@ -1722,7 +1720,7 @@
+@@ -1720,7 +1720,7 @@
  					    struct wt_status_state *state)
  {
  	int skip_worktree = 0;
@@ -364,7 +358,7 @@
  
  	if (!core_apply_sparse_checkout || r->index->cache_nr == 0) {
  		/*
-@@ -1754,7 +1752,7 @@
+@@ -1752,7 +1752,7 @@
  {
  	struct stat st;
  	struct object_id oid;
@@ -373,7 +367,7 @@
  
  	if (!stat(git_path_merge_head(r), &st)) {
  		wt_status_check_rebase(NULL, state);
-@@ -1949,7 +1947,7 @@
+@@ -1947,7 +1947,7 @@
  		fprintf(s->fp, " %s%c", it->string, 0);
  	} else {
  		struct strbuf onebuf = STRBUF_INIT;
@@ -382,7 +376,7 @@
  		one = quote_path(it->string, s->prefix, &onebuf, QUOTE_PATH_QUOTE_SP);
  		fprintf(s->fp, " %s\n", one);
  		strbuf_release(&onebuf);
-@@ -1976,7 +1974,7 @@
+@@ -1974,7 +1974,7 @@
  			fprintf(s->fp, "%s%c", d->rename_source, 0);
  	} else {
  		struct strbuf onebuf = STRBUF_INIT;
@@ -391,7 +385,7 @@
  
  		if (d->rename_source) {
  			one = quote_path(d->rename_source, s->prefix, &onebuf,
-@@ -1997,7 +1995,7 @@
+@@ -1995,7 +1995,7 @@
  		fprintf(s->fp, "%s %s%c", sign, it->string, 0);
  	} else {
  		struct strbuf onebuf = STRBUF_INIT;
@@ -400,7 +394,7 @@
  		one = quote_path(it->string, s->prefix, &onebuf, QUOTE_PATH_QUOTE_SP);
  		color_fprintf(s->fp, color(WT_STATUS_UNTRACKED, s), "%s", sign);
  		fprintf(s->fp, " %s\n", one);
-@@ -2007,15 +2005,15 @@
+@@ -2005,15 +2005,15 @@
  
  static void wt_shortstatus_print_tracking(struct wt_status *s)
  {
@@ -421,7 +415,7 @@
  	int upstream_is_gone = 0;
  
  	color_fprintf(s->fp, color(WT_STATUS_HEADER, s), "## ");
-@@ -2083,7 +2081,7 @@
+@@ -2081,7 +2081,7 @@
  
  static void wt_shortstatus_print(struct wt_status *s)
  {
@@ -430,7 +424,7 @@
  
  	if (s->show_branch)
  		wt_shortstatus_print_tracking(s);
-@@ -2147,10 +2145,10 @@
+@@ -2145,10 +2145,10 @@
   */
  static void wt_porcelain_v2_print_tracking(struct wt_status *s)
  {
@@ -445,7 +439,7 @@
  	char eol = s->null_termination ? '\0' : '\n';
  
  	fprintf(s->fp, "# branch.oid %s%c",
-@@ -2300,7 +2298,7 @@
+@@ -2298,7 +2298,7 @@
  	const char *path_from = NULL;
  	char key[3];
  	char submodule_token[5];
@@ -454,7 +448,7 @@
  
  	wt_porcelain_v2_fix_up_changed(it);
  	wt_porcelain_v2_submodule_state(d, submodule_token);
-@@ -2359,15 +2357,15 @@
+@@ -2357,15 +2357,15 @@
  {
  	struct wt_status_change_data *d = it->util;
  	struct index_state *istate = s->repo->index;
@@ -473,7 +467,7 @@
  	char submodule_token[5];
  	char unmerged_prefix = 'u';
  	char eol_char = s->null_termination ? '\0' : '\n';
-@@ -2441,8 +2439,8 @@
+@@ -2439,8 +2439,8 @@
  	char prefix)
  {
  	struct strbuf buf = STRBUF_INIT;
@@ -484,7 +478,7 @@
  
  	if (s->null_termination) {
  		path = it->string;
-@@ -2469,9 +2467,9 @@
+@@ -2467,9 +2467,9 @@
   */
  static void wt_porcelain_v2_print(struct wt_status *s)
  {
@@ -497,7 +491,7 @@
  
  	if (s->show_branch)
  		wt_porcelain_v2_print_tracking(s);
-@@ -2541,7 +2539,7 @@
+@@ -2539,7 +2539,7 @@
  int has_unstaged_changes(struct repository *r, int ignore_submodules)
  {
  	struct rev_info rev_info;
@@ -506,7 +500,7 @@
  
  	repo_init_revisions(r, &rev_info, NULL);
  	if (ignore_submodules) {
-@@ -2563,7 +2561,7 @@
+@@ -2561,7 +2561,7 @@
  			    int ignore_submodules)
  {
  	struct rev_info rev_info;

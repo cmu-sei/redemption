@@ -1,12 +1,6 @@
---- /host/data/test/out/path.c	2024-03-15 18:47:18.305564332 +0000
-+++ /oss/git/path.c	2024-03-05 20:45:27.467563330 +0000
-@@ -1,5 +1,3 @@
--#include "acr.h"
--
- /*
-  * Utilities for paths and pathnames
-  */
-@@ -59,7 +57,7 @@
+--- /host/data/test/out/git.clang-tidy.EXP33-C/path.c	2024-07-09 16:17:34.534548500 +0000
++++ /oss/git/path.c	2024-06-22 00:27:47.000000000 +0000
+@@ -57,7 +57,7 @@
  char *mksnpath(char *buf, size_t n, const char *fmt, ...)
  {
  	va_list args;
@@ -15,7 +9,7 @@
  
  	va_start(args, fmt);
  	len = vsnprintf(buf, n, fmt, args);
-@@ -183,9 +181,9 @@
+@@ -181,9 +181,9 @@
   */
  static void *add_to_trie(struct trie *root, const char *key, void *value)
  {
@@ -28,7 +22,7 @@
  
  	if (!*key) {
  		/* we have reached the end of the key */
-@@ -279,9 +277,9 @@
+@@ -277,9 +277,9 @@
  static int trie_find(struct trie *root, const char *key, match_fn fn,
  		     void *baton)
  {
@@ -41,7 +35,7 @@
  
  	if (!*key) {
  		/* we have reached the end of the key */
-@@ -334,7 +332,7 @@
+@@ -332,7 +332,7 @@
  
  static void init_common_trie(void)
  {
@@ -50,7 +44,7 @@
  
  	if (common_trie_done_setup)
  		return;
-@@ -379,8 +377,8 @@
+@@ -377,8 +377,8 @@
  void report_linked_checkout_garbage(void)
  {
  	struct strbuf sb = STRBUF_INIT;
@@ -61,7 +55,7 @@
  
  	if (!the_repository->different_commondir)
  		return;
-@@ -432,7 +430,7 @@
+@@ -430,7 +430,7 @@
  			const struct worktree *wt, struct strbuf *buf,
  			const char *fmt, va_list args)
  {
@@ -70,7 +64,7 @@
  	strbuf_worktree_gitdir(buf, repo, wt);
  	if (buf->len && !is_dir_sep(buf->buf[buf->len - 1]))
  		strbuf_addch(buf, '/');
-@@ -580,7 +578,7 @@
+@@ -578,7 +578,7 @@
  {
  	struct strbuf git_submodule_common_dir = STRBUF_INIT;
  	struct strbuf git_submodule_dir = STRBUF_INIT;
@@ -79,7 +73,7 @@
  
  	ret = submodule_to_gitdir(&git_submodule_dir, path);
  	if (ret)
-@@ -603,7 +601,7 @@
+@@ -601,7 +601,7 @@
  
  char *git_pathdup_submodule(const char *path, const char *fmt, ...)
  {
@@ -88,7 +82,7 @@
  	va_list args;
  	struct strbuf buf = STRBUF_INIT;
  	va_start(args, fmt);
-@@ -619,7 +617,7 @@
+@@ -617,7 +617,7 @@
  int strbuf_git_path_submodule(struct strbuf *buf, const char *path,
  			      const char *fmt, ...)
  {
@@ -97,7 +91,7 @@
  	va_list args;
  	va_start(args, fmt);
  	err = do_submodule_path(buf, path, fmt, args);
-@@ -664,10 +662,10 @@
+@@ -662,10 +662,10 @@
  {
  	struct stat st;
  	char buffer[256];
@@ -111,7 +105,7 @@
  
  	if (lstat(path, &st) < 0)
  		return -1;
-@@ -714,7 +712,7 @@
+@@ -712,7 +712,7 @@
  
  static struct passwd *getpw_str(const char *username, size_t len)
  {
@@ -120,7 +114,7 @@
  	char *username_z = xmemdupz(username, len);
  	pw = getpwnam(username_z);
  	free(username_z);
-@@ -802,9 +800,9 @@
+@@ -800,9 +800,9 @@
  		static const char *suffix[] = {
  			"/.git", "", ".git/.git", ".git", NULL,
  		};
@@ -132,7 +126,7 @@
  		while ((1 < len) && (path[len-1] == '/'))
  			len--;
  
-@@ -869,7 +867,7 @@
+@@ -867,7 +867,7 @@
  
  static int calc_shared_perm(int mode)
  {
@@ -141,7 +135,7 @@
  
  	if (get_shared_repository() < 0)
  		tweak = -get_shared_repository();
-@@ -892,7 +890,7 @@
+@@ -890,7 +890,7 @@
  
  int adjust_shared_perm(const char *path)
  {
@@ -150,7 +144,7 @@
  
  	if (!get_shared_repository())
  		return 0;
-@@ -932,7 +930,7 @@
+@@ -930,7 +930,7 @@
  
  static int have_same_root(const char *path1, const char *path2)
  {
@@ -159,7 +153,7 @@
  
  	is_abs1 = is_absolute_path(path1);
  	is_abs2 = is_absolute_path(path2);
-@@ -1119,8 +1117,8 @@
+@@ -1117,8 +1117,8 @@
   */
  int normalize_path_copy_len(char *dst, const char *src, int *prefix_len)
  {
@@ -170,7 +164,7 @@
  
  	/*
  	 * Copy initial part of absolute path: "/", "C:/", "//server/share/".
-@@ -1224,7 +1222,7 @@
+@@ -1222,7 +1222,7 @@
   */
  int longest_ancestor_length(const char *path, struct string_list *prefixes)
  {
@@ -179,7 +173,7 @@
  
  	if (!strcmp(path, "/"))
  		return -1;
-@@ -1310,7 +1308,7 @@
+@@ -1308,7 +1308,7 @@
  
  int daemon_avoid_alias(const char *p)
  {
@@ -188,7 +182,7 @@
  
  	/*
  	 * This resurrects the belts and suspenders paranoia check by HPA
-@@ -1394,7 +1392,7 @@
+@@ -1392,7 +1392,7 @@
   */
  int is_ntfs_dotgit(const char *name)
  {
@@ -197,7 +191,7 @@
  
  	/*
  	 * Note that when we don't find `.git` or `git~1` we end up with `name`
-@@ -1433,8 +1431,8 @@
+@@ -1431,8 +1431,8 @@
  			       size_t len,
  			       const char *dotgit_ntfs_shortname_prefix)
  {
@@ -208,7 +202,7 @@
  
  	if ((name[0] == '.' && !strncasecmp(name + 1, dotgit_name, len))) {
  		i = len + 1;
-@@ -1524,7 +1522,7 @@
+@@ -1522,7 +1522,7 @@
  
  char *xdg_config_home_for(const char *subdir, const char *filename)
  {
@@ -217,7 +211,7 @@
  
  	assert(subdir);
  	assert(filename);
-@@ -1546,7 +1544,7 @@
+@@ -1544,7 +1544,7 @@
  
  char *xdg_cache_home(const char *filename)
  {
