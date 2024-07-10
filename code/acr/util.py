@@ -29,13 +29,14 @@
 import sys, os, re, pdb, argparse, json, traceback
 import time
 import gzip
+from pathlib import Path
 
 __all__ = ['json', 'stop', 'read_whole_file', 'read_file_range', 'get_dict_path', 'set_dict_path', 'setdefault_dict_path', 'print_progress', 'condense_json_int_pairs', 'strip_filename_extension', 'get_ast_file_base', 'is_nonzero_file', 'is_newer_file', 'AstVisitor']
 
 stop = pdb.set_trace
 
 def read_whole_file(filename, mode_mod=""):
-    if filename.endswith(".gz"):
+    if Path(filename).suffix == ".gz":
         fn_open = gzip.open
     else:
         fn_open = open

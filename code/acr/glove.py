@@ -61,13 +61,13 @@ def run(edits_file, output_dir, *, comp_dir=".", base_dir=None, repair_only=None
             f" -b {base_dir}" if base_dir is not None else "",
             f" --repair-includes {repair_only}" if repair_only is not None else "",
             edits_file))
-    outdir = output_dir
-    outdir = os.path.realpath(outdir)
+    outdir = Path(output_dir).resolve()
+    outdir.mkdir(parents=True, exist_ok=True)
     if repair_only:
-        repair_only = os.path.realpath(repair_only)
+        repair_only = Path(repair_only).resolve()
     if (base_dir is None):
         base_dir = comp_dir
-    base_dir = os.path.realpath(base_dir)
+    base_dir = Path(base_dir).resolve()
 
     edits_by_file = OrderedDict()
     edit_json = read_json_file(edits_file)
@@ -103,23 +103,19 @@ def run(edits_file, output_dir, *, comp_dir=".", base_dir=None, repair_only=None
             pass
         edits_by_file[filename] = accum
 
-    def remove_base_dir(s):
-        if s.startswith(base_dir + "/"):
-            return s[len(base_dir + "/"):]
-        else:
-            return s
-
+    acr_added = False
     repaired_files = []
     for (filename, edit_list) in edits_by_file.items():
-        abs_filename = os.path.realpath(os.path.join(base_dir, filename))
-        if repair_only and (abs_filename != os.path.realpath(repair_only)):
+        abs_filename = base_dir.joinpath(filename).resolve()
+        if repair_only and (abs_filename != repair_only):
             print("Warning: Skipping #include'd file: %s" % filename)
             continue
-        outname = os.path.realpath(outdir + "/" + remove_base_dir(abs_filename))
-        if not outname.startswith(outdir + "/"):
-            sys.stderr.write("Warning: Skipping file outside of out_dir: %r" % outname)
+        try:
+            outname = outdir.joinpath(abs_filename.relative_to(base_dir))
+        except ValueError:
+            sys.stderr.write("Warning: Skipping file outside of out_dir: %r" % abs_filename)
             continue
-        assert(abs_filename.startswith("/"))
+        assert(abs_filename.is_absolute())
         contents_string = read_whole_file(abs_filename, 'b')
         contents = list(contents_string)
         if len(edit_list) > 0 and filename in add_acr:
@@ -127,20 +123,22 @@ def run(edits_file, output_dir, *, comp_dir=".", base_dir=None, repair_only=None
             already_present = re.search(b'^' + bytes(include_line, "utf-8") + b'$',
                                         contents_string, flags=re.MULTILINE)
             if not already_present:
+                acr_added = True
                 edit_list.append([0, 0, include_line + "\n\n"])
         for (start, end, replacement) in reversed(sorted(edit_list)):
             contents[start:end] = list(bytes(replacement, 'utf-8'))
         contents = bytes(contents)
-        out_subdir = os.path.dirname(outname)
-        Path(out_subdir).mkdir(parents=True, exist_ok=True)
+        out_subdir = outname.parent
+        out_subdir.mkdir(parents=True, exist_ok=True)
         with open(outname, 'wb') as outfile:
             outfile.write(contents)
             repaired_files.append(outname)
     print("Repaired files: %r" % repaired_files)
 
-    # Copy the header file to the output directory
-    script_dir = os.path.dirname(os.path.realpath(__file__))
-    shutil.copy(script_dir + "/acr.h", outdir)
+    if acr_added:
+        # Copy the header file to the output directory
+        script_dir = Path(__file__).resolve().parent
+        shutil.copy(script_dir.joinpath("acr.h"), outdir)
 
 if __name__ == "__main__":
     main()
