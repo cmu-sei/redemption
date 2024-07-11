@@ -83,7 +83,7 @@ RUN cd /oss/zeek ; \
 # Other packages
 RUN apt-get update \
     && DEBIAN_FRONTEND=noninteractive apt-get -y install --no-install-recommends \
-        jq \
+        jq python3-pytest-xdist \
         && apt-get --purge -y autoremove \
     && apt-get clean
 
