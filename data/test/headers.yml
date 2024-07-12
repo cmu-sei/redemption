@@ -44,6 +44,10 @@ git:
     "sha1dc/sha1.c"
   "sha1dc/ubc_check.h":
     "sha1dc/ubc_check.c"
+  "khash.h":
+    "delta-islands.c"
+  "object-store.h":
+    "walker.c"
 
 zeek:
   "auxil/broker/caf/libcaf_core/caf/detail/parser/read_bool.hpp":

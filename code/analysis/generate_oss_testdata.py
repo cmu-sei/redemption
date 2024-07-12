@@ -77,7 +77,9 @@ def run(alerts_file, codebase, base_dir, rule, tool, compile_cmds_file):
         for data in csv_reader:
             # if "tool" in data.keys() and data["tool"] != tool
             #     continue
-            if "CWE" in data.keys():
+
+            # So far, only cppcheck produces valid CWE mappings in output
+            if tool == "cppcheck":
                 data["rule"] = "CWE-" + data["CWE"]
             if "rule" in data.keys() and data["rule"] != rule:
                 continue
@@ -109,7 +111,7 @@ def run(alerts_file, codebase, base_dir, rule, tool, compile_cmds_file):
     header_data = yaml.safe_load(open("headers.yml"))[codebase]
     tests = list()
     for path in sorted(paths):
-        name_path = re.sub("/", "_", re.sub("\.", "_", path))
+        name_path = re.sub(r"/", "_", re.sub(r"\.", "_", path))
         test = {"name": name_path,
                 "answer_file": name + "." + name_path + ".ans",
                 "input": {
