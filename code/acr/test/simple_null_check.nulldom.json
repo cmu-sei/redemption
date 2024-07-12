@@ -1,0 +1,13 @@
+[
+################## 
+# Function: foo
+################## 
+[
+  ["/host/code/acr/test/simple_null_check.c", [8, 12]], {
+    "derefs": [
+    ],
+    "null_checks": [
+    ]
+  }
+],
+]

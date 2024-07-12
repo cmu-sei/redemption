@@ -48,7 +48,7 @@ os.environ['acr_gzip_ear_out'] = "true"
 os.environ['REPAIR_MSC12'] = "true"
 
 parser = argparse.ArgumentParser(
-                    prog='create-ans-files-2',
+                    prog='create_ans_files_2',
                     description='Before running this script, set environmental variables per the comments at the top of the script. (Must do that first, so the .diff file can be copied from the step directory to create the .ans file.) This script creates .ans files if they do not already exist for adjudicated alerts with "satisfactory": "true" matching fields. STEPS include: 1. identifies alerts with "satisfactory": "true" matching fields; 2. identifies the associated test name; and also (with the -t argument) 3. checks if a .ans file currently exists and creates one if it does not (using test_runner.py); 4. runs the test which compares against the .ans file; 5. redirects output from testing to a file.  After this step, currently manually we check the output file contents, and compare that to the adjudication and current "satisfactory" entry if any, and may edit the "satisfactory" value (e.g., it may become `true` after a repair has been implemented.  In the future, would be nice to have step 6 automate creation of summary for each adjudicated alert: test name, if .ans previously existed, if .ans was created, and result of test (pass/fail).')
 
 parser.add_argument("filename", help="provide a single filename ending alerts.json")

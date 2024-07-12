@@ -1,0 +1,8 @@
+[
+  { "rule": "EXP34-C", "file": "dom_null_derefs.c", "line": 10 },
+  { "rule": "EXP34-C", "file": "dom_null_derefs.c", "line": 11 },
+  { "rule": "EXP34-C", "file": "dom_null_derefs.c", "line": 13 },
+  { "rule": "EXP34-C", "file": "dom_null_derefs.c", "line": 16 },
+  { "rule": "EXP34-C", "file": "dom_null_derefs.c", "line": 18 },
+  { "rule": "EXP34-C", "file": "dom_null_derefs.c", "line": 19 }
+]

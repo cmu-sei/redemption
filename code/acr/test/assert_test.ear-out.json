@@ -161,7 +161,7 @@
         "col": 13,
         "tokLen": 13,
         "includedFrom": {
-          "file": "assert-test.c"
+          "file": "assert_test.c"
         }
       },
       "range": {
@@ -170,7 +170,7 @@
           "col": 1,
           "tokLen": 6,
           "includedFrom": {
-            "file": "assert-test.c"
+            "file": "assert_test.c"
           }
         },
         "end": {
@@ -179,7 +179,7 @@
           "col": 43,
           "tokLen": 1,
           "includedFrom": {
-            "file": "assert-test.c"
+            "file": "assert_test.c"
           }
         },
         "file": "/usr/include/assert.h"
@@ -201,7 +201,7 @@
             "col": 40,
             "tokLen": 11,
             "includedFrom": {
-              "file": "assert-test.c"
+              "file": "assert_test.c"
             }
           },
           "range": {
@@ -210,7 +210,7 @@
               "col": 28,
               "tokLen": 5,
               "includedFrom": {
-                "file": "assert-test.c"
+                "file": "assert_test.c"
               }
             },
             "end": {
@@ -218,7 +218,7 @@
               "col": 40,
               "tokLen": 11,
               "includedFrom": {
-                "file": "assert-test.c"
+                "file": "assert_test.c"
               }
             },
             "file": "/usr/include/assert.h"
@@ -236,7 +236,7 @@
             "col": 65,
             "tokLen": 6,
             "includedFrom": {
-              "file": "assert-test.c"
+              "file": "assert_test.c"
             }
           },
           "range": {
@@ -245,7 +245,7 @@
               "col": 53,
               "tokLen": 5,
               "includedFrom": {
-                "file": "assert-test.c"
+                "file": "assert_test.c"
               }
             },
             "end": {
@@ -253,7 +253,7 @@
               "col": 65,
               "tokLen": 6,
               "includedFrom": {
-                "file": "assert-test.c"
+                "file": "assert_test.c"
               }
             },
             "file": "/usr/include/assert.h"
@@ -272,7 +272,7 @@
             "col": 20,
             "tokLen": 6,
             "includedFrom": {
-              "file": "assert-test.c"
+              "file": "assert_test.c"
             }
           },
           "range": {
@@ -281,7 +281,7 @@
               "col": 7,
               "tokLen": 8,
               "includedFrom": {
-                "file": "assert-test.c"
+                "file": "assert_test.c"
               }
             },
             "end": {
@@ -289,7 +289,7 @@
               "col": 20,
               "tokLen": 6,
               "includedFrom": {
-                "file": "assert-test.c"
+                "file": "assert_test.c"
               }
             },
             "file": "/usr/include/assert.h"
@@ -307,7 +307,7 @@
             "col": 40,
             "tokLen": 10,
             "includedFrom": {
-              "file": "assert-test.c"
+              "file": "assert_test.c"
             }
           },
           "range": {
@@ -316,7 +316,7 @@
               "col": 28,
               "tokLen": 5,
               "includedFrom": {
-                "file": "assert-test.c"
+                "file": "assert_test.c"
               }
             },
             "end": {
@@ -324,7 +324,7 @@
               "col": 40,
               "tokLen": 10,
               "includedFrom": {
-                "file": "assert-test.c"
+                "file": "assert_test.c"
               }
             },
             "file": "/usr/include/assert.h"
@@ -356,7 +356,7 @@
                 "col": 6,
                 "tokLen": 7,
                 "includedFrom": {
-                  "file": "assert-test.c"
+                  "file": "assert_test.c"
                 }
               }
             },
@@ -378,7 +378,7 @@
                 "col": 6,
                 "tokLen": 7,
                 "includedFrom": {
-                  "file": "assert-test.c"
+                  "file": "assert_test.c"
                 }
               }
             },
@@ -396,7 +396,7 @@
         "col": 13,
         "tokLen": 20,
         "includedFrom": {
-          "file": "assert-test.c"
+          "file": "assert_test.c"
         }
       },
       "range": {
@@ -405,7 +405,7 @@
           "col": 1,
           "tokLen": 6,
           "includedFrom": {
-            "file": "assert-test.c"
+            "file": "assert_test.c"
           }
         },
         "end": {
@@ -414,7 +414,7 @@
           "col": 43,
           "tokLen": 1,
           "includedFrom": {
-            "file": "assert-test.c"
+            "file": "assert_test.c"
           }
         },
         "file": "/usr/include/assert.h"
@@ -435,7 +435,7 @@
             "col": 39,
             "tokLen": 8,
             "includedFrom": {
-              "file": "assert-test.c"
+              "file": "assert_test.c"
             }
           },
           "range": {
@@ -444,7 +444,7 @@
               "col": 35,
               "tokLen": 3,
               "includedFrom": {
-                "file": "assert-test.c"
+                "file": "assert_test.c"
               }
             },
             "end": {
@@ -452,7 +452,7 @@
               "col": 39,
               "tokLen": 8,
               "includedFrom": {
-                "file": "assert-test.c"
+                "file": "assert_test.c"
               }
             },
             "file": "/usr/include/assert.h"
@@ -470,7 +470,7 @@
             "col": 61,
             "tokLen": 6,
             "includedFrom": {
-              "file": "assert-test.c"
+              "file": "assert_test.c"
             }
           },
           "range": {
@@ -479,7 +479,7 @@
               "col": 49,
               "tokLen": 5,
               "includedFrom": {
-                "file": "assert-test.c"
+                "file": "assert_test.c"
               }
             },
             "end": {
@@ -487,7 +487,7 @@
               "col": 61,
               "tokLen": 6,
               "includedFrom": {
-                "file": "assert-test.c"
+                "file": "assert_test.c"
               }
             },
             "file": "/usr/include/assert.h"
@@ -506,7 +506,7 @@
             "col": 20,
             "tokLen": 6,
             "includedFrom": {
-              "file": "assert-test.c"
+              "file": "assert_test.c"
             }
           },
           "range": {
@@ -515,7 +515,7 @@
               "col": 7,
               "tokLen": 8,
               "includedFrom": {
-                "file": "assert-test.c"
+                "file": "assert_test.c"
               }
             },
             "end": {
@@ -523,7 +523,7 @@
               "col": 20,
               "tokLen": 6,
               "includedFrom": {
-                "file": "assert-test.c"
+                "file": "assert_test.c"
               }
             },
             "file": "/usr/include/assert.h"
@@ -541,7 +541,7 @@
             "col": 40,
             "tokLen": 10,
             "includedFrom": {
-              "file": "assert-test.c"
+              "file": "assert_test.c"
             }
           },
           "range": {
@@ -550,7 +550,7 @@
               "col": 28,
               "tokLen": 5,
               "includedFrom": {
-                "file": "assert-test.c"
+                "file": "assert_test.c"
               }
             },
             "end": {
@@ -558,7 +558,7 @@
               "col": 40,
               "tokLen": 10,
               "includedFrom": {
-                "file": "assert-test.c"
+                "file": "assert_test.c"
               }
             },
             "file": "/usr/include/assert.h"
@@ -590,7 +590,7 @@
                 "col": 6,
                 "tokLen": 7,
                 "includedFrom": {
-                  "file": "assert-test.c"
+                  "file": "assert_test.c"
                 }
               }
             },
@@ -612,7 +612,7 @@
                 "col": 6,
                 "tokLen": 7,
                 "includedFrom": {
-                  "file": "assert-test.c"
+                  "file": "assert_test.c"
                 }
               }
             },
@@ -630,7 +630,7 @@
         "col": 13,
         "tokLen": 8,
         "includedFrom": {
-          "file": "assert-test.c"
+          "file": "assert_test.c"
         }
       },
       "range": {
@@ -639,7 +639,7 @@
           "col": 1,
           "tokLen": 6,
           "includedFrom": {
-            "file": "assert-test.c"
+            "file": "assert_test.c"
           }
         },
         "end": {
@@ -648,7 +648,7 @@
           "col": 43,
           "tokLen": 1,
           "includedFrom": {
-            "file": "assert-test.c"
+            "file": "assert_test.c"
           }
         },
         "file": "/usr/include/assert.h"
@@ -669,7 +669,7 @@
             "col": 35,
             "tokLen": 11,
             "includedFrom": {
-              "file": "assert-test.c"
+              "file": "assert_test.c"
             }
           },
           "range": {
@@ -678,7 +678,7 @@
               "col": 23,
               "tokLen": 5,
               "includedFrom": {
-                "file": "assert-test.c"
+                "file": "assert_test.c"
               }
             },
             "end": {
@@ -686,7 +686,7 @@
               "col": 35,
               "tokLen": 11,
               "includedFrom": {
-                "file": "assert-test.c"
+                "file": "assert_test.c"
               }
             },
             "file": "/usr/include/assert.h"
@@ -704,7 +704,7 @@
             "col": 60,
             "tokLen": 6,
             "includedFrom": {
-              "file": "assert-test.c"
+              "file": "assert_test.c"
             }
           },
           "range": {
@@ -713,7 +713,7 @@
               "col": 48,
               "tokLen": 5,
               "includedFrom": {
-                "file": "assert-test.c"
+                "file": "assert_test.c"
               }
             },
             "end": {
@@ -721,7 +721,7 @@
               "col": 60,
               "tokLen": 6,
               "includedFrom": {
-                "file": "assert-test.c"
+                "file": "assert_test.c"
               }
             },
             "file": "/usr/include/assert.h"
@@ -739,7 +739,7 @@
             "col": 72,
             "tokLen": 6,
             "includedFrom": {
-              "file": "assert-test.c"
+              "file": "assert_test.c"
             }
           },
           "range": {
@@ -748,7 +748,7 @@
               "col": 68,
               "tokLen": 3,
               "includedFrom": {
-                "file": "assert-test.c"
+                "file": "assert_test.c"
               }
             },
             "end": {
@@ -756,7 +756,7 @@
               "col": 72,
               "tokLen": 6,
               "includedFrom": {
-                "file": "assert-test.c"
+                "file": "assert_test.c"
               }
             },
             "file": "/usr/include/assert.h"
@@ -788,7 +788,7 @@
                 "col": 6,
                 "tokLen": 7,
                 "includedFrom": {
-                  "file": "assert-test.c"
+                  "file": "assert_test.c"
                 }
               }
             },
@@ -810,7 +810,7 @@
                 "col": 6,
                 "tokLen": 7,
                 "includedFrom": {
-                  "file": "assert-test.c"
+                  "file": "assert_test.c"
                 }
               }
             },
@@ -824,7 +824,7 @@
       "kind": "FunctionDecl",
       "loc": {
         "offset": 25,
-        "file": "assert-test.c",
+        "file": "assert_test.c",
         "line": 3,
         "col": 5,
         "tokLen": 4
@@ -841,7 +841,7 @@
           "col": 1,
           "tokLen": 1
         },
-        "file": "/host/code/acr/test/assert-test.c"
+        "file": "/host/code/acr/test/assert_test.c"
       },
       "name": "main",
       "mangledName": "main",
@@ -869,7 +869,7 @@
               "col": 14,
               "tokLen": 4
             },
-            "file": "/host/code/acr/test/assert-test.c"
+            "file": "/host/code/acr/test/assert_test.c"
           },
           "isUsed": true,
           "name": "argc",
@@ -896,7 +896,7 @@
               "col": 27,
               "tokLen": 4
             },
-            "file": "/host/code/acr/test/assert-test.c"
+            "file": "/host/code/acr/test/assert_test.c"
           },
           "name": "argv",
           "type": {
@@ -918,7 +918,7 @@
               "col": 1,
               "tokLen": 1
             },
-            "file": "/host/code/acr/test/assert-test.c"
+            "file": "/host/code/acr/test/assert_test.c"
           },
           "inner": [
             {
@@ -933,12 +933,12 @@
                     "col": 3,
                     "tokLen": 1,
                     "includedFrom": {
-                      "file": "assert-test.c"
+                      "file": "assert_test.c"
                     }
                   },
                   "expansionLoc": {
                     "offset": 59,
-                    "file": "assert-test.c",
+                    "file": "assert_test.c",
                     "line": 4,
                     "col": 5,
                     "tokLen": 6
@@ -952,18 +952,18 @@
                     "col": 7,
                     "tokLen": 1,
                     "includedFrom": {
-                      "file": "assert-test.c"
+                      "file": "assert_test.c"
                     }
                   },
                   "expansionLoc": {
                     "offset": 59,
-                    "file": "assert-test.c",
+                    "file": "assert_test.c",
                     "line": 4,
                     "col": 5,
                     "tokLen": 6
                   }
                 },
-                "file": "/host/code/acr/test/assert-test.c"
+                "file": "/host/code/acr/test/assert_test.c"
               },
               "type": {
                 "qualType": "void"
@@ -982,12 +982,12 @@
                         "col": 4,
                         "tokLen": 1,
                         "includedFrom": {
-                          "file": "assert-test.c"
+                          "file": "assert_test.c"
                         }
                       },
                       "expansionLoc": {
                         "offset": 59,
-                        "file": "assert-test.c",
+                        "file": "assert_test.c",
                         "line": 4,
                         "col": 5,
                         "tokLen": 6
@@ -1001,18 +1001,18 @@
                         "col": 6,
                         "tokLen": 1,
                         "includedFrom": {
-                          "file": "assert-test.c"
+                          "file": "assert_test.c"
                         }
                       },
                       "expansionLoc": {
                         "offset": 59,
-                        "file": "assert-test.c",
+                        "file": "assert_test.c",
                         "line": 4,
                         "col": 5,
                         "tokLen": 6
                       }
                     },
-                    "file": "/host/code/acr/test/assert-test.c"
+                    "file": "/host/code/acr/test/assert_test.c"
                   },
                   "type": {
                     "qualType": "void"
@@ -1032,12 +1032,12 @@
                             "col": 4,
                             "tokLen": 1,
                             "includedFrom": {
-                              "file": "assert-test.c"
+                              "file": "assert_test.c"
                             }
                           },
                           "expansionLoc": {
                             "offset": 59,
-                            "file": "assert-test.c",
+                            "file": "assert_test.c",
                             "line": 4,
                             "col": 5,
                             "tokLen": 6
@@ -1051,18 +1051,18 @@
                             "col": 33,
                             "tokLen": 1,
                             "includedFrom": {
-                              "file": "assert-test.c"
+                              "file": "assert_test.c"
                             }
                           },
                           "expansionLoc": {
                             "offset": 59,
-                            "file": "assert-test.c",
+                            "file": "assert_test.c",
                             "line": 4,
                             "col": 5,
                             "tokLen": 6
                           }
                         },
-                        "file": "/host/code/acr/test/assert-test.c"
+                        "file": "/host/code/acr/test/assert_test.c"
                       },
                       "type": {
                         "qualType": "void"
@@ -1082,12 +1082,12 @@
                                 "col": 11,
                                 "tokLen": 6,
                                 "includedFrom": {
-                                  "file": "assert-test.c"
+                                  "file": "assert_test.c"
                                 }
                               },
                               "expansionLoc": {
                                 "offset": 59,
-                                "file": "assert-test.c",
+                                "file": "assert_test.c",
                                 "line": 4,
                                 "col": 5,
                                 "tokLen": 6
@@ -1101,18 +1101,18 @@
                                 "col": 33,
                                 "tokLen": 1,
                                 "includedFrom": {
-                                  "file": "assert-test.c"
+                                  "file": "assert_test.c"
                                 }
                               },
                               "expansionLoc": {
                                 "offset": 59,
-                                "file": "assert-test.c",
+                                "file": "assert_test.c",
                                 "line": 4,
                                 "col": 5,
                                 "tokLen": 6
                               }
                             },
-                            "file": "/host/code/acr/test/assert-test.c"
+                            "file": "/host/code/acr/test/assert_test.c"
                           },
                           "type": {
                             "qualType": "unsigned long"
@@ -1132,12 +1132,12 @@
                                     "col": 18,
                                     "tokLen": 1,
                                     "includedFrom": {
-                                      "file": "assert-test.c"
+                                      "file": "assert_test.c"
                                     }
                                   },
                                   "expansionLoc": {
                                     "offset": 59,
-                                    "file": "assert-test.c",
+                                    "file": "assert_test.c",
                                     "line": 4,
                                     "col": 5,
                                     "tokLen": 6
@@ -1151,18 +1151,18 @@
                                     "col": 33,
                                     "tokLen": 1,
                                     "includedFrom": {
-                                      "file": "assert-test.c"
+                                      "file": "assert_test.c"
                                     }
                                   },
                                   "expansionLoc": {
                                     "offset": 59,
-                                    "file": "assert-test.c",
+                                    "file": "assert_test.c",
                                     "line": 4,
                                     "col": 5,
                                     "tokLen": 6
                                   }
                                 },
-                                "file": "/host/code/acr/test/assert-test.c"
+                                "file": "/host/code/acr/test/assert_test.c"
                               },
                               "type": {
                                 "qualType": "int"
@@ -1181,12 +1181,12 @@
                                         "col": 19,
                                         "tokLen": 1,
                                         "includedFrom": {
-                                          "file": "assert-test.c"
+                                          "file": "assert_test.c"
                                         }
                                       },
                                       "expansionLoc": {
                                         "offset": 59,
-                                        "file": "assert-test.c",
+                                        "file": "assert_test.c",
                                         "line": 4,
                                         "col": 5,
                                         "tokLen": 6
@@ -1200,18 +1200,18 @@
                                         "col": 32,
                                         "tokLen": 1,
                                         "includedFrom": {
-                                          "file": "assert-test.c"
+                                          "file": "assert_test.c"
                                         }
                                       },
                                       "expansionLoc": {
                                         "offset": 59,
-                                        "file": "assert-test.c",
+                                        "file": "assert_test.c",
                                         "line": 4,
                                         "col": 5,
                                         "tokLen": 6
                                       }
                                     },
-                                    "file": "/host/code/acr/test/assert-test.c"
+                                    "file": "/host/code/acr/test/assert_test.c"
                                   },
                                   "type": {
                                     "qualType": "int"
@@ -1230,12 +1230,12 @@
                                             "col": 19,
                                             "tokLen": 1,
                                             "includedFrom": {
-                                              "file": "assert-test.c"
+                                              "file": "assert_test.c"
                                             }
                                           },
                                           "expansionLoc": {
                                             "offset": 59,
-                                            "file": "assert-test.c",
+                                            "file": "assert_test.c",
                                             "line": 4,
                                             "col": 5,
                                             "tokLen": 6
@@ -1249,18 +1249,18 @@
                                             "col": 24,
                                             "tokLen": 1,
                                             "includedFrom": {
-                                              "file": "assert-test.c"
+                                              "file": "assert_test.c"
                                             }
                                           },
                                           "expansionLoc": {
                                             "offset": 59,
-                                            "file": "assert-test.c",
+                                            "file": "assert_test.c",
                                             "line": 4,
                                             "col": 5,
                                             "tokLen": 6
                                           }
                                         },
-                                        "file": "/host/code/acr/test/assert-test.c"
+                                        "file": "/host/code/acr/test/assert_test.c"
                                       },
                                       "type": {
                                         "qualType": "int"
@@ -1297,7 +1297,7 @@
                                                 "isMacroArgExpansion": true
                                               }
                                             },
-                                            "file": "/host/code/acr/test/assert-test.c"
+                                            "file": "/host/code/acr/test/assert_test.c"
                                           },
                                           "type": {
                                             "qualType": "int"
@@ -1335,7 +1335,7 @@
                                                     "isMacroArgExpansion": true
                                                   }
                                                 },
-                                                "file": "/host/code/acr/test/assert-test.c"
+                                                "file": "/host/code/acr/test/assert_test.c"
                                               },
                                               "type": {
                                                 "qualType": "int"
@@ -1373,7 +1373,7 @@
                                                         "isMacroArgExpansion": true
                                                       }
                                                     },
-                                                    "file": "/host/code/acr/test/assert-test.c"
+                                                    "file": "/host/code/acr/test/assert_test.c"
                                                   },
                                                   "type": {
                                                     "qualType": "int"
@@ -1422,7 +1422,7 @@
                                                     "isMacroArgExpansion": true
                                                   }
                                                 },
-                                                "file": "/host/code/acr/test/assert-test.c"
+                                                "file": "/host/code/acr/test/assert_test.c"
                                               },
                                               "type": {
                                                 "qualType": "int"
@@ -1446,12 +1446,12 @@
                                             "col": 28,
                                             "tokLen": 1,
                                             "includedFrom": {
-                                              "file": "assert-test.c"
+                                              "file": "assert_test.c"
                                             }
                                           },
                                           "expansionLoc": {
                                             "offset": 59,
-                                            "file": "assert-test.c",
+                                            "file": "assert_test.c",
                                             "line": 4,
                                             "col": 5,
                                             "tokLen": 6
@@ -1465,18 +1465,18 @@
                                             "col": 28,
                                             "tokLen": 1,
                                             "includedFrom": {
-                                              "file": "assert-test.c"
+                                              "file": "assert_test.c"
                                             }
                                           },
                                           "expansionLoc": {
                                             "offset": 59,
-                                            "file": "assert-test.c",
+                                            "file": "assert_test.c",
                                             "line": 4,
                                             "col": 5,
                                             "tokLen": 6
                                           }
                                         },
-                                        "file": "/host/code/acr/test/assert-test.c"
+                                        "file": "/host/code/acr/test/assert_test.c"
                                       },
                                       "type": {
                                         "qualType": "int"
@@ -1496,12 +1496,12 @@
                                             "col": 32,
                                             "tokLen": 1,
                                             "includedFrom": {
-                                              "file": "assert-test.c"
+                                              "file": "assert_test.c"
                                             }
                                           },
                                           "expansionLoc": {
                                             "offset": 59,
-                                            "file": "assert-test.c",
+                                            "file": "assert_test.c",
                                             "line": 4,
                                             "col": 5,
                                             "tokLen": 6
@@ -1515,18 +1515,18 @@
                                             "col": 32,
                                             "tokLen": 1,
                                             "includedFrom": {
-                                              "file": "assert-test.c"
+                                              "file": "assert_test.c"
                                             }
                                           },
                                           "expansionLoc": {
                                             "offset": 59,
-                                            "file": "assert-test.c",
+                                            "file": "assert_test.c",
                                             "line": 4,
                                             "col": 5,
                                             "tokLen": 6
                                           }
                                         },
-                                        "file": "/host/code/acr/test/assert-test.c"
+                                        "file": "/host/code/acr/test/assert_test.c"
                                       },
                                       "type": {
                                         "qualType": "int"
@@ -1554,12 +1554,12 @@
                             "col": 36,
                             "tokLen": 13,
                             "includedFrom": {
-                              "file": "assert-test.c"
+                              "file": "assert_test.c"
                             }
                           },
                           "expansionLoc": {
                             "offset": 59,
-                            "file": "assert-test.c",
+                            "file": "assert_test.c",
                             "line": 4,
                             "col": 5,
                             "tokLen": 6
@@ -1573,18 +1573,18 @@
                             "col": 6,
                             "tokLen": 1,
                             "includedFrom": {
-                              "file": "assert-test.c"
+                              "file": "assert_test.c"
                             }
                           },
                           "expansionLoc": {
                             "offset": 59,
-                            "file": "assert-test.c",
+                            "file": "assert_test.c",
                             "line": 4,
                             "col": 5,
                             "tokLen": 6
                           }
                         },
-                        "file": "/host/code/acr/test/assert-test.c"
+                        "file": "/host/code/acr/test/assert_test.c"
                       },
                       "type": {
                         "qualType": "void"
@@ -1606,12 +1606,12 @@
                                 "col": 50,
                                 "tokLen": 1,
                                 "includedFrom": {
-                                  "file": "assert-test.c"
+                                  "file": "assert_test.c"
                                 }
                               },
                               "expansionLoc": {
                                 "offset": 59,
-                                "file": "assert-test.c",
+                                "file": "assert_test.c",
                                 "line": 4,
                                 "col": 5,
                                 "tokLen": 6
@@ -1625,18 +1625,18 @@
                                 "col": 6,
                                 "tokLen": 1,
                                 "includedFrom": {
-                                  "file": "assert-test.c"
+                                  "file": "assert_test.c"
                                 }
                               },
                               "expansionLoc": {
                                 "offset": 59,
-                                "file": "assert-test.c",
+                                "file": "assert_test.c",
                                 "line": 4,
                                 "col": 5,
                                 "tokLen": 6
                               }
                             },
-                            "file": "/host/code/acr/test/assert-test.c"
+                            "file": "/host/code/acr/test/assert_test.c"
                           },
                           "type": {
                             "qualType": "void"
@@ -1655,12 +1655,12 @@
                                     "col": 51,
                                     "tokLen": 1,
                                     "includedFrom": {
-                                      "file": "assert-test.c"
+                                      "file": "assert_test.c"
                                     }
                                   },
                                   "expansionLoc": {
                                     "offset": 59,
-                                    "file": "assert-test.c",
+                                    "file": "assert_test.c",
                                     "line": 4,
                                     "col": 5,
                                     "tokLen": 6
@@ -1674,18 +1674,18 @@
                                     "col": 5,
                                     "tokLen": 1,
                                     "includedFrom": {
-                                      "file": "assert-test.c"
+                                      "file": "assert_test.c"
                                     }
                                   },
                                   "expansionLoc": {
                                     "offset": 59,
-                                    "file": "assert-test.c",
+                                    "file": "assert_test.c",
                                     "line": 4,
                                     "col": 5,
                                     "tokLen": 6
                                   }
                                 },
-                                "file": "/host/code/acr/test/assert-test.c"
+                                "file": "/host/code/acr/test/assert_test.c"
                               },
                               "inner": [
                                 {
@@ -1700,12 +1700,12 @@
                                         "col": 7,
                                         "tokLen": 2,
                                         "includedFrom": {
-                                          "file": "assert-test.c"
+                                          "file": "assert_test.c"
                                         }
                                       },
                                       "expansionLoc": {
                                         "offset": 59,
-                                        "file": "assert-test.c",
+                                        "file": "assert_test.c",
                                         "line": 4,
                                         "col": 5,
                                         "tokLen": 6
@@ -1719,18 +1719,18 @@
                                         "col": 68,
                                         "tokLen": 1,
                                         "includedFrom": {
-                                          "file": "assert-test.c"
+                                          "file": "assert_test.c"
                                         }
                                       },
                                       "expansionLoc": {
                                         "offset": 59,
-                                        "file": "assert-test.c",
+                                        "file": "assert_test.c",
                                         "line": 4,
                                         "col": 5,
                                         "tokLen": 6
                                       }
                                     },
-                                    "file": "/host/code/acr/test/assert-test.c"
+                                    "file": "/host/code/acr/test/assert_test.c"
                                   },
                                   "hasElse": true,
                                   "inner": [
@@ -1764,7 +1764,7 @@
                                             "isMacroArgExpansion": true
                                           }
                                         },
-                                        "file": "/host/code/acr/test/assert-test.c"
+                                        "file": "/host/code/acr/test/assert_test.c"
                                       },
                                       "type": {
                                         "qualType": "int"
@@ -1802,7 +1802,7 @@
                                                 "isMacroArgExpansion": true
                                               }
                                             },
-                                            "file": "/host/code/acr/test/assert-test.c"
+                                            "file": "/host/code/acr/test/assert_test.c"
                                           },
                                           "type": {
                                             "qualType": "int"
@@ -1840,7 +1840,7 @@
                                                     "isMacroArgExpansion": true
                                                   }
                                                 },
-                                                "file": "/host/code/acr/test/assert-test.c"
+                                                "file": "/host/code/acr/test/assert_test.c"
                                               },
                                               "type": {
                                                 "qualType": "int"
@@ -1888,7 +1888,7 @@
                                                 "isMacroArgExpansion": true
                                               }
                                             },
-                                            "file": "/host/code/acr/test/assert-test.c"
+                                            "file": "/host/code/acr/test/assert_test.c"
                                           },
                                           "type": {
                                             "qualType": "int"
@@ -1910,12 +1910,12 @@
                                             "col": 9,
                                             "tokLen": 1,
                                             "includedFrom": {
-                                              "file": "assert-test.c"
+                                              "file": "assert_test.c"
                                             }
                                           },
                                           "expansionLoc": {
                                             "offset": 59,
-                                            "file": "assert-test.c",
+                                            "file": "assert_test.c",
                                             "line": 4,
                                             "col": 5,
                                             "tokLen": 6
@@ -1929,18 +1929,18 @@
                                             "col": 9,
                                             "tokLen": 1,
                                             "includedFrom": {
-                                              "file": "assert-test.c"
+                                              "file": "assert_test.c"
                                             }
                                           },
                                           "expansionLoc": {
                                             "offset": 59,
-                                            "file": "assert-test.c",
+                                            "file": "assert_test.c",
                                             "line": 4,
                                             "col": 5,
                                             "tokLen": 6
                                           }
                                         },
-                                        "file": "/host/code/acr/test/assert-test.c"
+                                        "file": "/host/code/acr/test/assert_test.c"
                                       }
                                     },
                                     {
@@ -1955,12 +1955,12 @@
                                             "col": 9,
                                             "tokLen": 13,
                                             "includedFrom": {
-                                              "file": "assert-test.c"
+                                              "file": "assert_test.c"
                                             }
                                           },
                                           "expansionLoc": {
                                             "offset": 59,
-                                            "file": "assert-test.c",
+                                            "file": "assert_test.c",
                                             "line": 4,
                                             "col": 5,
                                             "tokLen": 6
@@ -1974,18 +1974,18 @@
                                             "col": 68,
                                             "tokLen": 1,
                                             "includedFrom": {
-                                              "file": "assert-test.c"
+                                              "file": "assert_test.c"
                                             }
                                           },
                                           "expansionLoc": {
                                             "offset": 59,
-                                            "file": "assert-test.c",
+                                            "file": "assert_test.c",
                                             "line": 4,
                                             "col": 5,
                                             "tokLen": 6
                                           }
                                         },
-                                        "file": "/host/code/acr/test/assert-test.c"
+                                        "file": "/host/code/acr/test/assert_test.c"
                                       },
                                       "type": {
                                         "qualType": "void"
@@ -2004,12 +2004,12 @@
                                                 "col": 9,
                                                 "tokLen": 13,
                                                 "includedFrom": {
-                                                  "file": "assert-test.c"
+                                                  "file": "assert_test.c"
                                                 }
                                               },
                                               "expansionLoc": {
                                                 "offset": 59,
-                                                "file": "assert-test.c",
+                                                "file": "assert_test.c",
                                                 "line": 4,
                                                 "col": 5,
                                                 "tokLen": 6
@@ -2023,18 +2023,18 @@
                                                 "col": 9,
                                                 "tokLen": 13,
                                                 "includedFrom": {
-                                                  "file": "assert-test.c"
+                                                  "file": "assert_test.c"
                                                 }
                                               },
                                               "expansionLoc": {
                                                 "offset": 59,
-                                                "file": "assert-test.c",
+                                                "file": "assert_test.c",
                                                 "line": 4,
                                                 "col": 5,
                                                 "tokLen": 6
                                               }
                                             },
-                                            "file": "/host/code/acr/test/assert-test.c"
+                                            "file": "/host/code/acr/test/assert_test.c"
                                           },
                                           "type": {
                                             "qualType": "void (*)(const char *, const char *, unsigned int, const char *) __attribute__((noreturn))"
@@ -2054,12 +2054,12 @@
                                                     "col": 9,
                                                     "tokLen": 13,
                                                     "includedFrom": {
-                                                      "file": "assert-test.c"
+                                                      "file": "assert_test.c"
                                                     }
                                                   },
                                                   "expansionLoc": {
                                                     "offset": 59,
-                                                    "file": "assert-test.c",
+                                                    "file": "assert_test.c",
                                                     "line": 4,
                                                     "col": 5,
                                                     "tokLen": 6
@@ -2073,18 +2073,18 @@
                                                     "col": 9,
                                                     "tokLen": 13,
                                                     "includedFrom": {
-                                                      "file": "assert-test.c"
+                                                      "file": "assert_test.c"
                                                     }
                                                   },
                                                   "expansionLoc": {
                                                     "offset": 59,
-                                                    "file": "assert-test.c",
+                                                    "file": "assert_test.c",
                                                     "line": 4,
                                                     "col": 5,
                                                     "tokLen": 6
                                                   }
                                                 },
-                                                "file": "/host/code/acr/test/assert-test.c"
+                                                "file": "/host/code/acr/test/assert_test.c"
                                               },
                                               "type": {
                                                 "qualType": "void (const char *, const char *, unsigned int, const char *) __attribute__((noreturn))"
@@ -2116,7 +2116,7 @@
                                               },
                                               "expansionLoc": {
                                                 "offset": 59,
-                                                "file": "assert-test.c",
+                                                "file": "assert_test.c",
                                                 "line": 4,
                                                 "col": 5,
                                                 "tokLen": 6
@@ -2132,13 +2132,13 @@
                                               },
                                               "expansionLoc": {
                                                 "offset": 59,
-                                                "file": "assert-test.c",
+                                                "file": "assert_test.c",
                                                 "line": 4,
                                                 "col": 5,
                                                 "tokLen": 6
                                               }
                                             },
-                                            "file": "/host/code/acr/test/assert-test.c"
+                                            "file": "/host/code/acr/test/assert_test.c"
                                           },
                                           "type": {
                                             "qualType": "const char *"
@@ -2160,7 +2160,7 @@
                                                   },
                                                   "expansionLoc": {
                                                     "offset": 59,
-                                                    "file": "assert-test.c",
+                                                    "file": "assert_test.c",
                                                     "line": 4,
                                                     "col": 5,
                                                     "tokLen": 6
@@ -2176,13 +2176,13 @@
                                                   },
                                                   "expansionLoc": {
                                                     "offset": 59,
-                                                    "file": "assert-test.c",
+                                                    "file": "assert_test.c",
                                                     "line": 4,
                                                     "col": 5,
                                                     "tokLen": 6
                                                   }
                                                 },
-                                                "file": "/host/code/acr/test/assert-test.c"
+                                                "file": "/host/code/acr/test/assert_test.c"
                                               },
                                               "type": {
                                                 "qualType": "char *"
@@ -2204,7 +2204,7 @@
                                                       },
                                                       "expansionLoc": {
                                                         "offset": 59,
-                                                        "file": "assert-test.c",
+                                                        "file": "assert_test.c",
                                                         "line": 4,
                                                         "col": 5,
                                                         "tokLen": 6
@@ -2220,13 +2220,13 @@
                                                       },
                                                       "expansionLoc": {
                                                         "offset": 59,
-                                                        "file": "assert-test.c",
+                                                        "file": "assert_test.c",
                                                         "line": 4,
                                                         "col": 5,
                                                         "tokLen": 6
                                                       }
                                                     },
-                                                    "file": "/host/code/acr/test/assert-test.c"
+                                                    "file": "/host/code/acr/test/assert_test.c"
                                                   },
                                                   "type": {
                                                     "qualType": "char[9]"
@@ -2252,7 +2252,7 @@
                                               },
                                               "expansionLoc": {
                                                 "offset": 59,
-                                                "file": "assert-test.c",
+                                                "file": "assert_test.c",
                                                 "line": 4,
                                                 "col": 5,
                                                 "tokLen": 6
@@ -2268,13 +2268,13 @@
                                               },
                                               "expansionLoc": {
                                                 "offset": 59,
-                                                "file": "assert-test.c",
+                                                "file": "assert_test.c",
                                                 "line": 4,
                                                 "col": 5,
                                                 "tokLen": 6
                                               }
                                             },
-                                            "file": "/host/code/acr/test/assert-test.c"
+                                            "file": "/host/code/acr/test/assert_test.c"
                                           },
                                           "type": {
                                             "qualType": "const char *"
@@ -2296,7 +2296,7 @@
                                                   },
                                                   "expansionLoc": {
                                                     "offset": 59,
-                                                    "file": "assert-test.c",
+                                                    "file": "assert_test.c",
                                                     "line": 4,
                                                     "col": 5,
                                                     "tokLen": 6
@@ -2312,13 +2312,13 @@
                                                   },
                                                   "expansionLoc": {
                                                     "offset": 59,
-                                                    "file": "assert-test.c",
+                                                    "file": "assert_test.c",
                                                     "line": 4,
                                                     "col": 5,
                                                     "tokLen": 6
                                                   }
                                                 },
-                                                "file": "/host/code/acr/test/assert-test.c"
+                                                "file": "/host/code/acr/test/assert_test.c"
                                               },
                                               "type": {
                                                 "qualType": "char *"
@@ -2340,7 +2340,7 @@
                                                       },
                                                       "expansionLoc": {
                                                         "offset": 59,
-                                                        "file": "assert-test.c",
+                                                        "file": "assert_test.c",
                                                         "line": 4,
                                                         "col": 5,
                                                         "tokLen": 6
@@ -2356,19 +2356,19 @@
                                                       },
                                                       "expansionLoc": {
                                                         "offset": 59,
-                                                        "file": "assert-test.c",
+                                                        "file": "assert_test.c",
                                                         "line": 4,
                                                         "col": 5,
                                                         "tokLen": 6
                                                       }
                                                     },
-                                                    "file": "/host/code/acr/test/assert-test.c"
+                                                    "file": "/host/code/acr/test/assert_test.c"
                                                   },
                                                   "type": {
                                                     "qualType": "char[14]"
                                                   },
                                                   "valueCategory": "lvalue",
-                                                  "value": "\"assert-test.c\""
+                                                  "value": "\"assert_test.c\""
                                                 }
                                               ]
                                             }
@@ -2388,7 +2388,7 @@
                                               },
                                               "expansionLoc": {
                                                 "offset": 59,
-                                                "file": "assert-test.c",
+                                                "file": "assert_test.c",
                                                 "line": 4,
                                                 "col": 5,
                                                 "tokLen": 6
@@ -2404,13 +2404,13 @@
                                               },
                                               "expansionLoc": {
                                                 "offset": 59,
-                                                "file": "assert-test.c",
+                                                "file": "assert_test.c",
                                                 "line": 4,
                                                 "col": 5,
                                                 "tokLen": 6
                                               }
                                             },
-                                            "file": "/host/code/acr/test/assert-test.c"
+                                            "file": "/host/code/acr/test/assert_test.c"
                                           },
                                           "type": {
                                             "qualType": "unsigned int"
@@ -2432,7 +2432,7 @@
                                                   },
                                                   "expansionLoc": {
                                                     "offset": 59,
-                                                    "file": "assert-test.c",
+                                                    "file": "assert_test.c",
                                                     "line": 4,
                                                     "col": 5,
                                                     "tokLen": 6
@@ -2448,13 +2448,13 @@
                                                   },
                                                   "expansionLoc": {
                                                     "offset": 59,
-                                                    "file": "assert-test.c",
+                                                    "file": "assert_test.c",
                                                     "line": 4,
                                                     "col": 5,
                                                     "tokLen": 6
                                                   }
                                                 },
-                                                "file": "/host/code/acr/test/assert-test.c"
+                                                "file": "/host/code/acr/test/assert_test.c"
                                               },
                                               "type": {
                                                 "qualType": "int"
@@ -2476,12 +2476,12 @@
                                                 "col": 30,
                                                 "tokLen": 13,
                                                 "includedFrom": {
-                                                  "file": "assert-test.c"
+                                                  "file": "assert_test.c"
                                                 }
                                               },
                                               "expansionLoc": {
                                                 "offset": 59,
-                                                "file": "assert-test.c",
+                                                "file": "assert_test.c",
                                                 "line": 4,
                                                 "col": 5,
                                                 "tokLen": 6
@@ -2495,18 +2495,18 @@
                                                 "col": 44,
                                                 "tokLen": 19,
                                                 "includedFrom": {
-                                                  "file": "assert-test.c"
+                                                  "file": "assert_test.c"
                                                 }
                                               },
                                               "expansionLoc": {
                                                 "offset": 59,
-                                                "file": "assert-test.c",
+                                                "file": "assert_test.c",
                                                 "line": 4,
                                                 "col": 5,
                                                 "tokLen": 6
                                               }
                                             },
-                                            "file": "/host/code/acr/test/assert-test.c"
+                                            "file": "/host/code/acr/test/assert_test.c"
                                           },
                                           "type": {
                                             "qualType": "const char *"
@@ -2526,12 +2526,12 @@
                                                     "col": 30,
                                                     "tokLen": 13,
                                                     "includedFrom": {
-                                                      "file": "assert-test.c"
+                                                      "file": "assert_test.c"
                                                     }
                                                   },
                                                   "expansionLoc": {
                                                     "offset": 59,
-                                                    "file": "assert-test.c",
+                                                    "file": "assert_test.c",
                                                     "line": 4,
                                                     "col": 5,
                                                     "tokLen": 6
@@ -2545,18 +2545,18 @@
                                                     "col": 44,
                                                     "tokLen": 19,
                                                     "includedFrom": {
-                                                      "file": "assert-test.c"
+                                                      "file": "assert_test.c"
                                                     }
                                                   },
                                                   "expansionLoc": {
                                                     "offset": 59,
-                                                    "file": "assert-test.c",
+                                                    "file": "assert_test.c",
                                                     "line": 4,
                                                     "col": 5,
                                                     "tokLen": 6
                                                   }
                                                 },
-                                                "file": "/host/code/acr/test/assert-test.c"
+                                                "file": "/host/code/acr/test/assert_test.c"
                                               },
                                               "type": {
                                                 "qualType": "const char[23]"
@@ -2578,12 +2578,12 @@
                                                         "col": 44,
                                                         "tokLen": 19,
                                                         "includedFrom": {
-                                                          "file": "assert-test.c"
+                                                          "file": "assert_test.c"
                                                         }
                                                       },
                                                       "expansionLoc": {
                                                         "offset": 59,
-                                                        "file": "assert-test.c",
+                                                        "file": "assert_test.c",
                                                         "line": 4,
                                                         "col": 5,
                                                         "tokLen": 6
@@ -2597,18 +2597,18 @@
                                                         "col": 44,
                                                         "tokLen": 19,
                                                         "includedFrom": {
-                                                          "file": "assert-test.c"
+                                                          "file": "assert_test.c"
                                                         }
                                                       },
                                                       "expansionLoc": {
                                                         "offset": 59,
-                                                        "file": "assert-test.c",
+                                                        "file": "assert_test.c",
                                                         "line": 4,
                                                         "col": 5,
                                                         "tokLen": 6
                                                       }
                                                     },
-                                                    "file": "/host/code/acr/test/assert-test.c"
+                                                    "file": "/host/code/acr/test/assert_test.c"
                                                   },
                                                   "type": {
                                                     "qualType": "const char[23]"
@@ -2628,12 +2628,12 @@
                                                             "col": 44,
                                                             "tokLen": 19,
                                                             "includedFrom": {
-                                                              "file": "assert-test.c"
+                                                              "file": "assert_test.c"
                                                             }
                                                           },
                                                           "expansionLoc": {
                                                             "offset": 59,
-                                                            "file": "assert-test.c",
+                                                            "file": "assert_test.c",
                                                             "line": 4,
                                                             "col": 5,
                                                             "tokLen": 6
@@ -2647,18 +2647,18 @@
                                                             "col": 44,
                                                             "tokLen": 19,
                                                             "includedFrom": {
-                                                              "file": "assert-test.c"
+                                                              "file": "assert_test.c"
                                                             }
                                                           },
                                                           "expansionLoc": {
                                                             "offset": 59,
-                                                            "file": "assert-test.c",
+                                                            "file": "assert_test.c",
                                                             "line": 4,
                                                             "col": 5,
                                                             "tokLen": 6
                                                           }
                                                         },
-                                                        "file": "/host/code/acr/test/assert-test.c"
+                                                        "file": "/host/code/acr/test/assert_test.c"
                                                       },
                                                       "type": {
                                                         "qualType": "const char[23]"
@@ -2701,7 +2701,7 @@
                   "col": 12,
                   "tokLen": 1
                 },
-                "file": "/host/code/acr/test/assert-test.c"
+                "file": "/host/code/acr/test/assert_test.c"
               },
               "inner": [
                 {
@@ -2718,7 +2718,7 @@
                       "col": 12,
                       "tokLen": 1
                     },
-                    "file": "/host/code/acr/test/assert-test.c"
+                    "file": "/host/code/acr/test/assert_test.c"
                   },
                   "type": {
                     "qualType": "int"
@@ -2735,17 +2735,17 @@
   ],
   "base_dir": "/host/code/acr/test",
   "compile_dir": "/host/code/acr/test",
-  "file": "/host/code/acr/test/assert-test.c",
+  "file": "/host/code/acr/test/assert_test.c",
   "preproc_db": {
-    "/host/code/acr/test/assert-test.c": [
+    "/host/code/acr/test/assert_test.c": [
       0
     ]
   },
   "comments_db": {
-    "/host/code/acr/test/assert-test.c": []
+    "/host/code/acr/test/assert_test.c": []
   },
   "newlines_db": {
-    "/host/code/acr/test/assert-test.c": [
+    "/host/code/acr/test/assert_test.c": [
       19,
       20,
       54,

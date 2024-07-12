@@ -311,10 +311,10 @@ def test_e2e_arrow_null_01():
         step_dir_prev_existed = True
     else:
         step_dir_prev_existed = False
-    os.system("rm -f out/arrow-null-01*.*")
-    source_file="arrow-null-01.c"
+    os.system("rm -f out/arrow_null_01*.*")
+    source_file="arrow_null_01.c"
     compile_commands="autogen"
-    alerts="arrow-null-01.alerts.json"
+    alerts="arrow_null_01.alerts.json"
     step_dir="out"
     out_src_dir="out"
     end_to_end_acr.run(
@@ -323,7 +323,7 @@ def test_e2e_arrow_null_01():
         alerts=alerts,
         step_dir=step_dir,
         out_src_dir=out_src_dir)
-    assert cmp_file_normalize("arrow-null-01.repaired.c", "out/arrow-null-01.c")
+    assert cmp_file_normalize("arrow_null_01.repaired.c", "out/arrow_null_01.c")
     print("source_file: ", source_file)
     fixed_c_file = out_src_dir+"/"+source_file
     print("fixed_c_file: ", fixed_c_file)
@@ -437,20 +437,20 @@ def test_super01_bothstars():
     test_runner.cleanup(base_dir, out_location=step_dir, test_results_filepath="out", step_dir=step_dir, base_dir=base_dir, additional_files="out/super01*.*")
 
 def test_dom_null_derefs():
-    os.system("rm -f out/dom-null-derefs*.*")
-    alerts="dom-null-derefs.alerts.json"
+    os.system("rm -f out/dom_null_derefs*.*")
+    alerts="dom_null_derefs.alerts.json"
     step_dir="out"
     base_dir="."
     end_to_end_acr.run(
-        source_file="dom-null-derefs.c",
+        source_file="dom_null_derefs.c",
         compile_commands="autogen",
         alerts=alerts,
         step_dir=step_dir,
         out_src_dir=step_dir)
-    assert cmp_file_normalize("dom-null-derefs.nulldom.json", "out/dom-null-derefs.nulldom.json")
-    assert cmp_file_normalize("dom-null-derefs.brain-out.json", "out/dom-null-derefs.brain-out.json")
+    assert cmp_file_normalize("dom_null_derefs.nulldom.json", "out/dom_null_derefs.nulldom.json")
+    assert cmp_file_normalize("dom_null_derefs.brain-out.json", "out/dom_null_derefs.brain-out.json")
     if os.getenv('pytest_keep') != "true":
-        os.system("rm -f out/dom-null-derefs*.*")
+        os.system("rm -f out/dom_null_derefs*.*")
 
 def test_already_repaired():
     os.system("rm -f out/already_repaired_null_01.*")

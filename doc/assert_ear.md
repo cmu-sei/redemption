@@ -21,7 +21,7 @@ subject to its own license.
 DM23-2165
 </legal>
 
-Consider the file `assert-test.c`, whose contents are as follows:
+Consider the file `assert_test.c`, whose contents are as follows:
 ```c
     #include <assert.h>
 
@@ -40,7 +40,7 @@ When this file is run thru the C preprocessor without any options, the `assert(a
    argc > 1
    ) ; else __assert_fail (
    "argc > 1"
-   , "assert-test.c", 4, __extension__ __PRETTY_FUNCTION__); }))
+   , "assert_test.c", 4, __extension__ __PRETTY_FUNCTION__); }))
 ```
 
 But with the `-DNDEBUG` option, the line becomes:
@@ -53,10 +53,10 @@ The ear output contains the ASTs of the above preprocessed code.  For example, y
 
 ```bash
     cd /host/code/acr/test
-    ../ear.py -o out/assert-test.ear-out.json        -s assert-test.c -c autogen
-    ../ear.py -o out/assert-test.ear-out.NDEBUG.json -s assert-test.c -c assert-test.compile_cmds.NDEBUG.json
+    ../ear.py -o out/assert_test.ear-out.json        -s assert_test.c -c autogen
+    ../ear.py -o out/assert_test.ear-out.NDEBUG.json -s assert_test.c -c assert_test.compile_cmds.NDEBUG.json
 ```
 
-where `assert-test.compile_cmds.NDEBUG.json` specifies the `-DNDEBUG` argument.
+where `assert_test.compile_cmds.NDEBUG.json` specifies the `-DNDEBUG` argument.
 
 So, to check whether an `assert` in a given translation unit is disabled, you can grep for `__assert_fail` in the ear output.  With `test_runner.py`, the ear output goes in the step directory (default: `/host/code/acr/test/step`), provided that `pytest_keep` is `true`.

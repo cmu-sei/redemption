@@ -30,9 +30,9 @@ tests:
     out_src_dir: out
   name: preproc_parser_1_not_simple_null_checkb_repeated_incorrect
 
-# - answer_file: "arrow-null-01.repaired.c"
+# - answer_file: "arrow_null_01.repaired.c"
 #   input:
-#     alerts_file: "arrow-null-01.alerts.json"
-#     cfile: "arrow-null-01.c"
+#     alerts_file: "arrow_null_01.alerts.json"
+#     cfile: "arrow_null_01.c"
 #     compile_cmds_file: autogen
-#   name: "arrow-null-01"
+#   name: "arrow_null_01"

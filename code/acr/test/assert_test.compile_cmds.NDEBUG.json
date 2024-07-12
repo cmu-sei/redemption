@@ -1,0 +1,8 @@
+[
+    {
+        "arguments": ["cc", "-c", "assert_test.c", "-DNDEBUG"],
+        "directory": "$TEST_DIR",
+        "file": "assert_test.c"
+    }
+]
+

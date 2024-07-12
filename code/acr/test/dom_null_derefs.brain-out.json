@@ -1,13 +1,13 @@
 [
   {
     "rule": "EXP34-C",
-    "file": "/host/code/acr/test/dom-null-derefs.c",
+    "file": "/host/code/acr/test/dom_null_derefs.c",
     "line": 10,
     "alert_id": 1,
     "ast_id": 2785,
     "patch": [
       [
-        "/host/code/acr/test/dom-null-derefs.c",
+        "/host/code/acr/test/dom_null_derefs.c",
         [
           [
             175,
@@ -28,13 +28,13 @@
   },
   {
     "rule": "EXP34-C",
-    "file": "/host/code/acr/test/dom-null-derefs.c",
+    "file": "/host/code/acr/test/dom_null_derefs.c",
     "line": 11,
     "alert_id": 2,
     "ast_id": 2790,
     "patch": [
       [
-        "/host/code/acr/test/dom-null-derefs.c",
+        "/host/code/acr/test/dom_null_derefs.c",
         [
           [
             190,
@@ -55,7 +55,7 @@
   },
   {
     "rule": "EXP34-C",
-    "file": "/host/code/acr/test/dom-null-derefs.c",
+    "file": "/host/code/acr/test/dom_null_derefs.c",
     "line": 13,
     "alert_id": 3,
     "ast_id": 2800,
@@ -71,7 +71,7 @@
   },
   {
     "rule": "EXP34-C",
-    "file": "/host/code/acr/test/dom-null-derefs.c",
+    "file": "/host/code/acr/test/dom_null_derefs.c",
     "line": 16,
     "alert_id": 4,
     "ast_id": 2810,
@@ -87,7 +87,7 @@
   },
   {
     "rule": "EXP34-C",
-    "file": "/host/code/acr/test/dom-null-derefs.c",
+    "file": "/host/code/acr/test/dom_null_derefs.c",
     "line": 18,
     "alert_id": 5,
     "ast_id": 2816,
@@ -102,7 +102,7 @@
   },
   {
     "rule": "EXP34-C",
-    "file": "/host/code/acr/test/dom-null-derefs.c",
+    "file": "/host/code/acr/test/dom_null_derefs.c",
     "line": 19,
     "alert_id": 6,
     "ast_id": 2822,

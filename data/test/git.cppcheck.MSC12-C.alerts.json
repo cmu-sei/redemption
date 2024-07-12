@@ -183,7 +183,7 @@
     "message": "Redundant initialization for 'retval'. The initialized value is overwritten before it is read.",
     "verdict": "false",
     "repairable": "false",
-    "rationale": "We never repair redundant initializers.  See the dead-code.md file."
+    "rationale": "We never repair redundant initializers.  See the dead_code.md file."
   },
   {
     "rule": "MSC12-C",

@@ -3,7 +3,7 @@
 # Function: foo
 ################## 
 [
-  ["$BASE/dom-null-derefs.c", [10, 8]], {
+  ["$BASE/dom_null_derefs.c", [10, 8]], {
     "derefs": [
     ],
     "null_checks": [
@@ -11,7 +11,7 @@
   }
 ],
 [
-  ["$BASE/dom-null-derefs.c", [13, 12]], {
+  ["$BASE/dom_null_derefs.c", [13, 12]], {
     "derefs": [
       [10, 8],
     ],
@@ -21,7 +21,7 @@
   }
 ],
 [
-  ["$BASE/dom-null-derefs.c", [18, 10]], {
+  ["$BASE/dom_null_derefs.c", [18, 10]], {
     "derefs": [
       [10, 8],
     ],
@@ -31,7 +31,7 @@
 ],
 ################## 
 [
-  ["$BASE/dom-null-derefs.c", [11, 12]], {
+  ["$BASE/dom_null_derefs.c", [11, 12]], {
     "derefs": [
     ],
     "null_checks": [
@@ -39,7 +39,7 @@
   }
 ],
 [
-  ["$BASE/dom-null-derefs.c", [16, 16]], {
+  ["$BASE/dom_null_derefs.c", [16, 16]], {
     "derefs": [
       [11, 12],
     ],
@@ -49,7 +49,7 @@
   }
 ],
 [
-  ["$BASE/dom-null-derefs.c", [19, 12]], {
+  ["$BASE/dom_null_derefs.c", [19, 12]], {
     "derefs": [
       [11, 12],
     ],

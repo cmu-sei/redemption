@@ -81,9 +81,9 @@ tests:
     cfile: call_noret.c
     alerts_file: call_noret.alerts.json
 
-#- answer_file: "arrow-null-01.repaired.c"
+#- answer_file: "arrow_null_01.repaired.c"
 #  input:
-#    alerts_file: "arrow-null-01.alerts.json"
-#    cfile: "arrow-null-01.c"
+#    alerts_file: "arrow_null_01.alerts.json"
+#    cfile: "arrow_null_01.c"
 #    compile_cmds_file: autogen
-#  name: "arrow-null-01"
+#  name: "arrow_null_01"

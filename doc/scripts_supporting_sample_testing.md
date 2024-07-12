@@ -94,9 +94,9 @@ Benefit: This script is relatively fast to run since it only runs tests on adjud
 
 Possible drawback: Even the limited disk space used by this script might be too large compared to available space, so users should inspect their system first to ensure adequate disk space.
 
-### 4. `create-ans-files-2.py`
+### 4. `create_ans_files_2.py`
 
-`data/test/create-ans-files-2.py` Helps with step 1. The script identifies adjudicated alerts, and create .ans files if they don’t already exist for only adjudicated “satisfactory” alerts (or just prints -ans filenames for the “satisfactory” set.) To run: Before running, set env variables as in comments at top. Then, provide single alerts.json filename. 1. Use -t to actually run tests AND create .ans files IF they don’t already exist; 2. Use -v (verbose) just to find out which .ans filenames are in the “satisfactory” list.
+`data/test/create_ans_files_2.py` Helps with step 1. The script identifies adjudicated alerts, and create .ans files if they don’t already exist for only adjudicated “satisfactory” alerts (or just prints -ans filenames for the “satisfactory” set.) To run: Before running, set env variables as in comments at top. Then, provide single alerts.json filename. 1. Use -t to actually run tests AND create .ans files IF they don’t already exist; 2. Use -v (verbose) just to find out which .ans filenames are in the “satisfactory” list.
 
 
 ### 5. `test_runner.py`

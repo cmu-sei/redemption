@@ -30,5 +30,5 @@ make
 ================================================================================
 To run:
 ================================================================================
-clang -Xclang -disable-O0-optnone -g -S -O0 -fno-inline -emit-llvm ../test/dom-null-derefs.c -o test.ll
+clang -Xclang -disable-O0-optnone -g -S -O0 -fno-inline -emit-llvm ../test/dom_null_derefs.c -o test.ll
 opt-15 -enable-new-pm=0 -load ./libNullDom.so -mem2reg -sroa -domtree -nulldom test.ll -S -disable-output
