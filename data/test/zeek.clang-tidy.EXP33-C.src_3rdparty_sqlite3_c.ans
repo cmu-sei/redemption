@@ -1,4 +1,4 @@
---- /host/data/test/out/zeek.clang-tidy.EXP33-C/src/3rdparty/sqlite3.c	2024-07-09 16:28:58.918263170 +0000
+--- /host/data/test/out/zeek.clang-tidy.EXP33-C/src/3rdparty/sqlite3.c	2024-07-15 20:06:05.620717774 +0000
 +++ /oss/zeek/src/3rdparty/sqlite3.c	2024-06-22 00:27:13.000000000 +0000
 @@ -22778,7 +22778,7 @@
  ** The caller must hold the appropriate mutex.
@@ -1808,7 +1808,7 @@
    ** other hand, dlsym() will not work on such a system either, so we have
    ** not really lost anything.
    */
--  void (*(*x = 0)(void*,const char*))(void);
+-  void (*(*x)(void*,const char*))(void) = 0;
 +  void (*(*x)(void*,const char*))(void);
    UNUSED_PARAMETER(NotUsed);
    x = (void(*(*)(void*,const char*))(void))dlsym;
@@ -14454,7 +14454,7 @@
      }
      if( i==wsdAutoext.nExt ){
        u64 nByte = (wsdAutoext.nExt+1)*sizeof(wsdAutoext.aExt[0]);
--      void (**aNew = 0)(void);
+-      void (**aNew)(void) = 0;
 +      void (**aNew)(void);
        aNew = sqlite3_realloc64(wsdAutoext.aExt, nByte);
        if( aNew==0 ){
@@ -17584,7 +17584,7 @@
     && ALWAYS(pTab->u.vtab.p!=0)
    ){
 -    VTable *p = NULL;
--    int (*xDestroy = 0)(sqlite3_vtab *);
+-    int (*xDestroy)(sqlite3_vtab *) = 0;
 +    VTable *p;
 +    int (*xDestroy)(sqlite3_vtab *);
      for(p=pTab->u.vtab.p; p; p=p->pNext){
@@ -17603,7 +17603,7 @@
        VTable *pVTab = aVTrans[i];
        sqlite3_vtab *p = pVTab->pVtab;
        if( p ){
--        int (*x = 0)(sqlite3_vtab *);
+-        int (*x)(sqlite3_vtab *) = 0;
 +        int (*x)(sqlite3_vtab *);
          x = *(int (**)(sqlite3_vtab *))((char *)p->pModule + offset);
          if( x ) x(p);
@@ -17619,7 +17619,7 @@
  
    db->aVTrans = 0;
    for(i=0; rc==SQLITE_OK && i<db->nVTrans; i++){
--    int (*x = 0)(sqlite3_vtab *);
+-    int (*x)(sqlite3_vtab *) = 0;
 +    int (*x)(sqlite3_vtab *);
      sqlite3_vtab *pVtab = aVTrans[i]->pVtab;
      if( pVtab && (x = pVtab->pModule->xSync)!=0 ){
@@ -17652,7 +17652,7 @@
        VTable *pVTab = db->aVTrans[i];
        const sqlite3_module *pMod = pVTab->pMod->pModule;
        if( pVTab->pVtab && pMod->iVersion>=2 ){
--        int (*xMethod = 0)(sqlite3_vtab *, int);
+-        int (*xMethod)(sqlite3_vtab *, int) = 0;
 +        int (*xMethod)(sqlite3_vtab *, int);
          sqlite3VtabLock(pVTab);
          switch( op ){
@@ -18285,7 +18285,7 @@
      if( ExprIsVtab(pCol) ){
 -      sqlite3_vtab *pVtab = NULL;
 -      sqlite3_module *pMod = NULL;
--      void (*xNotUsed = 0)(sqlite3_context*,int,sqlite3_value**);
+-      void (*xNotUsed)(sqlite3_context*,int,sqlite3_value**) = 0;
 -      void *pNotUsed = NULL;
 +      sqlite3_vtab *pVtab;
 +      sqlite3_module *pMod;

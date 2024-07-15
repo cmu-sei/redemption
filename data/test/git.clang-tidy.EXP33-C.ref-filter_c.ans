@@ -1,0 +1,504 @@
+--- /host/data/test/out/git.clang-tidy.EXP33-C/ref-filter.c	2024-07-15 20:30:14.136065329 +0000
++++ /oss/git/ref-filter.c	2024-06-28 01:30:36.760014151 +0000
+@@ -94,7 +94,7 @@
+ 				      const struct hashmap_entry *kptr,
+ 				      const void *keydata_aka_refname)
+ {
+-	const struct ref_to_worktree_entry *e = NULL, *k = NULL;
++	const struct ref_to_worktree_entry *e, *k;
+ 
+ 	e = container_of(eptr, const struct ref_to_worktree_entry, ent);
+ 	k = container_of(kptr, const struct ref_to_worktree_entry, ent);
+@@ -270,7 +270,7 @@
+ 				  const char *arg, struct strbuf *err)
+ {
+ 	struct string_list params = STRING_LIST_INIT_DUP;
+-	int i = 0;
++	int i;
+ 
+ 	if (!strcmp(atom->name, "push") || starts_with(atom->name, "push:"))
+ 		atom->u.remote_ref.push = 1;
+@@ -499,7 +499,7 @@
+ {
+ 	struct align *align = &atom->u.align;
+ 	struct string_list params = STRING_LIST_INIT_DUP;
+-	int i = 0;
++	int i;
+ 	unsigned int width = ~0U;
+ 
+ 	if (!arg)
+@@ -510,7 +510,7 @@
+ 	string_list_split(&params, arg, ',', -1);
+ 	for (i = 0; i < params.nr; i++) {
+ 		const char *s = params.items[i].string;
+-		int position = 0;
++		int position;
+ 
+ 		if (skip_prefix(s, "position=", &s)) {
+ 			position = parse_align_position(s);
+@@ -669,9 +669,9 @@
+ 				 const char *atom, const char *ep,
+ 				 struct strbuf *err)
+ {
+-	const char *sp = NULL;
+-	const char *arg = NULL;
+-	int i = 0, at = 0, atom_len = 0;
++	const char *sp;
++	const char *arg;
++	int i, at, atom_len;
+ 
+ 	sp = atom;
+ 	if (*sp == '*' && sp < ep)
+@@ -825,7 +825,7 @@
+ static int align_atom_handler(struct atom_value *atomv, struct ref_formatting_state *state,
+ 			      struct strbuf *unused_err)
+ {
+-	struct ref_formatting_stack *new_stack = NULL;
++	struct ref_formatting_stack *new_stack;
+ 
+ 	push_stack_element(&state->stack);
+ 	new_stack = state->stack;
+@@ -872,7 +872,7 @@
+ static int if_atom_handler(struct atom_value *atomv, struct ref_formatting_state *state,
+ 			   struct strbuf *unused_err)
+ {
+-	struct ref_formatting_stack *new_stack = NULL;
++	struct ref_formatting_stack *new_stack;
+ 	struct if_then_else *if_then_else = xcalloc(1,
+ 						    sizeof(struct if_then_else));
+ 
+@@ -1015,13 +1015,13 @@
+  */
+ int verify_ref_format(struct ref_format *format)
+ {
+-	const char *cp = NULL, *sp = NULL;
++	const char *cp, *sp;
+ 
+ 	format->need_color_reset_at_eol = 0;
+ 	for (cp = format->format; *cp && (sp = find_next(cp)); ) {
+ 		struct strbuf err = STRBUF_INIT;
+-		const char *color = NULL, *ep = strchr(sp, ')');
+-		int at = 0;
++		const char *color, *ep = strchr(sp, ')');
++		int at;
+ 
+ 		if (!ep)
+ 			return error(_("malformed format string %s"), sp);
+@@ -1078,7 +1078,7 @@
+ /* See grab_values */
+ static void grab_common_values(struct atom_value *val, int deref, struct expand_data *oi)
+ {
+-	int i = 0;
++	int i;
+ 
+ 	for (i = 0; i < used_atom_cnt; i++) {
+ 		const char *name = used_atom[i].name;
+@@ -1108,7 +1108,7 @@
+ /* See grab_values */
+ static void grab_tag_values(struct atom_value *val, int deref, struct object *obj)
+ {
+-	int i = 0;
++	int i;
+ 	struct tag *tag = (struct tag *) obj;
+ 
+ 	for (i = 0; i < used_atom_cnt; i++) {
+@@ -1131,7 +1131,7 @@
+ /* See grab_values */
+ static void grab_commit_values(struct atom_value *val, int deref, struct object *obj)
+ {
+-	int i = 0;
++	int i;
+ 	struct commit *commit = (struct commit *) obj;
+ 
+ 	for (i = 0; i < used_atom_cnt; i++) {
+@@ -1165,7 +1165,7 @@
+ 
+ static const char *find_wholine(const char *who, int wholen, const char *buf)
+ {
+-	const char *eol = NULL;
++	const char *eol;
+ 	while (*buf) {
+ 		if (!strncmp(buf, who, wholen) &&
+ 		    buf[wholen] == ' ')
+@@ -1189,7 +1189,7 @@
+ 
+ static const char *copy_name(const char *buf)
+ {
+-	const char *cp = NULL;
++	const char *cp;
+ 	for (cp = buf; *cp && *cp != '\n'; cp++) {
+ 		if (!strncmp(cp, " <", 2))
+ 			return xmemdupz(buf, cp - buf);
+@@ -1200,7 +1200,7 @@
+ static const char *copy_email(const char *buf, struct used_atom *atom)
+ {
+ 	const char *email = strchr(buf, '<');
+-	const char *eoemail = NULL;
++	const char *eoemail;
+ 	if (!email)
+ 		return xstrdup("");
+ 	switch (atom->u.email_option.option) {
+@@ -1231,7 +1231,7 @@
+ static char *copy_subject(const char *buf, unsigned long len)
+ {
+ 	struct strbuf sb = STRBUF_INIT;
+-	int i = 0;
++	int i;
+ 
+ 	for (i = 0; i < len; i++) {
+ 		if (buf[i] == '\r' && i + 1 < len && buf[i + 1] == '\n')
+@@ -1248,11 +1248,11 @@
+ static void grab_date(const char *buf, struct atom_value *v, const char *atomname)
+ {
+ 	const char *eoemail = strstr(buf, "> ");
+-	char *zone = NULL;
+-	timestamp_t timestamp = 0;
+-	long tz = 0;
++	char *zone;
++	timestamp_t timestamp;
++	long tz;
+ 	struct date_mode date_mode = DATE_MODE_INIT;
+-	const char *formatp = NULL;
++	const char *formatp;
+ 
+ 	/*
+ 	 * We got here because atomname ends in "date" or "date<something>";
+@@ -1286,7 +1286,7 @@
+ /* See grab_values */
+ static void grab_person(const char *who, struct atom_value *val, int deref, void *buf)
+ {
+-	int i = 0;
++	int i;
+ 	int wholen = strlen(who);
+ 	const char *wholine = NULL;
+ 
+@@ -1352,9 +1352,9 @@
+ {
+ 	struct strbuf payload = STRBUF_INIT;
+ 	struct strbuf signature = STRBUF_INIT;
+-	const char *eol = NULL;
++	const char *eol;
+ 	const char *end = buf + strlen(buf);
+-	const char *sigstart = NULL;
++	const char *sigstart;
+ 
+ 	/* parse signature first; we might not even have a subject line */
+ 	parse_signature(buf, end - buf, &payload, &signature);
+@@ -1403,9 +1403,9 @@
+  */
+ static void append_lines(struct strbuf *out, const char *buf, unsigned long size, int lines)
+ {
+-	int i = 0;
+-	const char *sp = NULL, *eol = NULL;
+-	size_t len = 0;
++	int i;
++	const char *sp, *eol;
++	size_t len;
+ 
+ 	sp = buf;
+ 
+@@ -1424,7 +1424,7 @@
+ /* See grab_values */
+ static void grab_sub_body_contents(struct atom_value *val, int deref, struct expand_data *data)
+ {
+-	int i = 0;
++	int i;
+ 	const char *subpos = NULL, *bodypos = NULL, *sigpos = NULL;
+ 	size_t sublen = 0, bodylen = 0, nonsiglen = 0, siglen = 0;
+ 	void *buf = data->content;
+@@ -1506,7 +1506,7 @@
+  */
+ static void fill_missing_values(struct atom_value *val)
+ {
+-	int i = 0;
++	int i;
+ 	for (i = 0; i < used_atom_cnt; i++) {
+ 		struct atom_value *v = &val[i];
+ 		if (!v->s)
+@@ -1564,7 +1564,7 @@
+ 	const char *to_free = start;
+ 
+ 	if (len < 0) {
+-		int i = 0;
++		int i;
+ 		const char *p = refname;
+ 
+ 		/* Find total no of '/' separated path-components */
+@@ -1602,7 +1602,7 @@
+ 	const char *to_free = start;
+ 
+ 	if (len < 0) {
+-		int i = 0;
++		int i;
+ 		const char *p = refname;
+ 
+ 		/* Find total no of '/' separated path-components */
+@@ -1643,7 +1643,7 @@
+ static void fill_remote_ref_details(struct used_atom *atom, const char *refname,
+ 				    struct branch *branch, const char **s)
+ {
+-	int num_ours = 0, num_theirs = 0;
++	int num_ours, num_theirs;
+ 	if (atom->u.remote_ref.option == RR_REF)
+ 		*s = show_ref(&atom->u.remote_ref.refname, refname);
+ 	else if (atom->u.remote_ref.option == RR_TRACK) {
+@@ -1681,13 +1681,13 @@
+ 		else
+ 			*s = xstrdup("<>");
+ 	} else if (atom->u.remote_ref.option == RR_REMOTE_NAME) {
+-		int explicit = 0;
++		int explicit;
+ 		const char *remote = atom->u.remote_ref.push ?
+ 			pushremote_for_branch(branch, &explicit) :
+ 			remote_for_branch(branch, &explicit);
+ 		*s = xstrdup(explicit ? remote : "");
+ 	} else if (atom->u.remote_ref.option == RR_REMOTE_REF) {
+-		const char *merge = NULL;
++		const char *merge;
+ 
+ 		merge = remote_ref_for_branch(branch, atom->u.remote_ref.push);
+ 		*s = xstrdup(merge ? merge : "");
+@@ -1778,11 +1778,11 @@
+ 
+ static void populate_worktree_map(struct hashmap *map, struct worktree **worktrees)
+ {
+-	int i = 0;
++	int i;
+ 
+ 	for (i = 0; worktrees[i]; i++) {
+ 		if (worktrees[i]->head_ref) {
+-			struct ref_to_worktree_entry *entry = NULL;
++			struct ref_to_worktree_entry *entry;
+ 			entry = xmalloc(sizeof(*entry));
+ 			entry->wt = worktrees[i];
+ 			hashmap_entry_init(&entry->ent,
+@@ -1805,8 +1805,8 @@
+ 
+ static char *get_worktree_path(const struct used_atom *atom, const struct ref_array_item *ref)
+ {
+-	struct hashmap_entry entry, *e = NULL;
+-	struct ref_to_worktree_entry *lookup_result = NULL;
++	struct hashmap_entry entry, *e;
++	struct ref_to_worktree_entry *lookup_result;
+ 
+ 	lazy_init_worktree_map();
+ 
+@@ -1826,8 +1826,8 @@
+  */
+ static int populate_value(struct ref_array_item *ref, struct strbuf *err)
+ {
+-	struct object *obj = NULL;
+-	int i = 0;
++	struct object *obj;
++	int i;
+ 	struct object_info empty = OBJECT_INFO_INIT;
+ 
+ 	CALLOC_ARRAY(ref->value, used_atom_cnt);
+@@ -1846,7 +1846,7 @@
+ 		const char *name = used_atom[i].name;
+ 		struct atom_value *v = &ref->value[i];
+ 		int deref = 0;
+-		const char *refname = NULL;
++		const char *refname;
+ 		struct branch *branch = NULL;
+ 
+ 		v->s_size = ATOM_SIZE_UNSPECIFIED;
+@@ -1870,7 +1870,7 @@
+ 		else if (atom_type == ATOM_SYMREF)
+ 			refname = get_symref(atom, ref);
+ 		else if (atom_type == ATOM_UPSTREAM) {
+-			const char *branch_name = NULL;
++			const char *branch_name;
+ 			/* only local branches may have an upstream */
+ 			if (!skip_prefix(ref->refname, "refs/heads/",
+ 					 &branch_name)) {
+@@ -1886,7 +1886,7 @@
+ 				v->s = xstrdup("");
+ 			continue;
+ 		} else if (atom_type == ATOM_PUSH && atom->u.remote_ref.push) {
+-			const char *branch_name = NULL;
++			const char *branch_name;
+ 			v->s = xstrdup("");
+ 			if (!skip_prefix(ref->refname, "refs/heads/",
+ 					 &branch_name))
+@@ -1938,7 +1938,7 @@
+ 			v->s = xstrdup("");
+ 			continue;
+ 		} else if (atom_type == ATOM_IF) {
+-			const char *s = NULL;
++			const char *s;
+ 			if (skip_prefix(name, "if:", &s))
+ 				v->s = xstrdup(s);
+ 			else
+@@ -2149,7 +2149,7 @@
+ 					       const char *refname)
+ {
+ 	const struct object_id *tagged_oid = NULL;
+-	struct object *obj = NULL;
++	struct object *obj;
+ 
+ 	if (oid_array_lookup(points_at, oid) >= 0)
+ 		return oid;
+@@ -2171,7 +2171,7 @@
+ static struct ref_array_item *new_ref_array_item(const char *refname,
+ 						 const struct object_id *oid)
+ {
+-	struct ref_array_item *ref = NULL;
++	struct ref_array_item *ref;
+ 
+ 	FLEX_ALLOC_STR(ref, refname, refname);
+ 	oidcpy(&ref->objectname, oid);
+@@ -2194,7 +2194,7 @@
+ 
+ static int ref_kind_from_refname(const char *refname)
+ {
+-	unsigned int i = 0;
++	unsigned int i;
+ 
+ 	static struct {
+ 		const char *prefix;
+@@ -2240,9 +2240,9 @@
+ {
+ 	struct ref_filter_cbdata *ref_cbdata = cb_data;
+ 	struct ref_filter *filter = ref_cbdata->filter;
+-	struct ref_array_item *ref = NULL;
++	struct ref_array_item *ref;
+ 	struct commit *commit = NULL;
+-	unsigned int kind = 0;
++	unsigned int kind;
+ 
+ 	if (flag & REF_BAD_NAME) {
+ 		warning(_("ignoring ref with broken name %s"), refname);
+@@ -2303,7 +2303,7 @@
+ {
+ 	free((char *)item->symref);
+ 	if (item->value) {
+-		int i = 0;
++		int i;
+ 		for (i = 0; i < used_atom_cnt; i++)
+ 			free((char *)item->value[i].s);
+ 		free(item->value);
+@@ -2314,7 +2314,7 @@
+ /* Free all memory allocated for ref_array */
+ void ref_array_clear(struct ref_array *array)
+ {
+-	int i = 0;
++	int i;
+ 
+ 	for (i = 0; i < array->nr; i++)
+ 		free_array_item(array->items[i]);
+@@ -2345,9 +2345,9 @@
+ 			 int include_reached)
+ {
+ 	struct rev_info revs;
+-	int i = 0, old_nr = 0;
+-	struct commit **to_clear = NULL;
+-	struct commit_list *cr = NULL;
++	int i, old_nr;
++	struct commit **to_clear;
++	struct commit_list *cr;
+ 
+ 	if (!check_reachable)
+ 		return;
+@@ -2407,7 +2407,7 @@
+ int filter_refs(struct ref_array *array, struct ref_filter *filter, unsigned int type)
+ {
+ 	struct ref_filter_cbdata ref_cbdata;
+-	int save_commit_buffer_orig = 0;
++	int save_commit_buffer_orig;
+ 	int ret = 0;
+ 
+ 	ref_cbdata.array = array;
+@@ -2487,8 +2487,8 @@
+ 
+ static int cmp_ref_sorting(struct ref_sorting *s, struct ref_array_item *a, struct ref_array_item *b)
+ {
+-	struct atom_value *va = NULL, *vb = NULL;
+-	int cmp = 0;
++	struct atom_value *va, *vb;
++	int cmp;
+ 	int cmp_detached_head = 0;
+ 	cmp_type cmp_type = used_atom[s->atom].type;
+ 	struct strbuf err = STRBUF_INIT;
+@@ -2506,7 +2506,7 @@
+ 		cmp = versioncmp(va->s, vb->s);
+ 	} else if (cmp_type == FIELD_STR) {
+ 		if (va->s_size < 0 && vb->s_size < 0) {
+-			int (*cmp_fn)(const char *, const char *) = 0;
++			int (*cmp_fn)(const char *, const char *);
+ 			cmp_fn = s->sort_flags & REF_SORTING_ICASE
+ 				? strcasecmp : strcmp;
+ 			cmp = cmp_fn(va->s, vb->s);
+@@ -2515,7 +2515,7 @@
+ 					strlen(va->s) : va->s_size;
+ 			size_t b_size = vb->s_size < 0 ?
+ 					strlen(vb->s) : vb->s_size;
+-			int (*cmp_fn)(const void *, const void *, size_t) = 0;
++			int (*cmp_fn)(const void *, const void *, size_t);
+ 			cmp_fn = s->sort_flags & REF_SORTING_ICASE
+ 				? memcasecmp : memcmp;
+ 
+@@ -2545,7 +2545,7 @@
+ {
+ 	struct ref_array_item *a = *((struct ref_array_item **)a_);
+ 	struct ref_array_item *b = *((struct ref_array_item **)b_);
+-	struct ref_sorting *s = NULL;
++	struct ref_sorting *s;
+ 
+ 	for (s = ref_sorting; s; s = s->next) {
+ 		int cmp = cmp_ref_sorting(s, a, b);
+@@ -2601,15 +2601,15 @@
+ 			  struct strbuf *final_buf,
+ 			  struct strbuf *error_buf)
+ {
+-	const char *cp = NULL, *sp = NULL, *ep = NULL;
++	const char *cp, *sp, *ep;
+ 	struct ref_formatting_state state = REF_FORMATTING_STATE_INIT;
+ 
+ 	state.quote_style = format->quote_style;
+ 	push_stack_element(&state.stack);
+ 
+ 	for (cp = format->format; *cp && (sp = find_next(cp)); cp = ep + 1) {
+-		struct atom_value *atomv = NULL;
+-		int pos = 0;
++		struct atom_value *atomv;
++		int pos;
+ 
+ 		ep = strchr(sp, ')');
+ 		if (cp < sp)
+@@ -2645,7 +2645,7 @@
+ void pretty_print_ref(const char *name, const struct object_id *oid,
+ 		      struct ref_format *format)
+ {
+-	struct ref_array_item *ref_item = NULL;
++	struct ref_array_item *ref_item;
+ 	struct strbuf output = STRBUF_INIT;
+ 	struct strbuf err = STRBUF_INIT;
+ 
+@@ -2691,7 +2691,7 @@
+ 
+ static void parse_ref_sorting(struct ref_sorting **sorting_tail, const char *arg)
+ {
+-	struct ref_sorting *s = NULL;
++	struct ref_sorting *s;
+ 
+ 	CALLOC_ARRAY(s, 1);
+ 	s->next = *sorting_tail;
+@@ -2709,7 +2709,7 @@
+ 
+ struct ref_sorting *ref_sorting_options(struct string_list *options)
+ {
+-	struct string_list_item *item = NULL;
++	struct string_list_item *item;
+ 	struct ref_sorting *sorting = NULL, **tail = &sorting;
+ 
+ 	if (!options->nr) {
+@@ -2741,7 +2741,7 @@
+ {
+ 	struct ref_filter *rf = opt->value;
+ 	struct object_id oid;
+-	struct commit *merge_commit = NULL;
++	struct commit *merge_commit;
+ 
+ 	BUG_ON_OPT_NEG(unset);
+ 

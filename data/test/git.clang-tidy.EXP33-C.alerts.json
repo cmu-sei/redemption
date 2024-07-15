@@ -61847,7 +61847,12 @@
     "column": "10",
     "tool": "clang-tidy",
     "checker": "cppcoreguidelines-init-variables",
-    "message": "variable 'cmp_fn' is not initialized"
+    "message": "variable 'cmp_fn' is not initialized",
+    "satisfactory": "true",
+    "verdict": "false",
+    "repairable": "true",
+    "rationale": "This alert is a false positive. While cmp_fn is not initialized on 2509, it is initialized on the next immediate line.",
+    "issue": "DONE REM-396"
   },
   {
     "rule": "EXP33-C",

@@ -319,10 +319,8 @@ class EXP33_C(Alert):
                     init_val = "NULL"
                 elif self.decl_node["type"].get("desugaredQualType","").startswith(("struct","union")):
                     init_val = "{}"
-                try:
-                    loc = self.decl_node["loc"]
-                    byte_end = loc['offset'] + loc['tokLen']
-                except KeyError:
+                byte_end = self.decl_node.get_end_offset()
+                if byte_end is None:
                     self["why_skipped"] = "AST node is missing VarDecl location information"
                     self["patch"] = []
                     return False
