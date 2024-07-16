@@ -43,7 +43,7 @@ ACR_NORETURN void abort(void);
 // https://gcc.gnu.org/onlinedocs/gcc/Statement-Exprs.html
 
 #define null_check(p_expr, ...)                             \
-  ({ __typeof__(p_expr) _sei_acr_temp_bc_p = (p_expr);      \
+  ({ __typeof__(&*p_expr) _sei_acr_temp_bc_p = (p_expr);      \
     if (!_sei_acr_temp_bc_p) {                              \
         __VA_ARGS__;                                        \
         printf("Exiting due to detected impending null pointer dereference in file %s, function %s, line %d\n", __FILE__, __func__, __LINE__); \
