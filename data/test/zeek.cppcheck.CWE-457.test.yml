@@ -1,0 +1,16 @@
+tests:
+- answer_file: zeek.cppcheck.CWE-457.auxil_broker_3rdparty_sqlite3_c.ans
+  input:
+    alerts_file: zeek.cppcheck.CWE-457.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/broker/3rdparty/sqlite3.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_broker_3rdparty_sqlite3_c
+- answer_file: zeek.cppcheck.CWE-457.auxil_c-ares_src_lib_ares_query_c.ans
+  input:
+    alerts_file: zeek.cppcheck.CWE-457.alerts.json
+    base_dir: /oss/zeek
+    cfile: auxil/c-ares/src/lib/ares_query.c
+    compile_cmds_file: ../compile_commands.zeek.json
+  name: auxil_c-ares_src_lib_ares_query_c
+

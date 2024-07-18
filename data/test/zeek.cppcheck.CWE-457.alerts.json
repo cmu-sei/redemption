@@ -1,0 +1,29 @@
+[
+  {
+    "rule": "CWE-457",
+    "file": "auxil/c-ares/src/lib/ares_query.c",
+    "line": "70",
+    "column": "41",
+    "tool": "cppcheck",
+    "checker": "uninitvar",
+    "message": "Uninitialized variable: qid"
+  },
+  {
+    "rule": "CWE-457",
+    "file": "auxil/broker/3rdparty/sqlite3.c",
+    "line": "222789",
+    "column": "10",
+    "tool": "cppcheck",
+    "checker": "uninitvar",
+    "message": "Uninitialized variable: rc"
+  },
+  {
+    "rule": "CWE-457",
+    "file": "auxil/broker/3rdparty/sqlite3.c",
+    "line": "42154",
+    "column": "25",
+    "tool": "cppcheck",
+    "checker": "uninitvar",
+    "message": "Uninitialized variable: myHostID"
+  }
+]

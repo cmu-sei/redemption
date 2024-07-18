@@ -1,0 +1,9 @@
+tests:
+- answer_file: git.cppcheck.CWE-457.builtin_notes_c.ans
+  input:
+    alerts_file: git.cppcheck.CWE-457.alerts.json
+    base_dir: /oss/git
+    cfile: builtin/notes.c
+    compile_cmds_file: ../compile_commands.git.json
+  name: builtin_notes_c
+
