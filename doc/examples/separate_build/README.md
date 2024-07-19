@@ -30,22 +30,22 @@ subject to its own license.
 DM23-2165
 </legal>
 
-This is a demo scenario involving the Redemption of False Positives project.  Unless stated otherwise, any shell commands you execute should be done in this directory (`doc/examples/separate_build`)
-
 <a name="clang-15-on-the-build-platform"></a>
 ## Clang 15 on the Build Platform
 
-To use this feature, your Build Platform must have Clang version 15 with the Redemption enhancements built in. For the demo, you can use the Build Platform container described below in the [Build Platform](#build-platform) section.  When you want to run Redemption on code that builds on some platform, but not in the Redemption Container, you must make that platform your Build Platform. That is, you must install Clang 15 on your own build platform.
+The Redemption tool provides a modification to Clang for producing additional information that is needed by the rest of the Redemption tool.  The modification is in the form of several C++ files that built as part of clang, but we have extended them; our modifications currently live [here](../../../code/clang).  The Redemption Docker container already has the modified Clang built, but if you wish to use Clang outside the Redemption container as this document demonstrates, then additional steps are needed to build Clang with these Redemption patches on your platform.
 
-While you could install Clang 15 binaries on your platform, the Redemption enhancements require Clang 15 to be compiled from source on your platform. The Clang 15 source can be downloaded and [Clang's Github repository](https://github.com/llvm/llvm-project/releases/tag/llvmorg-15.0.7).
+For this demo, you can use the Build Platform container described below in the [Build Platform](#build-platform) section, which already has Clang built with our modifications.  But when you want to run Redemption on code that builds on some platform, but not in the Redemption Container, you must make that platform your Build Platform. That is, you must install Clang 15 with the Redemption modifications on your own build platform.
+
+While you could install Clang 15 binaries on your platform, the Redemption enhancements require Clang 15 to be compiled from source on your platform. The Clang 15 source can be downloaded from [Clang's Github repository](https://github.com/llvm/llvm-project/releases/tag/llvmorg-15.0.7).
 
 To apply the patch and build Clang, you must first install necessary dependencies. Details about necessary dependencies are available at [LLVM's website](https://llvm.org/docs/GettingStarted.html#requirements).  You must then copy several files from the `code/clang` directory into the Clang source before building.
 
-The `Dockerfile.prereq` file contains precise shell commands for downloading, preparing, and building Clang on a container running Ubuntu Linux 23.10 ("mantic minotaur").  The dependencies begin on the first line that says "Apt packages". The line that says `modified clang based on 15.0.7` concludes dependencies, and begins the process of downloading, preparing, and building Clang, and these commands end at the line that says `clang is built in /opt/clang/build/bin`.
+The [`Dockerfile.prereq`](../../../Dockerfile.prereq) file contains precise shell commands for downloading, preparing, and building Clang on a container running Ubuntu Linux 24.04 ("Noble Numbat").  The dependencies begin on the first line that says "Apt packages". The line that says `modified clang based on 15.0.7` concludes dependencies, and begins the process of downloading, preparing, and building Clang, and these commands end at the line that says `clang is built in /opt/clang/build/bin`.
 
-If you are using a different OS, the precise commands that you should use will depend on the platform.
+If you are using a different OS, the precise commands that you should use will depend on your OS.
 
-The commands to download, prepare, and build Clang (from the `Dockerfile.prereq`) are as follows:
+The commands to download, prepare, and build Clang (from the `Dockerfile.prereq` file) are as follows...they should be executed from the top directory (the same directory that contains `Dockerfile.prereq`):
 
 ```sh
 mkdir /opt/clang
@@ -114,7 +114,7 @@ Note that while this container includes a basic Linux install, as well as our pa
 Inside the container, you can now build `wrk`:
 
 ``` sh
-cd /separate_build/wrk 
+cd /separate_build/wrk
 make WITH_OPENSSL=/usr WITH_LUAJIT=/usr CFLAGS="-I/usr/include/luajit-2.1 "
 ```
 
@@ -153,7 +153,7 @@ Produce static analysis on the given C file, using Clang-tidy in the Build Platf
 
 ``` sh
 cd /separate_build/wrk
-grep --color=none '"file":' ../compile_commands.json | sed 's/"file"://;  s/",/"/;' | sort -u  | xargs clang-tidy -checks='*'  > ../clang-tidy.txt
+grep --color=none '"file":' ../compile_commands.json | sed 's/"file"://;  s/",/"/;' | sort -u  | xargs clang-tidy-16 -checks='*'  > ../clang-tidy.txt
 ```
 
 ### Convert to Redemption Input (Repair Platform)

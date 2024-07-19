@@ -80,7 +80,7 @@ Produce static analysis on the given C file, using Clang-tidy 16.0.6, which live
 
 ``` sh
 cd dos2unix-7.5.2
-grep --color=none '"file":' ../compile_commands.json | sed 's/"file"://;  s/",/"/;' | sort -u  | xargs clang-tidy -checks='*'  > ../clang-tidy.txt
+grep --color=none '"file":' ../compile_commands.json | sed 's/"file"://;  s/",/"/;' | sort -u  | xargs clang-tidy-16 -checks='*'  > ../clang-tidy.txt
 cd ..
 ```
 
@@ -100,8 +100,8 @@ Here is an example of how to run a built-in end-to-end automated code repair tes
 EXAMPLE=/host/doc/examples/codebase
 cd /host/code/acr
 python3 sup.py  -c ${EXAMPLE}/compile_commands.json  -a ${EXAMPLE}/alerts.json  -b ${EXAMPLE}/dos2unix-7.5.2  --repaired-src ${EXAMPLE}/out
-cd /code
-diff -ru --label=ORIGINAL --label=REPAIRED -ru  dos2unix-7.5.2  out > repaired.diffs 
+cd ${EXAMPLE}
+diff -r --label=ORIGINAL --label=REPAIRED -ru  dos2unix-7.5.2  out > repaired.diffs 
 ```
 
 The `repaired.diffs` file contains all the specific repairs made to the code.

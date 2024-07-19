@@ -43,9 +43,12 @@ RUN apt-get update \
     && apt-get clean
 
 # Clang (v15)
+# Yes, we are installing vanilla clang 15 so that we can use it to build our enhanced clang-15.
+# And we are using clang-tidy v16, but everything else should be v15
 RUN apt-get update \
     && DEBIAN_FRONTEND=noninteractive apt-get -y install --no-install-recommends \
-        clang-15 clang-tools-15 libclang-15-dev libclang1-15 clang-format python3-clang clangd clang-tidy \
+        clang-15 clang-tools-15 libclang-15-dev libclang1-15 clang-format-15 python3-clang-15 clangd-15 \
+        clang-tidy-16 \
         llvm-15-dev cmake \
     && apt-get --purge -y autoremove \
     && apt-get clean \

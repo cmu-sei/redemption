@@ -9,7 +9,7 @@ Only in dos2unix-7.5.2: README.txt
 Only in dos2unix-7.5.2: TODO.txt
 Only in out: acr.h
 Only in dos2unix-7.5.2: bcc.mak
-diff --color -r '--label=ORIGINAL' '--label=REPAIRED' -ru ORIGINAL REPAIRED
+diff -r '--label=ORIGINAL' '--label=REPAIRED' -ru ORIGINAL REPAIRED
 --- ORIGINAL
 +++ REPAIRED
 @@ -1,3 +1,5 @@
@@ -148,7 +148,7 @@ diff --color -r '--label=ORIGINAL' '--label=REPAIRED' -ru ORIGINAL REPAIRED
              return(WEOF);
 Only in dos2unix-7.5.2: common.h
 Only in dos2unix-7.5.2: djgpp.mak
-diff --color -r '--label=ORIGINAL' '--label=REPAIRED' -ru ORIGINAL REPAIRED
+diff -r '--label=ORIGINAL' '--label=REPAIRED' -ru ORIGINAL REPAIRED
 --- ORIGINAL
 +++ REPAIRED
 @@ -1,3 +1,5 @@
@@ -229,7 +229,7 @@ Only in dos2unix-7.5.2: querycp.c
 Only in dos2unix-7.5.2: querycp.h
 Only in dos2unix-7.5.2: run_clang.sh
 Only in dos2unix-7.5.2: test
-diff --color -r '--label=ORIGINAL' '--label=REPAIRED' -ru ORIGINAL REPAIRED
+diff -r '--label=ORIGINAL' '--label=REPAIRED' -ru ORIGINAL REPAIRED
 --- ORIGINAL
 +++ REPAIRED
 @@ -1,3 +1,5 @@
