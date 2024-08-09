@@ -93,6 +93,8 @@ RUN mkdir /opt/clang/build && \
 
 # clang is built in /opt/clang/build/bin
 
+LABEL org.opencontainers.image.source=https://github.com/cmu-sei/redemption
+
 CMD ["/bin/bash"]
 
 # code/acr/SortedCollection.py was manually downloaded from
