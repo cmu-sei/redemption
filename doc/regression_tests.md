@@ -99,8 +99,8 @@ The cached output is invalidated if the last-modification date of the corresondi
 There is also a `test` Docker container that you can build and test with. It builds `git` and `zeek`. Building zeek takes about 40 minutes on one machine. Once these are built, there are some tests that test the repair tool on these codebases. To build and run the `test` container:
 
 ```sh
-docker  build  -f Dockerfile.test  -t docker.cc.cert.org/redemption/test  .
-docker run -it --rm -v ${PWD}:/host -w /host docker.cc.cert.org/redemption/test  bash
+docker  build  -f Dockerfile.test  -t ghcr.io/cmu-sei/redemption-test  .
+docker run -it --rm -v ${PWD}:/host -w /host ghcr.io/cmu-sei/redemption-test  bash
 ```
 
 To run the tests, use the bash shell in the `test` container. The various options to speed up tests in the previous section (-k, --stringinput, etc) are useful here, too:

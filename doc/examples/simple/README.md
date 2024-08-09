@@ -66,7 +66,7 @@ For the rest of these instructions, you should execute the commands inside the `
 To set this up, run this command (in the `simple` directory):
 
 ``` sh
-docker run -it --rm  -v ${PWD}:/code  docker.cc.cert.org/redemption/distrib  bash
+docker run -it --rm  -v ${PWD}:/code  ghcr.io/cmu-sei/redemption-distrib  bash
 ```
 
 (See the toplevel [README.md](../../../README.md) instructions for details on how to build this container if necessary.

@@ -30,4 +30,4 @@
 # </legal>
 
 
-docker  build -f Dockerfile.test  -t docker.cc.cert.org/redemption/test  .
+docker  build -f Dockerfile.test  -t ghcr.io/cmu-sei/redemption-test  .

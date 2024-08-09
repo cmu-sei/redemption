@@ -30,5 +30,5 @@
 # </legal>
 
 
-docker run --rm  -v ${PWD}:/host  --workdir /host  docker.cc.cert.org/redemption/prereq \
+docker run --rm  -v ${PWD}:/host  --workdir /host  ghcr.io/cmu-sei/redemption-prereq \
   git -c safe.directory='*'  clean -dfx

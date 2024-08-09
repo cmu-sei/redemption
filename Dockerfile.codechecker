@@ -1,6 +1,6 @@
 # This file installs CodeChecker
 
-# docker  build -f Dockerfile.codechecker  -t docker.cc.cert.org/redemption/codechecker  .
+# docker  build -f Dockerfile.codechecker  -t ghcr.io/cmu-sei/redemption-codechecker  .
 
 # <legal>
 # 'Redemption' Automated Code Repair Tool
@@ -30,7 +30,7 @@
 # </legal>
 
 
-FROM docker.cc.cert.org/redemption/prereq
+FROM ghcr.io/cmu-sei/redemption-prereq
 
 # Apt packages
 RUN apt-get update \

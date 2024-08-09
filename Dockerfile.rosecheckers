@@ -1,7 +1,7 @@
 # This file builds enough tools into a Linux distro to be useful for
 # general software building.
 
-# docker  build -f Dockerfile.rosecheckers  -t docker.cc.cert.org/redemption/rosebud  .
+# docker  build -f Dockerfile.rosecheckers  -t ghcr.io/cmu-sei/redemption-rosebud  .
 
 # <legal>
 # 'Redemption' Automated Code Repair Tool

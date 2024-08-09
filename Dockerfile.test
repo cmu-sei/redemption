@@ -1,6 +1,6 @@
 # This file adds git and zeek (v5) for testing the Redemption software
 
-# docker  build -f Dockerfile.test  -t docker.cc.cert.org/redemption/test  .
+# docker  build -f Dockerfile.test  -t ghcr.io/cmu-sei/redemption-test  .
 
 # <legal>
 # 'Redemption' Automated Code Repair Tool
@@ -30,7 +30,7 @@
 # </legal>
 
 
-FROM docker.cc.cert.org/redemption/prereq
+FROM ghcr.io/cmu-sei/redemption-prereq
 
 
 # Apt packages for git

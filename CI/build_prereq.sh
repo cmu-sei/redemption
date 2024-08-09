@@ -30,4 +30,4 @@
 # </legal>
 
 
-docker  build -f Dockerfile.prereq  -t docker.cc.cert.org/redemption/prereq  .
+docker  build -f Dockerfile.prereq  -t ghcr.io/cmu-sei/redemption-prereq  .

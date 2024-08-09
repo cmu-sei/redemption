@@ -53,7 +53,7 @@ You can try to repair other codebases, or other versions of the `dos2unix` codeb
 For the rest of these instructions, you should execute the commands inside the `prereq` Docker container, and `cd` into this directory.  To set this up, run this command in the top-level Redemption directory:
 
 ``` sh
-docker run -it --rm  -v ${PWD}:/host -w /host  docker.cc.cert.org/redemption/prereq  bash
+docker run -it --rm  -v ${PWD}:/host -w /host  ghcr.io/cmu-sei/redemption-prereq  bash
 ```
 
 (See the toplevel [README.md](../../../README.md) instructions for details on how to build this container if necessary.

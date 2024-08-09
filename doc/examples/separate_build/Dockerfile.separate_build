@@ -1,6 +1,6 @@
 # This file makes a container that builds the separate_build code in this demo
 
-# docker  build -f Dockerfile.separate_build  -t docker.cc.cert.org/redemption/separate_build  .
+# docker  build -f Dockerfile.separate_build  -t ghcr.io/cmu-sei/redemption-separate_build  .
 
 # <legal>
 # 'Redemption' Automated Code Repair Tool
@@ -30,7 +30,7 @@
 # </legal>
 
 
-FROM docker.cc.cert.org/redemption/prereq
+FROM ghcr.io/cmu-sei/redemption-prereq
 
 # Apt packages
 RUN apt-get update \

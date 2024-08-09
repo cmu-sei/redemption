@@ -30,4 +30,4 @@
 # </legal>
 
 
-docker  build -f Dockerfile.distrib  -t docker.cc.cert.org/redemption/distrib  .
+docker  build -f Dockerfile.distrib  -t ghcr.io/cmu-sei/redemption-distrib  .

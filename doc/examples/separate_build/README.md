@@ -103,8 +103,8 @@ In one shell, you can launch the Build Platform. To set this up, use these comma
 
 ``` sh
 cd doc/examples/separate_build
-docker  build  -f Dockerfile.separate_build  -t docker.cc.cert.org/redemption/separate_build  .
-docker run -it --rm  -v ${PWD}:/separate_build  -w /separate_build  docker.cc.cert.org/redemption/separate_build  bash
+docker  build  -f Dockerfile.separate_build  -t ghcr.io/cmu-sei/redemption-separate_build  .
+docker run -it --rm  -v ${PWD}:/separate_build  -w /separate_build  ghcr.io/cmu-sei/redemption-separate_build  bash
 ```
 
 (You only have to build this container once, after that you can run it as many times as you wish.)
@@ -126,7 +126,7 @@ In another shell, you can launch the Repair Platform. (Do not exit the shell wit
 
 ``` sh
 cd doc/examples/separate_build
-docker run -it --rm  -v ${PWD}:/separate_build  docker.cc.cert.org/redemption/distrib  bash 
+docker run -it --rm  -v ${PWD}:/separate_build  ghcr.io/cmu-sei/redemption-distrib  bash 
 ```
 
 (See the toplevel [README.md](../../../README.md) instructions for details on how to build this container if necessary.

@@ -1,7 +1,7 @@
 # This file builds enough tools into a Linux distro to be useful for
 # general software building.
 
-# docker  build -f Dockerfile.prereq  -t docker.cc.cert.org/redemption/prereq  .
+# docker  build -f Dockerfile.prereq  -t ghcr.io/cmu-sei/redemption-prereq  .
 
 # To correct the time zone, run:
 # dpkg-reconfigure tzdata

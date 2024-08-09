@@ -1,6 +1,6 @@
 # This file adds the Redemption software in for distribution
 
-# docker  build -f Dockerfile.distrib  -t docker.cc.cert.org/redemption/distrib  .
+# docker  build -f Dockerfile.distrib  -t ghcr.io/cmu-sei/redemption-distrib  .
 
 # <legal>
 # 'Redemption' Automated Code Repair Tool
@@ -30,7 +30,7 @@
 # </legal>
 
 
-FROM docker.cc.cert.org/redemption/prereq
+FROM ghcr.io/cmu-sei/redemption-prereq
 
 WORKDIR /host
 COPY . /host
