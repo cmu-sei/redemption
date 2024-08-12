@@ -95,10 +95,13 @@ def processFile(input_file, output_file):
             message = message.strip().replace("\t", " ")
             checker = parse.group(6)
 
-        parse = re.match(r"\^\~*", line)
-        if state == "info_line" and parse is not None:
+        if state == "info_line":
             state = None
-            end_column_number = int(column_number) + len(line) - 1
+            parse = re.match(r"\^.*", line)
+            if parse is not None:
+                end_column_number = int(column_number) + len(line) - 1
+            else:
+                end_column_number = int(column_number)
             column_values = "\t".join([checker, file_path, line_number, column_number, message,
                                        "clang_tidy", line_number, str(end_column_number)])
             output_file.write(column_values + "\n")
