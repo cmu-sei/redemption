@@ -168,6 +168,7 @@ def get_clang_cmds(compile_cmd):
     compile_dir = get_compile_dir(compile_cmd)
     return [
         [
+            "echo -e '\n' Building " + cache_base_name,
             "cd " + get_compile_dir(compile_cmd),
             shlex.join(proc_args) + f" 2> {ast_out_dir}/{stderr_file} | gzip > {ast_out_dir}/{cache_ast_file}; echo $? > {ast_out_dir}/{retcode_file}",
             shlex.join(ll_args) + " " + ast_out_dir + "/" + ll_raw_file

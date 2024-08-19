@@ -69,7 +69,7 @@ def run_clang_parse(compile_cmd, clang_output_dir, generated=False):
     cur_dir = os.getcwd()
     os.chdir(compile_dir)
     if generated is False:
-        ast_proc = subprocess.run(clang_cmds[1], env=environ, shell=True, capture_output=True, encoding="utf-8")
+        ast_proc = subprocess.run(clang_cmds[2], env=environ, shell=True, capture_output=True, encoding="utf-8")
 
     class AttrDict(dict):
         def __getattr__(self, item):
@@ -86,12 +86,12 @@ def run_clang_parse(compile_cmd, clang_output_dir, generated=False):
     if ast_proc.returncode != 0:
         sys.stderr.write("="*78 + "\n")
         err_msg = ("Clang encountered an error!\n" +
-            "Command line:\n" + clang_cmds[1] + "\n" +
+            "Command line:\n" + clang_cmds[2] + "\n" +
             "Error message:\n" + ast_proc.stderr + "\n")
         os.chdir(cur_dir)
         raise EarException(err_msg)
     if generated is False:
-        subprocess.check_output(clang_cmds[2], shell=True, env=environ)
+        subprocess.check_output(clang_cmds[3], shell=True, env=environ)
     os.chdir(cur_dir)
 
     print_progress("Finished running Clang.")
