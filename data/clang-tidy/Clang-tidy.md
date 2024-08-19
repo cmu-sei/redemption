@@ -72,5 +72,5 @@ tidy.
 If you want to run clang-tidy only on source files in the `compile_commands.json` file, you could use this command:
 
 ```sh
-grep --color=none '"file":' compile_commands.json | sed 's/"file"://;  s/",/"/;' | sort -u  | xargs clang-tidy -checks='*'  > ../clang-tidy.txt
+grep --color=none '"file":' compile_commands.json | sed 's/"file"://;  s/",/"/;' | sort -u  | xargs clang-tidy -checks='*'  > clang-tidy.txt
 ```

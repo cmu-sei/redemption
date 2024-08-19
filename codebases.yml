@@ -80,8 +80,7 @@ codebases: # All the codebases that we list
       clean: "popd ; rm -rf /home/git"
     clang-tidy:
       cmd: ["bear -- make PAGER_ENV=dummy CC=clang git",
-            "clang-tidy -checks='*' ${SOURCE}"]
-            # must compute $SOURCE from compile_commands.json
+            "grep --color=none '\"file\":' compile_commands.json | sed 's/\"file\"://;  s/\",/\"/;' | sort -u  | xargs clang-tidy -checks='*'"]
     scan-build:
       cmd: "scan-build -plist -o clang.out  make PAGER_ENV=dummy  CC=clang  git"
 

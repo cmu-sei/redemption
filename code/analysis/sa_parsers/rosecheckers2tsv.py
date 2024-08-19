@@ -86,7 +86,7 @@ def processFile(input_file, output_file):
             file_path = directory + "/" + file_name
             file_path = file_path.strip()
 
-        column_values = "\t".join([checker, file_path, line_number, column_number, message
+        column_values = "\t".join([checker, file_path, line_number, column_number, message,
                                        "rosecheckers", "0", "0"])
         output_file.write(column_values + "\n")
 
