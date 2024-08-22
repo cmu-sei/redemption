@@ -13,6 +13,11 @@
 #
 # This script currently produces only one message per alert
 #
+# For example, the commands:
+#   python3 clang_tidy2tsv.py  ../../../data/clang-tidy/dos2unix/clang-tidy.txt  ct.tsv
+#   diff ct.tsv ct.good.tsv
+# should produce no output.
+#
 # <legal>
 # 'Redemption' Automated Code Repair Tool
 #
@@ -52,7 +57,7 @@ def canonicalize_path(dirstack, filename):
             break
         path = newpath
     while (True):
-        newpath = re.sub(r"$./", r"", path)
+        newpath = re.sub(r"^./", r"", path)
         if (len(newpath) == len(path)):
             break
         path = newpath
@@ -67,6 +72,12 @@ def canonicalize_path(dirstack, filename):
 def processFile(input_file, output_file):
     output_file.write("\t".join(["Checker","Path","Line","Column","Message",
                                  "Tool","End_Line","End_Column"]) + "\n")
+
+    def outputState():
+        if state is not None:
+            column_values = "\t".join([checker, file_path, line_number, column_number, message,
+                                       "clang_tidy", line_number, str(end_column_number)])
+            output_file.write(column_values + "\n")
 
     inCtrFlag = 0
     message = ""
@@ -86,25 +97,24 @@ def processFile(input_file, output_file):
 
         # Line with alert
         parse = re.match(r"^([^ :]*?\.(c|C|cpp|cxx|h|H)):([0-9]*):([0-9]*): warning: *(\S.*?) \[(.*)\]$", line)
-        if (state is None and parse is not None and parse.group(2) != ""):
+        if (parse is not None and parse.group(2) != ""):
+            outputState()
             state = "info_line"
             file_path = canonicalize_path( dirstack, parse.group(1))
             line_number = parse.group(3)
             column_number = parse.group(4)
+            end_column_number = column_number
             message = parse.group(5)
             message = message.strip().replace("\t", " ")
             checker = parse.group(6)
 
         if state == "info_line":
-            state = None
             parse = re.match(r"\^.*", line)
             if parse is not None:
+                state = "complete"
                 end_column_number = int(column_number) + len(line) - 1
-            else:
-                end_column_number = int(column_number)
-            column_values = "\t".join([checker, file_path, line_number, column_number, message,
-                                       "clang_tidy", line_number, str(end_column_number)])
-            output_file.write(column_values + "\n")
+
+    outputState()
 
 
 if __name__ == "__main__":
