@@ -95,8 +95,24 @@ class ASTContext:
         for x in self.current():
             yield ASTContext((x, self.path), path=True, name_proxy=self.name_proxy)
 
+    def _remap_refid(self, key):
+        if not self.is_mapping():
+            return None
+        id_map = getattr(self, "id_map", None)
+        if id_map is None:
+            return None
+        ref_id = self.current().get("refId")
+        if ref_id is None:
+            return None
+        return id_map.get(ref_id)
+
     def __contains__(self, key):
-        return key in self.current()
+        if key in self.current():
+            return True
+        actual = self._remap_refid(key)
+        if actual is None:
+            return False
+        return key in actual
 
     def __repr__(self):
         return f"ASTContext({self.current()})"
@@ -237,8 +253,16 @@ class ASTContext:
         return n.get("offset") + n.get("tokLen")
 
     def __getitem__(self, key):
-        return ASTContext((self.current()[key], self.path), path=True,
-                          name_proxy=self.name_proxy)
+        try:
+            return ASTContext((self.current()[key], self.path), path=True,
+                              name_proxy=self.name_proxy)
+        except AttributeError as e:
+            actual = self._remap_refid(key)
+            if actual is None:
+                raise e
+            value = actual[key]
+            return ASTContext((value, self.path), path=True,
+                              name_proxy=self.name_proxy)
 
     def __eq__(self, other):
         if isinstance(other, ASTContext):
@@ -273,7 +297,7 @@ class Brain(AstVisitor):
         self.preproc_db = ast["preproc_db"]
         self.base_dir = ast["base_dir"]
         self.compile_dir = ast["compile_dir"]
-        self.decls_by_id = {}
+        self.id_map = {}
 
         brainstem = Brainstem();
         brainstem.visit(ast)
@@ -315,8 +339,8 @@ class Brain(AstVisitor):
             return
 
     def previsit(self, node):
-        if node["kind"] in ("VarDecl", "CXXConstructorDecl"):
-            self.decls_by_id[node["id"]] = node
+        node_id = node.get("id")
+        self.id_map[node_id] = node
 
         match node:
             case {'range': {'file': filename, 'begin': _, 'end': _}}:

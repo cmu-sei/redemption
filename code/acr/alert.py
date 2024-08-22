@@ -87,7 +87,7 @@ class Alert(OrderedDict):
         decl_id = node.get("referencedDecl",{}).get("prevId")
         if not decl_id:
             return None
-        decl_node = node.decls_by_id.get(decl_id)
+        decl_node = node.id_map.get(decl_id)
         if not decl_node:
             return None
         return decl_node
@@ -136,7 +136,7 @@ class EXP33_C(Alert):
             declNode = context
         else:
             # This is a constructor definition outside the class declaration.
-            declNode = context.decls_by_id.get(prevDecl)
+            declNode = context.id_map.get(prevDecl)
             if declNode is None:
                 return None
         same_file = (get_dict_path(context, "range", "file")

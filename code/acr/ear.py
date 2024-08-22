@@ -43,7 +43,6 @@ import argparse
 
 import parse_preproc
 from make_run_clang import get_compile_cmds_for_source_file, get_compile_dir, get_clang_cmds
-import bloater
 
 class EarException(Exception):
     pass
@@ -110,8 +109,6 @@ def update_ast(ast_json, base_dir, cmd):
         return os.path.realpath(os.path.join(compile_dir, s))
     print_progress("Processing AST...")
 
-    # rebloat it by replacing the refId with the full id contents
-    ast_json = bloater.debloat(ast_json)
     incl_files = find_included_files(ast_json, add_path)
     renumber_ids(ast_json, {})
     add_filenames(ast_json, [cur_file], add_path)
@@ -288,7 +285,7 @@ def renumber_ids(node, id_map):
         return
     if isinstance(node, (str, int)):
         return
-    for id_field in ["id", "previousDecl", "typeAliasDeclId"]:
+    for id_field in ["id", "previousDecl", "typeAliasDeclId", "refId"]:
         node_id = node.get(id_field)
         if node_id:
             new_id = id_map.get(node_id)

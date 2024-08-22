@@ -245,7 +245,7 @@
               "ptr"
             ],
             "qualType": {
-              "id": 1024,
+              "id": 1019,
               "kind": "QualType",
               "type": {
                 "qualType": "const char"
@@ -324,17 +324,11 @@
       "variadic": true,
       "returnTypeDetail": {
         "qualType": {
-          "id": "",
-          "kind": "QualType",
-          "type": {
-            "qualType": "int"
-          },
-          "qualifiers": "",
+          "refId": 1016,
           "qualDetails": [
             "signed",
             "integer"
-          ],
-          "prevId": 1016
+          ]
         }
       },
       "inner": [
@@ -367,33 +361,22 @@
             "qualType": "const char *"
           },
           "qualType": {
-            "id": "",
-            "kind": "QualType",
-            "type": {
-              "qualType": "const char *"
-            },
-            "qualifiers": "",
+            "refId": 1018,
             "qualDetails": [
               "ptr"
             ],
             "qualType": {
-              "id": 1024,
-              "kind": "QualType",
-              "type": {
-                "qualType": "const char"
-              },
-              "qualifiers": "const",
+              "refId": 1019,
               "qualDetails": [
                 "promotable",
                 "signed",
                 "integer"
               ]
-            },
-            "prevId": 1018
+            }
           }
         },
         {
-          "id": 1025,
+          "id": 1024,
           "kind": "BuiltinAttr",
           "range": {
             "begin": {},
@@ -403,7 +386,7 @@
           "implicit": true
         },
         {
-          "id": 1026,
+          "id": 1025,
           "kind": "FormatAttr",
           "range": {
             "begin": {
@@ -425,7 +408,7 @@
       ]
     },
     {
-      "id": 1027,
+      "id": 1026,
       "kind": "FunctionDecl",
       "loc": {
         "offset": 42,
@@ -455,22 +438,16 @@
       },
       "returnTypeDetail": {
         "qualType": {
-          "id": "",
-          "kind": "QualType",
-          "type": {
-            "qualType": "int"
-          },
-          "qualifiers": "",
+          "refId": 1016,
           "qualDetails": [
             "signed",
             "integer"
-          ],
-          "prevId": 1016
+          ]
         }
       },
       "inner": [
         {
-          "id": 1028,
+          "id": 1027,
           "kind": "CompoundStmt",
           "range": {
             "begin": {
@@ -489,7 +466,7 @@
           },
           "inner": [
             {
-              "id": 1029,
+              "id": 1028,
               "kind": "DeclStmt",
               "range": {
                 "begin": {
@@ -508,7 +485,7 @@
               },
               "inner": [
                 {
-                  "id": 1030,
+                  "id": 1029,
                   "kind": "VarDecl",
                   "loc": {
                     "offset": 59,
@@ -538,21 +515,15 @@
                   },
                   "init": "c",
                   "qualType": {
-                    "id": "",
-                    "kind": "QualType",
-                    "type": {
-                      "qualType": "int"
-                    },
-                    "qualifiers": "",
+                    "refId": 1016,
                     "qualDetails": [
                       "signed",
                       "integer"
-                    ],
-                    "prevId": 1016
+                    ]
                   },
                   "inner": [
                     {
-                      "id": 1031,
+                      "id": 1030,
                       "kind": "IntegerLiteral",
                       "range": {
                         "begin": {
@@ -578,7 +549,7 @@
                   ]
                 },
                 {
-                  "id": 1032,
+                  "id": 1031,
                   "kind": "VarDecl",
                   "loc": {
                     "offset": 64,
@@ -608,21 +579,15 @@
                   },
                   "init": "c",
                   "qualType": {
-                    "id": "",
-                    "kind": "QualType",
-                    "type": {
-                      "qualType": "int"
-                    },
-                    "qualifiers": "",
+                    "refId": 1016,
                     "qualDetails": [
                       "signed",
                       "integer"
-                    ],
-                    "prevId": 1016
+                    ]
                   },
                   "inner": [
                     {
-                      "id": 1033,
+                      "id": 1032,
                       "kind": "IntegerLiteral",
                       "range": {
                         "begin": {
@@ -648,7 +613,7 @@
                   ]
                 },
                 {
-                  "id": 1034,
+                  "id": 1033,
                   "kind": "VarDecl",
                   "loc": {
                     "offset": 69,
@@ -678,21 +643,15 @@
                   },
                   "init": "c",
                   "qualType": {
-                    "id": "",
-                    "kind": "QualType",
-                    "type": {
-                      "qualType": "int"
-                    },
-                    "qualifiers": "",
+                    "refId": 1016,
                     "qualDetails": [
                       "signed",
                       "integer"
-                    ],
-                    "prevId": 1016
+                    ]
                   },
                   "inner": [
                     {
-                      "id": 1035,
+                      "id": 1034,
                       "kind": "IntegerLiteral",
                       "range": {
                         "begin": {
@@ -720,7 +679,7 @@
               ]
             },
             {
-              "id": 1036,
+              "id": 1035,
               "kind": "DeclStmt",
               "range": {
                 "begin": {
@@ -739,7 +698,7 @@
               },
               "inner": [
                 {
-                  "id": 1037,
+                  "id": 1036,
                   "kind": "VarDecl",
                   "loc": {
                     "offset": 82,
@@ -769,21 +728,15 @@
                   },
                   "init": "c",
                   "qualType": {
-                    "id": "",
-                    "kind": "QualType",
-                    "type": {
-                      "qualType": "int"
-                    },
-                    "qualifiers": "",
+                    "refId": 1016,
                     "qualDetails": [
                       "signed",
                       "integer"
-                    ],
-                    "prevId": 1016
+                    ]
                   },
                   "inner": [
                     {
-                      "id": 1038,
+                      "id": 1037,
                       "kind": "IntegerLiteral",
                       "range": {
                         "begin": {
@@ -809,7 +762,7 @@
                   ]
                 },
                 {
-                  "id": 1039,
+                  "id": 1038,
                   "kind": "VarDecl",
                   "loc": {
                     "offset": 87,
@@ -838,21 +791,15 @@
                   },
                   "init": "c",
                   "qualType": {
-                    "id": "",
-                    "kind": "QualType",
-                    "type": {
-                      "qualType": "int"
-                    },
-                    "qualifiers": "",
+                    "refId": 1016,
                     "qualDetails": [
                       "signed",
                       "integer"
-                    ],
-                    "prevId": 1016
+                    ]
                   },
                   "inner": [
                     {
-                      "id": 1040,
+                      "id": 1039,
                       "kind": "IntegerLiteral",
                       "range": {
                         "begin": {
@@ -878,7 +825,7 @@
                   ]
                 },
                 {
-                  "id": 1041,
+                  "id": 1040,
                   "kind": "VarDecl",
                   "loc": {
                     "offset": 92,
@@ -908,21 +855,15 @@
                   },
                   "init": "c",
                   "qualType": {
-                    "id": "",
-                    "kind": "QualType",
-                    "type": {
-                      "qualType": "int"
-                    },
-                    "qualifiers": "",
+                    "refId": 1016,
                     "qualDetails": [
                       "signed",
                       "integer"
-                    ],
-                    "prevId": 1016
+                    ]
                   },
                   "inner": [
                     {
-                      "id": 1042,
+                      "id": 1041,
                       "kind": "IntegerLiteral",
                       "range": {
                         "begin": {
@@ -950,7 +891,7 @@
               ]
             },
             {
-              "id": 1043,
+              "id": 1042,
               "kind": "ImplicitCastExpr",
               "range": {
                 "begin": {
@@ -974,7 +915,7 @@
               "castKind": "ArrayToPointerDecay",
               "inner": [
                 {
-                  "id": 1044,
+                  "id": 1043,
                   "kind": "StringLiteral",
                   "range": {
                     "begin": {
@@ -1000,7 +941,7 @@
               ]
             },
             {
-              "id": 1045,
+              "id": 1044,
               "kind": "ImplicitCastExpr",
               "range": {
                 "begin": {
@@ -1024,7 +965,7 @@
               "castKind": "ArrayToPointerDecay",
               "inner": [
                 {
-                  "id": 1046,
+                  "id": 1045,
                   "kind": "StringLiteral",
                   "range": {
                     "begin": {
@@ -1050,7 +991,7 @@
               ]
             },
             {
-              "id": 1047,
+              "id": 1046,
               "kind": "BinaryOperator",
               "range": {
                 "begin": {
@@ -1074,7 +1015,7 @@
               "opcode": "=",
               "inner": [
                 {
-                  "id": 1048,
+                  "id": 1047,
                   "kind": "DeclRefExpr",
                   "range": {
                     "begin": {
@@ -1096,30 +1037,24 @@
                   },
                   "valueCategory": "lvalue",
                   "referencedDecl": {
-                    "id": "",
+                    "id": "1029b",
                     "kind": "VarDecl",
                     "name": "x",
                     "type": {
                       "qualType": "int"
                     },
-                    "prevId": 1030
+                    "prevId": 1029
                   },
                   "qualType": {
-                    "id": "",
-                    "kind": "QualType",
-                    "type": {
-                      "qualType": "int"
-                    },
-                    "qualifiers": "",
+                    "refId": 1016,
                     "qualDetails": [
                       "signed",
                       "integer"
-                    ],
-                    "prevId": 1016
+                    ]
                   }
                 },
                 {
-                  "id": 1049,
+                  "id": 1048,
                   "kind": "BinaryOperator",
                   "range": {
                     "begin": {
@@ -1143,7 +1078,7 @@
                   "opcode": "+",
                   "inner": [
                     {
-                      "id": 1050,
+                      "id": 1049,
                       "kind": "ImplicitCastExpr",
                       "range": {
                         "begin": {
@@ -1167,7 +1102,7 @@
                       "castKind": "LValueToRValue",
                       "inner": [
                         {
-                          "id": 1051,
+                          "id": 1050,
                           "kind": "ParenExpr",
                           "range": {
                             "begin": {
@@ -1190,7 +1125,7 @@
                           "valueCategory": "lvalue",
                           "inner": [
                             {
-                              "id": 1052,
+                              "id": 1051,
                               "kind": "DeclRefExpr",
                               "range": {
                                 "begin": {
@@ -1212,26 +1147,20 @@
                               },
                               "valueCategory": "lvalue",
                               "referencedDecl": {
-                                "id": "",
+                                "id": "1036b",
                                 "kind": "VarDecl",
                                 "name": "a",
                                 "type": {
                                   "qualType": "int"
                                 },
-                                "prevId": 1037
+                                "prevId": 1036
                               },
                               "qualType": {
-                                "id": "",
-                                "kind": "QualType",
-                                "type": {
-                                  "qualType": "int"
-                                },
-                                "qualifiers": "",
+                                "refId": 1016,
                                 "qualDetails": [
                                   "signed",
                                   "integer"
-                                ],
-                                "prevId": 1016
+                                ]
                               }
                             }
                           ]
@@ -1239,7 +1168,7 @@
                       ]
                     },
                     {
-                      "id": 1053,
+                      "id": 1052,
                       "kind": "ImplicitCastExpr",
                       "range": {
                         "begin": {
@@ -1263,7 +1192,7 @@
                       "castKind": "LValueToRValue",
                       "inner": [
                         {
-                          "id": 1054,
+                          "id": 1053,
                           "kind": "DeclRefExpr",
                           "range": {
                             "begin": {
@@ -1285,26 +1214,20 @@
                           },
                           "valueCategory": "lvalue",
                           "referencedDecl": {
-                            "id": "",
+                            "id": "1040b",
                             "kind": "VarDecl",
                             "name": "c",
                             "type": {
                               "qualType": "int"
                             },
-                            "prevId": 1041
+                            "prevId": 1040
                           },
                           "qualType": {
-                            "id": "",
-                            "kind": "QualType",
-                            "type": {
-                              "qualType": "int"
-                            },
-                            "qualifiers": "",
+                            "refId": 1016,
                             "qualDetails": [
                               "signed",
                               "integer"
-                            ],
-                            "prevId": 1016
+                            ]
                           }
                         }
                       ]
@@ -1314,7 +1237,7 @@
               ]
             },
             {
-              "id": 1055,
+              "id": 1054,
               "kind": "CallExpr",
               "range": {
                 "begin": {
@@ -1337,7 +1260,7 @@
               "valueCategory": "prvalue",
               "inner": [
                 {
-                  "id": 1056,
+                  "id": 1055,
                   "kind": "ImplicitCastExpr",
                   "range": {
                     "begin": {
@@ -1361,7 +1284,7 @@
                   "castKind": "FunctionToPointerDecay",
                   "inner": [
                     {
-                      "id": 1057,
+                      "id": 1056,
                       "kind": "DeclRefExpr",
                       "range": {
                         "begin": {
@@ -1383,7 +1306,7 @@
                       },
                       "valueCategory": "prvalue",
                       "referencedDecl": {
-                        "id": "",
+                        "id": "1022b",
                         "kind": "FunctionDecl",
                         "name": "printf",
                         "type": {
@@ -1392,7 +1315,7 @@
                         "prevId": 1022
                       },
                       "qualType": {
-                        "id": 1058,
+                        "id": 1057,
                         "kind": "QualType",
                         "type": {
                           "qualType": "int (const char *, ...)"
@@ -1404,7 +1327,7 @@
                   ]
                 },
                 {
-                  "id": 1059,
+                  "id": 1058,
                   "kind": "ImplicitCastExpr",
                   "range": {
                     "begin": {
@@ -1428,7 +1351,7 @@
                   "castKind": "NoOp",
                   "inner": [
                     {
-                      "id": 1060,
+                      "id": 1059,
                       "kind": "ImplicitCastExpr",
                       "range": {
                         "begin": {
@@ -1452,7 +1375,7 @@
                       "castKind": "ArrayToPointerDecay",
                       "inner": [
                         {
-                          "id": 1061,
+                          "id": 1060,
                           "kind": "StringLiteral",
                           "range": {
                             "begin": {
@@ -1480,7 +1403,7 @@
                   ]
                 },
                 {
-                  "id": 1062,
+                  "id": 1061,
                   "kind": "ImplicitCastExpr",
                   "range": {
                     "begin": {
@@ -1504,7 +1427,7 @@
                   "castKind": "LValueToRValue",
                   "inner": [
                     {
-                      "id": 1063,
+                      "id": 1062,
                       "kind": "DeclRefExpr",
                       "range": {
                         "begin": {
@@ -1526,26 +1449,20 @@
                       },
                       "valueCategory": "lvalue",
                       "referencedDecl": {
-                        "id": "",
+                        "id": "1029b",
                         "kind": "VarDecl",
                         "name": "x",
                         "type": {
                           "qualType": "int"
                         },
-                        "prevId": 1030
+                        "prevId": 1029
                       },
                       "qualType": {
-                        "id": "",
-                        "kind": "QualType",
-                        "type": {
-                          "qualType": "int"
-                        },
-                        "qualifiers": "",
+                        "refId": 1016,
                         "qualDetails": [
                           "signed",
                           "integer"
-                        ],
-                        "prevId": 1016
+                        ]
                       }
                     }
                   ]
@@ -1553,7 +1470,7 @@
               ]
             },
             {
-              "id": 1064,
+              "id": 1063,
               "kind": "DeclStmt",
               "range": {
                 "begin": {
@@ -1572,7 +1489,7 @@
               },
               "inner": [
                 {
-                  "id": 1065,
+                  "id": 1064,
                   "kind": "VarDecl",
                   "loc": {
                     "offset": 427,
@@ -1602,7 +1519,7 @@
                   },
                   "init": "c",
                   "qualType": {
-                    "id": 1066,
+                    "id": 1065,
                     "kind": "QualType",
                     "type": {
                       "qualType": "int *"
@@ -1612,22 +1529,16 @@
                       "ptr"
                     ],
                     "qualType": {
-                      "id": 1080,
-                      "kind": "QualType",
-                      "type": {
-                        "qualType": "int"
-                      },
-                      "qualifiers": "",
+                      "refId": 1016,
                       "qualDetails": [
                         "signed",
                         "integer"
-                      ],
-                      "prevId": 1016
+                      ]
                     }
                   },
                   "inner": [
                     {
-                      "id": 1067,
+                      "id": 1066,
                       "kind": "UnaryOperator",
                       "range": {
                         "begin": {
@@ -1653,7 +1564,7 @@
                       "canOverflow": false,
                       "inner": [
                         {
-                          "id": 1068,
+                          "id": 1067,
                           "kind": "DeclRefExpr",
                           "range": {
                             "begin": {
@@ -1675,32 +1586,26 @@
                           },
                           "valueCategory": "lvalue",
                           "referencedDecl": {
-                            "id": "",
+                            "id": "1040b",
                             "kind": "VarDecl",
                             "name": "c",
                             "type": {
                               "qualType": "int"
                             },
-                            "prevId": 1041
+                            "prevId": 1040
                           },
                           "qualType": {
-                            "id": "",
-                            "kind": "QualType",
-                            "type": {
-                              "qualType": "int"
-                            },
-                            "qualifiers": "",
+                            "refId": 1016,
                             "qualDetails": [
                               "signed",
                               "integer"
-                            ],
-                            "prevId": 1016
+                            ]
                           }
                         }
                       ]
                     },
                     {
-                      "id": 1069,
+                      "id": 1068,
                       "kind": "FullComment",
                       "loc": {
                         "offset": 363,
@@ -1725,7 +1630,7 @@
                       },
                       "inner": [
                         {
-                          "id": 1070,
+                          "id": 1069,
                           "kind": "ParagraphComment",
                           "loc": {
                             "offset": 363,
@@ -1750,7 +1655,7 @@
                           },
                           "inner": [
                             {
-                              "id": 1071,
+                              "id": 1070,
                               "kind": "TextComment",
                               "loc": {
                                 "offset": 363,
@@ -1784,7 +1689,7 @@
               ]
             },
             {
-              "id": 1072,
+              "id": 1071,
               "kind": "BinaryOperator",
               "range": {
                 "begin": {
@@ -1808,7 +1713,7 @@
               "opcode": "=",
               "inner": [
                 {
-                  "id": 1073,
+                  "id": 1072,
                   "kind": "DeclRefExpr",
                   "range": {
                     "begin": {
@@ -1830,30 +1735,24 @@
                   },
                   "valueCategory": "lvalue",
                   "referencedDecl": {
-                    "id": "",
+                    "id": "1031b",
                     "kind": "VarDecl",
                     "name": "y",
                     "type": {
                       "qualType": "int"
                     },
-                    "prevId": 1032
+                    "prevId": 1031
                   },
                   "qualType": {
-                    "id": "",
-                    "kind": "QualType",
-                    "type": {
-                      "qualType": "int"
-                    },
-                    "qualifiers": "",
+                    "refId": 1016,
                     "qualDetails": [
                       "signed",
                       "integer"
-                    ],
-                    "prevId": 1016
+                    ]
                   }
                 },
                 {
-                  "id": 1074,
+                  "id": 1073,
                   "kind": "BinaryOperator",
                   "range": {
                     "begin": {
@@ -1877,7 +1776,7 @@
                   "opcode": "+",
                   "inner": [
                     {
-                      "id": 1075,
+                      "id": 1074,
                       "kind": "ImplicitCastExpr",
                       "range": {
                         "begin": {
@@ -1901,7 +1800,7 @@
                       "castKind": "LValueToRValue",
                       "inner": [
                         {
-                          "id": 1076,
+                          "id": 1075,
                           "kind": "ParenExpr",
                           "range": {
                             "begin": {
@@ -1924,7 +1823,7 @@
                           "valueCategory": "lvalue",
                           "inner": [
                             {
-                              "id": 1077,
+                              "id": 1076,
                               "kind": "UnaryOperator",
                               "range": {
                                 "begin": {
@@ -1950,7 +1849,7 @@
                               "canOverflow": false,
                               "inner": [
                                 {
-                                  "id": 1078,
+                                  "id": 1077,
                                   "kind": "ImplicitCastExpr",
                                   "range": {
                                     "begin": {
@@ -1974,7 +1873,7 @@
                                   "castKind": "LValueToRValue",
                                   "inner": [
                                     {
-                                      "id": 1079,
+                                      "id": 1078,
                                       "kind": "DeclRefExpr",
                                       "range": {
                                         "begin": {
@@ -1996,38 +1895,26 @@
                                       },
                                       "valueCategory": "lvalue",
                                       "referencedDecl": {
-                                        "id": "",
+                                        "id": "1064b",
                                         "kind": "VarDecl",
                                         "name": "e",
                                         "type": {
                                           "qualType": "int *"
                                         },
-                                        "prevId": 1065
+                                        "prevId": 1064
                                       },
                                       "qualType": {
-                                        "id": "",
-                                        "kind": "QualType",
-                                        "type": {
-                                          "qualType": "int *"
-                                        },
-                                        "qualifiers": "",
+                                        "refId": 1065,
                                         "qualDetails": [
                                           "ptr"
                                         ],
                                         "qualType": {
-                                          "id": 1080,
-                                          "kind": "QualType",
-                                          "type": {
-                                            "qualType": "int"
-                                          },
-                                          "qualifiers": "",
+                                          "refId": 1016,
                                           "qualDetails": [
                                             "signed",
                                             "integer"
-                                          ],
-                                          "prevId": 1016
-                                        },
-                                        "prevId": 1066
+                                          ]
+                                        }
                                       }
                                     }
                                   ]
@@ -2039,7 +1926,7 @@
                       ]
                     },
                     {
-                      "id": 1081,
+                      "id": 1079,
                       "kind": "ImplicitCastExpr",
                       "range": {
                         "begin": {
@@ -2063,7 +1950,7 @@
                       "castKind": "LValueToRValue",
                       "inner": [
                         {
-                          "id": 1082,
+                          "id": 1080,
                           "kind": "DeclRefExpr",
                           "range": {
                             "begin": {
@@ -2085,26 +1972,20 @@
                           },
                           "valueCategory": "lvalue",
                           "referencedDecl": {
-                            "id": "",
+                            "id": "1040b",
                             "kind": "VarDecl",
                             "name": "c",
                             "type": {
                               "qualType": "int"
                             },
-                            "prevId": 1041
+                            "prevId": 1040
                           },
                           "qualType": {
-                            "id": "",
-                            "kind": "QualType",
-                            "type": {
-                              "qualType": "int"
-                            },
-                            "qualifiers": "",
+                            "refId": 1016,
                             "qualDetails": [
                               "signed",
                               "integer"
-                            ],
-                            "prevId": 1016
+                            ]
                           }
                         }
                       ]
@@ -2114,7 +1995,7 @@
               ]
             },
             {
-              "id": 1083,
+              "id": 1081,
               "kind": "CallExpr",
               "range": {
                 "begin": {
@@ -2137,7 +2018,7 @@
               "valueCategory": "prvalue",
               "inner": [
                 {
-                  "id": 1084,
+                  "id": 1082,
                   "kind": "ImplicitCastExpr",
                   "range": {
                     "begin": {
@@ -2161,7 +2042,7 @@
                   "castKind": "FunctionToPointerDecay",
                   "inner": [
                     {
-                      "id": 1085,
+                      "id": 1083,
                       "kind": "DeclRefExpr",
                       "range": {
                         "begin": {
@@ -2183,7 +2064,7 @@
                       },
                       "valueCategory": "prvalue",
                       "referencedDecl": {
-                        "id": "",
+                        "id": "1022b",
                         "kind": "FunctionDecl",
                         "name": "printf",
                         "type": {
@@ -2192,20 +2073,14 @@
                         "prevId": 1022
                       },
                       "qualType": {
-                        "id": "",
-                        "kind": "QualType",
-                        "type": {
-                          "qualType": "int (const char *, ...)"
-                        },
-                        "qualifiers": "",
-                        "qualDetails": [],
-                        "prevId": 1058
+                        "refId": 1057,
+                        "qualDetails": []
                       }
                     }
                   ]
                 },
                 {
-                  "id": 1086,
+                  "id": 1084,
                   "kind": "ImplicitCastExpr",
                   "range": {
                     "begin": {
@@ -2229,7 +2104,7 @@
                   "castKind": "NoOp",
                   "inner": [
                     {
-                      "id": 1087,
+                      "id": 1085,
                       "kind": "ImplicitCastExpr",
                       "range": {
                         "begin": {
@@ -2253,7 +2128,7 @@
                       "castKind": "ArrayToPointerDecay",
                       "inner": [
                         {
-                          "id": 1088,
+                          "id": 1086,
                           "kind": "StringLiteral",
                           "range": {
                             "begin": {
@@ -2281,7 +2156,7 @@
                   ]
                 },
                 {
-                  "id": 1089,
+                  "id": 1087,
                   "kind": "ImplicitCastExpr",
                   "range": {
                     "begin": {
@@ -2293,6 +2168,71 @@
                     "end": {
                       "offset": 560,
                       "col": 32,
+                      "tokLen": 1,
+                      "line": 40
+                    },
+                    "file": ""
+                  },
+                  "type": {
+                    "qualType": "int"
+                  },
+                  "valueCategory": "prvalue",
+                  "castKind": "LValueToRValue",
+                  "inner": [
+                    {
+                      "id": 1088,
+                      "kind": "DeclRefExpr",
+                      "range": {
+                        "begin": {
+                          "offset": 560,
+                          "col": 32,
+                          "tokLen": 1,
+                          "line": 40
+                        },
+                        "end": {
+                          "offset": 560,
+                          "col": 32,
+                          "tokLen": 1,
+                          "line": 40
+                        },
+                        "file": ""
+                      },
+                      "type": {
+                        "qualType": "int"
+                      },
+                      "valueCategory": "lvalue",
+                      "referencedDecl": {
+                        "id": "1031b",
+                        "kind": "VarDecl",
+                        "name": "y",
+                        "type": {
+                          "qualType": "int"
+                        },
+                        "prevId": 1031
+                      },
+                      "qualType": {
+                        "refId": 1016,
+                        "qualDetails": [
+                          "signed",
+                          "integer"
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": 1089,
+                  "kind": "ImplicitCastExpr",
+                  "range": {
+                    "begin": {
+                      "offset": 563,
+                      "col": 35,
+                      "tokLen": 1,
+                      "line": 40
+                    },
+                    "end": {
+                      "offset": 563,
+                      "col": 35,
                       "tokLen": 1,
                       "line": 40
                     },
@@ -2309,77 +2249,6 @@
                       "kind": "DeclRefExpr",
                       "range": {
                         "begin": {
-                          "offset": 560,
-                          "col": 32,
-                          "tokLen": 1,
-                          "line": 40
-                        },
-                        "end": {
-                          "offset": 560,
-                          "col": 32,
-                          "tokLen": 1,
-                          "line": 40
-                        },
-                        "file": ""
-                      },
-                      "type": {
-                        "qualType": "int"
-                      },
-                      "valueCategory": "lvalue",
-                      "referencedDecl": {
-                        "id": "",
-                        "kind": "VarDecl",
-                        "name": "y",
-                        "type": {
-                          "qualType": "int"
-                        },
-                        "prevId": 1032
-                      },
-                      "qualType": {
-                        "id": "",
-                        "kind": "QualType",
-                        "type": {
-                          "qualType": "int"
-                        },
-                        "qualifiers": "",
-                        "qualDetails": [
-                          "signed",
-                          "integer"
-                        ],
-                        "prevId": 1016
-                      }
-                    }
-                  ]
-                },
-                {
-                  "id": 1091,
-                  "kind": "ImplicitCastExpr",
-                  "range": {
-                    "begin": {
-                      "offset": 563,
-                      "col": 35,
-                      "tokLen": 1,
-                      "line": 40
-                    },
-                    "end": {
-                      "offset": 563,
-                      "col": 35,
-                      "tokLen": 1,
-                      "line": 40
-                    },
-                    "file": ""
-                  },
-                  "type": {
-                    "qualType": "int"
-                  },
-                  "valueCategory": "prvalue",
-                  "castKind": "LValueToRValue",
-                  "inner": [
-                    {
-                      "id": 1092,
-                      "kind": "DeclRefExpr",
-                      "range": {
-                        "begin": {
                           "offset": 563,
                           "col": 35,
                           "tokLen": 1,
@@ -2398,26 +2267,20 @@
                       },
                       "valueCategory": "lvalue",
                       "referencedDecl": {
-                        "id": "",
+                        "id": "1033b",
                         "kind": "VarDecl",
                         "name": "z",
                         "type": {
                           "qualType": "int"
                         },
-                        "prevId": 1034
+                        "prevId": 1033
                       },
                       "qualType": {
-                        "id": "",
-                        "kind": "QualType",
-                        "type": {
-                          "qualType": "int"
-                        },
-                        "qualifiers": "",
+                        "refId": 1016,
                         "qualDetails": [
                           "signed",
                           "integer"
-                        ],
-                        "prevId": 1016
+                        ]
                       }
                     }
                   ]
@@ -2425,7 +2288,7 @@
               ]
             },
             {
-              "id": 1093,
+              "id": 1091,
               "kind": "ReturnStmt",
               "range": {
                 "begin": {
@@ -2444,7 +2307,7 @@
               },
               "inner": [
                 {
-                  "id": 1094,
+                  "id": 1092,
                   "kind": "IntegerLiteral",
                   "range": {
                     "begin": {
@@ -2474,11 +2337,11 @@
       ]
     }
   ],
-  "compile_dir": "",
-  "compile_dir": "",
+  "base_dir": "/host/code/acr/test",
+  "compile_dir": "/host/code/acr/test",
   "file": "",
   "preproc_db": {
-    "test/preproc_parser_1.c": [
+    "/host/code/acr/test/preproc_parser_1.c": [
       289,
       309,
       450,
@@ -2487,7 +2350,7 @@
     ]
   },
   "comments_db": {
-    "test/preproc_parser_1.c": [
+    "/host/code/acr/test/preproc_parser_1.c": [
       [171, 184],
       [189, 202],
       [207, 264],
@@ -2496,7 +2359,7 @@
     ]
   },
   "newlines_db": {
-    "test/preproc_parser_1.c": [
+    "/host/code/acr/test/preproc_parser_1.c": [
       36,
       37,
       50,

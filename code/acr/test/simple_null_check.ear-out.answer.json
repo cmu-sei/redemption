@@ -306,17 +306,11 @@
       },
       "returnTypeDetail": {
         "qualType": {
-          "id": "1016b",
-          "kind": "QualType",
-          "type": {
-            "qualType": "int"
-          },
-          "qualifiers": "",
+          "refId": 1016,
           "qualDetails": [
             "signed",
             "integer"
-          ],
-          "prevId": 1016
+          ]
         }
       },
       "inner": [
@@ -360,17 +354,11 @@
               "ptr"
             ],
             "qualType": {
-              "id": 1042,
-              "kind": "QualType",
-              "type": {
-                "qualType": "int"
-              },
-              "qualifiers": "",
+              "refId": 1016,
               "qualDetails": [
                 "signed",
                 "integer"
-              ],
-              "prevId": 1016
+              ]
             }
           }
         },
@@ -494,29 +482,17 @@
                             "prevId": 1021
                           },
                           "qualType": {
-                            "id": "1022b",
-                            "kind": "QualType",
-                            "type": {
-                              "qualType": "int *"
-                            },
-                            "qualifiers": "",
+                            "refId": 1022,
                             "qualDetails": [
                               "ptr"
                             ],
                             "qualType": {
-                              "id": 1042,
-                              "kind": "QualType",
-                              "type": {
-                                "qualType": "int"
-                              },
-                              "qualifiers": "",
+                              "refId": 1016,
                               "qualDetails": [
                                 "signed",
                                 "integer"
-                              ],
-                              "prevId": 1016
-                            },
-                            "prevId": 1022
+                              ]
+                            }
                           }
                         }
                       ]
@@ -524,7 +500,7 @@
                   ]
                 },
                 {
-                  "id": 1029,
+                  "id": 1028,
                   "kind": "CompoundStmt",
                   "range": {
                     "begin": {
@@ -543,7 +519,7 @@
                   },
                   "inner": [
                     {
-                      "id": 1030,
+                      "id": 1029,
                       "kind": "CallExpr",
                       "range": {
                         "begin": {
@@ -566,7 +542,7 @@
                       "valueCategory": "prvalue",
                       "inner": [
                         {
-                          "id": 1031,
+                          "id": 1030,
                           "kind": "ImplicitCastExpr",
                           "range": {
                             "begin": {
@@ -590,7 +566,7 @@
                           "castKind": "FunctionToPointerDecay",
                           "inner": [
                             {
-                              "id": 1032,
+                              "id": 1031,
                               "kind": "DeclRefExpr",
                               "range": {
                                 "begin": {
@@ -621,7 +597,7 @@
                                 "prevId": 1015
                               },
                               "qualType": {
-                                "id": 1033,
+                                "id": 1032,
                                 "kind": "QualType",
                                 "type": {
                                   "qualType": "int (const char *)"
@@ -633,7 +609,7 @@
                           ]
                         },
                         {
-                          "id": 1034,
+                          "id": 1033,
                           "kind": "ImplicitCastExpr",
                           "range": {
                             "begin": {
@@ -657,7 +633,7 @@
                           "castKind": "NoOp",
                           "inner": [
                             {
-                              "id": 1035,
+                              "id": 1034,
                               "kind": "ImplicitCastExpr",
                               "range": {
                                 "begin": {
@@ -681,7 +657,7 @@
                               "castKind": "ArrayToPointerDecay",
                               "inner": [
                                 {
-                                  "id": 1036,
+                                  "id": 1035,
                                   "kind": "StringLiteral",
                                   "range": {
                                     "begin": {
@@ -715,7 +691,7 @@
               ]
             },
             {
-              "id": 1037,
+              "id": 1036,
               "kind": "ReturnStmt",
               "range": {
                 "begin": {
@@ -734,7 +710,7 @@
               },
               "inner": [
                 {
-                  "id": 1038,
+                  "id": 1037,
                   "kind": "ImplicitCastExpr",
                   "range": {
                     "begin": {
@@ -758,7 +734,7 @@
                   "castKind": "LValueToRValue",
                   "inner": [
                     {
-                      "id": 1039,
+                      "id": 1038,
                       "kind": "UnaryOperator",
                       "range": {
                         "begin": {
@@ -784,7 +760,7 @@
                       "canOverflow": false,
                       "inner": [
                         {
-                          "id": 1040,
+                          "id": 1039,
                           "kind": "ImplicitCastExpr",
                           "range": {
                             "begin": {
@@ -808,7 +784,7 @@
                           "castKind": "LValueToRValue",
                           "inner": [
                             {
-                              "id": 1041,
+                              "id": 1040,
                               "kind": "DeclRefExpr",
                               "range": {
                                 "begin": {
@@ -839,29 +815,17 @@
                                 "prevId": 1021
                               },
                               "qualType": {
-                                "id": "1022b",
-                                "kind": "QualType",
-                                "type": {
-                                  "qualType": "int *"
-                                },
-                                "qualifiers": "",
+                                "refId": 1022,
                                 "qualDetails": [
                                   "ptr"
                                 ],
                                 "qualType": {
-                                  "id": 1042,
-                                  "kind": "QualType",
-                                  "type": {
-                                    "qualType": "int"
-                                  },
-                                  "qualifiers": "",
+                                  "refId": 1016,
                                   "qualDetails": [
                                     "signed",
                                     "integer"
-                                  ],
-                                  "prevId": 1016
-                                },
-                                "prevId": 1022
+                                  ]
+                                }
                               }
                             }
                           ]

@@ -4,7 +4,7 @@
     "file": "/host/code/acr/test/super01a.c",
     "line": 9,
     "alert_id": 1,
-    "ast_id": 2577,
+    "ast_id": 2255,
     "add-headers": [
       "acr.h"
     ],
@@ -57,7 +57,7 @@
     "file": "/host/code/acr/test/super01.h",
     "line": 2,
     "alert_id": 3,
-    "ast_id": 2543,
+    "ast_id": 2223,
     "add-headers": [
       "acr.h"
     ],

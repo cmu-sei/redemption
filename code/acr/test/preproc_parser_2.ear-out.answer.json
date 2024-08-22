@@ -274,17 +274,11 @@
         "qualType": "int"
       },
       "qualType": {
-        "id": "1016b",
-        "kind": "QualType",
-        "type": {
-          "qualType": "int"
-        },
-        "qualifiers": "",
+        "refId": 1016,
         "qualDetails": [
           "signed",
           "integer"
-        ],
-        "prevId": 1016
+        ]
       }
     }
   ],

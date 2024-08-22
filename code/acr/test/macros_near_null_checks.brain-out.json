@@ -4,7 +4,7 @@
     "file": "/host/code/acr/test/macros_near_null_checks.c",
     "line": 14,
     "alert_id": 1,
-    "ast_id": 1077,
+    "ast_id": 1074,
     "patch": [
       [
         "/host/code/acr/test/macros_near_null_checks.c",
@@ -31,7 +31,7 @@
     "file": "/host/code/acr/test/macros_near_null_checks.c",
     "line": 15,
     "alert_id": 2,
-    "ast_id": 1098,
+    "ast_id": 1093,
     "why_skipped": [
       "In a macro expansion at beginning of expression",
       "In a macro expansion at end of expression"
@@ -43,7 +43,7 @@
     "file": "/host/code/acr/test/macros_near_null_checks.c",
     "line": 16,
     "alert_id": 3,
-    "ast_id": 1111,
+    "ast_id": 1105,
     "patch": [
       [
         "/host/code/acr/test/macros_near_null_checks.c",
@@ -70,7 +70,7 @@
     "file": "/host/code/acr/test/macros_near_null_checks.c",
     "line": 17,
     "alert_id": 4,
-    "ast_id": 1128,
+    "ast_id": 1121,
     "why_skipped": [
       "In a macro expansion at end of expression"
     ],
@@ -81,7 +81,7 @@
     "file": "/host/code/acr/test/macros_near_null_checks.c",
     "line": 18,
     "alert_id": 5,
-    "ast_id": 1147,
+    "ast_id": 1139,
     "why_skipped": [
       "In a macro expansion at beginning of expression",
       "In a macro expansion at end of expression"
@@ -94,7 +94,7 @@
     "line": 19,
     "column": 33,
     "alert_id": 6,
-    "ast_id": 1173,
+    "ast_id": 1163,
     "why_skipped": [
       "In a macro expansion at beginning of expression",
       "In a macro expansion at end of expression"
@@ -107,7 +107,7 @@
     "line": 20,
     "column": 33,
     "alert_id": 7,
-    "ast_id": 1192,
+    "ast_id": 1180,
     "why_skipped": [
       "In a macro expansion at beginning of expression"
     ],
