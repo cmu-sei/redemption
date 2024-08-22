@@ -35,11 +35,13 @@ FROM ghcr.io/cmu-sei/redemption-prereq
 # Apt packages
 RUN apt-get update \
     && DEBIAN_FRONTEND=noninteractive apt-get -y install --no-install-recommends \
-         pipx python3-dev python3-psutil g++ libpcre3-dev \
+         pipx python3-dev python3-psutil g++ libpcre3-dev jq \
     && apt-get --purge -y autoremove \
     && apt-get clean
 
-RUN pipx install codechecker
+RUN pipx install codechecker && pipx inject codechecker setuptools \
+    && jq '.runtime.analyzers["clang-tidy"] = "clang-tidy-16"' < /root/.local/share/pipx/venvs/codechecker/share/codechecker/config/package_layout.json > package_layout.json \
+    && mv package_layout.json /root/.local/share/pipx/venvs/codechecker/share/codechecker/config/
 
 ENV PATH=/root/.local/bin:$PATH
 
