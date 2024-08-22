@@ -47,8 +47,6 @@ def parse_args():
     parser.add_argument("-e", action="store_true", dest="examine_shouldnt_repair", help="To determine if the test fails, examine the shouldnt_fix and patch attributes. Writes output to file named <YAML_FILENAME>.alerts_info.json")
     return parser.parse_args()
 
-
-
 test_args = {
     "yfiles": glob.glob("*.test.yml"),
     "stringinput": ""

@@ -30,12 +30,16 @@
 
 import os, sys
 import shlex
+import difflib
 import re
 sys.path.append('..')
 import ear, brain, glove, end_to_end_acr, sup
 import test_runner
 from util import *
 from make_run_clang import read_json_file
+from pprint import pprint
+import difflib
+import string
 
 def read_whole_file(filename):
     with open(filename, 'r') as the_file:
@@ -45,13 +49,18 @@ def read_whole_file_as_bytes(filename):
     with open(filename, 'rb') as the_file:
         return the_file.read()
 
+def delete_refIds(s):
+    return re.sub('"refId": "[A-Za-z0-9]*"', '"refId": ""', s)
+
 def delete_ids(s):
     s = re.sub('"id": "[A-Za-z0-9]*"', '"id": ""', s)
     s = re.sub('"ast_id": [0-9]*', '"ast_id": ""', s)
+    s = re.sub('"refId": "[A-Za-z0-9]*"', '"refId": ""', s)
     return s
 
 def delete_ids_and_filenames(s):
     s = re.sub('"id": "[A-Za-z0-9]*"', '"id": ""', s)
+    s = re.sub('"refId": "[A-Za-z0-9]*"', '"refId": ""', s)
     s = re.sub('"ast_id": [0-9]*', '"ast_id": ""', s)
     s = re.sub('"file": "[^"]*"', '"file": ""', s)
     s = re.sub('"base_dir": "[^"]*"', '"compile_dir": ""', s)
@@ -65,7 +74,6 @@ def relativize_paths(s):
     s = re.sub('"/.*/test\\b', '"test', s)
     return s
 
-
 def cmp_file_normalize(file1, file2, fn_norm=None):
     if (fn_norm is None):
         fn_norm = lambda x: x
@@ -73,12 +81,40 @@ def cmp_file_normalize(file1, file2, fn_norm=None):
         s = re.sub("[$]BASE[/]", "/host/code/acr/test/", s)
         if os.getenv('acr_ignore_ast_id') == "true":
             s = delete_ids(s)
+        else:
+            # ALWAYS delete the refIds in the comparison
+            s = delete_refIds(s)
         return s
     fc1 = fn_norm(norm_base(read_whole_file(file1)))
     fc2 = fn_norm(norm_base(read_whole_file(file2)))
-    ret = (fc1 == fc2)
+
+    # ignore whitespace when performing comparisons
+    mapping = {ord(c): None for c in string.whitespace}
+    ret = (fc1.translate(mapping) == fc2.translate(mapping))
+
     if ret is False:
         print("Normalized files differ: %s != %s" % (file1, file2))
+
+        # NOTE: useful snippets and output for debugging unit tests
+        
+        # NOTE: using file1 and file2 loaded in a difftool enables fast debugging
+        # with open("_expected.json", "w+") as w1:
+        #     w1.write(fc1)
+        # with open("_actual.json", "w+") as w2:
+        #     w2.write(fc2)
+        
+        # NOTE: useful for diffing on the CLI, unless the diffs become too large
+        # d = difflib.Differ()
+        # diffs = list(d.compare(fc1.splitlines(keepends=True), fc2.splitlines(keepends=True)))
+        # pprint(diffs)
+        
+        # NOTE: very detailed output for non-equal sequence matching
+        # delta = difflib.SequenceMatcher(None, fc1, fc2)
+        # for tag, i1, i2, j1, j2 in delta.get_opcodes():
+        #     if (tag != "equal"):
+        #         print('{:7}   a[{}:{}] --> b[{}:{}] {!r:>8} --> {!r}'.format(
+        #             tag, i1, i2, j1, j2, fc1[i1:i2], fc2[j1:j2]))
+
     return ret
     # TODO: report a diff if the comparison fails
 
@@ -101,8 +137,8 @@ def test_ear_03():
     pass
 
 def test_brain_03():
-    os.system("rm -f out/simple_null_check.brain-out.json")
     #os.system("python3 ../brain.py --no-patch -o out/simple_null_check.brain-out.json -a simple_null_check.alerts.json simple_null_check.ear-out.answer.json")
+    os.system("rm -f out/simple_null_check.brain-out.json")
     brain.run(ast_file="simple_null_check.ear-out.answer.json", alerts_filename="simple_null_check.alerts.json", output_filename="out/simple_null_check.brain-out.json")
     assert cmp_file_normalize("simple_null_check.brain-out.answer.json", "out/simple_null_check.brain-out.json", relativize_paths)
     test_runner.cleanup("simple_null_check.c", out_location="out", step_dir="out", additional_files="out/simple_null_check.brain-out.json")
@@ -391,7 +427,8 @@ def test_super01_normal():
         step_dir=step_dir,
         base_dir=base_dir,
         combined_brain_out=combined_brain_out)
-    assert cmp_file_normalize("out/super01.combined-brain.json", "super01.normal.combined-brain.json")
+
+    assert cmp_file_normalize("super01.normal.combined-brain.json", "out/super01.combined-brain.json")
     test_runner.cleanup(base_dir, out_location=step_dir, test_results_filepath="out", step_dir=step_dir, base_dir=base_dir, additional_files="out/super01*.*")
 
 def test_super01_smell_check():
@@ -412,6 +449,7 @@ def test_super01_smell_check():
         base_dir=base_dir,
         combined_brain_out=combined_brain_out,
         inject_brain_output=True)
+    
     assert cmp_file_normalize("out/super01.combined-brain.json", "super01.smell-check.combined-brain.json")
     test_runner.cleanup(base_dir, out_location=step_dir, test_results_filepath="out", step_dir=step_dir, base_dir=base_dir, additional_files="out/super01*.*")
 
@@ -433,6 +471,7 @@ def test_super01_bothstars():
         base_dir=base_dir,
         combined_brain_out=combined_brain_out,
         inject_brain_output=inject_brain_output)
+    
     assert cmp_file_normalize("out/super01.combined-brain.json", "super01.bothstars.combined-brain.json")
     test_runner.cleanup(base_dir, out_location=step_dir, test_results_filepath="out", step_dir=step_dir, base_dir=base_dir, additional_files="out/super01*.*")
 
@@ -447,6 +486,7 @@ def test_dom_null_derefs():
         alerts=alerts,
         step_dir=step_dir,
         out_src_dir=step_dir)
+    
     assert cmp_file_normalize("dom_null_derefs.nulldom.json", "out/dom_null_derefs.nulldom.json")
     assert cmp_file_normalize("dom_null_derefs.brain-out.json", "out/dom_null_derefs.brain-out.json")
     if os.getenv('pytest_keep') != "true":

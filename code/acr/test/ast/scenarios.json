@@ -25,6 +25,21 @@
       "name": "test-structs",
       "json": "test-structs.json",
       "source": "test-structs.c"
+    },
+    {
+      "name": "test-sible-null",
+      "json": "test-sible-null.json",
+      "source": "test-sible-null.c"
+    },
+    {
+      "name": "test ReferenceDecl to FunctionDecl",
+      "json": "test-null-check.json",
+      "source": "test-null-check.c"
+    },
+    {
+      "name": "test function pointer assignment",
+      "json": "test-git-config.json",
+      "source": "test-git-config.c"
     }
   ]
 }

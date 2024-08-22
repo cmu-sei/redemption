@@ -35,10 +35,19 @@ Tests for changes to clang's AST output exist here.
 | scenario_generator.py | creates a scenarios.json file from specified file extensions, e.g., *./scenario_generator.py . c scenarios.json* |
 | scenarios.json        | clang path and test details that ast_comparer.py uses                                                            |
 
-## tests
+## CMakelists.txt
 
-test-function-pointers.c*
-test-functions.c*
-test-pointers-init.c*
-test-pointers.c*
-test-structs.c*
+for quickly testing AST traversal, you can use:
+
+```sh
+cd /host/code/acr/test/ast
+mkdir build
+cd build
+cmake -DFILE_TO_COMPILE=../test-pointers.c ../
+```
+
+for quickly testing brainstem's parser of AST output
+
+```sh
+python3 brainstem.py /host/code/acr/test/ast/test-pointers.json -o test-pointers.out
+```

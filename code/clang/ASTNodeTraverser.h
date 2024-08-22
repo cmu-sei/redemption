@@ -179,7 +179,7 @@ public:
       return Visit(SQT.Ty);
 
     // SEI: changed from default label to "qualTypeDetail"
-    getNodeDelegate().AddChild( "qualTypeDetail", [=] {
+    getNodeDelegate().AddChild( "qualTypeDetail", [this, T] {
       getNodeDelegate().Visit(T);
       Visit(T.split().Ty);
     });
@@ -202,12 +202,15 @@ public:
 
   // SEI: traverse ReturnType information
   void VisitReturnType(QualType T) {
+    //getNodeDelegate().AddChild("returnTypeDetail",
+    //  [=] { getNodeDelegate().Visit(T); } );
     getNodeDelegate().VisitReturnType(T);
+    //getNodeDelegate().Visit(T);
   }
 
   void Visit(const Type *T) {
     // SEI: renamed this from default label
-    getNodeDelegate().AddChild( "typeDetails", [=] {
+    getNodeDelegate().AddChild( "typeDetails", [this, T] {
       getNodeDelegate().Visit(T);
       if (!T)
         return;
@@ -222,7 +225,7 @@ public:
 
   void Visit(const Attr *A) {
     // SEI: renamed from default label
-    getNodeDelegate().AddChild( "attrDetails", [=] {
+    getNodeDelegate().AddChild( "attrDetails", [this, A] {
       getNodeDelegate().Visit(A);
       ConstAttrVisitor<Derived>::Visit(A);
     });
@@ -410,7 +413,7 @@ public:
   void VisitFunctionType(const FunctionType *T) 
   { 
     // SEI: add functionDetails, incl. return type
-    getNodeDelegate().AddChild( "functionDetails", [=] 
+    getNodeDelegate().AddChild( "functionDetails", [this, T] 
     { 
       getNodeDelegate().VisitFunctionType(T);
       getNodeDelegate().VisitReturnType(T->getReturnType());
@@ -522,13 +525,26 @@ public:
         // convert FT to a FunctionProtoType type to get the parameters
         // and notify the consumers of the AST that an FPT is coming
         if (const auto *FPT = dyn_cast<FunctionProtoType>(FT))
-          Visit(FPT);
+        {
+          // TODO: is this redundant?? removing this line fixes everything!
+          //Visit(FPT);
+        }
       }
     }
 
     // SEI: traverse PointerType for Variables 
-    if (D->getType()->isPointerType())
-      getNodeDelegate().VisitPointeeType(D->getType()->getPointeeType());
+    //if (D->getType()->isPointerType())
+    //{
+    //    getNodeDelegate().Visit(D->getType());
+    //}
+    //  //getNodeDelegate().VisitPointeeType(D->getType()->getPointeeType());
+    //else
+    //{
+    //  // we only need the QualType details 
+    //  getNodeDelegate().VisitQualTypeDetails(D->getType());
+    //}
+
+    getNodeDelegate().Visit(D->getType());
   }
 
   void VisitDecompositionDecl(const DecompositionDecl *D) {
@@ -659,7 +675,8 @@ public:
   void
   VisitVarTemplateSpecializationDecl(const VarTemplateSpecializationDecl *D) {
     dumpTemplateArgumentList(D->getTemplateArgs());
-    VisitVarDecl(D);
+    
+    getNodeDelegate().AddChild( [=] { VisitVarDecl(D); } );
   }
 
   void VisitVarTemplatePartialSpecializationDecl(

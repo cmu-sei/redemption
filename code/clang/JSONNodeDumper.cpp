@@ -70,13 +70,14 @@ void JSONNodeDumper::Visit(const Stmt *S) {
 
 void JSONNodeDumper::Visit(const Type *T) {
   // SEI: ensure FPTs are debloated. this can be expanded to ALL types, if desired
-  //if (T && T->isFunctionProtoType() && cacheAddress((void*)T)) {
   if (T && cacheAddress((void*)T)) {
     // add this as a child to know that it's a Type
     AddChild( "typeDetails", 
       [=] { JOS.attribute("refId", createPointerRepresentation(T)); });
     
     InnerTypeVisitor::Visit(T);
+    // SEI
+    VisitQualTypeDetails(T->getCanonicalTypeInternal());
     return;
   }
 
@@ -96,19 +97,76 @@ void JSONNodeDumper::Visit(const Type *T) {
                       T->containsUnexpandedParameterPack());
   attributeOnlyIfTrue("isImported", T->isFromAST());
   InnerTypeVisitor::Visit(T);
+  // SEI
+  VisitQualTypeDetails(T->getCanonicalTypeInternal());
 }
 
 void JSONNodeDumper::Visit(QualType T) {
-  // SEI: cache visited addresses and add only its refId
-  if (cacheAddress(T.getAsOpaquePtr())) {
-    JOS.attribute("refId", createPointerRepresentation(T.getAsOpaquePtr()));
-    return;
-  }
 
-  JOS.attribute("id", createPointerRepresentation(T.getAsOpaquePtr()));
-  JOS.attribute("kind", "QualType");
-  JOS.attribute("type", createQualType(T));
-  JOS.attribute("qualifiers", T.split().Quals.getAsString());
+  // SEI: used AddChild to prevent qualType from being part added to a list
+  //JOS.attributeArray("qualTypes", [=] {
+   
+    // SEI: force qualType into its own block, otherwise multiple Visits
+    // create a bunch of siblings, which is invalid JSON
+    JOS.attributeBegin("qualType");
+    JOS.objectBegin();
+
+    // SEI: cache visited addresses and add only its refId
+    // instead of the kind, type, quals, but leave the qual type details
+    // because those can differ among IDs
+    if (cacheAddress(T.getAsOpaquePtr())) {
+      JOS.attribute("refId", createPointerRepresentation(T.getAsOpaquePtr()));
+    }
+    else {
+      JOS.attribute("id", createPointerRepresentation(T.getAsOpaquePtr()));
+      JOS.attribute("kind", "QualType");
+      JOS.attribute("type", createQualType(T));
+      JOS.attribute("qualifiers", T.split().Quals.getAsString());
+    }
+
+    // SEI: get add'l info required for redemption analysis
+    // the qual type details differ even among cached references
+    VisitQualTypeDetails(T);
+  
+    // SEI: if this is a pointer type, then recursively call ourselves 
+    // until it's not
+    if (T->isPointerType())
+      Visit(T->getPointeeType());
+
+    JOS.objectEnd();
+    JOS.attributeEnd();
+  //} );
+}
+
+void JSONNodeDumper::VisitQualTypeDetails(QualType T) {
+  // SEI: get more detailed info on type. this info is not transferrable
+  // with the refId, so this must be called on every type even if that type
+  // has been cached
+  JOS.attributeBegin("qualDetails");
+  JOS.arrayBegin();
+
+  auto CT = T->getCanonicalTypeInternal();
+
+  if (CT->isStructureType()) JOS.value("struct");
+  
+  if (CT->isNullPtrType()) JOS.value("null");
+  if (CT->isPromotableIntegerType()) JOS.value("promotable");
+  if (CT->isUndeducedType()) JOS.value("undeduced");
+
+  if (CT->isPointerType()) JOS.value("ptr");
+  if (CT->isVoidType()) JOS.value("void");
+
+  if (CT->isSignedIntegerType()) JOS.value("signed");
+  if (CT->isUnsignedIntegerType()) JOS.value("unsigned");
+  if (CT->isIntegerType()) JOS.value("integer");
+  if (CT->isFloatingType()) JOS.value("fpp");
+  if (CT->isEnumeralType()) JOS.value("enum");
+  if (CT->isUnionType()) JOS.value("union");
+  if (CT->isFunctionPointerType()) JOS.value("func_ptr");
+  if (CT->isTypedefNameType()) JOS.value("type_def");
+
+  JOS.arrayEnd();
+  JOS.attributeEnd();
 }
 
 // SEI: capture the return info in a nested JSON block
@@ -117,20 +175,12 @@ void JSONNodeDumper::VisitReturnType(QualType T) {
   // section into its own JSON block. if we do this in ASTNodeTraverser, 
   // then the TextNodeDumper works as expected but the JSONNodeDumper
   // rolls all siblings into the returnType node with those siblings as child nodes
+  
   JOS.attributeObject("returnTypeDetail", [=] { 
     Visit(T);
-    if (T->isPointerType())
-      VisitPointeeType(T->getPointeeType());
   });
-}
 
-// SEI: recursively capture pointer types
-void JSONNodeDumper::VisitPointeeType(QualType T) {
-  JOS.attributeObject("pointeeTypeDetail", [=] {
-    Visit(T);
-    if (T->isPointerType())
-      VisitPointeeType(T->getPointeeType());
-  });
+  //Visit(T);
 }
 
 void JSONNodeDumper::Visit(const Decl *D) {
@@ -386,6 +436,7 @@ llvm::json::Object JSONNodeDumper::createBareDeclRef(const Decl *D) {
     Ret["name"] = ND->getDeclName().getAsString();
   if (const auto *VD = dyn_cast<ValueDecl>(D))
     Ret["type"] = createQualType(VD->getType());
+  
   return Ret;
 }
 
@@ -599,6 +650,7 @@ void JSONNodeDumper::VisitFunctionProtoType(const FunctionProtoType *T) {
     llvm::json::Array Types;
     for (QualType QT : E.ExceptionSpec.Exceptions)
       Types.push_back(createQualType(QT));
+
     JOS.attribute("exceptionTypes", std::move(Types));
   } break;
   case EST_MSAny:
@@ -782,6 +834,7 @@ void JSONNodeDumper::VisitMemberPointerType(const MemberPointerType *MPT) {
 void JSONNodeDumper::VisitNamedDecl(const NamedDecl *ND) {
   if (ND && ND->getDeclName()) {
     JOS.attribute("name", ND->getNameAsString());
+
     // FIXME: There are likely other contexts in which it makes no sense to ask
     // for a mangled name.
     if (isa<RequiresExprBodyDecl>(ND->getDeclContext()))
@@ -848,8 +901,9 @@ void JSONNodeDumper::VisitUsingShadowDecl(const UsingShadowDecl *USD) {
 
 void JSONNodeDumper::VisitVarDecl(const VarDecl *VD) {
   VisitNamedDecl(VD);
-  JOS.attribute("type", createQualType(VD->getType()));
 
+  JOS.attribute("type", createQualType(VD->getType()));
+  
   StorageClass SC = VD->getStorageClass();
   if (SC != SC_None)
     JOS.attribute("storageClass", VarDecl::getStorageClassSpecifierString(SC));
@@ -879,6 +933,10 @@ void JSONNodeDumper::VisitFieldDecl(const FieldDecl *FD) {
   attributeOnlyIfTrue("modulePrivate", FD->isModulePrivate());
   attributeOnlyIfTrue("isBitfield", FD->isBitField());
   attributeOnlyIfTrue("hasInClassInitializer", FD->hasInClassInitializer());
+
+  // SEI: had to add this in b/c FieldDecls do not seem to call 
+  // Visit(QualType)
+  Visit(FD->getType());
 }
 
 void JSONNodeDumper::VisitFunctionDecl(const FunctionDecl *FD) {
@@ -1249,6 +1307,9 @@ void JSONNodeDumper::VisitDeclRefExpr(const DeclRefExpr *DRE) {
   case NOUR_Constant: JOS.attribute("nonOdrUseReason", "constant"); break;
   case NOUR_Discarded: JOS.attribute("nonOdrUseReason", "discarded"); break;
   }
+
+  // SEI: this doesn't called VisitNamedDecl, so we force it
+  Visit(DRE->getType());
 }
 
 void JSONNodeDumper::VisitSYCLUniqueStableNameExpr(

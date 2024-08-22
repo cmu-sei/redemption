@@ -29,3 +29,8 @@ doc/examples/separate_build/wrk
 
 # Emacs backup files
 *~
+
+# logs and test/step output
+data/test/logs.log
+data/test/out/*
+data/test/step/*

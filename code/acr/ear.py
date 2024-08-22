@@ -43,6 +43,7 @@ import argparse
 
 import parse_preproc
 from make_run_clang import get_compile_cmds_for_source_file, get_compile_dir, get_clang_cmds
+import bloater
 
 class EarException(Exception):
     pass
@@ -98,7 +99,7 @@ def run_clang_parse(compile_cmd, clang_output_dir, generated=False):
     return [ast_file, ll_file, cplusplus]
 
 
-def update_ast( ast_json, base_dir, cmd):
+def update_ast(ast_json, base_dir, cmd):
     compile_dir = os.path.realpath(get_compile_dir(cmd))
     base_dir = os.path.realpath(base_dir or compile_dir)
     ast_json["base_dir"] = base_dir
@@ -108,6 +109,9 @@ def update_ast( ast_json, base_dir, cmd):
     def add_path(s):
         return os.path.realpath(os.path.join(compile_dir, s))
     print_progress("Processing AST...")
+
+    # rebloat it by replacing the refId with the full id contents
+    ast_json = bloater.debloat(ast_json)
     incl_files = find_included_files(ast_json, add_path)
     renumber_ids(ast_json, {})
     add_filenames(ast_json, [cur_file], add_path)

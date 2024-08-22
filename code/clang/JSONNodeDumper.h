@@ -232,11 +232,11 @@ public:
   void Visit(const Type *T);
   void Visit(QualType T);
 
+  // SEI: get specific details from the qual type
+  void VisitQualTypeDetails(QualType T);
+
   // SEI: traverse ReturnType information
   void VisitReturnType(QualType T);
-
-  // SEI: traverse PointerType information
-  void VisitPointeeType(QualType T);
 
   void Visit(const Decl *D);
 

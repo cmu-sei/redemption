@@ -549,6 +549,7 @@ def determine_pass_status(*, examine_shouldnt_repair,
             # repaired file and original file) and a diff between the newly-repaired file and the original file.
             # We use interdiff to ignore timestamp differences between diff files.
             diff_from_original = subprocess.run(['diff', '-u', test_results_file, file_to_repair], capture_output=True)
+
             cur_diff_file = step_dir + "/" + test_name + ".diff"
             with open(cur_diff_file, mode="w") as df:
                 # Store diffs between the test_results_file and the original file

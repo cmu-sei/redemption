@@ -20,13 +20,17 @@
       "type": {
         "qualType": "__int128"
       },
-      "inner": [
+      "typeDetails": [
         {
           "id": 1002,
           "kind": "BuiltinType",
           "type": {
             "qualType": "__int128"
-          }
+          },
+          "qualDetails": [
+            "signed",
+            "integer"
+          ]
         }
       ]
     },
@@ -43,13 +47,17 @@
       "type": {
         "qualType": "unsigned __int128"
       },
-      "inner": [
+      "typeDetails": [
         {
           "id": 1004,
           "kind": "BuiltinType",
           "type": {
             "qualType": "unsigned __int128"
-          }
+          },
+          "qualDetails": [
+            "unsigned",
+            "integer"
+          ]
         }
       ]
     },
@@ -66,7 +74,7 @@
       "type": {
         "qualType": "struct __NSConstantString_tag"
       },
-      "inner": [
+      "typeDetails": [
         {
           "id": 1006,
           "kind": "RecordType",
@@ -77,7 +85,10 @@
             "id": 1007,
             "kind": "RecordDecl",
             "name": "__NSConstantString_tag"
-          }
+          },
+          "qualDetails": [
+            "struct"
+          ]
         }
       ]
     },
@@ -94,20 +105,28 @@
       "type": {
         "qualType": "char *"
       },
-      "inner": [
+      "typeDetails": [
         {
           "id": 1009,
           "kind": "PointerType",
           "type": {
             "qualType": "char *"
           },
-          "inner": [
+          "qualDetails": [
+            "ptr"
+          ],
+          "typeDetails": [
             {
               "id": 1010,
               "kind": "BuiltinType",
               "type": {
                 "qualType": "char"
-              }
+              },
+              "qualDetails": [
+                "promotable",
+                "signed",
+                "integer"
+              ]
             }
           ]
         }
@@ -126,7 +145,7 @@
       "type": {
         "qualType": "struct __va_list_tag[1]"
       },
-      "inner": [
+      "typeDetails": [
         {
           "id": 1012,
           "kind": "ConstantArrayType",
@@ -134,7 +153,8 @@
             "qualType": "struct __va_list_tag[1]"
           },
           "size": 1,
-          "inner": [
+          "qualDetails": [],
+          "typeDetails": [
             {
               "id": 1013,
               "kind": "RecordType",
@@ -145,7 +165,10 @@
                 "id": 1014,
                 "kind": "RecordDecl",
                 "name": "__va_list_tag"
-              }
+              },
+              "qualDetails": [
+                "struct"
+              ]
             }
           ]
         }
@@ -156,7 +179,7 @@
       "kind": "FunctionDecl",
       "loc": {
         "offset": 4,
-        "file": "preproc_parser_1.c",
+        "file": "",
         "line": 1,
         "col": 5,
         "tokLen": 6
@@ -174,7 +197,7 @@
           "tokLen": 6,
           "line": 1
         },
-        "file": "/host/code/acr/test/preproc_parser_1.c"
+        "file": ""
       },
       "isImplicit": true,
       "isUsed": true,
@@ -185,9 +208,23 @@
       },
       "storageClass": "extern",
       "variadic": true,
+      "returnTypeDetail": {
+        "qualType": {
+          "id": 1016,
+          "kind": "QualType",
+          "type": {
+            "qualType": "int"
+          },
+          "qualifiers": "",
+          "qualDetails": [
+            "signed",
+            "integer"
+          ]
+        }
+      },
       "inner": [
         {
-          "id": 1016,
+          "id": 1017,
           "kind": "ParmVarDecl",
           "loc": {},
           "range": {
@@ -196,10 +233,34 @@
           },
           "type": {
             "qualType": "const char *"
+          },
+          "qualType": {
+            "id": 1018,
+            "kind": "QualType",
+            "type": {
+              "qualType": "const char *"
+            },
+            "qualifiers": "",
+            "qualDetails": [
+              "ptr"
+            ],
+            "qualType": {
+              "id": 1024,
+              "kind": "QualType",
+              "type": {
+                "qualType": "const char"
+              },
+              "qualifiers": "const",
+              "qualDetails": [
+                "promotable",
+                "signed",
+                "integer"
+              ]
+            }
           }
         },
         {
-          "id": 1017,
+          "id": 1020,
           "kind": "BuiltinAttr",
           "range": {
             "begin": {},
@@ -208,7 +269,7 @@
           "implicit": true
         },
         {
-          "id": 1018,
+          "id": 1021,
           "kind": "FormatAttr",
           "range": {
             "begin": {
@@ -223,14 +284,14 @@
               "tokLen": 6,
               "line": 1
             },
-            "file": "/host/code/acr/test/preproc_parser_1.c"
+            "file": ""
           },
           "implicit": true
         }
       ]
     },
     {
-      "id": 1019,
+      "id": 1022,
       "kind": "FunctionDecl",
       "loc": {
         "offset": 4,
@@ -251,7 +312,7 @@
           "tokLen": 1,
           "line": 1
         },
-        "file": "/host/code/acr/test/preproc_parser_1.c"
+        "file": ""
       },
       "isUsed": true,
       "previousDecl": 1015,
@@ -261,9 +322,24 @@
         "qualType": "int (const char *, ...)"
       },
       "variadic": true,
+      "returnTypeDetail": {
+        "qualType": {
+          "id": "",
+          "kind": "QualType",
+          "type": {
+            "qualType": "int"
+          },
+          "qualifiers": "",
+          "qualDetails": [
+            "signed",
+            "integer"
+          ],
+          "prevId": 1016
+        }
+      },
       "inner": [
         {
-          "id": 1020,
+          "id": 1023,
           "kind": "ParmVarDecl",
           "loc": {
             "offset": 23,
@@ -284,15 +360,40 @@
               "tokLen": 6,
               "line": 1
             },
-            "file": "/host/code/acr/test/preproc_parser_1.c"
+            "file": ""
           },
           "name": "format",
           "type": {
             "qualType": "const char *"
+          },
+          "qualType": {
+            "id": "",
+            "kind": "QualType",
+            "type": {
+              "qualType": "const char *"
+            },
+            "qualifiers": "",
+            "qualDetails": [
+              "ptr"
+            ],
+            "qualType": {
+              "id": 1024,
+              "kind": "QualType",
+              "type": {
+                "qualType": "const char"
+              },
+              "qualifiers": "const",
+              "qualDetails": [
+                "promotable",
+                "signed",
+                "integer"
+              ]
+            },
+            "prevId": 1018
           }
         },
         {
-          "id": 1021,
+          "id": 1025,
           "kind": "BuiltinAttr",
           "range": {
             "begin": {},
@@ -302,7 +403,7 @@
           "implicit": true
         },
         {
-          "id": 1022,
+          "id": 1026,
           "kind": "FormatAttr",
           "range": {
             "begin": {
@@ -317,14 +418,14 @@
               "tokLen": 6,
               "line": 1
             },
-            "file": "/host/code/acr/test/preproc_parser_1.c"
+            "file": ""
           },
           "inherited": true
         }
       ]
     },
     {
-      "id": 1023,
+      "id": 1027,
       "kind": "FunctionDecl",
       "loc": {
         "offset": 42,
@@ -345,16 +446,31 @@
           "col": 1,
           "tokLen": 1
         },
-        "file": "/host/code/acr/test/preproc_parser_1.c"
+        "file": ""
       },
       "name": "main",
       "mangledName": "main",
       "type": {
         "qualType": "int ()"
       },
+      "returnTypeDetail": {
+        "qualType": {
+          "id": "",
+          "kind": "QualType",
+          "type": {
+            "qualType": "int"
+          },
+          "qualifiers": "",
+          "qualDetails": [
+            "signed",
+            "integer"
+          ],
+          "prevId": 1016
+        }
+      },
       "inner": [
         {
-          "id": 1024,
+          "id": 1028,
           "kind": "CompoundStmt",
           "range": {
             "begin": {
@@ -369,11 +485,11 @@
               "col": 1,
               "tokLen": 1
             },
-            "file": "/host/code/acr/test/preproc_parser_1.c"
+            "file": ""
           },
           "inner": [
             {
-              "id": 1025,
+              "id": 1029,
               "kind": "DeclStmt",
               "range": {
                 "begin": {
@@ -388,11 +504,11 @@
                   "tokLen": 1,
                   "line": 4
                 },
-                "file": "/host/code/acr/test/preproc_parser_1.c"
+                "file": ""
               },
               "inner": [
                 {
-                  "id": 1026,
+                  "id": 1030,
                   "kind": "VarDecl",
                   "loc": {
                     "offset": 59,
@@ -413,7 +529,7 @@
                       "tokLen": 1,
                       "line": 4
                     },
-                    "file": "/host/code/acr/test/preproc_parser_1.c"
+                    "file": ""
                   },
                   "isUsed": true,
                   "name": "x",
@@ -421,9 +537,22 @@
                     "qualType": "int"
                   },
                   "init": "c",
+                  "qualType": {
+                    "id": "",
+                    "kind": "QualType",
+                    "type": {
+                      "qualType": "int"
+                    },
+                    "qualifiers": "",
+                    "qualDetails": [
+                      "signed",
+                      "integer"
+                    ],
+                    "prevId": 1016
+                  },
                   "inner": [
                     {
-                      "id": 1027,
+                      "id": 1031,
                       "kind": "IntegerLiteral",
                       "range": {
                         "begin": {
@@ -438,7 +567,7 @@
                           "tokLen": 1,
                           "line": 4
                         },
-                        "file": "/host/code/acr/test/preproc_parser_1.c"
+                        "file": ""
                       },
                       "type": {
                         "qualType": "int"
@@ -449,7 +578,7 @@
                   ]
                 },
                 {
-                  "id": 1028,
+                  "id": 1032,
                   "kind": "VarDecl",
                   "loc": {
                     "offset": 64,
@@ -470,7 +599,7 @@
                       "tokLen": 1,
                       "line": 4
                     },
-                    "file": "/host/code/acr/test/preproc_parser_1.c"
+                    "file": ""
                   },
                   "isUsed": true,
                   "name": "y",
@@ -478,9 +607,22 @@
                     "qualType": "int"
                   },
                   "init": "c",
+                  "qualType": {
+                    "id": "",
+                    "kind": "QualType",
+                    "type": {
+                      "qualType": "int"
+                    },
+                    "qualifiers": "",
+                    "qualDetails": [
+                      "signed",
+                      "integer"
+                    ],
+                    "prevId": 1016
+                  },
                   "inner": [
                     {
-                      "id": 1029,
+                      "id": 1033,
                       "kind": "IntegerLiteral",
                       "range": {
                         "begin": {
@@ -495,7 +637,7 @@
                           "tokLen": 1,
                           "line": 4
                         },
-                        "file": "/host/code/acr/test/preproc_parser_1.c"
+                        "file": ""
                       },
                       "type": {
                         "qualType": "int"
@@ -506,7 +648,7 @@
                   ]
                 },
                 {
-                  "id": 1030,
+                  "id": 1034,
                   "kind": "VarDecl",
                   "loc": {
                     "offset": 69,
@@ -527,7 +669,7 @@
                       "tokLen": 1,
                       "line": 4
                     },
-                    "file": "/host/code/acr/test/preproc_parser_1.c"
+                    "file": ""
                   },
                   "isUsed": true,
                   "name": "z",
@@ -535,9 +677,22 @@
                     "qualType": "int"
                   },
                   "init": "c",
+                  "qualType": {
+                    "id": "",
+                    "kind": "QualType",
+                    "type": {
+                      "qualType": "int"
+                    },
+                    "qualifiers": "",
+                    "qualDetails": [
+                      "signed",
+                      "integer"
+                    ],
+                    "prevId": 1016
+                  },
                   "inner": [
                     {
-                      "id": 1031,
+                      "id": 1035,
                       "kind": "IntegerLiteral",
                       "range": {
                         "begin": {
@@ -552,7 +707,7 @@
                           "tokLen": 1,
                           "line": 4
                         },
-                        "file": "/host/code/acr/test/preproc_parser_1.c"
+                        "file": ""
                       },
                       "type": {
                         "qualType": "int"
@@ -565,7 +720,7 @@
               ]
             },
             {
-              "id": 1032,
+              "id": 1036,
               "kind": "DeclStmt",
               "range": {
                 "begin": {
@@ -580,11 +735,11 @@
                   "tokLen": 1,
                   "line": 5
                 },
-                "file": "/host/code/acr/test/preproc_parser_1.c"
+                "file": ""
               },
               "inner": [
                 {
-                  "id": 1033,
+                  "id": 1037,
                   "kind": "VarDecl",
                   "loc": {
                     "offset": 82,
@@ -605,7 +760,7 @@
                       "tokLen": 1,
                       "line": 5
                     },
-                    "file": "/host/code/acr/test/preproc_parser_1.c"
+                    "file": ""
                   },
                   "isUsed": true,
                   "name": "a",
@@ -613,9 +768,22 @@
                     "qualType": "int"
                   },
                   "init": "c",
+                  "qualType": {
+                    "id": "",
+                    "kind": "QualType",
+                    "type": {
+                      "qualType": "int"
+                    },
+                    "qualifiers": "",
+                    "qualDetails": [
+                      "signed",
+                      "integer"
+                    ],
+                    "prevId": 1016
+                  },
                   "inner": [
                     {
-                      "id": 1034,
+                      "id": 1038,
                       "kind": "IntegerLiteral",
                       "range": {
                         "begin": {
@@ -630,7 +798,7 @@
                           "tokLen": 1,
                           "line": 5
                         },
-                        "file": "/host/code/acr/test/preproc_parser_1.c"
+                        "file": ""
                       },
                       "type": {
                         "qualType": "int"
@@ -641,7 +809,7 @@
                   ]
                 },
                 {
-                  "id": 1035,
+                  "id": 1039,
                   "kind": "VarDecl",
                   "loc": {
                     "offset": 87,
@@ -662,16 +830,29 @@
                       "tokLen": 1,
                       "line": 5
                     },
-                    "file": "/host/code/acr/test/preproc_parser_1.c"
+                    "file": ""
                   },
                   "name": "b",
                   "type": {
                     "qualType": "int"
                   },
                   "init": "c",
+                  "qualType": {
+                    "id": "",
+                    "kind": "QualType",
+                    "type": {
+                      "qualType": "int"
+                    },
+                    "qualifiers": "",
+                    "qualDetails": [
+                      "signed",
+                      "integer"
+                    ],
+                    "prevId": 1016
+                  },
                   "inner": [
                     {
-                      "id": 1036,
+                      "id": 1040,
                       "kind": "IntegerLiteral",
                       "range": {
                         "begin": {
@@ -686,7 +867,7 @@
                           "tokLen": 1,
                           "line": 5
                         },
-                        "file": "/host/code/acr/test/preproc_parser_1.c"
+                        "file": ""
                       },
                       "type": {
                         "qualType": "int"
@@ -697,7 +878,7 @@
                   ]
                 },
                 {
-                  "id": 1037,
+                  "id": 1041,
                   "kind": "VarDecl",
                   "loc": {
                     "offset": 92,
@@ -718,7 +899,7 @@
                       "tokLen": 1,
                       "line": 5
                     },
-                    "file": "/host/code/acr/test/preproc_parser_1.c"
+                    "file": ""
                   },
                   "isUsed": true,
                   "name": "c",
@@ -726,9 +907,22 @@
                     "qualType": "int"
                   },
                   "init": "c",
+                  "qualType": {
+                    "id": "",
+                    "kind": "QualType",
+                    "type": {
+                      "qualType": "int"
+                    },
+                    "qualifiers": "",
+                    "qualDetails": [
+                      "signed",
+                      "integer"
+                    ],
+                    "prevId": 1016
+                  },
                   "inner": [
                     {
-                      "id": 1038,
+                      "id": 1042,
                       "kind": "IntegerLiteral",
                       "range": {
                         "begin": {
@@ -743,7 +937,7 @@
                           "tokLen": 1,
                           "line": 5
                         },
-                        "file": "/host/code/acr/test/preproc_parser_1.c"
+                        "file": ""
                       },
                       "type": {
                         "qualType": "int"
@@ -756,7 +950,7 @@
               ]
             },
             {
-              "id": 1039,
+              "id": 1043,
               "kind": "ImplicitCastExpr",
               "range": {
                 "begin": {
@@ -771,7 +965,7 @@
                   "tokLen": 38,
                   "line": 7
                 },
-                "file": "/host/code/acr/test/preproc_parser_1.c"
+                "file": ""
               },
               "type": {
                 "qualType": "char *"
@@ -780,7 +974,7 @@
               "castKind": "ArrayToPointerDecay",
               "inner": [
                 {
-                  "id": 1040,
+                  "id": 1044,
                   "kind": "StringLiteral",
                   "range": {
                     "begin": {
@@ -795,7 +989,7 @@
                       "tokLen": 38,
                       "line": 7
                     },
-                    "file": "/host/code/acr/test/preproc_parser_1.c"
+                    "file": ""
                   },
                   "type": {
                     "qualType": "char[37]"
@@ -806,7 +1000,7 @@
               ]
             },
             {
-              "id": 1041,
+              "id": 1045,
               "kind": "ImplicitCastExpr",
               "range": {
                 "begin": {
@@ -821,7 +1015,7 @@
                   "tokLen": 19,
                   "line": 8
                 },
-                "file": "/host/code/acr/test/preproc_parser_1.c"
+                "file": ""
               },
               "type": {
                 "qualType": "char *"
@@ -830,7 +1024,7 @@
               "castKind": "ArrayToPointerDecay",
               "inner": [
                 {
-                  "id": 1042,
+                  "id": 1046,
                   "kind": "StringLiteral",
                   "range": {
                     "begin": {
@@ -845,7 +1039,7 @@
                       "tokLen": 19,
                       "line": 8
                     },
-                    "file": "/host/code/acr/test/preproc_parser_1.c"
+                    "file": ""
                   },
                   "type": {
                     "qualType": "char[18]"
@@ -856,7 +1050,7 @@
               ]
             },
             {
-              "id": 1043,
+              "id": 1047,
               "kind": "BinaryOperator",
               "range": {
                 "begin": {
@@ -871,7 +1065,7 @@
                   "col": 9,
                   "tokLen": 1
                 },
-                "file": "/host/code/acr/test/preproc_parser_1.c"
+                "file": ""
               },
               "type": {
                 "qualType": "int"
@@ -880,7 +1074,7 @@
               "opcode": "=",
               "inner": [
                 {
-                  "id": 1044,
+                  "id": 1048,
                   "kind": "DeclRefExpr",
                   "range": {
                     "begin": {
@@ -895,24 +1089,37 @@
                       "tokLen": 1,
                       "line": 14
                     },
-                    "file": "/host/code/acr/test/preproc_parser_1.c"
+                    "file": ""
                   },
                   "type": {
                     "qualType": "int"
                   },
                   "valueCategory": "lvalue",
                   "referencedDecl": {
-                    "id": "1026b",
+                    "id": "",
                     "kind": "VarDecl",
                     "name": "x",
                     "type": {
                       "qualType": "int"
                     },
-                    "prevId": 1026
+                    "prevId": 1030
+                  },
+                  "qualType": {
+                    "id": "",
+                    "kind": "QualType",
+                    "type": {
+                      "qualType": "int"
+                    },
+                    "qualifiers": "",
+                    "qualDetails": [
+                      "signed",
+                      "integer"
+                    ],
+                    "prevId": 1016
                   }
                 },
                 {
-                  "id": 1045,
+                  "id": 1049,
                   "kind": "BinaryOperator",
                   "range": {
                     "begin": {
@@ -927,7 +1134,7 @@
                       "col": 9,
                       "tokLen": 1
                     },
-                    "file": "/host/code/acr/test/preproc_parser_1.c"
+                    "file": ""
                   },
                   "type": {
                     "qualType": "int"
@@ -936,7 +1143,7 @@
                   "opcode": "+",
                   "inner": [
                     {
-                      "id": 1046,
+                      "id": 1050,
                       "kind": "ImplicitCastExpr",
                       "range": {
                         "begin": {
@@ -951,7 +1158,7 @@
                           "col": 5,
                           "tokLen": 1
                         },
-                        "file": "/host/code/acr/test/preproc_parser_1.c"
+                        "file": ""
                       },
                       "type": {
                         "qualType": "int"
@@ -960,7 +1167,7 @@
                       "castKind": "LValueToRValue",
                       "inner": [
                         {
-                          "id": 1047,
+                          "id": 1051,
                           "kind": "ParenExpr",
                           "range": {
                             "begin": {
@@ -975,7 +1182,7 @@
                               "col": 5,
                               "tokLen": 1
                             },
-                            "file": "/host/code/acr/test/preproc_parser_1.c"
+                            "file": ""
                           },
                           "type": {
                             "qualType": "int"
@@ -983,7 +1190,7 @@
                           "valueCategory": "lvalue",
                           "inner": [
                             {
-                              "id": 1048,
+                              "id": 1052,
                               "kind": "DeclRefExpr",
                               "range": {
                                 "begin": {
@@ -998,20 +1205,33 @@
                                   "tokLen": 1,
                                   "line": 16
                                 },
-                                "file": "/host/code/acr/test/preproc_parser_1.c"
+                                "file": ""
                               },
                               "type": {
                                 "qualType": "int"
                               },
                               "valueCategory": "lvalue",
                               "referencedDecl": {
-                                "id": "1033b",
+                                "id": "",
                                 "kind": "VarDecl",
                                 "name": "a",
                                 "type": {
                                   "qualType": "int"
                                 },
-                                "prevId": 1033
+                                "prevId": 1037
+                              },
+                              "qualType": {
+                                "id": "",
+                                "kind": "QualType",
+                                "type": {
+                                  "qualType": "int"
+                                },
+                                "qualifiers": "",
+                                "qualDetails": [
+                                  "signed",
+                                  "integer"
+                                ],
+                                "prevId": 1016
                               }
                             }
                           ]
@@ -1019,7 +1239,7 @@
                       ]
                     },
                     {
-                      "id": 1049,
+                      "id": 1053,
                       "kind": "ImplicitCastExpr",
                       "range": {
                         "begin": {
@@ -1034,7 +1254,7 @@
                           "tokLen": 1,
                           "line": 20
                         },
-                        "file": "/host/code/acr/test/preproc_parser_1.c"
+                        "file": ""
                       },
                       "type": {
                         "qualType": "int"
@@ -1043,7 +1263,7 @@
                       "castKind": "LValueToRValue",
                       "inner": [
                         {
-                          "id": 1050,
+                          "id": 1054,
                           "kind": "DeclRefExpr",
                           "range": {
                             "begin": {
@@ -1058,20 +1278,33 @@
                               "tokLen": 1,
                               "line": 20
                             },
-                            "file": "/host/code/acr/test/preproc_parser_1.c"
+                            "file": ""
                           },
                           "type": {
                             "qualType": "int"
                           },
                           "valueCategory": "lvalue",
                           "referencedDecl": {
-                            "id": "1037b",
+                            "id": "",
                             "kind": "VarDecl",
                             "name": "c",
                             "type": {
                               "qualType": "int"
                             },
-                            "prevId": 1037
+                            "prevId": 1041
+                          },
+                          "qualType": {
+                            "id": "",
+                            "kind": "QualType",
+                            "type": {
+                              "qualType": "int"
+                            },
+                            "qualifiers": "",
+                            "qualDetails": [
+                              "signed",
+                              "integer"
+                            ],
+                            "prevId": 1016
                           }
                         }
                       ]
@@ -1081,7 +1314,7 @@
               ]
             },
             {
-              "id": 1051,
+              "id": 1055,
               "kind": "CallExpr",
               "range": {
                 "begin": {
@@ -1096,7 +1329,7 @@
                   "tokLen": 1,
                   "line": 22
                 },
-                "file": "/host/code/acr/test/preproc_parser_1.c"
+                "file": ""
               },
               "type": {
                 "qualType": "int"
@@ -1104,7 +1337,7 @@
               "valueCategory": "prvalue",
               "inner": [
                 {
-                  "id": 1052,
+                  "id": 1056,
                   "kind": "ImplicitCastExpr",
                   "range": {
                     "begin": {
@@ -1119,7 +1352,7 @@
                       "tokLen": 6,
                       "line": 22
                     },
-                    "file": "/host/code/acr/test/preproc_parser_1.c"
+                    "file": ""
                   },
                   "type": {
                     "qualType": "int (*)(const char *, ...)"
@@ -1128,7 +1361,7 @@
                   "castKind": "FunctionToPointerDecay",
                   "inner": [
                     {
-                      "id": 1053,
+                      "id": 1057,
                       "kind": "DeclRefExpr",
                       "range": {
                         "begin": {
@@ -1143,26 +1376,35 @@
                           "tokLen": 6,
                           "line": 22
                         },
-                        "file": "/host/code/acr/test/preproc_parser_1.c"
+                        "file": ""
                       },
                       "type": {
                         "qualType": "int (const char *, ...)"
                       },
                       "valueCategory": "prvalue",
                       "referencedDecl": {
-                        "id": "1019b",
+                        "id": "",
                         "kind": "FunctionDecl",
                         "name": "printf",
                         "type": {
                           "qualType": "int (const char *, ...)"
                         },
-                        "prevId": 1019
+                        "prevId": 1022
+                      },
+                      "qualType": {
+                        "id": 1058,
+                        "kind": "QualType",
+                        "type": {
+                          "qualType": "int (const char *, ...)"
+                        },
+                        "qualifiers": "",
+                        "qualDetails": []
                       }
                     }
                   ]
                 },
                 {
-                  "id": 1054,
+                  "id": 1059,
                   "kind": "ImplicitCastExpr",
                   "range": {
                     "begin": {
@@ -1177,7 +1419,7 @@
                       "tokLen": 10,
                       "line": 22
                     },
-                    "file": "/host/code/acr/test/preproc_parser_1.c"
+                    "file": ""
                   },
                   "type": {
                     "qualType": "const char *"
@@ -1186,7 +1428,7 @@
                   "castKind": "NoOp",
                   "inner": [
                     {
-                      "id": 1055,
+                      "id": 1060,
                       "kind": "ImplicitCastExpr",
                       "range": {
                         "begin": {
@@ -1201,7 +1443,7 @@
                           "tokLen": 10,
                           "line": 22
                         },
-                        "file": "/host/code/acr/test/preproc_parser_1.c"
+                        "file": ""
                       },
                       "type": {
                         "qualType": "char *"
@@ -1210,7 +1452,7 @@
                       "castKind": "ArrayToPointerDecay",
                       "inner": [
                         {
-                          "id": 1056,
+                          "id": 1061,
                           "kind": "StringLiteral",
                           "range": {
                             "begin": {
@@ -1225,7 +1467,7 @@
                               "tokLen": 10,
                               "line": 22
                             },
-                            "file": "/host/code/acr/test/preproc_parser_1.c"
+                            "file": ""
                           },
                           "type": {
                             "qualType": "char[8]"
@@ -1238,7 +1480,7 @@
                   ]
                 },
                 {
-                  "id": 1057,
+                  "id": 1062,
                   "kind": "ImplicitCastExpr",
                   "range": {
                     "begin": {
@@ -1253,7 +1495,7 @@
                       "tokLen": 1,
                       "line": 22
                     },
-                    "file": "/host/code/acr/test/preproc_parser_1.c"
+                    "file": ""
                   },
                   "type": {
                     "qualType": "int"
@@ -1262,7 +1504,7 @@
                   "castKind": "LValueToRValue",
                   "inner": [
                     {
-                      "id": 1058,
+                      "id": 1063,
                       "kind": "DeclRefExpr",
                       "range": {
                         "begin": {
@@ -1277,20 +1519,33 @@
                           "tokLen": 1,
                           "line": 22
                         },
-                        "file": "/host/code/acr/test/preproc_parser_1.c"
+                        "file": ""
                       },
                       "type": {
                         "qualType": "int"
                       },
                       "valueCategory": "lvalue",
                       "referencedDecl": {
-                        "id": "1026b",
+                        "id": "",
                         "kind": "VarDecl",
                         "name": "x",
                         "type": {
                           "qualType": "int"
                         },
-                        "prevId": 1026
+                        "prevId": 1030
+                      },
+                      "qualType": {
+                        "id": "",
+                        "kind": "QualType",
+                        "type": {
+                          "qualType": "int"
+                        },
+                        "qualifiers": "",
+                        "qualDetails": [
+                          "signed",
+                          "integer"
+                        ],
+                        "prevId": 1016
                       }
                     }
                   ]
@@ -1298,7 +1553,7 @@
               ]
             },
             {
-              "id": 1059,
+              "id": 1064,
               "kind": "DeclStmt",
               "range": {
                 "begin": {
@@ -1313,11 +1568,11 @@
                   "tokLen": 1,
                   "line": 26
                 },
-                "file": "/host/code/acr/test/preproc_parser_1.c"
+                "file": ""
               },
               "inner": [
                 {
-                  "id": 1060,
+                  "id": 1065,
                   "kind": "VarDecl",
                   "loc": {
                     "offset": 427,
@@ -1338,7 +1593,7 @@
                       "tokLen": 1,
                       "line": 26
                     },
-                    "file": "/host/code/acr/test/preproc_parser_1.c"
+                    "file": ""
                   },
                   "isUsed": true,
                   "name": "e",
@@ -1346,9 +1601,33 @@
                     "qualType": "int *"
                   },
                   "init": "c",
+                  "qualType": {
+                    "id": 1066,
+                    "kind": "QualType",
+                    "type": {
+                      "qualType": "int *"
+                    },
+                    "qualifiers": "",
+                    "qualDetails": [
+                      "ptr"
+                    ],
+                    "qualType": {
+                      "id": 1080,
+                      "kind": "QualType",
+                      "type": {
+                        "qualType": "int"
+                      },
+                      "qualifiers": "",
+                      "qualDetails": [
+                        "signed",
+                        "integer"
+                      ],
+                      "prevId": 1016
+                    }
+                  },
                   "inner": [
                     {
-                      "id": 1061,
+                      "id": 1067,
                       "kind": "UnaryOperator",
                       "range": {
                         "begin": {
@@ -1363,7 +1642,7 @@
                           "tokLen": 1,
                           "line": 26
                         },
-                        "file": "/host/code/acr/test/preproc_parser_1.c"
+                        "file": ""
                       },
                       "type": {
                         "qualType": "int *"
@@ -1374,7 +1653,7 @@
                       "canOverflow": false,
                       "inner": [
                         {
-                          "id": 1062,
+                          "id": 1068,
                           "kind": "DeclRefExpr",
                           "range": {
                             "begin": {
@@ -1389,26 +1668,39 @@
                               "tokLen": 1,
                               "line": 26
                             },
-                            "file": "/host/code/acr/test/preproc_parser_1.c"
+                            "file": ""
                           },
                           "type": {
                             "qualType": "int"
                           },
                           "valueCategory": "lvalue",
                           "referencedDecl": {
-                            "id": "1037b",
+                            "id": "",
                             "kind": "VarDecl",
                             "name": "c",
                             "type": {
                               "qualType": "int"
                             },
-                            "prevId": 1037
+                            "prevId": 1041
+                          },
+                          "qualType": {
+                            "id": "",
+                            "kind": "QualType",
+                            "type": {
+                              "qualType": "int"
+                            },
+                            "qualifiers": "",
+                            "qualDetails": [
+                              "signed",
+                              "integer"
+                            ],
+                            "prevId": 1016
                           }
                         }
                       ]
                     },
                     {
-                      "id": 1063,
+                      "id": 1069,
                       "kind": "FullComment",
                       "loc": {
                         "offset": 363,
@@ -1429,11 +1721,11 @@
                           "tokLen": 1,
                           "line": 24
                         },
-                        "file": "/host/code/acr/test/preproc_parser_1.c"
+                        "file": ""
                       },
                       "inner": [
                         {
-                          "id": 1064,
+                          "id": 1070,
                           "kind": "ParagraphComment",
                           "loc": {
                             "offset": 363,
@@ -1454,11 +1746,11 @@
                               "tokLen": 1,
                               "line": 24
                             },
-                            "file": "/host/code/acr/test/preproc_parser_1.c"
+                            "file": ""
                           },
                           "inner": [
                             {
-                              "id": 1065,
+                              "id": 1071,
                               "kind": "TextComment",
                               "loc": {
                                 "offset": 363,
@@ -1479,7 +1771,7 @@
                                   "tokLen": 1,
                                   "line": 24
                                 },
-                                "file": "/host/code/acr/test/preproc_parser_1.c"
+                                "file": ""
                               },
                               "text": "/////////////////////////////////////////////////////"
                             }
@@ -1492,7 +1784,7 @@
               ]
             },
             {
-              "id": 1066,
+              "id": 1072,
               "kind": "BinaryOperator",
               "range": {
                 "begin": {
@@ -1507,7 +1799,7 @@
                   "col": 9,
                   "tokLen": 1
                 },
-                "file": "/host/code/acr/test/preproc_parser_1.c"
+                "file": ""
               },
               "type": {
                 "qualType": "int"
@@ -1516,7 +1808,7 @@
               "opcode": "=",
               "inner": [
                 {
-                  "id": 1067,
+                  "id": 1073,
                   "kind": "DeclRefExpr",
                   "range": {
                     "begin": {
@@ -1531,24 +1823,37 @@
                       "tokLen": 1,
                       "line": 28
                     },
-                    "file": "/host/code/acr/test/preproc_parser_1.c"
+                    "file": ""
                   },
                   "type": {
                     "qualType": "int"
                   },
                   "valueCategory": "lvalue",
                   "referencedDecl": {
-                    "id": "1028b",
+                    "id": "",
                     "kind": "VarDecl",
                     "name": "y",
                     "type": {
                       "qualType": "int"
                     },
-                    "prevId": 1028
+                    "prevId": 1032
+                  },
+                  "qualType": {
+                    "id": "",
+                    "kind": "QualType",
+                    "type": {
+                      "qualType": "int"
+                    },
+                    "qualifiers": "",
+                    "qualDetails": [
+                      "signed",
+                      "integer"
+                    ],
+                    "prevId": 1016
                   }
                 },
                 {
-                  "id": 1068,
+                  "id": 1074,
                   "kind": "BinaryOperator",
                   "range": {
                     "begin": {
@@ -1563,7 +1868,7 @@
                       "col": 9,
                       "tokLen": 1
                     },
-                    "file": "/host/code/acr/test/preproc_parser_1.c"
+                    "file": ""
                   },
                   "type": {
                     "qualType": "int"
@@ -1572,7 +1877,7 @@
                   "opcode": "+",
                   "inner": [
                     {
-                      "id": 1069,
+                      "id": 1075,
                       "kind": "ImplicitCastExpr",
                       "range": {
                         "begin": {
@@ -1587,7 +1892,7 @@
                           "col": 5,
                           "tokLen": 1
                         },
-                        "file": "/host/code/acr/test/preproc_parser_1.c"
+                        "file": ""
                       },
                       "type": {
                         "qualType": "int"
@@ -1596,7 +1901,7 @@
                       "castKind": "LValueToRValue",
                       "inner": [
                         {
-                          "id": 1070,
+                          "id": 1076,
                           "kind": "ParenExpr",
                           "range": {
                             "begin": {
@@ -1611,7 +1916,7 @@
                               "col": 5,
                               "tokLen": 1
                             },
-                            "file": "/host/code/acr/test/preproc_parser_1.c"
+                            "file": ""
                           },
                           "type": {
                             "qualType": "int"
@@ -1619,7 +1924,7 @@
                           "valueCategory": "lvalue",
                           "inner": [
                             {
-                              "id": 1071,
+                              "id": 1077,
                               "kind": "UnaryOperator",
                               "range": {
                                 "begin": {
@@ -1634,7 +1939,7 @@
                                   "tokLen": 1,
                                   "line": 36
                                 },
-                                "file": "/host/code/acr/test/preproc_parser_1.c"
+                                "file": ""
                               },
                               "type": {
                                 "qualType": "int"
@@ -1645,7 +1950,7 @@
                               "canOverflow": false,
                               "inner": [
                                 {
-                                  "id": 1072,
+                                  "id": 1078,
                                   "kind": "ImplicitCastExpr",
                                   "range": {
                                     "begin": {
@@ -1660,7 +1965,7 @@
                                       "tokLen": 1,
                                       "line": 36
                                     },
-                                    "file": "/host/code/acr/test/preproc_parser_1.c"
+                                    "file": ""
                                   },
                                   "type": {
                                     "qualType": "int *"
@@ -1669,7 +1974,7 @@
                                   "castKind": "LValueToRValue",
                                   "inner": [
                                     {
-                                      "id": 1073,
+                                      "id": 1079,
                                       "kind": "DeclRefExpr",
                                       "range": {
                                         "begin": {
@@ -1684,20 +1989,45 @@
                                           "tokLen": 1,
                                           "line": 36
                                         },
-                                        "file": "/host/code/acr/test/preproc_parser_1.c"
+                                        "file": ""
                                       },
                                       "type": {
                                         "qualType": "int *"
                                       },
                                       "valueCategory": "lvalue",
                                       "referencedDecl": {
-                                        "id": "1060b",
+                                        "id": "",
                                         "kind": "VarDecl",
                                         "name": "e",
                                         "type": {
                                           "qualType": "int *"
                                         },
-                                        "prevId": 1060
+                                        "prevId": 1065
+                                      },
+                                      "qualType": {
+                                        "id": "",
+                                        "kind": "QualType",
+                                        "type": {
+                                          "qualType": "int *"
+                                        },
+                                        "qualifiers": "",
+                                        "qualDetails": [
+                                          "ptr"
+                                        ],
+                                        "qualType": {
+                                          "id": 1080,
+                                          "kind": "QualType",
+                                          "type": {
+                                            "qualType": "int"
+                                          },
+                                          "qualifiers": "",
+                                          "qualDetails": [
+                                            "signed",
+                                            "integer"
+                                          ],
+                                          "prevId": 1016
+                                        },
+                                        "prevId": 1066
                                       }
                                     }
                                   ]
@@ -1709,7 +2039,7 @@
                       ]
                     },
                     {
-                      "id": 1074,
+                      "id": 1081,
                       "kind": "ImplicitCastExpr",
                       "range": {
                         "begin": {
@@ -1724,7 +2054,7 @@
                           "tokLen": 1,
                           "line": 38
                         },
-                        "file": "/host/code/acr/test/preproc_parser_1.c"
+                        "file": ""
                       },
                       "type": {
                         "qualType": "int"
@@ -1733,7 +2063,7 @@
                       "castKind": "LValueToRValue",
                       "inner": [
                         {
-                          "id": 1075,
+                          "id": 1082,
                           "kind": "DeclRefExpr",
                           "range": {
                             "begin": {
@@ -1748,20 +2078,33 @@
                               "tokLen": 1,
                               "line": 38
                             },
-                            "file": "/host/code/acr/test/preproc_parser_1.c"
+                            "file": ""
                           },
                           "type": {
                             "qualType": "int"
                           },
                           "valueCategory": "lvalue",
                           "referencedDecl": {
-                            "id": "1037b",
+                            "id": "",
                             "kind": "VarDecl",
                             "name": "c",
                             "type": {
                               "qualType": "int"
                             },
-                            "prevId": 1037
+                            "prevId": 1041
+                          },
+                          "qualType": {
+                            "id": "",
+                            "kind": "QualType",
+                            "type": {
+                              "qualType": "int"
+                            },
+                            "qualifiers": "",
+                            "qualDetails": [
+                              "signed",
+                              "integer"
+                            ],
+                            "prevId": 1016
                           }
                         }
                       ]
@@ -1771,7 +2114,7 @@
               ]
             },
             {
-              "id": 1076,
+              "id": 1083,
               "kind": "CallExpr",
               "range": {
                 "begin": {
@@ -1786,7 +2129,7 @@
                   "tokLen": 1,
                   "line": 40
                 },
-                "file": "/host/code/acr/test/preproc_parser_1.c"
+                "file": ""
               },
               "type": {
                 "qualType": "int"
@@ -1794,7 +2137,7 @@
               "valueCategory": "prvalue",
               "inner": [
                 {
-                  "id": 1077,
+                  "id": 1084,
                   "kind": "ImplicitCastExpr",
                   "range": {
                     "begin": {
@@ -1809,7 +2152,7 @@
                       "tokLen": 6,
                       "line": 40
                     },
-                    "file": "/host/code/acr/test/preproc_parser_1.c"
+                    "file": ""
                   },
                   "type": {
                     "qualType": "int (*)(const char *, ...)"
@@ -1818,7 +2161,7 @@
                   "castKind": "FunctionToPointerDecay",
                   "inner": [
                     {
-                      "id": 1078,
+                      "id": 1085,
                       "kind": "DeclRefExpr",
                       "range": {
                         "begin": {
@@ -1833,26 +2176,36 @@
                           "tokLen": 6,
                           "line": 40
                         },
-                        "file": "/host/code/acr/test/preproc_parser_1.c"
+                        "file": ""
                       },
                       "type": {
                         "qualType": "int (const char *, ...)"
                       },
                       "valueCategory": "prvalue",
                       "referencedDecl": {
-                        "id": "1019b",
+                        "id": "",
                         "kind": "FunctionDecl",
                         "name": "printf",
                         "type": {
                           "qualType": "int (const char *, ...)"
                         },
-                        "prevId": 1019
+                        "prevId": 1022
+                      },
+                      "qualType": {
+                        "id": "",
+                        "kind": "QualType",
+                        "type": {
+                          "qualType": "int (const char *, ...)"
+                        },
+                        "qualifiers": "",
+                        "qualDetails": [],
+                        "prevId": 1058
                       }
                     }
                   ]
                 },
                 {
-                  "id": 1079,
+                  "id": 1086,
                   "kind": "ImplicitCastExpr",
                   "range": {
                     "begin": {
@@ -1867,7 +2220,7 @@
                       "tokLen": 18,
                       "line": 40
                     },
-                    "file": "/host/code/acr/test/preproc_parser_1.c"
+                    "file": ""
                   },
                   "type": {
                     "qualType": "const char *"
@@ -1876,7 +2229,7 @@
                   "castKind": "NoOp",
                   "inner": [
                     {
-                      "id": 1080,
+                      "id": 1087,
                       "kind": "ImplicitCastExpr",
                       "range": {
                         "begin": {
@@ -1891,7 +2244,7 @@
                           "tokLen": 18,
                           "line": 40
                         },
-                        "file": "/host/code/acr/test/preproc_parser_1.c"
+                        "file": ""
                       },
                       "type": {
                         "qualType": "char *"
@@ -1900,7 +2253,7 @@
                       "castKind": "ArrayToPointerDecay",
                       "inner": [
                         {
-                          "id": 1081,
+                          "id": 1088,
                           "kind": "StringLiteral",
                           "range": {
                             "begin": {
@@ -1915,7 +2268,7 @@
                               "tokLen": 18,
                               "line": 40
                             },
-                            "file": "/host/code/acr/test/preproc_parser_1.c"
+                            "file": ""
                           },
                           "type": {
                             "qualType": "char[16]"
@@ -1928,7 +2281,7 @@
                   ]
                 },
                 {
-                  "id": 1082,
+                  "id": 1089,
                   "kind": "ImplicitCastExpr",
                   "range": {
                     "begin": {
@@ -1943,7 +2296,7 @@
                       "tokLen": 1,
                       "line": 40
                     },
-                    "file": "/host/code/acr/test/preproc_parser_1.c"
+                    "file": ""
                   },
                   "type": {
                     "qualType": "int"
@@ -1952,7 +2305,7 @@
                   "castKind": "LValueToRValue",
                   "inner": [
                     {
-                      "id": 1083,
+                      "id": 1090,
                       "kind": "DeclRefExpr",
                       "range": {
                         "begin": {
@@ -1967,26 +2320,39 @@
                           "tokLen": 1,
                           "line": 40
                         },
-                        "file": "/host/code/acr/test/preproc_parser_1.c"
+                        "file": ""
                       },
                       "type": {
                         "qualType": "int"
                       },
                       "valueCategory": "lvalue",
                       "referencedDecl": {
-                        "id": "1028b",
+                        "id": "",
                         "kind": "VarDecl",
                         "name": "y",
                         "type": {
                           "qualType": "int"
                         },
-                        "prevId": 1028
+                        "prevId": 1032
+                      },
+                      "qualType": {
+                        "id": "",
+                        "kind": "QualType",
+                        "type": {
+                          "qualType": "int"
+                        },
+                        "qualifiers": "",
+                        "qualDetails": [
+                          "signed",
+                          "integer"
+                        ],
+                        "prevId": 1016
                       }
                     }
                   ]
                 },
                 {
-                  "id": 1084,
+                  "id": 1091,
                   "kind": "ImplicitCastExpr",
                   "range": {
                     "begin": {
@@ -2001,7 +2367,7 @@
                       "tokLen": 1,
                       "line": 40
                     },
-                    "file": "/host/code/acr/test/preproc_parser_1.c"
+                    "file": ""
                   },
                   "type": {
                     "qualType": "int"
@@ -2010,7 +2376,7 @@
                   "castKind": "LValueToRValue",
                   "inner": [
                     {
-                      "id": 1085,
+                      "id": 1092,
                       "kind": "DeclRefExpr",
                       "range": {
                         "begin": {
@@ -2025,20 +2391,33 @@
                           "tokLen": 1,
                           "line": 40
                         },
-                        "file": "/host/code/acr/test/preproc_parser_1.c"
+                        "file": ""
                       },
                       "type": {
                         "qualType": "int"
                       },
                       "valueCategory": "lvalue",
                       "referencedDecl": {
-                        "id": "1030b",
+                        "id": "",
                         "kind": "VarDecl",
                         "name": "z",
                         "type": {
                           "qualType": "int"
                         },
-                        "prevId": 1030
+                        "prevId": 1034
+                      },
+                      "qualType": {
+                        "id": "",
+                        "kind": "QualType",
+                        "type": {
+                          "qualType": "int"
+                        },
+                        "qualifiers": "",
+                        "qualDetails": [
+                          "signed",
+                          "integer"
+                        ],
+                        "prevId": 1016
                       }
                     }
                   ]
@@ -2046,7 +2425,7 @@
               ]
             },
             {
-              "id": 1086,
+              "id": 1093,
               "kind": "ReturnStmt",
               "range": {
                 "begin": {
@@ -2061,11 +2440,11 @@
                   "tokLen": 1,
                   "line": 44
                 },
-                "file": "/host/code/acr/test/preproc_parser_1.c"
+                "file": ""
               },
               "inner": [
                 {
-                  "id": 1087,
+                  "id": 1094,
                   "kind": "IntegerLiteral",
                   "range": {
                     "begin": {
@@ -2080,7 +2459,7 @@
                       "tokLen": 1,
                       "line": 44
                     },
-                    "file": "/host/code/acr/test/preproc_parser_1.c"
+                    "file": ""
                   },
                   "type": {
                     "qualType": "int"
@@ -2095,11 +2474,11 @@
       ]
     }
   ],
-  "base_dir": "/host/code/acr/test",
-  "compile_dir": "/host/code/acr/test",
-  "file": "/host/code/acr/test/preproc_parser_1.c",
+  "compile_dir": "",
+  "compile_dir": "",
+  "file": "",
   "preproc_db": {
-    "/host/code/acr/test/preproc_parser_1.c": [
+    "test/preproc_parser_1.c": [
       289,
       309,
       450,
@@ -2108,7 +2487,7 @@
     ]
   },
   "comments_db": {
-    "/host/code/acr/test/preproc_parser_1.c": [
+    "test/preproc_parser_1.c": [
       [171, 184],
       [189, 202],
       [207, 264],
@@ -2117,7 +2496,7 @@
     ]
   },
   "newlines_db": {
-    "/host/code/acr/test/preproc_parser_1.c": [
+    "test/preproc_parser_1.c": [
       36,
       37,
       50,

@@ -28,11 +28,35 @@
 # DM23-2165
 # </legal>
 
-# example: ./json_generator.sh . c
+# docker example : ./json_generator.sh . c
+# nhr dev example: 
+#   ./json_generator.sh . c /c/Precision/projects/llvm-project/build/MinSizeRel/bin
+
 # Directory containing source files
 SOURCE_DIR=$1
 # File extension to match
 EXTENSION=$2
+
+# use the default modified clang in docker version
+# unless the user specifies a different one
+CLANG=/opt/clang/build/bin
+CLANG_OPT=$3
+
+POSTFIX=""
+POSTFIX_OPT=$4
+
+if [ -n "$CLANG_OPT" ]; then
+  echo "clang: $CLANG_OPT"
+else
+  echo "default clang: $CLANG"
+  CLANG_OPT=$CLANG
+fi
+
+if [ -n "$POSTFIX_OPT" ]; then
+  echo "postfix: $POSTFIX_OPT"
+else
+  echo "postfix: n/a"  
+fi
 
 # Iterate over each file with the specified extension
 for file in "$SOURCE_DIR"/*."$EXTENSION"; do
@@ -40,9 +64,8 @@ for file in "$SOURCE_DIR"/*."$EXTENSION"; do
   if [ -f "$file" ]; then
     # Extract file name without extension
     filename=$(basename "$file" .$EXTENSION)
-    # Run clang command
-    # use the modified version
-    /opt/clang/build/bin/clang -fsyntax-only -Xclang -ast-dump=json "$file" > "$SOURCE_DIR"/"$filename".json
+    # Run clang command using the specified clang version
+    $CLANG_OPT/clang -fsyntax-only -Xclang -ast-dump=json "$file" > "$SOURCE_DIR"/"$filename""$POSTFIX_OPT".json
 
     # use the unmodified version
     # clang -fsyntax-only -Xclang -ast-dump=json "$file" > "$SOURCE_DIR"/"$filename"-orig.json

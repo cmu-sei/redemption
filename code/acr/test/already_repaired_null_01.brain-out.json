@@ -4,7 +4,7 @@
     "file": "/host/code/acr/test/already_repaired_null_01.c",
     "line": 8,
     "alert_id": 1,
-    "ast_id": 2780,
+    "ast_id": 3612,
     "why_skipped": [
       "In a macro expansion at end of expression",
       "Dominated by the following nullness checks (identified by (line, col) pairs): [[8, 13]]"

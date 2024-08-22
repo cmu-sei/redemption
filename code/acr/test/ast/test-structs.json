@@ -1,5 +1,5 @@
 {
-  "id": "0x55846fe47ed8",
+  "id": "0x5615601f6ed8",
   "kind": "TranslationUnitDecl",
   "loc": {},
   "range": {
@@ -8,7 +8,7 @@
   },
   "inner": [
     {
-      "id": "0x55846fe48700",
+      "id": "0x5615601f7700",
       "kind": "TypedefDecl",
       "loc": {},
       "range": {
@@ -22,16 +22,20 @@
       },
       "typeDetails": [
         {
-          "id": "0x55846fe484a0",
+          "id": "0x5615601f74a0",
           "kind": "BuiltinType",
           "type": {
             "qualType": "__int128"
-          }
+          },
+          "qualDetails": [
+            "signed",
+            "integer"
+          ]
         }
       ]
     },
     {
-      "id": "0x55846fe48770",
+      "id": "0x5615601f7770",
       "kind": "TypedefDecl",
       "loc": {},
       "range": {
@@ -45,16 +49,20 @@
       },
       "typeDetails": [
         {
-          "id": "0x55846fe484c0",
+          "id": "0x5615601f74c0",
           "kind": "BuiltinType",
           "type": {
             "qualType": "unsigned __int128"
-          }
+          },
+          "qualDetails": [
+            "unsigned",
+            "integer"
+          ]
         }
       ]
     },
     {
-      "id": "0x55846fe48a78",
+      "id": "0x5615601f7a78",
       "kind": "TypedefDecl",
       "loc": {},
       "range": {
@@ -68,21 +76,24 @@
       },
       "typeDetails": [
         {
-          "id": "0x55846fe48850",
+          "id": "0x5615601f7850",
           "kind": "RecordType",
           "type": {
             "qualType": "struct __NSConstantString_tag"
           },
           "decl": {
-            "id": "0x55846fe487c8",
+            "id": "0x5615601f77c8",
             "kind": "RecordDecl",
             "name": "__NSConstantString_tag"
-          }
+          },
+          "qualDetails": [
+            "struct"
+          ]
         }
       ]
     },
     {
-      "id": "0x55846fe48b10",
+      "id": "0x5615601f7b10",
       "kind": "TypedefDecl",
       "loc": {},
       "range": {
@@ -96,25 +107,33 @@
       },
       "typeDetails": [
         {
-          "id": "0x55846fe48ad0",
+          "id": "0x5615601f7ad0",
           "kind": "PointerType",
           "type": {
             "qualType": "char *"
           },
+          "qualDetails": [
+            "ptr"
+          ],
           "typeDetails": [
             {
-              "id": "0x55846fe47f80",
+              "id": "0x5615601f6f80",
               "kind": "BuiltinType",
               "type": {
                 "qualType": "char"
-              }
+              },
+              "qualDetails": [
+                "promotable",
+                "signed",
+                "integer"
+              ]
             }
           ]
         }
       ]
     },
     {
-      "id": "0x55846fe48e08",
+      "id": "0x5615601f7e08",
       "kind": "TypedefDecl",
       "loc": {},
       "range": {
@@ -128,31 +147,35 @@
       },
       "typeDetails": [
         {
-          "id": "0x55846fe48db0",
+          "id": "0x5615601f7db0",
           "kind": "ConstantArrayType",
           "type": {
             "qualType": "struct __va_list_tag[1]"
           },
           "size": 1,
+          "qualDetails": [],
           "typeDetails": [
             {
-              "id": "0x55846fe48bf0",
+              "id": "0x5615601f7bf0",
               "kind": "RecordType",
               "type": {
                 "qualType": "struct __va_list_tag"
               },
               "decl": {
-                "id": "0x55846fe48b68",
+                "id": "0x5615601f7b68",
                 "kind": "RecordDecl",
                 "name": "__va_list_tag"
-              }
+              },
+              "qualDetails": [
+                "struct"
+              ]
             }
           ]
         }
       ]
     },
     {
-      "id": "0x55846fea45b0",
+      "id": "0x5615602535b0",
       "kind": "RecordDecl",
       "loc": {
         "offset": 7,
@@ -179,7 +202,7 @@
       "completeDefinition": true,
       "inner": [
         {
-          "id": "0x55846fea4668",
+          "id": "0x561560253668",
           "kind": "FieldDecl",
           "loc": {
             "offset": 33,
@@ -202,10 +225,22 @@
           "name": "tsia",
           "type": {
             "qualType": "int"
+          },
+          "qualType": {
+            "id": "0x5615601f6fe0",
+            "kind": "QualType",
+            "type": {
+              "qualType": "int"
+            },
+            "qualifiers": "",
+            "qualDetails": [
+              "signed",
+              "integer"
+            ]
           }
         },
         {
-          "id": "0x55846fea4700",
+          "id": "0x561560253700",
           "kind": "FieldDecl",
           "loc": {
             "offset": 48,
@@ -228,10 +263,28 @@
           "name": "tsib",
           "type": {
             "qualType": "int *"
+          },
+          "qualType": {
+            "id": "0x5615602536c0",
+            "kind": "QualType",
+            "type": {
+              "qualType": "int *"
+            },
+            "qualifiers": "",
+            "qualDetails": [
+              "ptr"
+            ],
+            "qualType": {
+              "refId": "0x5615601f6fe0",
+              "qualDetails": [
+                "signed",
+                "integer"
+              ]
+            }
           }
         },
         {
-          "id": "0x55846fea4768",
+          "id": "0x561560253768",
           "kind": "FieldDecl",
           "loc": {
             "offset": 64,
@@ -254,12 +307,26 @@
           "name": "tsic",
           "type": {
             "qualType": "char *"
+          },
+          "qualType": {
+            "refId": "0x5615601f7ad0",
+            "qualDetails": [
+              "ptr"
+            ],
+            "qualType": {
+              "refId": "0x5615601f6f80",
+              "qualDetails": [
+                "promotable",
+                "signed",
+                "integer"
+              ]
+            }
           }
         }
       ]
     },
     {
-      "id": "0x55846fea47b8",
+      "id": "0x5615602537b8",
       "kind": "RecordDecl",
       "loc": {
         "offset": 84,
@@ -285,7 +352,7 @@
       "completeDefinition": true,
       "inner": [
         {
-          "id": "0x55846fea4910",
+          "id": "0x561560253910",
           "kind": "FieldDecl",
           "loc": {
             "offset": 131,
@@ -309,10 +376,33 @@
           "name": "tsoa",
           "type": {
             "qualType": "struct TestStructInner *"
+          },
+          "qualType": {
+            "id": "0x5615602538c0",
+            "kind": "QualType",
+            "type": {
+              "qualType": "struct TestStructInner *"
+            },
+            "qualifiers": "",
+            "qualDetails": [
+              "ptr"
+            ],
+            "qualType": {
+              "id": "0x561560253860",
+              "kind": "QualType",
+              "type": {
+                "desugaredQualType": "struct TestStructInner",
+                "qualType": "struct TestStructInner"
+              },
+              "qualifiers": "",
+              "qualDetails": [
+                "struct"
+              ]
+            }
           }
         },
         {
-          "id": "0x55846fea4978",
+          "id": "0x561560253978",
           "kind": "FieldDecl",
           "loc": {
             "offset": 146,
@@ -335,10 +425,23 @@
           "name": "tsob",
           "type": {
             "qualType": "int *"
+          },
+          "qualType": {
+            "refId": "0x5615602536c0",
+            "qualDetails": [
+              "ptr"
+            ],
+            "qualType": {
+              "refId": "0x5615601f6fe0",
+              "qualDetails": [
+                "signed",
+                "integer"
+              ]
+            }
           }
         },
         {
-          "id": "0x55846fea49e0",
+          "id": "0x5615602539e0",
           "kind": "FieldDecl",
           "loc": {
             "offset": 162,
@@ -361,10 +464,24 @@
           "name": "tsoc",
           "type": {
             "qualType": "char *"
+          },
+          "qualType": {
+            "refId": "0x5615601f7ad0",
+            "qualDetails": [
+              "ptr"
+            ],
+            "qualType": {
+              "refId": "0x5615601f6f80",
+              "qualDetails": [
+                "promotable",
+                "signed",
+                "integer"
+              ]
+            }
           }
         },
         {
-          "id": "0x55846fea4a58",
+          "id": "0x561560253a58",
           "kind": "FieldDecl",
           "loc": {
             "offset": 196,
@@ -388,12 +505,24 @@
           "name": "tsod",
           "type": {
             "qualType": "struct TestStructInner *"
+          },
+          "qualType": {
+            "refId": "0x5615602538c0",
+            "qualDetails": [
+              "ptr"
+            ],
+            "qualType": {
+              "refId": "0x561560253860",
+              "qualDetails": [
+                "struct"
+              ]
+            }
           }
         }
       ]
     },
     {
-      "id": "0x55846fea4c70",
+      "id": "0x561560253c70",
       "kind": "FunctionDecl",
       "loc": {
         "offset": 234,
@@ -420,25 +549,22 @@
         "qualType": "struct TestStructInner *(struct TestStructOuter *)"
       },
       "returnTypeDetail": {
-        "id": "0x55846fea48c0",
-        "kind": "QualType",
-        "type": {
-          "qualType": "struct TestStructInner *"
-        },
-        "qualifiers": "",
-        "pointeeTypeDetail": {
-          "id": "0x55846fea4860",
-          "kind": "QualType",
-          "type": {
-            "desugaredQualType": "struct TestStructInner",
-            "qualType": "struct TestStructInner"
-          },
-          "qualifiers": ""
+        "qualType": {
+          "refId": "0x5615602538c0",
+          "qualDetails": [
+            "ptr"
+          ],
+          "qualType": {
+            "refId": "0x561560253860",
+            "qualDetails": [
+              "struct"
+            ]
+          }
         }
       },
       "inner": [
         {
-          "id": "0x55846fea4b60",
+          "id": "0x561560253b60",
           "kind": "ParmVarDecl",
           "loc": {
             "offset": 266,
@@ -463,18 +589,32 @@
           "type": {
             "qualType": "struct TestStructOuter *"
           },
-          "pointeeTypeDetail": {
-            "id": "0x55846fea4ab0",
+          "qualType": {
+            "id": "0x561560253b10",
             "kind": "QualType",
             "type": {
-              "desugaredQualType": "struct TestStructOuter",
-              "qualType": "struct TestStructOuter"
+              "qualType": "struct TestStructOuter *"
             },
-            "qualifiers": ""
+            "qualifiers": "",
+            "qualDetails": [
+              "ptr"
+            ],
+            "qualType": {
+              "id": "0x561560253ab0",
+              "kind": "QualType",
+              "type": {
+                "desugaredQualType": "struct TestStructOuter",
+                "qualType": "struct TestStructOuter"
+              },
+              "qualifiers": "",
+              "qualDetails": [
+                "struct"
+              ]
+            }
           }
         },
         {
-          "id": "0x55846fea4f20",
+          "id": "0x561560253f20",
           "kind": "CompoundStmt",
           "range": {
             "begin": {
@@ -492,7 +632,7 @@
           },
           "inner": [
             {
-              "id": "0x55846fea4e70",
+              "id": "0x561560253e70",
               "kind": "IfStmt",
               "range": {
                 "begin": {
@@ -509,7 +649,7 @@
               },
               "inner": [
                 {
-                  "id": "0x55846fea4dc8",
+                  "id": "0x561560253dc8",
                   "kind": "ImplicitCastExpr",
                   "range": {
                     "begin": {
@@ -530,7 +670,7 @@
                   "castKind": "LValueToRValue",
                   "inner": [
                     {
-                      "id": "0x55846fea4d98",
+                      "id": "0x561560253d98",
                       "kind": "MemberExpr",
                       "range": {
                         "begin": {
@@ -550,10 +690,10 @@
                       "valueCategory": "lvalue",
                       "name": "tsoa",
                       "isArrow": true,
-                      "referencedMemberDecl": "0x55846fea4910",
+                      "referencedMemberDecl": "0x561560253910",
                       "inner": [
                         {
-                          "id": "0x55846fea4d80",
+                          "id": "0x561560253d80",
                           "kind": "ImplicitCastExpr",
                           "range": {
                             "begin": {
@@ -574,7 +714,7 @@
                           "castKind": "LValueToRValue",
                           "inner": [
                             {
-                              "id": "0x55846fea4d60",
+                              "id": "0x561560253d60",
                               "kind": "DeclRefExpr",
                               "range": {
                                 "begin": {
@@ -593,11 +733,23 @@
                               },
                               "valueCategory": "lvalue",
                               "referencedDecl": {
-                                "id": "0x55846fea4b60",
+                                "id": "0x561560253b60",
                                 "kind": "ParmVarDecl",
                                 "name": "tso",
                                 "type": {
                                   "qualType": "struct TestStructOuter *"
+                                }
+                              },
+                              "qualType": {
+                                "refId": "0x561560253b10",
+                                "qualDetails": [
+                                  "ptr"
+                                ],
+                                "qualType": {
+                                  "refId": "0x561560253ab0",
+                                  "qualDetails": [
+                                    "struct"
+                                  ]
                                 }
                               }
                             }
@@ -608,7 +760,7 @@
                   ]
                 },
                 {
-                  "id": "0x55846fea4e60",
+                  "id": "0x561560253e60",
                   "kind": "ReturnStmt",
                   "range": {
                     "begin": {
@@ -624,7 +776,7 @@
                   },
                   "inner": [
                     {
-                      "id": "0x55846fea4e48",
+                      "id": "0x561560253e48",
                       "kind": "ImplicitCastExpr",
                       "range": {
                         "begin": {
@@ -645,7 +797,7 @@
                       "castKind": "LValueToRValue",
                       "inner": [
                         {
-                          "id": "0x55846fea4e18",
+                          "id": "0x561560253e18",
                           "kind": "MemberExpr",
                           "range": {
                             "begin": {
@@ -665,10 +817,10 @@
                           "valueCategory": "lvalue",
                           "name": "tsoa",
                           "isArrow": true,
-                          "referencedMemberDecl": "0x55846fea4910",
+                          "referencedMemberDecl": "0x561560253910",
                           "inner": [
                             {
-                              "id": "0x55846fea4e00",
+                              "id": "0x561560253e00",
                               "kind": "ImplicitCastExpr",
                               "range": {
                                 "begin": {
@@ -689,7 +841,7 @@
                               "castKind": "LValueToRValue",
                               "inner": [
                                 {
-                                  "id": "0x55846fea4de0",
+                                  "id": "0x561560253de0",
                                   "kind": "DeclRefExpr",
                                   "range": {
                                     "begin": {
@@ -708,11 +860,23 @@
                                   },
                                   "valueCategory": "lvalue",
                                   "referencedDecl": {
-                                    "id": "0x55846fea4b60",
+                                    "id": "0x561560253b60",
                                     "kind": "ParmVarDecl",
                                     "name": "tso",
                                     "type": {
                                       "qualType": "struct TestStructOuter *"
+                                    }
+                                  },
+                                  "qualType": {
+                                    "refId": "0x561560253b10",
+                                    "qualDetails": [
+                                      "ptr"
+                                    ],
+                                    "qualType": {
+                                      "refId": "0x561560253ab0",
+                                      "qualDetails": [
+                                        "struct"
+                                      ]
                                     }
                                   }
                                 }
@@ -727,7 +891,7 @@
               ]
             },
             {
-              "id": "0x55846fea4f10",
+              "id": "0x561560253f10",
               "kind": "ReturnStmt",
               "range": {
                 "begin": {
@@ -744,7 +908,7 @@
               },
               "inner": [
                 {
-                  "id": "0x55846fea4ef8",
+                  "id": "0x561560253ef8",
                   "kind": "ImplicitCastExpr",
                   "range": {
                     "begin": {
@@ -765,7 +929,7 @@
                   "castKind": "LValueToRValue",
                   "inner": [
                     {
-                      "id": "0x55846fea4ec8",
+                      "id": "0x561560253ec8",
                       "kind": "MemberExpr",
                       "range": {
                         "begin": {
@@ -785,10 +949,10 @@
                       "valueCategory": "lvalue",
                       "name": "tsod",
                       "isArrow": true,
-                      "referencedMemberDecl": "0x55846fea4a58",
+                      "referencedMemberDecl": "0x561560253a58",
                       "inner": [
                         {
-                          "id": "0x55846fea4eb0",
+                          "id": "0x561560253eb0",
                           "kind": "ImplicitCastExpr",
                           "range": {
                             "begin": {
@@ -809,7 +973,7 @@
                           "castKind": "LValueToRValue",
                           "inner": [
                             {
-                              "id": "0x55846fea4e90",
+                              "id": "0x561560253e90",
                               "kind": "DeclRefExpr",
                               "range": {
                                 "begin": {
@@ -828,11 +992,23 @@
                               },
                               "valueCategory": "lvalue",
                               "referencedDecl": {
-                                "id": "0x55846fea4b60",
+                                "id": "0x561560253b60",
                                 "kind": "ParmVarDecl",
                                 "name": "tso",
                                 "type": {
                                   "qualType": "struct TestStructOuter *"
+                                }
+                              },
+                              "qualType": {
+                                "refId": "0x561560253b10",
+                                "qualDetails": [
+                                  "ptr"
+                                ],
+                                "qualType": {
+                                  "refId": "0x561560253ab0",
+                                  "qualDetails": [
+                                    "struct"
+                                  ]
                                 }
                               }
                             }

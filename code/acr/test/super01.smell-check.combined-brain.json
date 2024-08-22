@@ -1,7 +1,7 @@
 [
   {
     "rule": "EXP34-C",
-    "file": "$BASE/super01a.c",
+    "file": "/host/code/acr/test/super01a.c",
     "line": 9,
     "alert_id": 1,
     "patch": [],
@@ -9,7 +9,7 @@
     "conflicting_repairs": [
       [
         [
-          "$BASE/super01a.c",
+          "/host/code/acr/test/super01a.c",
           [
             [
               146,
@@ -26,7 +26,7 @@
       ],
       [
         [
-          "$BASE/super01a.c",
+          "/host/code/acr/test/super01a.c",
           [
             [
               146,
@@ -45,7 +45,7 @@
   },
   {
     "rule": "EXP34-C",
-    "file": "$BASE/super01b.c",
+    "file": "/host/code/acr/test/super01b.c",
     "line": 4,
     "alert_id": 2,
     "ast_id": 1028,
@@ -54,7 +54,7 @@
     ],
     "patch": [
       [
-        "$BASE/super01b.c",
+        "/host/code/acr/test/super01b.c",
         [
           [
             52,
@@ -72,7 +72,7 @@
   },
   {
     "rule": "EXP34-C",
-    "file": "$BASE/super01.h",
+    "file": "/host/code/acr/test/super01.h",
     "line": 2,
     "alert_id": 3,
     "ast_id": 1020,
@@ -81,7 +81,7 @@
     ],
     "patch": [
       [
-        "$BASE/super01.h",
+        "/host/code/acr/test/super01.h",
         [
           [
             44,

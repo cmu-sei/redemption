@@ -1,5 +1,5 @@
 {
-  "id": "0x5556524f0fc8",
+  "id": "0x56497d265fc8",
   "kind": "TranslationUnitDecl",
   "loc": {},
   "range": {
@@ -8,7 +8,7 @@
   },
   "inner": [
     {
-      "id": "0x5556524f17f0",
+      "id": "0x56497d2667f0",
       "kind": "TypedefDecl",
       "loc": {},
       "range": {
@@ -22,16 +22,20 @@
       },
       "typeDetails": [
         {
-          "id": "0x5556524f1590",
+          "id": "0x56497d266590",
           "kind": "BuiltinType",
           "type": {
             "qualType": "__int128"
-          }
+          },
+          "qualDetails": [
+            "signed",
+            "integer"
+          ]
         }
       ]
     },
     {
-      "id": "0x5556524f1860",
+      "id": "0x56497d266860",
       "kind": "TypedefDecl",
       "loc": {},
       "range": {
@@ -45,16 +49,20 @@
       },
       "typeDetails": [
         {
-          "id": "0x5556524f15b0",
+          "id": "0x56497d2665b0",
           "kind": "BuiltinType",
           "type": {
             "qualType": "unsigned __int128"
-          }
+          },
+          "qualDetails": [
+            "unsigned",
+            "integer"
+          ]
         }
       ]
     },
     {
-      "id": "0x5556524f1b68",
+      "id": "0x56497d266b68",
       "kind": "TypedefDecl",
       "loc": {},
       "range": {
@@ -68,21 +76,24 @@
       },
       "typeDetails": [
         {
-          "id": "0x5556524f1940",
+          "id": "0x56497d266940",
           "kind": "RecordType",
           "type": {
             "qualType": "struct __NSConstantString_tag"
           },
           "decl": {
-            "id": "0x5556524f18b8",
+            "id": "0x56497d2668b8",
             "kind": "RecordDecl",
             "name": "__NSConstantString_tag"
-          }
+          },
+          "qualDetails": [
+            "struct"
+          ]
         }
       ]
     },
     {
-      "id": "0x5556524f1c00",
+      "id": "0x56497d266c00",
       "kind": "TypedefDecl",
       "loc": {},
       "range": {
@@ -96,25 +107,33 @@
       },
       "typeDetails": [
         {
-          "id": "0x5556524f1bc0",
+          "id": "0x56497d266bc0",
           "kind": "PointerType",
           "type": {
             "qualType": "char *"
           },
+          "qualDetails": [
+            "ptr"
+          ],
           "typeDetails": [
             {
-              "id": "0x5556524f1070",
+              "id": "0x56497d266070",
               "kind": "BuiltinType",
               "type": {
                 "qualType": "char"
-              }
+              },
+              "qualDetails": [
+                "promotable",
+                "signed",
+                "integer"
+              ]
             }
           ]
         }
       ]
     },
     {
-      "id": "0x5556524f1ef8",
+      "id": "0x56497d266ef8",
       "kind": "TypedefDecl",
       "loc": {},
       "range": {
@@ -128,48 +147,52 @@
       },
       "typeDetails": [
         {
-          "id": "0x5556524f1ea0",
+          "id": "0x56497d266ea0",
           "kind": "ConstantArrayType",
           "type": {
             "qualType": "struct __va_list_tag[1]"
           },
           "size": 1,
+          "qualDetails": [],
           "typeDetails": [
             {
-              "id": "0x5556524f1ce0",
+              "id": "0x56497d266ce0",
               "kind": "RecordType",
               "type": {
                 "qualType": "struct __va_list_tag"
               },
               "decl": {
-                "id": "0x5556524f1c58",
+                "id": "0x56497d266c58",
                 "kind": "RecordDecl",
                 "name": "__va_list_tag"
-              }
+              },
+              "qualDetails": [
+                "struct"
+              ]
             }
           ]
         }
       ]
     },
     {
-      "id": "0x55565254d6d8",
+      "id": "0x56497d2c27a8",
       "kind": "VarDecl",
       "loc": {
-        "offset": 11,
+        "offset": 149,
         "file": "./test-function-pointers.c",
-        "line": 1,
-        "col": 12,
+        "line": 5,
+        "col": 11,
         "tokLen": 8
       },
       "range": {
         "begin": {
-          "offset": 0,
+          "offset": 139,
           "col": 1,
           "tokLen": 4
         },
         "end": {
-          "offset": 36,
-          "col": 37,
+          "offset": 171,
+          "col": 33,
           "tokLen": 1
         }
       },
@@ -178,97 +201,46 @@
       "type": {
         "qualType": "char **(*)(const int **)"
       },
-      "pointeeTypeDetail": {
-        "id": "0x55565254d610",
+      "qualType": {
+        "id": "0x56497d2c2740",
         "kind": "QualType",
         "type": {
-          "desugaredQualType": "char **(const int **)",
-          "qualType": "char **(const int **)"
+          "qualType": "char **(*)(const int **)"
         },
-        "qualifiers": ""
-      },
-      "typeDetails": [
-        {
-          "id": "0x55565254d5e0",
-          "kind": "FunctionProtoType",
+        "qualifiers": "",
+        "qualDetails": [
+          "ptr",
+          "func_ptr"
+        ],
+        "qualType": {
+          "id": "0x56497d2c26e0",
+          "kind": "QualType",
           "type": {
+            "desugaredQualType": "char **(const int **)",
             "qualType": "char **(const int **)"
           },
-          "cc": "cdecl",
-          "functionDetails": [
-            {
-              "cc": "cdecl",
-              "returnTypeDetail": {
-                "id": "0x55565254d5b0",
-                "kind": "QualType",
-                "type": {
-                  "qualType": "char **"
-                },
-                "qualifiers": "",
-                "pointeeTypeDetail": {
-                  "refId": "0x5556524f1bc0",
-                  "pointeeTypeDetail": {
-                    "refId": "0x5556524f1070"
-                  }
-                }
-              }
-            },
-            {
-              "id": "0x5556524f1f50",
-              "kind": "PointerType",
-              "type": {
-                "qualType": "const int **"
-              },
-              "typeDetails": [
-                {
-                  "id": "0x5556524f19c0",
-                  "kind": "PointerType",
-                  "type": {
-                    "qualType": "const int *"
-                  },
-                  "qualTypeDetail": [
-                    {
-                      "id": "0x5556524f10d1",
-                      "kind": "QualType",
-                      "type": {
-                        "qualType": "const int"
-                      },
-                      "qualifiers": "const",
-                      "typeDetails": [
-                        {
-                          "id": "0x5556524f10d0",
-                          "kind": "BuiltinType",
-                          "type": {
-                            "qualType": "int"
-                          }
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
+          "qualifiers": "",
+          "qualDetails": []
         }
-      ]
+      }
     },
     {
-      "id": "0x55565254da98",
+      "id": "0x56497d2c2b68",
       "kind": "VarDecl",
       "loc": {
-        "offset": 46,
-        "line": 2,
+        "offset": 209,
+        "line": 7,
         "col": 8,
         "tokLen": 3
       },
       "range": {
         "begin": {
-          "offset": 39,
+          "offset": 202,
           "col": 1,
           "tokLen": 4
         },
         "end": {
-          "offset": 65,
+          "offset": 228,
           "col": 27,
           "tokLen": 1
         }
@@ -278,97 +250,46 @@
       "type": {
         "qualType": "long (*)(int (*)(short))"
       },
-      "pointeeTypeDetail": {
-        "id": "0x55565254d9d0",
+      "qualType": {
+        "id": "0x56497d2c2b00",
         "kind": "QualType",
         "type": {
-          "desugaredQualType": "long (int (*)(short))",
-          "qualType": "long (int (*)(short))"
+          "qualType": "long (*)(int (*)(short))"
         },
-        "qualifiers": ""
-      },
-      "typeDetails": [
-        {
-          "id": "0x55565254d9a0",
-          "kind": "FunctionProtoType",
+        "qualifiers": "",
+        "qualDetails": [
+          "ptr",
+          "func_ptr"
+        ],
+        "qualType": {
+          "id": "0x56497d2c2aa0",
+          "kind": "QualType",
           "type": {
+            "desugaredQualType": "long (int (*)(short))",
             "qualType": "long (int (*)(short))"
           },
-          "cc": "cdecl",
-          "functionDetails": [
-            {
-              "cc": "cdecl",
-              "returnTypeDetail": {
-                "id": "0x5556524f10f0",
-                "kind": "QualType",
-                "type": {
-                  "qualType": "long"
-                },
-                "qualifiers": ""
-              }
-            },
-            {
-              "id": "0x55565254d8a0",
-              "kind": "PointerType",
-              "type": {
-                "qualType": "int (*)(short)"
-              },
-              "typeDetails": [
-                {
-                  "id": "0x55565254d840",
-                  "kind": "ParenType",
-                  "type": {
-                    "qualType": "int (short)"
-                  },
-                  "typeDetails": [
-                    {
-                      "id": "0x55565254d810",
-                      "kind": "FunctionProtoType",
-                      "type": {
-                        "qualType": "int (short)"
-                      },
-                      "cc": "cdecl",
-                      "functionDetails": [
-                        {
-                          "cc": "cdecl",
-                          "returnTypeDetail": {
-                            "refId": "0x5556524f10d0"
-                          }
-                        },
-                        {
-                          "id": "0x5556524f10b0",
-                          "kind": "BuiltinType",
-                          "type": {
-                            "qualType": "short"
-                          }
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
+          "qualifiers": "",
+          "qualDetails": []
         }
-      ]
+      }
     },
     {
-      "id": "0x55565254dbc0",
+      "id": "0x56497d2c2c90",
       "kind": "VarDecl",
       "loc": {
-        "offset": 74,
-        "line": 3,
+        "offset": 237,
+        "line": 8,
         "col": 7,
         "tokLen": 3
       },
       "range": {
         "begin": {
-          "offset": 68,
+          "offset": 231,
           "col": 1,
           "tokLen": 3
         },
         "end": {
-          "offset": 84,
+          "offset": 247,
           "col": 17,
           "tokLen": 1
         }
@@ -378,50 +299,46 @@
       "type": {
         "qualType": "int (*)(short)"
       },
-      "pointeeTypeDetail": {
-        "refId": "0x55565254d840"
-      },
-      "typeDetails": [
-        {
-          "cc": "cdecl",
-          "typeDetails": [
-            {
-              "refId": "0x55565254d810"
-            },
-            {
-              "cc": "cdecl",
-              "returnTypeDetail": {
-                "refId": "0x5556524f10d0"
-              }
-            },
-            {
-              "typeDetails": [
-                {
-                  "refId": "0x5556524f10b0"
-                }
-              ]
-            }
-          ]
+      "qualType": {
+        "id": "0x56497d2c2970",
+        "kind": "QualType",
+        "type": {
+          "qualType": "int (*)(short)"
+        },
+        "qualifiers": "",
+        "qualDetails": [
+          "ptr",
+          "func_ptr"
+        ],
+        "qualType": {
+          "id": "0x56497d2c2910",
+          "kind": "QualType",
+          "type": {
+            "desugaredQualType": "int (short)",
+            "qualType": "int (short)"
+          },
+          "qualifiers": "",
+          "qualDetails": []
         }
-      ]
+      }
     },
     {
-      "id": "0x55565254dce8",
+      "id": "0x56497d2c2db8",
       "kind": "VarDecl",
       "loc": {
-        "offset": 93,
-        "line": 4,
+        "offset": 256,
+        "line": 9,
         "col": 7,
         "tokLen": 4
       },
       "range": {
         "begin": {
-          "offset": 87,
+          "offset": 250,
           "col": 1,
           "tokLen": 3
         },
         "end": {
-          "offset": 104,
+          "offset": 267,
           "col": 18,
           "tokLen": 1
         }
@@ -431,26 +348,135 @@
       "type": {
         "qualType": "int (*)(short)"
       },
-      "pointeeTypeDetail": {
-        "refId": "0x55565254d840"
+      "qualType": {
+        "refId": "0x56497d2c2970",
+        "qualDetails": [
+          "ptr",
+          "func_ptr"
+        ],
+        "qualType": {
+          "refId": "0x56497d2c2910",
+          "qualDetails": []
+        }
+      }
+    },
+    {
+      "id": "0x56497d2c3030",
+      "kind": "TypedefDecl",
+      "loc": {
+        "offset": 284,
+        "line": 10,
+        "col": 15,
+        "tokLen": 6
+      },
+      "range": {
+        "begin": {
+          "offset": 270,
+          "col": 1,
+          "tokLen": 7
+        },
+        "end": {
+          "offset": 314,
+          "col": 45,
+          "tokLen": 1
+        }
+      },
+      "name": "tdtest",
+      "type": {
+        "qualType": "int (*)(int, char **)"
       },
       "typeDetails": [
         {
-          "cc": "cdecl",
+          "id": "0x56497d2c2fc0",
+          "kind": "PointerType",
+          "type": {
+            "qualType": "int (*)(int, char **)"
+          },
+          "qualDetails": [
+            "ptr",
+            "func_ptr"
+          ],
           "typeDetails": [
             {
-              "refId": "0x55565254d810"
-            },
-            {
-              "cc": "cdecl",
-              "returnTypeDetail": {
-                "refId": "0x5556524f10d0"
-              }
-            },
-            {
+              "id": "0x56497d2c2f60",
+              "kind": "ParenType",
+              "type": {
+                "qualType": "int (int, char **)"
+              },
+              "qualDetails": [],
               "typeDetails": [
                 {
-                  "refId": "0x5556524f10b0"
+                  "id": "0x56497d2c2f20",
+                  "kind": "FunctionProtoType",
+                  "type": {
+                    "qualType": "int (int, char **)"
+                  },
+                  "cc": "cdecl",
+                  "qualDetails": [],
+                  "functionDetails": [
+                    {
+                      "cc": "cdecl",
+                      "returnTypeDetail": {
+                        "qualType": {
+                          "id": "0x56497d2660d0",
+                          "kind": "QualType",
+                          "type": {
+                            "qualType": "int"
+                          },
+                          "qualifiers": "",
+                          "qualDetails": [
+                            "signed",
+                            "integer"
+                          ]
+                        }
+                      }
+                    },
+                    {
+                      "qualDetails": [
+                        "signed",
+                        "integer"
+                      ],
+                      "typeDetails": [
+                        {
+                          "refId": "0x56497d2660d0"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "0x56497d2c2680",
+                      "kind": "PointerType",
+                      "type": {
+                        "qualType": "char **"
+                      },
+                      "qualDetails": [
+                        "ptr"
+                      ],
+                      "typeDetails": [
+                        {
+                          "qualDetails": [
+                            "ptr"
+                          ],
+                          "typeDetails": [
+                            {
+                              "refId": "0x56497d266bc0"
+                            },
+                            {
+                              "qualDetails": [
+                                "promotable",
+                                "signed",
+                                "integer"
+                              ],
+                              "typeDetails": [
+                                {
+                                  "refId": "0x56497d266070"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
                 }
               ]
             }

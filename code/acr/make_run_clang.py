@@ -137,10 +137,10 @@ def get_clang_cmds(compile_cmd):
     args = compile_cmd['arguments']
     compiler = args[0]
     if compiler.endswith("clang++"):
-        args[0] = "clang++"
+        args[0] = "/opt/clang/build/bin/clang++"
         cplusplus = True
     else:
-        args[0] = "clang"
+        args[0] = "/opt/clang/build/bin/clang"
         cplusplus = False
     default_lang_std = os.getenv('acr_default_lang_std')
     if default_lang_std:

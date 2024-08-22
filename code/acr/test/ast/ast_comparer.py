@@ -28,7 +28,7 @@
 # DM23-2165
 # </legal>
 
-import subprocess, json, argparse
+import subprocess, json, argparse, re
 
 #####################################################################
 # This script provides the following: 
@@ -101,6 +101,24 @@ def clang_ast_dump_json(source_file, clang_location):
 #####################################################################
 
 """
+Check if the input string is a hexadecimal address.
+
+Args:
+s (str): The input string to check.
+
+Returns:
+bool: True if the input is a hexadecimal address, False otherwise.
+"""
+
+def is_hex_address(s):
+    return bool(is_hex_address.pattern.match(s))
+
+# Define the regular expression pattern for a hexadecimal address
+is_hex_address.pattern = re.compile(r'^0x[0-9a-fA-F]+$')
+
+#####################################################################
+
+"""
 Recursively compare JSON nodes and print any mismatches.
 
 Args:
@@ -127,9 +145,8 @@ def compare_json_nodes(node1, node2):
         # ids and file are flexible components of the AST tree.
         # the id can change between generations or between builds.
         # the file will change based on the location provided to clang
-        if (path != "id" and path[-3:] != ".id" and 
-            path != "refId" and path[-6:] != ".refId" and 
-            path != "referencedMemberDecl" and path[-21:] != ".referencedMemberDecl" and 
+        if (is_hex_address(node1) == False and 
+            is_hex_address(node2) == False and
             path != "file" and path[-5:] != ".file"):
           
           nonlocal mismatches

@@ -31,24 +31,80 @@ from collections import OrderedDict, defaultdict
 
 from util import *
 from make_run_clang import read_json_file
+from dataclasses import dataclass
 
-# FIXME: Ugly hack...we should be getting Clang to provide this info in the JSON
+import json
+
+@dataclass
+class FunctionStruct:
+    realType: str
+    isIntegralType: bool
+    isVoidType: bool
+    isPointerType: bool
+    isSigned: bool
+    isFloatingType: bool
+
+# moves through all the qualDetails to combine them into a
+# single array
+def combine_qual_details(node):
+    combined_details = []
+
+    def recursive_collect(details_node):
+        if 'qualDetails' in details_node:
+            combined_details.extend(details_node['qualDetails'])
+        for key, value in details_node.items():
+            if isinstance(value, dict):
+                recursive_collect(value)
+            elif isinstance(value, list):
+                for item in value:
+                    if isinstance(item, dict):
+                        recursive_collect(item)
+
+    recursive_collect(node)
+    return combined_details
+
+def get_deepest_qual_type(node):
+    def recursive_search(current_node, current_depth):
+        if 'qualType' in current_node and isinstance(current_node['qualType'], dict):
+            # There is a nested qualType, dive deeper
+            return recursive_search(current_node['qualType'], current_depth + 1)
+        elif 'type' in current_node and isinstance(current_node['type'], dict):
+            # There is a nested type, dive deeper
+            return recursive_search(current_node['type'], current_depth + 1)
+        else:
+            # No more nested qualType or type, return this node and depth
+            return current_node, current_depth
+
+    result_node, depth = recursive_search(node, 0)
+    return result_node
+
+# the return type may be nested
 def get_function_return_type(node):
-    t = node["type"]["qualType"]
-    return t[0:t.find("(")].strip()
 
-# FIXME: Ugly hack...we should be getting Clang to provide this info in the JSON
-def is_integral_type(t):
-    return t in ["int", "unsigned int"]
+    # a referencedDecl may not contain returnTypeDetail
+    # despite containing FunctionDecl
+    # "referencedDecl": {
+    # "id": "0x556a9629d560",
+    # "kind": "FunctionDecl",
+    # "name": "puts",
+    # "type": {
+    #     "qualType": "int (const char *)"
+    #   }
+    # }
+    if "returnTypeDetail" not in node:
+        return None
 
-# FIXME: Ugly hack...we should be getting Clang to provide this info in the JSON
-def is_void(t):
-    return t == "void"
+    qual_details = combine_qual_details(node["returnTypeDetail"])
+    return_type = FunctionStruct(
+        isIntegralType="integer" in qual_details,
+        isVoidType="void" in qual_details,
+        isPointerType="ptr" in qual_details,
+        isSigned="signed" in qual_details,
+        isFloatingType="fpp" in qual_details,
+        realType=get_deepest_qual_type(node["returnTypeDetail"])
+    )
 
-# FIXME: Ugly hack...we should be getting Clang to provide this info in the JSON
-def is_pointer_type(t):
-    return t.endswith("*")
-
+    return return_type
 
 # Identify integers and NULL
 def identify_expr(node):
@@ -71,12 +127,15 @@ class Brainstem(AstVisitor):
     def visit_CXXMethodDecl(self, node):
         self.handle_functions(node)
     def handle_functions(self, node):
-        if "inner" not in node:
-            return
-        d = dict();
+        d = dict()
         d["name"] = node["name"]
         return_type = get_function_return_type(node)
-        self._return_exps = list();
+
+        # verify node contains a return result
+        if return_type is None:
+            return
+
+        self._return_exps = list()
 
         self.visitdefault(node)
 
@@ -87,14 +146,13 @@ class Brainstem(AstVisitor):
                 return_others = self._return_exps
 
         error_handler = None
-        if is_pointer_type(return_type) and "0" in return_others:
+        if return_type.isPointerType and "0" in return_others:
             error_handler = "return NULL"
-        if is_integral_type(return_type) and "0" in return_others:
-            error_handler = "return 0"
-        if is_integral_type(return_type) and "-1" in return_others:
-            error_handler = "return -1"
-        if is_void(return_type) and None in return_others:
-            error_handler = "return"
+        elif return_type.isIntegralType:
+            if "-1" in return_others:
+                error_handler = "return -1"
+            elif "0" in return_others:
+                error_handler = "return 0"
         if error_handler is not None:
             d["error_handler"] = error_handler
 
@@ -118,7 +176,9 @@ def parse_args():
 def run(ast_file, output_filename):
     if os.getenv('acr_emit_invocation'):
         print(f"brainstem.py -o {output_filename} {ast_file}")
+
     ast = read_json_file(ast_file)
+
     brainstem = Brainstem()
     brainstem.visit(ast)
     with open(output_filename, 'w') as outfile:

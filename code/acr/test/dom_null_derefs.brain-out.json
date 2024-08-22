@@ -4,7 +4,7 @@
     "file": "/host/code/acr/test/dom_null_derefs.c",
     "line": 10,
     "alert_id": 1,
-    "ast_id": 2785,
+    "ast_id": 3585,
     "patch": [
       [
         "/host/code/acr/test/dom_null_derefs.c",
@@ -31,7 +31,7 @@
     "file": "/host/code/acr/test/dom_null_derefs.c",
     "line": 11,
     "alert_id": 2,
-    "ast_id": 2790,
+    "ast_id": 3590,
     "patch": [
       [
         "/host/code/acr/test/dom_null_derefs.c",
@@ -58,7 +58,7 @@
     "file": "/host/code/acr/test/dom_null_derefs.c",
     "line": 13,
     "alert_id": 3,
-    "ast_id": 2800,
+    "ast_id": 3601,
     "patch": [],
     "add-headers": [
       "acr.h"
@@ -74,7 +74,7 @@
     "file": "/host/code/acr/test/dom_null_derefs.c",
     "line": 16,
     "alert_id": 4,
-    "ast_id": 2810,
+    "ast_id": 3612,
     "patch": [],
     "add-headers": [
       "acr.h"
@@ -90,7 +90,7 @@
     "file": "/host/code/acr/test/dom_null_derefs.c",
     "line": 18,
     "alert_id": 5,
-    "ast_id": 2816,
+    "ast_id": 3618,
     "patch": [],
     "add-headers": [
       "acr.h"
@@ -105,7 +105,7 @@
     "file": "/host/code/acr/test/dom_null_derefs.c",
     "line": 19,
     "alert_id": 6,
-    "ast_id": 2822,
+    "ast_id": 3625,
     "patch": [],
     "add-headers": [
       "acr.h"

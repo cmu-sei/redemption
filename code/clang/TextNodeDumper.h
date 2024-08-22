@@ -198,9 +198,9 @@ public:
 
   // SEI: added support for getting ReturnType information
   void VisitReturnType(QualType T);
-  // SEI: added support for getting PointerType information
-  // although it's currently just a passthrough for this class
-  void VisitPointeeType(QualType T) {}
+
+  // SEI: added support for more QT details. it's a passthrough for this class
+  void VisitQualTypeDetails(QualType T) {}
 
   void Visit(const Decl *D);
 
