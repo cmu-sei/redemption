@@ -383,6 +383,10 @@ cd /host/code/acr
     --alerts test/macros_near_null_checks.alerts.json  --raw-ast-dir test/cache
 ```
 
+### Parallelization
+
+Redemption currently uses a single processor to do its work. However, the `sup.py` script supports parallelization.  Passing it `-j <NUM>` or `--threads <NUM>` will cause it to distribute its tasks among `<NUM>` processors. If `<NUM>` is 0, then it uses all of the processors available on the platform.
+
 ## Extending the Redemption Tool
 
 Documentation detail about useful environment variables and further testing is in [doc/regression_tests.md](doc/regression_tests.md). Also, a lot more detail about our system that may be of interest to others interested in extending it or just understanding it better is in the [doc](doc) directory.
