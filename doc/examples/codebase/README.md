@@ -99,9 +99,12 @@ Here is an example of how to run a built-in end-to-end automated code repair tes
 ```sh
 EXAMPLE=/host/doc/examples/codebase
 cd /host/code/acr
-python3 sup.py  -c ${EXAMPLE}/compile_commands.json  -a ${EXAMPLE}/alerts.json  -b ${EXAMPLE}/dos2unix-7.5.2  --repaired-src ${EXAMPLE}/out
+python3 sup.py  -c ${EXAMPLE}/compile_commands.json  -a ${EXAMPLE}/alerts.json  -b ${EXAMPLE}/dos2unix-7.5.2  --repaired-src ${EXAMPLE}/out --threads 0
 cd ${EXAMPLE}
-diff -r --label=ORIGINAL --label=REPAIRED -ru  dos2unix-7.5.2  out > repaired.diffs 
+/usr/bin/diff -r --label=ORIGINAL --label=REPAIRED -ru  dos2unix-7.5.2  out > repaired.diffs 
 ```
 
 The `repaired.diffs` file contains all the specific repairs made to the code.
+
+Normally Redemption uses a single processor to do its work. However, this command makes Redemption use all available processors to complete the work more quickly. This codebase is so small that the speedup is trivial, but it can be significant on larger codebases.  The `--threads 0` causes this speedup, but can be removed to force Redemption to do everything on just one processor.
+

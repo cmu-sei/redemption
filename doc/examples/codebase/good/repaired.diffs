@@ -7,18 +7,11 @@ Only in dos2unix-7.5.2: Makefile
 Only in dos2unix-7.5.2: NEWS.txt
 Only in dos2unix-7.5.2: README.txt
 Only in dos2unix-7.5.2: TODO.txt
-Only in out: acr.h
 Only in dos2unix-7.5.2: bcc.mak
 diff -r '--label=ORIGINAL' '--label=REPAIRED' -ru ORIGINAL REPAIRED
 --- ORIGINAL
 +++ REPAIRED
-@@ -1,3 +1,5 @@
-+#include "acr.h"
-+
- /*
-  *   Copyright (C) 2009-2024 Erwin Waterlander
-  *   All rights reserved.
-@@ -1034,7 +1036,7 @@
+@@ -1034,7 +1034,7 @@
    int RetVal = 0;
  #ifdef S_ISLNK
    struct stat StatBuf;
@@ -27,7 +20,7 @@ diff -r '--label=ORIGINAL' '--label=REPAIRED' -ru ORIGINAL REPAIRED
    char *targetFN = NULL;
  
    if (STAT(lFN, &StatBuf)) {
-@@ -1434,8 +1436,8 @@
+@@ -1434,8 +1434,8 @@
    int RetVal = 0;
    FILE *InF = NULL;
    FILE *TempF = NULL;
@@ -38,7 +31,7 @@ diff -r '--label=ORIGINAL' '--label=REPAIRED' -ru ORIGINAL REPAIRED
  #ifdef D2U_UNIFILE
     struct _stat StatBuf;
     wchar_t pathw[D2U_MAX_PATH];
-@@ -1444,7 +1446,7 @@
+@@ -1444,7 +1444,7 @@
  #endif
    struct utimbuf UTimeBuf;
  #ifndef NO_CHMOD
@@ -47,7 +40,7 @@ diff -r '--label=ORIGINAL' '--label=REPAIRED' -ru ORIGINAL REPAIRED
  #endif
    char *TargetFN = NULL;
    int ResolveSymlinkResult = 0;
-@@ -1726,7 +1728,7 @@
+@@ -1726,7 +1726,7 @@
  {
    int RetVal = 0;
    FILE *InF = NULL;
@@ -56,7 +49,7 @@ diff -r '--label=ORIGINAL' '--label=REPAIRED' -ru ORIGINAL REPAIRED
  
    ipFlag->status = 0 ;
  
-@@ -2119,7 +2121,7 @@
+@@ -2119,7 +2119,7 @@
    if ((ipFlag->add_eol && !(ipFlag->file_info & INFO_CONVERT)) || ipFlag->file_info & INFO_EOL)
      D2U_UTF8_FPRINTF(stdout, " %s ", eol);
    if (*filename != '\0') {
@@ -65,7 +58,7 @@ diff -r '--label=ORIGINAL' '--label=REPAIRED' -ru ORIGINAL REPAIRED
      if ((ipFlag->file_info & INFO_NOPATH) && (((ptr=strrchr(filename,'/')) != NULL) || ((ptr=strrchr(filename,'\\')) != NULL)) )
        ptr++;
      else
-@@ -2137,7 +2139,7 @@
+@@ -2137,7 +2137,7 @@
  #ifdef D2U_UNICODE
  void FileInfoW(FILE* ipInF, CFlag *ipFlag, const char *filename, int bomtype, const char *progname)
  {
@@ -74,7 +67,7 @@ diff -r '--label=ORIGINAL' '--label=REPAIRED' -ru ORIGINAL REPAIRED
    wint_t PreviousChar = 0;
    unsigned int lb_dos = 0;
    unsigned int lb_unix = 0;
-@@ -2194,7 +2196,7 @@
+@@ -2194,7 +2194,7 @@
  
  void FileInfo(FILE* ipInF, CFlag *ipFlag, const char *filename, int bomtype, const char *progname)
  {
@@ -83,7 +76,7 @@ diff -r '--label=ORIGINAL' '--label=REPAIRED' -ru ORIGINAL REPAIRED
    int PreviousChar = 0;
    unsigned int lb_dos = 0;
    unsigned int lb_unix = 0;
-@@ -2345,7 +2347,7 @@
+@@ -2345,7 +2345,7 @@
  
  void get_info_options(char *option, CFlag *pFlag, const char *progname)
  {
@@ -92,7 +85,7 @@ diff -r '--label=ORIGINAL' '--label=REPAIRED' -ru ORIGINAL REPAIRED
    int default_info = 1;
  
    ptr = option;
-@@ -2681,7 +2683,7 @@
+@@ -2681,7 +2681,7 @@
        }
      } else {
        /* not an option */
@@ -101,7 +94,7 @@ diff -r '--label=ORIGINAL' '--label=REPAIRED' -ru ORIGINAL REPAIRED
        pFlag->stdio_mode = 0;
        if (pFlag->NewFile) {
          if (CanSwitchFileMode)
-@@ -2777,8 +2779,8 @@
+@@ -2777,8 +2777,8 @@
  
  wint_t d2u_getwc(FILE *f, int bomtype)
  {
@@ -112,7 +105,7 @@ diff -r '--label=ORIGINAL' '--label=REPAIRED' -ru ORIGINAL REPAIRED
  
     if (((c_lead=fgetc(f)) == EOF)  || ((c_trail=fgetc(f)) == EOF))
        return(WEOF);
-@@ -2795,7 +2797,7 @@
+@@ -2795,7 +2795,7 @@
  
  wint_t d2u_ungetwc(wint_t wc, FILE *f, int bomtype)
  {
@@ -121,7 +114,7 @@ diff -r '--label=ORIGINAL' '--label=REPAIRED' -ru ORIGINAL REPAIRED
  
     if (bomtype == FILE_UTF16LE) { /* UTF16 little endian */
        c_trail = (int)(wc & 0xff00);
-@@ -2819,13 +2821,13 @@
+@@ -2819,13 +2819,13 @@
     static char mbs[8];
     static wchar_t lead=0x01;  /* lead get's invalid value */
     static wchar_t wstr[3];
@@ -137,7 +130,7 @@ diff -r '--label=ORIGINAL' '--label=REPAIRED' -ru ORIGINAL REPAIRED
       if (ipFlag->bomtype == FILE_UTF16LE) { /* UTF16 little endian */
          c_trail = (int)(wc & 0xff00);
          c_trail >>=8;
-@@ -2950,7 +2952,7 @@
+@@ -2950,7 +2950,7 @@
        ipFlag->status |= UNICODE_CONVERSION_ERROR ;
        return(WEOF);
     } else {
@@ -151,13 +144,7 @@ Only in dos2unix-7.5.2: djgpp.mak
 diff -r '--label=ORIGINAL' '--label=REPAIRED' -ru ORIGINAL REPAIRED
 --- ORIGINAL
 +++ REPAIRED
-@@ -1,3 +1,5 @@
-+#include "acr.h"
-+
- /*
-  *  Name: dos2unix
-  *  Documentation:
-@@ -88,7 +90,7 @@
+@@ -88,7 +88,7 @@
  #ifdef D2U_UNICODE
  wint_t StripDelimiterW(FILE* ipInF, FILE* ipOutF, CFlag *ipFlag, wint_t CurChar, unsigned int *converted, const char *progname)
  {
@@ -166,7 +153,7 @@ diff -r '--label=ORIGINAL' '--label=REPAIRED' -ru ORIGINAL REPAIRED
    /* CurChar is always CR (x0d) */
    /* In normal dos2unix mode put nothing (skip CR). */
    /* Don't modify Mac files when in dos2unix mode. */
-@@ -134,7 +136,7 @@
+@@ -134,7 +134,7 @@
   */
  int StripDelimiter(FILE* ipInF, FILE* ipOutF, CFlag *ipFlag, int CurChar, unsigned int *converted, const char *progname)
  {
@@ -175,7 +162,7 @@ diff -r '--label=ORIGINAL' '--label=REPAIRED' -ru ORIGINAL REPAIRED
    /* CurChar is always CR (x0d) */
    /* In normal dos2unix mode put nothing (skip CR). */
    /* Don't modify Mac files when in dos2unix mode. */
-@@ -181,8 +183,8 @@
+@@ -181,8 +181,8 @@
  {
      int RetVal = 0;
      wint_t PrevChar = WEOF;
@@ -186,7 +173,7 @@ diff -r '--label=ORIGINAL' '--label=REPAIRED' -ru ORIGINAL REPAIRED
      unsigned int line_nr = 1;
      unsigned int converted = 0;
  
-@@ -349,9 +351,9 @@
+@@ -349,9 +349,9 @@
  {
      int RetVal = 0;
      int PrevChar = EOF;
@@ -199,7 +186,7 @@ diff -r '--label=ORIGINAL' '--label=REPAIRED' -ru ORIGINAL REPAIRED
      unsigned int line_nr = 1;
      unsigned int converted = 0;
  
-@@ -551,15 +553,15 @@
+@@ -551,15 +551,15 @@
  {
    /* variable declarations */
    char progname[9];
@@ -227,18 +214,11 @@ Only in dos2unix-7.5.2: po
 Only in dos2unix-7.5.2: po-man
 Only in dos2unix-7.5.2: querycp.c
 Only in dos2unix-7.5.2: querycp.h
-Only in dos2unix-7.5.2: run_clang.sh
 Only in dos2unix-7.5.2: test
 diff -r '--label=ORIGINAL' '--label=REPAIRED' -ru ORIGINAL REPAIRED
 --- ORIGINAL
 +++ REPAIRED
-@@ -1,3 +1,5 @@
-+#include "acr.h"
-+
- /*
-  *  Name: unix2dos
-  *  Documentation:
-@@ -133,7 +135,7 @@
+@@ -133,7 +133,7 @@
  int ConvertUnixToDosW(FILE* ipInF, FILE* ipOutF, CFlag *ipFlag, const char *progname)
  {
      int RetVal = 0;
@@ -247,7 +227,7 @@ diff -r '--label=ORIGINAL' '--label=REPAIRED' -ru ORIGINAL REPAIRED
      wint_t PreviousChar = WEOF;
      unsigned int line_nr = 1;
      unsigned int converted = 0;
-@@ -315,9 +317,9 @@
+@@ -315,9 +315,9 @@
  int ConvertUnixToDos(FILE* ipInF, FILE* ipOutF, CFlag *ipFlag, const char *progname)
  {
      int RetVal = 0;
@@ -259,7 +239,7 @@ diff -r '--label=ORIGINAL' '--label=REPAIRED' -ru ORIGINAL REPAIRED
      unsigned int line_nr = 1;
      unsigned int converted = 0;
  
-@@ -532,15 +534,15 @@
+@@ -532,15 +532,15 @@
  {
    /* variable declarations */
    char progname[9];

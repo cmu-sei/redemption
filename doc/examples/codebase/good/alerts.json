@@ -825,6 +825,17 @@
     "message": "an assignment within an 'if' condition is bug-prone"
   },
   {
+    "rule": "EXP19-C",
+    "file": "common.c",
+    "line": "984",
+    "column": "48",
+    "end-line": "984",
+    "end-column": "48",
+    "tool": "clang_tidy",
+    "checker": "google-readability-braces-around-statements,hicpp-braces-around-statements,readability-braces-around-statements",
+    "message": "statement should be inside braces"
+  },
+  {
     "rule": "ERR33-C",
     "file": "common.c",
     "line": "986",
@@ -858,6 +869,17 @@
     "message": "an assignment within an 'if' condition is bug-prone"
   },
   {
+    "rule": "EXP19-C",
+    "file": "common.c",
+    "line": "999",
+    "column": "39",
+    "end-line": "999",
+    "end-column": "39",
+    "tool": "clang_tidy",
+    "checker": "google-readability-braces-around-statements,hicpp-braces-around-statements,readability-braces-around-statements",
+    "message": "statement should be inside braces"
+  },
+  {
     "rule": "EXP45-C",
     "file": "common.c",
     "line": "1002",
@@ -867,6 +889,17 @@
     "tool": "clang_tidy",
     "checker": "bugprone-assignment-in-if-condition",
     "message": "an assignment within an 'if' condition is bug-prone"
+  },
+  {
+    "rule": "EXP19-C",
+    "file": "common.c",
+    "line": "1002",
+    "column": "37",
+    "end-line": "1002",
+    "end-column": "37",
+    "tool": "clang_tidy",
+    "checker": "google-readability-braces-around-statements,hicpp-braces-around-statements,readability-braces-around-statements",
+    "message": "statement should be inside braces"
   },
   {
     "rule": "EXP33-C",
@@ -971,6 +1004,17 @@
     "rule": "DCL06-C",
     "file": "common.c",
     "line": "1131",
+    "column": "22",
+    "end-line": "1131",
+    "end-column": "22",
+    "tool": "clang_tidy",
+    "checker": "cppcoreguidelines-avoid-magic-numbers,readability-magic-numbers",
+    "message": "0xff is a magic number; consider replacing it with a named constant"
+  },
+  {
+    "rule": "DCL06-C",
+    "file": "common.c",
+    "line": "1131",
     "column": "42",
     "end-line": "1131",
     "end-column": "42",
@@ -1021,6 +1065,17 @@
     "tool": "clang_tidy",
     "checker": "bugprone-assignment-in-if-condition",
     "message": "an assignment within an 'if' condition is bug-prone"
+  },
+  {
+    "rule": "EXP19-C",
+    "file": "common.c",
+    "line": "1140",
+    "column": "39",
+    "end-line": "1140",
+    "end-column": "39",
+    "tool": "clang_tidy",
+    "checker": "hicpp-braces-around-statements,readability-braces-around-statements",
+    "message": "statement should be inside braces"
   },
   {
     "rule": "EXP19-C",
@@ -1087,6 +1142,17 @@
     "tool": "clang_tidy",
     "checker": "bugprone-assignment-in-if-condition",
     "message": "an assignment within an 'if' condition is bug-prone"
+  },
+  {
+    "rule": "EXP19-C",
+    "file": "common.c",
+    "line": "1157",
+    "column": "39",
+    "end-line": "1157",
+    "end-column": "39",
+    "tool": "clang_tidy",
+    "checker": "hicpp-braces-around-statements,readability-braces-around-statements",
+    "message": "statement should be inside braces"
   },
   {
     "rule": "EXP19-C",
@@ -1597,6 +1663,17 @@
   {
     "rule": "EXP19-C",
     "file": "common.c",
+    "line": "1341",
+    "column": "79",
+    "end-line": "1341",
+    "end-column": "79",
+    "tool": "clang_tidy",
+    "checker": "google-readability-braces-around-statements,hicpp-braces-around-statements,readability-braces-around-statements",
+    "message": "statement should be inside braces"
+  },
+  {
+    "rule": "EXP19-C",
+    "file": "common.c",
     "line": "1343",
     "column": "79",
     "end-line": "1343",
@@ -1692,6 +1769,17 @@
     "tool": "clang_tidy",
     "checker": "bugprone-assignment-in-if-condition",
     "message": "an assignment within an 'if' condition is bug-prone"
+  },
+  {
+    "rule": "EXP19-C",
+    "file": "common.c",
+    "line": "1381",
+    "column": "27",
+    "end-line": "1381",
+    "end-column": "27",
+    "tool": "clang_tidy",
+    "checker": "google-readability-braces-around-statements,hicpp-braces-around-statements,readability-braces-around-statements",
+    "message": "statement should be inside braces"
   },
   {
     "rule": "EXP19-C",
@@ -1967,6 +2055,17 @@
     "tool": "clang_tidy",
     "checker": "bugprone-assignment-in-if-condition",
     "message": "an assignment within an 'if' condition is bug-prone"
+  },
+  {
+    "rule": "CON33-C",
+    "file": "common.c",
+    "line": "1537",
+    "column": "18",
+    "end-line": "1537",
+    "end-column": "18",
+    "tool": "clang_tidy",
+    "checker": "concurrency-mt-unsafe",
+    "message": "function is not thread safe"
   },
   {
     "rule": "ERR33-C",
@@ -4202,6 +4301,28 @@
     "message": "an assignment within an 'if' condition is bug-prone"
   },
   {
+    "rule": "EXP45-C",
+    "file": "common.c",
+    "line": "2123",
+    "column": "93",
+    "end-line": "2123",
+    "end-column": "93",
+    "tool": "clang_tidy",
+    "checker": "bugprone-assignment-in-if-condition",
+    "message": "an assignment within an 'if' condition is bug-prone"
+  },
+  {
+    "rule": "EXP19-C",
+    "file": "common.c",
+    "line": "2123",
+    "column": "129",
+    "end-line": "2123",
+    "end-column": "129",
+    "tool": "clang_tidy",
+    "checker": "google-readability-braces-around-statements,hicpp-braces-around-statements,readability-braces-around-statements",
+    "message": "statement should be inside braces"
+  },
+  {
     "rule": "EXP19-C",
     "file": "common.c",
     "line": "2125",
@@ -5566,6 +5687,39 @@
     "message": "variable 'wc' is not initialized"
   },
   {
+    "rule": "EXP45-C",
+    "file": "common.c",
+    "line": "2783",
+    "column": "16",
+    "end-line": "2783",
+    "end-column": "16",
+    "tool": "clang_tidy",
+    "checker": "bugprone-assignment-in-if-condition",
+    "message": "an assignment within an 'if' condition is bug-prone"
+  },
+  {
+    "rule": "EXP45-C",
+    "file": "common.c",
+    "line": "2783",
+    "column": "48",
+    "end-line": "2783",
+    "end-column": "48",
+    "tool": "clang_tidy",
+    "checker": "bugprone-assignment-in-if-condition",
+    "message": "an assignment within an 'if' condition is bug-prone"
+  },
+  {
+    "rule": "EXP19-C",
+    "file": "common.c",
+    "line": "2783",
+    "column": "67",
+    "end-line": "2783",
+    "end-column": "67",
+    "tool": "clang_tidy",
+    "checker": "google-readability-braces-around-statements,hicpp-braces-around-statements,readability-braces-around-statements",
+    "message": "statement should be inside braces"
+  },
+  {
     "rule": "INT13-C",
     "file": "common.c",
     "line": "2787",
@@ -5659,7 +5813,18 @@
     "line": "2801",
     "column": "28",
     "end-line": "2801",
-    "end-column": "38",
+    "end-column": "28",
+    "tool": "clang_tidy",
+    "checker": "hicpp-signed-bitwise",
+    "message": "use of a signed integer operand with a binary bitwise operator"
+  },
+  {
+    "rule": "INT13-C",
+    "file": "common.c",
+    "line": "2802",
+    "column": "7",
+    "end-line": "2802",
+    "end-column": "17",
     "tool": "clang_tidy",
     "checker": "hicpp-signed-bitwise",
     "message": "use of a signed integer operand with a binary bitwise operator"
@@ -5698,12 +5863,34 @@
     "message": "use of a signed integer operand with a binary bitwise operator"
   },
   {
+    "rule": "DCL06-C",
+    "file": "common.c",
+    "line": "2805",
+    "column": "27",
+    "end-line": "2805",
+    "end-column": "27",
+    "tool": "clang_tidy",
+    "checker": "cppcoreguidelines-avoid-magic-numbers,readability-magic-numbers",
+    "message": "0xff00 is a magic number; consider replacing it with a named constant"
+  },
+  {
     "rule": "INT13-C",
     "file": "common.c",
     "line": "2805",
     "column": "27",
     "end-line": "2805",
-    "end-column": "36",
+    "end-column": "27",
+    "tool": "clang_tidy",
+    "checker": "hicpp-signed-bitwise",
+    "message": "use of a signed integer operand with a binary bitwise operator"
+  },
+  {
+    "rule": "INT13-C",
+    "file": "common.c",
+    "line": "2806",
+    "column": "7",
+    "end-line": "2806",
+    "end-column": "16",
     "tool": "clang_tidy",
     "checker": "hicpp-signed-bitwise",
     "message": "use of a signed integer operand with a binary bitwise operator"
@@ -5740,6 +5927,17 @@
     "tool": "clang_tidy",
     "checker": "hicpp-signed-bitwise",
     "message": "use of a signed integer operand with a binary bitwise operator"
+  },
+  {
+    "rule": "EXP19-C",
+    "file": "common.c",
+    "line": "2811",
+    "column": "65",
+    "end-line": "2811",
+    "end-column": "65",
+    "tool": "clang_tidy",
+    "checker": "google-readability-braces-around-statements,hicpp-braces-around-statements,readability-braces-around-statements",
+    "message": "statement should be inside braces"
   },
   {
     "rule": "DCL06-C",
@@ -5813,7 +6011,18 @@
     "line": "2830",
     "column": "30",
     "end-line": "2830",
-    "end-column": "40",
+    "end-column": "30",
+    "tool": "clang_tidy",
+    "checker": "hicpp-signed-bitwise",
+    "message": "use of a signed integer operand with a binary bitwise operator"
+  },
+  {
+    "rule": "INT13-C",
+    "file": "common.c",
+    "line": "2831",
+    "column": "9",
+    "end-line": "2831",
+    "end-column": "19",
     "tool": "clang_tidy",
     "checker": "hicpp-signed-bitwise",
     "message": "use of a signed integer operand with a binary bitwise operator"
@@ -5852,12 +6061,34 @@
     "message": "use of a signed integer operand with a binary bitwise operator"
   },
   {
+    "rule": "DCL06-C",
+    "file": "common.c",
+    "line": "2834",
+    "column": "29",
+    "end-line": "2834",
+    "end-column": "29",
+    "tool": "clang_tidy",
+    "checker": "cppcoreguidelines-avoid-magic-numbers,readability-magic-numbers",
+    "message": "0xff00 is a magic number; consider replacing it with a named constant"
+  },
+  {
     "rule": "INT13-C",
     "file": "common.c",
     "line": "2834",
     "column": "29",
     "end-line": "2834",
-    "end-column": "38",
+    "end-column": "29",
+    "tool": "clang_tidy",
+    "checker": "hicpp-signed-bitwise",
+    "message": "use of a signed integer operand with a binary bitwise operator"
+  },
+  {
+    "rule": "INT13-C",
+    "file": "common.c",
+    "line": "2835",
+    "column": "9",
+    "end-line": "2835",
+    "end-column": "18",
     "tool": "clang_tidy",
     "checker": "hicpp-signed-bitwise",
     "message": "use of a signed integer operand with a binary bitwise operator"
@@ -5894,6 +6125,17 @@
     "tool": "clang_tidy",
     "checker": "hicpp-signed-bitwise",
     "message": "use of a signed integer operand with a binary bitwise operator"
+  },
+  {
+    "rule": "EXP19-C",
+    "file": "common.c",
+    "line": "2838",
+    "column": "65",
+    "end-line": "2838",
+    "end-column": "65",
+    "tool": "clang_tidy",
+    "checker": "google-readability-braces-around-statements,hicpp-braces-around-statements,readability-braces-around-statements",
+    "message": "statement should be inside braces"
   },
   {
     "rule": "DCL06-C",
@@ -6283,6 +6525,17 @@
   {
     "rule": "DCL06-C",
     "file": "dos2unix.c",
+    "line": "100",
+    "column": "26",
+    "end-line": "100",
+    "end-column": "26",
+    "tool": "clang_tidy",
+    "checker": "cppcoreguidelines-avoid-magic-numbers,readability-magic-numbers",
+    "message": "0x0a is a magic number; consider replacing it with a named constant"
+  },
+  {
+    "rule": "DCL06-C",
+    "file": "dos2unix.c",
     "line": "108",
     "column": "23",
     "end-line": "108",
@@ -6668,6 +6921,17 @@
   {
     "rule": "DCL06-C",
     "file": "dos2unix.c",
+    "line": "283",
+    "column": "36",
+    "end-line": "283",
+    "end-column": "36",
+    "tool": "clang_tidy",
+    "checker": "cppcoreguidelines-avoid-magic-numbers,readability-magic-numbers",
+    "message": "0x0a is a magic number; consider replacing it with a named constant"
+  },
+  {
+    "rule": "DCL06-C",
+    "file": "dos2unix.c",
     "line": "284",
     "column": "31",
     "end-line": "284",
@@ -7042,6 +7306,17 @@
   {
     "rule": "ERR33-C",
     "file": "dos2unix.c",
+    "line": "521",
+    "column": "15",
+    "end-line": "521",
+    "end-column": "15",
+    "tool": "clang_tidy",
+    "checker": "cert-err33-c",
+    "message": "the value returned by this function should be used"
+  },
+  {
+    "rule": "ERR33-C",
+    "file": "dos2unix.c",
     "line": "522",
     "column": "15",
     "end-line": "522",
@@ -7280,6 +7555,28 @@
     "tool": "clang_tidy",
     "checker": "bugprone-assignment-in-if-condition",
     "message": "an assignment within an 'if' condition is bug-prone"
+  },
+  {
+    "rule": "EXP45-C",
+    "file": "dos2unix.c",
+    "line": "615",
+    "column": "53",
+    "end-line": "615",
+    "end-column": "53",
+    "tool": "clang_tidy",
+    "checker": "bugprone-assignment-in-if-condition",
+    "message": "an assignment within an 'if' condition is bug-prone"
+  },
+  {
+    "rule": "EXP19-C",
+    "file": "dos2unix.c",
+    "line": "615",
+    "column": "87",
+    "end-line": "615",
+    "end-column": "87",
+    "tool": "clang_tidy",
+    "checker": "google-readability-braces-around-statements,hicpp-braces-around-statements,readability-braces-around-statements",
+    "message": "statement should be inside braces"
   },
   {
     "rule": "EXP19-C",
@@ -7544,6 +7841,17 @@
     "tool": "clang_tidy",
     "checker": "bugprone-assignment-in-if-condition",
     "message": "an assignment within an 'if' condition is bug-prone"
+  },
+  {
+    "rule": "EXP19-C",
+    "file": "unix2dos.c",
+    "line": "177",
+    "column": "36",
+    "end-line": "177",
+    "end-column": "36",
+    "tool": "clang_tidy",
+    "checker": "google-readability-braces-around-statements,hicpp-braces-around-statements,readability-braces-around-statements",
+    "message": "statement should be inside braces"
   },
   {
     "rule": "DCL06-C",
@@ -8054,6 +8362,17 @@
   {
     "rule": "EXP19-C",
     "file": "unix2dos.c",
+    "line": "400",
+    "column": "36",
+    "end-line": "400",
+    "end-column": "36",
+    "tool": "clang_tidy",
+    "checker": "google-readability-braces-around-statements,hicpp-braces-around-statements,readability-braces-around-statements",
+    "message": "statement should be inside braces"
+  },
+  {
+    "rule": "EXP19-C",
+    "file": "unix2dos.c",
     "line": "413",
     "column": "34",
     "end-line": "413",
@@ -8413,6 +8732,28 @@
     "tool": "clang_tidy",
     "checker": "bugprone-assignment-in-if-condition",
     "message": "an assignment within an 'if' condition is bug-prone"
+  },
+  {
+    "rule": "EXP45-C",
+    "file": "unix2dos.c",
+    "line": "596",
+    "column": "53",
+    "end-line": "596",
+    "end-column": "53",
+    "tool": "clang_tidy",
+    "checker": "bugprone-assignment-in-if-condition",
+    "message": "an assignment within an 'if' condition is bug-prone"
+  },
+  {
+    "rule": "EXP19-C",
+    "file": "unix2dos.c",
+    "line": "596",
+    "column": "87",
+    "end-line": "596",
+    "end-column": "87",
+    "tool": "clang_tidy",
+    "checker": "google-readability-braces-around-statements,hicpp-braces-around-statements,readability-braces-around-statements",
+    "message": "statement should be inside braces"
   },
   {
     "rule": "EXP19-C",
