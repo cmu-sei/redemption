@@ -39,11 +39,25 @@ For more details of the background and capabilities of the Redemption tool, see 
 
 Redemption is currently able to identify alerts from the following static-analysis tools:
 
-| Tool         | Version | License      | Container                                        | Origin            | Instructions      |
-|--------------|---------|--------------|--------------------------------------------------|-------------------|-------------------|
-| Clang-tidy   | 16.0.6  | LLVM Release | silkeh/clang:latest                              | [Clang-tidy](https://clang.llvm.org/extra/clang-tidy)   | [Clang-tidy](data/clang-tidy/Clang-tidy.md)   |
-| Cppcheck     | 2.4.1   | GPL v3       | facthunder/cppcheck:latest                       | [Cppcheck](https://cppcheck.sourceforge.io)     | [Cppcheck](data/cppcheck/Cppcheck.md)     |
-| Rosecheckers |         | CMU (OSS)    | ghcr.io/cmu-sei/cert-rosecheckers/rosebud:latest | [Rosecheckers](https://github.com/cmu-sei/cert-rosecheckers) | [Rosecheckers](data/rosecheckers/CERT-Rosecheckers.md) |
+| Tool         | Version | License      | Dockerfile              | Original Container                               | Origin            | Instructions      |
+|--------------|---------|--------------|-------------------------|--------------------------------------------------|-------------------|-------------------|
+| Clang-tidy   |  16.0.6 | LLVM Release | Dockeffile.prereq       | silkeh/clang:latest                              | [Clang-tidy](https://clang.llvm.org/extra/clang-tidy)   | [Clang-tidy](data/clang-tidy/Clang-tidy.md)   |
+| Cppcheck     |   2.4.1 | GPL v3       | Dockerfile.codechecker  | facthunder/cppcheck:latest                       | [Cppcheck](https://cppcheck.sourceforge.io)     | [Cppcheck](data/cppcheck/Cppcheck.md)     |
+| Rosecheckers |         | CMU (OSS)    | Dockerfile.rosecheckers | ghcr.io/cmu-sei/cert-rosecheckers/rosebud:latest | [Rosecheckers](https://github.com/cmu-sei/cert-rosecheckers) | [Rosecheckers](data/rosecheckers/CERT-Rosecheckers.md) |
+
+For each tool, you can use the appropriate `Dockerfile` to create a container. For example, to run Cppcheck, you can build the `codechecker` container which will contain it:
+
+```sh
+docker  build -f Dockerfile.codechecker  -t ghcr.io/cmu-sei/redemption-codechecker  .
+```
+
+Rather than build the container, you could pull the `Original Container` as in:
+
+```sh
+docker run -it --rm facthunder/cppcheck:latest /bin/bash
+```
+
+Note that clang-tidy is part of the `prereq` Redemption container, so it is already installed in the same container as Redemption.
 
 You may run other tools, or create alerts manually; however Redemption has not been tested with alerts produced by other tools.
 
@@ -80,7 +94,12 @@ Note that this code is ineffective only if the assignment can be proved not to i
 
 ## Build instructions
 
-The code is designed to run inside a Docker container, which means you will need Docker. We provide three useful containers for working with Redemption.
+The code is designed to run inside a Docker container, which means you will need [Docker](https://www.docker.com/). In particular, once you can run containers, you will need to share filesystems between your host and the various containers. For that you want the `-v` switch in your `docker run` command, its documentation is available here:
+
+https://docs.docker.com/reference/cli/docker/container/run/#volume
+
+
+We provide three useful containers for working with Redemption.
 
 ### `prereq` Image
 
@@ -158,7 +177,7 @@ docker run -it --rm  -v /opt/code:/opt/code  ghcr.io/cmu-sei/redemption-distrib 
 In the `doc/examples` directory, there are several demos, each living in its own directory. The following table lists each demo; its title is the same as the folder containing the demo. The demos differ in the properties of the code they repair, and this is reflected in the `Codebase` column:
 
 | Demo Title       | Codebase                                          |
-|------------------+---------------------------------------------------|
+|------------------|---------------------------------------------------|
 | `simple`         | Simple C source file                              |
 | `codebase`       | Multi-file OSS codebase                           |
 | `separate_build` | OSS codebase requiring separate build environment |
