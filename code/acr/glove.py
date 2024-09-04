@@ -133,7 +133,7 @@ def run(edits_file, output_dir, *, comp_dir=".", base_dir=None, repair_only=None
         with open(outname, 'wb') as outfile:
             outfile.write(contents)
             repaired_files.append(outname)
-    print("Repaired files: %r" % repaired_files)
+    print("Repaired files: %r" % [str(x) for x in repaired_files])
 
     if acr_added:
         # Copy the header file to the output directory

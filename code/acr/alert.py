@@ -449,6 +449,10 @@ class MSC12_C(Alert):
 
 class EXP34_C(Alert):
 
+    def __init__(self, *args, **kwds):
+        super().__init__(*args, **kwds)
+        self.lvalue_context = False
+
     def get_error_handler_at_cursor(self, context):
         fn_decl_node = context.find_through_parents("FunctionDecl")
         try:
@@ -540,8 +544,9 @@ class EXP34_C(Alert):
             closer = ", " + self.handle_error + ")"
         else:
             closer = ")"
+        check = "null_check_lval(" if self.lvalue_context else "null_check("
         edit = [self['file'], [
-            [byte_start+1, byte_start+1, "null_check("],
+            [byte_start+1, byte_start+1, check],
             [byte_end, byte_end, closer]]]
         self["patch"] = [edit]
         self["add-headers"] = ["acr.h"]
@@ -621,13 +626,15 @@ class EXP34_C_CPPCHECK(EXP34_C):
 
     def match_arithmetic_locus(self, context):
         match context:
-            case {"kind": "BinaryOperator", "opcode": ("+" | "-"),
+            case {"kind": "BinaryOperator", "opcode": (("+" | "-" | "+=" | "-=") as opcode),
                   "type": { "qualType": typ },
                   "inner" : [{"type": {"qualType": ltyp}} as lhs,
                              {"type": {"qualType": rtyp}} as rhs]}:
                 if typ[-1] != "*":
                     return None
                 if typ == ltyp:
+                    if opcode[-1] == '=':
+                        self.lvalue_context = True
                     return lhs
                 if typ == rtyp:
                     return rhs
@@ -637,6 +644,7 @@ class EXP34_C_CPPCHECK(EXP34_C):
                   "inner": [arg]}:
                 if typ[-1] != "*":
                     return None
+                self.lvalue_context = True
                 return arg
             case _:
                 return None

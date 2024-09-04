@@ -42,12 +42,32 @@ ACR_NORETURN void abort(void);
 // This file also uses the GCC "statement-expr" extension; see
 // https://gcc.gnu.org/onlinedocs/gcc/Statement-Exprs.html
 
-#define null_check(p_expr, ...)                             \
-  ({ __typeof__(&*p_expr) _sei_acr_temp_bc_p = (p_expr);      \
-    if (!_sei_acr_temp_bc_p) {                              \
-        __VA_ARGS__;                                        \
-        printf("Exiting due to detected impending null pointer dereference in file %s, function %s, line %d\n", __FILE__, __func__, __LINE__); \
-        abort();                                            \
-    };                                                      \
-    _sei_acr_temp_bc_p;                                     \
+
+// If p_expr is NULL, execute '...', then abort.  Returns p_expr.
+//
+// null_check() works when p_expr is any expression, but fails if its
+// result is used as an lvalue.  Example: null_check(x)++ fails.
+#define null_check(p_expr, ...)                                         \
+  ({ __typeof__(&*p_expr) _sei_acr_temp_bc_p = (p_expr);                \
+    if (!_sei_acr_temp_bc_p) {                                          \
+      __VA_ARGS__;                                                      \
+      printf("Exiting due to detected impending null pointer dereference in file %s, function %s, line %d\n", __FILE__, __func__, __LINE__); \
+      abort();                                                          \
+    };                                                                  \
+    _sei_acr_temp_bc_p;                                                 \
   })
+
+
+// This version is the same, as null_check(), but requires p_expr to
+// be an lvalue, and returns an lvalue.  This version will fail if
+// p_expr results in a value that does not have an address.  Example:
+// null_check_lval(x + 1) fails.
+#define null_check_lval(p_expr, ...)                                    \
+  (*({ __typeof__(&*p_expr) *_sei_acr_temp_bc_p = &(p_expr);            \
+      if (!*_sei_acr_temp_bc_p) {                                       \
+        __VA_ARGS__;                                                    \
+        printf("Exiting due to detected impending null pointer dereference in file %s, function %s, line %d\n", __FILE__, __func__, __LINE__); \
+        abort();                                                        \
+      };                                                                \
+      _sei_acr_temp_bc_p;                                               \
+    }))
