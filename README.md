@@ -92,6 +92,8 @@ can be repaired by preserving the expression and removing the assignment.
 
 Note that this code is ineffective only if the assignment can be proved not to invoke a C++ constructor, destructor, overloaded assignment operator or overloaded conversion or cast operators, which might have side effects.
 
+Also note that Ineffective Code (MSC12-C) is a recommendation not a rule, and this presented additional complications, including the `REPAIR_MSC12` environment variable that we currently use.  For more information, see the [Ineffective Code](doc/dead_code.md) document, and the [Environment Variables](#environment-variables) section of this document.
+
 ## Build instructions
 
 The code is designed to run inside a Docker container, which means you will need [Docker](https://www.docker.com/). In particular, once you can run containers, you will need to share filesystems between your host and the various containers. For that you want the `-v` switch in your `docker run` command, its documentation is available here:
