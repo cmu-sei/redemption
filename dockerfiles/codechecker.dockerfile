@@ -1,5 +1,6 @@
 # This file installs CodeChecker
 
+# To build, use this command in directory above this one:
 # docker  build -f Dockerfile.codechecker  -t ghcr.io/cmu-sei/redemption-codechecker  .
 
 # <legal>

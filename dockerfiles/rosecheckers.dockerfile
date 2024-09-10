@@ -1,6 +1,7 @@
 # This file builds enough tools into a Linux distro to be useful for
 # general software building.
 
+# To build, use this command in directory above this one:
 # docker  build -f Dockerfile.rosecheckers  -t ghcr.io/cmu-sei/redemption-rosebud  .
 
 # <legal>
