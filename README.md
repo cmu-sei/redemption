@@ -237,7 +237,7 @@ As specified [above](#detail-about-the-end_to_end_acrpy-script), the `STEP_DIR` 
 ```bash
 export acr_default_lang_std=foo # Adds "--std=foo" to the beginning of the arguments given to Clang.
 export acr_emit_invocation=true # Show subprogram invocation information
-export acr_gzip_ear_out=true    # Compresses the AST (compresses the output of the ear module)
+export acr_gzip_ear_out=false   # Whether to compress the AST (the output of the ear module); true by default.
 export acr_ignore_ast_id=true   # Tests pass even if AST IDs are different
 export acr_parser_cache=/host/code/acr/test/cache/  # Cache the output of the ear module, else set to ""
 export acr_parser_cache_verbose=true # Print messages about the cache, for debugging/troubleshooting

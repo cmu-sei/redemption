@@ -233,6 +233,8 @@ def run(*, compile_cmds_file, base_dir, alerts=None, combined_brain_out=None,
             source_base_name = source_base_name + "." + (("tu%0"+str(len(str(num_tus)))+"d") % tu_index)
 
             ast_filename = step_dir + "/" + source_base_name + ".ear-out.json"
+            if (os.getenv('acr_gzip_ear_out') or "").lower() != "false":
+                ast_filename += ".gz"
             brain_out_file = step_dir + "/" + source_base_name + ".brain-out.json"
 
             skip_generating_brain_out = inject_brain_output and os.path.exists(brain_out_file)
