@@ -512,6 +512,7 @@ class Brain(AstVisitor):
 
     def run(self, ast):
         self.visit(ast)
+        print_progress("Finished visiting AST.")
         self.cplusplus = ast.get("cplusplus", False)
         self.intervals = SortedCollection(iterable=self.intervals, key=self._key)
         for a in self.alert_list:
@@ -601,6 +602,7 @@ def run(ast_file, alerts_filename, output_filename):
             output_filename, alerts_filename, ast_file))
     ll_file = get_ast_file_base(ast_file) + ".ll"
     ast = read_json_file(ast_file)
+    print_progress("Finished parsing AST in brain module.")
     brain = Brain(ast)
     brain.parse_alerts(alerts_filename)
     brain.nulldom_info = get_nulldom_info(ll_file)

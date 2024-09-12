@@ -37,6 +37,7 @@ import tempfile
 import ear, brain
 import pprint
 import hashlib
+import shutil
 from tempfile import TemporaryDirectory
 from collections import OrderedDict, defaultdict
 from make_run_clang import get_compile_dir, read_json_file
@@ -143,8 +144,11 @@ def combine_brain_outs(indiv_brain_filenames):
     def combine_alert(alert_id, variants):
         non_empty = []
         for (v, filename) in zip(variants, indiv_brain_filenames):
-            if v['alert_id'] != alert_id:
-                print(f"Error in {filename}: Expecting alert_id {alert_id} but found alert_id {v['alert_id']}.")
+            found_alert_id = v.get('alert_id')
+            if found_alert_id is None and v.get('patch') is None:
+                continue
+            if found_alert_id != alert_id:
+                print(f"Error in {filename}: Expecting alert_id {alert_id} but found alert_id {found_alert_id}.")
             if v['patch'] != []:
                 non_empty.append((tuplize(v['patch']), tuplize(v.get('add-headers'))))
         combined = variants[0].copy()
@@ -172,11 +176,23 @@ def combine_brain_outs(indiv_brain_filenames):
 
     return combined_alert_list
 
-def execute(cmd, base_dir, ast_filename, raw_ast_dir, alerts, brain_out_file):
-    ear.write_ear_output_for_cmd(cmd, base_dir, ast_file=ast_filename,
-                                 raw_ast_dir=raw_ast_dir)
+def execute(cmd, base_dir, ast_filename, raw_ast_dir, alerts, brain_out_file, alerted_files):
+    print_progress("\nAST output file: " + ast_filename)
+    try:
+        ear.write_ear_output_for_cmd(cmd, base_dir, ast_file=ast_filename,
+                                 raw_ast_dir=raw_ast_dir, alerted_files=alerted_files)
+    except ear.EarNoAlerts:
+        # Make a dummy brain output
+        shutil.copy(alerts, brain_out_file)
+        return
     brain.run(ast_file=ast_filename, alerts_filename=alerts,
               output_filename=brain_out_file)
+
+def get_all_filenames_in_alerts(alerts_file):
+    filenames = set()
+    for alert in read_json_file(alerts_file):
+        filenames.add(os.path.basename(alert["file"]))
+    return list(sorted(filenames))
 
 def run(*, compile_cmds_file, base_dir, alerts=None, combined_brain_out=None,
         step_dir=None, out_src_dir=None, inject_brain_output=False, raw_ast_dir=None, **kwargs):
@@ -221,6 +237,7 @@ def run(*, compile_cmds_file, base_dir, alerts=None, combined_brain_out=None,
         base_name = strip_filename_extension(os.path.basename(compile_cmds_file))
         combined_brain_out = f"{step_dir}/{hashval}.combined.json"
 
+    alerted_files = get_all_filenames_in_alerts(alerts)
     try:
         for (tu_index, cmd) in enumerate(compile_commands):
             compile_dir = get_compile_dir(cmd)
@@ -238,7 +255,7 @@ def run(*, compile_cmds_file, base_dir, alerts=None, combined_brain_out=None,
             brain_out_file = step_dir + "/" + source_base_name + ".brain-out.json"
 
             skip_generating_brain_out = inject_brain_output and os.path.exists(brain_out_file)
-            args = (cmd, base_dir, ast_filename, raw_ast_dir, alerts, brain_out_file)
+            args = (cmd, base_dir, ast_filename, raw_ast_dir, alerts, brain_out_file, alerted_files)
             if not skip_generating_brain_out:
                 if pool is not None:
                     worker = pool.apply_async(execute, args)
@@ -256,13 +273,17 @@ def run(*, compile_cmds_file, base_dir, alerts=None, combined_brain_out=None,
         # if output_clang_script is not None:
         #     return
 
+        print_progress("\nCombining brain outputs...")
         combined_alerts = combine_brain_outs(indiv_brain_filenames)
         with open(combined_brain_out, 'w') as outfile:
             outfile.write(json.dumps(combined_alerts, indent=2) + "\n")
 
         if out_src_dir:
+            print_progress("Writing repaired files...")
             import glove
             glove.run(edits_file=combined_brain_out, output_dir=out_src_dir, base_dir=base_dir)
+
+        print_progress("Finished!")
 
     finally:
         if pool is not None:

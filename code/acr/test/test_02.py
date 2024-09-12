@@ -540,3 +540,23 @@ def test_already_repaired_null_01():
     assert cmp_file_normalize("already_repaired_null_01.brain-out.json", "out/already_repaired_null_01.brain-out.json")
     if os.getenv('pytest_keep') != "true":
         os.system("rm -f out/already_repaired_null_01.*")
+
+def test_super02():
+    os.system("rm -f out/super02*.*")
+    compile_cmds_file="super02_compile_cmds.json"
+    alerts="super02.alerts.json"
+    step_dir="out"
+    base_dir="."
+    combined_brain_out="out/super02.combined-brain.json"
+    sup.run(
+        compile_cmds_file=compile_cmds_file,
+        alerts=alerts,
+        step_dir=step_dir,
+        base_dir=base_dir,
+        combined_brain_out=combined_brain_out,
+        out_src_dir="out"
+        )
+
+    assert cmp_file_normalize("super02a.answer.c", "out/super02a.c")
+    test_runner.cleanup(base_dir, out_location=step_dir, test_results_filepath="out", step_dir=step_dir, base_dir=base_dir, additional_files="out/super02*.*")
+
