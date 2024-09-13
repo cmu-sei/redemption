@@ -1,5 +1,5 @@
 {
-  "id": "0x558237d028d8",
+  "id": "0x562ba739e878",
   "kind": "TranslationUnitDecl",
   "loc": {},
   "range": {
@@ -8,7 +8,7 @@
   },
   "inner": [
     {
-      "id": "0x558237d03100",
+      "id": "0x562ba739f0a0",
       "kind": "TypedefDecl",
       "loc": {},
       "range": {
@@ -22,7 +22,7 @@
       },
       "inner": [
         {
-          "id": "0x558237d02ea0",
+          "id": "0x562ba739ee40",
           "kind": "BuiltinType",
           "type": {
             "qualType": "__int128"
@@ -31,7 +31,7 @@
       ]
     },
     {
-      "id": "0x558237d03170",
+      "id": "0x562ba739f110",
       "kind": "TypedefDecl",
       "loc": {},
       "range": {
@@ -45,7 +45,7 @@
       },
       "inner": [
         {
-          "id": "0x558237d02ec0",
+          "id": "0x562ba739ee60",
           "kind": "BuiltinType",
           "type": {
             "qualType": "unsigned __int128"
@@ -54,7 +54,7 @@
       ]
     },
     {
-      "id": "0x558237d03478",
+      "id": "0x562ba739f418",
       "kind": "TypedefDecl",
       "loc": {},
       "range": {
@@ -68,13 +68,13 @@
       },
       "inner": [
         {
-          "id": "0x558237d03250",
+          "id": "0x562ba739f1f0",
           "kind": "RecordType",
           "type": {
             "qualType": "struct __NSConstantString_tag"
           },
           "decl": {
-            "id": "0x558237d031c8",
+            "id": "0x562ba739f168",
             "kind": "RecordDecl",
             "name": "__NSConstantString_tag"
           }
@@ -82,7 +82,7 @@
       ]
     },
     {
-      "id": "0x558237d03510",
+      "id": "0x562ba739f4b0",
       "kind": "TypedefDecl",
       "loc": {},
       "range": {
@@ -96,14 +96,14 @@
       },
       "inner": [
         {
-          "id": "0x558237d034d0",
+          "id": "0x562ba739f470",
           "kind": "PointerType",
           "type": {
             "qualType": "char *"
           },
           "inner": [
             {
-              "id": "0x558237d02980",
+              "id": "0x562ba739e920",
               "kind": "BuiltinType",
               "type": {
                 "qualType": "char"
@@ -114,7 +114,7 @@
       ]
     },
     {
-      "id": "0x558237d03808",
+      "id": "0x562ba739f7a8",
       "kind": "TypedefDecl",
       "loc": {},
       "range": {
@@ -128,7 +128,7 @@
       },
       "inner": [
         {
-          "id": "0x558237d037b0",
+          "id": "0x562ba739f750",
           "kind": "ConstantArrayType",
           "type": {
             "qualType": "struct __va_list_tag[1]"
@@ -136,13 +136,13 @@
           "size": 1,
           "inner": [
             {
-              "id": "0x558237d035f0",
+              "id": "0x562ba739f590",
               "kind": "RecordType",
               "type": {
                 "qualType": "struct __va_list_tag"
               },
               "decl": {
-                "id": "0x558237d03568",
+                "id": "0x562ba739f508",
                 "kind": "RecordDecl",
                 "name": "__va_list_tag"
               }
@@ -152,23 +152,23 @@
       ]
     },
     {
-      "id": "0x558237d5ed80",
+      "id": "0x562ba73fae00",
       "kind": "VarDecl",
       "loc": {
-        "offset": 46,
-        "file": "./test-pointers.c",
-        "line": 3,
+        "offset": 89,
+        "file": "test-pointers.c",
+        "line": 4,
         "col": 5,
         "tokLen": 1
       },
       "range": {
         "begin": {
-          "offset": 42,
+          "offset": 85,
           "col": 1,
           "tokLen": 3
         },
         "end": {
-          "offset": 46,
+          "offset": 89,
           "col": 5,
           "tokLen": 1
         }
@@ -180,22 +180,22 @@
       }
     },
     {
-      "id": "0x558237d5ee70",
+      "id": "0x562ba73faef0",
       "kind": "VarDecl",
       "loc": {
-        "offset": 54,
-        "line": 4,
+        "offset": 97,
+        "line": 5,
         "col": 6,
         "tokLen": 1
       },
       "range": {
         "begin": {
-          "offset": 49,
+          "offset": 92,
           "col": 1,
           "tokLen": 3
         },
         "end": {
-          "offset": 54,
+          "offset": 97,
           "col": 6,
           "tokLen": 1
         }
@@ -207,22 +207,22 @@
       }
     },
     {
-      "id": "0x558237d5ef28",
+      "id": "0x562ba73fafa8",
       "kind": "VarDecl",
       "loc": {
-        "offset": 64,
-        "line": 5,
+        "offset": 107,
+        "line": 6,
         "col": 7,
         "tokLen": 1
       },
       "range": {
         "begin": {
-          "offset": 58,
+          "offset": 101,
           "col": 1,
           "tokLen": 3
         },
         "end": {
-          "offset": 64,
+          "offset": 107,
           "col": 7,
           "tokLen": 1
         }
@@ -234,22 +234,22 @@
       }
     },
     {
-      "id": "0x558237d5efb0",
+      "id": "0x562ba73fb030",
       "kind": "VarDecl",
       "loc": {
-        "offset": 75,
-        "line": 6,
+        "offset": 118,
+        "line": 7,
         "col": 7,
         "tokLen": 1
       },
       "range": {
         "begin": {
-          "offset": 69,
+          "offset": 112,
           "col": 1,
           "tokLen": 3
         },
         "end": {
-          "offset": 75,
+          "offset": 118,
           "col": 7,
           "tokLen": 1
         }
@@ -261,22 +261,22 @@
       }
     },
     {
-      "id": "0x558237d5f068",
+      "id": "0x562ba73fb0e8",
       "kind": "VarDecl",
       "loc": {
-        "offset": 87,
-        "line": 7,
+        "offset": 130,
+        "line": 8,
         "col": 8,
         "tokLen": 1
       },
       "range": {
         "begin": {
-          "offset": 80,
+          "offset": 123,
           "col": 1,
           "tokLen": 3
         },
         "end": {
-          "offset": 87,
+          "offset": 130,
           "col": 8,
           "tokLen": 1
         }
@@ -288,22 +288,22 @@
       }
     },
     {
-      "id": "0x558237d5f1c0",
+      "id": "0x562ba73fb240",
       "kind": "FunctionDecl",
       "loc": {
-        "offset": 95,
-        "line": 8,
+        "offset": 138,
+        "line": 9,
         "col": 5,
         "tokLen": 4
       },
       "range": {
         "begin": {
-          "offset": 91,
+          "offset": 134,
           "col": 1,
           "tokLen": 3
         },
         "end": {
-          "offset": 109,
+          "offset": 152,
           "col": 19,
           "tokLen": 1
         }
@@ -315,21 +315,21 @@
       },
       "inner": [
         {
-          "id": "0x558237d5f0f0",
+          "id": "0x562ba73fb170",
           "kind": "ParmVarDecl",
           "loc": {
-            "offset": 107,
+            "offset": 150,
             "col": 17,
             "tokLen": 1
           },
           "range": {
             "begin": {
-              "offset": 101,
+              "offset": 144,
               "col": 11,
               "tokLen": 3
             },
             "end": {
-              "offset": 107,
+              "offset": 150,
               "col": 17,
               "tokLen": 1
             }
@@ -340,6 +340,220 @@
           }
         }
       ]
+    },
+    {
+      "id": "0x562ba73fb3c8",
+      "kind": "FunctionDecl",
+      "loc": {
+        "offset": 160,
+        "line": 10,
+        "col": 6,
+        "tokLen": 5
+      },
+      "range": {
+        "begin": {
+          "offset": 155,
+          "col": 1,
+          "tokLen": 4
+        },
+        "end": {
+          "offset": 175,
+          "col": 21,
+          "tokLen": 1
+        }
+      },
+      "name": "test2",
+      "mangledName": "test2",
+      "type": {
+        "qualType": "void (void *)"
+      },
+      "inner": [
+        {
+          "id": "0x562ba73fb300",
+          "kind": "ParmVarDecl",
+          "loc": {
+            "offset": 173,
+            "col": 19,
+            "tokLen": 1
+          },
+          "range": {
+            "begin": {
+              "offset": 167,
+              "col": 13,
+              "tokLen": 4
+            },
+            "end": {
+              "offset": 173,
+              "col": 19,
+              "tokLen": 1
+            }
+          },
+          "name": "g",
+          "type": {
+            "qualType": "void *"
+          }
+        }
+      ]
+    },
+    {
+      "id": "0x562ba73fb670",
+      "kind": "FunctionDecl",
+      "loc": {
+        "offset": 184,
+        "line": 11,
+        "col": 7,
+        "tokLen": 5
+      },
+      "range": {
+        "begin": {
+          "offset": 178,
+          "col": 1,
+          "tokLen": 5
+        },
+        "end": {
+          "offset": 227,
+          "col": 50,
+          "tokLen": 1
+        }
+      },
+      "name": "test3",
+      "mangledName": "test3",
+      "type": {
+        "qualType": "float (double **, unsigned long long *)"
+      },
+      "inner": [
+        {
+          "id": "0x562ba73fb4e8",
+          "kind": "ParmVarDecl",
+          "loc": {
+            "offset": 201,
+            "col": 24,
+            "tokLen": 1
+          },
+          "range": {
+            "begin": {
+              "offset": 191,
+              "col": 14,
+              "tokLen": 6
+            },
+            "end": {
+              "offset": 201,
+              "col": 24,
+              "tokLen": 1
+            }
+          },
+          "name": "h",
+          "type": {
+            "qualType": "double **"
+          }
+        },
+        {
+          "id": "0x562ba73fb590",
+          "kind": "ParmVarDecl",
+          "loc": {
+            "offset": 225,
+            "col": 48,
+            "tokLen": 1
+          },
+          "range": {
+            "begin": {
+              "offset": 204,
+              "col": 27,
+              "tokLen": 8
+            },
+            "end": {
+              "offset": 225,
+              "col": 48,
+              "tokLen": 1
+            }
+          },
+          "name": "i",
+          "type": {
+            "qualType": "unsigned long long *"
+          }
+        }
+      ]
+    },
+    {
+      "id": "0x562ba73fb800",
+      "kind": "FunctionDecl",
+      "loc": {
+        "offset": 239,
+        "line": 12,
+        "col": 10,
+        "tokLen": 5
+      },
+      "range": {
+        "begin": {
+          "offset": 230,
+          "col": 1,
+          "tokLen": 6
+        },
+        "end": {
+          "offset": 254,
+          "col": 25,
+          "tokLen": 1
+        }
+      },
+      "name": "test4",
+      "mangledName": "test4",
+      "type": {
+        "qualType": "double *(short)"
+      },
+      "inner": [
+        {
+          "id": "0x562ba73fb738",
+          "kind": "ParmVarDecl",
+          "loc": {
+            "offset": 252,
+            "col": 23,
+            "tokLen": 1
+          },
+          "range": {
+            "begin": {
+              "offset": 246,
+              "col": 17,
+              "tokLen": 5
+            },
+            "end": {
+              "offset": 252,
+              "col": 23,
+              "tokLen": 1
+            }
+          },
+          "name": "j",
+          "type": {
+            "qualType": "short"
+          }
+        }
+      ]
+    },
+    {
+      "id": "0x562ba73fb900",
+      "kind": "FunctionDecl",
+      "loc": {
+        "offset": 264,
+        "line": 13,
+        "col": 8,
+        "tokLen": 5
+      },
+      "range": {
+        "begin": {
+          "offset": 257,
+          "col": 1,
+          "tokLen": 4
+        },
+        "end": {
+          "offset": 270,
+          "col": 14,
+          "tokLen": 1
+        }
+      },
+      "name": "test5",
+      "mangledName": "test5",
+      "type": {
+        "qualType": "void *()"
+      }
     }
   ]
 }

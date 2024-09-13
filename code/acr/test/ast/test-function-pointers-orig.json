@@ -1,5 +1,5 @@
 {
-  "id": "0x55e9851f5888",
+  "id": "0x56334c57a8b8",
   "kind": "TranslationUnitDecl",
   "loc": {},
   "range": {
@@ -8,7 +8,7 @@
   },
   "inner": [
     {
-      "id": "0x55e9851f60b0",
+      "id": "0x56334c57b0e0",
       "kind": "TypedefDecl",
       "loc": {},
       "range": {
@@ -22,7 +22,7 @@
       },
       "inner": [
         {
-          "id": "0x55e9851f5e50",
+          "id": "0x56334c57ae80",
           "kind": "BuiltinType",
           "type": {
             "qualType": "__int128"
@@ -31,7 +31,7 @@
       ]
     },
     {
-      "id": "0x55e9851f6120",
+      "id": "0x56334c57b150",
       "kind": "TypedefDecl",
       "loc": {},
       "range": {
@@ -45,7 +45,7 @@
       },
       "inner": [
         {
-          "id": "0x55e9851f5e70",
+          "id": "0x56334c57aea0",
           "kind": "BuiltinType",
           "type": {
             "qualType": "unsigned __int128"
@@ -54,7 +54,7 @@
       ]
     },
     {
-      "id": "0x55e9851f6428",
+      "id": "0x56334c57b458",
       "kind": "TypedefDecl",
       "loc": {},
       "range": {
@@ -68,13 +68,13 @@
       },
       "inner": [
         {
-          "id": "0x55e9851f6200",
+          "id": "0x56334c57b230",
           "kind": "RecordType",
           "type": {
             "qualType": "struct __NSConstantString_tag"
           },
           "decl": {
-            "id": "0x55e9851f6178",
+            "id": "0x56334c57b1a8",
             "kind": "RecordDecl",
             "name": "__NSConstantString_tag"
           }
@@ -82,7 +82,7 @@
       ]
     },
     {
-      "id": "0x55e9851f64c0",
+      "id": "0x56334c57b4f0",
       "kind": "TypedefDecl",
       "loc": {},
       "range": {
@@ -96,14 +96,14 @@
       },
       "inner": [
         {
-          "id": "0x55e9851f6480",
+          "id": "0x56334c57b4b0",
           "kind": "PointerType",
           "type": {
             "qualType": "char *"
           },
           "inner": [
             {
-              "id": "0x55e9851f5930",
+              "id": "0x56334c57a960",
               "kind": "BuiltinType",
               "type": {
                 "qualType": "char"
@@ -114,7 +114,7 @@
       ]
     },
     {
-      "id": "0x55e9851f67b8",
+      "id": "0x56334c57b7e8",
       "kind": "TypedefDecl",
       "loc": {},
       "range": {
@@ -128,7 +128,7 @@
       },
       "inner": [
         {
-          "id": "0x55e9851f6760",
+          "id": "0x56334c57b790",
           "kind": "ConstantArrayType",
           "type": {
             "qualType": "struct __va_list_tag[1]"
@@ -136,13 +136,13 @@
           "size": 1,
           "inner": [
             {
-              "id": "0x55e9851f65a0",
+              "id": "0x56334c57b5d0",
               "kind": "RecordType",
               "type": {
                 "qualType": "struct __va_list_tag"
               },
               "decl": {
-                "id": "0x55e9851f6518",
+                "id": "0x56334c57b548",
                 "kind": "RecordDecl",
                 "name": "__va_list_tag"
               }
@@ -152,24 +152,24 @@
       ]
     },
     {
-      "id": "0x55e985251ef8",
+      "id": "0x56334c5d6ff8",
       "kind": "VarDecl",
       "loc": {
-        "offset": 11,
-        "file": "./test-function-pointers.c",
-        "line": 1,
-        "col": 12,
+        "offset": 149,
+        "file": "test-function-pointers.c",
+        "line": 5,
+        "col": 11,
         "tokLen": 8
       },
       "range": {
         "begin": {
-          "offset": 0,
+          "offset": 139,
           "col": 1,
           "tokLen": 4
         },
         "end": {
-          "offset": 36,
-          "col": 37,
+          "offset": 171,
+          "col": 33,
           "tokLen": 1
         }
       },
@@ -180,22 +180,22 @@
       }
     },
     {
-      "id": "0x55e9852522b8",
+      "id": "0x56334c5d73b8",
       "kind": "VarDecl",
       "loc": {
-        "offset": 46,
-        "line": 2,
+        "offset": 209,
+        "line": 7,
         "col": 8,
         "tokLen": 3
       },
       "range": {
         "begin": {
-          "offset": 39,
+          "offset": 202,
           "col": 1,
           "tokLen": 4
         },
         "end": {
-          "offset": 65,
+          "offset": 228,
           "col": 27,
           "tokLen": 1
         }
@@ -207,22 +207,22 @@
       }
     },
     {
-      "id": "0x55e9852523e0",
+      "id": "0x56334c5d74e0",
       "kind": "VarDecl",
       "loc": {
-        "offset": 74,
-        "line": 3,
+        "offset": 237,
+        "line": 8,
         "col": 7,
         "tokLen": 3
       },
       "range": {
         "begin": {
-          "offset": 68,
+          "offset": 231,
           "col": 1,
           "tokLen": 3
         },
         "end": {
-          "offset": 84,
+          "offset": 247,
           "col": 17,
           "tokLen": 1
         }
@@ -234,22 +234,22 @@
       }
     },
     {
-      "id": "0x55e985252508",
+      "id": "0x56334c5d7608",
       "kind": "VarDecl",
       "loc": {
-        "offset": 93,
-        "line": 4,
+        "offset": 256,
+        "line": 9,
         "col": 7,
         "tokLen": 4
       },
       "range": {
         "begin": {
-          "offset": 87,
+          "offset": 250,
           "col": 1,
           "tokLen": 3
         },
         "end": {
-          "offset": 104,
+          "offset": 267,
           "col": 18,
           "tokLen": 1
         }
@@ -259,6 +259,101 @@
       "type": {
         "qualType": "int (*)(short)"
       }
+    },
+    {
+      "id": "0x56334c5d7880",
+      "kind": "TypedefDecl",
+      "loc": {
+        "offset": 284,
+        "line": 10,
+        "col": 15,
+        "tokLen": 6
+      },
+      "range": {
+        "begin": {
+          "offset": 270,
+          "col": 1,
+          "tokLen": 7
+        },
+        "end": {
+          "offset": 314,
+          "col": 45,
+          "tokLen": 1
+        }
+      },
+      "name": "tdtest",
+      "type": {
+        "qualType": "int (*)(int, char **)"
+      },
+      "inner": [
+        {
+          "id": "0x56334c5d7810",
+          "kind": "PointerType",
+          "type": {
+            "qualType": "int (*)(int, char **)"
+          },
+          "inner": [
+            {
+              "id": "0x56334c5d77b0",
+              "kind": "ParenType",
+              "type": {
+                "qualType": "int (int, char **)"
+              },
+              "inner": [
+                {
+                  "id": "0x56334c5d7770",
+                  "kind": "FunctionProtoType",
+                  "type": {
+                    "qualType": "int (int, char **)"
+                  },
+                  "cc": "cdecl",
+                  "inner": [
+                    {
+                      "id": "0x56334c57a9c0",
+                      "kind": "BuiltinType",
+                      "type": {
+                        "qualType": "int"
+                      }
+                    },
+                    {
+                      "id": "0x56334c57a9c0",
+                      "kind": "BuiltinType",
+                      "type": {
+                        "qualType": "int"
+                      }
+                    },
+                    {
+                      "id": "0x56334c5d6ed0",
+                      "kind": "PointerType",
+                      "type": {
+                        "qualType": "char **"
+                      },
+                      "inner": [
+                        {
+                          "id": "0x56334c57b4b0",
+                          "kind": "PointerType",
+                          "type": {
+                            "qualType": "char *"
+                          },
+                          "inner": [
+                            {
+                              "id": "0x56334c57a960",
+                              "kind": "BuiltinType",
+                              "type": {
+                                "qualType": "char"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ]
 }

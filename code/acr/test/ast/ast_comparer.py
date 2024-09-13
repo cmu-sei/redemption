@@ -111,7 +111,12 @@ bool: True if the input is a hexadecimal address, False otherwise.
 """
 
 def is_hex_address(s):
-    return bool(is_hex_address.pattern.match(s))
+    # must be a string or an exception is thrown
+    if isinstance(s, str):
+      return bool(is_hex_address.pattern.match(s))
+    
+    # if it's not a string, then it's not a hex address
+    return False
 
 # Define the regular expression pattern for a hexadecimal address
 is_hex_address.pattern = re.compile(r'^0x[0-9a-fA-F]+$')

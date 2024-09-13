@@ -34,3 +34,4 @@ doc/examples/separate_build/wrk
 data/test/logs.log
 data/test/out/*
 data/test/step/*
+code/acr/test/logs.log

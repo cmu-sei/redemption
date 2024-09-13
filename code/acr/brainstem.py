@@ -35,6 +35,12 @@ from dataclasses import dataclass
 
 import json
 
+###############################################################################
+#
+# Utilize Clang Modifications
+#
+###############################################################################
+
 @dataclass
 class FunctionStruct:
     realType: str
@@ -117,6 +123,39 @@ def identify_expr(node):
       return "-" + identify_expr(node["inner"][0])
     return node
 
+###############################################################################
+#
+# Utilize Unmodified Clang
+#
+###############################################################################
+
+brainstem_pointer_regex = re.compile(r"(?:\*|\(\*\)\(.*\)(?: ?[a-z_]+)*)$", re.I)
+
+# Legacy: uses unmodified version of clang
+def get_function_return_type_legacy(node):
+    t = node["type"]["qualType"]
+    return t[0:t.find("(")].strip()
+
+# Legacy: uses unmodified version of clang
+def is_integral_type_legacy(t):
+    return t in ["int", "unsigned int"]
+
+# Legacy: uses unmodified version of clang
+def is_void_legacy(t):
+    return t == "void"
+
+# Legacy: uses unmodified version of clang
+def is_pointer_type_legacy(t):
+    return bool(brainstem_pointer_regex.search(t))
+
+###############################################################################
+#
+# The Brainstem class 
+#
+# will switch between the unmodified and modified 
+# depending on what characteristics are found in the AST
+###############################################################################
+
 class Brainstem(AstVisitor):
     def __init__(self):
         AstVisitor.__init__(self)
@@ -129,10 +168,14 @@ class Brainstem(AstVisitor):
     def handle_functions(self, node):
         d = dict()
         d["name"] = node["name"]
+
+        # assumes the modified version of clang
+        # we need to run a check to ensure AST compatibility.
         return_type = get_function_return_type(node)
 
         # verify node contains a return result
         if return_type is None:
+            self.handle_function_legacy(node)
             return
 
         self._return_exps = list()
@@ -165,6 +208,42 @@ class Brainstem(AstVisitor):
             expr = None
         self._return_exps.append(expr)
 
+    def handle_function_legacy(self, node):
+        """
+        Will attempt to provide some information based on the hacks that were in place
+        before the Clang AST output was modified. This should only be called whenever 
+        the other handle_function function fails.
+        """
+        if "inner" not in node:
+            return
+        
+        d = dict()
+        d["name"] = node["name"]
+
+        return_type = get_function_return_type(node)
+        self._return_exps = list()
+
+        self.visitdefault(node)
+
+        return_others = list()
+        if len(self._return_exps) > 0:
+            return_last = self._return_exps.pop(-1)
+            if len(self._return_exps) > 0:
+                return_others = self._return_exps
+
+        error_handler = None
+        if is_pointer_type_legacy(return_type) and "0" in return_others:
+            error_handler = "return NULL"
+        if is_integral_type_legacy(return_type) and "0" in return_others:
+            error_handler = "return 0"
+        if is_integral_type_legacy(return_type) and "-1" in return_others:
+            error_handler = "return -1"
+        if is_void_legacy(return_type) and None in return_others:
+            error_handler = "return"
+        if error_handler is not None:
+            d["error_handler"] = error_handler
+
+        self.error_handling_db[node['id']] = d
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Produces error-handling strategies for each function in AST')

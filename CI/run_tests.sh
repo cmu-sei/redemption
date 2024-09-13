@@ -42,6 +42,10 @@ docker run --rm  -v ${PWD}:/host  --workdir /host/code/acr/test/ast  ghcr.io/cmu
        pytest --verbose --junit-xml=junit.clang.xml -s ast_comparer.py --config scenarios.json
 echo clang pytest done
 
+docker run --rm  -v ${PWD}:/host  --workdir /host/code/acr/test/ast  ghcr.io/cmu-sei/redemption-prereq \
+       pytest --verbose --junit-xml=junit.clang.xml -s ast_comparer.py --config scenarios_legacy_ast.json
+echo clang pytest done
+
 docker run --rm  -v ${PWD}:/host  --workdir /host/data/test  ghcr.io/cmu-sei/redemption-test \
        pytest --verbose --junit-xml=junit.oss.xml
 echo oss pytest done

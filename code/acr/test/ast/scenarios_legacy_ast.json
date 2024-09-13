@@ -1,0 +1,45 @@
+{
+  "clang": "/usr/bin/clang",
+  "scenarios": [
+    {
+      "name": "test-function-pointers: uninitialized function pointers",
+      "json": "test-function-pointers-orig.json",
+      "source": "test-function-pointers.c"
+    },
+    {
+      "name": "test-functions: declarations and definitions",
+      "json": "test-functions-orig.json",
+      "source": "test-functions.c"
+    },
+    {
+      "name": "test-pointers-init: initialized and uninitialized pointers",
+      "json": "test-pointers-init-orig.json",
+      "source": "test-pointers-init.c"
+    },
+    {
+      "name": "test-pointers: uninitialized pointers",
+      "json": "test-pointers-orig.json",
+      "source": "test-pointers.c"
+    },
+    {
+      "name": "test-structs",
+      "json": "test-structs-orig.json",
+      "source": "test-structs.c"
+    },
+    {
+      "name": "test-sible-null",
+      "json": "test-sible-null-orig.json",
+      "source": "test-sible-null.c"
+    },
+    {
+      "name": "test ReferenceDecl to FunctionDecl",
+      "json": "test-null-check-orig.json",
+      "source": "test-null-check.c"
+    },
+    {
+      "name": "test function pointer assignment",
+      "json": "test-git-config-orig.json",
+      "source": "test-git-config.c"
+    }
+  ]
+}
