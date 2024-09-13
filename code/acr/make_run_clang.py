@@ -88,11 +88,14 @@ def get_compile_cmds_for_source_file(compile_cmds_file=None, source_file=None):
         source_file = os.path.realpath(source_file)
 
     cmds = []
+    skipped_files = []
     for cmd in compile_commands:
         compile_dir = get_compile_dir(cmd)
         cur_file = os.path.realpath(os.path.join(compile_dir, cmd['file']))
         if source_file is None or source_file == cur_file:
             cmds.append(cmd)
+        elif source_file != cur_file:
+            skipped_files.append(cur_file)
     if len(cmds) == 0:
         err_msg = (("Error: source file %r not found in compile commands!\n" % source_file) +
                    ("Files available in compile commands: %r" % skipped_files))
