@@ -95,7 +95,7 @@ class ASTContext:
         for x in self.current():
             yield ASTContext((x, self.path), path=True, name_proxy=self.name_proxy)
 
-    def _remap_refid(self, key):
+    def _remap_refid(self):
         if not self.is_mapping():
             return None
         id_map = getattr(self, "id_map", None)
@@ -109,7 +109,7 @@ class ASTContext:
     def __contains__(self, key):
         if key in self.current():
             return True
-        actual = self._remap_refid(key)
+        actual = self._remap_refid()
         if actual is None:
             return False
         return key in actual
@@ -252,12 +252,50 @@ class ASTContext:
             return None
         return n.get("offset") + n.get("tokLen")
 
+    def _type_matcher(self, raw_matcher, detail_match, *, fallback = True):
+        if not self.is_mapping():
+            return None
+        td = self.get("typeDetails") or self.get("qualType")
+        if td is not None:
+            qd = td["qualDetails"]
+            if isinstance(detail_match, tuple):
+                for item in detail_match:
+                    if item in qd:
+                        return True
+            elif detail_match in qd:
+                return True
+            if not fallback:
+                return False
+        # Fall back to the basic type information
+        typ = self.get("type")
+        if typ is None:
+            return None
+        qual = typ.get("desugaredQualType") or typ.get("qualType")
+        if qual is None:
+            return None
+        return raw_matcher(qual)
+
+    # A reasonable heuristic for matching pointer types
+    pointer_regex = re.compile(r"(?:\*|\(\*\)\(.*\)(?: ?[a-z_]+)*)$", re.I)
+
+    def is_pointer_type(self):
+        raw_matcher = lambda x: bool(self.pointer_regex.search(x))
+        return self._type_matcher(raw_matcher, "ptr", fallback=False)
+
+    def is_array_type(self):
+        raw_matcher = lambda x: x.endswith(']')
+        return self._type_matcher(raw_matcher, "array")
+
+    def is_struct_or_union_type(self):
+        raw_matcher = lambda x: x.startswith(("struct", "union"))
+        return self._type_matcher(raw_matcher, ("struct", "union"))
+
     def __getitem__(self, key):
         try:
             return ASTContext((self.current()[key], self.path), path=True,
                               name_proxy=self.name_proxy)
         except AttributeError as e:
-            actual = self._remap_refid(key)
+            actual = self._remap_refid()
             if actual is None:
                 raise e
             value = actual[key]
@@ -500,8 +538,8 @@ class Brain(AstVisitor):
                 if new_node is node:
                     items = (self.intervals[i] for i in range(idx, 0, -1))
                     nodes = takewhile(lambda x: (x[0].file == filename
-                                                      and x[0].begin == key.begin),
-                                           items)
+                                                 and x[0].begin == key.begin),
+                                      items)
                     return ([x[1] for x in nodes], True)
                 elif new_node is None:
                     return None

@@ -1,5 +1,5 @@
---- /host/data/test/out/zeek.clang-tidy.EXP33-C/src/3rdparty/sqlite3.c	2024-07-15 20:06:05.620717774 +0000
-+++ /oss/zeek/src/3rdparty/sqlite3.c	2024-06-22 00:27:13.000000000 +0000
+--- /host/data/test/out/zeek.clang-tidy.EXP33-C/src/3rdparty/sqlite3.c	2024-09-11 19:59:01.169029972 +0000
++++ /oss/zeek/src/3rdparty/sqlite3.c	2024-08-20 17:41:30.000000000 +0000
 @@ -22778,7 +22778,7 @@
  ** The caller must hold the appropriate mutex.
  */
@@ -1808,7 +1808,7 @@
    ** other hand, dlsym() will not work on such a system either, so we have
    ** not really lost anything.
    */
--  void (*(*x)(void*,const char*))(void) = 0;
+-  void (*(*x)(void*,const char*))(void) = NULL;
 +  void (*(*x)(void*,const char*))(void);
    UNUSED_PARAMETER(NotUsed);
    x = (void(*(*)(void*,const char*))(void))dlsym;
@@ -4787,7 +4787,7 @@
    int *pRes                /* Write search results here */
  ){
 -  int rc = 0;
--  RecordCompare xRecordCompare = 0;
+-  RecordCompare xRecordCompare = NULL;
 +  int rc;
 +  RecordCompare xRecordCompare;
  
@@ -12113,7 +12113,7 @@
 +  int rc;
  #endif
  #ifndef SQLITE_OMIT_AUTHORIZATION
--  sqlite3_xauth xAuth = 0;       /* Saved xAuth pointer */
+-  sqlite3_xauth xAuth = NULL;       /* Saved xAuth pointer */
 +  sqlite3_xauth xAuth;       /* Saved xAuth pointer */
  #endif
  
@@ -14397,7 +14397,7 @@
  ){
    sqlite3_vfs *pVfs = db->pVfs;
 -  void *handle = NULL;
--  sqlite3_loadext_entry xInit = 0;
+-  sqlite3_loadext_entry xInit = NULL;
 +  void *handle;
 +  sqlite3_loadext_entry xInit;
    char *zErrmsg = 0;
@@ -14454,7 +14454,7 @@
      }
      if( i==wsdAutoext.nExt ){
        u64 nByte = (wsdAutoext.nExt+1)*sizeof(wsdAutoext.aExt[0]);
--      void (**aNew)(void) = 0;
+-      void (**aNew)(void) = NULL;
 +      void (**aNew)(void);
        aNew = sqlite3_realloc64(wsdAutoext.aExt, nByte);
        if( aNew==0 ){
@@ -14476,7 +14476,7 @@
 +  u32 i;
    int go = 1;
 -  int rc = 0;
--  sqlite3_loadext_entry xInit = 0;
+-  sqlite3_loadext_entry xInit = NULL;
 +  int rc;
 +  sqlite3_loadext_entry xInit;
  
@@ -15230,7 +15230,7 @@
          db->aDb[iDb].zDbSName, zSchemaTabName);
  #ifndef SQLITE_OMIT_AUTHORIZATION
      {
--      sqlite3_xauth xAuth = 0;
+-      sqlite3_xauth xAuth = NULL;
 +      sqlite3_xauth xAuth;
        xAuth = db->xAuth;
        db->xAuth = 0;
@@ -17584,7 +17584,7 @@
     && ALWAYS(pTab->u.vtab.p!=0)
    ){
 -    VTable *p = NULL;
--    int (*xDestroy)(sqlite3_vtab *) = 0;
+-    int (*xDestroy)(sqlite3_vtab *) = NULL;
 +    VTable *p;
 +    int (*xDestroy)(sqlite3_vtab *);
      for(p=pTab->u.vtab.p; p; p=p->pNext){
@@ -17603,7 +17603,7 @@
        VTable *pVTab = aVTrans[i];
        sqlite3_vtab *p = pVTab->pVtab;
        if( p ){
--        int (*x)(sqlite3_vtab *) = 0;
+-        int (*x)(sqlite3_vtab *) = NULL;
 +        int (*x)(sqlite3_vtab *);
          x = *(int (**)(sqlite3_vtab *))((char *)p->pModule + offset);
          if( x ) x(p);
@@ -17619,7 +17619,7 @@
  
    db->aVTrans = 0;
    for(i=0; rc==SQLITE_OK && i<db->nVTrans; i++){
--    int (*x)(sqlite3_vtab *) = 0;
+-    int (*x)(sqlite3_vtab *) = NULL;
 +    int (*x)(sqlite3_vtab *);
      sqlite3_vtab *pVtab = aVTrans[i]->pVtab;
      if( pVtab && (x = pVtab->pModule->xSync)!=0 ){
@@ -17652,7 +17652,7 @@
        VTable *pVTab = db->aVTrans[i];
        const sqlite3_module *pMod = pVTab->pMod->pModule;
        if( pVTab->pVtab && pMod->iVersion>=2 ){
--        int (*xMethod)(sqlite3_vtab *, int) = 0;
+-        int (*xMethod)(sqlite3_vtab *, int) = NULL;
 +        int (*xMethod)(sqlite3_vtab *, int);
          sqlite3VtabLock(pVTab);
          switch( op ){
@@ -18285,7 +18285,7 @@
      if( ExprIsVtab(pCol) ){
 -      sqlite3_vtab *pVtab = NULL;
 -      sqlite3_module *pMod = NULL;
--      void (*xNotUsed)(sqlite3_context*,int,sqlite3_value**) = 0;
+-      void (*xNotUsed)(sqlite3_context*,int,sqlite3_value**) = NULL;
 -      void *pNotUsed = NULL;
 +      sqlite3_vtab *pVtab;
 +      sqlite3_module *pMod;
@@ -20935,8 +20935,8 @@
      */
      case SQLITE_TESTCTRL_BENIGN_MALLOC_HOOKS: {
        typedef void (*void_function)(void);
--      void_function xBenignBegin = 0;
--      void_function xBenignEnd = 0;
+-      void_function xBenignBegin = NULL;
+-      void_function xBenignEnd = NULL;
 +      void_function xBenignBegin;
 +      void_function xBenignEnd;
        xBenignBegin = va_arg(ap, void_function);

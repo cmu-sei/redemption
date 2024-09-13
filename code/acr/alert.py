@@ -315,9 +315,10 @@ class EXP33_C(Alert):
                 init_val = "0"
                 if context.cplusplus:
                     init_val = "{}";
-                elif self.decl_node["type"]["qualType"].endswith("*"):
+                elif self.decl_node.is_pointer_type():
                     init_val = "NULL"
-                elif self.decl_node["type"].get("desugaredQualType","").startswith(("struct","union")):
+                elif (self.decl_node.is_struct_or_union_type()
+                      or self.decl_node.is_array_type()):
                     init_val = "{}"
                 byte_end = self.decl_node.get_end_offset()
                 if byte_end is None:

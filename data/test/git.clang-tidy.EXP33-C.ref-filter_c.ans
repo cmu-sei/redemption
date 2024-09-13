@@ -1,5 +1,5 @@
---- /host/data/test/out/git.clang-tidy.EXP33-C/ref-filter.c	2024-07-15 20:30:14.136065329 +0000
-+++ /oss/git/ref-filter.c	2024-06-28 01:30:36.760014151 +0000
+--- /host/data/test/out/git.clang-tidy.EXP33-C/ref-filter.c	2024-09-11 19:44:36.359658906 +0000
++++ /oss/git/ref-filter.c	2024-08-20 17:42:04.000000000 +0000
 @@ -94,7 +94,7 @@
  				      const struct hashmap_entry *kptr,
  				      const void *keydata_aka_refname)
@@ -424,7 +424,7 @@
  		cmp = versioncmp(va->s, vb->s);
  	} else if (cmp_type == FIELD_STR) {
  		if (va->s_size < 0 && vb->s_size < 0) {
--			int (*cmp_fn)(const char *, const char *) = 0;
+-			int (*cmp_fn)(const char *, const char *) = NULL;
 +			int (*cmp_fn)(const char *, const char *);
  			cmp_fn = s->sort_flags & REF_SORTING_ICASE
  				? strcasecmp : strcmp;
@@ -433,7 +433,7 @@
  					strlen(va->s) : va->s_size;
  			size_t b_size = vb->s_size < 0 ?
  					strlen(vb->s) : vb->s_size;
--			int (*cmp_fn)(const void *, const void *, size_t) = 0;
+-			int (*cmp_fn)(const void *, const void *, size_t) = NULL;
 +			int (*cmp_fn)(const void *, const void *, size_t);
  			cmp_fn = s->sort_flags & REF_SORTING_ICASE
  				? memcasecmp : memcmp;
