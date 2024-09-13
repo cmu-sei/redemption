@@ -34,8 +34,22 @@
 #  define ACR_NORETURN
 #endif
 
+#if __cplusplus
+// It's better not to try to guess at the abort and printf prototypes in C++, so use their
+// actual definitions.
+#  include <cstdlib>            // For abort()
+#  include <cstdio>             // For printf()
+#  define _null_check_abort  ::std::abort
+#  define _null_check_printf ::std::printf
+#else
+// However, in C the effect of pulling in the headers is much more likely to be affected by the
+// existence of defines such as _BSD_SOURCE or _GNU_SOURCE.  As such, we don't want to include
+// them prematurely.  And in C, the prototypes are a little more stable.
 int printf(const char *restrict format, ...);
 ACR_NORETURN void abort(void);
+#  define _null_check_abort  abort
+#  define _null_check_printf printf
+#endif
 
 // Note: `__typeof__` is a GCC/Clang extension; change `__typeof__` to `typeof`
 // for C23-compliant compilers that don't recognize `__typeof__`.
@@ -51,8 +65,8 @@ ACR_NORETURN void abort(void);
   ({ __typeof__(&*p_expr) _sei_acr_temp_bc_p = (p_expr);                \
     if (!_sei_acr_temp_bc_p) {                                          \
       __VA_ARGS__;                                                      \
-      printf("Exiting due to detected impending null pointer dereference in file %s, function %s, line %d\n", __FILE__, __func__, __LINE__); \
-      abort();                                                          \
+      _null_check_printf("Exiting due to detected impending null pointer dereference in file %s, function %s, line %d\n", __FILE__, __func__, __LINE__); \
+      _null_check_abort();                                              \
     };                                                                  \
     _sei_acr_temp_bc_p;                                                 \
   })
@@ -66,8 +80,8 @@ ACR_NORETURN void abort(void);
   (*({ __typeof__(&*p_expr) *_sei_acr_temp_bc_p = &(p_expr);            \
       if (!*_sei_acr_temp_bc_p) {                                       \
         __VA_ARGS__;                                                    \
-        printf("Exiting due to detected impending null pointer dereference in file %s, function %s, line %d\n", __FILE__, __func__, __LINE__); \
-        abort();                                                        \
+        _null_check_printf("Exiting due to detected impending null pointer dereference in file %s, function %s, line %d\n", __FILE__, __func__, __LINE__); \
+        _null_check_abort();                                            \
       };                                                                \
       _sei_acr_temp_bc_p;                                               \
     }))
