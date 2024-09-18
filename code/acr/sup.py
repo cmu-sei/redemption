@@ -173,10 +173,11 @@ def combine_brain_outs(indiv_brain_filenames):
     return combined_alert_list
 
 def execute(cmd, base_dir, ast_filename, raw_ast_dir, alerts, brain_out_file):
-    ear.write_ear_output_for_cmd(cmd, base_dir, ast_file=ast_filename,
+    ast = ear.write_ear_output_for_cmd(cmd, base_dir, ast_file=ast_filename,
                                  raw_ast_dir=raw_ast_dir)
+    extra = {} if ast is None else {"preloaded_ast": ast}
     brain.run(ast_file=ast_filename, alerts_filename=alerts,
-              output_filename=brain_out_file)
+              output_filename=brain_out_file, **extra)
 
 def run(*, compile_cmds_file, base_dir, alerts=None, combined_brain_out=None,
         step_dir=None, out_src_dir=None, inject_brain_output=False, raw_ast_dir=None, **kwargs):

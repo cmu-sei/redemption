@@ -155,6 +155,7 @@ def run_ear_for_cmd(cmd, base_dir, ast_file, ll_outfile, raw_ast_dir=None):
         fn_open = open
     with fn_open(ast_file, 'wt') as outfile:
         outfile.write(ast2)
+    return ast_json
 
 
 def write_ear_output_for_cmd(cmd, base_dir, ast_file=None, raw_ast_dir=None):
@@ -200,6 +201,7 @@ def write_ear_output_for_cmd(cmd, base_dir, ast_file=None, raw_ast_dir=None):
         run_ear_for_cmd(cmd, base_dir, ast_file, ll_outfile, raw_ast_dir)
         shutil.copy(ast_file, cache_ast_file)
         shutil.copy(ll_outfile, cache_ll_file)
+    return None
 
 
 def run_ear_for_source_file(source_file, compile_cmds_file=None, ast_file=None, base_dir=None, raw_ast_dir=None):

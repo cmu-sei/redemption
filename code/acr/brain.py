@@ -634,12 +634,15 @@ def main():
     cmdline_args = parse_args()
     run(**vars(cmdline_args))
 
-def run(ast_file, alerts_filename, output_filename):
+def run(ast_file, alerts_filename, output_filename, preloaded_ast=None):
     if os.getenv('acr_emit_invocation'):
         print("brain.py -o {} -a {} {}".format(
             output_filename, alerts_filename, ast_file))
     ll_file = get_ast_file_base(ast_file) + ".ll"
-    ast = read_json_file(ast_file)
+    if preloaded_ast is None:
+        ast = read_json_file(ast_file)
+    else:
+        ast = preloaded_ast
     print_progress("Finished parsing AST in brain module.")
     brain = Brain(ast)
     brain.parse_alerts(alerts_filename)
