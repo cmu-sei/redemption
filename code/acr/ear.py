@@ -28,7 +28,6 @@
 
 import os
 import sys
-import re
 import subprocess
 import pprint
 from util import print_progress, read_whole_file, is_nonzero_file, \
@@ -48,8 +47,6 @@ from make_run_clang import get_compile_cmds_for_source_file, get_compile_dir, ge
 class EarException(Exception):
     pass
 
-class EarNoAlerts(Exception):
-    pass
 
 def run_clang_parse(compile_cmd, clang_output_dir, generated=False):
     print_progress(f"Running Clang on {compile_cmd['file']}...")
@@ -131,14 +128,8 @@ def update_ast(ast_json, base_dir, cmd):
 
     return ast_json
 
-def has_filenames_in_ast(text_ast, filenames):
-    escaped_strings = [re.escape(s) for s in filenames]
-    pat = '"file":.*(' + '|'.join(escaped_strings) + ')'
-    regex = re.compile(pat.encode('utf-8'))
-    match = regex.search(text_ast)
-    return bool(match)
 
-def run_ear_for_cmd(cmd, base_dir, ast_file, ll_outfile, raw_ast_dir=None, alerted_files=None):
+def run_ear_for_cmd(cmd, base_dir, ast_file, ll_outfile, raw_ast_dir=None):
     generated = (raw_ast_dir is not None)
     if generated is False:
         raw_ast_dir = os.path.dirname(ll_outfile)
@@ -147,10 +138,6 @@ def run_ear_for_cmd(cmd, base_dir, ast_file, ll_outfile, raw_ast_dir=None, alert
 
     print_progress("Reading AST file...")
     ast1 = read_whole_file(ast_raw_file)
-    print_progress("Checking for alerted files in AST...")
-    if alerted_files != None and not has_filenames_in_ast(ast1, alerted_files):
-        print_progress("Skipping this TU, since it has no files with alerts.")
-        raise EarNoAlerts
     print_progress("Parsing JSON AST...")
     ast_json = json.loads(ast1, object_pairs_hook=OrderedDict)
 
@@ -170,7 +157,7 @@ def run_ear_for_cmd(cmd, base_dir, ast_file, ll_outfile, raw_ast_dir=None, alert
         outfile.write(ast2)
 
 
-def write_ear_output_for_cmd(cmd, base_dir, ast_file=None, raw_ast_dir=None, alerted_files=None):
+def write_ear_output_for_cmd(cmd, base_dir, ast_file=None, raw_ast_dir=None):
     cache_dir = os.getenv('acr_parser_cache')
     if cache_dir and not cache_dir.startswith("/"):
         print("ERROR: environment variable 'acr_parser_cache' must be an absolute path!")
@@ -184,7 +171,7 @@ def write_ear_output_for_cmd(cmd, base_dir, ast_file=None, raw_ast_dir=None, ale
     if (not cache_dir) or not os.path.isdir(cache_dir):
         if os.getenv('acr_parser_cache_verbose'):
             print("No cache dir")
-        return run_ear_for_cmd(cmd, base_dir, ast_file, ll_outfile, raw_ast_dir, alerted_files=alerted_files)
+        return run_ear_for_cmd(cmd, base_dir, ast_file, ll_outfile, raw_ast_dir)
 
     cur_file = os.path.realpath(os.path.join(compile_dir, cmd['file']))
     cache_base_name = os.path.splitext(os.path.basename(cmd["file"]))[0][:20]
@@ -210,7 +197,7 @@ def write_ear_output_for_cmd(cmd, base_dir, ast_file=None, raw_ast_dir=None, ale
     else:
         if os.getenv('acr_parser_cache_verbose'):
             print("Generating ear output for " + cmd["file"])
-        run_ear_for_cmd(cmd, base_dir, ast_file, ll_outfile, raw_ast_dir, alerted_files=alerted_files)
+        run_ear_for_cmd(cmd, base_dir, ast_file, ll_outfile, raw_ast_dir)
         shutil.copy(ast_file, cache_ast_file)
         shutil.copy(ll_outfile, cache_ll_file)
 
