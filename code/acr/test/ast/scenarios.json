@@ -40,6 +40,11 @@
       "name": "test function pointer assignment",
       "json": "test-git-config.json",
       "source": "test-git-config.c"
+    },
+    {
+      "name": "union and array qualDetails",
+      "json": "test-array-union.json",
+      "source": "test-array-union.c"
     }
   ]
 }

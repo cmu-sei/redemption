@@ -1,0 +1,371 @@
+{
+  "id": "0x557ca8e2f838",
+  "kind": "TranslationUnitDecl",
+  "loc": {},
+  "range": {
+    "begin": {},
+    "end": {}
+  },
+  "inner": [
+    {
+      "id": "0x557ca8e30060",
+      "kind": "TypedefDecl",
+      "loc": {},
+      "range": {
+        "begin": {},
+        "end": {}
+      },
+      "isImplicit": true,
+      "name": "__int128_t",
+      "type": {
+        "qualType": "__int128"
+      },
+      "inner": [
+        {
+          "id": "0x557ca8e2fe00",
+          "kind": "BuiltinType",
+          "type": {
+            "qualType": "__int128"
+          }
+        }
+      ]
+    },
+    {
+      "id": "0x557ca8e300d0",
+      "kind": "TypedefDecl",
+      "loc": {},
+      "range": {
+        "begin": {},
+        "end": {}
+      },
+      "isImplicit": true,
+      "name": "__uint128_t",
+      "type": {
+        "qualType": "unsigned __int128"
+      },
+      "inner": [
+        {
+          "id": "0x557ca8e2fe20",
+          "kind": "BuiltinType",
+          "type": {
+            "qualType": "unsigned __int128"
+          }
+        }
+      ]
+    },
+    {
+      "id": "0x557ca8e303d8",
+      "kind": "TypedefDecl",
+      "loc": {},
+      "range": {
+        "begin": {},
+        "end": {}
+      },
+      "isImplicit": true,
+      "name": "__NSConstantString",
+      "type": {
+        "qualType": "struct __NSConstantString_tag"
+      },
+      "inner": [
+        {
+          "id": "0x557ca8e301b0",
+          "kind": "RecordType",
+          "type": {
+            "qualType": "struct __NSConstantString_tag"
+          },
+          "decl": {
+            "id": "0x557ca8e30128",
+            "kind": "RecordDecl",
+            "name": "__NSConstantString_tag"
+          }
+        }
+      ]
+    },
+    {
+      "id": "0x557ca8e30470",
+      "kind": "TypedefDecl",
+      "loc": {},
+      "range": {
+        "begin": {},
+        "end": {}
+      },
+      "isImplicit": true,
+      "name": "__builtin_ms_va_list",
+      "type": {
+        "qualType": "char *"
+      },
+      "inner": [
+        {
+          "id": "0x557ca8e30430",
+          "kind": "PointerType",
+          "type": {
+            "qualType": "char *"
+          },
+          "inner": [
+            {
+              "id": "0x557ca8e2f8e0",
+              "kind": "BuiltinType",
+              "type": {
+                "qualType": "char"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "0x557ca8e30768",
+      "kind": "TypedefDecl",
+      "loc": {},
+      "range": {
+        "begin": {},
+        "end": {}
+      },
+      "isImplicit": true,
+      "name": "__builtin_va_list",
+      "type": {
+        "qualType": "struct __va_list_tag[1]"
+      },
+      "inner": [
+        {
+          "id": "0x557ca8e30710",
+          "kind": "ConstantArrayType",
+          "type": {
+            "qualType": "struct __va_list_tag[1]"
+          },
+          "size": 1,
+          "inner": [
+            {
+              "id": "0x557ca8e30550",
+              "kind": "RecordType",
+              "type": {
+                "qualType": "struct __va_list_tag"
+              },
+              "decl": {
+                "id": "0x557ca8e304c8",
+                "kind": "RecordDecl",
+                "name": "__va_list_tag"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "0x557ca8e8bdf8",
+      "kind": "VarDecl",
+      "loc": {
+        "offset": 5,
+        "file": "test-array-union.c",
+        "line": 1,
+        "col": 6,
+        "tokLen": 4
+      },
+      "range": {
+        "begin": {
+          "offset": 0,
+          "col": 1,
+          "tokLen": 4
+        },
+        "end": {
+          "offset": 13,
+          "col": 14,
+          "tokLen": 1
+        }
+      },
+      "name": "carr",
+      "mangledName": "carr",
+      "type": {
+        "qualType": "char[128]"
+      }
+    },
+    {
+      "id": "0x557ca8e8bea8",
+      "kind": "RecordDecl",
+      "loc": {
+        "offset": 23,
+        "line": 3,
+        "col": 7,
+        "tokLen": 4
+      },
+      "range": {
+        "begin": {
+          "offset": 17,
+          "col": 1,
+          "tokLen": 5
+        },
+        "end": {
+          "offset": 67,
+          "line": 8,
+          "col": 1,
+          "tokLen": 1
+        }
+      },
+      "name": "Data",
+      "tagUsed": "union",
+      "completeDefinition": true,
+      "inner": [
+        {
+          "id": "0x557ca8e8bf68",
+          "kind": "FieldDecl",
+          "loc": {
+            "offset": 37,
+            "line": 5,
+            "col": 7,
+            "tokLen": 1
+          },
+          "range": {
+            "begin": {
+              "offset": 33,
+              "col": 3,
+              "tokLen": 3
+            },
+            "end": {
+              "offset": 37,
+              "col": 7,
+              "tokLen": 1
+            }
+          },
+          "name": "i",
+          "type": {
+            "qualType": "int"
+          }
+        },
+        {
+          "id": "0x557ca8e8bfd0",
+          "kind": "FieldDecl",
+          "loc": {
+            "offset": 48,
+            "line": 6,
+            "col": 9,
+            "tokLen": 1
+          },
+          "range": {
+            "begin": {
+              "offset": 42,
+              "col": 3,
+              "tokLen": 5
+            },
+            "end": {
+              "offset": 48,
+              "col": 9,
+              "tokLen": 1
+            }
+          },
+          "name": "f",
+          "type": {
+            "qualType": "float"
+          }
+        },
+        {
+          "id": "0x557ca8e8c0b8",
+          "kind": "FieldDecl",
+          "loc": {
+            "offset": 58,
+            "line": 7,
+            "col": 8,
+            "tokLen": 3
+          },
+          "range": {
+            "begin": {
+              "offset": 53,
+              "col": 3,
+              "tokLen": 4
+            },
+            "end": {
+              "offset": 64,
+              "col": 14,
+              "tokLen": 1
+            }
+          },
+          "name": "str",
+          "type": {
+            "qualType": "char[20]"
+          }
+        }
+      ]
+    },
+    {
+      "id": "0x557ca8e8c160",
+      "kind": "VarDecl",
+      "loc": {
+        "offset": 82,
+        "line": 10,
+        "col": 12,
+        "tokLen": 11
+      },
+      "range": {
+        "begin": {
+          "offset": 71,
+          "col": 1,
+          "tokLen": 5
+        },
+        "end": {
+          "offset": 82,
+          "col": 12,
+          "tokLen": 11
+        }
+      },
+      "name": "instantData",
+      "mangledName": "instantData",
+      "type": {
+        "desugaredQualType": "union Data",
+        "qualType": "union Data"
+      }
+    },
+    {
+      "id": "0x557ca8e8c270",
+      "kind": "VarDecl",
+      "loc": {
+        "offset": 103,
+        "line": 12,
+        "col": 8,
+        "tokLen": 7
+      },
+      "range": {
+        "begin": {
+          "offset": 96,
+          "col": 1,
+          "tokLen": 4
+        },
+        "end": {
+          "offset": 113,
+          "col": 18,
+          "tokLen": 1
+        }
+      },
+      "name": "carrarr",
+      "mangledName": "carrarr",
+      "type": {
+        "qualType": "char *[20]"
+      }
+    },
+    {
+      "id": "0x557ca8e8c3d8",
+      "kind": "VarDecl",
+      "loc": {
+        "offset": 123,
+        "line": 13,
+        "col": 8,
+        "tokLen": 10
+      },
+      "range": {
+        "begin": {
+          "offset": 116,
+          "col": 1,
+          "tokLen": 4
+        },
+        "end": {
+          "offset": 137,
+          "col": 22,
+          "tokLen": 1
+        }
+      },
+      "name": "carrarrptr",
+      "mangledName": "carrarrptr",
+      "type": {
+        "qualType": "char (*)[20]"
+      }
+    }
+  ]
+}

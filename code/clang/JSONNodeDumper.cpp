@@ -164,6 +164,7 @@ void JSONNodeDumper::VisitQualTypeDetails(QualType T) {
   if (CT->isUnionType()) JOS.value("union");
   if (CT->isFunctionPointerType()) JOS.value("func_ptr");
   if (CT->isTypedefNameType()) JOS.value("type_def");
+  if (CT->isArrayType()) JOS.value("array");
 
   JOS.arrayEnd();
   JOS.attributeEnd();

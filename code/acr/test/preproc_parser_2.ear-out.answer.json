@@ -153,7 +153,9 @@
             "qualType": "struct __va_list_tag[1]"
           },
           "size": 1,
-          "qualDetails": [],
+          "qualDetails": [
+            "array"
+          ],
           "typeDetails": [
             {
               "id": 1013,

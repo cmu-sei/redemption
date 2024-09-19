@@ -1,0 +1,487 @@
+{
+  "id": "0x55c8860def68",
+  "kind": "TranslationUnitDecl",
+  "loc": {},
+  "range": {
+    "begin": {},
+    "end": {}
+  },
+  "inner": [
+    {
+      "id": "0x55c8860df790",
+      "kind": "TypedefDecl",
+      "loc": {},
+      "range": {
+        "begin": {},
+        "end": {}
+      },
+      "isImplicit": true,
+      "name": "__int128_t",
+      "type": {
+        "qualType": "__int128"
+      },
+      "typeDetails": [
+        {
+          "id": "0x55c8860df530",
+          "kind": "BuiltinType",
+          "type": {
+            "qualType": "__int128"
+          },
+          "qualDetails": [
+            "signed",
+            "integer"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "0x55c8860df800",
+      "kind": "TypedefDecl",
+      "loc": {},
+      "range": {
+        "begin": {},
+        "end": {}
+      },
+      "isImplicit": true,
+      "name": "__uint128_t",
+      "type": {
+        "qualType": "unsigned __int128"
+      },
+      "typeDetails": [
+        {
+          "id": "0x55c8860df550",
+          "kind": "BuiltinType",
+          "type": {
+            "qualType": "unsigned __int128"
+          },
+          "qualDetails": [
+            "unsigned",
+            "integer"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "0x55c8860dfb08",
+      "kind": "TypedefDecl",
+      "loc": {},
+      "range": {
+        "begin": {},
+        "end": {}
+      },
+      "isImplicit": true,
+      "name": "__NSConstantString",
+      "type": {
+        "qualType": "struct __NSConstantString_tag"
+      },
+      "typeDetails": [
+        {
+          "id": "0x55c8860df8e0",
+          "kind": "RecordType",
+          "type": {
+            "qualType": "struct __NSConstantString_tag"
+          },
+          "decl": {
+            "id": "0x55c8860df858",
+            "kind": "RecordDecl",
+            "name": "__NSConstantString_tag"
+          },
+          "qualDetails": [
+            "struct"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "0x55c8860dfba0",
+      "kind": "TypedefDecl",
+      "loc": {},
+      "range": {
+        "begin": {},
+        "end": {}
+      },
+      "isImplicit": true,
+      "name": "__builtin_ms_va_list",
+      "type": {
+        "qualType": "char *"
+      },
+      "typeDetails": [
+        {
+          "id": "0x55c8860dfb60",
+          "kind": "PointerType",
+          "type": {
+            "qualType": "char *"
+          },
+          "qualDetails": [
+            "ptr"
+          ],
+          "typeDetails": [
+            {
+              "id": "0x55c8860df010",
+              "kind": "BuiltinType",
+              "type": {
+                "qualType": "char"
+              },
+              "qualDetails": [
+                "promotable",
+                "signed",
+                "integer"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "0x55c8860dfe98",
+      "kind": "TypedefDecl",
+      "loc": {},
+      "range": {
+        "begin": {},
+        "end": {}
+      },
+      "isImplicit": true,
+      "name": "__builtin_va_list",
+      "type": {
+        "qualType": "struct __va_list_tag[1]"
+      },
+      "typeDetails": [
+        {
+          "id": "0x55c8860dfe40",
+          "kind": "ConstantArrayType",
+          "type": {
+            "qualType": "struct __va_list_tag[1]"
+          },
+          "size": 1,
+          "qualDetails": [
+            "array"
+          ],
+          "typeDetails": [
+            {
+              "id": "0x55c8860dfc80",
+              "kind": "RecordType",
+              "type": {
+                "qualType": "struct __va_list_tag"
+              },
+              "decl": {
+                "id": "0x55c8860dfbf8",
+                "kind": "RecordDecl",
+                "name": "__va_list_tag"
+              },
+              "qualDetails": [
+                "struct"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "0x55c88613b5c8",
+      "kind": "VarDecl",
+      "loc": {
+        "offset": 5,
+        "file": "test-array-union.c",
+        "line": 1,
+        "col": 6,
+        "tokLen": 4
+      },
+      "range": {
+        "begin": {
+          "offset": 0,
+          "col": 1,
+          "tokLen": 4
+        },
+        "end": {
+          "offset": 13,
+          "col": 14,
+          "tokLen": 1
+        }
+      },
+      "name": "carr",
+      "mangledName": "carr",
+      "type": {
+        "qualType": "char[128]"
+      },
+      "qualType": {
+        "id": "0x55c88613b570",
+        "kind": "QualType",
+        "type": {
+          "qualType": "char[128]"
+        },
+        "qualifiers": "",
+        "qualDetails": [
+          "array"
+        ]
+      }
+    },
+    {
+      "id": "0x55c88613b678",
+      "kind": "RecordDecl",
+      "loc": {
+        "offset": 23,
+        "line": 3,
+        "col": 7,
+        "tokLen": 4
+      },
+      "range": {
+        "begin": {
+          "offset": 17,
+          "col": 1,
+          "tokLen": 5
+        },
+        "end": {
+          "offset": 67,
+          "line": 8,
+          "col": 1,
+          "tokLen": 1
+        }
+      },
+      "name": "Data",
+      "tagUsed": "union",
+      "completeDefinition": true,
+      "inner": [
+        {
+          "id": "0x55c88613b738",
+          "kind": "FieldDecl",
+          "loc": {
+            "offset": 37,
+            "line": 5,
+            "col": 7,
+            "tokLen": 1
+          },
+          "range": {
+            "begin": {
+              "offset": 33,
+              "col": 3,
+              "tokLen": 3
+            },
+            "end": {
+              "offset": 37,
+              "col": 7,
+              "tokLen": 1
+            }
+          },
+          "name": "i",
+          "type": {
+            "qualType": "int"
+          },
+          "qualType": {
+            "id": "0x55c8860df070",
+            "kind": "QualType",
+            "type": {
+              "qualType": "int"
+            },
+            "qualifiers": "",
+            "qualDetails": [
+              "signed",
+              "integer"
+            ]
+          }
+        },
+        {
+          "id": "0x55c88613b7a0",
+          "kind": "FieldDecl",
+          "loc": {
+            "offset": 48,
+            "line": 6,
+            "col": 9,
+            "tokLen": 1
+          },
+          "range": {
+            "begin": {
+              "offset": 42,
+              "col": 3,
+              "tokLen": 5
+            },
+            "end": {
+              "offset": 48,
+              "col": 9,
+              "tokLen": 1
+            }
+          },
+          "name": "f",
+          "type": {
+            "qualType": "float"
+          },
+          "qualType": {
+            "id": "0x55c8860df170",
+            "kind": "QualType",
+            "type": {
+              "qualType": "float"
+            },
+            "qualifiers": "",
+            "qualDetails": [
+              "fpp"
+            ]
+          }
+        },
+        {
+          "id": "0x55c88613b888",
+          "kind": "FieldDecl",
+          "loc": {
+            "offset": 58,
+            "line": 7,
+            "col": 8,
+            "tokLen": 3
+          },
+          "range": {
+            "begin": {
+              "offset": 53,
+              "col": 3,
+              "tokLen": 4
+            },
+            "end": {
+              "offset": 64,
+              "col": 14,
+              "tokLen": 1
+            }
+          },
+          "name": "str",
+          "type": {
+            "qualType": "char[20]"
+          },
+          "qualType": {
+            "id": "0x55c88613b830",
+            "kind": "QualType",
+            "type": {
+              "qualType": "char[20]"
+            },
+            "qualifiers": "",
+            "qualDetails": [
+              "array"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "0x55c88613b930",
+      "kind": "VarDecl",
+      "loc": {
+        "offset": 82,
+        "line": 10,
+        "col": 12,
+        "tokLen": 11
+      },
+      "range": {
+        "begin": {
+          "offset": 71,
+          "col": 1,
+          "tokLen": 5
+        },
+        "end": {
+          "offset": 82,
+          "col": 12,
+          "tokLen": 11
+        }
+      },
+      "name": "instantData",
+      "mangledName": "instantData",
+      "type": {
+        "desugaredQualType": "union Data",
+        "qualType": "union Data"
+      },
+      "qualType": {
+        "id": "0x55c88613b8e0",
+        "kind": "QualType",
+        "type": {
+          "desugaredQualType": "union Data",
+          "qualType": "union Data"
+        },
+        "qualifiers": "",
+        "qualDetails": [
+          "union"
+        ]
+      }
+    },
+    {
+      "id": "0x55c88613ba40",
+      "kind": "VarDecl",
+      "loc": {
+        "offset": 103,
+        "line": 12,
+        "col": 8,
+        "tokLen": 7
+      },
+      "range": {
+        "begin": {
+          "offset": 96,
+          "col": 1,
+          "tokLen": 4
+        },
+        "end": {
+          "offset": 113,
+          "col": 18,
+          "tokLen": 1
+        }
+      },
+      "name": "carrarr",
+      "mangledName": "carrarr",
+      "type": {
+        "qualType": "char *[20]"
+      },
+      "qualType": {
+        "id": "0x55c88613b9e0",
+        "kind": "QualType",
+        "type": {
+          "qualType": "char *[20]"
+        },
+        "qualifiers": "",
+        "qualDetails": [
+          "array"
+        ]
+      }
+    },
+    {
+      "id": "0x55c88613bba8",
+      "kind": "VarDecl",
+      "loc": {
+        "offset": 123,
+        "line": 13,
+        "col": 8,
+        "tokLen": 10
+      },
+      "range": {
+        "begin": {
+          "offset": 116,
+          "col": 1,
+          "tokLen": 4
+        },
+        "end": {
+          "offset": 137,
+          "col": 22,
+          "tokLen": 1
+        }
+      },
+      "name": "carrarrptr",
+      "mangledName": "carrarrptr",
+      "type": {
+        "qualType": "char (*)[20]"
+      },
+      "qualType": {
+        "id": "0x55c88613bb50",
+        "kind": "QualType",
+        "type": {
+          "qualType": "char (*)[20]"
+        },
+        "qualifiers": "",
+        "qualDetails": [
+          "ptr"
+        ],
+        "qualType": {
+          "id": "0x55c88613baf0",
+          "kind": "QualType",
+          "type": {
+            "desugaredQualType": "char[20]",
+            "qualType": "char[20]"
+          },
+          "qualifiers": "",
+          "qualDetails": [
+            "array"
+          ]
+        }
+      }
+    }
+  ]
+}
