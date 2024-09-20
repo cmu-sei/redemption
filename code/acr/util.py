@@ -31,7 +31,7 @@ import time
 import gzip
 from pathlib import Path
 
-__all__ = ['json', 'stop', 'read_whole_file', 'read_file_range', 'get_dict_path', 'set_dict_path', 'setdefault_dict_path', 'print_progress', 'condense_json_int_pairs', 'strip_filename_extension', 'get_ast_file_base', 'is_nonzero_file', 'is_newer_file', 'AstVisitor']
+__all__ = ['json', 'stop', 'read_whole_file', 'read_file_range', 'get_dict_path', 'set_dict_path', 'setdefault_dict_path', 'print_progress', 'set_progress_prefix', 'condense_json_int_pairs', 'strip_filename_extension', 'get_ast_file_base', 'is_nonzero_file', 'is_newer_file', 'AstVisitor']
 
 stop = pdb.set_trace
 
@@ -90,7 +90,13 @@ program_start_time = time.time()
 def print_progress(msg):
     if env_var__show_progress:
         elapsed_time = time.time() - program_start_time
-        print("[%6.2f sec] %s" % (elapsed_time, msg))
+        prefix = print_progress.prefix or ""
+        print("[%6.2f sec] %s%s" % (elapsed_time, prefix, msg))
+
+def set_progress_prefix(value):
+    print_progress.prefix = value
+
+set_progress_prefix(None)
 
 def condense_json_int_pairs(s):
     return re.sub("(\n *)\\[\n *([0-9]+),\n *([0-9]+)\n *\\]", "\\1[\\2, \\3]", s, re.MULTILINE)

@@ -155,6 +155,7 @@ def run_ear_for_cmd(cmd, base_dir, ast_file, ll_outfile, raw_ast_dir=None):
         fn_open = open
     with fn_open(ast_file, 'wt') as outfile:
         outfile.write(ast2)
+    print_progress("AST has been written.")
     return ast_json
 
 

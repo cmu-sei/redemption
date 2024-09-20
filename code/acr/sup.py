@@ -172,12 +172,15 @@ def combine_brain_outs(indiv_brain_filenames):
 
     return combined_alert_list
 
-def execute(cmd, base_dir, ast_filename, raw_ast_dir, alerts, brain_out_file):
+def execute(cmd, base_dir, ast_filename, raw_ast_dir, alerts, brain_out_file, total, index):
+    set_progress_prefix(f"[{index + 1}/{total}]: ")
+    print_progress("Processing translation unit...")
     ast = ear.write_ear_output_for_cmd(cmd, base_dir, ast_file=ast_filename,
                                  raw_ast_dir=raw_ast_dir)
     extra = {} if ast is None else {"preloaded_ast": ast}
     brain.run(ast_file=ast_filename, alerts_filename=alerts,
               output_filename=brain_out_file, **extra)
+    print_progress("Finished translation unit.")
 
 def run(*, compile_cmds_file, base_dir, alerts=None, combined_brain_out=None,
         step_dir=None, out_src_dir=None, inject_brain_output=False, raw_ast_dir=None, **kwargs):
@@ -206,7 +209,7 @@ def run(*, compile_cmds_file, base_dir, alerts=None, combined_brain_out=None,
         elif threads < 0:
             threads = max(1, os.cpu_count() + threads)
     if threads != 1:
-        pool = Pool(threads)
+        pool = Pool(threads, maxtasksperchild=3)
 
     if base_dir == "/":
         sys.stderr.write('Error: base_dir may not be the root directory ("/").')
@@ -239,7 +242,8 @@ def run(*, compile_cmds_file, base_dir, alerts=None, combined_brain_out=None,
             brain_out_file = step_dir + "/" + source_base_name + ".brain-out.json"
 
             skip_generating_brain_out = inject_brain_output and os.path.exists(brain_out_file)
-            args = (cmd, base_dir, ast_filename, raw_ast_dir, alerts, brain_out_file)
+            args = (cmd, base_dir, ast_filename, raw_ast_dir, alerts, brain_out_file,
+                    len(compile_commands), tu_index)
             if not skip_generating_brain_out:
                 if pool is not None:
                     worker = pool.apply_async(execute, args)
