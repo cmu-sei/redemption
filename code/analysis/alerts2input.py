@@ -95,7 +95,7 @@ SELECT * FROM Alerts, Checkers WHERE Checkers.tool=Alerts.tool AND Checkers.chec
                             "column": data["Column"],
                             "end-line": data["End_Line"],
                             "end-column": data["End_Column"],
-                            "tool": tool,
+                            "tool": data["Tool"],
                             "checker": data["Checker"],
                             "message": data["Message"]}
 
