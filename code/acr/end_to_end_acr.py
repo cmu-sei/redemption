@@ -76,6 +76,7 @@ def main():
 
 def run(source_file, compile_commands, alerts, *, out_src_dir=None, step_dir=None, base_dir=None,
         repair_includes_mode=None, repair_in_place=False, raw_ast_dir=None, **run_kwargs):
+
     if os.getenv('acr_emit_invocation'):
         print("end_to_end_acr.py{}{}{}{}{}{} {} {} {}".format(
             f" --alerts {alerts}" if alerts else "",
@@ -146,6 +147,7 @@ def run(source_file, compile_commands, alerts, *, out_src_dir=None, step_dir=Non
         print_progress("Running brain module...")
         brain.run(ast_file=ast_filename, alerts_filename=alerts, output_filename=brain_out_file)
         compile_dir = read_json_file(ast_filename)["compile_dir"]
+
         if out_src_dir:
             import glove
             kwargs = {}

@@ -1,0 +1,660 @@
+{
+  "id": "0x55e29e7a5468",
+  "kind": "TranslationUnitDecl",
+  "loc": {},
+  "range": {
+    "begin": {},
+    "end": {}
+  },
+  "inner": [
+    {
+      "id": "0x55e29e7a5cd0",
+      "kind": "TypedefDecl",
+      "loc": {},
+      "range": {
+        "begin": {},
+        "end": {}
+      },
+      "isImplicit": true,
+      "name": "__int128_t",
+      "type": {
+        "qualType": "__int128"
+      },
+      "typeDetails": [
+        {
+          "id": "0x55e29e7a5a30",
+          "kind": "BuiltinType",
+          "type": {
+            "qualType": "__int128"
+          },
+          "qualDetails": [
+            "signed",
+            "integer"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "0x55e29e7a5d40",
+      "kind": "TypedefDecl",
+      "loc": {},
+      "range": {
+        "begin": {},
+        "end": {}
+      },
+      "isImplicit": true,
+      "name": "__uint128_t",
+      "type": {
+        "qualType": "unsigned __int128"
+      },
+      "typeDetails": [
+        {
+          "id": "0x55e29e7a5a50",
+          "kind": "BuiltinType",
+          "type": {
+            "qualType": "unsigned __int128"
+          },
+          "qualDetails": [
+            "unsigned",
+            "integer"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "0x55e29e7a60b8",
+      "kind": "TypedefDecl",
+      "loc": {},
+      "range": {
+        "begin": {},
+        "end": {}
+      },
+      "isImplicit": true,
+      "name": "__NSConstantString",
+      "type": {
+        "qualType": "__NSConstantString_tag"
+      },
+      "typeDetails": [
+        {
+          "id": "0x55e29e7a5e30",
+          "kind": "RecordType",
+          "type": {
+            "qualType": "__NSConstantString_tag"
+          },
+          "decl": {
+            "id": "0x55e29e7a5d98",
+            "kind": "CXXRecordDecl",
+            "name": "__NSConstantString_tag"
+          },
+          "qualDetails": [
+            "struct"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "0x55e29e7a6150",
+      "kind": "TypedefDecl",
+      "loc": {},
+      "range": {
+        "begin": {},
+        "end": {}
+      },
+      "isImplicit": true,
+      "name": "__builtin_ms_va_list",
+      "type": {
+        "qualType": "char *"
+      },
+      "typeDetails": [
+        {
+          "id": "0x55e29e7a6110",
+          "kind": "PointerType",
+          "type": {
+            "qualType": "char *"
+          },
+          "qualDetails": [
+            "ptr"
+          ],
+          "typeDetails": [
+            {
+              "id": "0x55e29e7a5510",
+              "kind": "BuiltinType",
+              "type": {
+                "qualType": "char"
+              },
+              "qualDetails": [
+                "promotable",
+                "signed",
+                "integer"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "0x55e29e7eb2b8",
+      "kind": "TypedefDecl",
+      "loc": {},
+      "range": {
+        "begin": {},
+        "end": {}
+      },
+      "isImplicit": true,
+      "name": "__builtin_va_list",
+      "type": {
+        "qualType": "__va_list_tag[1]"
+      },
+      "typeDetails": [
+        {
+          "id": "0x55e29e7eb260",
+          "kind": "ConstantArrayType",
+          "type": {
+            "qualType": "__va_list_tag[1]"
+          },
+          "size": 1,
+          "qualDetails": [
+            "array"
+          ],
+          "typeDetails": [
+            {
+              "id": "0x55e29e7a6240",
+              "kind": "RecordType",
+              "type": {
+                "qualType": "__va_list_tag"
+              },
+              "decl": {
+                "id": "0x55e29e7a61a8",
+                "kind": "CXXRecordDecl",
+                "name": "__va_list_tag"
+              },
+              "qualDetails": [
+                "struct"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "0x55e29e7eb310",
+      "kind": "CXXRecordDecl",
+      "loc": {
+        "offset": 7,
+        "file": "test-cxxCtorInitializer.cpp",
+        "line": 1,
+        "col": 8,
+        "tokLen": 1
+      },
+      "range": {
+        "begin": {
+          "offset": 0,
+          "col": 1,
+          "tokLen": 6
+        },
+        "end": {
+          "offset": 33,
+          "line": 4,
+          "col": 1,
+          "tokLen": 1
+        }
+      },
+      "name": "A",
+      "tagUsed": "struct",
+      "completeDefinition": true,
+      "definitionData": {
+        "canConstDefaultInit": true,
+        "canPassInRegisters": true,
+        "copyAssign": {
+          "hasConstParam": true,
+          "implicitHasConstParam": true,
+          "needsImplicit": true,
+          "simple": true,
+          "trivial": true
+        },
+        "copyCtor": {
+          "hasConstParam": true,
+          "implicitHasConstParam": true,
+          "simple": true,
+          "trivial": true
+        },
+        "defaultCtor": {
+          "exists": true,
+          "nonTrivial": true,
+          "userProvided": true
+        },
+        "dtor": {
+          "irrelevant": true,
+          "needsImplicit": true,
+          "simple": true,
+          "trivial": true
+        },
+        "hasUserDeclaredConstructor": true,
+        "isStandardLayout": true,
+        "isTriviallyCopyable": true,
+        "moveAssign": {
+          "exists": true,
+          "needsImplicit": true,
+          "simple": true,
+          "trivial": true
+        },
+        "moveCtor": {
+          "exists": true,
+          "simple": true,
+          "trivial": true
+        }
+      },
+      "inner": [
+        {
+          "id": "0x55e29e7eb428",
+          "kind": "CXXRecordDecl",
+          "loc": {
+            "offset": 7,
+            "line": 1,
+            "col": 8,
+            "tokLen": 1
+          },
+          "range": {
+            "begin": {
+              "offset": 0,
+              "col": 1,
+              "tokLen": 6
+            },
+            "end": {
+              "offset": 7,
+              "col": 8,
+              "tokLen": 1
+            }
+          },
+          "isImplicit": true,
+          "isReferenced": true,
+          "name": "A",
+          "tagUsed": "struct"
+        },
+        {
+          "id": "0x55e29e7eb4d0",
+          "kind": "FieldDecl",
+          "loc": {
+            "offset": 18,
+            "line": 2,
+            "col": 7,
+            "tokLen": 1
+          },
+          "range": {
+            "begin": {
+              "offset": 14,
+              "col": 3,
+              "tokLen": 3
+            },
+            "end": {
+              "offset": 18,
+              "col": 7,
+              "tokLen": 1
+            }
+          },
+          "name": "x",
+          "type": {
+            "qualType": "int"
+          },
+          "qualType": {
+            "id": "0x55e29e7a5570",
+            "kind": "QualType",
+            "type": {
+              "qualType": "int"
+            },
+            "qualifiers": "",
+            "qualDetails": [
+              "signed",
+              "integer"
+            ]
+          }
+        },
+        {
+          "id": "0x55e29e7eb538",
+          "kind": "FieldDecl",
+          "loc": {
+            "offset": 21,
+            "col": 10,
+            "tokLen": 1
+          },
+          "range": {
+            "begin": {
+              "offset": 14,
+              "col": 3,
+              "tokLen": 3
+            },
+            "end": {
+              "offset": 21,
+              "col": 10,
+              "tokLen": 1
+            }
+          },
+          "name": "y",
+          "type": {
+            "qualType": "int"
+          },
+          "qualType": {
+            "refId": "0x55e29e7a5570",
+            "qualDetails": [
+              "signed",
+              "integer"
+            ]
+          }
+        },
+        {
+          "id": "0x55e29e7eb628",
+          "kind": "CXXConstructorDecl",
+          "loc": {
+            "offset": 27,
+            "line": 3,
+            "col": 3,
+            "tokLen": 1
+          },
+          "range": {
+            "begin": {
+              "offset": 27,
+              "col": 3,
+              "tokLen": 1
+            },
+            "end": {
+              "offset": 29,
+              "col": 5,
+              "tokLen": 1
+            }
+          },
+          "name": "A",
+          "mangledName": "_ZN1AC1Ev",
+          "type": {
+            "qualType": "void ()"
+          },
+          "returnTypeDetail": {
+            "qualType": {
+              "id": "0x55e29e7a54d0",
+              "kind": "QualType",
+              "type": {
+                "qualType": "void"
+              },
+              "qualifiers": "",
+              "qualDetails": [
+                "void"
+              ]
+            }
+          }
+        },
+        {
+          "id": "0x55e29e7eb768",
+          "kind": "CXXConstructorDecl",
+          "loc": {
+            "offset": 7,
+            "line": 1,
+            "col": 8,
+            "tokLen": 1
+          },
+          "range": {
+            "begin": {
+              "offset": 7,
+              "col": 8,
+              "tokLen": 1
+            },
+            "end": {
+              "offset": 7,
+              "col": 8,
+              "tokLen": 1
+            }
+          },
+          "isImplicit": true,
+          "name": "A",
+          "mangledName": "_ZN1AC1ERKS_",
+          "type": {
+            "qualType": "void (const A &)"
+          },
+          "inline": true,
+          "constexpr": true,
+          "explicitlyDefaulted": "default",
+          "returnTypeDetail": {
+            "qualType": {
+              "refId": "0x55e29e7a54d0",
+              "qualDetails": [
+                "void"
+              ]
+            }
+          },
+          "inner": [
+            {
+              "id": "0x55e29e7eb878",
+              "kind": "ParmVarDecl",
+              "loc": {
+                "offset": 7,
+                "col": 8,
+                "tokLen": 1
+              },
+              "range": {
+                "begin": {
+                  "offset": 7,
+                  "col": 8,
+                  "tokLen": 1
+                },
+                "end": {
+                  "offset": 7,
+                  "col": 8,
+                  "tokLen": 1
+                }
+              },
+              "type": {
+                "qualType": "const A &"
+              },
+              "qualType": {
+                "id": "0x55e29e7eb740",
+                "kind": "QualType",
+                "type": {
+                  "qualType": "const A &"
+                },
+                "qualifiers": "",
+                "qualDetails": []
+              }
+            }
+          ]
+        },
+        {
+          "id": "0x55e29e7eb928",
+          "kind": "CXXConstructorDecl",
+          "loc": {
+            "offset": 7,
+            "col": 8,
+            "tokLen": 1
+          },
+          "range": {
+            "begin": {
+              "offset": 7,
+              "col": 8,
+              "tokLen": 1
+            },
+            "end": {
+              "offset": 7,
+              "col": 8,
+              "tokLen": 1
+            }
+          },
+          "isImplicit": true,
+          "name": "A",
+          "mangledName": "_ZN1AC1EOS_",
+          "type": {
+            "qualType": "void (A &&)"
+          },
+          "inline": true,
+          "constexpr": true,
+          "explicitlyDefaulted": "default",
+          "returnTypeDetail": {
+            "qualType": {
+              "refId": "0x55e29e7a54d0",
+              "qualDetails": [
+                "void"
+              ]
+            }
+          },
+          "inner": [
+            {
+              "id": "0x55e29e7eba38",
+              "kind": "ParmVarDecl",
+              "loc": {
+                "offset": 7,
+                "col": 8,
+                "tokLen": 1
+              },
+              "range": {
+                "begin": {
+                  "offset": 7,
+                  "col": 8,
+                  "tokLen": 1
+                },
+                "end": {
+                  "offset": 7,
+                  "col": 8,
+                  "tokLen": 1
+                }
+              },
+              "type": {
+                "qualType": "A &&"
+              },
+              "qualType": {
+                "id": "0x55e29e7eb900",
+                "kind": "QualType",
+                "type": {
+                  "qualType": "A &&"
+                },
+                "qualifiers": "",
+                "qualDetails": []
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "0x55e29e7ebab8",
+      "kind": "CXXConstructorDecl",
+      "loc": {
+        "offset": 42,
+        "line": 6,
+        "col": 4,
+        "tokLen": 1
+      },
+      "range": {
+        "begin": {
+          "offset": 39,
+          "col": 1,
+          "tokLen": 1
+        },
+        "end": {
+          "offset": 55,
+          "col": 17,
+          "tokLen": 1
+        }
+      },
+      "parentDeclContextId": "0x55e29e7eb310",
+      "previousDecl": "0x55e29e7eb628",
+      "name": "A",
+      "mangledName": "_ZN1AC1Ev",
+      "type": {
+        "qualType": "void ()"
+      },
+      "returnTypeDetail": {
+        "qualType": {
+          "refId": "0x55e29e7a54d0",
+          "qualDetails": [
+            "void"
+          ]
+        }
+      },
+      "inner": [
+        {
+          "kind": "CXXCtorInitializer",
+          "id": "0x55e29e7ebbf8",
+          "range": {
+            "begin": {
+              "offset": 48,
+              "col": 10,
+              "tokLen": 1
+            },
+            "end": {
+              "offset": 52,
+              "col": 14,
+              "tokLen": 1
+            }
+          },
+          "anyInit": {
+            "id": "0x55e29e7eb538",
+            "kind": "FieldDecl",
+            "name": "y",
+            "type": {
+              "qualType": "int"
+            }
+          },
+          "inner": [
+            {
+              "id": "0x55e29e7ebbc0",
+              "kind": "UnaryOperator",
+              "range": {
+                "begin": {
+                  "offset": 50,
+                  "col": 12,
+                  "tokLen": 1
+                },
+                "end": {
+                  "offset": 51,
+                  "col": 13,
+                  "tokLen": 1
+                }
+              },
+              "type": {
+                "qualType": "int"
+              },
+              "valueCategory": "prvalue",
+              "isPostfix": false,
+              "opcode": "-",
+              "inner": [
+                {
+                  "id": "0x55e29e7ebba0",
+                  "kind": "IntegerLiteral",
+                  "range": {
+                    "begin": {
+                      "offset": 51,
+                      "col": 13,
+                      "tokLen": 1
+                    },
+                    "end": {
+                      "offset": 51,
+                      "col": 13,
+                      "tokLen": 1
+                    }
+                  },
+                  "type": {
+                    "qualType": "int"
+                  },
+                  "valueCategory": "prvalue",
+                  "value": "1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "0x55e29e7ebc20",
+          "kind": "CompoundStmt",
+          "range": {
+            "begin": {
+              "offset": 54,
+              "col": 16,
+              "tokLen": 1
+            },
+            "end": {
+              "offset": 55,
+              "col": 17,
+              "tokLen": 1
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

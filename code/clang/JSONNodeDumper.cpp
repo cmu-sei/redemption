@@ -248,6 +248,14 @@ void JSONNodeDumper::Visit(const TemplateArgument &TA, SourceRange R,
 
 void JSONNodeDumper::Visit(const CXXCtorInitializer *Init) {
   JOS.attribute("kind", "CXXCtorInitializer");
+  
+  // SEI: added id for 
+  JOS.attribute("id", createPointerRepresentation(Init));
+
+  // SEI: added range for CXXCtorInitializers
+  JOS.attributeObject("range",
+                      [Init, this] { writeSourceRange(Init->getSourceRange()); });
+
   if (Init->isAnyMemberInitializer())
     JOS.attribute("anyInit", createBareDeclRef(Init->getAnyMember()));
   else if (Init->isBaseInitializer())

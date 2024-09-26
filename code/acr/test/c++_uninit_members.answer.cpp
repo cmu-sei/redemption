@@ -53,9 +53,9 @@ C::C(float*) : Base(-1), a(1), c(3) {}
 C::C(char*)  : Base(-1), a(1), b(2) {}
 
 D::D() = default;
-D::D(int)    : b(2), c(3) {a = {}; }
-D::D(float)  : a(1), c(3) {b = {}; }
-D::D(char)   : a(1), b(2) , c{} {}
-D::D(int*)   : Base(-1), b(2), c(3) {a = {}; }
-D::D(float*) : Base(-1), a(1), c(3) {b = {}; }
-D::D(char*)  : Base(-1), a(1), b(2) , c{} {}
+D::D(int)    :  a{}, b(2), c(3) {}
+D::D(float)  : a(1),  b{}, c(3) {}
+D::D(char)   : a(1), b(2), c{} {}
+D::D(int*)   : Base(-1),  a{}, b(2), c(3) {}
+D::D(float*) : Base(-1), a(1),  b{}, c(3) {}
+D::D(char*)  : Base(-1), a(1), b(2), c{} {}

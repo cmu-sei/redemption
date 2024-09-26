@@ -42,6 +42,11 @@
       "source": "test-git-config.c"
     },
     {
+      "name": "test no range CXXCtorInitializer",
+      "json": "test-cxxCtorInitializer-orig.json",
+      "source": "test-cxxCtorInitializer.cpp"
+    },
+    {
       "name": "union and array qualDetails",
       "json": "test-array-union-orig.json",
       "source": "test-array-union.c"
