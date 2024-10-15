@@ -417,7 +417,9 @@ See the [Codebase Demo Instructions](doc/examples/codebase/README.md) for an exa
 
 ## Extending the Redemption Tool
 
-Documentation detail about useful environment variables and further testing is in [doc/regression_tests.md](doc/regression_tests.md). Also, a lot more detail about our system that may be of interest to others interested in extending it or just understanding it better is in the [doc](doc) directory.
+Documentation detail about useful environment variables and further testing is in [doc/regression_tests.md](doc/regression_tests.md). Also, a lot more detail about our system that may be of interest to others interested in extending it or just understanding it better is in the [doc](doc) directory.  The [data/test](file:data/test) directory contains test input and answers used by our regression and sample alert tests. 
+
+There is also some documentation out side the doc directory. Documentation about running our static analysis tools all lives inside the [data](data) directory, at: [Clang-tidy](data/clang-tidy/Clang-tidy.md), [Cppcheck](data/cppcheck/Cppcheck.md), and [Rosecheckers](data/rosecheckers/CERT-Rosecheckers.md).  Likewise, we have test data from running recurrence tests in [data/recurrence](data/recurrence)...see that directory's [README](data/recurrence/README.md) file for details.
 
 ## Troubleshooting
 
